@@ -1,0 +1,116 @@
+@import 'tailwindcss';
+
+@import '@fontsource/mulish/300.css';
+@import '@fontsource/mulish/400.css';
+@import '@fontsource/mulish/600.css';
+@import '@fontsource/mulish/700.css';
+@import '@fontsource/mulish/800.css';
+
+@theme {
+  /* Astratta brand tokens */
+  --color-primary: #5140f2;
+  --color-primary-dark: #2929a3;
+  --color-secondary: #ff7503;
+  --color-neutral: #eaeaea;
+  --color-ink: #0e0e12;
+
+  --font-sans: 'Mulish', ui-sans-serif, system-ui, sans-serif;
+
+  --ease-astratta: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  * {
+    @apply border-neutral/40;
+  }
+
+  html {
+    scroll-behavior: auto;
+    background-color: #fff;
+  }
+
+  html.has-scroll-smooth {
+    overflow: hidden;
+  }
+
+  body {
+    @apply bg-white text-ink font-sans font-normal antialiased;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-sans font-extrabold tracking-tight;
+  }
+
+  ::selection {
+    background: var(--color-primary);
+    color: #fff;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
+
+@layer utilities {
+  /* subtle grain texture overlay, used absolutely inside a relative container */
+  .grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .dot-pattern {
+    background-image: radial-gradient(circle, rgba(14, 14, 18, 0.12) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  .dot-pattern-light {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.14) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Custom cursor: hide native cursor on fine-pointer devices only */
+@media (hover: hover) and (pointer: fine) {
+  html.custom-cursor,
+  html.custom-cursor a,
+  html.custom-cursor button {
+    cursor: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
