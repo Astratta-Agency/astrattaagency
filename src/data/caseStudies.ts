@@ -1,6 +1,8 @@
 export type CaseStudy = {
   slug: string
   title: string
+  /** placeholder month/year — replace with the real project date before launch */
+  date: string
   tags: string[]
   summary: string
   challenge: string
@@ -20,6 +22,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     slug: 'placeholder-project-one',
     title: '[Placeholder project — replace before launch]',
+    date: '[Month Year]',
     tags: ['Web Development', 'Web Design'],
     summary: '[One-line outcome-focused summary of the real project goes here.]',
     challenge: '[What was broken or missing before Astratta got involved.]',
@@ -30,6 +33,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     slug: 'placeholder-project-two',
     title: '[Placeholder project — replace before launch]',
+    date: '[Month Year]',
     tags: ['Digital Marketing'],
     summary: '[One-line outcome-focused summary of the real project goes here.]',
     challenge: '[What was broken or missing before Astratta got involved.]',
@@ -40,6 +44,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     slug: 'placeholder-project-three',
     title: '[Placeholder project — replace before launch]',
+    date: '[Month Year]',
     tags: ['Graphic Design', 'Brand Identity'],
     summary: '[One-line outcome-focused summary of the real project goes here.]',
     challenge: '[What was broken or missing before Astratta got involved.]',

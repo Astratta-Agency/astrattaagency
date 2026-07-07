@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Container } from '@/components/ui/Container'
 import { fadeUp, viewportOnce } from '@/lib/animations'
 import { FOOTER_COLUMNS, SITE, SOCIALS } from '@/lib/constants'
+import logoWhite from '@/assets/logo-white.png'
 
 export function Footer() {
   const scrollToTop = () => {
@@ -21,9 +22,7 @@ export function Footer() {
         >
           <div className="flex flex-col items-start justify-between gap-10 border-b border-white/10 pb-16 md:flex-row md:items-end">
             <div>
-              <h2 className="font-sans text-[13vw] font-extrabold leading-[0.9] tracking-tight md:text-[7vw]">
-                Astratta
-              </h2>
+              <img src={logoWhite} alt="Astratta Agency" className="w-[70vw] max-w-[420px]" />
               <p className="mt-4 max-w-md text-white/60">{SITE.tagline}</p>
             </div>
             <button

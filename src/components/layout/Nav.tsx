@@ -6,6 +6,7 @@ import { useScrollDirection } from '@/hooks/useScrollDirection'
 import { NAV_LINKS } from '@/lib/constants'
 import { EASE } from '@/lib/animations'
 import { MagneticButton } from '@/components/ui/MagneticButton'
+import logo from '@/assets/logo.png'
 
 export function Nav() {
   const { direction, scrolled } = useScrollDirection()
@@ -38,8 +39,8 @@ export function Nav() {
         )}
       >
         <div className="mx-auto flex w-full max-w-[1400px] items-center justify-between px-6 py-5 md:px-10">
-          <Link to="/" className="font-sans text-xl font-extrabold tracking-tight">
-            Astratta
+          <Link to="/" className="shrink-0">
+            <img src={logo} alt="Astratta Agency" className="h-7 w-auto md:h-8" />
           </Link>
 
           <nav className="hidden items-center gap-8 md:flex">
