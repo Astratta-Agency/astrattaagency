@@ -10,6 +10,9 @@ import amazonsMockup1 from '@/assets/case-studies/hero-marquee/amazons-1.jpg'
 import amazonsMockup2 from '@/assets/case-studies/hero-marquee/amazons-2.jpg'
 import perreandoMockup1 from '@/assets/case-studies/hero-marquee/perreando-1.jpg'
 import perreandoMockup2 from '@/assets/case-studies/hero-marquee/perreando-2.jpg'
+import gradosmedspaVideo from '@/assets/case-studies/hero-marquee/180-grados-med-spa.mp4'
+import perreandohotdogVideo from '@/assets/case-studies/hero-marquee/perreando-hotdog.mp4'
+import prestigeVideo from '@/assets/case-studies/hero-marquee/prestige-home-improvements.mp4'
 
 const TICKER_ITEMS = ['Web Development', 'Digital Marketing', 'Graphic Design', 'Website Audits']
 
@@ -27,6 +30,7 @@ const CLIENT_LOGOS = [
 type MediaCard =
   | { type: 'image'; src: string; alt: string }
   | { type: 'gradient'; label: string; gradient: string }
+  | { type: 'video'; src: string; alt?: string; poster?: string }
 
 const MEDIA_COLUMNS: { cards: MediaCard[]; duration: number; reverse: boolean; offset?: string }[] = [
   {
@@ -34,7 +38,11 @@ const MEDIA_COLUMNS: { cards: MediaCard[]; duration: number; reverse: boolean; o
     reverse: false,
     cards: [
       { type: 'image', src: amazonsMockup1, alt: "Amazon's Flooring website mockup" },
-      { type: 'gradient', label: 'Web Development', gradient: 'from-primary to-primary-dark' },
+      { 
+        type: 'video', 
+        src: perreandohotdogVideo, 
+        alt: 'Perreando HotDog TikTok Video' 
+      },
       { type: 'image', src: perreandoMockup1, alt: 'Perreando HotDog website mockup' },
       { type: 'gradient', label: 'Brand Identity', gradient: 'from-ink to-primary-dark' },
     ],
@@ -46,7 +54,11 @@ const MEDIA_COLUMNS: { cards: MediaCard[]; duration: number; reverse: boolean; o
     cards: [
       { type: 'gradient', label: 'Digital Marketing', gradient: 'from-secondary to-secondary-dark' },
       { type: 'image', src: amazonsMockup2, alt: "Amazon's Flooring mobile mockup" },
-      { type: 'gradient', label: 'SEO & Growth', gradient: 'from-primary-dark to-ink' },
+      { 
+        type: 'video', 
+        src: gradosmedspaVideo, 
+        alt: '180 Grados Medspa TikTok Video' 
+      },
       { type: 'image', src: perreandoMockup2, alt: 'Perreando HotDog mobile mockup' },
     ],
   },
@@ -55,7 +67,11 @@ const MEDIA_COLUMNS: { cards: MediaCard[]; duration: number; reverse: boolean; o
     reverse: false,
     cards: [
       { type: 'gradient', label: 'Graphic Design', gradient: 'from-ink to-secondary-dark' },
-      { type: 'gradient', label: 'Lead Generation', gradient: 'from-secondary to-primary' },
+      { 
+        type: 'video', 
+        src: prestigeVideo, 
+        alt: 'Prestige Home Improvements TikTok Video' 
+      },
       { type: 'gradient', label: 'Website Audits', gradient: 'from-primary to-secondary' },
       { type: 'gradient', label: 'Conversion Design', gradient: 'from-primary-dark to-secondary-dark' },
     ],
@@ -76,7 +92,21 @@ function MediaCardEl({ card }: { card: MediaCard }) {
       </div>
     )
   }
-
+if (card.type === 'video') {
+    return (
+      <div className="aspect-[9/16] w-full overflow-hidden rounded-2xl transition-transform duration-300 ease-out hover:scale-[1.03] bg-black">
+        {/* Native video tags guarantee autoplay as long as they are muted */}
+        <video
+          src={card.src}
+          autoPlay
+          muted
+          loop
+          playsInline // Crucial for autoplaying on iPhones
+          className="h-full w-full object-cover"
+        />
+      </div>
+    )
+  }
   return (
     <div
       className={clsx(
@@ -131,7 +161,7 @@ export function Hero() {
             initial={{ opacity: 0, y: riseY }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: EASE, delay: 0.85 }}
-            className="mt-7 flex flex-col items-start gap-2.5"
+            className="mt-7 flex flex-row items-start gap-2.5"
           >
             {PILLS.map((pill) => (
               <span
@@ -142,7 +172,7 @@ export function Hero() {
               </span>
             ))}
           </motion.div>
-
+{/*
           {PROOF_PROJECT && (
             <motion.div
               initial={{ opacity: 0, y: riseY }}
@@ -170,7 +200,7 @@ export function Hero() {
                 </span>
               </Link>
             </motion.div>
-          )}
+          )}*/}
 
           <motion.p
             initial={{ opacity: 0, y: riseY }}
