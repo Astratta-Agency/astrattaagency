@@ -13,6 +13,11 @@ import perreandoMockup2 from '@/assets/case-studies/hero-marquee/perreando-2.jpg
 import gradosmedspaVideo from '@/assets/case-studies/hero-marquee/180-grados-med-spa.mp4'
 import perreandohotdogVideo from '@/assets/case-studies/hero-marquee/perreando-hotdog.mp4'
 import prestigeVideo from '@/assets/case-studies/hero-marquee/prestige-home-improvements.mp4'
+import clover4life from '@/assets/case-studies/hero-marquee/clover-4-life-mockup.jpg'
+import amazonsMockup3 from '@/assets/case-studies/hero-marquee/amazons-3.png'
+import clover4lifeMockup2 from '@/assets/case-studies/hero-marquee/clover4life-1.jpg'
+import gradosmedspaVideo2 from '@/assets/case-studies/hero-marquee/180gradosmedspa-2.mp4'
+import ensuenosMockup1 from '@/assets/case-studies/hero-marquee/eventos-ensuenos-1.png'
 
 const TICKER_ITEMS = ['Web Development', 'Digital Marketing', 'Graphic Design', 'Website Audits']
 
@@ -44,7 +49,7 @@ const MEDIA_COLUMNS: { cards: MediaCard[]; duration: number; reverse: boolean; o
         alt: 'Perreando HotDog TikTok Video' 
       },
       { type: 'image', src: perreandoMockup1, alt: 'Perreando HotDog website mockup' },
-      { type: 'gradient', label: 'Brand Identity', gradient: 'from-ink to-primary-dark' },
+      { type: 'image', src: clover4life, alt: 'Clover 4 Life logo mockup' },
     ],
   },
   {
@@ -52,28 +57,32 @@ const MEDIA_COLUMNS: { cards: MediaCard[]; duration: number; reverse: boolean; o
     reverse: true,
     offset: 'mt-12',
     cards: [
-      { type: 'gradient', label: 'Digital Marketing', gradient: 'from-secondary to-secondary-dark' },
-      { type: 'image', src: amazonsMockup2, alt: "Amazon's Flooring mobile mockup" },
+      { type: 'image', src: amazonsMockup3, alt: "Amazon's Flooring mobile mockup" },
+      { type: 'image', src: perreandoMockup2, alt: 'Perreando HotDog mobile mockup' },
       { 
         type: 'video', 
         src: gradosmedspaVideo, 
         alt: '180 Grados Medspa TikTok Video' 
       },
-      { type: 'image', src: perreandoMockup2, alt: 'Perreando HotDog mobile mockup' },
+      { type: 'image', src: amazonsMockup2, alt: "Amazon's Flooring mobile mockup" },
     ],
   },
   {
     duration: 28,
     reverse: false,
     cards: [
-      { type: 'gradient', label: 'Graphic Design', gradient: 'from-ink to-secondary-dark' },
+      { type: 'image', src: clover4lifeMockup2, alt: 'Clover 4 Life business mockup' },
       { 
         type: 'video', 
         src: prestigeVideo, 
         alt: 'Prestige Home Improvements TikTok Video' 
       },
-      { type: 'gradient', label: 'Website Audits', gradient: 'from-primary to-secondary' },
-      { type: 'gradient', label: 'Conversion Design', gradient: 'from-primary-dark to-secondary-dark' },
+      { type: 'image', src: ensuenosMockup1, alt: 'Eventos Ensueños website mockup' },
+      { 
+        type: 'video', 
+        src: gradosmedspaVideo2, 
+        alt: '180 Grados Medspa TikTok Video' 
+      },
     ],
   },
 ]
