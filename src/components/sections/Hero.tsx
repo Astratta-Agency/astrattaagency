@@ -5,7 +5,6 @@ import { RevealText } from '@/components/ui/RevealText'
 import { Marquee } from '@/components/ui/Marquee'
 import { EASE } from '@/lib/animations'
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion'
-import { CASE_STUDIES } from '@/data/caseStudies'
 import amazonsMockup1 from '@/assets/case-studies/hero-marquee/amazons-1.jpg'
 import amazonsMockup2 from '@/assets/case-studies/hero-marquee/amazons-2.jpg'
 import perreandoMockup1 from '@/assets/case-studies/hero-marquee/perreando-1.jpg'
@@ -22,9 +21,6 @@ import ensuenosMockup1 from '@/assets/case-studies/hero-marquee/eventos-ensuenos
 const TICKER_ITEMS = ['Web Development', 'Digital Marketing', 'Graphic Design', 'Website Audits']
 
 const PILLS = ['web development', 'digital marketing', 'graphic design']
-
-/** Proof visual in the hero — the flashiest, most citable result on file. */
-const PROOF_PROJECT = CASE_STUDIES.find((p) => p.slug === 'perreando-hotdog')
 
 const CLIENT_LOGOS = [
   { name: "Amazon's Flooring", hoverClass: 'hover:text-primary' },
