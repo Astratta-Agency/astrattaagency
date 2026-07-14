@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { useInView, useMotionValue, useSpring } from 'framer-motion'
+import { useMotionValue, useSpring } from 'framer-motion'
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion'
 
 type CounterProps = {
@@ -9,33 +9,63 @@ type CounterProps = {
   className?: string
 }
 
-/** Animates from 0 to `value` once it scrolls into view. */
+const VISIBILITY_FALLBACK_MS = 1000
+
+/**
+ * Renders the final value immediately — the count-up is progressive
+ * enhancement layered on top via IntersectionObserver, never the only path
+ * to a correct number. If the observer never fires (missed viewport
+ * entry, browser quirk, reduced motion), a 1s fallback timeout still
+ * starts it; if even that were skipped, the DOM already shows the real
+ * value, not a "0" stuck waiting on JS that didn't run.
+ */
 export function Counter({ value, suffix = '', prefix = '', className }: CounterProps) {
   const ref = useRef<HTMLSpanElement>(null)
-  const inView = useInView(ref, { once: true, margin: '-10% 0px' })
   const reducedMotion = usePrefersReducedMotion()
 
-  const motionValue = useMotionValue(0)
+  const motionValue = useMotionValue(value)
   const spring = useSpring(motionValue, { damping: 30, stiffness: 90 })
 
   useEffect(() => {
-    if (inView) motionValue.set(value)
-  }, [inView, value, motionValue])
+    const el = ref.current
+    if (!el || reducedMotion) return
+
+    let triggered = false
+    const animate = () => {
+      if (triggered) return
+      triggered = true
+      motionValue.set(0)
+      motionValue.set(value)
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) animate()
+      },
+      { rootMargin: '-10% 0px' },
+    )
+    observer.observe(el)
+    const fallback = window.setTimeout(animate, VISIBILITY_FALLBACK_MS)
+
+    return () => {
+      observer.disconnect()
+      window.clearTimeout(fallback)
+    }
+  }, [motionValue, value, reducedMotion])
 
   useEffect(() => {
-    if (reducedMotion) {
-      if (ref.current) ref.current.textContent = `${prefix}${value}${suffix}`
-      return
-    }
+    if (reducedMotion) return
     const unsubscribe = spring.on('change', (latest) => {
       if (ref.current) ref.current.textContent = `${prefix}${Math.round(latest)}${suffix}`
     })
     return unsubscribe
-  }, [spring, prefix, suffix, value, reducedMotion])
+  }, [spring, prefix, suffix, reducedMotion])
 
   return (
     <span ref={ref} className={className}>
-      {prefix}0{suffix}
+      {prefix}
+      {value}
+      {suffix}
     </span>
   )
 }
