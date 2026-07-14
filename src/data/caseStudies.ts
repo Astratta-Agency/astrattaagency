@@ -18,6 +18,17 @@ import eventosEnsuenosHorizontal2 from '@/assets/case-studies/eventos-ensuenos/e
 import eventosEnsuenosPortrait from '@/assets/case-studies/eventos-ensuenos/eventos-ensuenos-portrait-mockup.png'
 import eventosEnsuenosPortrait2 from '@/assets/case-studies/eventos-ensuenos/eventos-ensuenos-portrait-mockup-1.png'
 
+import clover4lifeBanner from '@/assets/case-studies/clover4life/clover4life-banner-mockup.jpg'
+import clover4lifeBusinessCard from '@/assets/case-studies/clover4life/clover4life-business-card-mockup.jpg'
+import clover4lifeCap from '@/assets/case-studies/clover4life/clover4life-cap-mockup.jpg'
+import clover4lifeTote from '@/assets/case-studies/clover4life/clover4life-mockup.jpg'
+
+import amazonsFlooringBrandHero from '@/assets/case-studies/amazons-flooring-branding/amazonsflooring-brand-hero.jpg'
+import amazonsFlooringBrandCard from '@/assets/case-studies/amazons-flooring-branding/amazons-flooring-brand-1.jpg'
+import amazonsFlooringBrandLogo from '@/assets/case-studies/amazons-flooring-branding/amazonsflooring-brand-2.jpg'
+import amazonsFlooringBrandShirts from '@/assets/case-studies/amazons-flooring-branding/amazonsflooring-brand-3.jpg'
+import amazonsFlooringBrandCap from '@/assets/case-studies/amazons-flooring-branding/amazonsflooring-brand-4.jpg'
+
 export type CaseStudyStat = {
   value: string
   label: string
@@ -248,6 +259,67 @@ export const CASE_STUDIES: CaseStudy[] = [
       eventosEnsuenosPortrait,
       eventosEnsuenosPortrait2,
       eventosEnsuenosHorizontal2,
+    ],
+  },
+  {
+    slug: 'clover4life',
+    title: 'Clover4Life Insurance',
+    client: 'Clover4Life Insurance',
+    industry: 'Insurance / Financial Services',
+    service: 'Graphic Design',
+    tags: ['Graphic Design'],
+    date: '2025',
+    timeline: '2 weeks',
+    technologies: ['Logo Design', 'Brand Identity', 'Typography', 'Print Design'],
+    summary:
+      'A Dallas–Fort Worth insurance agent needed a brand that reads as trustworthy on a business card and a trade-show banner alike.',
+    challenge:
+      'Selene Espina was building an independent insurance practice serving the DFW-area Latino community, but had no visual identity — no logo, no colors, no consistent look across the business cards and in-person materials she needed for client meetings and community events. Everything had to work bilingually and hold up printed at business-card size and banner size alike.',
+    approach:
+      "Astratta designed a full identity system starting from a mark: a four-leaf clover built from overlapping hearts, pairing the 'luck' of Clover4Life's name with the care at the center of an insurance relationship. A green-to-navy gradient palette carried that same trust-and-growth feel across every touchpoint, paired with an elegant serif for names and headlines against a clean sans for body copy. The system was then applied consistently across a double-sided business card and a retractable banner stand for in-person consultations.",
+    results:
+      'Clover4Life launched with a cohesive, print-ready identity — logo, palette, and typography applied consistently from the business card Selene hands out to the banner she sets up at events, giving the practice a professional, trustworthy presence from day one.',
+    stats: [
+      { value: '5', label: 'Brand Deliverables' },
+      { value: '100%', label: 'Print-Ready Files' },
+      { value: '3', label: 'Core Palette Colors' },
+      { value: 'EN/ES', label: 'Bilingual Ready' },
+    ],
+    coverGradient: 'from-secondary-dark to-ink',
+    coverImage: clover4lifeBanner,
+    gallery: [clover4lifeBusinessCard, clover4lifeTote, clover4lifeCap, clover4lifeBanner],
+  },
+  {
+    slug: 'amazons-flooring-branding',
+    title: "Amazon's Flooring — Brand Identity",
+    client: "Amazon's Flooring",
+    industry: 'Flooring / Home Services',
+    service: 'Graphic Design',
+    tags: ['Graphic Design'],
+    date: '2025',
+    timeline: '2 weeks',
+    technologies: ['Logo Design', 'Brand Identity', 'Typography', 'Print & Apparel Design'],
+    summary:
+      'A Dallas flooring company needed a visual identity as sharp as the website Astratta had already built them.',
+    challenge:
+      "Amazon's Flooring had a new website but no matching visual identity — no logo, no defined color system, nothing to put on a business card, a work shirt, or a job-site sign. The brand needed to read as an established, professional flooring company at a glance, both online and in person with customers and crews.",
+    approach:
+      "Astratta designed a wordmark built around a custom 'AF' monogram — angled bars that double as footsteps, a direct nod to flooring installed underfoot — in a blue-to-green gradient that carries the same trust-and-growth feel as the website. That mark was paired with the tagline 'Where Every Step Counts' and rolled out consistently across a business card and branded apparel (t-shirts and caps), so the crew and the company look consistent everywhere the brand shows up.",
+    results:
+      "Amazon's Flooring now has a complete, print-ready identity system that matches the professionalism of their website — one consistent logo, color palette, and tagline applied across business cards and branded apparel, from the job site to the front door.",
+    stats: [
+      { value: '5', label: 'Brand Deliverables' },
+      { value: '100%', label: 'Print-Ready Files' },
+      { value: '2', label: 'Core Brand Colors' },
+      { value: '2 weeks', label: 'Timeline' },
+    ],
+    coverGradient: 'from-ink to-primary',
+    coverImage: amazonsFlooringBrandHero,
+    gallery: [
+      amazonsFlooringBrandCard,
+      amazonsFlooringBrandLogo,
+      amazonsFlooringBrandCap,
+      amazonsFlooringBrandShirts,
     ],
   },
 ]
