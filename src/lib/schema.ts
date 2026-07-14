@@ -1,4 +1,4 @@
-import { SITE } from '@/lib/constants'
+import { SITE, SOCIALS } from '@/lib/constants'
 import type { FaqItem, PricingTier } from '@/data/pricing'
 
 const LOCAL_BUSINESS = {
@@ -17,6 +17,19 @@ const LOCAL_BUSINESS = {
 const AREA_SERVED = {
   '@type': 'City',
   name: 'Dallas–Fort Worth',
+} as const
+
+const FOUNDER_PERSON = {
+  '@type': 'Person',
+  name: 'Hisbelis Vargas',
+  jobTitle: 'Founder',
+} as const
+
+/** No confirmed personal name on hand for this role yet — described by title, not a placeholder identity. */
+const COMMUNITY_MANAGER_EMPLOYEE = {
+  '@type': 'Person',
+  name: 'Astratta Community Manager',
+  jobTitle: 'Community Manager',
 } as const
 
 /** Strips a display price like "From $8,500" or "$450/mo" down to a bare numeric string for schema.org's `price`. */
@@ -76,5 +89,38 @@ export function buildFaqSchema(faqs: FaqItem[]) {
         text: faq.answer,
       },
     })),
+  }
+}
+
+export function buildOrganizationSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: SITE.name,
+    url: `https://${SITE.domain}`,
+    logo: `https://${SITE.domain}/og-image.jpg`,
+    founder: FOUNDER_PERSON,
+    employee: [COMMUNITY_MANAGER_EMPLOYEE],
+  }
+}
+
+/**
+ * `sameAs` currently points at the company's own social handles (the only
+ * confirmed, live URLs on hand) rather than Hisbelis's personal profiles —
+ * swap in her personal LinkedIn/Instagram if those exist and should be
+ * the ones associated with this Person entity.
+ */
+export function buildPersonSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Hisbelis Vargas',
+    jobTitle: 'Founder',
+    worksFor: {
+      '@type': 'Organization',
+      name: SITE.name,
+      url: `https://${SITE.domain}`,
+    },
+    sameAs: SOCIALS.map((social) => social.href),
   }
 }

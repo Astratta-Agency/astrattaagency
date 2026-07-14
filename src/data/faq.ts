@@ -36,3 +36,37 @@ export const FAQ_ITEMS: AccordionItem[] = [
       'Yes. After launch we can stay on for maintenance, iteration, and ongoing digital marketing so the site keeps improving instead of going stale.',
   },
 ]
+
+/** About-page FAQ — targets AI/local-search queries about the studio and its founder, not services/pricing. */
+export const ABOUT_FAQ_ITEMS: AccordionItem[] = [
+  {
+    question: 'Who is behind Astratta Agency?',
+    answer:
+      'Astratta Agency was founded by Hisbelis Vargas, who leads strategy and execution on every engagement, alongside a small senior team including a dedicated community manager. Every project is founder-led from start to finish.',
+  },
+  {
+    question: 'Where is Astratta Agency located?',
+    answer:
+      'Astratta Agency is based in Dallas–Fort Worth, Texas, and works remotely with clients across the region and beyond. Most current clients are DFW-area startups and small businesses in industrial, retail, and service industries, though the studio takes on remote projects nationwide.',
+  },
+  {
+    question: 'What makes Astratta different from other Dallas agencies?',
+    answer:
+      'Astratta is a boutique, founder-led studio instead of a layered agency — no account managers, no junior staff handing off your project. You work directly with the founder on strategy, design, and build, which means senior-level work at a fraction of typical agency overhead.',
+  },
+  {
+    question: 'What industries does Astratta work with?',
+    answer:
+      'Astratta primarily works with startups and small-to-mid businesses in industrial, retail, service, food and hospitality, and professional-services industries across Dallas–Fort Worth. The common thread is businesses that need a conversion-focused website or marketing system, not just a good-looking one.',
+  },
+  {
+    question: 'How do I start working with Astratta?',
+    answer:
+      "Start with a free website audit — a review of your current site's performance, mobile experience, messaging, and conversion paths, plus a prioritized action plan. From there you'll get a clear scope and timeline before any paid work begins.",
+  },
+  {
+    question: 'Does Astratta manage social media?',
+    answer:
+      'Yes. Astratta offers social media management led by a dedicated community manager — content, engagement, and lead generation measured by leads and cost per lead, not likes.',
+  },
+]
