@@ -24,11 +24,35 @@
  *      a script bug.
  *   3. The verified, browser-confirmed <head> is what gets written to disk.
  */
-import puppeteer from 'puppeteer'
 import { createServer, preview } from 'vite'
 import { writeFileSync, mkdirSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+
+/**
+ * Vercel's build container has no Chrome system libraries (libnspr4.so,
+ * libnss3.so, etc.) and no way to apt-get them in, so plain `puppeteer`'s
+ * bundled Chrome fails to launch there. `@sparticuz/chromium` ships a
+ * statically-linked Chromium built for exactly that kind of sandboxed
+ * Linux build environment, so it's used (via `puppeteer-core`) whenever
+ * we're building on Vercel; local dev keeps using full `puppeteer`, which
+ * already manages a working Chrome install for whatever OS you're on.
+ */
+async function launchBrowser() {
+  if (process.env.VERCEL) {
+    const [{ default: puppeteer }, { default: chromium }] = await Promise.all([
+      import('puppeteer-core'),
+      import('@sparticuz/chromium'),
+    ])
+    return puppeteer.launch({
+      args: chromium.args,
+      executablePath: await chromium.executablePath(),
+      headless: true,
+    })
+  }
+  const { default: puppeteer } = await import('puppeteer')
+  return puppeteer.launch()
+}
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.join(__dirname, '..')
@@ -72,7 +96,7 @@ async function main() {
   const previewServer = await preview({ root: ROOT, preview: { port: PORT }, logLevel: 'error' })
   const base = previewServer.resolvedUrls.local[0].replace(/\/$/, '')
 
-  const browser = await puppeteer.launch()
+  const browser = await launchBrowser()
   const page = await browser.newPage()
 
   let failures = 0
