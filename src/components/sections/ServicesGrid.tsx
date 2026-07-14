@@ -35,7 +35,7 @@ export function ServicesGrid() {
           {SERVICES.map((service) => (
             <motion.div key={service.slug} variants={scaleIn}>
               <Link
-                to={`/services#${service.slug}`}
+                to={service.href}
                 className="group relative block overflow-hidden rounded-3xl bg-white p-8 transition-colors duration-500 hover:bg-primary md:p-10"
               >
                 <span className="font-sans text-sm font-bold text-primary transition-colors duration-500 group-hover:text-white/60">

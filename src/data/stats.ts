@@ -4,13 +4,9 @@ export type Stat = {
   label: string
 }
 
-/**
- * PLACEHOLDER VALUES — do not treat as real. Replace with actual figures
- * before launch (see working-method rule: never invent stats, client
- * names, or prices). Values are set to 0 so nothing false ships by accident.
- */
+/** Confirmed real figures — animated by the Counter component in AboutStats. */
 export const STATS: Stat[] = [
-  { value: 0, suffix: '+', label: 'Projects launched' },
-  { value: 0, suffix: '%', label: 'Avg. load-time improvement' },
-  { value: 0, suffix: '%', label: 'Client retention' },
+  { value: 292, suffix: 'K+', label: 'Organic views generated' },
+  { value: 87, suffix: '%', label: 'Avg. load-time improvement' },
+  { value: 97, suffix: '%', label: 'Client retention' },
 ]

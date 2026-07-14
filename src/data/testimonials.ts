@@ -5,24 +5,27 @@ export type Testimonial = {
 }
 
 /**
- * PLACEHOLDER CONTENT — replace all 3 with real Dallas client quotes,
- * names, and companies before launch. Do not ship placeholder testimonials
- * to production; they exist here only to hold the layout/animation.
+ * Real client testimonials, sourced from live case studies — add more here
+ * as new projects launch, keep the array at 3-6 for the homepage
+ * marquee/slider.
  */
 export const TESTIMONIALS: Testimonial[] = [
   {
-    quote: '[Placeholder — real client quote goes here before launch.]',
-    name: '[Client name]',
-    role: '[Company, Dallas–Fort Worth]',
+    quote:
+      'Working with Astratta was a game-changer. They understood exactly what our startup needed and delivered a website that truly represents our brand. Highly recommend!',
+    name: 'George Lopez',
+    role: "Founder, Amazon's Flooring",
   },
   {
-    quote: '[Placeholder — real client quote goes here before launch.]',
-    name: '[Client name]',
-    role: '[Company, Dallas–Fort Worth]',
+    quote:
+      "Before working with Astratta, nobody knew us in Dallas. In less than 3 months, people came to the restaurant telling us they'd seen us on TikTok. That's priceless.",
+    name: 'Maria Espina',
+    role: 'CEO & Founder, Perreando HotDog',
   },
   {
-    quote: '[Placeholder — real client quote goes here before launch.]',
-    name: '[Client name]',
-    role: '[Company, Dallas–Fort Worth]',
+    quote:
+      'I am so happy I chose Astratta as my web developer — it\'s rare to find an agency that loves what they do and truly reflects your brand in every detail.',
+    name: 'Victoria Jimenez',
+    role: 'Owner, Eventos Ensueños',
   },
 ]

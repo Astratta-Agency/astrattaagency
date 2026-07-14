@@ -4,11 +4,13 @@ export const SITE = {
   email: 'info@astrattaagency.com',
   location: 'Dallas–Fort Worth, TX',
   tagline: 'Agency-level quality at small-business-friendly prices.',
+  whatsapp: 'https://wa.me/19454074349',
 } as const
 
 export const NAV_LINKS = [
   { label: 'Work', href: '/work' },
   { label: 'Services', href: '/services' },
+  { label: 'Pricing', href: '/pricing' },
   { label: 'Audit', href: '/audit' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
@@ -24,10 +26,17 @@ export const FOOTER_COLUMNS = [
   {
     title: 'Services',
     links: [
-      { label: 'Web Development', href: '/services#web-development' },
-      { label: 'Digital Marketing', href: '/services#digital-marketing' },
-      { label: 'Graphic Design', href: '/services#graphic-design' },
-      { label: 'Website Audits', href: '/services#website-audits' },
+      { label: 'Web Development', href: '/services/web-development' },
+      { label: 'Digital Marketing', href: '/services/digital-marketing' },
+      { label: 'Graphic Design', href: '/services/graphic-design' },
+      { label: 'Website Audits', href: '/audit' },
+    ],
+  },
+  {
+    title: 'Pricing',
+    links: [
+      { label: 'Get a quote', href: '/pricing' },
+      { label: 'Packages', href: '/packages' },
     ],
   },
   {

@@ -6,15 +6,12 @@ import { RevealText } from '@/components/ui/RevealText'
 import { ContactForm } from '@/components/ui/ContactForm'
 import { SITE, SOCIALS } from '@/lib/constants'
 import { fadeUp, viewportOnce } from '@/lib/animations'
+import { STATIC_SEO } from '@/lib/seo-data'
 
 export default function Contact() {
   return (
     <>
-      <Seo
-        title="Contact — Astratta Agency | Dallas–Fort Worth, TX"
-        description="Get in touch with Astratta Agency, a Dallas–Fort Worth web design and digital marketing studio."
-        path="/contact"
-      />
+      <Seo {...STATIC_SEO['/contact']} path="/contact" />
 
       <section className="dot-pattern relative overflow-hidden bg-white py-24 pt-40 md:py-32 md:pt-48">
         <Container>

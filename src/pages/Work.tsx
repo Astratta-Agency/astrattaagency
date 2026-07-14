@@ -6,15 +6,12 @@ import { SectionLabel } from '@/components/ui/SectionLabel'
 import { RevealText } from '@/components/ui/RevealText'
 import { CASE_STUDIES } from '@/data/caseStudies'
 import { fadeUp, scaleIn, staggerContainer, viewportOnce } from '@/lib/animations'
+import { STATIC_SEO } from '@/lib/seo-data'
 
 export default function Work() {
   return (
     <>
-      <Seo
-        title="Our Work — Astratta Agency | Web Design Case Studies, Dallas TX"
-        description="Case studies from Astratta Agency: high-converting websites, funnels, and digital marketing for Dallas–Fort Worth startups and small businesses."
-        path="/work"
-      />
+      <Seo {...STATIC_SEO['/work']} path="/work" />
 
       <section className="bg-white pb-16 pt-40 md:pb-24 md:pt-48">
         <Container>
@@ -40,7 +37,15 @@ export default function Work() {
                   <div
                     className={`relative aspect-[4/3] overflow-hidden rounded-3xl bg-gradient-to-br ${project.coverGradient}`}
                   >
-                    <div className="absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110" />
+                    <div className="absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110">
+                      {project.coverImage && (
+                        <img
+                          src={project.coverImage}
+                          alt={`${project.title} website screenshot`}
+                          className="h-full w-full object-cover object-top"
+                        />
+                      )}
+                    </div>
                   </div>
                   <div className="mt-5 flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
@@ -70,8 +75,11 @@ export default function Work() {
           >
             <p className="text-ink/60">
               Want to see your project here next?{' '}
-              <Link to="/audit" className="font-bold text-primary">
-                Get a free website audit →
+              <Link to="/audit" className="group font-bold text-primary">
+                Get a free website audit{' '}
+                <span className="inline-block transition-[transform,color] duration-300 group-hover:translate-x-1 group-hover:text-secondary">
+                  →
+                </span>
               </Link>
             </p>
           </motion.div>

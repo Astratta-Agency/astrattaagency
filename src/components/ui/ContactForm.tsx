@@ -7,11 +7,14 @@ export function ContactForm({
   submitLabel = 'Send message',
   source,
   dark = false,
+  metadata,
 }: {
   submitLabel?: string
   /** identifies which page/offer this submission came from (e.g. "audit", "contact") */
   source: string
   dark?: boolean
+  /** optional context to attach to the submission (e.g. a quiz-answer summary) */
+  metadata?: string
 }) {
   const [status, setStatus] = useState<Status>('idle')
 
@@ -66,6 +69,7 @@ export function ContactForm({
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-6">
       <input type="hidden" name="source" value={source} />
+      {metadata && <input type="hidden" name="metadata" value={metadata} />}
 
       <div className="flex flex-col gap-2">
         <label htmlFor={`${source}-name`} className={labelClass}>

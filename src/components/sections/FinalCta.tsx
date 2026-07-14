@@ -16,7 +16,8 @@ export function FinalCta() {
             variants={fadeUp}
             className="font-sans text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl"
           >
-            <RevealText text="Let's find out why your site isn't converting." />
+            <RevealText text="Let's find out why your site isn't" />{' '}
+            <RevealText text="converting." className="text-secondary" />
           </motion.h2>
 
           <motion.div

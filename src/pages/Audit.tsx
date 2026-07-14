@@ -7,15 +7,12 @@ import { ContactForm } from '@/components/ui/ContactForm'
 import { GradientBlob } from '@/components/ui/GradientBlob'
 import { AUDIT_CHECKLIST, AUDIT_STEPS } from '@/data/audit'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
+import { STATIC_SEO } from '@/lib/seo-data'
 
 export default function Audit() {
   return (
     <>
-      <Seo
-        title="Free Website Audit — Astratta Agency | Dallas, TX"
-        description="Get a free website audit from Astratta Agency: a prioritized action plan covering performance, mobile UX, messaging, conversion paths, and SEO — for Dallas–Fort Worth businesses."
-        path="/audit"
-      />
+      <Seo {...STATIC_SEO['/audit']} path="/audit" />
 
       <section className="relative overflow-hidden bg-white pb-24 pt-40 md:pb-32 md:pt-48">
         <GradientBlob />

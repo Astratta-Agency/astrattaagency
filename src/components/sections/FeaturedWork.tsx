@@ -32,7 +32,15 @@ function CardBody({ project }: { project: CaseStudy }) {
         <BrowserMockup url="yourproject.com" fill>
           <div
             className={`absolute inset-0 bg-gradient-to-br transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 ${project.coverGradient}`}
-          />
+          >
+            {project.coverImage && (
+              <img
+                src={project.coverImage}
+                alt={`${project.title} website screenshot`}
+                className="h-full w-full object-cover object-top"
+              />
+            )}
+          </div>
         </BrowserMockup>
       </Link>
 
@@ -159,7 +167,7 @@ export function FeaturedWork() {
   const reducedMotion = usePrefersReducedMotion()
 
   return (
-    <section className="relative border-t border-ink/10 pt-24 md:pt-32">
+    <section className="relative border-t border-ink/10 pb-24 pt-24 md:pb-32 md:pt-32">
       <Container>
         <motion.div
           initial="hidden"

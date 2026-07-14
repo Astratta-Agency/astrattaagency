@@ -94,7 +94,7 @@ export const scaleIn: Variants = {
 }
 
 /** Standard viewport config for whileInView triggers. */
-export const viewportOnce = { once: true, margin: '-10% 0px -10% 0px' }
+export const viewportOnce = { once: true, amount: 0.2, margin: '0px 0px -10% 0px' }
 
 /**
  * Manual piecewise-linear interpolation with hard clamping at both ends.

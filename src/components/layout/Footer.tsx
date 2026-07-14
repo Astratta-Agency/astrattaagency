@@ -4,10 +4,14 @@ import { Container } from '@/components/ui/Container'
 import { fadeUp, viewportOnce } from '@/lib/animations'
 import { FOOTER_COLUMNS, SITE, SOCIALS } from '@/lib/constants'
 import logoWhite from '@/assets/logo-white.png'
+import { useLenis } from '@/components/layout/SmoothScroll'
 
 export function Footer() {
+  const lenis = useLenis()
+
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    if (lenis) lenis.scrollTo(0, { duration: 1.2 })
+    else window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   return (
@@ -34,7 +38,7 @@ export function Footer() {
             </button>
           </div>
 
-          <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
+          <div className="grid grid-cols-2 gap-10 md:grid-cols-5">
             {FOOTER_COLUMNS.map((col) => (
               <div key={col.title}>
                 <h3 className="mb-4 font-sans text-sm font-bold uppercase tracking-wide text-white/40">

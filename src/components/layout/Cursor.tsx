@@ -54,17 +54,17 @@ export function Cursor() {
   return (
     <>
       <motion.div
-        className="pointer-events-none fixed left-0 top-0 z-[100] size-1.5 rounded-full bg-ink"
+        className="pointer-events-none fixed left-0 top-0 z-[100] size-1.5 rounded-full bg-white mix-blend-difference"
         style={{ x, y, translateX: '-50%', translateY: '-50%' }}
       />
       <motion.div
-        className="pointer-events-none fixed left-0 top-0 z-[100] flex items-center justify-center rounded-full border border-ink/40 bg-transparent"
+        className={`pointer-events-none fixed left-0 top-0 z-[100] flex items-center justify-center rounded-full border bg-transparent ${active ? 'mix-blend-normal' : 'mix-blend-difference'}`}
         style={{ x: ringX, y: ringY, translateX: '-50%', translateY: '-50%' }}
         animate={{
           width: active ? 72 : 32,
           height: active ? 72 : 32,
           backgroundColor: active ? '#5140f2' : 'rgba(0,0,0,0)',
-          borderColor: active ? 'rgba(81,64,242,0)' : 'rgba(14,14,18,0.4)',
+          borderColor: active ? 'rgba(81,64,242,0)' : 'rgba(255,255,255,0.9)',
         }}
         transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
       >
