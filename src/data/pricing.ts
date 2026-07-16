@@ -19,6 +19,23 @@ export type FaqItem = {
   answer: string
 }
 
+export type Frustration = {
+  text: string
+}
+
+export type ProcessStep = {
+  number: string // "/01", "/02", etc.
+  title: string
+  description: string
+}
+
+export type ProofBlock = {
+  /** slug into CASE_STUDIES — pulls real stats, testimonial, and images from there. Required when real proof exists. */
+  caseStudySlug?: string
+  /** used ONLY when no dedicated case study exists yet (Paid Ads, Lead Generation) — an honest, non-fabricated substitute, e.g. process/guarantee-based proof instead of a stats block. Never a placeholder stat. */
+  fallbackNote?: string
+}
+
 export type ServicePage = {
   slug: string
   parentSlug?: string // for sub-pages nested under a hub, e.g. "digital-marketing"
@@ -31,6 +48,11 @@ export type ServicePage = {
   tiers: PricingTier[]
   addOns?: AddOn[]
   faqs: FaqItem[]
+  painHeadline?: string // pain-first H1, replaces the current feature-first h1 on the page (keep `h1` field itself untouched — it's used elsewhere/SEO; this is a new display-only override)
+  frustrations?: Frustration[]
+  processSteps?: ProcessStep[]
+  proof?: ProofBlock
+  benefits?: string[] // outcome-oriented, distinct from tier `features` (which are feature checklists)
 }
 
 export const WEB_DEVELOPMENT_PAGE: ServicePage = {
@@ -43,6 +65,52 @@ export const WEB_DEVELOPMENT_PAGE: ServicePage = {
   h1: 'Web development pricing, no guessing games.',
   intro:
     "Astratta builds four types of web projects for Dallas businesses: single-page landing sites, multi-page business websites, SEO-optimized sites, and multi-step conversion funnels. Prices below are flat and public — pick the tier that matches your goal, or request a free audit first if you're not sure which one fits.",
+  painHeadline: "Your site gets traffic. It just doesn't turn into leads.",
+  frustrations: [
+    { text: 'Visitors land, scroll, and leave — no clear next step anywhere on the page.' },
+    {
+      text: "Your current site takes 6+ seconds to load on mobile, and most people never wait that long.",
+    },
+    { text: "You're not sure what your own homepage is supposed to convince someone to do." },
+    {
+      text: 'Every page looks like a template because it is one — nothing about it says "this is a real Dallas business."',
+    },
+  ],
+  processSteps: [
+    {
+      number: '/01',
+      title: 'Audit & strategy',
+      description:
+        'We map your current funnel (or lack of one), your competitors, and exactly what a visitor needs to see to take action.',
+    },
+    {
+      number: '/02',
+      title: 'Copy before design',
+      description:
+        'We write the conversion path first — headline, value prop, CTA sequence — so design has something worth designing around.',
+    },
+    {
+      number: '/03',
+      title: 'Build & instrument',
+      description:
+        'Mobile-first build with Meta Pixel, GA4, and UTMs wired in from day one — so results are measurable from launch, not guessed at later.',
+    },
+    {
+      number: '/04',
+      title: 'Launch & iterate',
+      description:
+        'You get 2 rounds of revisions built in, plus post-launch support to adjust based on real visitor behavior.',
+    },
+  ],
+  proof: {
+    caseStudySlug: 'eventos-ensuenos',
+  },
+  benefits: [
+    "A site that explains what you do in the first 5 seconds, not the third scroll.",
+    "Mobile-first build — most of your traffic is on a phone, so that's what we design for first.",
+    "Analytics wired in from launch — you'll know what's working within weeks, not guess for months.",
+    'A structure built to add SEO, ads, or e-commerce later without a rebuild.',
+  ],
   tiers: [
     {
       slug: 'landing-essentials',
@@ -169,6 +237,51 @@ export const ECOMMERCE_PAGE: ServicePage = {
   h1: "E-commerce that's built to sell, not just to exist.",
   intro:
     'Astratta builds Shopify-based online stores for Dallas-area retailers and product businesses — from a 25-product boutique launch to a full migration and CRO program for stores doing $10k+/month. Every tier includes payments, tax setup, and shipping configured for Texas from day one.',
+  painHeadline: "Your products are ready. Your store isn't selling them.",
+  frustrations: [
+    {
+      text: "You're taking orders through Instagram DMs and losing track of who paid and who didn't.",
+    },
+    {
+      text: 'Your current store looks fine on desktop and falls apart on the phone, where most of your buyers actually are.',
+    },
+    { text: 'Checkout has so much friction that people add to cart and never finish.' },
+    {
+      text: "You migrated platforms once and lost search rankings for months — you're not doing that again without a plan.",
+    },
+  ],
+  processSteps: [
+    {
+      number: '/01',
+      title: 'Store audit',
+      description:
+        'We review your current catalog, checkout flow, and (if migrating) exactly what needs to move without breaking SEO.',
+    },
+    {
+      number: '/02',
+      title: 'Build on Shopify',
+      description:
+        'Theme, product pages, payments, tax, and shipping configured for Texas from day one — not left for you to figure out post-launch.',
+    },
+    {
+      number: '/03',
+      title: 'Connect the channels',
+      description:
+        "Meta Pixel, GA4 e-commerce events, and — depending on tier — Instagram Shopping and Google Merchant Center, so the store isn't an island.",
+    },
+    {
+      number: '/04',
+      title: 'Train & hand off',
+      description:
+        "You get a recorded training video and documentation, so adding products or running a sale doesn't require calling us every time.",
+    },
+  ],
+  benefits: [
+    'Payments, tax, and shipping configured correctly for Texas from launch — no post-launch scramble.',
+    'Mobile-first checkout — friction removed where most of your buyers actually are.',
+    "Migration with 301 redirects when moving platforms, so you don't lose existing search rankings.",
+    'Real e-commerce analytics from day one (cart, checkout, purchase funnel) — not just page views.',
+  ],
   tiers: [
     {
       slug: 'ecommerce-starter',
@@ -295,6 +408,50 @@ export const SOCIAL_MEDIA_PAGE: ServicePage = {
   h1: 'Social media that builds an audience worth selling to.',
   intro:
     'Astratta manages Instagram, Facebook, and TikTok for Dallas–Fort Worth businesses across four tiers — from a lightweight presence plan to a full authority program with community management and weekly executive reporting. Every plan includes a monthly content calendar and real metrics, not just post counts.',
+  painHeadline: "You're posting every week. Nothing is happening because of it.",
+  frustrations: [
+    { text: 'You post consistently and your follower count barely moves.' },
+    { text: "You can't tell if any of it is actually bringing in customers, or just... existing." },
+    {
+      text: "Every post takes an hour to plan, shoot, and edit — time you don't have to spend guessing.",
+    },
+    { text: 'You\'re on Instagram because you\'re "supposed to be," not because you have a plan for it.' },
+  ],
+  processSteps: [
+    {
+      number: '/01',
+      title: 'Audience & pillar strategy',
+      description:
+        "We define who you're actually talking to and 3-4 content pillars, so every post has a job instead of being filler.",
+    },
+    {
+      number: '/02',
+      title: 'Film & produce',
+      description:
+        "On-site filming sessions turn into posts, stories, and reels — produced for how each platform's algorithm actually behaves.",
+    },
+    {
+      number: '/03',
+      title: 'Publish & engage',
+      description:
+        "Consistent posting cadence plus daily community management on the tiers that include it — comments and DMs don't sit unanswered.",
+    },
+    {
+      number: '/04',
+      title: 'Report on what matters',
+      description:
+        'Monthly reports track reach, engagement, and traffic — not just a vanity follower count.',
+    },
+  ],
+  proof: {
+    caseStudySlug: 'perreando-hotdog-social-media',
+  },
+  benefits: [
+    "A documented content strategy, not a guess about what to post this week.",
+    'Real metrics reporting (reach, engagement, traffic) — not just "posts published."',
+    "Platform-specific content — what works on TikTok isn't copy-pasted onto LinkedIn.",
+    "A lead magnet + automation option on Growth tier and up, so social can generate leads without ad spend.",
+  ],
   tiers: [
     {
       slug: 'social-presence',
@@ -424,6 +581,53 @@ export const PAID_ADS_PAGE: ServicePage = {
   h1: "Ad spend that's accountable to a cost-per-lead number.",
   intro:
     'Astratta manages Meta and Google ad campaigns for Dallas businesses across four tiers — from cold-traffic prospecting to a full awareness-to-conversion funnel. Every plan separates our management fee from your ad budget, and reports against click-through rate, cost-per-click, and conversions weekly or bi-weekly.',
+  painHeadline: "You're spending on ads. You couldn't tell me your cost per lead if I asked.",
+  frustrations: [
+    {
+      text: "Your ad account shows spend and reach, but nobody can tell you what it actually cost to get one real lead.",
+    },
+    {
+      text: "Campaigns launched months ago are still running unchanged because nobody's optimizing them.",
+    },
+    {
+      text: "You're running ads to a page that wasn't built to convert, so the budget is doing twice the work it should.",
+    },
+    {
+      text: "Every report you get is impressions and reach — numbers that don't tell you if it's working.",
+    },
+  ],
+  processSteps: [
+    {
+      number: '/01',
+      title: 'Audit the funnel',
+      description:
+        "Before spending a dollar, we check whether your landing page can actually convert the traffic we're about to send it.",
+    },
+    {
+      number: '/02',
+      title: 'Launch & segment',
+      description:
+        'Campaigns built around your real audience — DFW-specific targeting, not broad "everyone" spend.',
+    },
+    {
+      number: '/03',
+      title: 'Test & optimize',
+      description:
+        'Creative and copy A/B testing on a real cadence (weekly to daily depending on tier), not "set it and check next month."',
+    },
+    {
+      number: '/04',
+      title: 'Report against cost per lead',
+      description:
+        'Every report ties spend to CTR, CPC, and conversions — the numbers that tell you if the budget is working.',
+    },
+  ],
+  benefits: [
+    "Management fee and ad spend shown separately — you always know what you're paying us vs. paying Meta/Google.",
+    'DFW-specific audience segmentation from tier 1, not generic broad targeting.',
+    'Reporting tied to cost per lead, not just impressions and reach.',
+    "A funnel check before launch — we'll tell you if your landing page needs work before we send it traffic.",
+  ],
   tiers: [
     {
       slug: 'ads-prospecting',
@@ -541,6 +745,58 @@ export const LEAD_GENERATION_PAGE: ServicePage = {
   h1: 'One system, built to deliver a number of leads — not just traffic.',
   intro:
     "The Lead Generation System is Astratta's core offer for Dallas businesses that need a predictable number of qualified leads per month. It combines a landing page, paid ads, social warm-up, and a lead magnet into one managed program — with a guaranteed minimum of 15 qualified leads and a cost-per-lead under $80 by month 3.",
+  painHeadline: "You don't need more traffic. You need a number of leads you can count on.",
+  frustrations: [
+    {
+      text: 'Some months you get 20 leads, some months you get 3, and you can never predict which.',
+    },
+    {
+      text: "Your marketing is split across a freelancer for ads, a friend for social, and nobody owning the whole funnel.",
+    },
+    {
+      text: 'Every "marketing win" is a vague reach number — not a lead count, not a cost per lead.',
+    },
+    {
+      text: "You've tried running ads to a page that was never built to capture a lead in the first place.",
+    },
+  ],
+  processSteps: [
+    {
+      number: '/01',
+      title: 'Diagnostic audit',
+      description:
+        'A 2-hour session on your current website, social, positioning, and conversion flow — so the system is built around actual gaps, not guesses.',
+    },
+    {
+      number: '/02',
+      title: 'Build the funnel',
+      description:
+        "Landing page, lead magnet, and ManyChat automation built and connected as one system, not separate pieces.",
+    },
+    {
+      number: '/03',
+      title: 'Warm up & run ads',
+      description:
+        "Social presence warms up cold traffic while retargeting ads bring back visitors who didn't convert the first time.",
+    },
+    {
+      number: '/04',
+      title: 'Report weekly, hit the number',
+      description:
+        'Weekly reporting on leads generated, cost per lead, and form conversion — with a guaranteed minimum of 15 qualified leads/month and under $80 cost per lead by month 3.',
+    },
+  ],
+  proof: {
+    caseStudySlug: 'eventos-ensuenos',
+    fallbackNote:
+      "This shows results from Astratta's web development work with Eventos Ensueños (+80% quote requests after a conversion-focused rebuild) — directionally the closest proof we have for lead volume, though that engagement was a website project, not the bundled Lead Generation System. The System adds paid ads, social warm-up, and a lead magnet on top of a conversion-built landing page, with its own guaranteed minimum of 15 qualified leads/month by month 3.",
+  },
+  benefits: [
+    "One system, one report — not three vendors you have to compare against each other.",
+    'A guaranteed minimum: 15 qualified leads/month and under $80 cost per lead by month 3.',
+    'Landing page, ads, social warm-up, and lead magnet built to work together, not bolted on separately.',
+    'Add the Sales Accelerator anytime to move from "leads delivered" to "leads closed."',
+  ],
   tiers: [
     {
       slug: 'lead-generation-core',
@@ -628,6 +884,56 @@ export const GRAPHIC_DESIGN_PAGE: ServicePage = {
   h1: 'A visual identity that looks like the market leader, not the newest business on the block.',
   intro:
     "Astratta designs logos, brand systems, and marketing collateral for Dallas businesses across four tiers — from a starter logo package to an ongoing monthly design retainer. Every project includes a usable style guide, not just files, so your team can stay consistent without calling us for every social post.",
+  painHeadline: 'Your logo was made in an hour. It shows.',
+  frustrations: [
+    {
+      text: "Your logo looks fine on a screen and falls apart the moment it's printed on a shirt, banner, or sign.",
+    },
+    {
+      text: 'Every piece of marketing material looks like it came from a different company — no consistent colors, no consistent fonts.',
+    },
+    {
+      text: "You don't have source files, so every small change means paying someone to recreate the whole thing.",
+    },
+    {
+      text: 'You look like a startup that\'s "still figuring it out," even though you\'ve been in business for years.',
+    },
+  ],
+  processSteps: [
+    {
+      number: '/01',
+      title: 'Discovery',
+      description:
+        'We start from what the mark needs to mean — not just what looks nice — so the concept has a reason behind it.',
+    },
+    {
+      number: '/02',
+      title: 'Concept & refine',
+      description:
+        'Multiple logo concepts, narrowed through revision rounds until one direction is clearly right.',
+    },
+    {
+      number: '/03',
+      title: 'Build the system',
+      description:
+        'Color palette, typography, and usage guidelines — so the identity holds up consistently, not just on the one file we designed it in.',
+    },
+    {
+      number: '/04',
+      title: 'Apply it everywhere',
+      description:
+        "The system gets applied across real touchpoints — business cards, apparel, signage — so it's tested against reality, not just a mockup.",
+    },
+  ],
+  proof: {
+    caseStudySlug: 'amazons-flooring-branding',
+  },
+  benefits: [
+    'Source files (Figma/Adobe) delivered — no calling us every time you need a small edit.',
+    'A system that holds up printed at business-card size and banner size alike.',
+    'Guidelines your team can actually use, not just a logo file and good luck.',
+    'Consistency across every touchpoint — business card, apparel, signage, social — from one system.',
+  ],
   tiers: [
     {
       slug: 'brand-starter',

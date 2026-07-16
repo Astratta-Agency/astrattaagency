@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Seo } from '@/components/layout/Seo'
 import { Container } from '@/components/ui/Container'
 import { RevealText } from '@/components/ui/RevealText'
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
 import { CASE_STUDIES } from '@/data/caseStudies'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
 import { CASE_STUDY_SEO_DESCRIPTIONS } from '@/lib/seo-data'
@@ -24,9 +25,12 @@ export default function CaseStudy() {
       <section className="bg-white pb-16 pt-40 md:pb-24 md:pt-48">
         <Container>
           <div className="flex flex-wrap items-center justify-between gap-4">
-            <Link to="/work" className="font-sans text-sm font-bold text-ink/50 hover:text-primary">
-              ← All work
-            </Link>
+            <Breadcrumbs
+              items={[
+                { label: 'Work', href: '/work' },
+                { label: project.title, href: `/work/${project.slug}` },
+              ]}
+            />
             {project.liveUrl && (
               <a
                 href={project.liveUrl}

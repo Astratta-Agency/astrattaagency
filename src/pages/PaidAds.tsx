@@ -11,10 +11,14 @@ import { QuoteCallout } from '@/components/ui/QuoteCallout'
 import { AddOnsList } from '@/components/ui/AddOnsList'
 import { FaqAccordion } from '@/components/ui/FaqAccordion'
 import { ContactForm } from '@/components/ui/ContactForm'
+import { ServiceFrustrations } from '@/components/ui/ServiceFrustrations'
+import { ServiceProcess } from '@/components/ui/ServiceProcess'
+import { ServiceBenefits } from '@/components/ui/ServiceBenefits'
 import { PAID_ADS_PAGE } from '@/data/pricing'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
 import { buildFaqSchema, buildOfferSchema, buildServiceSchema } from '@/lib/schema'
 import { SITE } from '@/lib/constants'
+import paidAdsHeroIllustration from '@/assets/illustrations/paid-ads-hero.webp'
 
 export default function PaidAds() {
   const page = PAID_ADS_PAGE
@@ -34,24 +38,70 @@ export default function PaidAds() {
 
       <section className="bg-white pb-16 pt-40 md:pb-24 md:pt-48">
         <Container>
-          <Breadcrumbs
-            items={[
-              { label: 'Services', href: '/services' },
-              { label: 'Digital Marketing', href: '/services/digital-marketing' },
-              { label: page.title, href: path },
-            ]}
-          />
-          <span className="mt-8 block font-sans text-sm font-bold text-primary">
-            {page.number}
-          </span>
-          <h1 className="mt-3 max-w-3xl font-sans text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
-            <RevealText text={page.h1} animateOnMount />
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg text-ink/70">{page.intro}</p>
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-[3fr_2fr] lg:items-center lg:gap-16">
+            <div>
+              <Breadcrumbs
+                items={[
+                  { label: 'Services', href: '/services' },
+                  { label: 'Digital Marketing', href: '/services/digital-marketing' },
+                  { label: page.title, href: path },
+                ]}
+              />
+              <span className="mt-8 block font-sans text-sm font-bold text-primary">
+                {page.number}
+              </span>
+              <h1 className="mt-3 max-w-3xl font-sans text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
+                <RevealText text={page.painHeadline ?? page.h1} animateOnMount />
+              </h1>
+              {page.painHeadline && (
+                <motion.p
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="mt-4 max-w-2xl font-sans text-lg font-medium text-ink/60"
+                >
+                  {page.h1}
+                </motion.p>
+              )}
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.45 }}
+                className="mt-6 max-w-2xl text-lg text-ink/70"
+              >
+                {page.intro}
+              </motion.p>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="mx-auto w-full max-w-md"
+            >
+              <img
+                src={paidAdsHeroIllustration}
+                alt="Illustration of an ad campaign dashboard with performance metrics"
+                className="w-full"
+              />
+            </motion.div>
+          </div>
         </Container>
       </section>
 
-      <section className="pb-24 md:pb-32">
+      {page.frustrations && (
+        <ServiceFrustrations frustrations={page.frustrations} title="Sound familiar?" />
+      )}
+
+      {page.processSteps && (
+        <ServiceProcess steps={page.processSteps} title="How we run it." />
+      )}
+
+      {page.benefits && (
+        <ServiceBenefits benefits={page.benefits} title="What you actually get." />
+      )}
+
+      <section className="border-t border-ink/10 pb-24 pt-24 md:pb-32 md:pt-32">
         <Container>
           <motion.p
             initial="hidden"

@@ -17,15 +17,24 @@ import amazonsMockup3 from '@/assets/case-studies/hero-marquee/amazons-3.png'
 import clover4lifeMockup2 from '@/assets/case-studies/hero-marquee/clover4life-1.jpg'
 import gradosmedspaVideo2 from '@/assets/case-studies/hero-marquee/180gradosmedspa-2.mp4'
 import ensuenosMockup1 from '@/assets/case-studies/hero-marquee/eventos-ensuenos-1.png'
+import amazonsFlooringLogo from '@/assets/client-logos/horizontal.png'
+import perreandoHotdogLogo from '@/assets/client-logos/logo-perreando-hotdog.png'
+import eventosEnsuenosLogo from '@/assets/client-logos/logo-eventos-ensuenos.png'
+import clover4LifeLogo from '@/assets/client-logos/Clover-4-Life-Logo.png'
+import medSpaLogo from '@/assets/client-logos/logo-180beautymedspa.png'
+import prestigeHomeLogo from '@/assets/client-logos/prestige-home-improvements-logo.png'
 
 const TICKER_ITEMS = ['Web Development', 'Digital Marketing', 'Graphic Design', 'Website Audits']
 
 const PILLS = ['web development', 'digital marketing', 'graphic design']
 
 const CLIENT_LOGOS = [
-  { name: "Amazon's Flooring", hoverClass: 'hover:text-primary' },
-  { name: 'Perreando HotDog', hoverClass: 'hover:text-secondary' },
-  { name: 'Eventos Ensueños', hoverClass: 'hover:text-ink' },
+  { name: "Amazon's Flooring", src: amazonsFlooringLogo },
+  { name: 'Perreando HotDog', src: perreandoHotdogLogo },
+  { name: 'Eventos Ensueños', src: eventosEnsuenosLogo },
+  { name: 'Clover 4 Life Insurance', src: clover4LifeLogo },
+  { name: '180 Med Spa', src: medSpaLogo },
+  { name: 'Prestige Home Improvements', src: prestigeHomeLogo },
 ]
 
 type MediaCard =
@@ -177,35 +186,6 @@ export function Hero() {
               </span>
             ))}
           </motion.div>
-{/*
-          {PROOF_PROJECT && (
-            <motion.div
-              initial={{ opacity: 0, y: riseY }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: EASE, delay: 1.0 }}
-              className="mt-6"
-            >
-              <Link
-                to="/work"
-                className="group inline-flex min-h-11 items-center gap-2.5 rounded-full border border-ink/10 bg-white/70 py-1.5 pl-1.5 pr-4 backdrop-blur-sm transition-colors duration-200 hover:border-ink/25"
-              >
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-secondary px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-wide text-white">
-                  <span className="relative flex h-1.5 w-1.5">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white/80" />
-                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-white" />
-                  </span>
-                  New project!
-                </span>
-                <span className="text-sm font-semibold text-ink">{PROOF_PROJECT.title}</span>
-                <span
-                  aria-hidden
-                  className="text-ink/50 transition-transform duration-200 group-hover:translate-x-0.5"
-                >
-                  →
-                </span>
-              </Link>
-            </motion.div>
-          )}*/}
 
           <motion.p
             initial={{ opacity: 0, y: riseY }}
@@ -302,14 +282,14 @@ export function Hero() {
           <div className="w-full overflow-hidden md:max-w-xl">
             <Marquee duration={18}>
               {CLIENT_LOGOS.map((logo) => (
-                <span
-                  key={logo.name}
-                  className={clsx(
-                    'mx-8 shrink-0 whitespace-nowrap font-sans text-xl font-extrabold uppercase tracking-tight text-ink/40 opacity-60 grayscale transition-[color,filter,opacity] duration-300 hover:opacity-100 hover:grayscale-0',
-                    logo.hoverClass,
-                  )}
-                >
-                  {logo.name}
+                <span key={logo.name} className="mx-8 flex h-9 shrink-0 items-center">
+                  <img
+                    src={logo.src}
+                    alt={logo.name}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-auto max-w-[130px] object-contain opacity-60 grayscale transition-[opacity,filter] duration-300 hover:opacity-100 hover:grayscale-0"
+                  />
                 </span>
               ))}
             </Marquee>
