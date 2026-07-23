@@ -13,6 +13,7 @@ import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
 import { STATIC_SEO } from '@/lib/seo-data'
 import { buildFaqSchema, buildOrganizationSchema, buildPersonSchema } from '@/lib/schema'
 import founderPhoto from '@/assets/founder-hisbelis-vargas.webp'
+import resultsIllustration from '@/assets/illustrations/results-hero.webp'
 
 const FOUNDER_ALT = 'Hisbelis Vargas, founder of Astratta Agency, web designer in Dallas–Fort Worth'
 
@@ -266,43 +267,59 @@ export default function About() {
       {/* SECTION 5 — Results */}
       <section className="border-t border-ink/10 py-24 md:py-32">
         <Container>
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={viewportOnce}
-            variants={staggerContainer(0.1)}
-          >
-            <motion.div variants={fadeUp}>
-              <SectionLabel>Results</SectionLabel>
-            </motion.div>
-            <motion.h2
-              variants={fadeUp}
-              className="mt-5 max-w-2xl font-sans text-4xl font-extrabold tracking-tight sm:text-5xl"
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-[3fr_2fr] lg:items-center lg:gap-16">
+            <motion.div
+              initial="hidden"
+              whileInView="show"
+              viewport={viewportOnce}
+              variants={staggerContainer(0.1)}
             >
-              What clients get.
-            </motion.h2>
-
-            <div className="mt-12 grid grid-cols-3 divide-x divide-ink/10 sm:max-w-xl">
-              {RESULTS_STATS.map((stat) => (
-                <motion.div key={stat.label} variants={fadeUp} className="px-4 first:pl-0 sm:px-6">
-                  <div className="font-sans text-[32px] font-extrabold text-primary sm:text-5xl">
-                    <Counter value={stat.value} suffix={stat.suffix} />
-                  </div>
-                  <p className="mt-2 font-sans text-xs text-ink/60 sm:text-sm">{stat.label}</p>
-                </motion.div>
-              ))}
-            </div>
-
-            {georgeLopez && (
-              <motion.div variants={fadeUp} className="mt-16 max-w-2xl border-t border-ink/10 pt-12">
-                <p className="font-sans text-2xl font-light leading-snug tracking-tight md:text-3xl">
-                  “{georgeLopez.quote}”
-                </p>
-                <p className="mt-6 font-sans text-base font-bold">{georgeLopez.name}</p>
-                <p className="text-sm text-ink/50">{georgeLopez.role}</p>
+              <motion.div variants={fadeUp}>
+                <SectionLabel>Results</SectionLabel>
               </motion.div>
-            )}
-          </motion.div>
+              <motion.h2
+                variants={fadeUp}
+                className="mt-5 max-w-2xl font-sans text-4xl font-extrabold tracking-tight sm:text-5xl"
+              >
+                What clients get.
+              </motion.h2>
+
+              <div className="mt-12 grid grid-cols-3 divide-x divide-ink/10 sm:max-w-xl">
+                {RESULTS_STATS.map((stat) => (
+                  <motion.div key={stat.label} variants={fadeUp} className="px-4 first:pl-0 sm:px-6">
+                    <div className="font-sans text-[32px] font-extrabold text-primary sm:text-5xl">
+                      <Counter value={stat.value} suffix={stat.suffix} />
+                    </div>
+                    <p className="mt-2 font-sans text-xs text-ink/60 sm:text-sm">{stat.label}</p>
+                  </motion.div>
+                ))}
+              </div>
+
+              {georgeLopez && (
+                <motion.div variants={fadeUp} className="mt-16 max-w-2xl border-t border-ink/10 pt-12">
+                  <p className="font-sans text-2xl font-light leading-snug tracking-tight md:text-3xl">
+                    “{georgeLopez.quote}”
+                  </p>
+                  <p className="mt-6 font-sans text-base font-bold">{georgeLopez.name}</p>
+                  <p className="text-sm text-ink/50">{georgeLopez.role}</p>
+                </motion.div>
+              )}
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={viewportOnce}
+              transition={{ duration: 0.7 }}
+              className="mx-auto w-full max-w-md"
+            >
+              <img
+                src={resultsIllustration}
+                alt="Illustration of an analytics dashboard with a rising bar chart and progress indicators"
+                className="w-full"
+              />
+            </motion.div>
+          </div>
         </Container>
       </section>
 
