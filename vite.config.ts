@@ -11,4 +11,15 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    rolldownOptions: {
+      output: {
+        minify: {
+          compress: { dropConsole: true },
+          mangle: true,
+          codegen: true,
+        },
+      },
+    },
+  },
 })
