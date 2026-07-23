@@ -23,7 +23,7 @@ export function ContactForm({
 
     if (!FORM_ENDPOINT) {
       console.warn(
-        'VITE_FORM_ENDPOINT is not set — wire up a Formspree (or similar) endpoint before launch.',
+        'VITE_FORM_ENDPOINT is not set — point it at the capture-lead endpoint before launch.',
       )
       setStatus('error')
       return
@@ -33,11 +33,24 @@ export function ContactForm({
     const form = e.currentTarget
     const data = new FormData(form)
 
+    // Payload shape expected by the `capture-lead` Supabase Edge Function.
+    const payload = {
+      workspace_slug: 'astratta-agency',
+      contact_name: String(data.get('name') ?? ''),
+      contact_email: String(data.get('email') ?? ''),
+      contact_phone: String(data.get('phone') ?? '') || null,
+      website: String(data.get('website') ?? '') || null,
+      message: String(data.get('message') ?? ''),
+      metadata: metadata || null,
+      source_page: source,
+      honeypot: String(data.get('company_role') ?? ''),
+    }
+
     try {
       const res = await fetch(FORM_ENDPOINT, {
         method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
+        body: JSON.stringify(payload),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       })
       if (res.ok) {
         setStatus('success')
@@ -68,8 +81,15 @@ export function ContactForm({
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-      <input type="hidden" name="source" value={source} />
-      {metadata && <input type="hidden" name="metadata" value={metadata} />}
+      {/* Honeypot anti-spam: hidden from humans; bots that fill it are silently dropped. */}
+      <input
+        type="text"
+        name="company_role"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
+      />
 
       <div className="flex flex-col gap-2">
         <label htmlFor={`${source}-name`} className={labelClass}>
@@ -95,6 +115,19 @@ export function ContactForm({
           type="email"
           required
           placeholder="you@company.com"
+          className={inputClass}
+        />
+      </div>
+
+      <div className="flex flex-col gap-2">
+        <label htmlFor={`${source}-phone`} className={labelClass}>
+          Phone <span className="normal-case opacity-60">(optional)</span>
+        </label>
+        <input
+          id={`${source}-phone`}
+          name="phone"
+          type="tel"
+          placeholder="(214) 555-0100"
           className={inputClass}
         />
       </div>

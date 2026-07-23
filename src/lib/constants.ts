@@ -55,5 +55,5 @@ export const FOOTER_COLUMNS = [
   },
 ] as const
 
-/** Formspree (or similar) endpoint — set VITE_FORM_ENDPOINT in your .env before launch. */
+/** Lead capture endpoint (Supabase Edge Function `capture-lead`) — set VITE_FORM_ENDPOINT in .env / Vercel. */
 export const FORM_ENDPOINT = import.meta.env.VITE_FORM_ENDPOINT ?? ''
