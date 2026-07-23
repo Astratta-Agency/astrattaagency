@@ -39,6 +39,7 @@ export function ContactForm({
       contact_name: String(data.get('name') ?? ''),
       contact_email: String(data.get('email') ?? ''),
       contact_phone: String(data.get('phone') ?? '') || null,
+      company_name: String(data.get('company') ?? '') || null,
       website: String(data.get('website') ?? '') || null,
       message: String(data.get('message') ?? ''),
       metadata: metadata || null,
@@ -93,14 +94,15 @@ export function ContactForm({
 
       <div className="flex flex-col gap-2">
         <label htmlFor={`${source}-name`} className={labelClass}>
-          Name
+          Full name
         </label>
         <input
           id={`${source}-name`}
           name="name"
           type="text"
           required
-          placeholder="Your name"
+          placeholder="Your full name"
+          autoComplete="name"
           className={inputClass}
         />
       </div>
@@ -133,8 +135,22 @@ export function ContactForm({
       </div>
 
       <div className="flex flex-col gap-2">
+        <label htmlFor={`${source}-company`} className={labelClass}>
+          Company <span className="normal-case opacity-60">(optional)</span>
+        </label>
+        <input
+          id={`${source}-company`}
+          name="company"
+          type="text"
+          placeholder="Your company name"
+          autoComplete="organization"
+          className={inputClass}
+        />
+      </div>
+
+      <div className="flex flex-col gap-2">
         <label htmlFor={`${source}-website`} className={labelClass}>
-          Website URL
+          Website URL <span className="normal-case opacity-60">(optional)</span>
         </label>
         <input
           id={`${source}-website`}
