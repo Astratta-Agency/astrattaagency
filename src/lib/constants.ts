@@ -57,3 +57,6 @@ export const FOOTER_COLUMNS = [
 
 /** Lead capture endpoint (Supabase Edge Function `capture-lead`) — set VITE_FORM_ENDPOINT in .env / Vercel. */
 export const FORM_ENDPOINT = import.meta.env.VITE_FORM_ENDPOINT ?? ''
+
+/** reCAPTCHA v3 site key (public) — set VITE_RECAPTCHA_SITE_KEY in .env / Vercel. Forms skip reCAPTCHA if unset. */
+export const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY ?? ''

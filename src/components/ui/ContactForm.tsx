@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { FORM_ENDPOINT } from '@/lib/constants'
+import { getRecaptchaToken } from '@/lib/recaptcha'
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
@@ -32,6 +33,7 @@ export function ContactForm({
     setStatus('submitting')
     const form = e.currentTarget
     const data = new FormData(form)
+    const recaptchaToken = await getRecaptchaToken(source)
 
     // Payload shape expected by the `capture-lead` Supabase Edge Function.
     const payload = {
@@ -44,6 +46,7 @@ export function ContactForm({
       message: String(data.get('message') ?? ''),
       metadata: metadata || null,
       source_page: source,
+      recaptcha_token: recaptchaToken,
       honeypot: String(data.get('company_role') ?? ''),
     }
 
@@ -123,25 +126,28 @@ export function ContactForm({
 
       <div className="flex flex-col gap-2">
         <label htmlFor={`${source}-phone`} className={labelClass}>
-          Phone <span className="normal-case opacity-60">(optional)</span>
+          Phone
         </label>
         <input
           id={`${source}-phone`}
           name="phone"
           type="tel"
+          required
           placeholder="(214) 555-0100"
+          autoComplete="tel"
           className={inputClass}
         />
       </div>
 
       <div className="flex flex-col gap-2">
         <label htmlFor={`${source}-company`} className={labelClass}>
-          Company <span className="normal-case opacity-60">(optional)</span>
+          Company
         </label>
         <input
           id={`${source}-company`}
           name="company"
           type="text"
+          required
           placeholder="Your company name"
           autoComplete="organization"
           className={inputClass}
