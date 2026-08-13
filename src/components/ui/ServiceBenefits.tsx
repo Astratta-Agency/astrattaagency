@@ -3,16 +3,19 @@ import { Container } from '@/components/ui/Container'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { RevealText } from '@/components/ui/RevealText'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 type ServiceBenefitsProps = {
   benefits: string[]
   title?: string
 }
 
-const DEFAULT_TITLE = 'What you actually get.'
-
 /** Outcome-oriented benefit list — lighter version of the About page's numbered PRINCIPLES pattern. */
-export function ServiceBenefits({ benefits, title = DEFAULT_TITLE }: ServiceBenefitsProps) {
+export function ServiceBenefits({ benefits, title }: ServiceBenefitsProps) {
+  const { dict } = useLanguage()
+  const t = dict.services.shared
+  const resolvedTitle = title ?? t.benefitsDefaultTitle
+
   return (
     <section className="border-t border-ink/10 py-24 md:py-32">
       <Container>
@@ -24,10 +27,10 @@ export function ServiceBenefits({ benefits, title = DEFAULT_TITLE }: ServiceBene
           className="max-w-2xl"
         >
           <motion.div variants={fadeUp}>
-            <SectionLabel>Benefits</SectionLabel>
+            <SectionLabel>{t.benefitsLabel}</SectionLabel>
           </motion.div>
           <h2 className="mt-5 font-sans text-4xl font-extrabold tracking-tight sm:text-5xl">
-            <RevealText text={title} />
+            <RevealText text={resolvedTitle} />
           </h2>
         </motion.div>
 

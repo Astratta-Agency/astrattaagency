@@ -38,6 +38,13 @@ import { fileURLToPath } from 'node:url'
  * we're building on Vercel; local dev keeps using full `puppeteer`, which
  * already manages a working Chrome install for whatever OS you're on.
  */
+/**
+ * The app now auto-detects UI language from `navigator.language` when no
+ * language has been chosen yet (see src/lib/i18n/storage.ts), so a fresh
+ * Puppeteer profile with no localStorage would otherwise inherit whatever
+ * locale Chromium/the build container defaults to. Pin it to en-US so
+ * prerendered output is always English regardless of the build machine.
+ */
 async function launchBrowser() {
   if (process.env.VERCEL) {
     const [{ default: puppeteer }, { default: chromium }] = await Promise.all([
@@ -45,13 +52,13 @@ async function launchBrowser() {
       import('@sparticuz/chromium'),
     ])
     return puppeteer.launch({
-      args: chromium.args,
+      args: [...chromium.args, '--lang=en-US'],
       executablePath: await chromium.executablePath(),
       headless: true,
     })
   }
   const { default: puppeteer } = await import('puppeteer')
-  return puppeteer.launch()
+  return puppeteer.launch({ args: ['--lang=en-US'] })
 }
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))

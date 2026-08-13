@@ -6,9 +6,10 @@ import { Container } from '@/components/ui/Container'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { RevealText } from '@/components/ui/RevealText'
 import { BrowserMockup } from '@/components/ui/BrowserMockup'
-import { CASE_STUDIES, type CaseStudy } from '@/data/caseStudies'
+import { CASE_STUDIES, resolveCaseStudies, type CaseStudy } from '@/data/caseStudies'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 function CardBody({ project }: { project: CaseStudy }) {
   return (
@@ -120,19 +121,19 @@ function StackedCard({
   )
 }
 
-function StackedWork() {
+function StackedWork({ caseStudies }: { caseStudies: CaseStudy[] }) {
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start start', 'end end'],
   })
-  const total = CASE_STUDIES.length
+  const total = caseStudies.length
 
   return (
     <div ref={containerRef} className="relative" style={{ height: `${total * 120}vh` }}>
       <div className="sticky top-24 h-[calc(100vh-6rem)] [perspective:1400px] md:top-28 md:h-[calc(100vh-7rem)]">
         <Container className="relative h-full">
-          {CASE_STUDIES.map((project, i) => (
+          {caseStudies.map((project, i) => (
             <StackedCard
               key={project.slug}
               project={project}
@@ -148,10 +149,10 @@ function StackedWork() {
 }
 
 /** Non-sticky fallback for prefers-reduced-motion — a plain vertical list, no pinning or 3D transforms. */
-function SimpleWork() {
+function SimpleWork({ caseStudies }: { caseStudies: CaseStudy[] }) {
   return (
     <Container className="flex flex-col gap-10 pb-24 md:pb-32">
-      {CASE_STUDIES.map((project) => (
+      {caseStudies.map((project) => (
         <div
           key={project.slug}
           className="flex h-[520px] flex-col rounded-[2rem] border border-ink/5 bg-white p-6 shadow-xl shadow-ink/10 md:p-10"
@@ -165,6 +166,9 @@ function SimpleWork() {
 
 export function FeaturedWork() {
   const reducedMotion = usePrefersReducedMotion()
+  const { dict, language } = useLanguage()
+  const t = dict.home.featuredWork
+  const caseStudies = resolveCaseStudies(CASE_STUDIES, language)
 
   return (
     <section className="relative border-t border-ink/10 pb-24 pt-24 md:pb-32 md:pt-32">
@@ -178,10 +182,10 @@ export function FeaturedWork() {
         >
           <div>
             <motion.div variants={fadeUp}>
-              <SectionLabel>Featured Work</SectionLabel>
+              <SectionLabel>{t.eyebrow}</SectionLabel>
             </motion.div>
             <h2 className="mt-5 max-w-2xl font-sans text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
-              <RevealText text="Real projects, real outcomes." />
+              <RevealText text={t.heading} />
             </h2>
           </div>
           <motion.div variants={fadeUp}>
@@ -189,7 +193,7 @@ export function FeaturedWork() {
               to="/work"
               className="group inline-flex items-center gap-2 font-sans text-base font-bold text-ink"
             >
-              View all work
+              {t.viewAll}
               <span className="transition-transform duration-300 group-hover:translate-x-1">
                 →
               </span>
@@ -198,7 +202,11 @@ export function FeaturedWork() {
         </motion.div>
       </Container>
 
-      {reducedMotion ? <SimpleWork /> : <StackedWork />}
+      {reducedMotion ? (
+        <SimpleWork caseStudies={caseStudies} />
+      ) : (
+        <StackedWork caseStudies={caseStudies} />
+      )}
     </section>
   )
 }

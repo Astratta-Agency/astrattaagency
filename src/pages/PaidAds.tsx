@@ -14,14 +14,18 @@ import { ContactForm } from '@/components/ui/ContactForm'
 import { ServiceFrustrations } from '@/components/ui/ServiceFrustrations'
 import { ServiceProcess } from '@/components/ui/ServiceProcess'
 import { ServiceBenefits } from '@/components/ui/ServiceBenefits'
-import { PAID_ADS_PAGE } from '@/data/pricing'
+import { PAID_ADS_PAGE, resolveServicePage } from '@/data/pricing'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
 import { buildFaqSchema, buildOfferSchema, buildServiceSchema } from '@/lib/schema'
 import { SITE } from '@/lib/constants'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 import paidAdsHeroIllustration from '@/assets/illustrations/paid-ads-hero.webp'
 
 export default function PaidAds() {
-  const page = PAID_ADS_PAGE
+  const { language, dict } = useLanguage()
+  const page = resolveServicePage(PAID_ADS_PAGE, language)
+  const t = dict.servicePages['paid-ads']
+  const shared = dict.services.shared
   const path = `/services/${page.slug}`
   const url = `https://${SITE.domain}${path}`
 
@@ -42,8 +46,8 @@ export default function PaidAds() {
             <div>
               <Breadcrumbs
                 items={[
-                  { label: 'Services', href: '/services' },
-                  { label: 'Digital Marketing', href: '/services/digital-marketing' },
+                  { label: shared.breadcrumbServices, href: '/services' },
+                  { label: shared.breadcrumbDigitalMarketing, href: '/services/digital-marketing' },
                   { label: page.title, href: path },
                 ]}
               />
@@ -89,17 +93,11 @@ export default function PaidAds() {
         </Container>
       </section>
 
-      {page.frustrations && (
-        <ServiceFrustrations frustrations={page.frustrations} title="Sound familiar?" />
-      )}
+      {page.frustrations && <ServiceFrustrations frustrations={page.frustrations} />}
 
-      {page.processSteps && (
-        <ServiceProcess steps={page.processSteps} title="How we run it." />
-      )}
+      {page.processSteps && <ServiceProcess steps={page.processSteps} title={t.processTitle} />}
 
-      {page.benefits && (
-        <ServiceBenefits benefits={page.benefits} title="What you actually get." />
-      )}
+      {page.benefits && <ServiceBenefits benefits={page.benefits} />}
 
       <section className="border-t border-ink/10 pb-24 pt-24 md:pb-32 md:pt-32">
         <Container>
@@ -110,9 +108,7 @@ export default function PaidAds() {
             variants={fadeUp}
             className="mb-10 max-w-2xl rounded-2xl border border-ink/10 bg-neutral/40 px-6 py-4 text-sm text-ink/60"
           >
-            Every tier below shows two separate numbers: our monthly management fee, and the
-            recommended ad spend budget. Ad spend is paid directly to Meta or Google — it's not
-            part of our fee.
+            {t.feeExplainer}
           </motion.p>
 
           <PricingTable tiers={page.tiers} />
@@ -129,9 +125,9 @@ export default function PaidAds() {
               className="rounded-2xl border border-ink/10 bg-neutral/40 p-6 md:p-8"
             >
               <p className="text-ink/70">
-                Need a landing page to send this traffic to?{' '}
-                <Link to="/services/web-development" className="font-bold text-primary">
-                  See Web Development pricing →
+                {t.crossSell1.text}{' '}
+                <Link to={t.crossSell1.to} className="font-bold text-primary">
+                  {t.crossSell1.linkText}
                 </Link>
               </p>
             </motion.div>
@@ -140,9 +136,9 @@ export default function PaidAds() {
               className="rounded-2xl border border-ink/10 bg-neutral/40 p-6 md:p-8"
             >
               <p className="text-ink/70">
-                Want ads bundled with social media and a lead magnet as one system?{' '}
-                <Link to="/services/lead-generation" className="font-bold text-primary">
-                  See the Lead Generation System →
+                {t.crossSell2.text}{' '}
+                <Link to={t.crossSell2.to} className="font-bold text-primary">
+                  {t.crossSell2.linkText}
                 </Link>
               </p>
             </motion.div>
@@ -171,10 +167,10 @@ export default function PaidAds() {
               className="mb-12 max-w-2xl"
             >
               <motion.div variants={fadeUp}>
-                <SectionLabel>Add-ons</SectionLabel>
+                <SectionLabel>{shared.addOnsLabel}</SectionLabel>
               </motion.div>
               <h2 className="mt-5 font-sans text-3xl font-extrabold tracking-tight sm:text-4xl">
-                Extend any plan.
+                {shared.addOnsHeading}
               </h2>
             </motion.div>
 
@@ -195,10 +191,10 @@ export default function PaidAds() {
               variants={staggerContainer(0.1)}
             >
               <motion.div variants={fadeUp}>
-                <SectionLabel>FAQ</SectionLabel>
+                <SectionLabel>{shared.faqLabel}</SectionLabel>
               </motion.div>
               <h2 className="mt-5 font-sans text-3xl font-extrabold tracking-tight sm:text-4xl">
-                <RevealText text="Questions, answered." />
+                <RevealText text={shared.questionsAnswered} />
               </h2>
             </motion.div>
 
@@ -214,15 +210,13 @@ export default function PaidAds() {
           <div className="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-10">
             <motion.div initial="hidden" whileInView="show" viewport={viewportOnce} variants={fadeUp}>
               <h2 className="font-sans text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">
-                <RevealText text="Ready to put budget behind a number?" />
+                <RevealText text={t.closingHeading} />
               </h2>
-              <p className="mt-6 max-w-md text-ink/60">
-                Tell us which tier fits, or request a free audit first if you're not sure.
-              </p>
+              <p className="mt-6 max-w-md text-ink/60">{t.closingSubtext}</p>
             </motion.div>
 
             <motion.div initial="hidden" whileInView="show" viewport={viewportOnce} variants={fadeUp}>
-              <ContactForm submitLabel="Start my campaigns" source="paid-ads-page" />
+              <ContactForm submitLabel={t.submitLabel} source="paid-ads-page" />
             </motion.div>
           </div>
         </Container>

@@ -6,6 +6,7 @@ import { RevealText } from '@/components/ui/RevealText'
 import { Counter } from '@/components/ui/Counter'
 import { STATS } from '@/data/stats'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 import founderPhoto from '@/assets/founder-hisbelis-vargas.webp'
 
 const FOUNDER_ALT = 'Hisbelis Vargas, founder of Astratta Agency, web designer in Dallas–Fort Worth'
@@ -17,6 +18,9 @@ const FOUNDER_ALT = 'Hisbelis Vargas, founder of Astratta Agency, web designer i
  * instead of being squeezed into a narrow card column.
  */
 export function AboutStats() {
+  const { dict, pick } = useLanguage()
+  const t = dict.home.aboutStats
+
   return (
     <section className="border-t border-ink/10 py-24 md:py-32">
       <Container>
@@ -37,7 +41,7 @@ export function AboutStats() {
             <div className="mt-6">
               <span className="block h-0.5 w-10 bg-secondary" />
               <p className="mt-3 font-sans text-xs font-light uppercase tracking-[0.1em] text-ink/60">
-                Hisbelis Vargas — Founder
+                {t.founderCaption}
               </p>
             </div>
           </motion.div>
@@ -45,32 +49,30 @@ export function AboutStats() {
           {/* Right column — claim, proof, CTA */}
           <div>
             <motion.div variants={fadeUp}>
-              <SectionLabel>About Astratta</SectionLabel>
+              <SectionLabel>{t.eyebrow}</SectionLabel>
             </motion.div>
 
             <motion.h2
               variants={fadeUp}
               className="mt-5 font-sans text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl"
             >
-              <RevealText text="A founder-led studio. Zero agency bloat." />
+              <RevealText text={t.heading} />
             </motion.h2>
 
             <motion.p variants={fadeUp} className="mt-6 max-w-[55ch] font-sans text-lg text-ink/70">
-              Astratta is a boutique studio in Dallas–Fort Worth. Founder-led on every project —
-              no account managers, no handoffs to juniors. Senior-level strategy and execution at
-              a fraction of big-agency overhead.
+              {t.body}
             </motion.p>
 
             <motion.div
               variants={fadeUp}
               className="mt-10 grid grid-cols-3 divide-x divide-ink/10 sm:max-w-md"
             >
-              {STATS.map((stat) => (
-                <div key={stat.label} className="px-4 first:pl-0">
+              {STATS.map((stat, i) => (
+                <div key={i} className="px-4 first:pl-0">
                   <div className="font-sans text-[32px] font-extrabold text-primary sm:text-[40px]">
                     <Counter value={stat.value} suffix={stat.suffix} />
                   </div>
-                  <p className="mt-1 font-sans text-xs text-ink/60 sm:text-sm">{stat.label}</p>
+                  <p className="mt-1 font-sans text-xs text-ink/60 sm:text-sm">{pick(stat.label)}</p>
                 </div>
               ))}
             </motion.div>
@@ -90,10 +92,10 @@ export function AboutStats() {
                 <span className="relative z-10 block h-6 overflow-hidden">
                   <span className="flex flex-col transition-transform duration-300 ease-out group-hover:-translate-y-1/2">
                     <span className="flex h-6 items-center justify-center whitespace-nowrap">
-                      Book a free audit
+                      {t.ctaBookAudit}
                     </span>
                     <span aria-hidden className="flex h-6 items-center justify-center whitespace-nowrap">
-                      Book a free audit
+                      {t.ctaBookAudit}
                     </span>
                   </span>
                 </span>
@@ -103,7 +105,7 @@ export function AboutStats() {
                 to="/about"
                 className="group inline-flex items-center gap-2 font-sans text-sm font-bold text-primary"
               >
-                More about the studio
+                {t.ctaMoreAbout}
                 <span className="transition-transform duration-300 group-hover:translate-x-1">
                   →
                 </span>

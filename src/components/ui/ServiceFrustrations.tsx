@@ -3,20 +3,23 @@ import { Container } from '@/components/ui/Container'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import type { Frustration } from '@/data/pricing'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 type ServiceFrustrationsProps = {
   frustrations: Frustration[]
   title?: string
 }
 
-const DEFAULT_TITLE = 'Sound familiar?'
-
 /**
  * Static (non-scroll-pinned) variant of the homepage PainPoints card grid —
  * service pages are shorter, so a full scroll-scrub sequence per page would
  * be excessive. Same dark-card visual language, no pinning.
  */
-export function ServiceFrustrations({ frustrations, title = DEFAULT_TITLE }: ServiceFrustrationsProps) {
+export function ServiceFrustrations({ frustrations, title }: ServiceFrustrationsProps) {
+  const { dict } = useLanguage()
+  const t = dict.services.shared
+  const resolvedTitle = title ?? t.frustrationsDefaultTitle
+
   return (
     <section className="border-t border-ink/10 bg-[#121212] py-24 md:py-32">
       <Container>
@@ -28,13 +31,13 @@ export function ServiceFrustrations({ frustrations, title = DEFAULT_TITLE }: Ser
           className="mx-auto max-w-2xl text-center"
         >
           <motion.div variants={fadeUp} className="flex justify-center">
-            <SectionLabel>Frustrations</SectionLabel>
+            <SectionLabel>{t.frustrationsLabel}</SectionLabel>
           </motion.div>
           <motion.h2
             variants={fadeUp}
             className="mt-5 text-[clamp(2.5rem,5vw,4.5rem)] font-sans font-extrabold leading-[1.1] tracking-tight text-[#eaeaea]"
           >
-            {title}
+            {resolvedTitle}
           </motion.h2>
         </motion.div>
 

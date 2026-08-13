@@ -4,20 +4,25 @@ import { Seo } from '@/components/layout/Seo'
 import { Container } from '@/components/ui/Container'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { RevealText } from '@/components/ui/RevealText'
-import { CASE_STUDIES } from '@/data/caseStudies'
+import { CASE_STUDIES, resolveCaseStudies } from '@/data/caseStudies'
 import { fadeUp, scaleIn, staggerContainer, viewportOnce } from '@/lib/animations'
-import { STATIC_SEO } from '@/lib/seo-data'
+import { STATIC_SEO, toSeoProps } from '@/lib/seo-data'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export default function Work() {
+  const { dict, language } = useLanguage()
+  const t = dict.work
+  const caseStudies = resolveCaseStudies(CASE_STUDIES, language)
+
   return (
     <>
-      <Seo {...STATIC_SEO['/work']} path="/work" />
+      <Seo {...toSeoProps(STATIC_SEO['/work'])} path="/work" />
 
       <section className="bg-white pb-16 pt-40 md:pb-24 md:pt-48">
         <Container>
-          <SectionLabel>Our Work</SectionLabel>
+          <SectionLabel>{t.eyebrow}</SectionLabel>
           <h1 className="mt-5 max-w-3xl font-sans text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl">
-            <RevealText text="Real projects, real outcomes." animateOnMount />
+            <RevealText text={t.heading} animateOnMount />
           </h1>
         </Container>
       </section>
@@ -31,7 +36,7 @@ export default function Work() {
             variants={staggerContainer(0.12)}
             className="grid grid-cols-1 gap-10 md:grid-cols-2"
           >
-            {CASE_STUDIES.map((project) => (
+            {caseStudies.map((project) => (
               <motion.div key={project.slug} variants={scaleIn}>
                 <Link to={`/work/${project.slug}`} data-cursor="View" className="group block">
                   <div
@@ -74,9 +79,9 @@ export default function Work() {
             className="mt-20 max-w-2xl border-t border-ink/10 pt-10"
           >
             <p className="text-ink/60">
-              Want to see your project here next?{' '}
+              {t.ctaText}{' '}
               <Link to="/audit" className="group font-bold text-primary">
-                Get a free website audit{' '}
+                {t.ctaLink}{' '}
                 <span className="inline-block transition-[transform,color] duration-300 group-hover:translate-x-1 group-hover:text-secondary">
                   →
                 </span>

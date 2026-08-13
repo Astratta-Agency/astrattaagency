@@ -5,6 +5,7 @@ import { RevealText } from '@/components/ui/RevealText'
 import { Marquee } from '@/components/ui/Marquee'
 import { EASE } from '@/lib/animations'
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 import amazonsMockup1 from '@/assets/case-studies/hero-marquee/amazons-1.jpg'
 import amazonsMockup2 from '@/assets/case-studies/hero-marquee/amazons-2.jpg'
 import perreandoMockup1 from '@/assets/case-studies/hero-marquee/perreando-1.jpg'
@@ -23,10 +24,6 @@ import eventosEnsuenosLogo from '@/assets/client-logos/logo-eventos-ensuenos.png
 import clover4LifeLogo from '@/assets/client-logos/Clover-4-Life-Logo.png'
 import medSpaLogo from '@/assets/client-logos/logo-180beautymedspa.png'
 import prestigeHomeLogo from '@/assets/client-logos/prestige-home-improvements-logo.png'
-
-const TICKER_ITEMS = ['Web Development', 'Digital Marketing', 'Graphic Design', 'Website Audits']
-
-const PILLS = ['web development', 'digital marketing', 'graphic design']
 
 const CLIENT_LOGOS = [
   { name: "Amazon's Flooring", src: amazonsFlooringLogo },
@@ -136,13 +133,15 @@ if (card.type === 'video') {
 export function Hero() {
   const reducedMotion = usePrefersReducedMotion()
   const riseY = reducedMotion ? 0 : 16
+  const { dict } = useLanguage()
+  const t = dict.home.hero
 
   return (
     <section aria-label="hero" className="relative overflow-hidden bg-neutral pt-24 md:pt-28">
       {/* Ticker bar */}
       <div className="relative z-10 border-y border-ink/10 py-3">
         <Marquee duration={30}>
-          {TICKER_ITEMS.map((item) => (
+          {t.ticker.map((item) => (
             <span
               key={item}
               className="mx-4 flex shrink-0 items-center gap-4 font-sans text-xs font-bold uppercase tracking-[0.2em] text-ink/70"
@@ -161,9 +160,9 @@ export function Hero() {
         {/* Left column */}
         <div className="relative z-10">
           <h1 className="font-sans text-[clamp(3rem,7vw,6.5rem)] font-extrabold leading-[0.95] tracking-tight text-ink">
-            <RevealText text="Websites that turn traffic into" animateOnMount blur delay={0.1} />{' '}
+            <RevealText text={t.headline1} animateOnMount blur delay={0.1} />{' '}
             <RevealText
-              text="clients."
+              text={t.headline2}
               animateOnMount
               blur
               className="text-primary"
@@ -177,7 +176,7 @@ export function Hero() {
             transition={{ duration: 0.6, ease: EASE, delay: 0.85 }}
             className="mt-7 flex flex-row items-start gap-2.5"
           >
-            {PILLS.map((pill) => (
+            {t.pills.map((pill) => (
               <span
                 key={pill}
                 className="inline-flex items-center rounded-full border border-ink/20 px-4 py-1.5 text-sm lowercase text-ink/70"
@@ -193,8 +192,7 @@ export function Hero() {
             transition={{ duration: 0.6, ease: EASE, delay: 1.15 }}
             className="mt-6 max-w-[46ch] text-[17px] font-normal leading-relaxed text-[#444]"
           >
-            Astratta builds high-converting websites and marketing systems for Dallas–Fort Worth
-            businesses — designed to generate leads, not just look good.
+            {t.subtext}
           </motion.p>
 
           <motion.div
@@ -213,9 +211,9 @@ export function Hero() {
               />
               <span className="relative z-10 block h-6 overflow-hidden">
                 <span className="flex flex-col transition-transform duration-300 ease-out group-hover:-translate-y-1/2">
-                  <span className="flex h-6 items-center whitespace-nowrap">Book a free audit</span>
+                  <span className="flex h-6 items-center whitespace-nowrap">{t.ctaBookAudit}</span>
                   <span aria-hidden className="flex h-6 items-center whitespace-nowrap">
-                    Book a free audit
+                    {t.ctaBookAudit}
                   </span>
                 </span>
               </span>
@@ -276,9 +274,7 @@ export function Hero() {
       {/* Logo strip */}
       <div className="relative z-10 border-t border-ink/10 py-8">
         <div className="mx-auto flex w-full max-w-[1600px] flex-col gap-5 px-6 md:flex-row md:items-center md:justify-between md:px-10">
-          <p className="shrink-0 text-sm font-semibold text-ink/60">
-            Trusted by DFW startups and small businesses
-          </p>
+          <p className="shrink-0 text-sm font-semibold text-ink/60">{t.trustedBy}</p>
           <div className="w-full overflow-hidden md:max-w-xl">
             <Marquee duration={18}>
               {CLIENT_LOGOS.map((logo) => (

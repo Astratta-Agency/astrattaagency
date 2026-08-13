@@ -1,11 +1,12 @@
 import { useState, type FormEvent } from 'react'
 import { FORM_ENDPOINT } from '@/lib/constants'
 import { getRecaptchaToken } from '@/lib/recaptcha'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
 export function ContactForm({
-  submitLabel = 'Send message',
+  submitLabel,
   source,
   dark = false,
   metadata,
@@ -17,6 +18,9 @@ export function ContactForm({
   /** optional context to attach to the submission (e.g. a quiz-answer summary) */
   metadata?: string
 }) {
+  const { dict } = useLanguage()
+  const t = dict.forms.contact
+  const resolvedSubmitLabel = submitLabel ?? t.submitLabel
   const [status, setStatus] = useState<Status>('idle')
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -76,11 +80,7 @@ export function ContactForm({
     : 'font-sans text-sm font-bold uppercase tracking-wide text-ink/40'
 
   if (status === 'success') {
-    return (
-      <p className={dark ? 'text-lg text-white' : 'text-lg text-ink'}>
-        Thanks — your message is in. We'll be in touch shortly.
-      </p>
-    )
+    return <p className={dark ? 'text-lg text-white' : 'text-lg text-ink'}>{t.success}</p>
   }
 
   return (
@@ -97,14 +97,14 @@ export function ContactForm({
 
       <div className="flex flex-col gap-2">
         <label htmlFor={`${source}-name`} className={labelClass}>
-          Full name
+          {t.fullName}
         </label>
         <input
           id={`${source}-name`}
           name="name"
           type="text"
           required
-          placeholder="Your full name"
+          placeholder={t.fullNamePlaceholder}
           autoComplete="name"
           className={inputClass}
         />
@@ -112,28 +112,28 @@ export function ContactForm({
 
       <div className="flex flex-col gap-2">
         <label htmlFor={`${source}-email`} className={labelClass}>
-          Email
+          {t.email}
         </label>
         <input
           id={`${source}-email`}
           name="email"
           type="email"
           required
-          placeholder="you@company.com"
+          placeholder={t.emailPlaceholder}
           className={inputClass}
         />
       </div>
 
       <div className="flex flex-col gap-2">
         <label htmlFor={`${source}-phone`} className={labelClass}>
-          Phone
+          {t.phone}
         </label>
         <input
           id={`${source}-phone`}
           name="phone"
           type="tel"
           required
-          placeholder="(214) 555-0100"
+          placeholder={t.phonePlaceholder}
           autoComplete="tel"
           className={inputClass}
         />
@@ -141,14 +141,14 @@ export function ContactForm({
 
       <div className="flex flex-col gap-2">
         <label htmlFor={`${source}-company`} className={labelClass}>
-          Company
+          {t.company}
         </label>
         <input
           id={`${source}-company`}
           name="company"
           type="text"
           required
-          placeholder="Your company name"
+          placeholder={t.companyPlaceholder}
           autoComplete="organization"
           className={inputClass}
         />
@@ -156,27 +156,27 @@ export function ContactForm({
 
       <div className="flex flex-col gap-2">
         <label htmlFor={`${source}-website`} className={labelClass}>
-          Website URL <span className="normal-case opacity-60">(optional)</span>
+          {t.websiteUrl} <span className="normal-case opacity-60">{t.optional}</span>
         </label>
         <input
           id={`${source}-website`}
           name="website"
           type="text"
-          placeholder="yourcompany.com (if you have one)"
+          placeholder={t.websitePlaceholder}
           className={inputClass}
         />
       </div>
 
       <div className="flex flex-col gap-2">
         <label htmlFor={`${source}-message`} className={labelClass}>
-          Message
+          {t.message}
         </label>
         <textarea
           id={`${source}-message`}
           name="message"
           rows={4}
           required
-          placeholder="Tell us about your project or goals"
+          placeholder={t.messagePlaceholder}
           className={inputClass}
         />
       </div>
@@ -186,13 +186,11 @@ export function ContactForm({
         disabled={status === 'submitting'}
         className="mt-4 self-start rounded-full bg-primary px-8 py-4 font-sans text-base font-bold text-white transition-colors hover:bg-primary-dark disabled:opacity-60"
       >
-        {status === 'submitting' ? 'Sending…' : submitLabel}
+        {status === 'submitting' ? t.sending : resolvedSubmitLabel}
       </button>
 
       {status === 'error' && (
-        <p className={dark ? 'text-sm text-secondary' : 'text-sm text-secondary'}>
-          Something went wrong — email us directly at info@astrattaagency.com.
-        </p>
+        <p className={dark ? 'text-sm text-secondary' : 'text-sm text-secondary'}>{t.error}</p>
       )}
     </form>
   )

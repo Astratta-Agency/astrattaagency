@@ -1,24 +1,10 @@
-import { useRef } from 'react'
+import { useMemo, useRef } from 'react'
 import { motion, useScroll, useTransform, type MotionValue } from 'framer-motion'
 import { clsx } from 'clsx'
 import { Container } from '@/components/ui/Container'
 import { fadeUp, viewportOnce } from '@/lib/animations'
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion'
-
-const PAIN_POINTS = [
-  "You've got traffic, but nobody's leaving their info or buying.",
-  "Your site looks like it's from 2015 — or loads so slow people leave before they see it.",
-  "You post on social, but it's not producing a single qualified lead.",
-  "You switch up your marketing every month because the last thing 'didn't work.'",
-]
-
-const STATEMENT = "Most businesses don't have an effort problem. They have a system problem."
-const STATEMENT_WORDS = STATEMENT.split(' ')
-/** Indices of "system" and "problem." — the second "problem." only; "effort problem." stays neutral. */
-const HIGHLIGHT_INDICES = new Set([10, 11])
-
-const CLOSING_LINE =
-  "This doesn't get fixed with more ads. It gets fixed with a system that converts."
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 /** Progress window (0–1 of the pinned scroll) in which the statement finishes revealing. */
 const WORD_PHASE_END = 0.45
@@ -26,14 +12,13 @@ const WORD_PHASE_END = 0.45
 const BG_START = 0.35
 const BG_END = 0.6
 
-const WORD_WINDOWS = STATEMENT_WORDS.map((_, i) => {
-  const windowWidth = (WORD_PHASE_END * 2.4) / STATEMENT_WORDS.length
-  const start =
-    STATEMENT_WORDS.length > 1
-      ? (i / (STATEMENT_WORDS.length - 1)) * (WORD_PHASE_END - windowWidth)
-      : 0
-  return { start: Math.max(0, start), end: Math.max(0, start) + windowWidth }
-})
+function buildWordWindows(wordCount: number) {
+  return Array.from({ length: wordCount }, (_, i) => {
+    const windowWidth = (WORD_PHASE_END * 2.4) / wordCount
+    const start = wordCount > 1 ? (i / (wordCount - 1)) * (WORD_PHASE_END - windowWidth) : 0
+    return { start: Math.max(0, start), end: Math.max(0, start) + windowWidth }
+  })
+}
 
 type CardConfig = {
   text: string
@@ -51,32 +36,12 @@ type CardConfig = {
  * anything narrower than ~430px. Desktop keeps the wider %-based scatter (safe at those
  * viewport widths, and matches the original spec'd 15/65/40/60 layout).
  */
-const CARDS: CardConfig[] = [
-  {
-    text: PAIN_POINTS[0],
-    enter: 0.15,
-    exit: 0.5,
-    positionClass: 'left-[calc(50%-2rem)] md:left-[15%]',
-  },
-  {
-    text: PAIN_POINTS[1],
-    enter: 0.21,
-    exit: 0.57,
-    positionClass: 'left-[calc(50%+2rem)] md:left-[65%]',
-  },
-  {
-    text: PAIN_POINTS[2],
-    enter: 0.5,
-    exit: 0.82,
-    positionClass: 'left-[calc(50%-2rem)] md:left-[40%]',
-  },
-  {
-    text: PAIN_POINTS[3],
-    enter: 0.58,
-    exit: 0.9,
-    positionClass: 'left-[calc(50%+2rem)] md:left-[60%]',
-  },
-]
+const CARD_LAYOUT = [
+  { enter: 0.15, exit: 0.5, positionClass: 'left-[calc(50%-2rem)] md:left-[15%]' },
+  { enter: 0.21, exit: 0.57, positionClass: 'left-[calc(50%+2rem)] md:left-[65%]' },
+  { enter: 0.5, exit: 0.82, positionClass: 'left-[calc(50%-2rem)] md:left-[40%]' },
+  { enter: 0.58, exit: 0.9, positionClass: 'left-[calc(50%+2rem)] md:left-[60%]' },
+] as const
 
 /** Clamped 0–1 progress through [start, end] — plain JS math, no native scroll-timeline shortcuts. */
 function clampedT(p: number, start: number, end: number): number {
@@ -111,13 +76,15 @@ function PainWord({
   index,
   highlighted,
   scrollYProgress,
+  wordWindows,
 }: {
   word: string
   index: number
   highlighted: boolean
   scrollYProgress: MotionValue<number>
+  wordWindows: { start: number; end: number }[]
 }) {
-  const { start, end } = WORD_WINDOWS[index]
+  const { start, end } = wordWindows[index]
   const opacity = useTransform(scrollYProgress, (p) => 0.15 + clampedT(p, start, end) * 0.85)
   const color = useTransform(scrollYProgress, (p) => {
     const t = clampedT(p, BG_START, BG_END)
@@ -152,7 +119,19 @@ function PainCard({ card, scrollYProgress }: { card: CardConfig; scrollYProgress
   )
 }
 
-function PainPointsScroll() {
+function PainPointsScroll({
+  eyebrow,
+  statementWords,
+  highlightIndices,
+  wordWindows,
+  cards,
+}: {
+  eyebrow: string
+  statementWords: string[]
+  highlightIndices: Set<number>
+  wordWindows: { start: number; end: number }[]
+  cards: CardConfig[]
+}) {
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -179,23 +158,24 @@ function PainPointsScroll() {
               className="inline-flex items-center gap-2 font-sans text-sm font-bold uppercase tracking-[0.2em]"
             >
               <span className="h-px w-6 bg-secondary" />
-              Sound familiar?
+              {eyebrow}
             </motion.span>
 
             <h2
-              aria-label={STATEMENT}
+              aria-label={statementWords.join(' ')}
               className="mt-5 text-[clamp(2.5rem,5vw,4.5rem)] font-sans font-extrabold leading-[1.1] tracking-tight"
             >
               <span aria-hidden="true">
-                {STATEMENT_WORDS.map((word, i) => (
+                {statementWords.map((word, i) => (
                   <span key={i}>
                     <PainWord
                       word={word}
                       index={i}
-                      highlighted={HIGHLIGHT_INDICES.has(i)}
+                      highlighted={highlightIndices.has(i)}
                       scrollYProgress={scrollYProgress}
+                      wordWindows={wordWindows}
                     />
-                    {i < STATEMENT_WORDS.length - 1 ? ' ' : ''}
+                    {i < statementWords.length - 1 ? ' ' : ''}
                   </span>
                 ))}
               </span>
@@ -204,7 +184,7 @@ function PainPointsScroll() {
         </Container>
 
         <ul className="absolute inset-0 z-20">
-          {CARDS.map((card, i) => (
+          {cards.map((card, i) => (
             <PainCard key={i} card={card} scrollYProgress={scrollYProgress} />
           ))}
         </ul>
@@ -213,26 +193,36 @@ function PainPointsScroll() {
   )
 }
 
-function PainPointsStatic() {
+function PainPointsStatic({
+  eyebrow,
+  statementWords,
+  highlightIndices,
+  points,
+}: {
+  eyebrow: string
+  statementWords: string[]
+  highlightIndices: Set<number>
+  points: string[]
+}) {
   return (
     <section className="border-t border-ink/10 bg-[#121212] py-24 md:py-32">
       <Container>
         <div className="mx-auto max-w-[18ch] text-center">
           <span className="inline-flex items-center gap-2 font-sans text-sm font-bold uppercase tracking-[0.2em] text-[#eaeaea]">
             <span className="h-px w-6 bg-secondary" />
-            Sound familiar?
+            {eyebrow}
           </span>
           <h2
-            aria-label={STATEMENT}
+            aria-label={statementWords.join(' ')}
             className="mt-5 text-[clamp(2.5rem,5vw,4.5rem)] font-sans font-extrabold leading-[1.1] tracking-tight text-[#eaeaea]"
           >
             <span aria-hidden="true">
-              {STATEMENT_WORDS.map((word, i) => (
+              {statementWords.map((word, i) => (
                 <span key={i}>
-                  <span className={HIGHLIGHT_INDICES.has(i) ? 'text-secondary' : undefined}>
+                  <span className={highlightIndices.has(i) ? 'text-secondary' : undefined}>
                     {word}
                   </span>
-                  {i < STATEMENT_WORDS.length - 1 ? ' ' : ''}
+                  {i < statementWords.length - 1 ? ' ' : ''}
                 </span>
               ))}
             </span>
@@ -240,7 +230,7 @@ function PainPointsStatic() {
         </div>
 
         <ul className="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2 md:mt-20">
-          {PAIN_POINTS.map((point) => (
+          {points.map((point) => (
             <li
               key={point}
               className="rounded-2xl border border-white/[0.06] bg-[#1e1e1e] p-6 shadow-[0_18px_40px_-12px_rgba(0,0,0,0.55)]"
@@ -259,7 +249,7 @@ function PainPointsStatic() {
   )
 }
 
-function ClosingLine() {
+function ClosingLine({ text }: { text: string }) {
   return (
     <div className="bg-[#121212] py-24 md:py-32">
       <Container>
@@ -270,7 +260,7 @@ function ClosingLine() {
           variants={fadeUp}
           className="mx-auto max-w-2xl text-center font-sans text-2xl font-extrabold tracking-tight text-[#eaeaea] sm:text-3xl"
         >
-          {CLOSING_LINE}
+          {text}
         </motion.p>
       </Container>
     </div>
@@ -286,11 +276,36 @@ function ClosingLine() {
  */
 export function PainPoints() {
   const reducedMotion = usePrefersReducedMotion()
+  const { dict } = useLanguage()
+  const t = dict.home.painPoints
+
+  const statementWords = useMemo(() => t.statement.split(' '), [t.statement])
+  const highlightIndices = useMemo(() => new Set(t.highlightIndices), [t.highlightIndices])
+  const wordWindows = useMemo(() => buildWordWindows(statementWords.length), [statementWords.length])
+  const cards = useMemo(
+    () => CARD_LAYOUT.map((layout, i) => ({ ...layout, text: t.points[i] })),
+    [t.points],
+  )
 
   return (
     <>
-      {reducedMotion ? <PainPointsStatic /> : <PainPointsScroll />}
-      <ClosingLine />
+      {reducedMotion ? (
+        <PainPointsStatic
+          eyebrow={t.eyebrow}
+          statementWords={statementWords}
+          highlightIndices={highlightIndices}
+          points={t.points}
+        />
+      ) : (
+        <PainPointsScroll
+          eyebrow={t.eyebrow}
+          statementWords={statementWords}
+          highlightIndices={highlightIndices}
+          wordWindows={wordWindows}
+          cards={cards}
+        />
+      )}
+      <ClosingLine text={t.closingLine} />
     </>
   )
 }

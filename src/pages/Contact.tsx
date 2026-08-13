@@ -6,18 +6,22 @@ import { RevealText } from '@/components/ui/RevealText'
 import { ContactForm } from '@/components/ui/ContactForm'
 import { SITE, SOCIALS } from '@/lib/constants'
 import { fadeUp, viewportOnce } from '@/lib/animations'
-import { STATIC_SEO } from '@/lib/seo-data'
+import { STATIC_SEO, toSeoProps } from '@/lib/seo-data'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export default function Contact() {
+  const { dict } = useLanguage()
+  const t = dict.contact
+
   return (
     <>
-      <Seo {...STATIC_SEO['/contact']} path="/contact" />
+      <Seo {...toSeoProps(STATIC_SEO['/contact'])} path="/contact" />
 
       <section className="dot-pattern relative overflow-hidden bg-white py-24 pt-40 md:py-32 md:pt-48">
         <Container>
-          <SectionLabel>Contact</SectionLabel>
+          <SectionLabel>{t.eyebrow}</SectionLabel>
           <h1 className="mt-5 max-w-2xl font-sans text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl">
-            <RevealText text="Let's talk about your project." animateOnMount />
+            <RevealText text={t.heading} animateOnMount />
           </h1>
 
           <div className="mt-20 grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-10">
@@ -30,7 +34,7 @@ export default function Contact() {
             >
               <div>
                 <h2 className="font-sans text-sm font-bold uppercase tracking-wide text-ink/40">
-                  Email
+                  {t.emailLabel}
                 </h2>
                 <a
                   href={`mailto:${SITE.email}`}
@@ -41,14 +45,14 @@ export default function Contact() {
               </div>
               <div>
                 <h2 className="font-sans text-sm font-bold uppercase tracking-wide text-ink/40">
-                  Location
+                  {t.locationLabel}
                 </h2>
                 <p className="mt-2 font-sans text-2xl font-extrabold text-ink">{SITE.location}</p>
-                <p className="mt-1 text-ink/50">Remote-first — we work with clients anywhere.</p>
+                <p className="mt-1 text-ink/50">{t.remoteNote}</p>
               </div>
               <div>
                 <h2 className="font-sans text-sm font-bold uppercase tracking-wide text-ink/40">
-                  Follow
+                  {t.followLabel}
                 </h2>
                 <ul className="mt-2 flex flex-col gap-1">
                   {SOCIALS.map((s) => (
@@ -73,7 +77,7 @@ export default function Contact() {
               viewport={viewportOnce}
               variants={fadeUp}
             >
-              <ContactForm submitLabel="Send message" source="contact-page" />
+              <ContactForm source="contact-page" />
             </motion.div>
           </div>
         </Container>

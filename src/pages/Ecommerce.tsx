@@ -14,14 +14,18 @@ import { ContactForm } from '@/components/ui/ContactForm'
 import { ServiceFrustrations } from '@/components/ui/ServiceFrustrations'
 import { ServiceProcess } from '@/components/ui/ServiceProcess'
 import { ServiceBenefits } from '@/components/ui/ServiceBenefits'
-import { ECOMMERCE_PAGE } from '@/data/pricing'
+import { ECOMMERCE_PAGE, resolveServicePage } from '@/data/pricing'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
 import { buildFaqSchema, buildOfferSchema, buildServiceSchema } from '@/lib/schema'
 import { SITE } from '@/lib/constants'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 import ecommerceHeroIllustration from '@/assets/illustrations/ecommerce-hero.webp'
 
 export default function Ecommerce() {
-  const page = ECOMMERCE_PAGE
+  const { language, dict } = useLanguage()
+  const page = resolveServicePage(ECOMMERCE_PAGE, language)
+  const t = dict.servicePages.ecommerce
+  const shared = dict.services.shared
   const path = `/services/${page.slug}`
   const url = `https://${SITE.domain}${path}`
 
@@ -46,7 +50,7 @@ export default function Ecommerce() {
             <div>
               <Breadcrumbs
                 items={[
-                  { label: 'Services', href: '/services' },
+                  { label: shared.breadcrumbServices, href: '/services' },
                   { label: page.title, href: path },
                 ]}
               />
@@ -92,17 +96,11 @@ export default function Ecommerce() {
         </Container>
       </section>
 
-      {page.frustrations && (
-        <ServiceFrustrations frustrations={page.frustrations} title="Sound familiar?" />
-      )}
+      {page.frustrations && <ServiceFrustrations frustrations={page.frustrations} />}
 
-      {page.processSteps && (
-        <ServiceProcess steps={page.processSteps} title="How we build it." />
-      )}
+      {page.processSteps && <ServiceProcess steps={page.processSteps} title={t.processTitle} />}
 
-      {page.benefits && (
-        <ServiceBenefits benefits={page.benefits} title="What you actually get." />
-      )}
+      {page.benefits && <ServiceBenefits benefits={page.benefits} />}
 
       <section className="border-t border-ink/10 pb-24 pt-24 md:pb-32 md:pt-32">
         <Container>
@@ -121,10 +119,10 @@ export default function Ecommerce() {
               className="mb-12 max-w-2xl"
             >
               <motion.div variants={fadeUp}>
-                <SectionLabel>Add-ons</SectionLabel>
+                <SectionLabel>{shared.addOnsLabel}</SectionLabel>
               </motion.div>
               <h2 className="mt-5 font-sans text-3xl font-extrabold tracking-tight sm:text-4xl">
-                Extend any plan.
+                {shared.addOnsHeading}
               </h2>
             </motion.div>
 
@@ -140,18 +138,18 @@ export default function Ecommerce() {
               className="mt-12 rounded-3xl bg-ink p-8 text-white md:p-10"
             >
               <span className="font-sans text-xs font-bold uppercase tracking-[0.2em] text-secondary">
-                Bundle & save
+                {shared.bundleSaveLabel}
               </span>
               <p className="mt-4 max-w-xl text-lg text-white/80">
-                Combine with Digital Marketing → the "store that sells" bundle: E-commerce Growth +
-                Ads & Retargeting for <span className="font-bold text-white">$600/mo</span>{' '}
-                (instead of $650/mo separately).
+                {t.bundleNote.prefix}
+                <span className="font-bold text-white">{t.bundleNote.priceText}</span>
+                {t.bundleNote.suffix}
               </p>
               <Link
                 to="/packages"
                 className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-sans text-sm font-bold text-ink transition-colors hover:bg-secondary hover:text-white"
               >
-                See all bundles →
+                {shared.seeAllBundles}
               </Link>
             </motion.div>
 
@@ -167,9 +165,9 @@ export default function Ecommerce() {
                 className="rounded-2xl border border-ink/10 bg-neutral/40 p-6 md:p-8"
               >
                 <p className="text-ink/70">
-                  Need a regular business website instead?{' '}
-                  <Link to="/services/web-development" className="font-bold text-primary">
-                    See Web Development pricing →
+                  {t.crossSell.text}{' '}
+                  <Link to={t.crossSell.to} className="font-bold text-primary">
+                    {t.crossSell.linkText}
                   </Link>
                 </p>
               </motion.div>
@@ -191,10 +189,10 @@ export default function Ecommerce() {
               variants={staggerContainer(0.1)}
             >
               <motion.div variants={fadeUp}>
-                <SectionLabel>FAQ</SectionLabel>
+                <SectionLabel>{shared.faqLabel}</SectionLabel>
               </motion.div>
               <h2 className="mt-5 font-sans text-3xl font-extrabold tracking-tight sm:text-4xl">
-                <RevealText text="Questions, answered." />
+                <RevealText text={shared.questionsAnswered} />
               </h2>
             </motion.div>
 
@@ -210,16 +208,13 @@ export default function Ecommerce() {
           <div className="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-10">
             <motion.div initial="hidden" whileInView="show" viewport={viewportOnce} variants={fadeUp}>
               <h2 className="font-sans text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">
-                <RevealText text="Ready to launch your store?" />
+                <RevealText text={t.closingHeading} />
               </h2>
-              <p className="mt-6 max-w-md text-ink/60">
-                Tell us about your catalog and current sales channels, or request a free audit
-                first if you're not sure which tier fits.
-              </p>
+              <p className="mt-6 max-w-md text-ink/60">{t.closingSubtext}</p>
             </motion.div>
 
             <motion.div initial="hidden" whileInView="show" viewport={viewportOnce} variants={fadeUp}>
-              <ContactForm submitLabel="Start my store" source="ecommerce-page" />
+              <ContactForm submitLabel={t.submitLabel} source="ecommerce-page" />
             </motion.div>
           </div>
         </Container>

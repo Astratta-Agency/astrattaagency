@@ -14,38 +14,18 @@ import { ServiceFrustrations } from '@/components/ui/ServiceFrustrations'
 import { ServiceProcess } from '@/components/ui/ServiceProcess'
 import { ProofSnapshot } from '@/components/ui/ProofSnapshot'
 import { ServiceBenefits } from '@/components/ui/ServiceBenefits'
-import { LEAD_GENERATION_PAGE } from '@/data/pricing'
+import { LEAD_GENERATION_PAGE, resolveServicePage } from '@/data/pricing'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
 import { buildFaqSchema, buildOfferSchema, buildServiceSchema } from '@/lib/schema'
 import { SITE } from '@/lib/constants'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 import leadGenerationHeroIllustration from '@/assets/illustrations/lead-generation-hero.webp'
 
-const ADS_SCALING_TIERS = [
-  {
-    plan: 'Ads Starter',
-    feeAndBudget: '$80 fee + $200 ad spend',
-    creatives: '2/mo',
-    targeting: 'Basic DFW',
-    result: '8-12 leads/month',
-  },
-  {
-    plan: 'Ads Pro',
-    feeAndBudget: '$120 fee + $400 ad spend',
-    creatives: '4/mo',
-    targeting: 'Advanced + lookalike',
-    result: '20-30 leads/month',
-  },
-  {
-    plan: 'Ads Enterprise',
-    feeAndBudget: '$200 fee + $600+ ad spend',
-    creatives: '6/mo',
-    targeting: 'Multi-angle + retargeting',
-    result: '40+ leads/month',
-  },
-] as const
-
 export default function LeadGeneration() {
-  const page = LEAD_GENERATION_PAGE
+  const { language, dict } = useLanguage()
+  const page = resolveServicePage(LEAD_GENERATION_PAGE, language)
+  const t = dict.servicePages['lead-generation']
+  const shared = dict.services.shared
   const path = `/services/${page.slug}`
   const url = `https://${SITE.domain}${path}`
 
@@ -69,8 +49,8 @@ export default function LeadGeneration() {
             <div>
               <Breadcrumbs
                 items={[
-                  { label: 'Services', href: '/services' },
-                  { label: 'Digital Marketing', href: '/services/digital-marketing' },
+                  { label: shared.breadcrumbServices, href: '/services' },
+                  { label: shared.breadcrumbDigitalMarketing, href: '/services/digital-marketing' },
                   { label: page.title, href: path },
                 ]}
               />
@@ -116,22 +96,16 @@ export default function LeadGeneration() {
         </Container>
       </section>
 
-      {page.frustrations && (
-        <ServiceFrustrations frustrations={page.frustrations} title="Sound familiar?" />
-      )}
+      {page.frustrations && <ServiceFrustrations frustrations={page.frustrations} />}
 
-      {page.processSteps && (
-        <ServiceProcess steps={page.processSteps} title="How the system works." />
-      )}
+      {page.processSteps && <ServiceProcess steps={page.processSteps} title={t.processTitle} />}
 
       <ProofSnapshot
         caseStudySlug={page.proof?.caseStudySlug}
         fallbackNote={page.proof?.fallbackNote}
       />
 
-      {page.benefits && (
-        <ServiceBenefits benefits={page.benefits} title="What you actually get." />
-      )}
+      {page.benefits && <ServiceBenefits benefits={page.benefits} />}
 
       <section className="border-t border-ink/10 pb-16 pt-24 md:pb-20 md:pt-32">
         <Container>
@@ -146,20 +120,20 @@ export default function LeadGeneration() {
           >
             <motion.div variants={fadeUp} className="sm:col-span-3">
               <span className="font-sans text-xs font-bold uppercase tracking-[0.2em] text-secondary">
-                Guaranteed by month 3
+                {t.guarantee.label}
               </span>
             </motion.div>
             <motion.div variants={fadeUp}>
-              <div className="font-sans text-4xl font-extrabold">15+</div>
-              <p className="mt-1 text-sm text-white/60">Qualified leads per month</p>
+              <div className="font-sans text-4xl font-extrabold">{t.guarantee.leads}</div>
+              <p className="mt-1 text-sm text-white/60">{t.guarantee.leadsLabel}</p>
             </motion.div>
             <motion.div variants={fadeUp}>
-              <div className="font-sans text-4xl font-extrabold">Under $80</div>
-              <p className="mt-1 text-sm text-white/60">Cost per lead</p>
+              <div className="font-sans text-4xl font-extrabold">{t.guarantee.cost}</div>
+              <p className="mt-1 text-sm text-white/60">{t.guarantee.costLabel}</p>
             </motion.div>
             <motion.div variants={fadeUp}>
-              <div className="font-sans text-4xl font-extrabold">6-mo</div>
-              <p className="mt-1 text-sm text-white/60">Minimum commitment</p>
+              <div className="font-sans text-4xl font-extrabold">{t.guarantee.commitment}</div>
+              <p className="mt-1 text-sm text-white/60">{t.guarantee.commitmentLabel}</p>
             </motion.div>
           </motion.div>
         </Container>
@@ -175,15 +149,12 @@ export default function LeadGeneration() {
             className="mb-12 max-w-2xl"
           >
             <motion.div variants={fadeUp}>
-              <SectionLabel>Optional add-ons</SectionLabel>
+              <SectionLabel>{t.addOnsEyebrow}</SectionLabel>
             </motion.div>
             <h2 className="mt-5 font-sans text-3xl font-extrabold tracking-tight sm:text-4xl">
-              Extend the system.
+              {t.addOnsHeading}
             </h2>
-            <p className="mt-3 text-ink/60">
-              Both add-ons below are only available to Lead Generation System clients — not sold
-              standalone.
-            </p>
+            <p className="mt-3 text-ink/60">{t.addOnsSubtext}</p>
           </motion.div>
 
           <PricingTable tiers={addOnTiers} />
@@ -200,10 +171,10 @@ export default function LeadGeneration() {
             className="mb-10 max-w-2xl"
           >
             <motion.div variants={fadeUp}>
-              <SectionLabel>Ads Scaling</SectionLabel>
+              <SectionLabel>{t.adsScalingEyebrow}</SectionLabel>
             </motion.div>
             <h2 className="mt-5 font-sans text-3xl font-extrabold tracking-tight sm:text-4xl">
-              Outgrown the included ad budget?
+              {t.adsScalingHeading}
             </h2>
           </motion.div>
 
@@ -218,24 +189,24 @@ export default function LeadGeneration() {
               <thead>
                 <tr className="border-b border-ink/10">
                   <th className="px-6 py-4 font-sans text-sm font-bold uppercase tracking-wide text-ink/50">
-                    Plan
+                    {t.tableHeaders.plan}
                   </th>
                   <th className="px-6 py-4 font-sans text-sm font-bold uppercase tracking-wide text-ink/50">
-                    Fee + Ad Budget
+                    {t.tableHeaders.feeAndBudget}
                   </th>
                   <th className="px-6 py-4 font-sans text-sm font-bold uppercase tracking-wide text-ink/50">
-                    Creatives/mo
+                    {t.tableHeaders.creatives}
                   </th>
                   <th className="px-6 py-4 font-sans text-sm font-bold uppercase tracking-wide text-ink/50">
-                    Targeting
+                    {t.tableHeaders.targeting}
                   </th>
                   <th className="px-6 py-4 font-sans text-sm font-bold uppercase tracking-wide text-ink/50">
-                    Expected Result
+                    {t.tableHeaders.result}
                   </th>
                 </tr>
               </thead>
               <tbody>
-                {ADS_SCALING_TIERS.map((row) => (
+                {t.adsScalingTiers.map((row) => (
                   <tr key={row.plan} className="border-b border-ink/10 last:border-b-0">
                     <td className="px-6 py-4 font-sans font-bold text-ink">{row.plan}</td>
                     <td className="px-6 py-4 text-ink/70">{row.feeAndBudget}</td>
@@ -256,13 +227,12 @@ export default function LeadGeneration() {
             className="mt-6 rounded-2xl border-2 border-secondary/30 bg-secondary/10 px-6 py-4"
           >
             <p className="text-sm text-ink/80">
-              <span className="font-bold text-secondary">Not a standalone purchase — </span>
-              these fees are lower than the{' '}
+              <span className="font-bold text-secondary">{t.notStandalone.prefix}</span>
+              {t.notStandalone.before}
               <Link to="/services/paid-ads" className="font-bold text-primary">
-                standalone Paid Ads service
-              </Link>{' '}
-              because they run inside the existing Lead Generation System infrastructure. They're
-              only available as an upgrade for active Lead Generation System clients.
+                {t.notStandalone.linkText}
+              </Link>
+              {t.notStandalone.after}
             </p>
           </motion.div>
 
@@ -288,10 +258,10 @@ export default function LeadGeneration() {
               variants={staggerContainer(0.1)}
             >
               <motion.div variants={fadeUp}>
-                <SectionLabel>FAQ</SectionLabel>
+                <SectionLabel>{shared.faqLabel}</SectionLabel>
               </motion.div>
               <h2 className="mt-5 font-sans text-3xl font-extrabold tracking-tight sm:text-4xl">
-                <RevealText text="Questions, answered." />
+                <RevealText text={shared.questionsAnswered} />
               </h2>
             </motion.div>
 
@@ -307,16 +277,13 @@ export default function LeadGeneration() {
           <div className="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-10">
             <motion.div initial="hidden" whileInView="show" viewport={viewportOnce} variants={fadeUp}>
               <h2 className="font-sans text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">
-                <RevealText text="Ready for a predictable pipeline?" />
+                <RevealText text={t.closingHeading} />
               </h2>
-              <p className="mt-6 max-w-md text-white/60">
-                Tell us about your business and current lead flow, or request a free audit first
-                if you're not sure this is the right fit.
-              </p>
+              <p className="mt-6 max-w-md text-white/60">{t.closingSubtext}</p>
             </motion.div>
 
             <motion.div initial="hidden" whileInView="show" viewport={viewportOnce} variants={fadeUp}>
-              <ContactForm submitLabel="Start my system" source="lead-generation-page" dark />
+              <ContactForm submitLabel={t.submitLabel} source="lead-generation-page" dark />
             </motion.div>
           </div>
         </Container>

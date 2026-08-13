@@ -10,75 +10,41 @@ import { JsonLd } from '@/components/ui/JsonLd'
 import { TESTIMONIALS } from '@/data/testimonials'
 import { ABOUT_FAQ_ITEMS } from '@/data/faq'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
-import { STATIC_SEO } from '@/lib/seo-data'
+import { STATIC_SEO, toSeoProps } from '@/lib/seo-data'
 import { buildFaqSchema, buildOrganizationSchema, buildPersonSchema } from '@/lib/schema'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 import founderPhoto from '@/assets/founder-hisbelis-vargas.webp'
 import resultsIllustration from '@/assets/illustrations/results-hero.webp'
 
 const FOUNDER_ALT = 'Hisbelis Vargas, founder of Astratta Agency, web designer in Dallas–Fort Worth'
 
-const RESULTS_STATS = [
-  { value: 292, suffix: 'K+', label: 'Organic views generated for clients' },
-  { value: 87, suffix: '%', label: 'Avg. load-time improvement after rebuild' },
-  { value: 97, suffix: '%', label: 'Client retention' },
-] as const
-
-const PRINCIPLES = [
-  'Conversion before decoration — every layout decision must earn leads, not awards.',
-  'Direct line, always — you talk to the team doing the work, not a middleman.',
-  'Measured, not guessed — we track what happens after launch and iterate.',
-  "Honest scope — if you don't need it, we'll tell you.",
-]
-
-const GOOD_FIT = [
-  "You've got traffic but it isn't converting into leads or sales.",
-  'Your current site is outdated, slow, or was never built to convert.',
-  "Your marketing changes every month because nothing's stuck yet.",
-]
-
-const NOT_A_FIT = [
-  'You want the cheapest possible template.',
-  "You're looking for a vendor, not a growth partner.",
-]
-
-const TEAM = [
-  {
-    name: 'Hisbelis Vargas',
-    role: 'Founder & Lead Strategist',
-    description: 'Leads strategy, web, and design on every engagement.',
-    photo: founderPhoto,
-  },
-  {
-    name: 'Community Manager',
-    role: 'Social Media & Community',
-    description:
-      'Runs day-to-day social content, engagement, and community growth for clients.',
-    initials: 'CM',
-  },
-] as const
-
-const LAST_UPDATED = 'July 2026'
+/** Structural fields (photo vs. initials) paired by index with `dict.about.team`'s translated name/role/description. */
+const TEAM_MEDIA = [{ photo: founderPhoto }, { initials: 'CM' }] as const
 
 export default function About() {
-  const georgeLopez = TESTIMONIALS.find((t) => t.name === 'George Lopez')
+  const { dict, pick } = useLanguage()
+  const t = dict.about
+  const georgeLopez = TESTIMONIALS.find((testimonial) => testimonial.name === 'George Lopez')
+  const faqItems = ABOUT_FAQ_ITEMS.map((item) => ({ question: pick(item.question), answer: pick(item.answer) }))
+  const team = t.team.map((member, i) => ({ ...member, ...TEAM_MEDIA[i] }))
 
   return (
     <>
-      <Seo {...STATIC_SEO['/about']} path="/about" />
+      <Seo {...toSeoProps(STATIC_SEO['/about'])} path="/about" />
       <JsonLd data={buildOrganizationSchema()} />
       <JsonLd data={buildPersonSchema()} />
-      <JsonLd data={buildFaqSchema(ABOUT_FAQ_ITEMS)} />
+      <JsonLd data={buildFaqSchema(faqItems)} />
 
       {/* SECTION 1 — Hero */}
       <section className="bg-white pb-16 pt-40 md:pb-24 md:pt-48">
         <Container>
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[3fr_2fr] lg:gap-12">
             <div className="order-2 lg:order-1">
-              <SectionLabel>About Astratta</SectionLabel>
+              <SectionLabel>{t.eyebrow}</SectionLabel>
               <h1 className="mt-5 font-sans text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl">
-                <RevealText text="Agency-level quality," animateOnMount />
+                <RevealText text={t.heroHeadline1} animateOnMount />
                 <br />
-                <RevealText text="small-business-friendly prices." animateOnMount delay={0.15} />
+                <RevealText text={t.heroHeadline2} animateOnMount delay={0.15} />
               </h1>
 
               <motion.p
@@ -87,11 +53,7 @@ export default function About() {
                 transition={{ duration: 0.7, delay: 0.5 }}
                 className="mt-6 max-w-[55ch] font-sans text-lg text-ink/70"
               >
-                Astratta Agency is a boutique web design and digital marketing studio based in
-                Dallas–Fort Worth, Texas, founded by Hisbelis Vargas. We build high-converting
-                websites, funnels, and marketing systems for startups and small businesses. Astratta
-                is a founder-led studio — senior-level work, zero agency bloat. You work with the
-                people doing the work, never an account manager relaying requests.
+                {t.heroBody}
               </motion.p>
             </div>
 
@@ -121,35 +83,26 @@ export default function About() {
             variants={staggerContainer(0.1)}
           >
             <motion.div variants={fadeUp}>
-              <SectionLabel>The Founder</SectionLabel>
+              <SectionLabel>{t.founderEyebrow}</SectionLabel>
             </motion.div>
             <motion.h2
               variants={fadeUp}
               className="mt-5 max-w-2xl font-sans text-4xl font-extrabold tracking-tight sm:text-5xl"
             >
-              Founder-led. Senior-only.
+              {t.founderHeading}
             </motion.h2>
 
             <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
               <motion.div variants={fadeUp} className="flex max-w-[55ch] flex-col gap-6 font-sans text-lg text-ink/70">
-                <p>
-                  I started Astratta after years of watching small businesses get charged
-                  agency prices for junior-level work — recycled templates, generic strategy, and
-                  account managers who'd never touched the actual project.
-                </p>
-                <p>
-                  Every project is led personally by founder Hisbelis Vargas, supported by a
-                  hand-picked team of senior specialists. As Astratta grows, that standard doesn't
-                  change: senior hands on every deliverable.
-                </p>
+                <p>{t.founderP1}</p>
+                <p>{t.founderP2}</p>
               </motion.div>
 
               <motion.blockquote
                 variants={fadeUp}
                 className="border-l-2 border-secondary pl-6 font-sans text-2xl font-light italic leading-snug text-ink md:text-3xl"
               >
-                You work with the people doing the work — never an account manager relaying
-                requests.
+                {t.founderQuote}
               </motion.blockquote>
             </div>
           </motion.div>
@@ -166,20 +119,20 @@ export default function About() {
             variants={staggerContainer(0.1)}
           >
             <motion.div variants={fadeUp}>
-              <SectionLabel>The Team</SectionLabel>
+              <SectionLabel>{t.teamEyebrow}</SectionLabel>
             </motion.div>
             <motion.h2
               variants={fadeUp}
               className="mt-5 max-w-2xl font-sans text-4xl font-extrabold tracking-tight sm:text-5xl"
             >
-              Small team. Senior standard.
+              {t.teamHeading}
             </motion.h2>
 
             <motion.div
               variants={staggerContainer(0.1)}
               className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3"
             >
-              {TEAM.map((member) => (
+              {team.map((member) => (
                 <motion.div
                   key={member.name}
                   variants={fadeUp}
@@ -209,9 +162,7 @@ export default function About() {
                 className="flex flex-col justify-center rounded-3xl border border-secondary/30 bg-white p-8"
               >
                 <span className="h-0.5 w-8 bg-secondary" />
-                <p className="mt-5 font-sans text-base text-ink/60">
-                  The team is growing — senior specialists join as client needs expand.
-                </p>
+                <p className="mt-5 font-sans text-base text-ink/60">{t.teamGrowingNote}</p>
               </motion.div>
             </motion.div>
           </motion.div>
@@ -229,13 +180,13 @@ export default function About() {
             className="max-w-2xl"
           >
             <motion.div variants={fadeUp}>
-              <SectionLabel>Principles</SectionLabel>
+              <SectionLabel>{t.principlesEyebrow}</SectionLabel>
             </motion.div>
             <motion.h2
               variants={fadeUp}
               className="mt-5 font-sans text-4xl font-extrabold tracking-tight sm:text-5xl"
             >
-              No mission statements. Operating principles.
+              {t.principlesHeading}
             </motion.h2>
           </motion.div>
 
@@ -246,7 +197,7 @@ export default function About() {
             variants={staggerContainer(0.1)}
             className="mt-12"
           >
-            {PRINCIPLES.map((point, i) => (
+            {t.principles.map((point, i) => (
               <motion.li
                 key={point}
                 variants={fadeUp}
@@ -275,18 +226,18 @@ export default function About() {
               variants={staggerContainer(0.1)}
             >
               <motion.div variants={fadeUp}>
-                <SectionLabel>Results</SectionLabel>
+                <SectionLabel>{t.resultsEyebrow}</SectionLabel>
               </motion.div>
               <motion.h2
                 variants={fadeUp}
                 className="mt-5 max-w-2xl font-sans text-4xl font-extrabold tracking-tight sm:text-5xl"
               >
-                What clients get.
+                {t.resultsHeading}
               </motion.h2>
 
               <div className="mt-12 grid grid-cols-3 divide-x divide-ink/10 sm:max-w-xl">
-                {RESULTS_STATS.map((stat) => (
-                  <motion.div key={stat.label} variants={fadeUp} className="px-4 first:pl-0 sm:px-6">
+                {t.resultsStats.map((stat, i) => (
+                  <motion.div key={i} variants={fadeUp} className="px-4 first:pl-0 sm:px-6">
                     <div className="font-sans text-[32px] font-extrabold text-primary sm:text-5xl">
                       <Counter value={stat.value} suffix={stat.suffix} />
                     </div>
@@ -298,10 +249,10 @@ export default function About() {
               {georgeLopez && (
                 <motion.div variants={fadeUp} className="mt-16 max-w-2xl border-t border-ink/10 pt-12">
                   <p className="font-sans text-2xl font-light leading-snug tracking-tight md:text-3xl">
-                    “{georgeLopez.quote}”
+                    “{pick(georgeLopez.quote)}”
                   </p>
                   <p className="mt-6 font-sans text-base font-bold">{georgeLopez.name}</p>
-                  <p className="text-sm text-ink/50">{georgeLopez.role}</p>
+                  <p className="text-sm text-ink/50">{pick(georgeLopez.role)}</p>
                 </motion.div>
               )}
             </motion.div>
@@ -336,14 +287,14 @@ export default function About() {
               variants={fadeUp}
               className="max-w-2xl font-sans text-4xl font-extrabold tracking-tight sm:text-5xl"
             >
-              Built for businesses that want leads, not just a pretty site.
+              {t.whoHeading}
             </motion.h2>
 
             <div className="mt-12 grid grid-cols-1 gap-12 sm:grid-cols-2 sm:divide-x sm:divide-ink/10">
               <motion.div variants={fadeUp}>
-                <h3 className="font-sans text-lg font-bold text-ink">A great fit if…</h3>
+                <h3 className="font-sans text-lg font-bold text-ink">{t.goodFitHeading}</h3>
                 <ul className="mt-5 flex flex-col gap-4">
-                  {GOOD_FIT.map((item) => (
+                  {t.goodFit.map((item) => (
                     <li key={item} className="flex gap-3 font-sans text-base text-ink/70">
                       <span aria-hidden className="text-primary">
                         +
@@ -355,9 +306,9 @@ export default function About() {
               </motion.div>
 
               <motion.div variants={fadeUp} className="sm:pl-12">
-                <h3 className="font-sans text-lg font-bold text-ink/50">Not a fit if…</h3>
+                <h3 className="font-sans text-lg font-bold text-ink/50">{t.notFitHeading}</h3>
                 <ul className="mt-5 flex flex-col gap-4">
-                  {NOT_A_FIT.map((item) => (
+                  {t.notFit.map((item) => (
                     <li key={item} className="flex gap-3 font-sans text-base text-ink/50">
                       <span aria-hidden>−</span>
                       {item}
@@ -381,15 +332,15 @@ export default function About() {
               variants={staggerContainer(0.1)}
             >
               <motion.div variants={fadeUp}>
-                <SectionLabel>FAQ</SectionLabel>
+                <SectionLabel>{t.faqEyebrow}</SectionLabel>
               </motion.div>
               <h2 className="mt-5 font-sans text-4xl font-extrabold tracking-tight sm:text-5xl">
-                <RevealText text="Questions, answered." />
+                <RevealText text={t.faqHeading} />
               </h2>
             </motion.div>
 
             <motion.div initial="hidden" whileInView="show" viewport={viewportOnce} variants={fadeUp}>
-              <Accordion items={ABOUT_FAQ_ITEMS} />
+              <Accordion items={faqItems} />
             </motion.div>
           </div>
         </Container>
@@ -409,8 +360,8 @@ export default function About() {
               variants={fadeUp}
               className="max-w-2xl font-sans text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl"
             >
-              <RevealText text="Let's find out why your site isn't" />{' '}
-              <RevealText text="converting." className="text-secondary" />
+              <RevealText text={t.ctaHeading1} />{' '}
+              <RevealText text={t.ctaHeading2} className="text-secondary" />
             </motion.h2>
 
             <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-6">
@@ -424,11 +375,9 @@ export default function About() {
                 />
                 <span className="relative z-10 block h-6 overflow-hidden">
                   <span className="flex flex-col transition-transform duration-300 ease-out group-hover:-translate-y-1/2">
-                    <span className="flex h-6 items-center whitespace-nowrap">
-                      Get your free website audit
-                    </span>
+                    <span className="flex h-6 items-center whitespace-nowrap">{t.ctaAudit}</span>
                     <span aria-hidden className="flex h-6 items-center whitespace-nowrap">
-                      Get your free website audit
+                      {t.ctaAudit}
                     </span>
                   </span>
                 </span>
@@ -438,7 +387,7 @@ export default function About() {
                 to="/contact"
                 className="group inline-flex items-center gap-2 font-sans text-base font-bold text-white/70 hover:text-white"
               >
-                Contact us
+                {t.ctaContact}
                 <span className="transition-transform duration-300 group-hover:translate-x-1">
                   →
                 </span>
@@ -446,7 +395,7 @@ export default function About() {
             </motion.div>
 
             <motion.p variants={fadeUp} className="mt-6 font-sans text-sm text-white/40">
-              Last updated: {LAST_UPDATED}
+              {t.lastUpdatedLabel} {t.lastUpdatedValue}
             </motion.p>
           </motion.div>
         </Container>

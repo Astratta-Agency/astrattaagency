@@ -5,8 +5,12 @@ import { SectionLabel } from '@/components/ui/SectionLabel'
 import { RevealText } from '@/components/ui/RevealText'
 import { SERVICES } from '@/data/services'
 import { fadeUp, scaleIn, staggerContainer, viewportOnce } from '@/lib/animations'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export function ServicesGrid() {
+  const { dict, pick } = useLanguage()
+  const t = dict.home.servicesGrid
+
   return (
     <section className="bg-neutral/40 py-24 md:py-32">
       <Container>
@@ -18,10 +22,10 @@ export function ServicesGrid() {
           className="mb-16 max-w-3xl md:mb-20"
         >
           <motion.div variants={fadeUp}>
-            <SectionLabel>Our Services</SectionLabel>
+            <SectionLabel>{t.eyebrow}</SectionLabel>
           </motion.div>
           <h2 className="mt-5 font-sans text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
-            <RevealText text="Built to convert, not just to look good." />
+            <RevealText text={t.heading} />
           </h2>
         </motion.div>
 
@@ -42,13 +46,13 @@ export function ServicesGrid() {
                   {service.number}
                 </span>
                 <h3 className="mt-4 font-sans text-2xl font-extrabold tracking-tight text-ink transition-colors duration-500 group-hover:text-white md:text-3xl">
-                  {service.title}
+                  {pick(service.title)}
                 </h3>
                 <p className="mt-4 max-w-sm text-base text-ink/60 transition-colors duration-500 group-hover:text-white/80">
-                  {service.description}
+                  {pick(service.description)}
                 </p>
                 <span className="mt-8 inline-flex items-center gap-2 font-sans text-sm font-bold text-ink transition-all duration-500 group-hover:translate-x-1 group-hover:text-white">
-                  Learn more →
+                  {t.learnMore}
                 </span>
               </Link>
             </motion.div>

@@ -1,4 +1,5 @@
-import { getServicePage, type PricingTier } from '@/data/pricing'
+import { getServicePage, type PricingTierSource } from '@/data/pricing'
+import type { Bilingual } from '@/lib/i18n/types'
 
 export type GoalId = 'leads' | 'ecommerce' | 'brand' | 'fix-website'
 export type CurrentStateId = 'website' | 'social' | 'ads' | 'none'
@@ -19,44 +20,68 @@ export type QuizAnswers = {
 
 export const INITIAL_ANSWERS: QuizAnswers = { goal: null, currentState: [], interests: [] }
 
-export const GOAL_OPTIONS: { id: GoalId; label: string }[] = [
-  { id: 'leads', label: 'Get more leads' },
-  { id: 'ecommerce', label: 'Sell products online' },
-  { id: 'brand', label: 'Build brand authority' },
-  { id: 'fix-website', label: "Fix a website that isn't converting" },
+/** Visible quiz UI labels — bilingual, resolved by the page with `pick()`. */
+export const GOAL_OPTIONS: { id: GoalId; label: Bilingual<string> }[] = [
+  { id: 'leads', label: { en: 'Get more leads', es: 'Conseguir más leads' } },
+  { id: 'ecommerce', label: { en: 'Sell products online', es: 'Vender productos en línea' } },
+  { id: 'brand', label: { en: 'Build brand authority', es: 'Construir autoridad de marca' } },
+  {
+    id: 'fix-website',
+    label: { en: "Fix a website that isn't converting", es: 'Arreglar un sitio que no está convirtiendo' },
+  },
 ]
 
-export const CURRENT_STATE_OPTIONS: { id: CurrentStateId; label: string }[] = [
-  { id: 'website', label: 'A website' },
-  { id: 'social', label: 'Social media presence' },
-  { id: 'ads', label: 'Running ads' },
-  { id: 'none', label: 'None of the above yet' },
+export const CURRENT_STATE_OPTIONS: { id: CurrentStateId; label: Bilingual<string> }[] = [
+  { id: 'website', label: { en: 'A website', es: 'Un sitio web' } },
+  { id: 'social', label: { en: 'Social media presence', es: 'Presencia en redes sociales' } },
+  { id: 'ads', label: { en: 'Running ads', es: 'Anuncios activos' } },
+  { id: 'none', label: { en: 'None of the above yet', es: 'Ninguno de estos todavía' } },
 ]
 
-export const INTEREST_OPTIONS: { id: InterestId; label: string }[] = [
-  { id: 'web-development', label: 'Web Development' },
-  { id: 'ecommerce', label: 'E-commerce' },
-  { id: 'social-media', label: 'Social Media' },
-  { id: 'paid-ads', label: 'Paid Ads' },
-  { id: 'lead-generation', label: 'Lead Generation System' },
-  { id: 'graphic-design', label: 'Graphic Design' },
+export const INTEREST_OPTIONS: { id: InterestId; label: Bilingual<string> }[] = [
+  { id: 'web-development', label: { en: 'Web Development', es: 'Desarrollo Web' } },
+  { id: 'ecommerce', label: { en: 'E-commerce', es: 'E-commerce' } },
+  { id: 'social-media', label: { en: 'Social Media', es: 'Redes Sociales' } },
+  { id: 'paid-ads', label: { en: 'Paid Ads', es: 'Anuncios Pagados' } },
+  { id: 'lead-generation', label: { en: 'Lead Generation System', es: 'Sistema de Generación de Leads' } },
+  { id: 'graphic-design', label: { en: 'Graphic Design', es: 'Diseño Gráfico' } },
 ]
 
 /** Shown as its own card in step 3 — it's the usual entry point, not a bundle component. */
-export const AUDIT_INTEREST: { id: InterestId; label: string } = {
+export const AUDIT_INTEREST: { id: InterestId; label: Bilingual<string> } = {
   id: 'website-audits',
-  label: 'Website Audits',
+  label: { en: 'Website Audits', es: 'Auditorías de Sitio Web' },
 }
 
-const GOAL_LABELS: Record<GoalId, string> = Object.fromEntries(
-  GOAL_OPTIONS.map((o) => [o.id, o.label]),
-) as Record<GoalId, string>
-const STATE_LABELS: Record<CurrentStateId, string> = Object.fromEntries(
-  CURRENT_STATE_OPTIONS.map((o) => [o.id, o.label]),
-) as Record<CurrentStateId, string>
-const INTEREST_LABELS: Record<InterestId, string> = Object.fromEntries(
-  [...INTEREST_OPTIONS, AUDIT_INTEREST].map((o) => [o.id, o.label]),
-) as Record<InterestId, string>
+/**
+ * Internal-only English labels for the lead-capture summary sent to the
+ * CRM (see buildQuizSummary) — deliberately NOT derived from the bilingual
+ * *_OPTIONS above, so the visible quiz UI can be translated without ever
+ * affecting the internal sales record, which stays English regardless of
+ * site language (same rationale as the footer copyright: internal data,
+ * not visitor-facing content).
+ */
+const GOAL_LABELS: Record<GoalId, string> = {
+  leads: 'Get more leads',
+  ecommerce: 'Sell products online',
+  brand: 'Build brand authority',
+  'fix-website': "Fix a website that isn't converting",
+}
+const STATE_LABELS: Record<CurrentStateId, string> = {
+  website: 'A website',
+  social: 'Social media presence',
+  ads: 'Running ads',
+  none: 'None of the above yet',
+}
+const INTEREST_LABELS: Record<InterestId, string> = {
+  'web-development': 'Web Development',
+  ecommerce: 'E-commerce',
+  'social-media': 'Social Media',
+  'paid-ads': 'Paid Ads',
+  'lead-generation': 'Lead Generation System',
+  'graphic-design': 'Graphic Design',
+  'website-audits': 'Website Audits',
+}
 
 /** Strips a display price like "From $8,500" or "$450/mo" down to a bare number for quote math. */
 function priceToNumber(price: string): number {
@@ -64,7 +89,7 @@ function priceToNumber(price: string): number {
   return match ? Number(match[0].replace(/,/g, '')) : 0
 }
 
-function tierBySlug(pageSlug: string, tierSlug: string): { title: string; tier: PricingTier } {
+function tierBySlug(pageSlug: string, tierSlug: string): { title: Bilingual<string>; tier: PricingTierSource } {
   const page = getServicePage(pageSlug)
   const tier = page?.tiers.find((t) => t.slug === tierSlug)
   if (!page || !tier) throw new Error(`Unknown tier: ${pageSlug}/${tierSlug}`)
@@ -73,9 +98,9 @@ function tierBySlug(pageSlug: string, tierSlug: string): { title: string; tier: 
 
 export type RecommendationLine = {
   key: string
-  serviceTitle: string
+  serviceTitle: Bilingual<string>
   href: string
-  tierLabel: string
+  tierLabel: Bilingual<string>
   low: number
   high: number
 }
@@ -84,7 +109,11 @@ export type RecommendationResult = {
   lines: RecommendationLine[]
   lowTotal: number
   highTotal: number
-  intro: string
+  intro: Bilingual<string>
+}
+
+function combineTierNames(low: string, high: string): string {
+  return low === high ? low : `${low} – ${high}`
 }
 
 function rangeLine(pageSlug: string, lowTierSlug: string, highTierSlug: string): RecommendationLine {
@@ -92,11 +121,17 @@ function rangeLine(pageSlug: string, lowTierSlug: string, highTierSlug: string):
   const high = tierBySlug(pageSlug, highTierSlug)
   const lowNum = priceToNumber(low.tier.price)
   const highNum = priceToNumber(high.tier.price)
+  const sameTier = low.tier.slug === high.tier.slug
   return {
     key: pageSlug,
     serviceTitle: low.title,
     href: `/services/${pageSlug}`,
-    tierLabel: low.tier.slug === high.tier.slug ? low.tier.name : `${low.tier.name} – ${high.tier.name}`,
+    tierLabel: sameTier
+      ? low.tier.name
+      : {
+          en: combineTierNames(low.tier.name.en, high.tier.name.en),
+          es: combineTierNames(low.tier.name.es, high.tier.name.es),
+        },
     low: Math.min(lowNum, highNum),
     high: Math.max(lowNum, highNum),
   }
@@ -108,9 +143,9 @@ function singleLine(pageSlug: string, tierSlug: string): RecommendationLine {
 
 const AUDIT_LINE: RecommendationLine = {
   key: 'website-audits',
-  serviceTitle: 'Website Audit',
+  serviceTitle: { en: 'Website Audit', es: 'Auditoría de Sitio Web' },
   href: '/audit',
-  tierLabel: 'Free diagnostic',
+  tierLabel: { en: 'Free diagnostic', es: 'Diagnóstico gratuito' },
   low: 0,
   high: 0,
 }
@@ -127,36 +162,48 @@ export function getRecommendation(answers: QuizAnswers): RecommendationResult {
   const hasWebsite = currentState.includes('website')
 
   const lines = new Map<string, RecommendationLine>()
-  let intro =
-    "Here's a starting point based on your answers — every line links back to the full pricing page."
+  let intro: Bilingual<string> = {
+    en: "Here's a starting point based on your answers — every line links back to the full pricing page.",
+    es: 'Este es un punto de partida basado en tus respuestas — cada línea enlaza a la página de precios completa.',
+  }
 
   switch (goal) {
     case 'leads':
       if (hasWebsite) {
         lines.set('paid-ads', rangeLine('paid-ads', 'ads-prospecting', 'ads-retargeting-warm'))
-        intro =
-          'You already have a website, so the fastest path to more leads is running accountable ad campaigns against it.'
+        intro = {
+          en: 'You already have a website, so the fastest path to more leads is running accountable ad campaigns against it.',
+          es: 'Ya tienes un sitio web, así que el camino más rápido a más leads es correr campañas de anuncios responsables sobre él.',
+        }
       } else {
         lines.set('lead-generation', singleLine('lead-generation', 'lead-generation-core'))
-        intro =
-          "Without a website or funnel in place yet, the Lead Generation System bundles the landing page, ads, and follow-up into one program."
+        intro = {
+          en: "Without a website or funnel in place yet, the Lead Generation System bundles the landing page, ads, and follow-up into one program.",
+          es: 'Sin un sitio web o embudo todavía, el Sistema de Generación de Leads combina la landing page, anuncios y seguimiento en un solo programa.',
+        }
       }
       break
     case 'ecommerce':
       lines.set('ecommerce', rangeLine('ecommerce', 'ecommerce-starter', 'ecommerce-growth'))
-      intro =
-        'A Shopify build is the foundation — add Paid Ads below if you want traffic running the day the store launches.'
+      intro = {
+        en: 'A Shopify build is the foundation — add Paid Ads below if you want traffic running the day the store launches.',
+        es: 'Una tienda en Shopify es la base — agrega Anuncios Pagados abajo si quieres tráfico corriendo el día que lance la tienda.',
+      }
       break
     case 'brand':
       lines.set('social-media', singleLine('social-media', 'social-authority'))
       lines.set('graphic-design', singleLine('graphic-design', 'brand-identity-system'))
-      intro =
-        'Brand authority comes from a consistent identity plus a content presence that reinforces it — these two work together.'
+      intro = {
+        en: 'Brand authority comes from a consistent identity plus a content presence that reinforces it — these two work together.',
+        es: 'La autoridad de marca viene de una identidad consistente más una presencia de contenido que la refuerza — estos dos trabajan juntos.',
+      }
       break
     case 'fix-website':
       lines.set('website-audits', AUDIT_LINE)
-      intro =
-        "Start with a free audit to find out exactly what's costing you conversions before spending on a rebuild."
+      intro = {
+        en: "Start with a free audit to find out exactly what's costing you conversions before spending on a rebuild.",
+        es: 'Empieza con una auditoría gratuita para descubrir exactamente qué te está costando conversiones antes de gastar en una reconstrucción.',
+      }
       break
     default:
       break
@@ -196,7 +243,7 @@ export function getRecommendation(answers: QuizAnswers): RecommendationResult {
   return { lines: linesArr, lowTotal, highTotal, intro }
 }
 
-/** Human-readable answer summary attached to the lead-capture submission as hidden context. */
+/** Human-readable answer summary attached to the lead-capture submission as hidden context — always English (internal CRM data, not visitor-facing). */
 export function buildQuizSummary(answers: QuizAnswers, result: RecommendationResult): string {
   const goalText = answers.goal ? GOAL_LABELS[answers.goal] : 'Not answered'
   const stateText = answers.currentState.length
@@ -205,7 +252,7 @@ export function buildQuizSummary(answers: QuizAnswers, result: RecommendationRes
   const interestText = answers.interests.length
     ? answers.interests.map((id) => INTEREST_LABELS[id]).join(', ')
     : 'None specified'
-  const recText = result.lines.map((l) => `${l.serviceTitle} (${l.tierLabel})`).join('; ')
+  const recText = result.lines.map((l) => `${l.serviceTitle.en} (${l.tierLabel.en})`).join('; ')
 
   return [
     `Goal: ${goalText}`,

@@ -5,6 +5,7 @@ import { SectionLabel } from '@/components/ui/SectionLabel'
 import { RevealText } from '@/components/ui/RevealText'
 import type { ProcessStep } from '@/data/pricing'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 type ServiceProcessProps = {
   steps: ProcessStep[]
@@ -12,10 +13,12 @@ type ServiceProcessProps = {
   intro?: string
 }
 
-const DEFAULT_TITLE = 'How we do it.'
-
 /** Reuses the homepage Process section's visual pattern; column count adapts to 3 vs 4 steps. */
-export function ServiceProcess({ steps, title = DEFAULT_TITLE, intro }: ServiceProcessProps) {
+export function ServiceProcess({ steps, title, intro }: ServiceProcessProps) {
+  const { dict } = useLanguage()
+  const t = dict.services.shared
+  const resolvedTitle = title ?? t.processDefaultTitle
+
   return (
     <section className="bg-ink py-24 text-white md:py-32">
       <Container>
@@ -27,10 +30,10 @@ export function ServiceProcess({ steps, title = DEFAULT_TITLE, intro }: ServiceP
           className="mb-16 max-w-2xl md:mb-24"
         >
           <motion.div variants={fadeUp}>
-            <SectionLabel>Process</SectionLabel>
+            <SectionLabel>{t.processLabel}</SectionLabel>
           </motion.div>
           <h2 className="mt-5 font-sans text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
-            <RevealText text={title} />
+            <RevealText text={resolvedTitle} />
           </h2>
           {intro && (
             <motion.p variants={fadeUp} className="mt-6 max-w-[55ch] text-white/60">

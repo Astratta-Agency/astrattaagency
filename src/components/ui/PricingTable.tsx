@@ -4,6 +4,7 @@ import { clsx } from 'clsx'
 import { MagneticButton } from '@/components/ui/MagneticButton'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
 import type { PricingTier } from '@/data/pricing'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 const GRID_COLS: Record<number, string> = {
   1: 'md:grid-cols-1',
@@ -14,6 +15,8 @@ const GRID_COLS: Record<number, string> = {
 
 /** Responsive comparison table: side-by-side columns on desktop, stacked cards on mobile. */
 export function PricingTable({ tiers }: { tiers: PricingTier[] }) {
+  const { dict } = useLanguage()
+  const t = dict.services.shared
   const gridColsClass = GRID_COLS[tiers.length] ?? 'md:grid-cols-3'
 
   return (
@@ -37,7 +40,7 @@ export function PricingTable({ tiers }: { tiers: PricingTier[] }) {
         >
           {tier.recommended && (
             <span className="absolute -top-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-secondary px-4 py-1.5 font-sans text-xs font-bold uppercase tracking-wide text-white">
-              ⭐ Most popular in Dallas
+              {t.mostPopularBadge}
             </span>
           )}
 
@@ -76,7 +79,7 @@ export function PricingTable({ tiers }: { tiers: PricingTier[] }) {
                 : 'bg-ink text-white hover:bg-primary',
             )}
           >
-            Get this plan →
+            {t.getThisPlan}
           </MagneticButton>
         </motion.div>
       ))}

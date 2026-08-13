@@ -7,19 +7,23 @@ import { ContactForm } from '@/components/ui/ContactForm'
 import { GradientBlob } from '@/components/ui/GradientBlob'
 import { AUDIT_CHECKLIST, AUDIT_STEPS } from '@/data/audit'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
-import { STATIC_SEO } from '@/lib/seo-data'
+import { STATIC_SEO, toSeoProps } from '@/lib/seo-data'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export default function Audit() {
+  const { dict, pick } = useLanguage()
+  const t = dict.audit
+
   return (
     <>
-      <Seo {...STATIC_SEO['/audit']} path="/audit" />
+      <Seo {...toSeoProps(STATIC_SEO['/audit'])} path="/audit" />
 
       <section className="relative overflow-hidden bg-white pb-24 pt-40 md:pb-32 md:pt-48">
         <GradientBlob />
         <Container className="relative z-10">
-          <SectionLabel>Free Website Audit</SectionLabel>
+          <SectionLabel>{t.eyebrow}</SectionLabel>
           <h1 className="mt-5 max-w-4xl font-sans text-5xl font-extrabold leading-[1.02] tracking-tight sm:text-6xl md:text-7xl">
-            <RevealText text="Find out exactly why your site isn't converting." animateOnMount />
+            <RevealText text={t.heading} animateOnMount />
           </h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -27,8 +31,7 @@ export default function Audit() {
             transition={{ duration: 0.7, delay: 0.5 }}
             className="mt-8 max-w-xl text-lg text-ink/70 md:text-xl"
           >
-            A prioritized, plain-English action plan — what's broken, what it's costing you, and
-            how we'd fix it. No jargon, no upsell pressure.
+            {t.subtext}
           </motion.p>
         </Container>
       </section>
@@ -43,10 +46,10 @@ export default function Audit() {
             className="mb-16 max-w-2xl"
           >
             <motion.div variants={fadeUp}>
-              <SectionLabel>What's included</SectionLabel>
+              <SectionLabel>{t.includedEyebrow}</SectionLabel>
             </motion.div>
             <h2 className="mt-5 font-sans text-3xl font-extrabold tracking-tight sm:text-4xl">
-              Six things we check, every time.
+              {t.includedHeading}
             </h2>
           </motion.div>
 
@@ -58,14 +61,14 @@ export default function Audit() {
             className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
           >
             {AUDIT_CHECKLIST.map((item, i) => (
-              <motion.div key={item.title} variants={fadeUp} className="border-t border-ink/10 pt-6">
+              <motion.div key={i} variants={fadeUp} className="border-t border-ink/10 pt-6">
                 <span className="font-sans text-sm font-bold text-primary">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <h3 className="mt-3 font-sans text-xl font-extrabold tracking-tight">
-                  {item.title}
+                  {pick(item.title)}
                 </h3>
-                <p className="mt-2 text-ink/60">{item.description}</p>
+                <p className="mt-2 text-ink/60">{pick(item.description)}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -82,10 +85,10 @@ export default function Audit() {
             className="mb-16 max-w-2xl"
           >
             <motion.div variants={fadeUp}>
-              <SectionLabel>How it works</SectionLabel>
+              <SectionLabel>{t.howEyebrow}</SectionLabel>
             </motion.div>
             <h2 className="mt-5 font-sans text-3xl font-extrabold tracking-tight sm:text-4xl">
-              Three steps, no obligation.
+              {t.howHeading}
             </h2>
           </motion.div>
 
@@ -100,9 +103,9 @@ export default function Audit() {
               <motion.div key={step.number} variants={fadeUp}>
                 <span className="font-sans text-sm font-bold text-primary">{step.number}</span>
                 <h3 className="mt-3 font-sans text-2xl font-extrabold tracking-tight">
-                  {step.title}
+                  {pick(step.title)}
                 </h3>
-                <p className="mt-3 text-ink/60">{step.description}</p>
+                <p className="mt-3 text-ink/60">{pick(step.description)}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -119,12 +122,9 @@ export default function Audit() {
               variants={fadeUp}
             >
               <h2 className="font-sans text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">
-                <RevealText text="Request your free audit." />
+                <RevealText text={t.requestHeading} />
               </h2>
-              <p className="mt-6 max-w-md text-ink/60">
-                Fill in the form and we'll follow up with next steps — no sales call required to
-                get value out of this.
-              </p>
+              <p className="mt-6 max-w-md text-ink/60">{t.requestSubtext}</p>
             </motion.div>
 
             <motion.div
@@ -133,7 +133,7 @@ export default function Audit() {
               viewport={viewportOnce}
               variants={fadeUp}
             >
-              <ContactForm submitLabel="Request my audit" source="audit-page" />
+              <ContactForm submitLabel={t.submitLabel} source="audit-page" />
             </motion.div>
           </div>
         </Container>

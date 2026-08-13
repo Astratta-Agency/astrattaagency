@@ -6,12 +6,15 @@ import { useScrollDirection } from '@/hooks/useScrollDirection'
 import { NAV_LINKS } from '@/lib/constants'
 import { EASE } from '@/lib/animations'
 import { MagneticButton } from '@/components/ui/MagneticButton'
+import { LanguageSwitch } from '@/components/ui/LanguageSwitch'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 import logo from '@/assets/logo.png'
 
 export function Nav() {
   const { direction, scrolled } = useScrollDirection()
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
+  const { dict, pick } = useLanguage()
 
   const [lastPathname, setLastPathname] = useState(location.pathname)
   if (location.pathname !== lastPathname) {
@@ -50,22 +53,23 @@ export function Nav() {
                 to={link.href}
                 className="font-sans text-sm font-semibold text-ink/80 transition-colors hover:text-primary"
               >
-                {link.label}
+                {pick(link.label)}
               </Link>
             ))}
+            <LanguageSwitch />
             <MagneticButton
               as={Link}
               to="/audit"
               className="rounded-full bg-ink px-5 py-2.5 font-sans text-sm font-bold text-white transition-colors hover:bg-primary"
             >
-              Get a free audit
+              {dict.nav.ctaAudit}
             </MagneticButton>
           </nav>
 
           <button
             onClick={() => setMenuOpen((v) => !v)}
             aria-expanded={menuOpen}
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-label={menuOpen ? dict.nav.closeMenu : dict.nav.openMenu}
             className="relative z-10 flex size-10 flex-col items-center justify-center gap-1.5 md:hidden"
           >
             <motion.span
@@ -101,7 +105,7 @@ export function Nav() {
                     to={link.href}
                     className="block py-3 font-sans text-4xl font-extrabold text-white"
                   >
-                    {link.label}
+                    {pick(link.label)}
                   </Link>
                 </motion.div>
               ))}
@@ -109,13 +113,15 @@ export function Nav() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: EASE, delay: 0.1 + NAV_LINKS.length * 0.06 }}
+                className="mt-6 flex items-center gap-4"
               >
                 <Link
                   to="/audit"
-                  className="mt-6 inline-block rounded-full bg-primary px-6 py-3 font-sans text-base font-bold text-white"
+                  className="inline-block rounded-full bg-primary px-6 py-3 font-sans text-base font-bold text-white"
                 >
-                  Get a free audit
+                  {dict.nav.ctaAudit}
                 </Link>
+                <LanguageSwitch dark />
               </motion.div>
             </nav>
           </motion.div>

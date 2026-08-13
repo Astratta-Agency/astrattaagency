@@ -15,14 +15,18 @@ import { ServiceFrustrations } from '@/components/ui/ServiceFrustrations'
 import { ServiceProcess } from '@/components/ui/ServiceProcess'
 import { ProofSnapshot } from '@/components/ui/ProofSnapshot'
 import { ServiceBenefits } from '@/components/ui/ServiceBenefits'
-import { WEB_DEVELOPMENT_PAGE } from '@/data/pricing'
+import { WEB_DEVELOPMENT_PAGE, resolveServicePage } from '@/data/pricing'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
 import { buildFaqSchema, buildOfferSchema, buildServiceSchema } from '@/lib/schema'
 import { SITE } from '@/lib/constants'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 import webDevelopmentHeroIllustration from '@/assets/illustrations/web-development-hero.webp'
 
 export default function WebDevelopment() {
-  const page = WEB_DEVELOPMENT_PAGE
+  const { language, dict } = useLanguage()
+  const page = resolveServicePage(WEB_DEVELOPMENT_PAGE, language)
+  const t = dict.servicePages['web-development']
+  const shared = dict.services.shared
   const path = `/services/${page.slug}`
   const url = `https://${SITE.domain}${path}`
 
@@ -43,7 +47,7 @@ export default function WebDevelopment() {
             <div>
               <Breadcrumbs
                 items={[
-                  { label: 'Services', href: '/services' },
+                  { label: shared.breadcrumbServices, href: '/services' },
                   { label: page.title, href: path },
                 ]}
               />
@@ -89,22 +93,16 @@ export default function WebDevelopment() {
         </Container>
       </section>
 
-      {page.frustrations && (
-        <ServiceFrustrations frustrations={page.frustrations} title="Sound familiar?" />
-      )}
+      {page.frustrations && <ServiceFrustrations frustrations={page.frustrations} />}
 
-      {page.processSteps && (
-        <ServiceProcess steps={page.processSteps} title="How we build it." />
-      )}
+      {page.processSteps && <ServiceProcess steps={page.processSteps} title={t.processTitle} />}
 
       <ProofSnapshot
         caseStudySlug={page.proof?.caseStudySlug}
         fallbackNote={page.proof?.fallbackNote}
       />
 
-      {page.benefits && (
-        <ServiceBenefits benefits={page.benefits} title="What you actually get." />
-      )}
+      {page.benefits && <ServiceBenefits benefits={page.benefits} />}
 
       <section className="border-t border-ink/10 pb-24 pt-24 md:pb-32 md:pt-32">
         <Container>
@@ -122,9 +120,9 @@ export default function WebDevelopment() {
               className="rounded-2xl border border-ink/10 bg-neutral/40 p-6 md:p-8"
             >
               <p className="text-ink/70">
-                Selling physical products?{' '}
-                <Link to="/services/ecommerce" className="font-bold text-primary">
-                  See E-commerce pricing →
+                {t.crossSell.text}{' '}
+                <Link to={t.crossSell.to} className="font-bold text-primary">
+                  {t.crossSell.linkText}
                 </Link>
               </p>
             </motion.div>
@@ -146,10 +144,10 @@ export default function WebDevelopment() {
               className="mb-12 max-w-2xl"
             >
               <motion.div variants={fadeUp}>
-                <SectionLabel>Add-ons</SectionLabel>
+                <SectionLabel>{shared.addOnsLabel}</SectionLabel>
               </motion.div>
               <h2 className="mt-5 font-sans text-3xl font-extrabold tracking-tight sm:text-4xl">
-                Extend any plan.
+                {shared.addOnsHeading}
               </h2>
             </motion.div>
 
@@ -170,10 +168,10 @@ export default function WebDevelopment() {
               variants={staggerContainer(0.1)}
             >
               <motion.div variants={fadeUp}>
-                <SectionLabel>FAQ</SectionLabel>
+                <SectionLabel>{shared.faqLabel}</SectionLabel>
               </motion.div>
               <h2 className="mt-5 font-sans text-3xl font-extrabold tracking-tight sm:text-4xl">
-                <RevealText text="Questions, answered." />
+                <RevealText text={shared.questionsAnswered} />
               </h2>
             </motion.div>
 
@@ -189,15 +187,13 @@ export default function WebDevelopment() {
           <div className="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-10">
             <motion.div initial="hidden" whileInView="show" viewport={viewportOnce} variants={fadeUp}>
               <h2 className="font-sans text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">
-                <RevealText text="Ready to start your web project?" />
+                <RevealText text={t.closingHeading} />
               </h2>
-              <p className="mt-6 max-w-md text-ink/60">
-                Tell us which tier fits, or request a free audit first if you're not sure.
-              </p>
+              <p className="mt-6 max-w-md text-ink/60">{t.closingSubtext}</p>
             </motion.div>
 
             <motion.div initial="hidden" whileInView="show" viewport={viewportOnce} variants={fadeUp}>
-              <ContactForm submitLabel="Start my project" source="web-development-page" />
+              <ContactForm submitLabel={t.submitLabel} source="web-development-page" />
             </motion.div>
           </div>
         </Container>

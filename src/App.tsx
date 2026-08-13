@@ -4,6 +4,8 @@ import Home from '@/pages/Home'
 import Audit from '@/pages/Audit'
 import Work from '@/pages/Work'
 import CaseStudy from '@/pages/CaseStudy'
+import Blog from '@/pages/Blog'
+import BlogPost from '@/pages/BlogPost'
 import Services from '@/pages/Services'
 import WebDevelopment from '@/pages/WebDevelopment'
 import Ecommerce from '@/pages/Ecommerce'
@@ -26,6 +28,8 @@ export default function App() {
         <Route path="/audit" element={<Audit />} />
         <Route path="/work" element={<Work />} />
         <Route path="/work/:slug" element={<CaseStudy />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/services" element={<Services />} />
         <Route path="/services/web-development" element={<WebDevelopment />} />
         <Route path="/services/ecommerce" element={<Ecommerce />} />

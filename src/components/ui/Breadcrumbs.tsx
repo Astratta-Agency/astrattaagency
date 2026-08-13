@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { JsonLd } from '@/components/ui/JsonLd'
 import { SITE } from '@/lib/constants'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export type Crumb = {
   label: string
@@ -9,7 +10,8 @@ export type Crumb = {
 
 /** Renders "Home / Services / X" with the last item non-clickable, plus inline BreadcrumbList JSON-LD. */
 export function Breadcrumbs({ items }: { items: Crumb[] }) {
-  const crumbs: Crumb[] = [{ label: 'Home', href: '/' }, ...items]
+  const { dict } = useLanguage()
+  const crumbs: Crumb[] = [{ label: dict.nav.home, href: '/' }, ...items]
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',

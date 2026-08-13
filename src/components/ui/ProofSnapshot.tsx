@@ -5,8 +5,9 @@ import { Container } from '@/components/ui/Container'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { Counter } from '@/components/ui/Counter'
 import { BrowserMockup } from '@/components/ui/BrowserMockup'
-import { CASE_STUDIES, type CaseStudy, type CaseStudyStat } from '@/data/caseStudies'
+import { CASE_STUDIES, resolveCaseStudy, type CaseStudy, type CaseStudyStat } from '@/data/caseStudies'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 type ProofSnapshotProps = {
   caseStudySlug?: string
@@ -48,6 +49,9 @@ function ProofWithCaseStudy({
   /** Render the real deliverable gallery below the cover shot — for visual-first services where a single screenshot undersells the work. */
   showGallery?: boolean
 }) {
+  const { dict } = useLanguage()
+  const t = dict.services.shared
+
   return (
     <section className="border-t border-ink/10 py-24 md:py-32">
       <Container>
@@ -58,7 +62,7 @@ function ProofWithCaseStudy({
           variants={staggerContainer(0.1)}
         >
           <motion.div variants={fadeUp}>
-            <SectionLabel>Proof</SectionLabel>
+            <SectionLabel>{t.proofLabel}</SectionLabel>
           </motion.div>
           <motion.h2
             variants={fadeUp}
@@ -76,7 +80,7 @@ function ProofWithCaseStudy({
               className="mt-6 max-w-2xl rounded-2xl border-2 border-secondary/30 bg-secondary/10 px-6 py-4"
             >
               <p className="text-sm text-ink/80">
-                <span className="font-bold text-secondary">Directional proof — </span>
+                <span className="font-bold text-secondary">{t.directionalProofPrefix}</span>
                 {directionalNote}
               </p>
             </motion.div>
@@ -185,7 +189,7 @@ function ProofWithCaseStudy({
               to={`/work/${caseStudy.slug}`}
               className="group inline-flex items-center gap-2 font-sans text-base font-bold text-primary"
             >
-              See the full case study
+              {t.seeFullCaseStudy}
               <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </Link>
           </motion.div>
@@ -196,6 +200,9 @@ function ProofWithCaseStudy({
 }
 
 function ProofFallback({ note, visual }: { note: string; visual?: ReactNode }) {
+  const { dict } = useLanguage()
+  const t = dict.services.shared
+
   return (
     <section className="border-t border-ink/10 py-24 md:py-32">
       <Container>
@@ -207,7 +214,7 @@ function ProofFallback({ note, visual }: { note: string; visual?: ReactNode }) {
           className="max-w-2xl"
         >
           <motion.div variants={fadeUp}>
-            <SectionLabel>How we prove it</SectionLabel>
+            <SectionLabel>{t.howWeProveItLabel}</SectionLabel>
           </motion.div>
           <motion.div variants={fadeUp} className="mt-8 rounded-2xl border border-ink/10 p-8">
             <p className="text-lg text-ink/70">{note}</p>
@@ -241,7 +248,9 @@ export function ProofSnapshot({
   fallbackVisual,
   showGallery,
 }: ProofSnapshotProps) {
-  const caseStudy = caseStudySlug ? CASE_STUDIES.find((c) => c.slug === caseStudySlug) : undefined
+  const { language } = useLanguage()
+  const source = caseStudySlug ? CASE_STUDIES.find((c) => c.slug === caseStudySlug) : undefined
+  const caseStudy = source ? resolveCaseStudy(source, language) : undefined
 
   if (caseStudy) {
     return <ProofWithCaseStudy caseStudy={caseStudy} directionalNote={fallbackNote} showGallery={showGallery} />

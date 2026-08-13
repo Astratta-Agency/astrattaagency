@@ -4,8 +4,12 @@ import { SectionLabel } from '@/components/ui/SectionLabel'
 import { RevealText } from '@/components/ui/RevealText'
 import { PROCESS_STEPS } from '@/data/process'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export function Process() {
+  const { dict, pick } = useLanguage()
+  const t = dict.home.process
+
   return (
     <section className="bg-ink py-24 text-white md:py-32">
       <Container>
@@ -17,10 +21,10 @@ export function Process() {
           className="mb-16 max-w-2xl md:mb-24"
         >
           <motion.div variants={fadeUp}>
-            <SectionLabel>Process</SectionLabel>
+            <SectionLabel>{t.eyebrow}</SectionLabel>
           </motion.div>
           <h2 className="mt-5 font-sans text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
-            <RevealText text="From audit to launch." />
+            <RevealText text={t.heading} />
           </h2>
         </motion.div>
 
@@ -39,9 +43,9 @@ export function Process() {
             >
               <span className="font-sans text-sm font-bold text-secondary">{step.number}</span>
               <h3 className="mt-3 font-sans text-2xl font-extrabold tracking-tight">
-                {step.title}
+                {pick(step.title)}
               </h3>
-              <p className="mt-3 text-white/60">{step.description}</p>
+              <p className="mt-3 text-white/60">{pick(step.description)}</p>
             </motion.div>
           ))}
         </motion.div>

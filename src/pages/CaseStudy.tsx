@@ -4,13 +4,17 @@ import { Seo } from '@/components/layout/Seo'
 import { Container } from '@/components/ui/Container'
 import { RevealText } from '@/components/ui/RevealText'
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
-import { CASE_STUDIES } from '@/data/caseStudies'
+import { CASE_STUDIES, resolveCaseStudy } from '@/data/caseStudies'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
 import { CASE_STUDY_SEO_DESCRIPTIONS } from '@/lib/seo-data'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export default function CaseStudy() {
   const { slug } = useParams<{ slug: string }>()
-  const project = CASE_STUDIES.find((p) => p.slug === slug)
+  const { language, dict } = useLanguage()
+  const t = dict.work.caseStudy
+  const source = CASE_STUDIES.find((p) => p.slug === slug)
+  const project = source ? resolveCaseStudy(source, language) : undefined
 
   if (!project) return <Navigate to="/work" replace />
 
@@ -18,7 +22,7 @@ export default function CaseStudy() {
     <>
       <Seo
         title={`${project.title} — Astratta Agency Case Study`}
-        description={CASE_STUDY_SEO_DESCRIPTIONS[project.slug] ?? project.summary}
+        description={CASE_STUDY_SEO_DESCRIPTIONS[project.slug]?.[language] ?? project.summary}
         path={`/work/${project.slug}`}
       />
 
@@ -27,7 +31,7 @@ export default function CaseStudy() {
           <div className="flex flex-wrap items-center justify-between gap-4">
             <Breadcrumbs
               items={[
-                { label: 'Work', href: '/work' },
+                { label: t.breadcrumb, href: '/work' },
                 { label: project.title, href: `/work/${project.slug}` },
               ]}
             />
@@ -38,7 +42,7 @@ export default function CaseStudy() {
                 rel="noopener noreferrer"
                 className="font-sans text-sm font-bold text-primary hover:text-primary-dark"
               >
-                Visit live site →
+                {t.visitLiveSite}
               </a>
             )}
           </div>
@@ -104,9 +108,9 @@ export default function CaseStudy() {
             className="grid grid-cols-1 gap-12 md:grid-cols-3"
           >
             {[
-              { title: 'Challenge', copy: project.challenge },
-              { title: 'Approach', copy: project.approach },
-              { title: 'Results', copy: project.results },
+              { title: t.challenge, copy: project.challenge },
+              { title: t.approach, copy: project.approach },
+              { title: t.results, copy: project.results },
             ].map((block) => (
               <motion.div key={block.title} variants={fadeUp}>
                 <h2 className="font-sans text-sm font-bold uppercase tracking-wide text-primary">
@@ -180,7 +184,7 @@ export default function CaseStudy() {
               className="mb-12 max-w-2xl"
             >
               <h2 className="font-sans text-3xl font-extrabold tracking-tight sm:text-4xl">
-                Platform breakdown.
+                {t.platformBreakdown}
               </h2>
             </motion.div>
 
@@ -268,9 +272,9 @@ export default function CaseStudy() {
             className="border-t border-ink/10 pt-10"
           >
             <p className="text-ink/60">
-              Want outcomes like this?{' '}
+              {t.wantOutcomes}{' '}
               <Link to="/audit" className="group font-bold text-primary">
-                Get a free website audit{' '}
+                {t.getAudit}{' '}
                 <span className="inline-block transition-[transform,color] duration-300 group-hover:translate-x-1 group-hover:text-secondary">
                   →
                 </span>

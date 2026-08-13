@@ -5,10 +5,13 @@ import { SectionLabel } from '@/components/ui/SectionLabel'
 import { TESTIMONIALS } from '@/data/testimonials'
 import { EASE, fadeUp, viewportOnce } from '@/lib/animations'
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export function Testimonials() {
   const [index, setIndex] = useState(0)
   const reducedMotion = usePrefersReducedMotion()
+  const { dict, pick } = useLanguage()
+  const t = dict.home.testimonials
 
   useEffect(() => {
     if (reducedMotion) return
@@ -30,7 +33,7 @@ export function Testimonials() {
           variants={fadeUp}
           className="mb-14"
         >
-          <SectionLabel>What clients say</SectionLabel>
+          <SectionLabel>{t.eyebrow}</SectionLabel>
         </motion.div>
 
         <div className="relative mx-auto max-w-3xl text-center">
@@ -43,19 +46,19 @@ export function Testimonials() {
               transition={{ duration: 0.5, ease: EASE }}
             >
               <p className="font-sans text-2xl font-light leading-snug tracking-tight md:text-3xl">
-                “{active.quote}”
+                “{pick(active.quote)}”
               </p>
               <p className="mt-8 font-sans text-base font-bold">{active.name}</p>
-              <p className="text-sm text-ink/50">{active.role}</p>
+              <p className="text-sm text-ink/50">{pick(active.role)}</p>
             </motion.div>
           </AnimatePresence>
 
           <div className="mt-10 flex items-center justify-center gap-3">
-            {TESTIMONIALS.map((t, i) => (
+            {TESTIMONIALS.map((testimonial, i) => (
               <button
-                key={t.name + i}
+                key={testimonial.name + i}
                 onClick={() => setIndex(i)}
-                aria-label={`Show testimonial ${i + 1}`}
+                aria-label={t.showTestimonial(i + 1)}
                 className={`h-2 rounded-full transition-all duration-300 ${
                   i === index ? 'w-8 bg-primary' : 'w-2 bg-ink/20'
                 }`}

@@ -3,8 +3,12 @@ import { Container } from '@/components/ui/Container'
 import { RevealText } from '@/components/ui/RevealText'
 import { ContactForm } from '@/components/ui/ContactForm'
 import { fadeUp, viewportOnce } from '@/lib/animations'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export function FinalCta() {
+  const { dict } = useLanguage()
+  const t = dict.home.finalCta
+
   return (
     <section id="contact" className="dot-pattern-light relative overflow-hidden bg-ink py-24 text-white md:py-32">
       <Container>
@@ -16,8 +20,8 @@ export function FinalCta() {
             variants={fadeUp}
             className="font-sans text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl"
           >
-            <RevealText text="Let's find out why your site isn't" />{' '}
-            <RevealText text="converting." className="text-secondary" />
+            <RevealText text={t.heading1} />{' '}
+            <RevealText text={t.heading2} className="text-secondary" />
           </motion.h2>
 
           <motion.div
@@ -26,7 +30,7 @@ export function FinalCta() {
             viewport={viewportOnce}
             variants={fadeUp}
           >
-            <ContactForm submitLabel="Request my audit" source="home-final-cta" dark />
+            <ContactForm submitLabel={t.submitLabel} source="home-final-cta" dark />
           </motion.div>
         </div>
       </Container>
