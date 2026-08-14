@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from '@/components/ui/Link'
 import { motion, useScroll, useTransform, type MotionValue } from 'framer-motion'
 import { piecewise } from '@/lib/animations'
 import { Container } from '@/components/ui/Container'

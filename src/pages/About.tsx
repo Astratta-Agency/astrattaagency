@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { Link } from '@/components/ui/Link'
 import { Seo } from '@/components/layout/Seo'
 import { Container } from '@/components/ui/Container'
 import { SectionLabel } from '@/components/ui/SectionLabel'
@@ -366,7 +366,7 @@ export default function About() {
 
             <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-6">
               <Link
-                to="/audit"
+                to="/diagnostic"
                 className="group relative inline-flex min-h-[52px] items-center overflow-hidden rounded-full bg-primary px-8 text-base font-bold text-white active:scale-[0.97]"
               >
                 <span

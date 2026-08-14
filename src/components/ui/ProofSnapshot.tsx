@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from '@/components/ui/Link'
 import { motion } from 'framer-motion'
 import { Container } from '@/components/ui/Container'
 import { SectionLabel } from '@/components/ui/SectionLabel'

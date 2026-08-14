@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
+import { Link } from '@/components/ui/Link'
 import { AnimatePresence, motion } from 'framer-motion'
 import { clsx } from 'clsx'
 import { useScrollDirection } from '@/hooks/useScrollDirection'
@@ -59,7 +60,7 @@ export function Nav() {
             <LanguageSwitch />
             <MagneticButton
               as={Link}
-              to="/audit"
+              to="/diagnostic"
               className="rounded-full bg-ink px-5 py-2.5 font-sans text-sm font-bold text-white transition-colors hover:bg-primary"
             >
               {dict.nav.ctaAudit}
@@ -116,7 +117,7 @@ export function Nav() {
                 className="mt-6 flex items-center gap-4"
               >
                 <Link
-                  to="/audit"
+                  to="/diagnostic"
                   className="inline-block rounded-full bg-primary px-6 py-3 font-sans text-base font-bold text-white"
                 >
                   {dict.nav.ctaAudit}

@@ -1,6 +1,8 @@
-import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
+import { createContext, useCallback, useContext, useEffect, useMemo, type ReactNode } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import type { Bilingual, Language } from '@/lib/i18n/types'
-import { detectInitialLanguage, writeStoredLanguage } from '@/lib/i18n/storage'
+import { writeStoredLanguage } from '@/lib/i18n/storage'
+import { languageFromPath, translatePath } from '@/lib/i18n/routes'
 import { en } from '@/locales/en/index'
 import { es } from '@/locales/es/index'
 import type { Dictionary } from '@/locales/en/index'
@@ -16,24 +18,41 @@ type LanguageContextValue = {
 
 const LanguageContext = createContext<LanguageContextValue | null>(null)
 
+/**
+ * The URL is the source of truth for language: `/es/...` is Spanish, anything
+ * else is English. Switching languages is therefore a navigation, not a state
+ * change — which is what makes both versions independently crawlable.
+ *
+ * Must be rendered inside the router so it can read the current location.
+ */
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>(() => detectInitialLanguage())
+  const { pathname } = useLocation()
+  const navigate = useNavigate()
+  const language = languageFromPath(pathname)
 
   useEffect(() => {
     document.documentElement.lang = language
   }, [language])
 
-  const setLanguage = (next: Language) => {
-    setLanguageState(next)
-    writeStoredLanguage(next)
-  }
+  const setLanguage = useCallback(
+    (next: Language) => {
+      // localStorage no longer decides the language — it only records the
+      // preference so a later visit to the bare root can honour it.
+      writeStoredLanguage(next)
+      if (next !== language) navigate(translatePath(pathname, next))
+    },
+    [language, navigate, pathname],
+  )
 
-  const value: LanguageContextValue = {
-    language,
-    setLanguage,
-    dict: dictionaries[language],
-    pick: (bilingual) => bilingual[language],
-  }
+  const value = useMemo<LanguageContextValue>(
+    () => ({
+      language,
+      setLanguage,
+      dict: dictionaries[language],
+      pick: (bilingual) => bilingual[language],
+    }),
+    [language, setLanguage],
+  )
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>
 }

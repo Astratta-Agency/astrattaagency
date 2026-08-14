@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from '@/components/ui/Link'
 import { motion } from 'framer-motion'
 import { Seo } from '@/components/layout/Seo'
 import { Container } from '@/components/ui/Container'
@@ -80,7 +80,7 @@ export default function Work() {
           >
             <p className="text-ink/60">
               {t.ctaText}{' '}
-              <Link to="/audit" className="group font-bold text-primary">
+              <Link to="/diagnostic" className="group font-bold text-primary">
                 {t.ctaLink}{' '}
                 <span className="inline-block transition-[transform,color] duration-300 group-hover:translate-x-1 group-hover:text-secondary">
                   →

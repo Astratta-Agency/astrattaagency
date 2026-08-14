@@ -1,4 +1,5 @@
-import { Link, Navigate, useParams } from 'react-router-dom'
+import { Navigate, useParams } from 'react-router-dom'
+import { Link } from '@/components/ui/Link'
 import { motion } from 'framer-motion'
 import { Seo } from '@/components/layout/Seo'
 import { Container } from '@/components/ui/Container'
@@ -8,6 +9,7 @@ import { CASE_STUDIES, resolveCaseStudy } from '@/data/caseStudies'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
 import { CASE_STUDY_SEO_DESCRIPTIONS } from '@/lib/seo-data'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
+import { localizedPath } from '@/lib/i18n/routes'
 
 export default function CaseStudy() {
   const { slug } = useParams<{ slug: string }>()
@@ -16,7 +18,7 @@ export default function CaseStudy() {
   const source = CASE_STUDIES.find((p) => p.slug === slug)
   const project = source ? resolveCaseStudy(source, language) : undefined
 
-  if (!project) return <Navigate to="/work" replace />
+  if (!project) return <Navigate to={localizedPath('work', language)} replace />
 
   return (
     <>
@@ -273,7 +275,7 @@ export default function CaseStudy() {
           >
             <p className="text-ink/60">
               {t.wantOutcomes}{' '}
-              <Link to="/audit" className="group font-bold text-primary">
+              <Link to="/diagnostic" className="group font-bold text-primary">
                 {t.getAudit}{' '}
                 <span className="inline-block transition-[transform,color] duration-300 group-hover:translate-x-1 group-hover:text-secondary">
                   →

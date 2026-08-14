@@ -2,18 +2,19 @@ import { SITE } from '@/lib/constants'
 import { SERVICE_PAGES } from '@/data/pricing'
 import { CASE_STUDIES } from '@/data/caseStudies'
 import { BLOG_POSTS } from '@/data/blogPosts'
-import type { Bilingual } from '@/lib/i18n/types'
+import type { Bilingual, Language } from '@/lib/i18n/types'
+import { LANGUAGES, translatePath } from '@/lib/i18n/routes'
 
 export type SeoEntry = {
+  /** The localized path actually served, e.g. "/es/servicios/desarrollo-web". */
   path: string
+  language: Language
   title: string
   description: string
+  /** Absolute URL for this language — the page's canonical. */
   url: string
-}
-
-/** Resolves a field that may still be a plain (unmigrated) string or already Bilingual — see Seo.tsx. */
-function en(value: string | Bilingual<string>): string {
-  return typeof value === 'string' ? value : value.en
+  /** Absolute URL per language, for hreflang and sitemap alternates. */
+  alternates: Bilingual<string>
 }
 
 /**
@@ -40,12 +41,12 @@ export const STATIC_SEO: Record<string, Bilingual<{ title: string; description: 
     en: {
       title: 'Astratta Agency — Web Design & Digital Marketing in Dallas, TX',
       description:
-        'Astratta builds high-converting websites, funnels, and digital marketing campaigns for Dallas–Fort Worth startups and small businesses. Get a free website audit.',
+        'Astratta builds high-converting websites and growth systems for Dallas–Fort Worth businesses. Start with a $297 diagnostic — 7 days, 10 prioritized fixes.',
     },
     es: {
       title: 'Astratta Agency — Diseño Web y Marketing Digital en Dallas, TX',
       description:
-        'Astratta crea sitios web, embudos y campañas de marketing digital de alta conversión para startups y pequeños negocios de Dallas–Fort Worth. Solicita una auditoría gratuita.',
+        'Astratta crea sitios web y sistemas de crecimiento para negocios de Dallas–Fort Worth. Empieza con un diagnóstico de $297 — 7 días, 10 arreglos priorizados.',
     },
   },
   '/work': {
@@ -120,16 +121,16 @@ export const STATIC_SEO: Record<string, Bilingual<{ title: string; description: 
         'Análisis de web, marketing y diseño de proyectos reales de Dallas–Fort Worth — mejoras de conversión, SEO local y decisiones de diseño explicadas, sin relleno.',
     },
   },
-  '/audit': {
+  '/diagnostic': {
     en: {
-      title: 'Free Website Audit — Astratta Agency | Dallas, TX',
+      title: 'Marketing & Website Diagnostic — Dallas, TX | Astratta',
       description:
-        'Get a free website audit from Astratta Agency: a prioritized action plan covering performance, mobile UX, messaging, conversion paths, and SEO — for Dallas–Fort Worth businesses.',
+        'A 7-day diagnostic of your funnel, tracking and local presence for Dallas–Fort Worth businesses. 10 fixes ranked by return. $297, credited if you hire us.',
     },
     es: {
-      title: 'Auditoría Gratuita de Sitio Web — Astratta Agency | Dallas, TX',
+      title: 'Diagnóstico de Marketing y Sitio Web — Dallas, TX | Astratta',
       description:
-        'Recibe una auditoría gratuita de tu sitio web: un plan de acción priorizado que cubre rendimiento, experiencia móvil, mensaje, rutas de conversión y SEO — para negocios de Dallas–Fort Worth.',
+        'Un diagnóstico de 7 días de tu embudo, medición y presencia local en Dallas–Fort Worth. 10 arreglos ordenados por retorno. $297, acreditables al contratar.',
     },
   },
   '/contact': {
@@ -164,8 +165,28 @@ export const NOT_FOUND_SEO: Bilingual<{ title: string; description: string }> = 
   es: { title: 'Página no encontrada — Astratta Agency', description: 'Página no encontrada.' },
 }
 
-function withUrl(path: string, data: { title: string; description: string }): SeoEntry {
-  return { path, ...data, url: `https://${SITE.domain}${path}` }
+/**
+ * Builds the pair of entries (English + Spanish) for one canonical English
+ * path. Both carry the same `alternates` map, so the hreflang block a page
+ * emits and the sitemap's alternate links are generated from one source.
+ */
+function entriesFor(
+  canonicalPath: string,
+  copy: Bilingual<{ title: string; description: string }>,
+): SeoEntry[] {
+  const alternates: Bilingual<string> = {
+    en: `https://${SITE.domain}${translatePath(canonicalPath, 'en')}`,
+    es: `https://${SITE.domain}${translatePath(canonicalPath, 'es')}`,
+  }
+
+  return LANGUAGES.map((language) => ({
+    path: translatePath(canonicalPath, language),
+    language,
+    title: copy[language].title,
+    description: copy[language].description,
+    url: alternates[language],
+    alternates,
+  }))
 }
 
 /** Reshapes a `Bilingual<{title, description}>` entry into the `<Seo title=.. description=..>` prop shape. */
@@ -180,28 +201,36 @@ export function toSeoProps(entry: Bilingual<{ title: string; description: string
 }
 
 /**
- * Every prerenderable route (the 15 pages in public/sitemap.xml, plus one
- * per case study) with fully-resolved title/description/url. This is the
- * list scripts/prerender.mjs iterates to generate static HTML per route —
- * add a case study to caseStudies.ts and it's automatically included here,
- * no script changes needed.
+ * Every prerenderable route, in **both languages** — the manifest that
+ * scripts/prerender.mjs and scripts/generate-sitemap.mjs iterate. Add a case
+ * study or blog post to its data file and both language variants appear here
+ * automatically, no script changes needed.
  */
 export function getAllSeoRoutes(): SeoEntry[] {
-  const staticRoutes = Object.entries(STATIC_SEO).map(([path, data]) => withUrl(path, data.en))
+  const staticRoutes = Object.entries(STATIC_SEO).flatMap(([path, copy]) => entriesFor(path, copy))
 
-  const serviceRoutes = SERVICE_PAGES.map((page) =>
-    withUrl(`/services/${page.slug}`, { title: en(page.metaTitle), description: en(page.metaDescription) }),
-  )
-
-  const caseStudyRoutes = CASE_STUDIES.map((project) =>
-    withUrl(`/work/${project.slug}`, {
-      title: `${en(project.title)} — Astratta Agency Case Study`,
-      description: en(CASE_STUDY_SEO_DESCRIPTIONS[project.slug] ?? project.summary),
+  const serviceRoutes = SERVICE_PAGES.flatMap((page) =>
+    entriesFor(`/services/${page.slug}`, {
+      en: { title: page.metaTitle.en, description: page.metaDescription.en },
+      es: { title: page.metaTitle.es, description: page.metaDescription.es },
     }),
   )
 
-  const blogRoutes = BLOG_POSTS.map((post) =>
-    withUrl(`/blog/${post.slug}`, { title: en(post.metaTitle), description: en(post.metaDescription) }),
+  const caseStudyRoutes = CASE_STUDIES.flatMap((project) => {
+    // Case-study titles are brand names — identical in both languages, as on the page itself.
+    const description = CASE_STUDY_SEO_DESCRIPTIONS[project.slug] ?? project.summary
+    const title = `${project.title} — Astratta Agency Case Study`
+    return entriesFor(`/work/${project.slug}`, {
+      en: { title, description: description.en },
+      es: { title, description: description.es },
+    })
+  })
+
+  const blogRoutes = BLOG_POSTS.flatMap((post) =>
+    entriesFor(`/blog/${post.slug.en}`, {
+      en: { title: post.metaTitle.en, description: post.metaDescription.en },
+      es: { title: post.metaTitle.es, description: post.metaDescription.es },
+    }),
   )
 
   return [...staticRoutes, ...serviceRoutes, ...caseStudyRoutes, ...blogRoutes]

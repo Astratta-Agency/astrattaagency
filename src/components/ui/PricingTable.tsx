@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from '@/components/ui/Link'
 import { motion } from 'framer-motion'
 import { clsx } from 'clsx'
 import { MagneticButton } from '@/components/ui/MagneticButton'
@@ -71,7 +71,7 @@ export function PricingTable({ tiers }: { tiers: PricingTier[] }) {
           {/* TODO: point to /pricing once the quote page exists; /audit is the current highest-intent CTA */}
           <MagneticButton
             as={Link}
-            to="/audit"
+            to="/diagnostic"
             className={clsx(
               'mt-8 rounded-full px-6 py-3 text-center font-sans text-sm font-bold transition-colors',
               tier.recommended

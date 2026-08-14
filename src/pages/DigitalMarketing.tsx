@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from '@/components/ui/Link'
 import { motion } from 'framer-motion'
 import { Seo } from '@/components/layout/Seo'
 import { Container } from '@/components/ui/Container'
@@ -148,7 +148,7 @@ export default function DigitalMarketing() {
             </motion.div>
             <motion.div variants={fadeUp} className="flex shrink-0 flex-wrap gap-3">
               <Link
-                to="/audit"
+                to="/diagnostic"
                 className="rounded-full bg-primary px-6 py-3 font-sans text-sm font-bold text-white transition-colors hover:bg-primary-dark"
               >
                 {t.ctaAudit}

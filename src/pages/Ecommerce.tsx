@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from '@/components/ui/Link'
 import { motion } from 'framer-motion'
 import { Seo } from '@/components/layout/Seo'
 import { Container } from '@/components/ui/Container'

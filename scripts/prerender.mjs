@@ -39,11 +39,12 @@ import { fileURLToPath } from 'node:url'
  * already manages a working Chrome install for whatever OS you're on.
  */
 /**
- * The app now auto-detects UI language from `navigator.language` when no
- * language has been chosen yet (see src/lib/i18n/storage.ts), so a fresh
- * Puppeteer profile with no localStorage would otherwise inherit whatever
- * locale Chromium/the build container defaults to. Pin it to en-US so
- * prerendered output is always English regardless of the build machine.
+ * Language is now derived from the URL (`/es/...` = Spanish), so the locale
+ * Chromium reports no longer affects a page's rendered language. The en-US
+ * pin stays for a narrower reason: the bare root `/` redirects Spanish-browser
+ * visitors to `/es` (see src/components/layout/RootLanguageRedirect.tsx), and
+ * a build container defaulting to an es-* locale would otherwise prerender `/`
+ * as a redirect to Spanish instead of the English home page.
  */
 async function launchBrowser() {
   if (process.env.VERCEL) {
@@ -119,6 +120,13 @@ async function main() {
       ogTitle: document.querySelector('meta[property="og:title"]')?.getAttribute('content') ?? null,
       ogDescription:
         document.querySelector('meta[property="og:description"]')?.getAttribute('content') ?? null,
+      htmlLang: document.documentElement.lang,
+      alternates: Object.fromEntries(
+        [...document.querySelectorAll('link[rel="alternate"][hreflang]')].map((el) => [
+          el.getAttribute('hreflang'),
+          el.getAttribute('href'),
+        ]),
+      ),
     }))
 
     const mismatches = []
@@ -128,6 +136,16 @@ async function main() {
     if (actual.ogUrl !== route.url) mismatches.push('og:url mismatch')
     if (actual.ogTitle !== route.title) mismatches.push('og:title mismatch')
     if (actual.ogDescription !== route.description) mismatches.push('og:description mismatch')
+    if (actual.htmlLang !== route.language)
+      mismatches.push(`html lang: expected "${route.language}", got "${actual.htmlLang}"`)
+    for (const [key, expected] of [
+      ['en', route.alternates.en],
+      ['es', route.alternates.es],
+      ['x-default', route.alternates.en],
+    ]) {
+      if (actual.alternates[key] !== expected)
+        mismatches.push(`hreflang="${key}": expected "${expected}", got "${actual.alternates[key] ?? 'missing'}"`)
+    }
 
     if (mismatches.length > 0) {
       console.error(`  ✗ ${route.path}`)
@@ -139,9 +157,18 @@ async function main() {
     // Strip the CSR-rendered body back to the pristine SPA shell before
     // serializing — the shipped file gets corrected <head> tags only, never
     // a DOM snapshot, so the client always does a normal fresh mount.
+    //
+    // Emptying #root is not enough: components that portal into <body> (the
+    // sticky article bar, the custom cursor) render as siblings of #root and
+    // would otherwise ship as dead markup that the live app then duplicates.
     await page.evaluate(() => {
       const rootEl = document.getElementById('root')
       if (rootEl) rootEl.innerHTML = ''
+
+      const KEEP = new Set(['SCRIPT', 'STYLE', 'LINK', 'NOSCRIPT', 'TEMPLATE'])
+      for (const child of [...document.body.children]) {
+        if (child !== rootEl && !KEEP.has(child.tagName)) child.remove()
+      }
     })
 
     // page.content() already includes the <!DOCTYPE html> declaration.

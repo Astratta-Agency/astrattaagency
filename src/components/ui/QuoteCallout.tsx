@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from '@/components/ui/Link'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 /** Cross-links to the pricing quote tool and bundled packages — reused across every tier page. */

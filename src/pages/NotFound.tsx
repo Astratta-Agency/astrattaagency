@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from '@/components/ui/Link'
 import { Seo } from '@/components/layout/Seo'
 import { Container } from '@/components/ui/Container'
 import { NOT_FOUND_SEO, toSeoProps } from '@/lib/seo-data'

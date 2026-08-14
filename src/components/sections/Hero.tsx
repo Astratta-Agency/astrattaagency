@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from '@/components/ui/Link'
 import { motion } from 'framer-motion'
 import { clsx } from 'clsx'
 import { RevealText } from '@/components/ui/RevealText'
@@ -202,7 +202,7 @@ export function Hero() {
             className="mt-9"
           >
             <Link
-              to="/audit"
+              to="/diagnostic"
               className="group relative inline-flex min-h-[52px] items-center overflow-hidden rounded-full bg-primary px-8 text-base font-bold text-white active:scale-[0.97]"
             >
               <span

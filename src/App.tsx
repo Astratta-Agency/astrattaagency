@@ -1,7 +1,10 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
+import type { ReactElement } from 'react'
 import { Layout } from '@/components/layout/Layout'
+import { RootLanguageRedirect } from '@/components/layout/RootLanguageRedirect'
+import { LANGUAGES, SERVICE_SLUGS, localizedPath, routePattern, type RouteId } from '@/lib/i18n/routes'
 import Home from '@/pages/Home'
-import Audit from '@/pages/Audit'
+import Diagnostic from '@/pages/Diagnostic'
 import Work from '@/pages/Work'
 import CaseStudy from '@/pages/CaseStudy'
 import Blog from '@/pages/Blog'
@@ -20,29 +23,63 @@ import Contact from '@/pages/Contact'
 import About from '@/pages/About'
 import NotFound from '@/pages/NotFound'
 
+/**
+ * Every page is registered once here and emitted per language by the loop
+ * below, so an English route and its Spanish counterpart can never drift.
+ * Paths themselves live in src/lib/i18n/routes.ts.
+ */
+const PAGE_ROUTES: { id: RouteId; element: ReactElement }[] = [
+  { id: 'home', element: <Home /> },
+  { id: 'diagnostic', element: <Diagnostic /> },
+  { id: 'work', element: <Work /> },
+  { id: 'workDetail', element: <CaseStudy /> },
+  { id: 'blog', element: <Blog /> },
+  { id: 'blogDetail', element: <BlogPost /> },
+  { id: 'services', element: <Services /> },
+  { id: 'pricing', element: <Pricing /> },
+  { id: 'packages', element: <Packages /> },
+  { id: 'contact', element: <Contact /> },
+  { id: 'about', element: <About /> },
+]
+
+/** Keyed by the canonical English slug — the same key SERVICE_SLUGS uses. */
+const SERVICE_ROUTES: { slug: string; element: ReactElement }[] = [
+  { slug: 'web-development', element: <WebDevelopment /> },
+  { slug: 'ecommerce', element: <Ecommerce /> },
+  { slug: 'digital-marketing', element: <DigitalMarketing /> },
+  { slug: 'social-media', element: <SocialMedia /> },
+  { slug: 'paid-ads', element: <PaidAds /> },
+  { slug: 'lead-generation', element: <LeadGeneration /> },
+  { slug: 'graphic-design', element: <GraphicDesign /> },
+]
+
 export default function App() {
   return (
     <Layout>
+      <RootLanguageRedirect />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/audit" element={<Audit />} />
-        <Route path="/work" element={<Work />} />
-        <Route path="/work/:slug" element={<CaseStudy />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:slug" element={<BlogPost />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/services/web-development" element={<WebDevelopment />} />
-        <Route path="/services/ecommerce" element={<Ecommerce />} />
-        <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
-        <Route path="/services/social-media" element={<SocialMedia />} />
-        <Route path="/services/paid-ads" element={<PaidAds />} />
-        <Route path="/services/lead-generation" element={<LeadGeneration />} />
-        <Route path="/services/graphic-design" element={<GraphicDesign />} />
-        <Route path="/services/:slug" element={<Navigate to="/services" replace />} />
-        <Route path="/pricing" element={<Pricing />} />
-        <Route path="/packages" element={<Packages />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/about" element={<About />} />
+        {LANGUAGES.flatMap((language) => [
+          ...PAGE_ROUTES.map((route) => (
+            <Route
+              key={`${language}:${route.id}`}
+              path={routePattern(route.id, language)}
+              element={route.element}
+            />
+          )),
+          ...SERVICE_ROUTES.map((route) => (
+            <Route
+              key={`${language}:service:${route.slug}`}
+              path={localizedPath('serviceDetail', language, { slug: SERVICE_SLUGS[route.slug][language] })}
+              element={route.element}
+            />
+          )),
+          // Unknown service slugs fall back to the index rather than 404.
+          <Route
+            key={`${language}:service:fallback`}
+            path={routePattern('serviceDetail', language)}
+            element={<Navigate to={localizedPath('services', language)} replace />}
+          />,
+        ])}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>
