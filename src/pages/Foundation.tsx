@@ -6,6 +6,7 @@ import { RevealText } from '@/components/ui/RevealText'
 import { Link } from '@/components/ui/Link'
 import { PricingTable } from '@/components/ui/PricingTable'
 import { AddOnsList } from '@/components/ui/AddOnsList'
+import { FaqAccordion } from '@/components/ui/FaqAccordion'
 import { GradientBlob } from '@/components/ui/GradientBlob'
 import { resolveFoundationAddOns, resolveFoundationTiers } from '@/data/foundation'
 import { fadeUp, viewportOnce } from '@/lib/animations'
@@ -67,6 +68,17 @@ export default function Foundation() {
               <AddOnsList items={resolveFoundationAddOns(language)} />
             </div>
           </motion.div>
+        </Container>
+      </section>
+
+      <section className="border-t border-ink/10 py-20 md:py-24">
+        <Container>
+          <motion.div initial="hidden" whileInView="show" viewport={viewportOnce} variants={fadeUp}>
+            <SectionLabel>{t.faqEyebrow}</SectionLabel>
+          </motion.div>
+          <div className="mt-10 max-w-3xl">
+            <FaqAccordion items={t.faq} />
+          </div>
         </Container>
       </section>
 

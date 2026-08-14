@@ -1,23 +1,26 @@
 # COPY PENDIENTE
 
-> Bloques que quedan **vivos** tras la reestructura y no están en `CONTENIDO-Web-EN-ES.md`.
-> No se escriben sin texto del cliente (Regla 1).
-
-## Estado
+> **Estado: cerrado.** El doc de contenido incorporó §11 (huecos resueltos) y §12
+> (tabla final de redirects), así que ya no hay copy pendiente de escribir.
+> Este archivo queda como registro de origen del copy que se autorizó fuera del
+> doc durante las Fases 1 y 2.
 
 | Bloque | Qué es | Estado |
 |---|---|---|
 | **A** | Meta description del home | ✅ aplicado — Fase 1 |
 | **B** | Meta de `/diagnostic` | ✅ aplicado — Fase 1 |
 | **C v1** | FAQ "cómo empiezo" (versión diagnóstico) | ✅ aplicado — Fase 1 |
-| **C v2** | FAQ "cómo empiezo" (versión Growth Score) | ⏳ **Fase 5** — reemplaza a C v1 cuando exista `/growth-score` |
-| **D** | Prosa de 2 artículos → Growth Score | ⏳ **Fase 5** — enlazaría a un 404 antes |
+| **C v2** | FAQ "cómo empiezo" (versión Growth Score) | ⏳ Fase 5 — reemplaza a C v1 |
+| **D** | Prosa de 2 artículos → Growth Score | ⏳ Fase 5 |
 | **E** | `localSeo.paragraph2` del home | ✅ aplicado — Fase 1 |
 | **F** | Meta de `/foundation` y `/systems` | ✅ aplicado — Fase 2 |
-| **G** | Meta de `/how-it-works` | ⚠️ **provisional** — derivada del doc |
-| **H** | Índice `/industries` · FAQ de Restaurantes y Real Estate · línea EN del modo `metrics` | ⛔ **bloquea la Fase 4** |
+| **G** | Meta de `/how-it-works` | ⚠️ provisional, derivada del doc |
+| **H** | Índice `/industries` · FAQ · línea `metrics` | ✅ **resuelto en el doc §11** |
 
-Los textos aprobados se conservan abajo como registro de origen del copy.
+**Las metas siguen siendo el único hueco estructural.** El doc no define meta
+title/description para ninguna página nueva; las de `/how-it-works` y las que
+vienen (`/industries/*`, `/growth-score`, `/pricing`) se derivan del H1 y el
+subtítulo salvo que se escriban aparte.
 
 ---
 

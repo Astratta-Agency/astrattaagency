@@ -16,6 +16,16 @@ export const howItWorks: typeof en = {
     'Lo único que cambia entre un cliente y otro es el tamaño del sistema. Y eso lo define un diagnóstico, no un menú.',
   ],
 
+  notEyebrow: 'Límites',
+  notTitle: 'Lo que no hacemos.',
+  notItems: [
+    'No vendemos canales por separado. Anuncios sin una página que convierta es dinero quemado.',
+    'No reportamos alcance ni impresiones. Reportamos leads, citas y costo de adquisición.',
+    'No prometemos ventas en 30 días. El marketing necesita tiempo para dar datos confiables, y quien te diga lo contrario te está vendiendo algo.',
+    'No tocamos tu presupuesto de anuncios. Va directo de ti a las plataformas, desde una cuenta a tu nombre.',
+    'No trabajamos con tu competencia directa. Máximo tres clientes por industria y sub-mercado.',
+  ],
+
   stepsEyebrow: 'Los tres pasos',
   steps: [
     {

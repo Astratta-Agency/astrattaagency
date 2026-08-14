@@ -110,6 +110,39 @@ export default function HowItWorks() {
         </Container>
       </section>
 
+      {/* Lo que no hacemos — los límites son parte de la oferta, no letra pequeña. */}
+      <section className="border-t border-ink/10 py-24 md:py-32">
+        <Container>
+          <motion.div initial="hidden" whileInView="show" viewport={viewportOnce} variants={fadeUp}>
+            <SectionLabel>{t.notEyebrow}</SectionLabel>
+            <h2 className="mt-5 max-w-2xl font-sans text-3xl font-extrabold tracking-tight sm:text-4xl">
+              {t.notTitle}
+            </h2>
+          </motion.div>
+
+          <motion.ul
+            initial="hidden"
+            whileInView="show"
+            viewport={viewportOnce}
+            variants={staggerContainer(0.08)}
+            className="mt-10 flex max-w-3xl flex-col"
+          >
+            {t.notItems.map((item, i) => (
+              <motion.li
+                key={i}
+                variants={fadeUp}
+                className="flex gap-5 border-b border-ink/10 py-5 first:border-t"
+              >
+                <span aria-hidden="true" className="mt-1 shrink-0 font-sans font-bold text-secondary">
+                  ✕
+                </span>
+                <span className="text-ink/75">{item}</span>
+              </motion.li>
+            ))}
+          </motion.ul>
+        </Container>
+      </section>
+
       <section className="dot-pattern-light relative overflow-hidden bg-neutral/40 py-20 md:py-24">
         <Container>
           <motion.div initial="hidden" whileInView="show" viewport={viewportOnce} variants={fadeUp}>

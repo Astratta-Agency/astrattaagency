@@ -14,6 +14,16 @@ export const howItWorks = {
     'The only thing that changes from one client to the next is the size of the system. And that comes from a diagnostic, not a menu.',
   ],
 
+  notEyebrow: 'Boundaries',
+  notTitle: "What we don't do.",
+  notItems: [
+    "We don't sell channels separately. Ads without a page that converts is money on fire.",
+    "We don't report on reach and impressions. We report on leads, appointments and cost per acquisition.",
+    "We don't promise sales in 30 days. Marketing needs time to produce reliable data, and anyone telling you otherwise is selling you something.",
+    "We don't touch your ad budget. It goes straight from you to the platforms, from an account in your name.",
+    "We don't work with your direct competitor. Maximum three clients per industry per sub-market.",
+  ],
+
   stepsEyebrow: 'The three steps',
   steps: [
     {

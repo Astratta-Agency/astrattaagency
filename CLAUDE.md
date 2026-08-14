@@ -11,7 +11,7 @@ Todo el texto visible del sitio sale de **`docs/CONTENIDO-Web-EN-ES.md`**.
 
 **NUNCA** inventes copy, precios ni claims. Si falta un bloque, **pregunta** — no lo rellenes con texto plausible. Un placeholder inventado que llega a producción es peor que una página incompleta.
 
-La arquitectura de producto vive en `../Astratta-Arquitectura-Completa-de-Servicios.md` (directorio padre, fuera del repo). Es contexto estratégico; el copy manda desde el doc de contenido.
+La arquitectura de producto vive en `docs/Astratta-Arquitectura-Completa-de-Servicios.md`. Es contexto estratégico; el copy manda desde el doc de contenido.
 
 ### 2. EN y ES siempre juntos
 Todo cambio se hace en **inglés y español a la vez**. Una página sin su versión en español está **incompleta** y no se da por terminada.
@@ -71,11 +71,14 @@ El bloque "Caso del rubro" de las páginas de industria tiene **dos modos**, y l
 |---|---|---|
 | Home Improvement | `case` | `amazons-flooring` + testimonio de George Lopez |
 | Restaurants | `case` | `perreando-hotdog-social-media` — 292K vistas, 90 días, $0 en ads |
-| Med Spa | `metrics` | "Lo que medimos" — los KPIs del rubro |
+| Med Spa | `metrics` | "Lo que medimos" — los 5 KPIs del rubro (§11.2) |
 | Real Estate | `metrics` | "Lo que medimos" + la nota honesta de los 90 días |
 
-El modo `metrics` cierra con: *"Si tu agencia actual no te reporta estos tres, pregúntale por qué."*
-(«tres», no «cinco»: el doc de contenido define exactamente tres números por industria.)
+El modo `metrics` lista **cinco** KPIs y cierra con una línea propia por industria (§11.2):
+- Med Spa — EN: `If your current agency isn't reporting these five, ask them why.` · ES: `Si tu agencia actual no te reporta estos cinco, pregúntale por qué.`
+- Real Estate — cierra distinto, con la nota honesta: `We won't promise closings in 90 days…`
+
+⚠️ No confundir con **"Los tres números de tu negocio"**, que es el bloque 2 de la misma página (§5) y sí son tres. `metrics` es el bloque 6 y son cinco.
 
 Cumple la función de credibilidad **sin fabricar nada**. Cuando una industria tenga números reales (p. ej. 180 Grados), se cambia `mode` de `metrics` a `case` y ya. **Nunca** inventes un caso para llenar el bloque.
 
@@ -97,7 +100,7 @@ Aplica a `/services/social-media`, `/services/paid-ads` y `/services/lead-genera
 | `/services/paid-ads` | `/systems` | 301 · migrar SEO antes |
 | `/services/lead-generation` | `/systems` | 301 · migrar SEO antes |
 | `/services/graphic-design` | `/foundation` | 301 · Brand vive dentro de Foundation |
-| `/services/ecommerce` | `/foundation` | 301 · E-commerce es add-on desde $2,500 |
+| `/services/ecommerce` | — | **se conserva viva**, reescritura corta → `/foundation` (§12: intención de búsqueda propia y válida) |
 | `/services/web-development` | — | **se conserva viva**, reescrita → `/foundation` |
 | `/services/digital-marketing` | — | **se conserva viva**, reescrita → `/systems` |
 | `/pricing` | — | se conserva, reescrita a rangos |
