@@ -5,6 +5,8 @@ import { home } from '@/locales/en/home'
 import { work } from '@/locales/en/work'
 import { contact } from '@/locales/en/contact'
 import { diagnostic } from '@/locales/en/diagnostic'
+import { foundation } from '@/locales/en/foundation'
+import { systems } from '@/locales/en/systems'
 import { services } from '@/locales/en/services'
 import { notFound } from '@/locales/en/notFound'
 import { about } from '@/locales/en/about'
@@ -22,6 +24,8 @@ export const en = {
   work,
   contact,
   diagnostic,
+  foundation,
+  systems,
   services,
   notFound,
   about,

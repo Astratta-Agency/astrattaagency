@@ -121,6 +121,30 @@ export const STATIC_SEO: Record<string, Bilingual<{ title: string; description: 
         'Análisis de web, marketing y diseño de proyectos reales de Dallas–Fort Worth — mejoras de conversión, SEO local y decisiones de diseño explicadas, sin relleno.',
     },
   },
+  '/systems': {
+    en: {
+      title: 'Growth Systems — Ads, Content & Follow-up | Astratta Agency Dallas',
+      description:
+        'Ads, content and follow-up run as one system for Dallas–Fort Worth businesses — measured in customers, not likes. Four levels from $697 to $4,500 a month.',
+    },
+    es: {
+      title: 'Sistemas de Crecimiento — Anuncios, Contenido y Seguimiento | Astratta',
+      description:
+        'Anuncios, contenido y seguimiento funcionando como un solo sistema para negocios de Dallas–Fort Worth — medidos en clientes, no en likes. Cuatro niveles de $697 a $4,500 al mes.',
+    },
+  },
+  '/foundation': {
+    en: {
+      title: 'Foundation — Websites, Brand & Tracking | Astratta Agency Dallas',
+      description:
+        'A site that converts, a brand that holds up, and measurement wired in from day one. One-time projects from $1,200 to $6,500 for Dallas–Fort Worth businesses.',
+    },
+    es: {
+      title: 'Base — Sitios Web, Marca y Medición | Astratta Agency Dallas',
+      description:
+        'Un sitio que convierte, una marca que se sostiene y medición conectada desde el día uno. Proyectos de pago único de $1,200 a $6,500 para negocios de Dallas–Fort Worth.',
+    },
+  },
   '/diagnostic': {
     en: {
       title: 'Marketing & Website Diagnostic — Dallas, TX | Astratta',

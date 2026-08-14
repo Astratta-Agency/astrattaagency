@@ -119,7 +119,7 @@ type ServicePageSource = {
   benefits?: Bilingual<string[]>
 }
 
-function resolveTier(tier: PricingTierSource, language: Language): PricingTier {
+export function resolveTier(tier: PricingTierSource, language: Language): PricingTier {
   return {
     slug: tier.slug,
     name: tier.name[language],

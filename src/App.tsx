@@ -5,6 +5,8 @@ import { RootLanguageRedirect } from '@/components/layout/RootLanguageRedirect'
 import { LANGUAGES, SERVICE_SLUGS, localizedPath, routePattern, type RouteId } from '@/lib/i18n/routes'
 import Home from '@/pages/Home'
 import Diagnostic from '@/pages/Diagnostic'
+import Foundation from '@/pages/Foundation'
+import Systems from '@/pages/Systems'
 import Work from '@/pages/Work'
 import CaseStudy from '@/pages/CaseStudy'
 import Blog from '@/pages/Blog'
@@ -31,6 +33,8 @@ import NotFound from '@/pages/NotFound'
 const PAGE_ROUTES: { id: RouteId; element: ReactElement }[] = [
   { id: 'home', element: <Home /> },
   { id: 'diagnostic', element: <Diagnostic /> },
+  { id: 'foundation', element: <Foundation /> },
+  { id: 'systems', element: <Systems /> },
   { id: 'work', element: <Work /> },
   { id: 'workDetail', element: <CaseStudy /> },
   { id: 'blog', element: <Blog /> },

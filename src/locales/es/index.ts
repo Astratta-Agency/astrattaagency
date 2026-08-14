@@ -6,6 +6,8 @@ import { home } from '@/locales/es/home'
 import { work } from '@/locales/es/work'
 import { contact } from '@/locales/es/contact'
 import { diagnostic } from '@/locales/es/diagnostic'
+import { foundation } from '@/locales/es/foundation'
+import { systems } from '@/locales/es/systems'
 import { services } from '@/locales/es/services'
 import { notFound } from '@/locales/es/notFound'
 import { about } from '@/locales/es/about'
@@ -23,6 +25,8 @@ export const es: Dictionary = {
   work,
   contact,
   diagnostic,
+  foundation,
+  systems,
   services,
   notFound,
   about,

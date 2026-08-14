@@ -13,6 +13,7 @@
 | **C v2** | FAQ "cómo empiezo" (versión Growth Score) | ⏳ **Fase 5** — reemplaza a C v1 cuando exista `/growth-score` |
 | **D** | Prosa de 2 artículos → Growth Score | ⏳ **Fase 5** — enlazaría a un 404 antes |
 | **E** | `localSeo.paragraph2` del home | ✅ aplicado — Fase 1 |
+| **F** | Meta de `/foundation` y `/systems` | ⚠️ **provisional** — derivada del doc, pendiente de tu revisión |
 
 Los textos aprobados se conservan abajo como registro de origen del copy.
 
@@ -176,3 +177,35 @@ Not sure whether the problem is your site, your traffic, or your follow-up? That
 | `home.hero.ticker` | `Web Development · Digital Marketing · Graphic Design · Website Audits` | Son las 4 disciplinas viejas |
 | `home.process.heading` | `From audit to launch.` / `De la auditoría al lanzamiento.` | El proceso ya no arranca en auditoría |
 | `services.ts` | `four service lines` · `website-audits: Free` | Arquitectura vieja completa |
+
+
+---
+
+## F · Meta de `/foundation` y `/systems` *(provisional)*
+`src/lib/seo-data.ts`
+
+§3 y §4 dan el H1 y el subtítulo, pero **no** meta title/description. El prerender exige una entrada por ruta, así que quedaron **derivadas del propio copy del doc** — sin claims inventados, pero sin tu criterio editorial tampoco.
+
+**`/foundation` — actual (provisional):**
+> EN title: `Foundation — Websites, Brand & Tracking | Astratta Agency Dallas`
+> EN desc: `A site that converts, a brand that holds up, and measurement wired in from day one. One-time projects from $1,200 to $6,500 for Dallas–Fort Worth businesses.`
+> ES title: `Base — Sitios Web, Marca y Medición | Astratta Agency Dallas`
+> ES desc: `Un sitio que convierte, una marca que se sostiene y medición conectada desde el día uno. Proyectos de pago único de $1,200 a $6,500 para negocios de Dallas–Fort Worth.`
+
+→ REEMPLAZO (si quieres afinarlo):
+```
+
+```
+
+**`/systems` — actual (provisional):**
+> EN title: `Growth Systems — Ads, Content & Follow-up | Astratta Agency Dallas`
+> EN desc: `Ads, content and follow-up run as one system for Dallas–Fort Worth businesses — measured in customers, not likes. Four levels from $697 to $4,500 a month.`
+> ES title: `Sistemas de Crecimiento — Anuncios, Contenido y Seguimiento | Astratta`
+> ES desc: `Anuncios, contenido y seguimiento funcionando como un solo sistema para negocios de Dallas–Fort Worth — medidos en clientes, no en likes. Cuatro niveles de $697 a $4,500 al mes.`
+
+→ REEMPLAZO (si quieres afinarlo):
+```
+
+```
+
+*Nota: las mismas páginas volverán a necesitar meta propia para `/how-it-works`, `/industries/*`, `/growth-score` y el `/pricing` reescrito. Conviene decidir si las escribes tú o si se derivan así por defecto.*
