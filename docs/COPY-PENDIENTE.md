@@ -13,7 +13,7 @@
 | **C v2** | FAQ "cómo empiezo" (versión Growth Score) | ⏳ **Fase 5** — reemplaza a C v1 cuando exista `/growth-score` |
 | **D** | Prosa de 2 artículos → Growth Score | ⏳ **Fase 5** — enlazaría a un 404 antes |
 | **E** | `localSeo.paragraph2` del home | ✅ aplicado — Fase 1 |
-| **F** | Meta de `/foundation` y `/systems` | ⚠️ **provisional** — derivada del doc, pendiente de tu revisión |
+| **F** | Meta de `/foundation` y `/systems` | ✅ aplicado — Fase 2 |
 
 Los textos aprobados se conservan abajo como registro de origen del copy.
 
@@ -181,7 +181,7 @@ Not sure whether the problem is your site, your traffic, or your follow-up? That
 
 ---
 
-## F · Meta de `/foundation` y `/systems` *(provisional)*
+## F · Meta de `/foundation` y `/systems`
 `src/lib/seo-data.ts`
 
 §3 y §4 dan el H1 y el subtítulo, pero **no** meta title/description. El prerender exige una entrada por ruta, así que quedaron **derivadas del propio copy del doc** — sin claims inventados, pero sin tu criterio editorial tampoco.
@@ -194,7 +194,23 @@ Not sure whether the problem is your site, your traffic, or your follow-up? That
 
 → REEMPLAZO (si quieres afinarlo):
 ```
+/foundation
 
+EN title (56)
+
+Website Design & Brand Foundation — Dallas, TX | Astratta
+
+EN description (150)
+
+High-converting websites, brand identity and tracking built together. Three levels from $1,200 to $6,500 for Dallas–Fort Worth businesses. Flat pricing.
+
+ES title (52)
+
+Diseño Web y Marca para Negocios de Dallas | Astratta
+
+ES description (154)
+
+Sitios que convierten, identidad de marca y medición construidos juntos. Tres niveles de $1,200 a $6,500 para negocios de Dallas–Fort Worth. Precio cerrado.
 ```
 
 **`/systems` — actual (provisional):**
@@ -205,7 +221,23 @@ Not sure whether the problem is your site, your traffic, or your follow-up? That
 
 → REEMPLAZO (si quieres afinarlo):
 ```
+/systems
 
+EN title (57)
+
+Digital Marketing Systems for Dallas Businesses | Astratta
+
+EN description (154)
+
+Content, paid ads and follow-up automation running as one system. Four levels from $697 to $4,500/month for Dallas–Fort Worth businesses. Measured in leads.
+
+ES title (51)
+
+Marketing Digital para Negocios de Dallas | Astratta
+
+ES description (148)
+
+Contenido, publicidad paga y automatización de seguimiento en un solo sistema. Cuatro niveles de $697 a $4,500/mes para negocios de Dallas–Fort Worth.
 ```
 
 *Nota: las mismas páginas volverán a necesitar meta propia para `/how-it-works`, `/industries/*`, `/growth-score` y el `/pricing` reescrito. Conviene decidir si las escribes tú o si se derivan así por defecto.*

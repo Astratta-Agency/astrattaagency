@@ -123,26 +123,26 @@ export const STATIC_SEO: Record<string, Bilingual<{ title: string; description: 
   },
   '/systems': {
     en: {
-      title: 'Growth Systems — Ads, Content & Follow-up | Astratta Agency Dallas',
+      title: 'Digital Marketing Systems for Dallas Businesses | Astratta',
       description:
-        'Ads, content and follow-up run as one system for Dallas–Fort Worth businesses — measured in customers, not likes. Four levels from $697 to $4,500 a month.',
+        'Content, paid ads and follow-up automation running as one system. Four levels from $697 to $4,500/month for Dallas–Fort Worth businesses. Measured in leads.',
     },
     es: {
-      title: 'Sistemas de Crecimiento — Anuncios, Contenido y Seguimiento | Astratta',
+      title: 'Marketing Digital para Negocios de Dallas | Astratta',
       description:
-        'Anuncios, contenido y seguimiento funcionando como un solo sistema para negocios de Dallas–Fort Worth — medidos en clientes, no en likes. Cuatro niveles de $697 a $4,500 al mes.',
+        'Contenido, publicidad paga y automatización de seguimiento en un solo sistema. Cuatro niveles de $697 a $4,500/mes para negocios de Dallas–Fort Worth.',
     },
   },
   '/foundation': {
     en: {
-      title: 'Foundation — Websites, Brand & Tracking | Astratta Agency Dallas',
+      title: 'Website Design & Brand Foundation — Dallas, TX | Astratta',
       description:
-        'A site that converts, a brand that holds up, and measurement wired in from day one. One-time projects from $1,200 to $6,500 for Dallas–Fort Worth businesses.',
+        'High-converting websites, brand identity and tracking built together. Three levels from $1,200 to $6,500 for Dallas–Fort Worth businesses. Flat pricing.',
     },
     es: {
-      title: 'Base — Sitios Web, Marca y Medición | Astratta Agency Dallas',
+      title: 'Diseño Web y Marca para Negocios de Dallas | Astratta',
       description:
-        'Un sitio que convierte, una marca que se sostiene y medición conectada desde el día uno. Proyectos de pago único de $1,200 a $6,500 para negocios de Dallas–Fort Worth.',
+        'Sitios que convierten, identidad de marca y medición construidos juntos. Tres niveles de $1,200 a $6,500 para negocios de Dallas–Fort Worth. Precio cerrado.',
     },
   },
   '/diagnostic': {
