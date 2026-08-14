@@ -3,6 +3,7 @@ import type { systems as en } from '@/locales/en/systems'
 export const systems: typeof en = {
   // Copy de docs/CONTENIDO-Web-EN-ES.md §4. El español se usa tal cual.
   heading: 'Anuncios, contenido y seguimiento. Un solo sistema.',
+  imageAlt: 'Un símbolo de reproducción, una flecha ascendente y una burbuja de mensaje unidos por conectores en un solo circuito.',
   subtext:
     'Dejamos de vender canales sueltos porque no funcionan sueltos. Los reels sin campañas no venden. Las campañas sin seguimiento se pierden. Construimos las tres partes juntas — y las medimos en clientes, no en likes.',
   ctaPrimary: 'Agenda tu diagnóstico — $297',

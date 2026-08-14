@@ -3,6 +3,7 @@ import type { howItWorks as en } from '@/locales/en/howItWorks'
 export const howItWorks: typeof en = {
   // Copy de docs/CONTENIDO-Web-EN-ES.md §2. El español se usa tal cual.
   heading: 'Un sistema. No un menú de servicios.',
+  imageAlt: 'Tres bloques que ascienden como escalones, unidos por una cinta continua.',
   subtext:
     'La mayoría de las agencias te entregan una lista de precios y te dejan adivinar. Nosotros empezamos con un diagnóstico, construimos la base y después encendemos el motor. Cada paso se gana el siguiente.',
   cta: 'Empieza con un diagnóstico — $297',

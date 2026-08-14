@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion'
 import { Seo } from '@/components/layout/Seo'
 import { Container } from '@/components/ui/Container'
+import { PageHero } from '@/components/ui/PageHero'
+import systemsImage from '@/assets/pages/systems.webp'
 import { SectionLabel } from '@/components/ui/SectionLabel'
-import { RevealText } from '@/components/ui/RevealText'
 import { Link } from '@/components/ui/Link'
 import { FaqAccordion } from '@/components/ui/FaqAccordion'
 import { SystemsMatrix } from '@/components/ui/SystemsMatrix'
-import { GradientBlob } from '@/components/ui/GradientBlob'
 import {
   resolveInsideBlocks,
   resolveMatrix,
@@ -26,49 +26,33 @@ export default function Systems() {
     <>
       <Seo {...toSeoProps(STATIC_SEO['/systems'])} path="/systems" />
 
-      <section className="relative overflow-hidden bg-white pb-20 pt-40 md:pb-24 md:pt-48">
-        <GradientBlob />
-        <Container className="relative z-10">
-          <h1 className="max-w-4xl font-sans text-4xl font-extrabold leading-[1.04] tracking-tight sm:text-5xl md:text-6xl">
-            <RevealText text={t.heading} animateOnMount />
-          </h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.5 }}
-            className="mt-8 max-w-2xl text-lg text-ink/70 md:text-xl"
+      <PageHero
+        heading={t.heading}
+        subtext={t.subtext}
+        image={systemsImage}
+        imageAlt={t.imageAlt}
+      >
+        <div className="flex flex-wrap items-center gap-4">
+          <Link
+            to="/diagnostic"
+            className="inline-flex items-center rounded-full bg-primary px-7 py-4 font-sans text-base font-bold text-white transition-[transform,background-color] duration-150 ease-out hover:bg-primary-dark active:scale-[0.97] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
-            {t.subtext}
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.65 }}
-            className="mt-10 flex flex-wrap items-center gap-4"
+            {t.ctaPrimary}
+          </Link>
+          <a
+            href="#levels"
+            className="group inline-flex items-center gap-2 rounded-full px-2 py-2 font-sans text-base font-bold text-ink/70 transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
-            <Link
-              to="/diagnostic"
-              className="inline-flex items-center rounded-full bg-primary px-7 py-4 font-sans text-base font-bold text-white transition-transform duration-150 ease-out active:scale-[0.97]"
-            >
-              {t.ctaPrimary}
-            </Link>
-            <a
-              href="#levels"
-              className="group inline-flex items-center gap-2 font-sans text-base font-bold text-ink/70 transition-colors hover:text-primary"
-            >
-              {t.ctaSecondary}
-              <span className="inline-block transition-transform duration-300 group-hover:translate-y-0.5">
-                ↓
-              </span>
-            </a>
-          </motion.div>
-        </Container>
-      </section>
+            {t.ctaSecondary}
+            <span className="inline-block transition-transform duration-300 group-hover:translate-y-0.5">↓</span>
+          </a>
+        </div>
+      </PageHero>
 
       <section className="py-20 md:py-24">
         <Container>
           <motion.div initial="hidden" whileInView="show" viewport={viewportOnce} variants={fadeUp}>
-            <SectionLabel>{t.insideEyebrow}</SectionLabel>
+            <SectionLabel as="h2">{t.insideEyebrow}</SectionLabel>
           </motion.div>
 
           <motion.div

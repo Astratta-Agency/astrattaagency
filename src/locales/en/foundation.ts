@@ -1,6 +1,7 @@
 export const foundation = {
   // Copy de docs/CONTENIDO-Web-EN-ES.md §3.
   heading: 'The foundation everything else runs on.',
+  imageAlt: 'Three stacked slabs forming a platform, with a browser window resting on top.',
   subtext:
     'A site that converts, a brand that holds up, and measurement wired in from day one. One-time projects, flat pricing, no surprises.',
   tiersEyebrow: 'The three levels',

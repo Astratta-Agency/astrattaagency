@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion'
 import { Seo } from '@/components/layout/Seo'
 import { Container } from '@/components/ui/Container'
+import { PageHero } from '@/components/ui/PageHero'
+import foundationImage from '@/assets/pages/foundation.webp'
 import { SectionLabel } from '@/components/ui/SectionLabel'
-import { RevealText } from '@/components/ui/RevealText'
 import { Link } from '@/components/ui/Link'
 import { PricingTable } from '@/components/ui/PricingTable'
 import { AddOnsList } from '@/components/ui/AddOnsList'
 import { FaqAccordion } from '@/components/ui/FaqAccordion'
 import { Process } from '@/components/sections/Process'
-import { GradientBlob } from '@/components/ui/GradientBlob'
 import { resolveFoundationAddOns, resolveFoundationTiers } from '@/data/foundation'
 import { fadeUp, viewportOnce } from '@/lib/animations'
 import { STATIC_SEO, toSeoProps } from '@/lib/seo-data'
@@ -23,27 +23,12 @@ export default function Foundation() {
     <>
       <Seo {...toSeoProps(STATIC_SEO['/foundation'])} path="/foundation" />
 
-      <section className="relative overflow-hidden bg-white pb-20 pt-40 md:pb-24 md:pt-48">
-        <GradientBlob />
-        <Container className="relative z-10">
-          <h1 className="max-w-4xl font-sans text-4xl font-extrabold leading-[1.04] tracking-tight sm:text-5xl md:text-6xl">
-            <RevealText text={t.heading} animateOnMount />
-          </h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.5 }}
-            className="mt-8 max-w-2xl text-lg text-ink/70 md:text-xl"
-          >
-            {t.subtext}
-          </motion.p>
-        </Container>
-      </section>
+      <PageHero heading={t.heading} subtext={t.subtext} image={foundationImage} imageAlt={t.imageAlt} />
 
       <section className="py-20 md:py-24">
         <Container>
           <motion.div initial="hidden" whileInView="show" viewport={viewportOnce} variants={fadeUp}>
-            <SectionLabel>{t.tiersEyebrow}</SectionLabel>
+            <SectionLabel as="h2">{t.tiersEyebrow}</SectionLabel>
           </motion.div>
           <div className="mt-10">
             <PricingTable tiers={resolveFoundationTiers(language)} />

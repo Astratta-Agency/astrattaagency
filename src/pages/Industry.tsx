@@ -122,7 +122,7 @@ export default function Industry() {
       <section className="border-t border-ink/10 py-20 md:py-24">
         <Container>
           <motion.div initial="hidden" whileInView="show" viewport={viewportOnce} variants={fadeUp}>
-            <SectionLabel>{t.pathEyebrow}</SectionLabel>
+            <SectionLabel as="h2">{t.pathEyebrow}</SectionLabel>
           </motion.div>
           <div className="max-w-3xl">
             <IndustryPath steps={industry.path} />

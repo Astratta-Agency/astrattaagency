@@ -3,6 +3,7 @@ import type { foundation as en } from '@/locales/en/foundation'
 export const foundation: typeof en = {
   // Copy de docs/CONTENIDO-Web-EN-ES.md §3. El español se usa tal cual.
   heading: 'La base sobre la que corre todo lo demás.',
+  imageAlt: 'Tres capas apiladas formando una plataforma, con una ventana de navegador encima.',
   subtext:
     'Un sitio que convierte, una marca que se sostiene y medición conectada desde el día uno. Proyectos de pago único, precio cerrado, sin sorpresas.',
   tiersEyebrow: 'Los tres niveles',

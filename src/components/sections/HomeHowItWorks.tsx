@@ -27,7 +27,7 @@ export function HomeHowItWorks() {
           className="max-w-3xl"
         >
           <motion.div variants={fadeUp}>
-            <SectionLabel>{t.eyebrow}</SectionLabel>
+            <SectionLabel as="h2">{t.eyebrow}</SectionLabel>
           </motion.div>
           <h2 className="mt-5 font-sans text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
             <RevealText text={t.heading} />

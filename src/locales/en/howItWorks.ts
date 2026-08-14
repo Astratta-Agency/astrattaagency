@@ -1,6 +1,7 @@
 export const howItWorks = {
   // Copy de docs/CONTENIDO-Web-EN-ES.md §2.
   heading: 'One system. Not a menu of services.',
+  imageAlt: 'Three blocks rising like stairs, tied together by one continuous ribbon.',
   subtext:
     'Most agencies hand you a price list and let you guess. We start with a diagnostic, build the foundation, then run the engine. Each step earns the next.',
   cta: 'Start with a diagnostic — $297',

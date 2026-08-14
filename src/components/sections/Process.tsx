@@ -24,7 +24,7 @@ export function Process() {
           className="mb-16 max-w-2xl md:mb-24"
         >
           <motion.div variants={fadeUp}>
-            <SectionLabel>{t.processEyebrow}</SectionLabel>
+            <SectionLabel as="h2">{t.processEyebrow}</SectionLabel>
           </motion.div>
         </motion.div>
 

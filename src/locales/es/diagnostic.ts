@@ -3,6 +3,7 @@ import type { diagnostic as en } from '@/locales/en/diagnostic'
 export const diagnostic: typeof en = {
   // Copy de docs/CONTENIDO-Web-EN-ES.md §6. El español no es traducción: se usa tal cual.
   heading: 'Antes de gastar un dólar más en marketing, entiende dónde se está yendo.',
+  imageAlt: 'Un panel de informe donde los tres hallazgos principales están destacados en naranja sobre otros grises de menor prioridad, con una lupa.',
   subtext:
     'Siete días. Un documento. El mapa completo de tu embudo y los diez arreglos que más van a mover tu negocio.',
   cta: 'Agenda tu diagnóstico — $297',

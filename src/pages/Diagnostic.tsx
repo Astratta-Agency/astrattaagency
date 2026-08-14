@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion'
 import { Seo } from '@/components/layout/Seo'
 import { Container } from '@/components/ui/Container'
+import { PageHero } from '@/components/ui/PageHero'
+import diagnosticImage from '@/assets/pages/diagnostic.webp'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { RevealText } from '@/components/ui/RevealText'
 import { ContactForm } from '@/components/ui/ContactForm'
 import { FaqAccordion } from '@/components/ui/FaqAccordion'
-import { GradientBlob } from '@/components/ui/GradientBlob'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
 import { STATIC_SEO, toSeoProps } from '@/lib/seo-data'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
@@ -22,31 +23,19 @@ export default function Diagnostic() {
     <>
       <Seo {...toSeoProps(STATIC_SEO['/diagnostic'])} path="/diagnostic" />
 
-      <section className="relative overflow-hidden bg-white pb-20 pt-40 md:pb-24 md:pt-48">
-        <GradientBlob />
-        <Container className="relative z-10">
-          <h1 className="max-w-4xl font-sans text-4xl font-extrabold leading-[1.04] tracking-tight sm:text-5xl md:text-6xl">
-            <RevealText text={t.heading} animateOnMount />
-          </h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.5 }}
-            className="mt-8 max-w-xl text-lg text-ink/70 md:text-xl"
-          >
-            {t.subtext}
-          </motion.p>
-          <motion.a
-            href="#start"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.65 }}
-            className="mt-10 inline-flex items-center rounded-full bg-primary px-7 py-4 font-sans text-base font-bold text-white transition-transform duration-150 ease-out active:scale-[0.97]"
-          >
-            {t.cta}
-          </motion.a>
-        </Container>
-      </section>
+      <PageHero
+        heading={t.heading}
+        subtext={t.subtext}
+        image={diagnosticImage}
+        imageAlt={t.imageAlt}
+      >
+        <a
+          href="#start"
+          className="inline-flex items-center rounded-full bg-primary px-7 py-4 font-sans text-base font-bold text-white transition-[transform,background-color] duration-150 ease-out hover:bg-primary-dark active:scale-[0.97] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+        >
+          {t.cta}
+        </a>
+      </PageHero>
 
       <section className="py-24 md:py-32">
         <Container>
@@ -59,7 +48,7 @@ export default function Diagnostic() {
             whileInView="show"
             viewport={viewportOnce}
             variants={staggerContainer(0.06)}
-            className="mt-10 grid grid-cols-1 gap-x-10 gap-y-6 sm:grid-cols-2"
+            className="mt-10 grid grid-cols-1 gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-3"
           >
             {t.included.map((item, i) => (
               <motion.li key={i} variants={fadeUp} className="flex gap-4 border-t border-ink/10 pt-5">
@@ -80,14 +69,12 @@ export default function Diagnostic() {
             whileInView="show"
             viewport={viewportOnce}
             variants={fadeUp}
-            className="max-w-3xl"
+            className="grid grid-cols-1 gap-8 md:grid-cols-[minmax(0,200px)_minmax(0,1fr)] md:gap-16"
           >
             <p className="font-sans text-sm font-bold uppercase tracking-[0.2em] text-secondary">
               {t.guaranteeEyebrow}
             </p>
-            <p className="mt-5 font-sans text-2xl font-bold leading-snug sm:text-3xl">
-              {t.guarantee}
-            </p>
+            <p className="font-sans text-2xl font-bold leading-snug sm:text-3xl">{t.guarantee}</p>
           </motion.div>
         </Container>
       </section>

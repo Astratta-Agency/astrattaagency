@@ -63,6 +63,23 @@
   button {
     cursor: pointer;
   }
+
+  /*
+   * Foco visible global. No existía en ninguna parte del sitio: quien navega
+   * con teclado no tenía forma de saber dónde estaba. :focus-visible solo se
+   * activa con teclado, así que el ratón no lo ve.
+   */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Sobre superficies oscuras el índigo no contrasta; se invierte a blanco. */
+  .bg-ink :focus-visible,
+  .dot-pattern-light :focus-visible {
+    outline-color: #fff;
+  }
 }
 
 @layer utilities {

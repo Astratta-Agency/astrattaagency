@@ -1,6 +1,7 @@
 export const diagnostic = {
   // Copy de docs/CONTENIDO-Web-EN-ES.md §6. No modificar sin actualizar el doc.
   heading: "Before you spend another dollar on marketing, find out where it's going.",
+  imageAlt: 'A report panel where the top three findings are highlighted in orange above lower-priority grey ones, with a magnifying glass.',
   subtext:
     'Seven days. One document. The full map of your funnel and the ten fixes that will move your business most.',
   cta: 'Get your diagnostic — $297',
