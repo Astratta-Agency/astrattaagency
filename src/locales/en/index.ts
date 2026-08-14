@@ -10,6 +10,7 @@ import { systems } from '@/locales/en/systems'
 import { howItWorks } from '@/locales/en/howItWorks'
 import { industries } from '@/locales/en/industries'
 import { growthScore } from '@/locales/en/growthScore'
+import { pricing } from '@/locales/en/pricing'
 import { services } from '@/locales/en/services'
 import { notFound } from '@/locales/en/notFound'
 import { about } from '@/locales/en/about'
@@ -32,6 +33,7 @@ export const en = {
   howItWorks,
   industries,
   growthScore,
+  pricing,
   services,
   notFound,
   about,

@@ -14,7 +14,7 @@ export function QuoteCallout() {
           {t.quoteLink}
         </Link>{' '}
         {t.or}{' '}
-        <Link to="/packages" className="group font-bold text-primary">
+        <Link to="/systems" className="group font-bold text-primary">
           {t.bundlesLink}{' '}
           <span className="inline-block transition-[transform,color] duration-300 group-hover:translate-x-1 group-hover:text-secondary">
             →

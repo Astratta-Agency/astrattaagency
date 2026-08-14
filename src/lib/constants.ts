@@ -61,7 +61,7 @@ export const FOOTER_COLUMNS: { title: Bilingual<string>; links: { label: Bilingu
     title: { en: 'Pricing', es: 'Precios' },
     links: [
       { label: { en: 'Get a quote', es: 'Cotizar' }, href: '/pricing' },
-      { label: { en: 'Packages', es: 'Paquetes' }, href: '/packages' },
+      { label: { en: 'Growth Systems', es: 'Sistemas' }, href: '/systems' },
     ],
   },
   {

@@ -333,3 +333,44 @@ lista de entregables distinta (§6).
 *Insumos en §6: los 9 puntos de "qué incluye", los 7 días, la garantía de reembolso
 y los $297 acreditables. Alternativa sin escribir nada: eliminar la pregunta del
 FAQ, ya que `/diagnostic` la responde entera.*
+
+---
+
+## J · Migración SEO de las 4 páginas de servicio que mueren *(bloquea el resto de la Fase 6)*
+
+§12 marca estas cuatro como **301**, pero con una condición explícita:
+*"antes de redirigir, migra el texto SEO útil a una sección de la página destino."*
+
+| URL | Destino | Keywords en juego |
+|---|---|---|
+| `/services/social-media` | `/systems` | Social Media Management Pricing Dallas |
+| `/services/paid-ads` | `/systems` | Paid Ads Management · Meta & Google Ads Dallas |
+| `/services/lead-generation` | `/systems` | Lead Generation System Dallas |
+| `/services/graphic-design` | `/foundation` | Graphic Design & Brand Identity Dallas |
+
+**Están sin redirigir a propósito.** Redirigirlas hoy perdería exactamente el
+ranking que la regla existe para proteger. Siguen vivas y rankeando.
+
+**El problema:** su texto no se puede reubicar tal cual. Las metaDescriptions
+cargan precios eliminados (`$450/month`, `$200/month`) y el cuerpo vende social
+media, paid ads y lead gen como **SKU sueltos** — justo lo que la reestructura
+elimina. Copiarlo a `/systems` contradiría la página que lo recibe.
+
+Hace falta **una sección nueva en `/systems`** (y un párrafo en la sección de marca
+de `/foundation`) que cubra esas keywords con la voz de la arquitectura nueva:
+que esos canales existen dentro del sistema, no como productos sueltos.
+
+→ NUEVA SECCIÓN PARA `/systems` (EN + ES):
+```
+
+```
+
+→ PÁRRAFO DE MARCA PARA `/foundation` (EN + ES):
+```
+
+```
+
+*Insumos: §4 ya describe contenido, publicidad y captura como componentes del
+Motor — falta la formulación con los términos locales de búsqueda. Alternativa:
+conservar las cuatro páginas vivas y reescribirlas apuntando a `/systems` y
+`/foundation`, como se hizo con web-development y digital-marketing.*

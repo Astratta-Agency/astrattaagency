@@ -19,10 +19,8 @@ export type RouteId =
   | 'workDetail'
   | 'blog'
   | 'blogDetail'
-  | 'services'
   | 'serviceDetail'
   | 'pricing'
-  | 'packages'
   | 'contact'
   | 'about'
 
@@ -48,10 +46,8 @@ const ROUTE_DEFS: Record<RouteId, Bilingual<string>> = {
   workDetail: { en: 'work/:slug', es: 'proyectos/:slug' },
   blog: { en: 'blog', es: 'blog' },
   blogDetail: { en: 'blog/:slug', es: 'blog/:slug' },
-  services: { en: 'services', es: 'servicios' },
   serviceDetail: { en: 'services/:slug', es: 'servicios/:slug' },
   pricing: { en: 'pricing', es: 'precios' },
-  packages: { en: 'packages', es: 'paquetes' },
   contact: { en: 'contact', es: 'contacto' },
   about: { en: 'about', es: 'nosotros' },
 }

@@ -62,18 +62,6 @@ export const STATIC_SEO: Record<string, Bilingual<{ title: string; description: 
         'Casos de éxito de Astratta Agency: sitios web, embudos y marketing digital de alta conversión para startups y pequeños negocios de Dallas–Fort Worth.',
     },
   },
-  '/services': {
-    en: {
-      title: 'Services — Web Development, E-commerce, Marketing & Design | Astratta Agency',
-      description:
-        'Web development, e-commerce, digital marketing, graphic design, and website audits for Dallas–Fort Worth startups and small businesses — from Astratta Agency.',
-    },
-    es: {
-      title: 'Servicios — Desarrollo Web, E-commerce, Marketing y Diseño | Astratta Agency',
-      description:
-        'Desarrollo web, e-commerce, marketing digital, diseño gráfico y auditorías de sitios web para startups y pequeños negocios de Dallas–Fort Worth — por Astratta Agency.',
-    },
-  },
   '/services/digital-marketing': {
     en: {
       title: 'Digital Marketing for Dallas Businesses — Social, Ads & Lead Gen | Astratta',
@@ -88,26 +76,14 @@ export const STATIC_SEO: Record<string, Bilingual<{ title: string; description: 
   },
   '/pricing': {
     en: {
-      title: 'Get a Custom Quote — Web Design & Marketing Pricing | Astratta Agency Dallas',
+      title: 'Pricing — What Web Design & Marketing Costs in Dallas | Astratta',
       description:
-        'Answer a few questions and get a recommended service combination with estimated pricing — for Dallas–Fort Worth businesses evaluating web design, e-commerce, marketing, or design services.',
+        'No hidden pricing and no menu. The ranges for a diagnostic, a foundation build and a monthly growth system for Dallas–Fort Worth businesses, and what moves them.',
     },
     es: {
-      title: 'Cotiza tu Proyecto — Precios de Diseño Web y Marketing | Astratta Agency Dallas',
+      title: 'Precios — Cuánto Cuesta Diseño Web y Marketing en Dallas | Astratta',
       description:
-        'Responde unas preguntas y obtén una combinación de servicios recomendada con precio estimado — para negocios de Dallas–Fort Worth evaluando diseño web, e-commerce, marketing o diseño.',
-    },
-  },
-  '/packages': {
-    en: {
-      title: 'Service Bundles & Packages — Save on Combined Services | Astratta Agency',
-      description:
-        'Pre-built combinations of web development, e-commerce, marketing, and social media services for Dallas businesses — bundled at a lower combined rate than buying separately.',
-    },
-    es: {
-      title: 'Paquetes de Servicios — Ahorra al Combinar Servicios | Astratta Agency',
-      description:
-        'Combinaciones prearmadas de desarrollo web, e-commerce, marketing y redes sociales para negocios de Dallas — a un precio combinado más bajo que comprar por separado.',
+        'Sin precios escondidos y sin menú. Los rangos del diagnóstico, la base y el sistema mensual para negocios de Dallas–Fort Worth, y qué los mueve.',
     },
   },
   '/blog': {

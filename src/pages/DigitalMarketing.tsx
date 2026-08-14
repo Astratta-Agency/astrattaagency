@@ -37,7 +37,7 @@ export default function DigitalMarketing() {
         <Container>
           <Breadcrumbs
             items={[
-              { label: shared.breadcrumbServices, href: '/services' },
+              { label: shared.breadcrumbServices, href: '/how-it-works' },
               { label: t.breadcrumb, href: PATH },
             ]}
           />

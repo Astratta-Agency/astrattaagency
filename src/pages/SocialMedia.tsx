@@ -47,7 +47,7 @@ export default function SocialMedia() {
             <div>
               <Breadcrumbs
                 items={[
-                  { label: shared.breadcrumbServices, href: '/services' },
+                  { label: shared.breadcrumbServices, href: '/how-it-works' },
                   { label: shared.breadcrumbDigitalMarketing, href: '/services/digital-marketing' },
                   { label: page.title, href: path },
                 ]}

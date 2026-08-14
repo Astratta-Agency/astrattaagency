@@ -9,6 +9,26 @@
       "source": "/es/auditoria",
       "destination": "/es/diagnostico",
       "permanent": true
+    },
+    {
+      "source": "/packages",
+      "destination": "/systems",
+      "permanent": true
+    },
+    {
+      "source": "/es/paquetes",
+      "destination": "/es/sistemas",
+      "permanent": true
+    },
+    {
+      "source": "/services",
+      "destination": "/how-it-works",
+      "permanent": true
+    },
+    {
+      "source": "/es/servicios",
+      "destination": "/es/como-trabajamos",
+      "permanent": true
     }
   ],
   "headers": [

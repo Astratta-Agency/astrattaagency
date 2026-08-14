@@ -50,7 +50,7 @@ export default function Ecommerce() {
             <div>
               <Breadcrumbs
                 items={[
-                  { label: shared.breadcrumbServices, href: '/services' },
+                  { label: shared.breadcrumbServices, href: '/how-it-works' },
                   { label: page.title, href: path },
                 ]}
               />
@@ -146,7 +146,7 @@ export default function Ecommerce() {
                 {t.bundleNote.suffix}
               </p>
               <Link
-                to="/packages"
+                to="/systems"
                 className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-sans text-sm font-bold text-ink transition-colors hover:bg-secondary hover:text-white"
               >
                 {shared.seeAllBundles}

@@ -11,6 +11,7 @@ import { systems } from '@/locales/es/systems'
 import { howItWorks } from '@/locales/es/howItWorks'
 import { industries } from '@/locales/es/industries'
 import { growthScore } from '@/locales/es/growthScore'
+import { pricing } from '@/locales/es/pricing'
 import { services } from '@/locales/es/services'
 import { notFound } from '@/locales/es/notFound'
 import { about } from '@/locales/es/about'
@@ -33,6 +34,7 @@ export const es: Dictionary = {
   howItWorks,
   industries,
   growthScore,
+  pricing,
   services,
   notFound,
   about,

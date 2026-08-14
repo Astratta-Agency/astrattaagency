@@ -15,7 +15,6 @@ import Work from '@/pages/Work'
 import CaseStudy from '@/pages/CaseStudy'
 import Blog from '@/pages/Blog'
 import BlogPost from '@/pages/BlogPost'
-import Services from '@/pages/Services'
 import WebDevelopment from '@/pages/WebDevelopment'
 import Ecommerce from '@/pages/Ecommerce'
 import DigitalMarketing from '@/pages/DigitalMarketing'
@@ -24,7 +23,6 @@ import PaidAds from '@/pages/PaidAds'
 import LeadGeneration from '@/pages/LeadGeneration'
 import GraphicDesign from '@/pages/GraphicDesign'
 import Pricing from '@/pages/Pricing'
-import Packages from '@/pages/Packages'
 import Contact from '@/pages/Contact'
 import About from '@/pages/About'
 import NotFound from '@/pages/NotFound'
@@ -47,9 +45,7 @@ const PAGE_ROUTES: { id: RouteId; element: ReactElement }[] = [
   { id: 'workDetail', element: <CaseStudy /> },
   { id: 'blog', element: <Blog /> },
   { id: 'blogDetail', element: <BlogPost /> },
-  { id: 'services', element: <Services /> },
   { id: 'pricing', element: <Pricing /> },
-  { id: 'packages', element: <Packages /> },
   { id: 'contact', element: <Contact /> },
   { id: 'about', element: <About /> },
 ]
@@ -85,11 +81,13 @@ export default function App() {
               element={route.element}
             />
           )),
-          // Unknown service slugs fall back to the index rather than 404.
+          // El índice /services ya no existe: un slug de servicio desconocido
+          // cae en how-it-works, que es su reemplazo narrativo y el destino
+          // del 301 correspondiente.
           <Route
             key={`${language}:service:fallback`}
             path={routePattern('serviceDetail', language)}
-            element={<Navigate to={localizedPath('services', language)} replace />}
+            element={<Navigate to={localizedPath('howItWorks', language)} replace />}
           />,
         ])}
         <Route path="*" element={<NotFound />} />
