@@ -1,5 +1,11 @@
 import type { Bilingual, Language } from '@/lib/i18n/types'
 import type { BlogIllustrationVariant } from '@/components/ui/BlogIllustration'
+import trafficNoLeadsCover from '@/assets/blog/traffic-no-leads-cover.webp'
+import trafficNoLeadsClarity from '@/assets/blog/traffic-no-leads-clarity.webp'
+import trafficNoLeadsProof from '@/assets/blog/traffic-no-leads-proof.webp'
+import localSeoCover from '@/assets/blog/local-seo-cover.webp'
+import localSeoProfile from '@/assets/blog/local-seo-profile.webp'
+import localSeoReviews from '@/assets/blog/local-seo-reviews.webp'
 
 export type BlogCategory = 'web-conversion' | 'digital-marketing' | 'design' | 'case-notes'
 
@@ -13,7 +19,28 @@ export type BlogBlock =
   | { kind: 'paragraph'; text: string }
   | { kind: 'heading'; text: string }
   | { kind: 'quote'; text: string }
-  | { kind: 'image'; variant: BlogIllustrationVariant; caption: string }
+  /**
+   * `src` (a bundler-imported asset) wins when present; otherwise the
+   * `variant` vector illustration renders, so posts work before real
+   * photography exists. `alt` is required alongside `src` for accessibility —
+   * the illustrations are decorative and stay aria-hidden.
+   */
+  | { kind: 'image'; variant: BlogIllustrationVariant; caption: string; src?: string; alt?: string }
+
+/**
+ * Bylines are shared, not repeated per post. Add a key here and reference it
+ * by id from a post's `author` field.
+ */
+export const AUTHORS = {
+  hisbelis: {
+    name: 'Hisbelis Vargas',
+    role: { en: 'Founder · Astratta Agency', es: 'Astratta Agency' } satisfies Bilingual<string>,
+  },
+} as const
+
+export type AuthorId = keyof typeof AUTHORS
+
+export type ResolvedAuthor = { name: string; role: string }
 
 export type BlogPost = {
   slug: string
@@ -24,13 +51,16 @@ export type BlogPost = {
   readingTime: string
   coverGradient: string
   coverVariant: BlogIllustrationVariant
+  coverImage?: string
+  coverAlt?: string
+  author: ResolvedAuthor
   metaTitle: string
   metaDescription: string
   body: BlogBlock[]
 }
 
-type BlogPostSource = {
-  slug: string
+export type BlogPostSource = {
+  slug: Bilingual<string>
   title: Bilingual<string>
   excerpt: Bilingual<string>
   category: BlogCategory
@@ -38,6 +68,10 @@ type BlogPostSource = {
   readingTime: Bilingual<string>
   coverGradient: string
   coverVariant: BlogIllustrationVariant
+  /** Real cover art; falls back to the `coverVariant` illustration when absent. */
+  coverImage?: string
+  coverAlt?: Bilingual<string>
+  author: AuthorId
   metaTitle: Bilingual<string>
   metaDescription: Bilingual<string>
   body: Bilingual<BlogBlock[]>
@@ -45,7 +79,7 @@ type BlogPostSource = {
 
 export function resolveBlogPost(source: BlogPostSource, language: Language): BlogPost {
   return {
-    slug: source.slug,
+    slug: source.slug[language],
     title: source.title[language],
     excerpt: source.excerpt[language],
     category: source.category,
@@ -53,6 +87,9 @@ export function resolveBlogPost(source: BlogPostSource, language: Language): Blo
     readingTime: source.readingTime[language],
     coverGradient: source.coverGradient,
     coverVariant: source.coverVariant,
+    coverImage: source.coverImage,
+    coverAlt: source.coverAlt?.[language],
+    author: { name: AUTHORS[source.author].name, role: AUTHORS[source.author].role[language] },
     metaTitle: source.metaTitle[language],
     metaDescription: source.metaDescription[language],
     body: source.body[language],
@@ -76,7 +113,7 @@ export function categoryLabel(category: BlogCategory, language: Language): strin
 
 export const BLOG_POSTS: BlogPostSource[] = [
   {
-    slug: 'traffic-no-leads-dallas',
+    slug: { en: 'traffic-no-leads-dallas', es: 'trafico-sin-leads-dallas' },
     title: {
       en: 'Your Dallas business gets traffic but no leads — here’s why',
       es: 'Tu negocio en Dallas recibe tráfico pero no leads — aquí está el porqué',
@@ -90,6 +127,12 @@ export const BLOG_POSTS: BlogPostSource[] = [
     readingTime: { en: '5 min read', es: '5 min de lectura' },
     coverGradient: 'from-primary/20 to-secondary/20',
     coverVariant: 'insight',
+    coverImage: trafficNoLeadsCover,
+    coverAlt: {
+      en: 'Visitor dots streaming into a browser window, with only a few passing through into a nearly empty funnel below.',
+      es: 'Puntos de visitantes entrando a una ventana de navegador; solo unos pocos pasan a un embudo casi vacío debajo.',
+    },
+    author: 'hisbelis',
     metaTitle: {
       en: 'Traffic but No Leads? 3 Reasons Your Dallas Site Isn’t Converting | Astratta',
       es: '¿Tráfico pero Sin Leads? 3 Razones por las que tu Sitio en Dallas no Convierte | Astratta',
@@ -113,6 +156,8 @@ export const BLOG_POSTS: BlogPostSource[] = [
           kind: 'image',
           variant: 'clarity',
           caption: 'A homepage has about five seconds to answer: what do I get, and what do I do next?',
+          src: trafficNoLeadsClarity,
+          alt: 'A browser window showing one headline, one supporting line and a single orange call-to-action button, beside a stopwatch.',
         },
         { kind: 'heading', text: '2. One generic CTA is doing three jobs' },
         {
@@ -132,6 +177,8 @@ export const BLOG_POSTS: BlogPostSource[] = [
           kind: 'image',
           variant: 'proof',
           caption: 'A before/after or a real client quote does more work than any trust badge.',
+          src: trafficNoLeadsProof,
+          alt: 'A customer testimonial card next to a rising bar chart, with generic trust badges tipped over beside them.',
         },
         {
           kind: 'paragraph',
@@ -152,6 +199,8 @@ export const BLOG_POSTS: BlogPostSource[] = [
           kind: 'image',
           variant: 'clarity',
           caption: 'La página de inicio tiene unos cinco segundos para responder: ¿qué obtengo, y qué hago después?',
+          src: trafficNoLeadsClarity,
+          alt: 'Una ventana de navegador con un titular, una línea de apoyo y un solo botón naranja de llamada a la acción, junto a un cronómetro.',
         },
         { kind: 'heading', text: '2. Un solo CTA genérico haciendo tres trabajos' },
         {
@@ -171,6 +220,8 @@ export const BLOG_POSTS: BlogPostSource[] = [
           kind: 'image',
           variant: 'proof',
           caption: 'Un antes/después o la cita real de un cliente pesa más que cualquier sello de confianza.',
+          src: trafficNoLeadsProof,
+          alt: 'Una tarjeta de testimonio junto a un gráfico de barras ascendente, con sellos de confianza genéricos volcados al lado.',
         },
         {
           kind: 'paragraph',
@@ -180,7 +231,7 @@ export const BLOG_POSTS: BlogPostSource[] = [
     },
   },
   {
-    slug: 'local-seo-checklist-dfw',
+    slug: { en: 'local-seo-checklist-dfw', es: 'checklist-seo-local-dfw' },
     title: {
       en: 'The local SEO checklist we run before touching a single ad dollar',
       es: 'El checklist de SEO local que revisamos antes de tocar un solo dólar en anuncios',
@@ -194,6 +245,12 @@ export const BLOG_POSTS: BlogPostSource[] = [
     readingTime: { en: '6 min read', es: '6 min de lectura' },
     coverGradient: 'from-secondary/20 to-primary/20',
     coverVariant: 'checklist',
+    coverImage: localSeoCover,
+    coverAlt: {
+      en: 'A map pin standing on a street grid beside a checklist card with three orange check marks.',
+      es: 'Un marcador de mapa sobre una cuadrícula de calles junto a una tarjeta de lista con tres marcas naranjas.',
+    },
+    author: 'hisbelis',
     metaTitle: {
       en: 'Local SEO Checklist for Dallas–Fort Worth Businesses | Astratta Agency',
       es: 'Checklist de SEO Local para Negocios de Dallas–Fort Worth | Astratta Agency',
@@ -217,6 +274,8 @@ export const BLOG_POSTS: BlogPostSource[] = [
           kind: 'image',
           variant: 'gbp',
           caption: 'An incomplete profile is invisible in the map pack — where most "near me" searches convert.',
+          src: localSeoProfile,
+          alt: 'Three stacked map listings: the two complete ones carry an orange check badge, the incomplete one below is greyed out and empty.',
         },
         { kind: 'heading', text: '2. Is your NAP identical everywhere?' },
         {
@@ -241,6 +300,8 @@ export const BLOG_POSTS: BlogPostSource[] = [
           kind: 'image',
           variant: 'reviews',
           caption: 'Recency and response rate matter more to buyers than raw review count.',
+          src: localSeoReviews,
+          alt: 'Two review cards, the front one with five orange stars and an owner reply bubble, next to a clock.',
         },
         { kind: 'heading', text: '5–6. Page speed and schema markup' },
         {
@@ -266,6 +327,8 @@ export const BLOG_POSTS: BlogPostSource[] = [
           kind: 'image',
           variant: 'gbp',
           caption: 'Un perfil incompleto es invisible en el mapa de resultados — donde convierte la mayoría de las búsquedas "cerca de mí".',
+          src: localSeoProfile,
+          alt: 'Tres fichas de mapa apiladas: las dos completas llevan una insignia naranja; la incompleta, abajo, aparece en gris y vacía.',
         },
         { kind: 'heading', text: '2. ¿Tu NAP es idéntico en todas partes?' },
         {
@@ -290,6 +353,8 @@ export const BLOG_POSTS: BlogPostSource[] = [
           kind: 'image',
           variant: 'reviews',
           caption: 'La frecuencia y la tasa de respuesta importan más a los compradores que la cantidad de reseñas.',
+          src: localSeoReviews,
+          alt: 'Dos tarjetas de reseña; la del frente con cinco estrellas naranjas y una burbuja de respuesta, junto a un reloj.',
         },
         { kind: 'heading', text: '5–6. Velocidad de página y schema markup' },
         {

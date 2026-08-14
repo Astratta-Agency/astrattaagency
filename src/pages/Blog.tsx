@@ -1,12 +1,13 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from '@/components/ui/Link'
 import { motion } from 'framer-motion'
 import { Seo } from '@/components/layout/Seo'
 import { Container } from '@/components/ui/Container'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { RevealText } from '@/components/ui/RevealText'
 import { NewsletterForm } from '@/components/ui/NewsletterForm'
-import { BLOG_POSTS, BLOG_CATEGORIES, categoryLabel, resolveBlogPosts, type BlogCategory } from '@/data/blogPosts'
+import { BLOG_POSTS, BLOG_CATEGORIES, categoryLabel, resolveBlogPost, type BlogCategory } from '@/data/blogPosts'
+import { BlogCover } from '@/components/blog/BlogCover'
 import { fadeUp, scaleIn, staggerContainer, viewportOnce } from '@/lib/animations'
 import { STATIC_SEO, toSeoProps } from '@/lib/seo-data'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
@@ -15,10 +16,12 @@ export default function Blog() {
   const [activeCategory, setActiveCategory] = useState<BlogCategory | 'all'>('all')
   const { language, dict, pick } = useLanguage()
   const t = dict.blog
-  const allPosts = resolveBlogPosts(BLOG_POSTS, language)
+  const allPosts = BLOG_POSTS.map((source) => ({ source, post: resolveBlogPost(source, language) }))
 
   const posts =
-    activeCategory === 'all' ? allPosts : allPosts.filter((p) => p.category === activeCategory)
+    activeCategory === 'all'
+      ? allPosts
+      : allPosts.filter(({ post }) => post.category === activeCategory)
 
   return (
     <>
@@ -86,11 +89,16 @@ export default function Blog() {
             variants={staggerContainer(0.12)}
             className="grid grid-cols-1 gap-10 md:grid-cols-2"
           >
-            {posts.map((post) => (
-              <motion.div key={post.slug} variants={scaleIn}>
-                <Link to={`/blog/${post.slug}`} data-cursor="Read" className="group block">
-                  <div
-                    className={`relative aspect-[16/9] overflow-hidden rounded-3xl bg-gradient-to-br ${post.coverGradient}`}
+            {posts.map(({ source, post }) => (
+              <motion.div key={source.slug.en} variants={scaleIn}>
+                {/* Canonical English path — <Link> localizes it. */}
+                <Link to={`/blog/${source.slug.en}`} data-cursor="Read" className="group block">
+                  <BlogCover
+                    gradient={post.coverGradient}
+                    variant={post.coverVariant}
+                    src={post.coverImage}
+                    decorative
+                    className="aspect-[16/9] rounded-3xl"
                   />
                   <div className="mt-5 flex flex-wrap items-center gap-3">
                     <span className="rounded-full bg-neutral px-3 py-1 text-xs font-bold uppercase tracking-wide text-ink/60">
@@ -118,7 +126,7 @@ export default function Blog() {
           >
             <p className="text-ink/60">
               {t.ctaText}{' '}
-              <Link to="/audit" className="group font-bold text-primary">
+              <Link to="/diagnostic" className="group font-bold text-primary">
                 {t.ctaLink}{' '}
                 <span className="inline-block transition-[transform,color] duration-300 group-hover:translate-x-1 group-hover:text-secondary">
                   →

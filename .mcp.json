@@ -11,8 +11,11 @@
       "command": "npx",
       "args": [
         "-y",
-        "nanobanana-mcp-server"
-      ]
+        "@fjacquet/nano-banana-mcp"
+      ],
+      "env": {
+        "GEMINI_API_KEY": "${GEMINI_API_KEY}"
+      }
     }
   }
 }

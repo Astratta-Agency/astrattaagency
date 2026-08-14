@@ -29,3 +29,6 @@ skills-lock.json
 *.sln
 *.sw?
 .vercel
+
+# nanobanana MCP scratch output
+generated_imgs/
