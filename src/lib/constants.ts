@@ -12,13 +12,33 @@ export const SITE = {
   whatsapp: 'https://wa.me/19454074349',
 } as const
 
-export const NAV_LINKS: { label: Bilingual<string>; href: string }[] = [
-  { label: { en: 'Work', es: 'Trabajo' }, href: '/work' },
-  { label: { en: 'Blog', es: 'Blog' }, href: '/blog' },
-  { label: { en: 'Services', es: 'Servicios' }, href: '/services' },
-  { label: { en: 'Pricing', es: 'Precios' }, href: '/pricing' },
+/**
+ * Nav principal (docs/CONTENIDO-Web-EN-ES.md §7).
+ * `children` convierte la entrada en desplegable — hoy solo Industrias.
+ * Blog, Pricing y Contact salen del nav y viven en el footer.
+ */
+export type NavLink = {
+  label: Bilingual<string>
+  href: string
+  children?: { label: Bilingual<string>; href: string }[]
+}
+
+export const NAV_LINKS: NavLink[] = [
+  { label: { en: 'How it works', es: 'Cómo trabajamos' }, href: '/how-it-works' },
+  { label: { en: 'Systems', es: 'Sistemas' }, href: '/systems' },
+  { label: { en: 'Foundation', es: 'Base' }, href: '/foundation' },
+  {
+    label: { en: 'Industries', es: 'Industrias' },
+    href: '/industries',
+    children: [
+      { label: { en: 'Med Spas', es: 'Med Spas' }, href: '/industries/med-spa' },
+      { label: { en: 'Home Improvement', es: 'Remodelación' }, href: '/industries/home-improvement' },
+      { label: { en: 'Restaurants', es: 'Restaurantes' }, href: '/industries/restaurants' },
+      { label: { en: 'Real Estate', es: 'Bienes Raíces' }, href: '/industries/real-estate' },
+    ],
+  },
+  { label: { en: 'Work', es: 'Trabajos' }, href: '/work' },
   { label: { en: 'About', es: 'Nosotros' }, href: '/about' },
-  { label: { en: 'Contact', es: 'Contacto' }, href: '/contact' },
 ]
 
 export const SOCIALS = [

@@ -7,6 +7,7 @@ export const foundation: typeof en = {
     'Un sitio que convierte, una marca que se sostiene y medición conectada desde el día uno. Proyectos de pago único, precio cerrado, sin sorpresas.',
   tiersEyebrow: 'Los tres niveles',
   note: '¿No sabes cuál te toca? Para eso está el diagnóstico. Siete días, y te decimos exactamente qué necesitas — con números, no con opiniones.',
+  processEyebrow: 'Proceso',
   faqEyebrow: 'FAQ',
   faq: [
     {

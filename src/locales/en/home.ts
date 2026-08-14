@@ -1,7 +1,7 @@
 export const home = {
   hero: {
-    ticker: ['Web Development', 'Digital Marketing', 'Graphic Design', 'Website Audits'],
-    pills: ['web development', 'digital marketing', 'graphic design'],
+    ticker: ['Med Spas', 'Home Improvement', 'Restaurants', 'Real Estate'],
+    pills: ['med spas', 'home improvement', 'restaurants', 'real estate'],
     headline1: 'Websites that turn traffic into',
     headline2: 'clients.',
     subtext:
@@ -22,10 +22,20 @@ export const home = {
     ],
     closingLine: "This doesn't get fixed with more ads. It gets fixed with a system that converts.",
   },
-  servicesGrid: {
-    eyebrow: 'Our Services',
-    heading: 'Built to convert, not just to look good.',
-    learnMore: 'Learn more →',
+  howItWorksBlock: {
+    eyebrow: 'How it works',
+    heading: 'One system. Not a menu of services.',
+    link: 'See how it works',
+  },
+  industriesBlock: {
+    eyebrow: 'Industries',
+    heading: 'We know your business before the first call.',
+    items: [
+      { name: 'Med Spas', text: 'Lower cost per consultation, raise show-up rate.', href: '/industries/med-spa' },
+      { name: 'Home Improvement', text: 'Every missed call is a job lost to your competitor.', href: '/industries/home-improvement' },
+      { name: 'Restaurants', text: 'Fill the slow days, not the follower count.', href: '/industries/restaurants' },
+      { name: 'Real Estate', text: 'Long nurture, personal brand, database reactivation.', href: '/industries/real-estate' },
+    ],
   },
   aboutStats: {
     founderCaption: 'Hisbelis Vargas — Founder',
@@ -39,10 +49,6 @@ export const home = {
     eyebrow: 'Featured Work',
     heading: 'Real projects, real outcomes.',
     viewAll: 'View all work',
-  },
-  process: {
-    eyebrow: 'Process',
-    heading: 'From audit to launch.',
   },
   testimonials: {
     eyebrow: 'What clients say',

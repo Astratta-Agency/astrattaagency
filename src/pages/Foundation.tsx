@@ -7,6 +7,7 @@ import { Link } from '@/components/ui/Link'
 import { PricingTable } from '@/components/ui/PricingTable'
 import { AddOnsList } from '@/components/ui/AddOnsList'
 import { FaqAccordion } from '@/components/ui/FaqAccordion'
+import { Process } from '@/components/sections/Process'
 import { GradientBlob } from '@/components/ui/GradientBlob'
 import { resolveFoundationAddOns, resolveFoundationTiers } from '@/data/foundation'
 import { fadeUp, viewportOnce } from '@/lib/animations'
@@ -70,6 +71,8 @@ export default function Foundation() {
           </motion.div>
         </Container>
       </section>
+
+      <Process />
 
       <section className="border-t border-ink/10 py-20 md:py-24">
         <Container>

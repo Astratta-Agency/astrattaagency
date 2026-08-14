@@ -2,8 +2,8 @@ import type { home as en } from '@/locales/en/home'
 
 export const home: typeof en = {
   hero: {
-    ticker: ['Desarrollo Web', 'Marketing Digital', 'Diseño Gráfico', 'Auditorías de Sitio Web'],
-    pills: ['desarrollo web', 'marketing digital', 'diseño gráfico'],
+    ticker: ['Med Spas', 'Remodelación', 'Restaurantes', 'Bienes Raíces'],
+    pills: ['med spas', 'remodelación', 'restaurantes', 'bienes raíces'],
     headline1: 'Sitios web que convierten tráfico en',
     headline2: 'clientes.',
     subtext:
@@ -23,10 +23,20 @@ export const home: typeof en = {
     ],
     closingLine: 'Esto no se arregla con más anuncios. Se arregla con un sistema que convierte.',
   },
-  servicesGrid: {
-    eyebrow: 'Nuestros Servicios',
-    heading: 'Creados para convertir, no solo para verse bien.',
-    learnMore: 'Saber más →',
+  howItWorksBlock: {
+    eyebrow: 'Cómo trabajamos',
+    heading: 'Un sistema. No un menú de servicios.',
+    link: 'Ver cómo trabajamos',
+  },
+  industriesBlock: {
+    eyebrow: 'Industrias',
+    heading: 'Conocemos tu negocio antes de la primera llamada.',
+    items: [
+      { name: 'Med Spas', text: 'Baja el costo por consulta y sube la asistencia.', href: '/industries/med-spa' },
+      { name: 'Remodelación', text: 'Cada llamada perdida es un trabajo que se va a tu competencia.', href: '/industries/home-improvement' },
+      { name: 'Restaurantes', text: 'Llena los días lentos, no el contador de seguidores.', href: '/industries/restaurants' },
+      { name: 'Bienes Raíces', text: 'Seguimiento largo, marca personal, reactivación de base.', href: '/industries/real-estate' },
+    ],
   },
   aboutStats: {
     founderCaption: 'Hisbelis Vargas — Fundadora',
@@ -40,10 +50,6 @@ export const home: typeof en = {
     eyebrow: 'Trabajo Destacado',
     heading: 'Proyectos reales, resultados reales.',
     viewAll: 'Ver todo el trabajo',
-  },
-  process: {
-    eyebrow: 'Proceso',
-    heading: 'De la auditoría al lanzamiento.',
   },
   testimonials: {
     eyebrow: 'Lo que dicen los clientes',

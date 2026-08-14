@@ -1,9 +1,9 @@
 import { Hero } from '@/components/sections/Hero'
 import { PainPoints } from '@/components/sections/PainPoints'
-import { ServicesGrid } from '@/components/sections/ServicesGrid'
+import { HomeHowItWorks } from '@/components/sections/HomeHowItWorks'
+import { HomeIndustries } from '@/components/sections/HomeIndustries'
 import { AboutStats } from '@/components/sections/AboutStats'
 import { FeaturedWork } from '@/components/sections/FeaturedWork'
-import { Process } from '@/components/sections/Process'
 import { Testimonials } from '@/components/sections/Testimonials'
 import { Faq } from '@/components/sections/Faq'
 import { LocalSeo } from '@/components/sections/LocalSeo'
@@ -27,10 +27,10 @@ export default function Home() {
       <JsonLd data={faqSchema} />
       <Hero />
       <PainPoints />
-      <ServicesGrid />
+      <HomeHowItWorks />
+      <HomeIndustries />
       <AboutStats />
       <FeaturedWork />
-      <Process />
       <Testimonials />
       <Faq />
       <LocalSeo />

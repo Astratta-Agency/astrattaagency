@@ -1,14 +1,17 @@
+/**
+ * Proceso de entrega de un proyecto Foundation. Vivía en el home, pero un
+ * proceso de entrega pertenece a la página del producto que se entrega.
+ */
 import { motion } from 'framer-motion'
 import { Container } from '@/components/ui/Container'
 import { SectionLabel } from '@/components/ui/SectionLabel'
-import { RevealText } from '@/components/ui/RevealText'
 import { PROCESS_STEPS } from '@/data/process'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export function Process() {
   const { dict, pick } = useLanguage()
-  const t = dict.home.process
+  const t = dict.foundation
 
   return (
     <section className="bg-ink py-24 text-white md:py-32">
@@ -21,11 +24,8 @@ export function Process() {
           className="mb-16 max-w-2xl md:mb-24"
         >
           <motion.div variants={fadeUp}>
-            <SectionLabel>{t.eyebrow}</SectionLabel>
+            <SectionLabel>{t.processEyebrow}</SectionLabel>
           </motion.div>
-          <h2 className="mt-5 font-sans text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
-            <RevealText text={t.heading} />
-          </h2>
         </motion.div>
 
         <motion.div

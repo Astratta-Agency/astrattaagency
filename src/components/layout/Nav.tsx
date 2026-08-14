@@ -14,6 +14,7 @@ import logo from '@/assets/logo.png'
 export function Nav() {
   const { direction, scrolled } = useScrollDirection()
   const [menuOpen, setMenuOpen] = useState(false)
+  const [openMenu, setOpenMenu] = useState<string | null>(null)
   const location = useLocation()
   const { dict, pick } = useLanguage()
 
@@ -48,15 +49,66 @@ export function Nav() {
           </Link>
 
           <nav className="hidden items-center gap-8 md:flex">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className="font-sans text-sm font-semibold text-ink/80 transition-colors hover:text-primary"
-              >
-                {pick(link.label)}
-              </Link>
-            ))}
+            {NAV_LINKS.map((link) =>
+              link.children ? (
+                <div
+                  key={link.href}
+                  className="relative"
+                  onMouseEnter={() => setOpenMenu(link.href)}
+                  onMouseLeave={() => setOpenMenu(null)}
+                >
+                  <Link
+                    to={link.href}
+                    aria-expanded={openMenu === link.href}
+                    onFocus={() => setOpenMenu(link.href)}
+                    className="flex items-center gap-1.5 font-sans text-sm font-semibold text-ink/80 transition-colors hover:text-primary"
+                  >
+                    {pick(link.label)}
+                    <motion.span
+                      aria-hidden="true"
+                      animate={{ rotate: openMenu === link.href ? 180 : 0 }}
+                      transition={{ duration: 0.2, ease: EASE }}
+                      className="text-[10px]"
+                    >
+                      ▾
+                    </motion.span>
+                  </Link>
+
+                  <AnimatePresence>
+                    {openMenu === link.href && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -6 }}
+                        transition={{ duration: 0.18, ease: EASE }}
+                        className="absolute left-0 top-full w-56 pt-4"
+                      >
+                        <div className="flex flex-col rounded-2xl border border-ink/10 bg-white p-2 shadow-lg shadow-ink/5">
+                          {link.children.map((child) => (
+                            <Link
+                              key={child.href}
+                              to={child.href}
+                              onClick={() => setOpenMenu(null)}
+                              className="rounded-xl px-3 py-2.5 font-sans text-sm font-semibold text-ink/70 transition-colors hover:bg-neutral/60 hover:text-primary"
+                            >
+                              {pick(child.label)}
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="font-sans text-sm font-semibold text-ink/80 transition-colors hover:text-primary"
+                >
+                  {pick(link.label)}
+                </Link>
+              ),
+            )}
             <LanguageSwitch />
             <MagneticButton
               as={Link}
@@ -108,6 +160,19 @@ export function Nav() {
                   >
                     {pick(link.label)}
                   </Link>
+                  {link.children && (
+                    <div className="flex flex-col gap-1 pb-2 pl-5">
+                      {link.children.map((child) => (
+                        <Link
+                          key={child.href}
+                          to={child.href}
+                          className="py-1 font-sans text-lg font-bold text-white/60"
+                        >
+                          {pick(child.label)}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </motion.div>
               ))}
               <motion.div
