@@ -121,6 +121,18 @@ export const STATIC_SEO: Record<string, Bilingual<{ title: string; description: 
         'Análisis de web, marketing y diseño de proyectos reales de Dallas–Fort Worth — mejoras de conversión, SEO local y decisiones de diseño explicadas, sin relleno.',
     },
   },
+  '/how-it-works': {
+    en: {
+      title: 'How We Work — Diagnostic, Foundation, Engine | Astratta Dallas',
+      description:
+        'One system instead of a menu of services: a diagnostic first, then the foundation, then the engine. How Astratta works with Dallas–Fort Worth businesses.',
+    },
+    es: {
+      title: 'Cómo Trabajamos — Diagnóstico, Base y Motor | Astratta Dallas',
+      description:
+        'Un sistema en vez de un menú de servicios: primero el diagnóstico, después la base y luego el motor. Así trabaja Astratta con negocios de Dallas–Fort Worth.',
+    },
+  },
   '/systems': {
     en: {
       title: 'Digital Marketing Systems for Dallas Businesses | Astratta',

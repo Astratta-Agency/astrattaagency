@@ -7,6 +7,7 @@ import Home from '@/pages/Home'
 import Diagnostic from '@/pages/Diagnostic'
 import Foundation from '@/pages/Foundation'
 import Systems from '@/pages/Systems'
+import HowItWorks from '@/pages/HowItWorks'
 import Work from '@/pages/Work'
 import CaseStudy from '@/pages/CaseStudy'
 import Blog from '@/pages/Blog'
@@ -35,6 +36,7 @@ const PAGE_ROUTES: { id: RouteId; element: ReactElement }[] = [
   { id: 'diagnostic', element: <Diagnostic /> },
   { id: 'foundation', element: <Foundation /> },
   { id: 'systems', element: <Systems /> },
+  { id: 'howItWorks', element: <HowItWorks /> },
   { id: 'work', element: <Work /> },
   { id: 'workDetail', element: <CaseStudy /> },
   { id: 'blog', element: <Blog /> },

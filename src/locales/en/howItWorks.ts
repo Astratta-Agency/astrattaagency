@@ -1,0 +1,38 @@
+export const howItWorks = {
+  // Copy de docs/CONTENIDO-Web-EN-ES.md §2.
+  heading: 'One system. Not a menu of services.',
+  subtext:
+    'Most agencies hand you a price list and let you guess. We start with a diagnostic, build the foundation, then run the engine. Each step earns the next.',
+  cta: 'Start with a diagnostic — $297',
+
+  whyEyebrow: 'Why we changed',
+  why: [
+    'We used to sell services separately. It was a mistake.',
+    'A social media plan. An ads plan. A website. It looked flexible. What it really did was ask business owners to diagnose themselves.',
+    'The same thing happened every time. Someone bought ads, but their site didn’t convert. Someone bought content, but leads sat unanswered for twenty hours. Every piece worked. The whole never did.',
+    'Now we do one thing: complete systems. Content that feeds campaigns. Campaigns that land on pages that convert. Pages wired to follow-up that answers in under a minute.',
+    'The only thing that changes from one client to the next is the size of the system. And that comes from a diagnostic, not a menu.',
+  ],
+
+  stepsEyebrow: 'The three steps',
+  steps: [
+    {
+      number: '/01',
+      title: 'Diagnostic',
+      duration: '7 days',
+      body: 'We audit your site, funnel, tracking, local presence and competitors. You get the ten fixes that matter, ranked by return, plus a 7-day and 30-day plan. $297, credited in full if we work together.',
+    },
+    {
+      number: '/02',
+      title: 'Foundation',
+      duration: '10 days to 6 weeks',
+      body: 'We build what the diagnostic called for. Site, brand, tracking, capture. Everything measurable from launch, not guessed at later.',
+    },
+    {
+      number: '/03',
+      title: 'Engine',
+      duration: 'ongoing',
+      body: 'Content, ads and automation running together every month. You watch the numbers live, not in a monthly PDF.',
+    },
+  ],
+}

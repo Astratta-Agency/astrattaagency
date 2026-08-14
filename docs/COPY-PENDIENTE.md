@@ -14,6 +14,8 @@
 | **D** | Prosa de 2 artículos → Growth Score | ⏳ **Fase 5** — enlazaría a un 404 antes |
 | **E** | `localSeo.paragraph2` del home | ✅ aplicado — Fase 1 |
 | **F** | Meta de `/foundation` y `/systems` | ✅ aplicado — Fase 2 |
+| **G** | Meta de `/how-it-works` | ⚠️ **provisional** — derivada del doc |
+| **H** | Índice `/industries` · FAQ de Restaurantes y Real Estate · línea EN del modo `metrics` | ⛔ **bloquea la Fase 4** |
 
 Los textos aprobados se conservan abajo como registro de origen del copy.
 
@@ -241,3 +243,56 @@ Contenido, publicidad paga y automatización de seguimiento en un solo sistema. 
 ```
 
 *Nota: las mismas páginas volverán a necesitar meta propia para `/how-it-works`, `/industries/*`, `/growth-score` y el `/pricing` reescrito. Conviene decidir si las escribes tú o si se derivan así por defecto.*
+
+
+---
+
+## G · Meta de `/how-it-works` *(provisional)*
+`src/lib/seo-data.ts` · §2 no trae meta. Derivada del H1 y el subtítulo, igual que el bloque F antes de que lo afinaras.
+
+> EN title: `How We Work — Diagnostic, Foundation, Engine | Astratta Dallas`
+> EN desc: `One system instead of a menu of services: a diagnostic first, then the foundation, then the engine. How Astratta works with Dallas–Fort Worth businesses.`
+> ES title: `Cómo Trabajamos — Diagnóstico, Base y Motor | Astratta Dallas`
+> ES desc: `Un sistema en vez de un menú de servicios: primero el diagnóstico, después la base y luego el motor. Así trabaja Astratta con negocios de Dallas–Fort Worth.`
+
+→ REEMPLAZO:
+```
+
+```
+
+---
+
+## H · Lo que bloquea la Fase 4 (industrias)
+
+### H1 · Página índice `/industries`
+El mapa del sitio la incluye como nodo padre de las cuatro, pero **§5 solo define las hijas**. Sin copy no existe la página — y el nav §7 la necesita como destino del dropdown.
+
+→ H1, subtítulo y, si aplica, el texto que acompaña a cada una de las 4 tarjetas:
+```
+
+```
+
+*Alternativa sin copy nuevo: que "Industries" en el nav sea solo un menú desplegable sin página propia. Dime si prefieres eso y el bloque se cierra.*
+
+### H2 · FAQ de Restaurantes y Real Estate
+§5.1 (med spa) y §5.2 (home improvement) traen FAQ del rubro. §5.3 y §5.4 **no**. La plantilla de 8 bloques las pide.
+
+→ Restaurantes (2 preguntas EN + ES):
+```
+
+```
+→ Real Estate (2 preguntas EN + ES):
+```
+
+```
+
+*Alternativa: omitir el bloque FAQ en esas dos páginas. La plantilla no se rompe — simplemente tienen 7 bloques en vez de 8.*
+
+### H3 · Versión EN de la línea de cierre del modo `metrics`
+Me diste la española: *"Si tu agencia actual no te reporta estos tres, pregúntale por qué."*
+Falta la inglesa (Regla 3: el español no es traducción, así que no la derivo yo).
+
+→ EN:
+```
+
+```
