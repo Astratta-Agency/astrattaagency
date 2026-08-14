@@ -299,3 +299,37 @@ Falta la inglesa (Regla 3: el español no es traducción, así que no la derivo 
 ```
 
 ```
+
+---
+
+## I · FAQ del home: "¿Qué incluye la auditoría?" *(bloque abierto)*
+`src/data/faq.ts:33-42`
+
+Barrido incompleto de la Fase 1: mi patrón buscaba `free audit` y esta decía solo
+`the audit`, así que sobrevivió. Las otras seis menciones eran el nombre del
+producto de paso (`after the audit` → `after the diagnostic`) y se renombraron
+sin tocar el sentido. **Esta no**: pregunta y respuesta describen el contenido de
+la auditoría gratuita, y ese contenido cambió — ahora son 7 días, $297 y una
+lista de entregables distinta (§6).
+
+**EN actual:**
+> **P:** What's included in the audit?
+> **R:** A full review of your current site (or lack of one): performance, mobile experience, messaging clarity, conversion paths, and SEO fundamentals — plus a prioritized action plan of what to fix first and why.
+
+→ NUEVO EN (pregunta y respuesta):
+```
+
+```
+
+**ES actual:**
+> **P:** ¿Qué incluye la auditoría?
+> **R:** Una revisión completa de tu sitio actual (o la falta de uno): rendimiento, experiencia móvil, claridad del mensaje, rutas de conversión y fundamentos de SEO — más un plan de acción priorizado sobre qué corregir primero y por qué.
+
+→ NUEVO ES:
+```
+
+```
+
+*Insumos en §6: los 9 puntos de "qué incluye", los 7 días, la garantía de reembolso
+y los $297 acreditables. Alternativa sin escribir nada: eliminar la pregunta del
+FAQ, ya que `/diagnostic` la responde entera.*

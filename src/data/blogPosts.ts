@@ -182,7 +182,7 @@ export const BLOG_POSTS: BlogPostSource[] = [
         },
         {
           kind: 'paragraph',
-          text: 'None of these are redesign-scale problems. They’re usually fixable in the existing layout: rewrite the hero to lead with the outcome, split the CTA by intent, and swap vague trust language for one real number or quote per section. We cover exactly this in a **free website audit** — a prioritized list of what’s costing you leads today, not a 40-page report you’ll never open.',
+          text: 'None of these are redesign-scale problems. They’re usually fixable in the existing layout: rewrite the hero to lead with the outcome, split the CTA by intent, and swap vague trust language for one real number or quote per section. [Take the free Growth Score](/growth-score) — twelve questions that tell you which stage your business is in and where the biggest gaps are, not a 40-page report you’ll never open.',
         },
       ],
       es: [
@@ -225,7 +225,7 @@ export const BLOG_POSTS: BlogPostSource[] = [
         },
         {
           kind: 'paragraph',
-          text: 'Ninguno de estos son problemas a escala de rediseño. Usualmente se pueden arreglar en el diseño existente: reescribir la sección principal para liderar con el resultado, dividir el CTA por intención, y cambiar el lenguaje de confianza vago por un número o cita real por sección. Cubrimos exactamente esto en una **auditoría gratuita de sitio web** — una lista priorizada de qué te está costando leads hoy, no un reporte de 40 páginas que nunca abrirás.',
+          text: 'Ninguno de estos son problemas a escala de rediseño. Usualmente se pueden arreglar en el diseño existente: reescribir la sección principal para liderar con el resultado, dividir el CTA por intención, y cambiar el lenguaje de confianza vago por un número o cita real por sección. [Haz el Growth Score gratis](/growth-score) — doce preguntas que te dicen en qué etapa está tu negocio y dónde están las fugas más grandes, no un reporte de 40 páginas que nunca abrirás.',
         },
       ],
     },

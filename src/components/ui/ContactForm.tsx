@@ -10,6 +10,7 @@ export function ContactForm({
   source,
   dark = false,
   metadata,
+  onSubmitted,
 }: {
   submitLabel?: string
   /** identifies which page/offer this submission came from (e.g. "audit", "contact") */
@@ -17,6 +18,12 @@ export function ContactForm({
   dark?: boolean
   /** optional context to attach to the submission (e.g. a quiz-answer summary) */
   metadata?: string
+  /**
+   * Called once the submission succeeds. Lets a caller take over the screen —
+   * the Growth Score swaps the form for the result instead of showing the
+   * generic success line.
+   */
+  onSubmitted?: () => void
 }) {
   const { dict } = useLanguage()
   const t = dict.forms.contact
@@ -62,6 +69,7 @@ export function ContactForm({
       })
       if (res.ok) {
         setStatus('success')
+        onSubmitted?.()
         form.reset()
       } else {
         setStatus('error')

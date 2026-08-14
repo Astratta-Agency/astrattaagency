@@ -8,6 +8,7 @@ import Diagnostic from '@/pages/Diagnostic'
 import Foundation from '@/pages/Foundation'
 import Systems from '@/pages/Systems'
 import HowItWorks from '@/pages/HowItWorks'
+import GrowthScore from '@/pages/GrowthScore'
 import Industries from '@/pages/Industries'
 import Industry from '@/pages/Industry'
 import Work from '@/pages/Work'
@@ -39,6 +40,7 @@ const PAGE_ROUTES: { id: RouteId; element: ReactElement }[] = [
   { id: 'foundation', element: <Foundation /> },
   { id: 'systems', element: <Systems /> },
   { id: 'howItWorks', element: <HowItWorks /> },
+  { id: 'growthScore', element: <GrowthScore /> },
   { id: 'industries', element: <Industries /> },
   { id: 'industryDetail', element: <Industry /> },
   { id: 'work', element: <Work /> },

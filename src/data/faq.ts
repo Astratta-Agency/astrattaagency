@@ -16,8 +16,8 @@ export const FAQ_ITEMS: FaqEntry[] = [
       es: '¿Cuánto tiempo toma un sitio web?',
     },
     answer: {
-      en: "It depends on scope — a single landing page moves much faster than a multi-page site with custom features. You'll get a firm timeline after the audit, before any work starts.",
-      es: 'Depende del alcance — una landing page individual avanza mucho más rápido que un sitio de varias páginas con funciones personalizadas. Recibirás un cronograma firme después de la auditoría, antes de comenzar cualquier trabajo.',
+      en: "It depends on scope — a single landing page moves much faster than a multi-page site with custom features. You'll get a firm timeline after the diagnostic, before any work starts.",
+      es: 'Depende del alcance — una landing page individual avanza mucho más rápido que un sitio de varias páginas con funciones personalizadas. Recibirás un cronograma firme después del diagnóstico, antes de comenzar cualquier trabajo.',
     },
   },
   {
@@ -26,8 +26,8 @@ export const FAQ_ITEMS: FaqEntry[] = [
       es: '¿Cuánto cuesta un sitio web en Dallas?',
     },
     answer: {
-      en: 'Pricing depends on scope, not a one-size-fits-all package. Astratta is boutique and remote-first, so you get senior-level work without traditional agency overhead — you\'ll get a clear, itemized quote after the audit.',
-      es: 'El precio depende del alcance, no es un paquete único para todos. Astratta es boutique y remota, así que obtienes trabajo de nivel senior sin los gastos generales de una agencia tradicional — recibirás una cotización clara y detallada después de la auditoría.',
+      en: 'Pricing depends on scope, not a one-size-fits-all package. Astratta is boutique and remote-first, so you get senior-level work without traditional agency overhead — you\'ll get a clear, itemized quote after the diagnostic.',
+      es: 'El precio depende del alcance, no es un paquete único para todos. Astratta es boutique y remota, así que obtienes trabajo de nivel senior sin los gastos generales de una agencia tradicional — recibirás una cotización clara y detallada después del diagnóstico.',
     },
   },
   {
@@ -56,8 +56,8 @@ export const FAQ_ITEMS: FaqEntry[] = [
       es: 'Tengo tráfico pero no leads — ¿pueden solucionarlo?',
     },
     answer: {
-      en: "That's usually a conversion problem, not a traffic problem — and it's exactly what the audit is built to diagnose. We look at messaging, page speed, mobile UX, and funnel friction to find where visitors are dropping off.",
-      es: 'Eso suele ser un problema de conversión, no de tráfico — y es exactamente lo que la auditoría está diseñada para diagnosticar. Analizamos el mensaje, la velocidad de carga, la experiencia móvil y la fricción del embudo para encontrar dónde se están yendo los visitantes.',
+      en: "That's usually a conversion problem, not a traffic problem — and it's exactly what the diagnostic is built to find. We look at messaging, page speed, mobile UX, and funnel friction to find where visitors are dropping off.",
+      es: 'Eso suele ser un problema de conversión, no de tráfico — y es exactamente lo que el diagnóstico está diseñado para encontrar. Analizamos el mensaje, la velocidad de carga, la experiencia móvil y la fricción del embudo para encontrar dónde se están yendo los visitantes.',
     },
   },
   {
@@ -120,8 +120,8 @@ export const ABOUT_FAQ_ITEMS: FaqEntry[] = [
       es: '¿Cómo empiezo a trabajar con Astratta?',
     },
     answer: {
-      en: "Start with the diagnostic — seven days, one document. We audit your site, funnel, tracking, local presence and competitors, then hand you the ten fixes that matter most, ranked by return, plus a 7-day and 30-day plan. It's $297, credited in full if we work together. You'll have a clear scope and timeline before any build work begins.",
-      es: 'Empieza con el diagnóstico — siete días, un documento. Auditamos tu sitio, tu embudo, tu medición, tu presencia local y tu competencia, y te entregamos los diez arreglos que más importan, ordenados por retorno, más un plan de 7 y 30 días. Son $297, acreditables completos si trabajamos juntos. Vas a tener un alcance y cronograma claros antes de que empiece cualquier construcción.',
+      en: "Start with the Growth Score — twelve questions, four minutes, free. It tells you which stage your business is in and where your biggest gaps are. If you want the deeper version, the diagnostic goes seven days into your funnel, tracking, local presence and competitors, and hands you the ten fixes that matter most. It's $297, credited in full if we work together.",
+      es: 'Empieza con el Growth Score — doce preguntas, cuatro minutos, gratis. Te dice en qué etapa está tu negocio y dónde están tus fugas más grandes. Si quieres la versión profunda, el diagnóstico entra siete días en tu embudo, tu medición, tu presencia local y tu competencia, y te entrega los diez arreglos que más importan. Son $297, acreditables completos si trabajamos juntos.',
     },
   },
   {

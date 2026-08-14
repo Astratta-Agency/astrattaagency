@@ -17,6 +17,12 @@ export const howItWorks: typeof en = {
     'Lo único que cambia entre un cliente y otro es el tamaño del sistema. Y eso lo define un diagnóstico, no un menú.',
   ],
 
+  whereEyebrow: 'Por dónde empezar',
+  whereTitle: 'Dónde empiezas depende de lo que ya tienes.',
+  whereBody:
+    'Si no lo sabes, haz el Growth Score. Doce preguntas, cuatro minutos, y vas a saber en qué etapa estás antes de hablar con nadie.',
+  whereCtaPrimary: 'Haz el Growth Score — gratis',
+  whereCtaSecondary: 'O ve directo al diagnóstico — $297',
   notEyebrow: 'Límites',
   notTitle: 'Lo que no hacemos.',
   notItems: [

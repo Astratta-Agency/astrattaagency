@@ -32,16 +32,39 @@ function formatDate(iso: string, language: Language): string {
 }
 
 /** Splits `**bold**` markup into inline nodes — the surrounding prose is never altered, only styled. */
+/**
+ * Marcado inline del cuerpo: `**negrita**` y `[texto](/ruta)`.
+ *
+ * El enlace se añadió porque el copy necesitaba llamar a la acción desde
+ * dentro de un párrafo y `**negrita**` solo daba color — parecía un enlace y
+ * no se podía clicar. La ruta se escribe en su forma canónica inglesa; <Link>
+ * la localiza.
+ */
 function renderInline(text: string): ReactNode[] {
-  return text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
-    part.startsWith('**') && part.endsWith('**') ? (
-      <strong key={i} className="font-extrabold text-primary">
-        {part.slice(2, -2)}
-      </strong>
-    ) : (
-      part
-    ),
-  )
+  return text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g).map((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return (
+        <strong key={i} className="font-extrabold text-primary">
+          {part.slice(2, -2)}
+        </strong>
+      )
+    }
+
+    const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
+    if (link) {
+      return (
+        <Link
+          key={i}
+          to={link[2]}
+          className="font-extrabold text-primary underline decoration-primary/30 underline-offset-4 transition-colors hover:decoration-primary"
+        >
+          {link[1]}
+        </Link>
+      )
+    }
+
+    return part
+  })
 }
 
 /** Heading text minus the `**bold**` markers, used for anchors and the TOC. */

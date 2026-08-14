@@ -134,6 +134,18 @@ export const STATIC_SEO: Record<string, Bilingual<{ title: string; description: 
         'Mismo sistema, distinta mezcla. Marketing construido según cómo compra tu industria — med spas, contratistas, restaurantes y bienes raíces en Dallas–Fort Worth.',
     },
   },
+  '/growth-score': {
+    en: {
+      title: 'Free Growth Score — Rate Your Marketing in 4 Minutes | Astratta',
+      description:
+        'Twelve questions, four minutes, free. Score your marketing across the five systems that decide whether a Dallas–Fort Worth business grows predictably.',
+    },
+    es: {
+      title: 'Growth Score Gratis — Evalúa tu Marketing en 4 Minutos | Astratta',
+      description:
+        'Doce preguntas, cuatro minutos, gratis. Evalúa tu marketing en los cinco sistemas que deciden si un negocio de Dallas–Fort Worth crece de forma predecible.',
+    },
+  },
   '/how-it-works': {
     en: {
       title: 'How We Work — Diagnostic, Foundation, Engine | Astratta Dallas',

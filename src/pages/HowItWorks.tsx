@@ -134,18 +134,42 @@ export default function HowItWorks() {
         </Container>
       </section>
 
-      <section className="dot-pattern-light relative overflow-hidden bg-neutral/40 py-20 md:py-24">
+      <section className="dot-pattern-light relative overflow-hidden bg-neutral/40 py-24 md:py-32">
         <Container>
-          <motion.div initial="hidden" whileInView="show" viewport={viewportOnce} variants={fadeUp}>
-            <Link
-              to="/diagnostic"
-              className="group inline-flex items-center gap-3 font-sans text-2xl font-extrabold tracking-tight sm:text-3xl"
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={viewportOnce}
+            variants={staggerContainer(0.08)}
+            className="max-w-3xl"
+          >
+            <motion.div variants={fadeUp}>
+              <SectionLabel>{t.whereEyebrow}</SectionLabel>
+            </motion.div>
+            <motion.h2
+              variants={fadeUp}
+              className="mt-5 font-sans text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl md:text-5xl"
             >
-              {t.cta}
-              <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
-                →
-              </span>
-            </Link>
+              {t.whereTitle}
+            </motion.h2>
+            <motion.p variants={fadeUp} className="mt-6 text-lg text-ink/70">
+              {t.whereBody}
+            </motion.p>
+            <motion.div variants={fadeUp} className="mt-10 flex flex-wrap items-center gap-5">
+              <Link
+                to="/growth-score"
+                className="inline-flex items-center rounded-full bg-primary px-7 py-4 font-sans text-base font-bold text-white transition-[transform,background-color] duration-150 ease-out hover:bg-primary-dark active:scale-[0.97]"
+              >
+                {t.whereCtaPrimary}
+              </Link>
+              <Link
+                to="/diagnostic"
+                className="group inline-flex items-center gap-2 rounded-full px-2 py-2 font-sans text-base font-bold text-ink/70 transition-colors hover:text-primary"
+              >
+                {t.whereCtaSecondary}
+                <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </Link>
+            </motion.div>
           </motion.div>
         </Container>
       </section>

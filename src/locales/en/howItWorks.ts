@@ -15,6 +15,12 @@ export const howItWorks = {
     'The only thing that changes from one client to the next is the size of the system. And that comes from a diagnostic, not a menu.',
   ],
 
+  whereEyebrow: 'Where to start',
+  whereTitle: 'Where you start depends on what you already have.',
+  whereBody:
+    "If you don't know, take the Growth Score. Twelve questions, four minutes, and you'll know which stage you're in before you talk to anyone.",
+  whereCtaPrimary: 'Take the Growth Score — free',
+  whereCtaSecondary: 'Or go straight to the diagnostic — $297',
   notEyebrow: 'Boundaries',
   notTitle: "What we don't do.",
   notItems: [
