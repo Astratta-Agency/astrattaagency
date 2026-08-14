@@ -53,6 +53,17 @@ export default function Industries() {
                   className="group flex h-full flex-col justify-between gap-8 rounded-3xl border border-ink/10 p-8 transition-colors duration-200 hover:border-primary/40 md:p-10"
                 >
                   <div>
+                    {/* Decorativa aquí: el título contiguo ya nombra la industria. */}
+                    <img
+                      src={industry.image}
+                      alt=""
+                      aria-hidden="true"
+                      width={1200}
+                      height={670}
+                      loading="lazy"
+                      decoding="async"
+                      className="mb-6 w-full rounded-2xl bg-neutral/30"
+                    />
                     <h2 className="font-sans text-2xl font-extrabold tracking-tight transition-colors duration-200 group-hover:text-primary">
                       {t.names[industry.slug as keyof typeof t.names]}
                     </h2>

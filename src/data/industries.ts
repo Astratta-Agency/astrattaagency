@@ -1,4 +1,8 @@
 import type { Bilingual, Language } from '@/lib/i18n/types'
+import medSpaImage from '@/assets/industries/med-spa.webp'
+import homeImprovementImage from '@/assets/industries/home-improvement.webp'
+import restaurantsImage from '@/assets/industries/restaurants.webp'
+import realEstateImage from '@/assets/industries/real-estate.webp'
 
 /**
  * Páginas de industria — el conector de la arquitectura.
@@ -33,6 +37,9 @@ export type IndustryProof =
 export type IndustrySource = {
   /** Clave inglesa; coincide con INDUSTRY_SLUGS en routes.ts. */
   slug: string
+  /** Arte de cabecera; también hace de portada en la tarjeta del índice. */
+  image: string
+  imageAlt: Bilingual<string>
   card: Bilingual<string>
   heading: Bilingual<string>
   subtext: Bilingual<string>
@@ -51,6 +58,11 @@ const M = (en: string, es: string): Bilingual<string> => ({ en, es })
 export const INDUSTRIES: IndustrySource[] = [
   {
     slug: 'med-spa',
+    image: medSpaImage,
+    imageAlt: M(
+      'An appointment grid where half the slots are confirmed in orange and half are empty outlines, next to a clock.',
+      'Una cuadrícula de citas donde la mitad están confirmadas en naranja y la otra mitad son casillas vacías, junto a un reloj.',
+    ),
     card: M("Your problem isn't leads. It's that half of them never show up.", 'Tu problema no son los leads. Es que la mitad nunca llega.'),
     heading: M('Marketing for med spas in Dallas–Fort Worth', 'Marketing para med spas en Dallas–Fort Worth'),
     subtext: M(
@@ -131,6 +143,11 @@ export const INDUSTRIES: IndustrySource[] = [
 
   {
     slug: 'home-improvement',
+    image: homeImprovementImage,
+    imageAlt: M(
+      'A phone with call signal arcs, two of them breaking apart mid-air, in front of a house silhouette.',
+      'Un teléfono con ondas de llamada, dos de ellas rompiéndose en el aire, frente a la silueta de una casa.',
+    ),
     card: M('Every missed call is an $8,000 job that goes to your competitor.', 'Cada llamada perdida es un trabajo de $8,000 que se va a tu competencia.'),
     heading: M('Marketing for contractors in Dallas–Fort Worth', 'Marketing para contratistas en Dallas–Fort Worth'),
     subtext: M(
@@ -202,6 +219,11 @@ export const INDUSTRIES: IndustrySource[] = [
 
   {
     slug: 'restaurants',
+    image: restaurantsImage,
+    imageAlt: M(
+      'A dinner plate with cutlery and a floating message bubble above it, with seats marked taken and empty.',
+      'Un plato con cubiertos y una burbuja de mensaje flotando encima, con asientos marcados como ocupados y vacíos.',
+    ),
     card: M("You don't need more followers. You need Tuesday full.", 'No necesitas más seguidores. Necesitas el martes lleno.'),
     heading: M('Marketing for restaurants in Dallas–Fort Worth', 'Marketing para restaurantes en Dallas–Fort Worth'),
     subtext: M(
@@ -276,6 +298,11 @@ export const INDUSTRIES: IndustrySource[] = [
 
   {
     slug: 'real-estate',
+    image: realEstateImage,
+    imageAlt: M(
+      'A fanned stack of grey contact cards with one lifted and reactivated in indigo, beside a small house.',
+      'Una pila abierta de tarjetas de contacto grises con una levantada y reactivada en índigo, junto a una casa pequeña.',
+    ),
     card: M("You have 800 contacts you haven't touched in a year.", 'Tienes 800 contactos que no has tocado en un año.'),
     heading: M('Marketing for real estate agents in Dallas–Fort Worth', 'Marketing para agentes de bienes raíces en Dallas–Fort Worth'),
     subtext: M(
@@ -374,6 +401,8 @@ export type ResolvedIndustry = {
   card: string
   heading: string
   subtext: string
+  image: string
+  imageAlt: string
   numbers: string[]
   path: { month: string; text: string; price: string }[]
   different: string
@@ -388,6 +417,8 @@ export function resolveIndustry(source: IndustrySource, language: Language): Res
     card: source.card[language],
     heading: source.heading[language],
     subtext: source.subtext[language],
+    image: source.image,
+    imageAlt: source.imageAlt[language],
     numbers: source.numbers[language],
     path: source.path.map((p) => ({ month: p.month[language], text: p.text[language], price: p.price })),
     different: source.different[language],

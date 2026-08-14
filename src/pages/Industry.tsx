@@ -10,7 +10,7 @@ import { FaqAccordion } from '@/components/ui/FaqAccordion'
 import { IndustryPath } from '@/components/industries/IndustryPath'
 import { IndustryProof } from '@/components/industries/IndustryProof'
 import { INDUSTRIES, resolveIndustry } from '@/data/industries'
-import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
+import { EASE, fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import { INDUSTRY_SLUGS, localizedPath } from '@/lib/i18n/routes'
 
@@ -61,17 +61,35 @@ export default function Industry() {
               { label: t.names[source.slug as keyof typeof t.names], href: canonicalPath },
             ]}
           />
-          <h1 className="mt-6 max-w-4xl font-sans text-4xl font-extrabold leading-[1.04] tracking-tight sm:text-5xl md:text-6xl">
-            <RevealText text={industry.heading} animateOnMount />
-          </h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.5 }}
-            className="mt-8 max-w-2xl text-lg text-ink/70 md:text-xl"
-          >
-            {industry.subtext}
-          </motion.p>
+          <div className="mt-6 grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,42%)] lg:gap-14">
+            <div>
+              <h1 className="font-sans text-4xl font-extrabold leading-[1.04] tracking-tight sm:text-5xl md:text-6xl">
+                <RevealText text={industry.heading} animateOnMount />
+              </h1>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.5 }}
+                className="mt-8 max-w-2xl text-lg text-ink/70 md:text-xl"
+              >
+                {industry.subtext}
+              </motion.p>
+            </div>
+
+            <motion.img
+              src={industry.image}
+              alt={industry.imageAlt}
+              width={1200}
+              height={670}
+              loading="eager"
+              fetchPriority="high"
+              decoding="sync"
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, ease: EASE, delay: 0.25 }}
+              className="w-full rounded-3xl bg-neutral/30"
+            />
+          </div>
         </Container>
       </section>
 
