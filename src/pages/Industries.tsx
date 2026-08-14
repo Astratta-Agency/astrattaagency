@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { Seo } from '@/components/layout/Seo'
 import { Container } from '@/components/ui/Container'
-import { SectionLabel } from '@/components/ui/SectionLabel'
 import { RevealText } from '@/components/ui/RevealText'
 import { Link } from '@/components/ui/Link'
 import { GradientBlob } from '@/components/ui/GradientBlob'
@@ -36,7 +35,7 @@ export default function Industries() {
         </Container>
       </section>
 
-      <section className="pb-20 md:pb-24">
+      <section className="pt-16 pb-20 md:pt-20 md:pb-24">
         <Container>
           <motion.div
             initial="hidden"
@@ -95,10 +94,9 @@ export default function Industries() {
       <section className="dot-pattern-light relative overflow-hidden bg-ink py-20 text-white md:py-24">
         <Container>
           <motion.div initial="hidden" whileInView="show" viewport={viewportOnce} variants={fadeUp}>
-            <SectionLabel>{t.cardsEyebrow}</SectionLabel>
             <Link
               to="/diagnostic"
-              className="group mt-5 inline-flex items-center gap-3 font-sans text-2xl font-extrabold tracking-tight sm:text-3xl"
+              className="group inline-flex items-center gap-3 font-sans text-2xl font-extrabold tracking-tight sm:text-3xl"
             >
               {t.cta}
               <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
