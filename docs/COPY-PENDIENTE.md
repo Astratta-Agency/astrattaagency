@@ -1,0 +1,178 @@
+# COPY PENDIENTE
+
+> Bloques que quedan **vivos** tras la reestructura y no están en `CONTENIDO-Web-EN-ES.md`.
+> No se escriben sin texto del cliente (Regla 1).
+
+## Estado
+
+| Bloque | Qué es | Estado |
+|---|---|---|
+| **A** | Meta description del home | ✅ aplicado — Fase 1 |
+| **B** | Meta de `/diagnostic` | ✅ aplicado — Fase 1 |
+| **C v1** | FAQ "cómo empiezo" (versión diagnóstico) | ✅ aplicado — Fase 1 |
+| **C v2** | FAQ "cómo empiezo" (versión Growth Score) | ⏳ **Fase 5** — reemplaza a C v1 cuando exista `/growth-score` |
+| **D** | Prosa de 2 artículos → Growth Score | ⏳ **Fase 5** — enlazaría a un 404 antes |
+| **E** | `localSeo.paragraph2` del home | ✅ aplicado — Fase 1 |
+
+Los textos aprobados se conservan abajo como registro de origen del copy.
+
+---
+
+## A · Meta description del HOME
+`src/lib/seo-data.ts:39-50` · El snippet que Google muestra del home.
+El **title no cambia** (no menciona auditoría). Solo la description.
+
+**EN actual** (159 car.):
+> Astratta builds high-converting websites, funnels, and digital marketing campaigns for Dallas–Fort Worth startups and small businesses. **Get a free website audit.**
+
+→ NUEVO EN:
+```
+Astratta builds high-converting websites and growth systems for Dallas–Fort Worth businesses. Start with a $297 diagnostic — 7 days, 10 prioritized fixes.
+```
+
+**ES actual** (178 car.):
+> Astratta crea sitios web, embudos y campañas de marketing digital de alta conversión para startups y pequeños negocios de Dallas–Fort Worth. **Solicita una auditoría gratuita.**
+
+→ NUEVO ES:
+```
+Astratta crea sitios web y sistemas de crecimiento para negocios de Dallas–Fort Worth. Empieza con un diagnóstico de $297 — 7 días, 10 arreglos priorizados.
+```
+
+*Restricción: 150–160 caracteres ideal para no truncarse en Google. Debe cerrar con el diagnóstico de $297 en vez de la auditoría gratis.*
+
+---
+
+## B · Meta title + description de `/diagnostic`
+`src/lib/seo-data.ts:124-135` · Hoy es `/audit`; la entrada se renombra a `/diagnostic`.
+Es la página del CTA único del sitio, así que es la meta más importante después del home.
+
+**EN actual:**
+> **title:** Free Website Audit — Astratta Agency | Dallas, TX
+> **description:** Get a free website audit from Astratta Agency: a prioritized action plan covering performance, mobile UX, messaging, conversion paths, and SEO — for Dallas–Fort Worth businesses.
+
+→ NUEVO EN title:
+```
+Marketing & Website Diagnostic — Dallas, TX | Astratta
+```
+→ NUEVO EN description:
+```
+A 7-day diagnostic of your funnel, tracking and local presence for Dallas–Fort Worth businesses. 10 fixes ranked by return. $297, credited if you hire us.
+```
+
+**ES actual:**
+> **title:** Auditoría Gratuita de Sitio Web — Astratta Agency | Dallas, TX
+> **description:** Recibe una auditoría gratuita de tu sitio web: un plan de acción priorizado que cubre rendimiento, experiencia móvil, mensaje, rutas de conversión y SEO — para negocios de Dallas–Fort Worth.
+
+→ NUEVO ES title:
+```
+Diagnóstico de Marketing y Sitio Web — Dallas, TX | Astratta
+```
+→ NUEVO ES description:
+```
+Un diagnóstico de 7 días de tu embudo, medición y presencia local en Dallas–Fort Worth. 10 arreglos ordenados por retorno. $297, acreditables al contratar.
+```
+
+*Insumos disponibles en `CONTENIDO-Web-EN-ES.md` §6: "Siete días. Un documento." · el listado de qué incluye · la garantía de reembolso · $297 acreditables.*
+
+---
+
+## C · FAQ "¿cómo empiezo?"
+src/data/faq.ts:118-126 · La pregunta no cambia.
+
+Decisión: dos versiones, por fase. El Growth Score convierte mejor en esta pregunta — es de alguien que aún no confía — pero no existe hasta la Fase 5. Así que se implementa la v1 ahora y se reemplaza después.
+
+→ FASE 1 (implementar ahora)
+
+EN
+
+Start with the diagnostic — seven days, one document. We audit your site, funnel, tracking, local presence and competitors, then hand you the ten fixes that matter most, ranked by return, plus a 7-day and 30-day plan. It's $297, credited in full if we work together. You'll have a clear scope and timeline before any build work begins.
+
+ES
+
+Empieza con el diagnóstico — siete días, un documento. Auditamos tu sitio, tu embudo, tu medición, tu presencia local y tu competencia, y te entregamos los diez arreglos que más importan, ordenados por retorno, más un plan de 7 y 30 días. Son $297, acreditables completos si trabajamos juntos. Vas a tener un alcance y cronograma claros antes de que empiece cualquier construcción.
+→ FASE 5 (reemplazar cuando /growth-score exista)
+
+EN
+
+Start with the Growth Score — twelve questions, four minutes, free. It tells you which stage your business is in and where your biggest gaps are. If you want the deeper version, the diagnostic goes seven days into your funnel, tracking, local presence and competitors, and hands you the ten fixes that matter most. It's $297, credited in full if we work together.
+
+ES
+
+Empieza con el Growth Score — doce preguntas, cuatro minutos, gratis. Te dice en qué etapa está tu negocio y dónde están tus fugas más grandes. Si quieres la versión profunda, el diagnóstico entra siete días en tu embudo, tu medición, tu presencia local y tu competencia, y te entrega los diez arreglos que más importan. Son $297, acreditables completos si trabajamos juntos.
+
+Acción: agrega esto como tarea explícita de la Fase 5, o se va a olvidar.
+
+
+---
+
+## D · Prosa dentro de 2 artículos publicados → apunta a `/growth-score`
+`src/data/blogPosts.ts` · Post `traffic-no-leads-dallas`, último párrafo.
+**Decidido:** reescribir hacia `/growth-score` (mantiene la promesa de "sin costo" que el artículo ya le hizo al lector).
+
+⚠️ **Se ejecuta en la Fase 5**, no en la 1 — `/growth-score` no existe antes y quedaría un enlace roto.
+
+**EN actual** (solo cambia la frase final):
+> …swap vague trust language for one real number or quote per section. **We cover exactly this in a free website audit** — a prioritized list of what's costing you leads today, not a 40-page report you'll never open.
+
+→ NUEVO EN (frase final):
+```
+…swap vague trust language for one real number or quote per section. **Take the free Growth Score** — twelve questions that tell you which stage your business is in and where the biggest gaps are, not a 40-page report you'll never open.
+```
+
+**ES actual:**
+> …cambiar el lenguaje de confianza vago por un número o cita real por sección. **Cubrimos exactamente esto en una auditoría gratuita de sitio web** — una lista priorizada de qué te está costando leads hoy, no un reporte de 40 páginas que nunca abrirás.
+
+→ NUEVO ES (frase final):
+```
+…cambiar el lenguaje de confianza vago por un número o cita real por sección. **Haz el Growth Score gratis** — doce preguntas que te dicen en qué etapa está tu negocio y dónde están las fugas más grandes, no un reporte de 40 páginas que nunca abrirás.
+```
+
+*El `**bold**` marca el enlace. Debe envolver una subcadena exacta de la prosa — ver el comentario de `BlogBlock` en `blogPosts.ts`.*
+
+---
+
+## No bloquean — se resuelven solos
+
+Estos también dicen "free audit" pero **desaparecen con su página**, no necesitan copy nuevo:
+
+| Dónde | Cuándo se resuelve |
+|---|---|
+| `locales/{en,es}/servicePages.ts` — 12 × `closingSubtext` | Fases 2 y 6, al reescribir/redirigir cada página de servicio |
+| `locales/{en,es}/packages.ts` | Fase 6 — `/packages` redirige a `/systems` |
+| `locales/{en,es}/digitalMarketing.ts` | Fase 6 — reescritura hacia `/systems` |
+| `lib/quiz.ts:204-205` | Fase 5 — el módulo se retira |
+| `data/pricing.ts:181,429` | Fase 6 — además cargan precios muertos ($800 / $3,500+) |
+| `lib/constants.ts:52` — footer "Free website audit" | Fase 1 — es label, el doc da el texto |
+
+---
+
+## E · Bloque `localSeo` del home *(adelantado a Fase 1)*
+`src/locales/{en,es}/home.ts` · `localSeo.paragraph2`
+
+Se adelanta desde la Fase 3 porque su enlace apunta a `/audit`, que muere en la Fase 1.
+**Doble problema:** promete una auditoría *gratis y sin compromiso*, y presenta social media, paid ads y lead generation como **productos sueltos** — los tres desaparecen como SKU.
+
+**EN actual** (los `to:` son enlaces internos dentro del párrafo):
+> Not sure whether the problem is your site, your traffic, or your follow-up? Start with a free **[website audit → /audit]** — a straight read on performance, messaging, and conversion paths for any Dallas–Fort Worth business, no obligation attached. From there, our **[digital marketing → /services/digital-marketing]** programs cover social media, paid ads, and full lead generation systems for small businesses in DFW, each measured against leads and cost per lead — not likes, not impressions.
+
+→ NUEVO EN:
+```
+Not sure whether the problem is your site, your traffic, or your follow-up? That's what **the diagnostic** answers — seven days of analysis on your funnel, tracking and local presence, with the ten fixes that matter most ranked by return. From there, our digital marketing systems for Dallas–Fort Worth small businesses combine content, paid ads and follow-up automation into one measured pipeline — judged on leads and cost per lead, not likes, not impressions.
+```
+
+**ES actual:**
+> ¿No sabes si el problema es tu sitio, tu tráfico o tu seguimiento? Empieza con una **[auditoría de sitio web → /audit]** gratuita — un análisis directo del rendimiento, mensaje y rutas de conversión para cualquier negocio de Dallas–Fort Worth, sin compromiso. A partir de ahí, nuestros programas de **[marketing digital → /services/digital-marketing]** cubren redes sociales, anuncios pagados y sistemas completos de generación de leads para pequeños negocios en DFW, cada uno medido por leads y costo por lead — no likes, no impresiones.
+
+→ NUEVO ES:
+```
+¿No sabes si el problema es tu sitio, tu tráfico o tu seguimiento? Eso es exactamente lo que responde **el diagnóstico** — siete días de análisis sobre tu embudo, tu medición y tu presencia local, con los diez arreglos que más importan ordenados por retorno. A partir de ahí, nuestros sistemas de marketing digital para pequeños negocios de Dallas–Fort Worth combinan contenido, publicidad paga y automatización de seguimiento en un solo canal medido — evaluado por leads y costo por lead, no por likes ni impresiones.
+```
+
+*Es un bloque de SEO local: conviene conservar densidad de "Dallas–Fort Worth" y términos de servicio. Los enlaces se marcan igual que hoy (segmentos con `to:`); destinos disponibles: `/diagnostic`, `/foundation`, `/systems`.*
+
+### Quedan para la Fase 3 (reescritura del home, §8 del doc)
+| Clave | Actual | Por qué muere |
+|---|---|---|
+| `home.hero.ticker` | `Web Development · Digital Marketing · Graphic Design · Website Audits` | Son las 4 disciplinas viejas |
+| `home.process.heading` | `From audit to launch.` / `De la auditoría al lanzamiento.` | El proceso ya no arranca en auditoría |
+| `services.ts` | `four service lines` · `website-audits: Free` | Arquitectura vieja completa |

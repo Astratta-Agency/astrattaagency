@@ -5,7 +5,7 @@ import { forms } from '@/locales/es/forms'
 import { home } from '@/locales/es/home'
 import { work } from '@/locales/es/work'
 import { contact } from '@/locales/es/contact'
-import { audit } from '@/locales/es/audit'
+import { diagnostic } from '@/locales/es/diagnostic'
 import { services } from '@/locales/es/services'
 import { notFound } from '@/locales/es/notFound'
 import { about } from '@/locales/es/about'
@@ -22,7 +22,7 @@ export const es: Dictionary = {
   home,
   work,
   contact,
-  audit,
+  diagnostic,
   services,
   notFound,
   about,

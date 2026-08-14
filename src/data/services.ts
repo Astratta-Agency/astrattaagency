@@ -43,11 +43,11 @@ export const SERVICES: Service[] = [
   {
     number: '/04',
     slug: 'website-audits',
-    title: { en: 'Website Audits', es: 'Auditorías de Sitio Web' },
+    title: { en: 'Diagnostic', es: 'Diagnóstico' },
     description: {
       en: "A prioritized action plan: what's broken, what it's costing you, and how we fix it in 30 days.",
       es: 'Un plan de acción priorizado: qué está fallando, cuánto te está costando y cómo lo arreglamos en 30 días.',
     },
-    href: '/audit',
+    href: '/diagnostic',
   },
 ]

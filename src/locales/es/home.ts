@@ -8,7 +8,7 @@ export const home: typeof en = {
     headline2: 'clientes.',
     subtext:
       'Astratta crea sitios web y sistemas de marketing de alta conversión para negocios de Dallas–Fort Worth — diseñados para generar leads, no solo para verse bien.',
-    ctaBookAudit: 'Reserva una auditoría gratis',
+    ctaBookAudit: 'Agenda tu diagnóstico — $297',
     trustedBy: 'Con la confianza de startups y pequeños negocios de DFW',
   },
   painPoints: {
@@ -33,7 +33,7 @@ export const home: typeof en = {
     eyebrow: 'Sobre Astratta',
     heading: 'Un estudio liderado por su fundadora. Cero peso de agencia.',
     body: 'Astratta es un estudio boutique en Dallas–Fort Worth. Liderado por su fundadora en cada proyecto — sin gerentes de cuenta, sin traspasos a personal junior. Estrategia y ejecución de nivel senior a una fracción del costo de una gran agencia.',
-    ctaBookAudit: 'Reserva una auditoría gratis',
+    ctaBookAudit: 'Agenda tu diagnóstico — $297',
     ctaMoreAbout: 'Más sobre el estudio',
   },
   featuredWork: {
@@ -64,20 +64,18 @@ export const home: typeof en = {
       },
     ],
     paragraph2: [
-      { text: '¿No sabes si el problema es tu sitio, tu tráfico o tu seguimiento? Empieza con una ' },
-      { text: 'auditoría de sitio web', to: '/audit' },
       {
-        text: ' gratuita — un análisis directo del rendimiento, mensaje y rutas de conversión para cualquier negocio de Dallas–Fort Worth, sin compromiso. A partir de ahí, nuestros programas de ',
+        text: '¿No sabes si el problema es tu sitio, tu tráfico o tu seguimiento? Eso es exactamente lo que responde ',
       },
-      { text: 'marketing digital', to: '/services/digital-marketing' },
+      { text: 'el diagnóstico', to: '/diagnostic' },
       {
-        text: ' cubren redes sociales, anuncios pagados y sistemas completos de generación de leads para pequeños negocios en DFW, cada uno medido por leads y costo por lead — no likes, no impresiones.',
+        text: ' — siete días de análisis sobre tu embudo, tu medición y tu presencia local, con los diez arreglos que más importan ordenados por retorno. A partir de ahí, nuestros sistemas de marketing digital para pequeños negocios de Dallas–Fort Worth combinan contenido, publicidad paga y automatización de seguimiento en un solo canal medido — evaluado por leads y costo por lead, no por likes ni impresiones.',
       },
     ],
   },
   finalCta: {
     heading1: 'Descubramos por qué tu sitio no está',
     heading2: 'convirtiendo.',
-    submitLabel: 'Solicitar mi auditoría',
+    submitLabel: 'Agenda tu diagnóstico — $297',
   },
 }

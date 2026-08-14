@@ -34,7 +34,7 @@ export const FOOTER_COLUMNS: { title: Bilingual<string>; links: { label: Bilingu
       { label: { en: 'Web Development', es: 'Desarrollo Web' }, href: '/services/web-development' },
       { label: { en: 'Digital Marketing', es: 'Marketing Digital' }, href: '/services/digital-marketing' },
       { label: { en: 'Graphic Design', es: 'Diseño Gráfico' }, href: '/services/graphic-design' },
-      { label: { en: 'Website Audits', es: 'Auditorías de Sitio Web' }, href: '/audit' },
+      { label: { en: 'Diagnostic', es: 'Diagnóstico' }, href: '/diagnostic' },
     ],
   },
   {
@@ -49,7 +49,7 @@ export const FOOTER_COLUMNS: { title: Bilingual<string>; links: { label: Bilingu
     links: [
       { label: { en: 'Case studies', es: 'Casos de éxito' }, href: '/work' },
       { label: { en: 'Blog', es: 'Blog' }, href: '/blog' },
-      { label: { en: 'Free website audit', es: 'Auditoría gratuita' }, href: '/audit' },
+      { label: { en: 'Get your diagnostic — $297', es: 'Agenda tu diagnóstico — $297' }, href: '/diagnostic' },
     ],
   },
   {

@@ -4,7 +4,7 @@ import { forms } from '@/locales/en/forms'
 import { home } from '@/locales/en/home'
 import { work } from '@/locales/en/work'
 import { contact } from '@/locales/en/contact'
-import { audit } from '@/locales/en/audit'
+import { diagnostic } from '@/locales/en/diagnostic'
 import { services } from '@/locales/en/services'
 import { notFound } from '@/locales/en/notFound'
 import { about } from '@/locales/en/about'
@@ -21,7 +21,7 @@ export const en = {
   home,
   work,
   contact,
-  audit,
+  diagnostic,
   services,
   notFound,
   about,

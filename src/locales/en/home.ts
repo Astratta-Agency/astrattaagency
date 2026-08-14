@@ -6,7 +6,7 @@ export const home = {
     headline2: 'clients.',
     subtext:
       'Astratta builds high-converting websites and marketing systems for Dallas–Fort Worth businesses — designed to generate leads, not just look good.',
-    ctaBookAudit: 'Book a free audit',
+    ctaBookAudit: 'Get your diagnostic — $297',
     trustedBy: 'Trusted by DFW startups and small businesses',
   },
   painPoints: {
@@ -32,7 +32,7 @@ export const home = {
     eyebrow: 'About Astratta',
     heading: 'A founder-led studio. Zero agency bloat.',
     body: 'Astratta is a boutique studio in Dallas–Fort Worth. Founder-led on every project — no account managers, no handoffs to juniors. Senior-level strategy and execution at a fraction of big-agency overhead.',
-    ctaBookAudit: 'Book a free audit',
+    ctaBookAudit: 'Get your diagnostic — $297',
     ctaMoreAbout: 'More about the studio',
   },
   featuredWork: {
@@ -63,20 +63,18 @@ export const home = {
       },
     ],
     paragraph2: [
-      { text: 'Not sure whether the problem is your site, your traffic, or your follow-up? Start with a free ' },
-      { text: 'website audit', to: '/audit' },
       {
-        text: ' — a straight read on performance, messaging, and conversion paths for any Dallas–Fort Worth business, no obligation attached. From there, our ',
+        text: "Not sure whether the problem is your site, your traffic, or your follow-up? That's what ",
       },
-      { text: 'digital marketing', to: '/services/digital-marketing' },
+      { text: 'the diagnostic', to: '/diagnostic' },
       {
-        text: ' programs cover social media, paid ads, and full lead generation systems for small businesses in DFW, each measured against leads and cost per lead — not likes, not impressions.',
+        text: ' answers — seven days of analysis on your funnel, tracking and local presence, with the ten fixes that matter most ranked by return. From there, our digital marketing systems for Dallas–Fort Worth small businesses combine content, paid ads and follow-up automation into one measured pipeline — judged on leads and cost per lead, not likes, not impressions.',
       },
     ],
   },
   finalCta: {
     heading1: "Let's find out why your site isn't",
     heading2: 'converting.',
-    submitLabel: 'Request my audit',
+    submitLabel: 'Get your diagnostic — $297',
   },
 }

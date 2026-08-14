@@ -55,7 +55,7 @@ export const about = {
   faqHeading: 'Questions, answered.',
   ctaHeading1: "Let's find out why your site isn't",
   ctaHeading2: 'converting.',
-  ctaAudit: 'Get your free website audit',
+  ctaAudit: 'Get your diagnostic — $297',
   ctaContact: 'Contact us',
   lastUpdatedLabel: 'Last updated:',
   lastUpdatedValue: 'July 2026',

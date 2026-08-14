@@ -4,7 +4,7 @@ export const work: typeof en = {
   eyebrow: 'Nuestro Trabajo',
   heading: 'Proyectos reales, resultados reales.',
   ctaText: '¿Quieres ver tu proyecto aquí?',
-  ctaLink: 'Solicita una auditoría gratuita',
+  ctaLink: 'Agenda tu diagnóstico — $297',
   caseStudy: {
     breadcrumb: 'Trabajo',
     visitLiveSite: 'Visitar sitio en vivo →',
@@ -13,6 +13,6 @@ export const work: typeof en = {
     results: 'Resultados',
     platformBreakdown: 'Desglose por plataforma.',
     wantOutcomes: '¿Quieres resultados así?',
-    getAudit: 'Solicita una auditoría gratuita',
+    getAudit: 'Agenda tu diagnóstico — $297',
   },
 }

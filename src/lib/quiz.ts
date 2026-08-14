@@ -50,7 +50,7 @@ export const INTEREST_OPTIONS: { id: InterestId; label: Bilingual<string> }[] = 
 /** Shown as its own card in step 3 — it's the usual entry point, not a bundle component. */
 export const AUDIT_INTEREST: { id: InterestId; label: Bilingual<string> } = {
   id: 'website-audits',
-  label: { en: 'Website Audits', es: 'Auditorías de Sitio Web' },
+  label: { en: 'Diagnostic', es: 'Diagnóstico' },
 }
 
 /**
@@ -144,7 +144,7 @@ function singleLine(pageSlug: string, tierSlug: string): RecommendationLine {
 const AUDIT_LINE: RecommendationLine = {
   key: 'website-audits',
   serviceTitle: { en: 'Website Audit', es: 'Auditoría de Sitio Web' },
-  href: '/audit',
+  href: '/diagnostic',
   tierLabel: { en: 'Free diagnostic', es: 'Diagnóstico gratuito' },
   low: 0,
   high: 0,

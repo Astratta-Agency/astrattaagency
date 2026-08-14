@@ -120,8 +120,8 @@ export const ABOUT_FAQ_ITEMS: FaqEntry[] = [
       es: '¿Cómo empiezo a trabajar con Astratta?',
     },
     answer: {
-      en: "Start with a free website audit — a review of your current site's performance, mobile experience, messaging, and conversion paths, plus a prioritized action plan. From there you'll get a clear scope and timeline before any paid work begins.",
-      es: 'Empieza con una auditoría gratuita de tu sitio web — una revisión del rendimiento, experiencia móvil, mensaje y rutas de conversión de tu sitio actual, más un plan de acción priorizado. A partir de ahí recibirás un alcance y cronograma claros antes de comenzar cualquier trabajo pagado.',
+      en: "Start with the diagnostic — seven days, one document. We audit your site, funnel, tracking, local presence and competitors, then hand you the ten fixes that matter most, ranked by return, plus a 7-day and 30-day plan. It's $297, credited in full if we work together. You'll have a clear scope and timeline before any build work begins.",
+      es: 'Empieza con el diagnóstico — siete días, un documento. Auditamos tu sitio, tu embudo, tu medición, tu presencia local y tu competencia, y te entregamos los diez arreglos que más importan, ordenados por retorno, más un plan de 7 y 30 días. Son $297, acreditables completos si trabajamos juntos. Vas a tener un alcance y cronograma claros antes de que empiece cualquier construcción.',
     },
   },
   {

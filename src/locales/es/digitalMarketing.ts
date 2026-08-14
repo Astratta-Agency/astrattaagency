@@ -49,6 +49,6 @@ export const digitalMarketing: typeof en = {
   ],
   closingHeading: '¿No sabes con qué canal empezar?',
   closingSubtext: 'Obtén una auditoría gratuita de tu marketing actual, o solicita una cotización combinada entre canales.',
-  ctaAudit: 'Obtener una auditoría gratis →',
+  ctaAudit: 'Agenda tu diagnóstico — $297 →',
   ctaQuote: 'Obtener una cotización →',
 }

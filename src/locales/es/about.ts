@@ -57,7 +57,7 @@ export const about: typeof en = {
   faqHeading: 'Tus preguntas, respondidas.',
   ctaHeading1: 'Descubramos por qué tu sitio no está',
   ctaHeading2: 'convirtiendo.',
-  ctaAudit: 'Obtén tu auditoría gratuita',
+  ctaAudit: 'Agenda tu diagnóstico — $297',
   ctaContact: 'Contáctanos',
   lastUpdatedLabel: 'Última actualización:',
   lastUpdatedValue: 'julio 2026',

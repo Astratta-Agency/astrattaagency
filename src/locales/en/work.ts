@@ -2,7 +2,7 @@ export const work = {
   eyebrow: 'Our Work',
   heading: 'Real projects, real outcomes.',
   ctaText: 'Want to see your project here next?',
-  ctaLink: 'Get a free website audit',
+  ctaLink: 'Get your diagnostic — $297',
   caseStudy: {
     breadcrumb: 'Work',
     visitLiveSite: 'Visit live site →',
@@ -11,6 +11,6 @@ export const work = {
     results: 'Results',
     platformBreakdown: 'Platform breakdown.',
     wantOutcomes: 'Want outcomes like this?',
-    getAudit: 'Get a free website audit',
+    getAudit: 'Get your diagnostic — $297',
   },
 }

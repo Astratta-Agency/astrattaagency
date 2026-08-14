@@ -47,6 +47,6 @@ export const digitalMarketing = {
   ],
   closingHeading: 'Not sure which channel to start with?',
   closingSubtext: 'Get a free audit of your current marketing, or request a combined quote across channels.',
-  ctaAudit: 'Get a free audit →',
+  ctaAudit: 'Get your diagnostic — $297 →',
   ctaQuote: 'Get a pricing quote →',
 }
