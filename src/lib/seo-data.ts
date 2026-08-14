@@ -2,6 +2,7 @@ import { SITE } from '@/lib/constants'
 import { SERVICE_PAGES } from '@/data/pricing'
 import { CASE_STUDIES } from '@/data/caseStudies'
 import { BLOG_POSTS } from '@/data/blogPosts'
+import { INDUSTRIES } from '@/data/industries'
 import type { Bilingual, Language } from '@/lib/i18n/types'
 import { LANGUAGES, translatePath } from '@/lib/i18n/routes'
 
@@ -119,6 +120,18 @@ export const STATIC_SEO: Record<string, Bilingual<{ title: string; description: 
       title: 'Blog — Notas de Web, Marketing y Diseño | Astratta Agency Dallas',
       description:
         'Análisis de web, marketing y diseño de proyectos reales de Dallas–Fort Worth — mejoras de conversión, SEO local y decisiones de diseño explicadas, sin relleno.',
+    },
+  },
+  '/industries': {
+    en: {
+      title: 'Marketing by Industry — Med Spa, Contractors, Restaurants | Astratta',
+      description:
+        'Same system, different mix. Marketing built around how your industry actually buys — med spas, contractors, restaurants and real estate in Dallas–Fort Worth.',
+    },
+    es: {
+      title: 'Marketing por Industria — Med Spa, Contratistas, Restaurantes | Astratta',
+      description:
+        'Mismo sistema, distinta mezcla. Marketing construido según cómo compra tu industria — med spas, contratistas, restaurantes y bienes raíces en Dallas–Fort Worth.',
     },
   },
   '/how-it-works': {
@@ -252,6 +265,13 @@ export function getAllSeoRoutes(): SeoEntry[] {
     }),
   )
 
+  const industryRoutes = INDUSTRIES.flatMap((industry) =>
+    entriesFor(`/industries/${industry.slug}`, {
+      en: { title: `${industry.heading.en} | Astratta`, description: industry.subtext.en },
+      es: { title: `${industry.heading.es} | Astratta`, description: industry.subtext.es },
+    }),
+  )
+
   const caseStudyRoutes = CASE_STUDIES.flatMap((project) => {
     // Case-study titles are brand names — identical in both languages, as on the page itself.
     const description = CASE_STUDY_SEO_DESCRIPTIONS[project.slug] ?? project.summary
@@ -269,5 +289,5 @@ export function getAllSeoRoutes(): SeoEntry[] {
     }),
   )
 
-  return [...staticRoutes, ...serviceRoutes, ...caseStudyRoutes, ...blogRoutes]
+  return [...staticRoutes, ...serviceRoutes, ...industryRoutes, ...caseStudyRoutes, ...blogRoutes]
 }
