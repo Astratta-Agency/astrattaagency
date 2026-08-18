@@ -4,9 +4,10 @@ import { RevealText } from '@/components/ui/RevealText'
 import { ContactForm } from '@/components/ui/ContactForm'
 import { fadeUp, viewportOnce } from '@/lib/animations'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
+import { buildLanguageNote } from '@/lib/leadSummary'
 
 export function FinalCta() {
-  const { dict } = useLanguage()
+  const { dict, language } = useLanguage()
   const t = dict.home.finalCta
 
   return (
@@ -30,7 +31,12 @@ export function FinalCta() {
             viewport={viewportOnce}
             variants={fadeUp}
           >
-            <ContactForm submitLabel={t.submitLabel} source="home-final-cta" dark />
+            <ContactForm
+              submitLabel={t.submitLabel}
+              source="home-final-cta"
+              metadata={buildLanguageNote(language)}
+              dark
+            />
           </motion.div>
         </div>
       </Container>

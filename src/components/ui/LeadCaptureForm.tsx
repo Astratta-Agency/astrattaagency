@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from 'react'
 import { FORM_ENDPOINT } from '@/lib/constants'
 import { getRecaptchaToken } from '@/lib/recaptcha'
+import { getAttribution } from '@/lib/attribution'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 type Status = 'idle' | 'submitting' | 'error'
@@ -58,6 +59,8 @@ export function LeadCaptureForm({
       metadata: metadata || null,
       source_page: source,
       recaptcha_token: recaptchaToken,
+      // Clasifican el lead en el CRM (google_ads / meta_ads / website).
+      ...getAttribution(),
       honeypot: String(data.get('company_role') ?? ''),
     }
 

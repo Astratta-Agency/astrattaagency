@@ -5,6 +5,7 @@ import { Container } from '@/components/ui/Container'
 import { PageHero } from '@/components/ui/PageHero'
 import { Link } from '@/components/ui/Link'
 import { LeadCaptureForm } from '@/components/ui/LeadCaptureForm'
+import { buildGrowthScoreSummary } from '@/lib/leadSummary'
 import growthScoreImage from '@/assets/pages/growth-score.webp'
 import {
   FOUNDATION_COPY,
@@ -236,6 +237,7 @@ export default function GrowthScore() {
                     <LeadCaptureForm
                       submitLabel={t.submitLabel}
                       source="growth-score"
+                      metadata={buildGrowthScoreSummary(answers, result)}
                       onSubmitted={() => setStep(RESULT_STEP)}
                     />
                   </div>

@@ -10,13 +10,14 @@ import { FaqAccordion } from '@/components/ui/FaqAccordion'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
 import { STATIC_SEO, toSeoProps } from '@/lib/seo-data'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
+import { buildLanguageNote } from '@/lib/leadSummary'
 
 /**
  * La única puerta de entrada del sitio. Todo CTA del sitio termina aquí.
  * Copy íntegro de docs/CONTENIDO-Web-EN-ES.md §6.
  */
 export default function Diagnostic() {
-  const { dict } = useLanguage()
+  const { dict, language } = useLanguage()
   const t = dict.diagnostic
 
   return (
@@ -101,7 +102,11 @@ export default function Diagnostic() {
             </motion.div>
 
             <motion.div initial="hidden" whileInView="show" viewport={viewportOnce} variants={fadeUp}>
-              <ContactForm submitLabel={t.submitLabel} source="diagnostic-page" />
+              <ContactForm
+                submitLabel={t.submitLabel}
+                source="diagnostic-page"
+                metadata={buildLanguageNote(language)}
+              />
             </motion.div>
           </div>
         </Container>
