@@ -58,8 +58,20 @@ async function launchBrowser() {
       headless: true,
     })
   }
+  /**
+   * GitHub Actions corre sobre Ubuntu 24.04, que deshabilita los user
+   * namespaces sin privilegios vía AppArmor, así que Chrome aborta con
+   * "No usable sandbox!" antes de arrancar. En un runner efímero, que ya
+   * está aislado y solo ejecuta nuestro propio código, desactivar el
+   * sandbox es aceptable; en la máquina de desarrollo no lo es, y ahí se
+   * queda activo.
+   */
+  const isCi = Boolean(process.env.CI || process.env.GITHUB_ACTIONS)
+  const args = ['--lang=en-US']
+  if (isCi) args.push('--no-sandbox', '--disable-setuid-sandbox')
+
   const { default: puppeteer } = await import('puppeteer')
-  return puppeteer.launch({ args: ['--lang=en-US'] })
+  return puppeteer.launch({ args })
 }
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
