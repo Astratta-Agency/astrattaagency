@@ -1,0 +1,95 @@
+name: Blog images
+
+# Se dispara con cada push a una rama de artículo. Genera las 3 imágenes desde
+# .blog-specs/<slug>.json, corre el build, escribe .blog-status.txt y commitea
+# todo de vuelta a la misma rama.
+#
+# El commit de vuelta lleva [skip ci] para no volver a dispararse a sí mismo.
+
+on:
+  push:
+    branches:
+      - 'blog/**'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: blog-images-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  images:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Resolve slug from branch
+        id: slug
+        run: |
+          branch="${GITHUB_REF_NAME}"
+          slug="${branch#blog/}"
+          slug="$(printf '%s' "$slug" | sed -E 's/^[0-9]{4}-[0-9]{2}-[0-9]{2}-//')"
+          echo "slug=$slug" >> "$GITHUB_OUTPUT"
+          echo "Slug resuelto: $slug"
+
+      - name: Generate images
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          spec=".blog-specs/${{ steps.slug.outputs.slug }}.json"
+          if [ ! -f "$spec" ]; then
+            echo "No hay spec en $spec — se omite la generación de imágenes."
+            exit 0
+          fi
+          node scripts/blog-images.mjs --slug "${{ steps.slug.outputs.slug }}" --spec "$spec"
+
+      - name: Build
+        id: build
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          npm run build 2>&1 | tee build.log
+
+      - name: Write status and push back
+        run: |
+          run_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          if [ "${{ steps.build.outcome }}" = "success" ]; then
+            printf 'BUILD_OK\n%s\n' "$run_url" > .blog-status.txt
+          else
+            printf 'BUILD_FAIL\n%s\n' "$run_url" > .blog-status.txt
+            echo '--- últimas 40 líneas del build ---' >> .blog-status.txt
+            tail -n 40 build.log >> .blog-status.txt
+          fi
+          rm -f build.log
+
+          git config user.name  "astratta-blog-bot"
+          git config user.email "info@astrattaagency.com"
+          git add src/assets/blog .blog-status.txt
+          if git diff --cached --quiet; then
+            echo "Nada que commitear."
+            exit 0
+          fi
+          git commit -m "chore(blog): imágenes y estado de build [skip ci]"
+          git push origin HEAD:"${GITHUB_REF_NAME}"
+
+      - name: Fail the run if the build failed
+        if: steps.build.outcome != 'success'
+        run: |
+          echo "El build falló. El detalle quedó en .blog-status.txt de la rama."
+          exit 1
