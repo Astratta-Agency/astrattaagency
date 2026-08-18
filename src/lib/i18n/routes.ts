@@ -71,10 +71,6 @@ export const SERVICE_SLUGS: Record<string, Bilingual<string>> = {
   'web-development': { en: 'web-development', es: 'desarrollo-web' },
   ecommerce: { en: 'ecommerce', es: 'tienda-online' },
   'digital-marketing': { en: 'digital-marketing', es: 'marketing-digital' },
-  'social-media': { en: 'social-media', es: 'redes-sociales' },
-  'paid-ads': { en: 'paid-ads', es: 'publicidad-pagada' },
-  'lead-generation': { en: 'lead-generation', es: 'generacion-de-leads' },
-  'graphic-design': { en: 'graphic-design', es: 'diseno-grafico' },
 }
 
 export function languageFromPath(pathname: string): Language {

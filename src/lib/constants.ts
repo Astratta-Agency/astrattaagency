@@ -53,7 +53,8 @@ export const FOOTER_COLUMNS: { title: Bilingual<string>; links: { label: Bilingu
     links: [
       { label: { en: 'Web Development', es: 'Desarrollo Web' }, href: '/services/web-development' },
       { label: { en: 'Digital Marketing', es: 'Marketing Digital' }, href: '/services/digital-marketing' },
-      { label: { en: 'Graphic Design', es: 'Diseño Gráfico' }, href: '/services/graphic-design' },
+      // Brand/graphic design lives inside Foundation now (§12: /services/graphic-design → 301 /foundation).
+      { label: { en: 'Graphic Design', es: 'Diseño Gráfico' }, href: '/foundation' },
       { label: { en: 'Diagnostic', es: 'Diagnóstico' }, href: '/diagnostic' },
     ],
   },

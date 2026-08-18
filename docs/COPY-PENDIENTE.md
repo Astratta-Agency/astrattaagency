@@ -16,6 +16,9 @@
 | **F** | Meta de `/foundation` y `/systems` | ✅ aplicado — Fase 2 |
 | **G** | Meta de `/how-it-works` | ⚠️ provisional, derivada del doc |
 | **H** | Índice `/industries` · FAQ · línea `metrics` | ✅ **resuelto en el doc §11** |
+| **I** | FAQ del home "¿qué incluye la auditoría?" | ✅ eliminada + reemplazo aplicado |
+| **J** | Migración SEO de las 4 páginas que mueren | ✅ resuelto con 4 frases · 301 aplicados |
+| **K** | FAQ perdidas al vaciar las 3 CONSERVAR | ⛔ **abierto** |
 
 **Las metas siguen siendo el único hueco estructural.** El doc no define meta
 title/description para ninguna página nueva; las de `/how-it-works` y las que
@@ -302,75 +305,77 @@ Falta la inglesa (Regla 3: el español no es traducción, así que no la derivo 
 
 ---
 
-## I · FAQ del home: "¿Qué incluye la auditoría?" *(bloque abierto)*
-`src/data/faq.ts:33-42`
+## I · FAQ del home: "¿Qué incluye la auditoría?" — ✅ resuelto
+`src/data/faq.ts:33-40`
 
-Barrido incompleto de la Fase 1: mi patrón buscaba `free audit` y esta decía solo
-`the audit`, así que sobrevivió. Las otras seis menciones eran el nombre del
-producto de paso (`after the audit` → `after the diagnostic`) y se renombraron
-sin tocar el sentido. **Esta no**: pregunta y respuesta describen el contenido de
-la auditoría gratuita, y ese contenido cambió — ahora son 7 días, $297 y una
-lista de entregables distinta (§6).
+Eliminada sin reemplazo — el producto gratis que describía ya no existe.
+Reemplazada por la pregunta de deslinde diagnóstico-vs-sistema que el usuario dio:
 
-**EN actual:**
-> **P:** What's included in the audit?
-> **R:** A full review of your current site (or lack of one): performance, mobile experience, messaging clarity, conversion paths, and SEO fundamentals — plus a prioritized action plan of what to fix first and why.
-
-→ NUEVO EN (pregunta y respuesta):
-```
-
-```
-
-**ES actual:**
-> **P:** ¿Qué incluye la auditoría?
-> **R:** Una revisión completa de tu sitio actual (o la falta de uno): rendimiento, experiencia móvil, claridad del mensaje, rutas de conversión y fundamentos de SEO — más un plan de acción priorizado sobre qué corregir primero y por qué.
-
-→ NUEVO ES:
-```
-
-```
-
-*Insumos en §6: los 9 puntos de "qué incluye", los 7 días, la garantía de reembolso
-y los $297 acreditables. Alternativa sin escribir nada: eliminar la pregunta del
-FAQ, ya que `/diagnostic` la responde entera.*
+> **EN:** Not sure if you need the diagnostic or a system? The diagnostic finds the leaks; the system fixes them. Most clients start with the diagnostic.
+> **ES:** ¿No sabes si necesitas el diagnóstico o un sistema? El diagnóstico encuentra las fugas; el sistema las arregla. La mayoría de los clientes empieza con el diagnóstico.
 
 ---
 
-## J · Migración SEO de las 4 páginas de servicio que mueren *(bloquea el resto de la Fase 6)*
+## J · Migración SEO de las 4 páginas que mueren — ✅ resuelto
 
-§12 marca estas cuatro como **301**, pero con una condición explícita:
-*"antes de redirigir, migra el texto SEO útil a una sección de la página destino."*
+§12 condicionaba los 301 a "migrar el texto SEO útil a la página destino". Se
+resolvió **sin sección nueva ni página nueva**: cuatro frases insertadas dentro
+de bloques que ya existían.
 
-| URL | Destino | Keywords en juego |
+| Dónde | Frase | Keywords que absorbe |
 |---|---|---|
-| `/services/social-media` | `/systems` | Social Media Management Pricing Dallas |
-| `/services/paid-ads` | `/systems` | Paid Ads Management · Meta & Google Ads Dallas |
-| `/services/lead-generation` | `/systems` | Lead Generation System Dallas |
-| `/services/graphic-design` | `/foundation` | Graphic Design & Brand Identity Dallas |
+| `/systems` · subheadline del hero | `…this is the lead generation system Dallas–Fort Worth businesses use to keep their pipeline full.` | Lead Generation System Dallas |
+| `/systems` · tarjeta *Content & production* | `This is where your social media management lives — planned, shot and scheduled as part of the system, not a separate line item.` | Social Media Management Dallas |
+| `/systems` · tarjeta *Paid advertising* | `Meta Ads management and Google Ads management, run against the same cost-per-lead target as everything else.` | Meta & Google Ads Dallas |
+| `/foundation` · tarjeta Foundation ($3,500) | `Full graphic design and brand identity for Dallas businesses — logo, color system, typography.` | Graphic Design & Brand Identity Dallas |
 
-**Están sin redirigir a propósito.** Redirigirlas hoy perdería exactamente el
-ranking que la regla existe para proteger. Siguen vivas y rankeando.
+Con eso los 8 redirects (4 × 2 idiomas) están en `vercel.json`, y las 4 páginas
+se eliminaron del bundle, del sitemap y del prerender.
 
-**El problema:** su texto no se puede reubicar tal cual. Las metaDescriptions
-cargan precios eliminados (`$450/month`, `$200/month`) y el cuerpo vende social
-media, paid ads y lead gen como **SKU sueltos** — justo lo que la reestructura
-elimina. Copiarlo a `/systems` contradiría la página que lo recibe.
+⚠️ **Nota sobre la 4ª frase.** Se pidió "agregar al final de la línea de
+identidad de marca", pero la frase dada ya termina en `logo, color system,
+typography` — igual que la línea existente. Añadirla habría repetido los tres
+ítems dos veces en la misma viñeta, así que **reemplaza** esa línea en vez de
+concatenarse. Si la intención era otra, es un cambio de una línea en
+`src/data/foundation.ts`.
 
-Hace falta **una sección nueva en `/systems`** (y un párrafo en la sección de marca
-de `/foundation`) que cubra esas keywords con la voz de la arquitectura nueva:
-que esos canales existen dentro del sistema, no como productos sueltos.
+---
 
-→ NUEVA SECCIÓN PARA `/systems` (EN + ES):
+## K · FAQ perdidas al vaciar las 3 páginas CONSERVAR *(bloque abierto)*
+
+Vaciar las tres no fue solo quitar el `PricingTable`. **Sus FAQ y add-ons también
+cargaban precios y nombres de planes retirados**, y no se podían conservar:
+
+| Página | FAQ eliminadas | Por qué no sobrevivían |
+|---|---|---|
+| `/services/web-development` | 5 | citaban `$800`, `$2,000`, `$2,000-$3,500`, los planes *Landing Essentials* / *Website Core* / *Website + SEO Foundation*, y "request a free audit" |
+| `/services/ecommerce` | 5 | citaban `$2,800`, `$150/mo`, `$5,000+`, `$8,500+`, `$400`, `$250` y los planes *E-commerce Starter / Growth / Pro* |
+| `/services/digital-marketing` | 3 | vendían Paid Ads y Lead Generation System como SKU sueltos |
+
+Reescribirlas habría sido inventar copy (Regla 1); dejarlas, una violación viva
+de la Regla 5. Se eliminaron.
+
+**Lo que eso costó, y es real:**
+1. **`How much does a website cost in Dallas?` desapareció de esa página.**
+   CLAUDE.md la nombra como ranking real. El H1, la meta y el cuerpo siguen
+   cubriendo el término, pero el bloque FAQ y su `FAQPage` schema ya no están.
+2. Igual con `How much does a Shopify store cost in Dallas?` en `/services/ecommerce`.
+
+→ FAQ de reemplazo para `/services/web-development` (EN + ES) — 2 o 3 bastan:
 ```
 
 ```
 
-→ PÁRRAFO DE MARCA PARA `/foundation` (EN + ES):
+→ FAQ de reemplazo para `/services/ecommerce` (EN + ES):
 ```
 
 ```
 
-*Insumos: §4 ya describe contenido, publicidad y captura como componentes del
-Motor — falta la formulación con los términos locales de búsqueda. Alternativa:
-conservar las cuatro páginas vivas y reescribirlas apuntando a `/systems` y
-`/foundation`, como se hizo con web-development y digital-marketing.*
+→ Titular de cierre para la banda CTA de esas dos páginas (hoy es solo el botón,
+sin encabezado, porque no había copy aprobado):
+```
+
+```
+
+*Alternativa sin escribir nada: dejarlo así. Las páginas quedan correctas y sin
+precios muertos; solo pierden el bloque FAQ.*

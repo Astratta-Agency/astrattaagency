@@ -93,13 +93,13 @@ Aplica a `/services/social-media`, `/services/paid-ads` y `/services/lead-genera
 
 | URL actual | Destino | Trato |
 |---|---|---|
-| `/audit` | `/diagnostic` | 301 |
-| `/packages` | `/systems` | 301 |
-| `/services` (índice) | `/how-it-works` | 301 |
-| `/services/social-media` | `/systems` | 301 · migrar SEO antes |
-| `/services/paid-ads` | `/systems` | 301 · migrar SEO antes |
-| `/services/lead-generation` | `/systems` | 301 · migrar SEO antes |
-| `/services/graphic-design` | `/foundation` | 301 · Brand vive dentro de Foundation |
+| `/audit` | `/diagnostic` | ✅ 301 aplicado |
+| `/packages` | `/systems` | ✅ 301 aplicado |
+| `/services` (índice) | `/how-it-works` | ✅ 301 aplicado |
+| `/services/social-media` | `/systems` | ✅ 301 aplicado · SEO migrado a `/systems` |
+| `/services/paid-ads` | `/systems` | ✅ 301 aplicado · SEO migrado a `/systems` |
+| `/services/lead-generation` | `/systems` | ✅ 301 aplicado · SEO migrado a `/systems` |
+| `/services/graphic-design` | `/foundation` | ✅ 301 aplicado · SEO migrado a `/foundation` |
 | `/services/ecommerce` | — | **se conserva viva**, reescritura corta → `/foundation` (§12: intención de búsqueda propia y válida) |
 | `/services/web-development` | — | **se conserva viva**, reescrita → `/foundation` |
 | `/services/digital-marketing` | — | **se conserva viva**, reescrita → `/systems` |
@@ -107,6 +107,16 @@ Aplica a `/services/social-media`, `/services/paid-ads` y `/services/lead-genera
 | `/contact` | — | se conserva, sale del nav → footer |
 
 Cada 301 tiene su gemelo en español (`/es/auditoria` → `/es/diagnostico`, etc.).
+
+**Los 301 se replican client-side.** Un redirect de `vercel.json` solo dispara en
+peticiones reales, no en navegación dentro del SPA. `RETIRED_SERVICE_ROUTES` en
+`src/App.tsx` mantiene el gemelo en cliente para que una misma URL nunca dé dos
+respuestas distintas. Si añades un 301, añádelo en los dos sitios.
+
+**Al retirar una página, sácala también del bundle.** No basta con el 301: hay
+que borrar el componente, su entrada en `SERVICE_PAGES`/`SERVICE_SLUGS`/`PAGE_ROUTES`
+y sus locales — si no, sigue en `getAllSeoRoutes()` y por tanto en el sitemap y en
+el prerender, que es exactamente el error que el 301 intenta evitar.
 
 ### 11. `/contact` se queda
 Quitar el contacto de un sitio de servicios destruye confianza — más aún en un mercado ya quemado por agencias. Sale del **nav principal**, vive en el **footer**, simplificada.

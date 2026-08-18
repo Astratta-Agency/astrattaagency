@@ -54,7 +54,7 @@ export const FOUNDATION_TIERS: PricingTierSource[] = [
       en: [
         '5–7 pages',
         'Per-page conversion copywriting',
-        'Brand identity: logo, color system, typography',
+        'Full graphic design and brand identity for Dallas businesses — logo, color system, typography',
         'Full tracking stack',
         'CRM-connected forms',
         'Google Business Profile optimized',
@@ -66,7 +66,7 @@ export const FOUNDATION_TIERS: PricingTierSource[] = [
       es: [
         '5–7 páginas',
         'Copy de conversión por página',
-        'Identidad de marca: logo, sistema de color, tipografía',
+        'Diseño gráfico e identidad de marca completa para negocios de Dallas — logo, sistema de color, tipografía',
         'Medición completa',
         'Formularios conectados a CRM',
         'Google Business Profile optimizado',

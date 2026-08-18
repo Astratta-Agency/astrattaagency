@@ -1,22 +1,9 @@
 import type { services as en } from '@/locales/en/services'
 
 export const services: typeof en = {
-  eyebrow: 'Nuestros Servicios',
-  heading: 'Creados para convertir, no solo para verse bien.',
-  intro:
-    'Astratta ofrece cuatro líneas de servicio para negocios de Dallas–Fort Worth: desarrollo web (incluyendo e-commerce), marketing digital, diseño gráfico y auditorías de sitio web. Cada uno tiene precios transparentes por niveles a continuación — consulta el precio exacto en cada página de servicio, o usa nuestra cotización para combinar servicios en un solo plan.',
-  learnMore: 'Ver precios y detalles →',
-  priceTeasers: {
-    'web-development': 'Desde $800',
-    'digital-marketing': 'Desde $200/mes + inversión en anuncios',
-    'graphic-design': 'Desde $600*',
-    'website-audits': 'Gratis',
-  },
-  graphicDesignDisclaimer: '*El precio inicial de Diseño Gráfico es un estimado pendiente de confirmación.',
-  notSureHeading: '¿No sabes qué necesitas?',
-  notSureText: 'Arma una cotización personalizada entre servicios, o elige uno de nuestros paquetes.',
-  getQuote: 'Obtener una cotización →',
-  seePackages: 'Ver paquetes →',
+  // The /services index page was retired (§12 → 301 to /how-it-works).
+  // Only `shared` survives, consumed by the service detail pages. The old
+  // index copy carried retired prices (rule 5) and was deleted with the page.
   shared: {
     mostPopularBadge: '⭐ Lo más popular en Dallas',
     getThisPlan: 'Elegir este plan →',

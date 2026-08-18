@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import type { ReactElement } from 'react'
+import type { Bilingual } from '@/lib/i18n/types'
 import { Layout } from '@/components/layout/Layout'
 import { RootLanguageRedirect } from '@/components/layout/RootLanguageRedirect'
 import { LANGUAGES, SERVICE_SLUGS, localizedPath, routePattern, type RouteId } from '@/lib/i18n/routes'
@@ -18,10 +19,6 @@ import BlogPost from '@/pages/BlogPost'
 import WebDevelopment from '@/pages/WebDevelopment'
 import Ecommerce from '@/pages/Ecommerce'
 import DigitalMarketing from '@/pages/DigitalMarketing'
-import SocialMedia from '@/pages/SocialMedia'
-import PaidAds from '@/pages/PaidAds'
-import LeadGeneration from '@/pages/LeadGeneration'
-import GraphicDesign from '@/pages/GraphicDesign'
 import Pricing from '@/pages/Pricing'
 import Contact from '@/pages/Contact'
 import About from '@/pages/About'
@@ -55,10 +52,17 @@ const SERVICE_ROUTES: { slug: string; element: ReactElement }[] = [
   { slug: 'web-development', element: <WebDevelopment /> },
   { slug: 'ecommerce', element: <Ecommerce /> },
   { slug: 'digital-marketing', element: <DigitalMarketing /> },
-  { slug: 'social-media', element: <SocialMedia /> },
-  { slug: 'paid-ads', element: <PaidAds /> },
-  { slug: 'lead-generation', element: <LeadGeneration /> },
-  { slug: 'graphic-design', element: <GraphicDesign /> },
+]
+
+/**
+ * Slugs retirados por §12 y su destino — el gemelo client-side de los 301 de
+ * vercel.json. No están en SERVICE_SLUGS porque ya no son páginas.
+ */
+const RETIRED_SERVICE_ROUTES: { slug: Bilingual<string>; to: RouteId }[] = [
+  { slug: { en: 'social-media', es: 'redes-sociales' }, to: 'systems' },
+  { slug: { en: 'paid-ads', es: 'publicidad-pagada' }, to: 'systems' },
+  { slug: { en: 'lead-generation', es: 'generacion-de-leads' }, to: 'systems' },
+  { slug: { en: 'graphic-design', es: 'diseno-grafico' }, to: 'foundation' },
 ]
 
 export default function App() {
@@ -81,9 +85,19 @@ export default function App() {
               element={route.element}
             />
           )),
-          // El índice /services ya no existe: un slug de servicio desconocido
-          // cae en how-it-works, que es su reemplazo narrativo y el destino
-          // del 301 correspondiente.
+          // Las 4 páginas commodity retiradas (§12) tienen su 301 en
+          // vercel.json. Ese redirect solo dispara en peticiones reales, no en
+          // navegación client-side, así que se replica aquí para que la misma
+          // URL nunca dé dos respuestas distintas.
+          ...RETIRED_SERVICE_ROUTES.map(({ slug, to }) => (
+            <Route
+              key={`${language}:service:retired:${slug[language]}`}
+              path={localizedPath('serviceDetail', language, { slug: slug[language] })}
+              element={<Navigate to={localizedPath(to, language)} replace />}
+            />
+          )),
+          // El índice /services ya no existe: cualquier otro slug de servicio
+          // cae en how-it-works, su reemplazo narrativo.
           <Route
             key={`${language}:service:fallback`}
             path={routePattern('serviceDetail', language)}

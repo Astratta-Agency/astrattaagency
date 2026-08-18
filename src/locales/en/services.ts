@@ -1,20 +1,7 @@
 export const services = {
-  eyebrow: 'Our Services',
-  heading: 'Built to convert, not just to look good.',
-  intro:
-    'Astratta runs four service lines for Dallas–Fort Worth businesses: web development (including e-commerce), digital marketing, graphic design, and website audits. Each is priced in transparent tiers below — see exact pricing on each service page, or use our pricing quote to combine services into one plan.',
-  learnMore: 'View pricing & details →',
-  priceTeasers: {
-    'web-development': 'From $800',
-    'digital-marketing': 'From $200/mo + ad spend',
-    'graphic-design': 'From $600*',
-    'website-audits': 'Free',
-  },
-  graphicDesignDisclaimer: '*Graphic Design starting price is an estimate pending confirmation.',
-  notSureHeading: 'Not sure what you need?',
-  notSureText: 'Build a custom quote across services, or pick one of our bundled packages.',
-  getQuote: 'Get a pricing quote →',
-  seePackages: 'See packages →',
+  // The /services index page was retired (§12 → 301 to /how-it-works).
+  // Only `shared` survives, consumed by the service detail pages. The old
+  // index copy carried retired prices (rule 5) and was deleted with the page.
   shared: {
     mostPopularBadge: '⭐ Most popular in Dallas',
     getThisPlan: 'Get this plan →',

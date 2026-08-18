@@ -94,15 +94,15 @@ const INSIDE_SOURCES: { title: Bilingual<string>; body: Bilingual<string> }[] = 
   {
     title: { en: 'Content & production', es: 'Contenido y producción' },
     body: {
-      en: 'We come to your business and shoot. Reels, TikToks, photography, real client testimonials. We edit, write and schedule everything. Between 8 and 40 pieces a month depending on level — each with a defined role in the funnel, not posts to fill a feed.',
-      es: 'Vamos a tu negocio y grabamos. Reels, TikToks, fotografía, testimonios de clientes reales. Editamos, escribimos y programamos todo. Entre 8 y 40 piezas al mes según el nivel — y cada una con una función definida dentro del embudo, no publicaciones para llenar el feed.',
+      en: 'We come to your business and shoot. Reels, TikToks, photography, real client testimonials. We edit, write and schedule everything. Between 8 and 40 pieces a month depending on level — each with a defined role in the funnel, not posts to fill a feed. This is where your social media management lives — planned, shot and scheduled as part of the system, not a separate line item.',
+      es: 'Vamos a tu negocio y grabamos. Reels, TikToks, fotografía, testimonios de clientes reales. Editamos, escribimos y programamos todo. Entre 8 y 40 piezas al mes según el nivel — y cada una con una función definida dentro del embudo, no publicaciones para llenar el feed. Aquí vive el manejo de redes sociales — planeado, grabado y programado como parte del sistema, no como un renglón aparte.',
     },
   },
   {
     title: { en: 'Paid advertising', es: 'Publicidad paga' },
     body: {
-      en: 'Meta and Google, managed against a cost-per-lead target. New creative every month, angles that actually get tested, retargeting by stage. Your ad budget goes straight to the platforms from your own account — it never passes through us, and the account is always yours.',
-      es: 'Meta y Google, gestionados contra un objetivo de costo por lead. Creativos nuevos cada mes, ángulos que se testean de verdad, retargeting por etapa. Tu presupuesto de anuncios lo pagas directo a las plataformas desde tu propia cuenta — nunca pasa por nosotros y la cuenta siempre es tuya.',
+      en: 'Meta and Google, managed against a cost-per-lead target. New creative every month, angles that actually get tested, retargeting by stage. Your ad budget goes straight to the platforms from your own account — it never passes through us, and the account is always yours. Meta Ads management and Google Ads management, run against the same cost-per-lead target as everything else.',
+      es: 'Meta y Google, gestionados contra un objetivo de costo por lead. Creativos nuevos cada mes, ángulos que se testean de verdad, retargeting por etapa. Tu presupuesto de anuncios lo pagas directo a las plataformas desde tu propia cuenta — nunca pasa por nosotros y la cuenta siempre es tuya. Manejo de anuncios de Meta y de Google, gestionados contra el mismo objetivo de costo por lead que todo lo demás.',
     },
   },
   {

@@ -64,14 +64,14 @@ export const STATIC_SEO: Record<string, Bilingual<{ title: string; description: 
   },
   '/services/digital-marketing': {
     en: {
-      title: 'Digital Marketing for Dallas Businesses — Social, Ads & Lead Gen | Astratta',
+      title: 'Digital Marketing Services for Dallas | Astratta',
       description:
-        'Social media management, paid ads (Meta/Google), and full lead generation systems for Dallas–Fort Worth startups and SMBs — every plan reports leads and cost per lead, not vanity metrics.',
+        'Social media, paid ads and lead generation for Dallas–Fort Worth businesses. See current levels and flat pricing on our Systems page.',
     },
     es: {
-      title: 'Marketing Digital para Negocios de Dallas — Redes, Anuncios y Leads | Astratta',
+      title: 'Servicios de Marketing Digital — Dallas | Astratta',
       description:
-        'Gestión de redes sociales, anuncios pagados (Meta/Google) y sistemas completos de generación de leads para startups y pymes de Dallas–Fort Worth — cada plan reporta leads y costo por lead, no métricas de vanidad.',
+        'Redes sociales, publicidad paga y generación de leads para negocios de Dallas–Fort Worth. Ve los niveles y precios cerrados en nuestra página Sistemas.',
     },
   },
   '/pricing': {

@@ -29,6 +29,46 @@
       "source": "/es/servicios",
       "destination": "/es/como-trabajamos",
       "permanent": true
+    },
+    {
+      "source": "/services/social-media",
+      "destination": "/systems",
+      "permanent": true
+    },
+    {
+      "source": "/es/servicios/redes-sociales",
+      "destination": "/es/sistemas",
+      "permanent": true
+    },
+    {
+      "source": "/services/paid-ads",
+      "destination": "/systems",
+      "permanent": true
+    },
+    {
+      "source": "/es/servicios/publicidad-pagada",
+      "destination": "/es/sistemas",
+      "permanent": true
+    },
+    {
+      "source": "/services/lead-generation",
+      "destination": "/systems",
+      "permanent": true
+    },
+    {
+      "source": "/es/servicios/generacion-de-leads",
+      "destination": "/es/sistemas",
+      "permanent": true
+    },
+    {
+      "source": "/services/graphic-design",
+      "destination": "/foundation",
+      "permanent": true
+    },
+    {
+      "source": "/es/servicios/diseno-grafico",
+      "destination": "/es/base",
+      "permanent": true
     }
   ],
   "headers": [

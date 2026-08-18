@@ -17,8 +17,6 @@ import { notFound } from '@/locales/es/notFound'
 import { about } from '@/locales/es/about'
 import { servicePages } from '@/locales/es/servicePages'
 import { digitalMarketing } from '@/locales/es/digitalMarketing'
-import { pricingQuiz } from '@/locales/es/pricingQuiz'
-import { packages } from '@/locales/es/packages'
 import { blog } from '@/locales/es/blog'
 
 export const es: Dictionary = {
@@ -40,7 +38,5 @@ export const es: Dictionary = {
   about,
   servicePages,
   digitalMarketing,
-  pricingQuiz,
-  packages,
   blog,
 }

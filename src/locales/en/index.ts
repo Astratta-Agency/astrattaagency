@@ -16,8 +16,6 @@ import { notFound } from '@/locales/en/notFound'
 import { about } from '@/locales/en/about'
 import { servicePages } from '@/locales/en/servicePages'
 import { digitalMarketing } from '@/locales/en/digitalMarketing'
-import { pricingQuiz } from '@/locales/en/pricingQuiz'
-import { packages } from '@/locales/en/packages'
 import { blog } from '@/locales/en/blog'
 
 export const en = {
@@ -39,8 +37,6 @@ export const en = {
   about,
   servicePages,
   digitalMarketing,
-  pricingQuiz,
-  packages,
   blog,
 }
 

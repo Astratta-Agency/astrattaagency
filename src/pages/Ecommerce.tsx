@@ -2,25 +2,25 @@ import { Link } from '@/components/ui/Link'
 import { motion } from 'framer-motion'
 import { Seo } from '@/components/layout/Seo'
 import { Container } from '@/components/ui/Container'
-import { SectionLabel } from '@/components/ui/SectionLabel'
 import { RevealText } from '@/components/ui/RevealText'
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
 import { JsonLd } from '@/components/ui/JsonLd'
-import { PricingTable } from '@/components/ui/PricingTable'
-import { QuoteCallout } from '@/components/ui/QuoteCallout'
-import { AddOnsList } from '@/components/ui/AddOnsList'
-import { FaqAccordion } from '@/components/ui/FaqAccordion'
-import { ContactForm } from '@/components/ui/ContactForm'
 import { ServiceFrustrations } from '@/components/ui/ServiceFrustrations'
 import { ServiceProcess } from '@/components/ui/ServiceProcess'
 import { ServiceBenefits } from '@/components/ui/ServiceBenefits'
 import { ECOMMERCE_PAGE, resolveServicePage } from '@/data/pricing'
-import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
-import { buildFaqSchema, buildOfferSchema, buildServiceSchema } from '@/lib/schema'
+import { fadeUp, viewportOnce } from '@/lib/animations'
+import { buildServiceSchema } from '@/lib/schema'
 import { SITE } from '@/lib/constants'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import ecommerceHeroIllustration from '@/assets/illustrations/ecommerce-hero.webp'
 
+/**
+ * §12 "CONSERVAR": its own search intent is valid, so the URL stays — but
+ * e-commerce is now a Foundation add-on, not a tier ladder. The old
+ * $2,800 / $5,000 / $8,500 tiers and their FAQ never existed in the current
+ * architecture and were removed.
+ */
 export default function Ecommerce() {
   const { language, dict } = useLanguage()
   const page = resolveServicePage(ECOMMERCE_PAGE, language)
@@ -29,20 +29,16 @@ export default function Ecommerce() {
   const path = `/services/${page.slug}`
   const url = `https://${SITE.domain}${path}`
 
-  const serviceSchema = {
-    ...buildServiceSchema({
-      name: 'E-commerce Website Development',
-      description: page.intro,
-      url,
-    }),
-    offers: buildOfferSchema(page.tiers),
-  }
+  const serviceSchema = buildServiceSchema({
+    name: 'E-commerce Website Development',
+    description: page.intro,
+    url,
+  })
 
   return (
     <>
       <Seo title={page.metaTitle} description={page.metaDescription} path={path} />
       <JsonLd data={serviceSchema} />
-      <JsonLd data={buildFaqSchema(page.faqs)} />
 
       <section className="bg-white pb-16 pt-40 md:pb-24 md:pt-48">
         <Container>
@@ -78,6 +74,19 @@ export default function Ecommerce() {
               >
                 {page.intro}
               </motion.p>
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="mt-8"
+              >
+                <Link
+                  to="/foundation"
+                  className="inline-flex rounded-full bg-primary px-6 py-3 font-sans text-sm font-bold text-white transition-colors hover:bg-primary-dark active:scale-[0.97]"
+                >
+                  {t.ctaLabel}
+                </Link>
+              </motion.div>
             </div>
 
             <motion.div
@@ -102,121 +111,22 @@ export default function Ecommerce() {
 
       {page.benefits && <ServiceBenefits benefits={page.benefits} />}
 
-      <section className="border-t border-ink/10 pb-24 pt-24 md:pb-32 md:pt-32">
+      <section className="dot-pattern relative overflow-hidden border-t border-ink/10 bg-ink py-20 text-white md:py-24">
         <Container>
-          <PricingTable tiers={page.tiers} />
-        </Container>
-      </section>
-
-      {page.addOns && (
-        <section className="border-t border-ink/10 py-24 md:py-32">
-          <Container>
-            <motion.div
-              initial="hidden"
-              whileInView="show"
-              viewport={viewportOnce}
-              variants={staggerContainer(0.1)}
-              className="mb-12 max-w-2xl"
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={viewportOnce}
+            variants={fadeUp}
+            className="flex justify-center"
+          >
+            <Link
+              to="/foundation"
+              className="rounded-full bg-white px-8 py-4 font-sans text-base font-bold text-ink transition-colors hover:bg-secondary hover:text-white active:scale-[0.97]"
             >
-              <motion.div variants={fadeUp}>
-                <SectionLabel>{shared.addOnsLabel}</SectionLabel>
-              </motion.div>
-              <h2 className="mt-5 font-sans text-3xl font-extrabold tracking-tight sm:text-4xl">
-                {shared.addOnsHeading}
-              </h2>
-            </motion.div>
-
-            <motion.div initial="hidden" whileInView="show" viewport={viewportOnce} variants={fadeUp}>
-              <AddOnsList items={page.addOns} />
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="show"
-              viewport={viewportOnce}
-              variants={fadeUp}
-              className="mt-12 rounded-3xl bg-ink p-8 text-white md:p-10"
-            >
-              <span className="font-sans text-xs font-bold uppercase tracking-[0.2em] text-secondary">
-                {shared.bundleSaveLabel}
-              </span>
-              <p className="mt-4 max-w-xl text-lg text-white/80">
-                {t.bundleNote.prefix}
-                <span className="font-bold text-white">{t.bundleNote.priceText}</span>
-                {t.bundleNote.suffix}
-              </p>
-              <Link
-                to="/systems"
-                className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-sans text-sm font-bold text-ink transition-colors hover:bg-secondary hover:text-white"
-              >
-                {shared.seeAllBundles}
-              </Link>
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="show"
-              viewport={viewportOnce}
-              variants={staggerContainer(0.1)}
-              className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2"
-            >
-              <motion.div
-                variants={fadeUp}
-                className="rounded-2xl border border-ink/10 bg-neutral/40 p-6 md:p-8"
-              >
-                <p className="text-ink/70">
-                  {t.crossSell.text}{' '}
-                  <Link to={t.crossSell.to} className="font-bold text-primary">
-                    {t.crossSell.linkText}
-                  </Link>
-                </p>
-              </motion.div>
-              <motion.div variants={fadeUp}>
-                <QuoteCallout />
-              </motion.div>
-            </motion.div>
-          </Container>
-        </section>
-      )}
-
-      <section className="bg-neutral/40 py-24 md:py-32">
-        <Container>
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-[1fr_1.6fr] md:gap-10">
-            <motion.div
-              initial="hidden"
-              whileInView="show"
-              viewport={viewportOnce}
-              variants={staggerContainer(0.1)}
-            >
-              <motion.div variants={fadeUp}>
-                <SectionLabel>{shared.faqLabel}</SectionLabel>
-              </motion.div>
-              <h2 className="mt-5 font-sans text-3xl font-extrabold tracking-tight sm:text-4xl">
-                <RevealText text={shared.questionsAnswered} />
-              </h2>
-            </motion.div>
-
-            <motion.div initial="hidden" whileInView="show" viewport={viewportOnce} variants={fadeUp}>
-              <FaqAccordion items={page.faqs} />
-            </motion.div>
-          </div>
-        </Container>
-      </section>
-
-      <section className="dot-pattern relative overflow-hidden bg-white py-24 md:py-32">
-        <Container>
-          <div className="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-10">
-            <motion.div initial="hidden" whileInView="show" viewport={viewportOnce} variants={fadeUp}>
-              <h2 className="font-sans text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">
-                <RevealText text={t.closingHeading} />
-              </h2>
-              <p className="mt-6 max-w-md text-ink/60">{t.closingSubtext}</p>
-            </motion.div>
-
-            <motion.div initial="hidden" whileInView="show" viewport={viewportOnce} variants={fadeUp}>
-              <ContactForm submitLabel={t.submitLabel} source="ecommerce-page" />
-            </motion.div>
-          </div>
+              {t.ctaLabel}
+            </Link>
+          </motion.div>
         </Container>
       </section>
     </>

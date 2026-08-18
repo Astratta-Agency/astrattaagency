@@ -32,12 +32,12 @@ export const FAQ_ITEMS: FaqEntry[] = [
   },
   {
     question: {
-      en: "What's included in the audit?",
-      es: '¿Qué incluye la auditoría?',
+      en: 'Not sure if you need the diagnostic or a system?',
+      es: '¿No sabes si necesitas el diagnóstico o un sistema?',
     },
     answer: {
-      en: 'A full review of your current site (or lack of one): performance, mobile experience, messaging clarity, conversion paths, and SEO fundamentals — plus a prioritized action plan of what to fix first and why.',
-      es: 'Una revisión completa de tu sitio actual (o la falta de uno): rendimiento, experiencia móvil, claridad del mensaje, rutas de conversión y fundamentos de SEO — más un plan de acción priorizado sobre qué corregir primero y por qué.',
+      en: 'The diagnostic finds the leaks; the system fixes them. Most clients start with the diagnostic.',
+      es: 'El diagnóstico encuentra las fugas; el sistema las arregla. La mayoría de los clientes empieza con el diagnóstico.',
     },
   },
   {
