@@ -18,7 +18,7 @@
 | **H** | Índice `/industries` · FAQ · línea `metrics` | ✅ **resuelto en el doc §11** |
 | **I** | FAQ del home "¿qué incluye la auditoría?" | ✅ eliminada + reemplazo aplicado |
 | **J** | Migración SEO de las 4 páginas que mueren | ✅ resuelto con 4 frases · 301 aplicados |
-| **K** | FAQ perdidas al vaciar las 3 CONSERVAR | ⛔ **abierto** |
+| **K** | FAQ perdidas al vaciar las 3 CONSERVAR | ✅ aplicado — FAQ restauradas + titulares |
 
 **Las metas siguen siendo el único hueco estructural.** El doc no define meta
 title/description para ninguna página nueva; las de `/how-it-works` y las que
@@ -341,41 +341,23 @@ concatenarse. Si la intención era otra, es un cambio de una línea en
 
 ---
 
-## K · FAQ perdidas al vaciar las 3 páginas CONSERVAR *(bloque abierto)*
+## K · FAQ perdidas al vaciar las 3 páginas CONSERVAR — ✅ resuelto
 
-Vaciar las tres no fue solo quitar el `PricingTable`. **Sus FAQ y add-ons también
-cargaban precios y nombres de planes retirados**, y no se podían conservar:
+Vaciar las tres no fue solo quitar el `PricingTable`: sus FAQ y add-ons cargaban
+precios y nombres de planes retirados (`$800`, `$2,000`, `$2,800`, `$8,500`,
+*Landing Essentials*, *Website Core*, *E-commerce Pro*, "free audit"), así que se
+eliminaron con ellos. El copy de reemplazo lo aportó el usuario y ya está aplicado:
 
-| Página | FAQ eliminadas | Por qué no sobrevivían |
-|---|---|---|
-| `/services/web-development` | 5 | citaban `$800`, `$2,000`, `$2,000-$3,500`, los planes *Landing Essentials* / *Website Core* / *Website + SEO Foundation*, y "request a free audit" |
-| `/services/ecommerce` | 5 | citaban `$2,800`, `$150/mo`, `$5,000+`, `$8,500+`, `$400`, `$250` y los planes *E-commerce Starter / Growth / Pro* |
-| `/services/digital-marketing` | 3 | vendían Paid Ads y Lead Generation System como SKU sueltos |
+| Página | Restaurado |
+|---|---|
+| `/services/web-development` | 3 FAQ — incluida `How much does a website cost in Dallas?`, el ranking que CLAUDE.md nombra · titular de cierre |
+| `/services/ecommerce` | 2 FAQ — incluida `How much does an online store cost in Dallas?` · titular de cierre |
+| `/services/digital-marketing` | sin FAQ · vive como handoff corto a `/systems` |
 
-Reescribirlas habría sido inventar copy (Regla 1); dejarlas, una violación viva
-de la Regla 5. Se eliminaron.
+Con eso vuelve el `FAQPage` schema a las dos páginas, verificado en el DOM
+renderizado en ambos idiomas. La única cifra que aparece es `$2,500` como add-on
+de Foundation, que es canónica.
 
-**Lo que eso costó, y es real:**
-1. **`How much does a website cost in Dallas?` desapareció de esa página.**
-   CLAUDE.md la nombra como ranking real. El H1, la meta y el cuerpo siguen
-   cubriendo el término, pero el bloque FAQ y su `FAQPage` schema ya no están.
-2. Igual con `How much does a Shopify store cost in Dallas?` en `/services/ecommerce`.
-
-→ FAQ de reemplazo para `/services/web-development` (EN + ES) — 2 o 3 bastan:
-```
-
-```
-
-→ FAQ de reemplazo para `/services/ecommerce` (EN + ES):
-```
-
-```
-
-→ Titular de cierre para la banda CTA de esas dos páginas (hoy es solo el botón,
-sin encabezado, porque no había copy aprobado):
-```
-
-```
-
-*Alternativa sin escribir nada: dejarlo así. Las páginas quedan correctas y sin
-precios muertos; solo pierden el bloque FAQ.*
+`/services/digital-marketing` se queda sin bloque FAQ a propósito: sus tres
+preguntas vendían Paid Ads y Lead Generation como productos sueltos, y la página
+ya no vende nada — solo redirige la intención hacia `/systems`.

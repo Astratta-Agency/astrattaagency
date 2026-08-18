@@ -5,12 +5,14 @@ import { Container } from '@/components/ui/Container'
 import { RevealText } from '@/components/ui/RevealText'
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
 import { JsonLd } from '@/components/ui/JsonLd'
+import { SectionLabel } from '@/components/ui/SectionLabel'
+import { FaqAccordion } from '@/components/ui/FaqAccordion'
 import { ServiceFrustrations } from '@/components/ui/ServiceFrustrations'
 import { ServiceProcess } from '@/components/ui/ServiceProcess'
 import { ServiceBenefits } from '@/components/ui/ServiceBenefits'
 import { ECOMMERCE_PAGE, resolveServicePage } from '@/data/pricing'
-import { fadeUp, viewportOnce } from '@/lib/animations'
-import { buildServiceSchema } from '@/lib/schema'
+import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
+import { buildFaqSchema, buildServiceSchema } from '@/lib/schema'
 import { SITE } from '@/lib/constants'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import ecommerceHeroIllustration from '@/assets/illustrations/ecommerce-hero.webp'
@@ -39,6 +41,7 @@ export default function Ecommerce() {
     <>
       <Seo title={page.metaTitle} description={page.metaDescription} path={path} />
       <JsonLd data={serviceSchema} />
+      {page.faqs && <JsonLd data={buildFaqSchema(page.faqs)} />}
 
       <section className="bg-white pb-16 pt-40 md:pb-24 md:pt-48">
         <Container>
@@ -111,21 +114,56 @@ export default function Ecommerce() {
 
       {page.benefits && <ServiceBenefits benefits={page.benefits} />}
 
-      <section className="dot-pattern relative overflow-hidden border-t border-ink/10 bg-ink py-20 text-white md:py-24">
+
+      {page.faqs && (
+        <section className="bg-neutral/40 py-24 md:py-32">
+          <Container>
+            <div className="grid grid-cols-1 gap-12 md:grid-cols-[1fr_1.6fr] md:gap-10">
+              <motion.div
+                initial="hidden"
+                whileInView="show"
+                viewport={viewportOnce}
+                variants={staggerContainer(0.1)}
+              >
+                <motion.div variants={fadeUp}>
+                  <SectionLabel>{shared.faqLabel}</SectionLabel>
+                </motion.div>
+                <h2 className="mt-5 font-sans text-3xl font-extrabold tracking-tight sm:text-4xl">
+                  <RevealText text={shared.questionsAnswered} />
+                </h2>
+              </motion.div>
+
+              <motion.div initial="hidden" whileInView="show" viewport={viewportOnce} variants={fadeUp}>
+                <FaqAccordion items={page.faqs} />
+              </motion.div>
+            </div>
+          </Container>
+        </section>
+      )}
+
+      <section className="dot-pattern relative overflow-hidden bg-ink py-24 text-white md:py-28">
         <Container>
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={viewportOnce}
-            variants={fadeUp}
-            className="flex justify-center"
+            variants={staggerContainer(0.1)}
+            className="flex flex-col items-start gap-8 md:flex-row md:items-center md:justify-between"
           >
-            <Link
-              to="/foundation"
-              className="rounded-full bg-white px-8 py-4 font-sans text-base font-bold text-ink transition-colors hover:bg-secondary hover:text-white active:scale-[0.97]"
+            <motion.h2
+              variants={fadeUp}
+              className="max-w-xl font-sans text-3xl font-extrabold leading-[1.1] tracking-tight sm:text-4xl"
             >
-              {t.ctaLabel}
-            </Link>
+              <RevealText text={t.closingHeading} />
+            </motion.h2>
+            <motion.div variants={fadeUp} className="shrink-0">
+              <Link
+                to="/foundation"
+                className="inline-flex rounded-full bg-white px-8 py-4 font-sans text-base font-bold text-ink transition-colors hover:bg-secondary hover:text-white active:scale-[0.97]"
+              >
+                {t.ctaLabel}
+              </Link>
+            </motion.div>
           </motion.div>
         </Container>
       </section>

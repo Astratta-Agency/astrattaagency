@@ -263,6 +263,38 @@ export const WEB_DEVELOPMENT_PAGE: ServicePageSource = {
       'Una estructura construida para agregar SEO, anuncios o e-commerce después sin reconstruir.',
     ],
   },
+  faqs: [
+    {
+      question: {
+        en: 'How much does a website cost in Dallas?',
+        es: '¿Cuánto cuesta un sitio web en Dallas?',
+      },
+      answer: {
+        en: 'It depends on scope — a single conversion landing page moves faster and costs less than a full multi-page site with local SEO. We publish flat, public pricing for all three levels on our Foundation page, so you see the exact number before you talk to anyone.',
+        es: 'Depende del alcance — una landing page de conversión es más rápida y cuesta menos que un sitio completo multi-página con SEO local. Publicamos precios cerrados y públicos para los tres niveles en nuestra página Base, así que ves el número exacto antes de hablar con nadie.',
+      },
+    },
+    {
+      question: {
+        en: "What's the difference between a landing page and a full website?",
+        es: '¿Cuál es la diferencia entre una landing page y un sitio completo?',
+      },
+      answer: {
+        en: 'A landing page is a single page built around one action — usually to run ads to. A full site covers your services, about, contact and more, and is what most established businesses need. Both are covered under Foundation, at different levels.',
+        es: 'Una landing page es una sola página construida alrededor de una acción — normalmente para correr anuncios. Un sitio completo cubre tus servicios, nosotros, contacto y más, y es lo que necesita la mayoría de los negocios establecidos. Ambos están cubiertos bajo Base, en distintos niveles.',
+      },
+    },
+    {
+      question: {
+        en: 'Can I start small and upgrade later?',
+        es: '¿Puedo empezar pequeño y subir de nivel después?',
+      },
+      answer: {
+        en: "Yes. Every Foundation level is built on the same structure, so moving from a single landing page to a full site — or adding local SEO later — doesn't require starting over.",
+        es: 'Sí. Cada nivel de Base se construye sobre la misma estructura, así que pasar de una sola landing page a un sitio completo — o agregar SEO local después — no requiere empezar de cero.',
+      },
+    },
+  ],
 }
 
 export const ECOMMERCE_PAGE: ServicePageSource = {
@@ -363,30 +395,29 @@ export const ECOMMERCE_PAGE: ServicePageSource = {
       'Analítica real de e-commerce desde el día uno (carrito, checkout, embudo de compra) — no solo vistas de página.',
     ],
   },
+  faqs: [
+    {
+      question: {
+        en: 'How much does an online store cost in Dallas?',
+        es: '¿Cuánto cuesta una tienda en línea en Dallas?',
+      },
+      answer: {
+        en: "E-commerce builds start at $2,500 as an add-on to Foundation. The exact cost depends on catalog size, payment integrations and whether you need custom features — you'll get a firm number after the diagnostic.",
+        es: 'Las tiendas en línea empiezan en $2,500 como add-on de Base. El costo exacto depende del tamaño del catálogo, las integraciones de pago y si necesitas funciones a la medida — vas a tener un número firme después del diagnóstico.',
+      },
+    },
+    {
+      question: {
+        en: 'Do I need Foundation first, or can I just get a store?',
+        es: '¿Necesito Base primero, o puedo pedir solo la tienda?',
+      },
+      answer: {
+        en: 'E-commerce is built as part of a Foundation project, not on its own. The same tracking, brand and conversion structure that makes Foundation work applies to a store — a storefront without that foundation underneath tends to underperform.',
+        es: 'El e-commerce se construye como parte de un proyecto de Base, no por separado. La misma estructura de medición, marca y conversión que hace funcionar a Base aplica a una tienda — un storefront sin esa base debajo suele rendir menos.',
+      },
+    },
+  ],
 }
-
-/**
- * Standalone Paid Ads service (per-channel management fee + client-paid ad
- * spend). Distinct from the cheaper "Ads Scaling" tiers bundled inside the
- * Lead Generation System page — those are subsidized by the $1,200/mo Lead
- * Gen retainer, so don't merge the two pricing tables.
- */
-
-/**
- * Astratta's core offer. Structurally different from the other service
- * pages: one core system (tiers[0], rendered full-width/hero) plus two
- * optional add-ons (tiers[1..2], rendered smaller/secondary) rather than
- * parallel comparison tiers. The separate "Ads Scaling" 3-row mini-table
- * lives as page-local data in LeadGeneration.tsx, not here, since it's a
- * one-off shape (fee/budget/creatives/targeting/result columns) that doesn't
- * fit PricingTier and isn't reused anywhere else.
- */
-
-/**
- * Pricing validated against 2026 market comparables (Penji, Design Pickle,
- * boutique branding agencies) and Astratta's other service-page tiers.
- * Confirmed by Hisbelis — safe to treat as launch-ready.
- */
 
 /**
  * Populated per-page as each service page is built (see working-method rule:
