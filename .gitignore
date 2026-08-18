@@ -11,7 +11,11 @@ node_modules
 dist
 dist-ssr
 *.local
-.env
+
+# Variables de entorno — cubre .env, .env.production, .env.local, etc.
+# .env.example es la plantilla sin valores y sí se versiona.
+.env*
+!.env.example
 
 # Claude Code skill tooling (installed via `npx skills add`, not site content)
 .agents/
