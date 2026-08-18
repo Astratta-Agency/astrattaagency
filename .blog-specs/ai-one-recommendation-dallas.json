@@ -1,0 +1,15 @@
+{
+  "cover": {
+    "concept": "A single spotlight beam cutting down through darkness onto a flat-plan city grid of identical small rectangular buildings, illuminating only one of them in bright accent orange while the rest of the grid stays in muted indigo shadow, with one small abstract speech-bubble shape hovering above the lit building as the source of the beam."
+  },
+  "inline": [
+    {
+      "name": "one-glowing-storefront",
+      "concept": "A row of identical simple storefront-front shapes rendered as flat geometric silhouettes, all in muted indigo, except one storefront near the center rendered in bright accent orange and slightly larger, with a thin beam of light connecting it upward to a small abstract chat-bubble shape above the row."
+    },
+    {
+      "name": "profile-lighthouse-beacon",
+      "concept": "A single tall card-shaped beacon standing on a dark coastline, its top glowing in bright accent orange like a lighthouse lamp and casting a narrow beam of light across calm water toward a small abstract angular shape representing an AI, while several shorter unlit card-shapes sit further down the same coastline, half-obscured by a soft grey fog band."
+    }
+  ]
+}
