@@ -9,6 +9,9 @@ import localSeoReviews from '@/assets/blog/local-seo-reviews.webp'
 import aiLocalPickCover from '@/assets/blog/ai-one-recommendation-dallas-cover.webp'
 import aiLocalPickStorefront from '@/assets/blog/ai-one-recommendation-dallas-one-glowing-storefront.webp'
 import aiLocalPickBeacon from '@/assets/blog/ai-one-recommendation-dallas-profile-lighthouse-beacon.webp'
+import missedCallsCover from '@/assets/blog/missed-calls-lost-jobs-dfw-cover.webp'
+import missedCallsLeakTracking from '@/assets/blog/missed-calls-lost-jobs-dfw-leak-tracking.webp'
+import missedCallsUnifiedInbox from '@/assets/blog/missed-calls-lost-jobs-dfw-unified-inbox.webp'
 
 export type BlogCategory = 'web-conversion' | 'digital-marketing' | 'design' | 'case-notes'
 
@@ -523,6 +526,178 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: 'Nada de esto reemplaza un sitio que ya convierte una vez que el cliente llega — ese es otro problema con otro arreglo. Pero si la IA que responde por tu negocio hoy es segura, actual y correcta, **esa es una forma menos de que un cliente en DFW se vaya en silencio con la competencia antes de siquiera ver tu página.** Empieza con el [Diagnóstico](/diagnostic) — siete días, una persona real revisando lo que realmente existe, y una lista priorizada de qué arreglar primero.',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'missed-calls-lost-jobs-dfw', es: 'llamadas-perdidas-trabajos-dfw' },
+    title: {
+      en: "The missed call that's costing your DFW home improvement business the job",
+      es: 'La llamada perdida que le está costando el contrato a tu negocio de remodelación en DFW',
+    },
+    excerpt: {
+      en: 'Every ring that goes to voicemail is a lead about to call your competitor. Here’s the three-step fix DFW home improvement businesses can run this week — no agency required.',
+      es: 'Cada timbre que se va al buzón de voz es un lead a punto de llamar a tu competencia. Este es el arreglo de tres pasos que un negocio de remodelación en DFW puede implementar esta semana — sin agencia.',
+    },
+    category: 'web-conversion',
+    publishedAt: '2026-08-20',
+    readingTime: { en: '5 min read', es: '5 min de lectura' },
+    coverGradient: 'from-secondary/20 to-primary/20',
+    coverVariant: 'insight',
+    coverImage: missedCallsCover,
+    coverAlt: {
+      en: 'A rotary phone receiver dangling off the hook above an hourglass with sand draining fast.',
+      es: 'Un auricular de teléfono antiguo colgando fuera de la base, sobre un reloj de arena que se vacía rápido.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'Missed Calls Cost DFW Contractors Jobs | Astratta',
+      es: 'Llamadas Perdidas le Cuestan Contratos en DFW | Astratta',
+    },
+    metaDescription: {
+      en: "Missed calls are costing Dallas–Fort Worth contractors real jobs. Here's the three-step, no-agency fix: track the leak, answer fast, centralize every lead.",
+      es: 'Las llamadas perdidas le cuestan contratos a los negocios de Dallas–Fort Worth. El arreglo de tres pasos sin agencia: rastrear, responder rápido y centralizar.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: 'Every contractor in Dallas–Fort Worth says some version of the same thing: **the day I don’t pick up, that lead calls the next name on the list.** It’s not a complaint about volume — most home improvement businesses in DFW get enough calls. It’s a complaint about what happens in the fifteen minutes after a ring goes unanswered, when a homeowner with a leaking roof or a broken AC unit is already dialing the next number on Google.',
+        },
+        { kind: 'heading', text: 'What’s actually draining the pipeline' },
+        {
+          kind: 'paragraph',
+          text: 'The instinct is to blame lead quality or the ad budget. The real cause is almost always response time. A prospect who’s already compared two or three companies treats the first business to respond as the most trustworthy one, regardless of price or reviews. **Speed to first contact functions like a tiebreaker for every job that isn’t already decided.** A missed call isn’t a missed opportunity in the abstract — it’s a specific homeowner, standing in their kitchen, about to dial the next number down the list.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Add up where those leads actually go once they escape a phone call, and the pattern repeats across nearly every DFW home services business we’ve looked at: a text left unanswered on a personal cellphone, a Facebook DM read at 9pm after the crew’s already gone home, a voicemail nobody transcribes until the next morning. None of these are dramatic failures. They’re just small gaps, repeated dozens of times a month, that a homeowner mid-emergency isn’t willing to wait through.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'There’s also a version of this problem that isn’t about answering at all — it’s about where the answer goes afterward. A prospect gets a callback, gives their address and the type of job, and that information lives in a text thread on someone’s personal phone. Three weeks later, when it’s time to follow up on the estimate, nobody remembers to, because the information never left that one phone.',
+        },
+        { kind: 'heading', text: '1. Put a number on the leak' },
+        {
+          kind: 'paragraph',
+          text: 'Before you fix anything, measure how much is actually leaking. A dedicated call tracking number — routed through your Google Ads, your Google Business Profile, or your website — tells you exactly how many calls come in, how many get answered live, and what time of day the rest disappear. Most owners guess at this number and guess wrong; the real answer is usually worse during job-site hours, between roughly 8am and 4pm, than anyone expects. **You can’t fix a leak you’ve never quantified.** Tools like CallRail or a dedicated WhatsApp Business line do this without buying a new phone system.',
+        },
+        { kind: 'heading', text: '2. Answer in under 60 seconds — even when you can’t' },
+        {
+          kind: 'paragraph',
+          text: 'Set up an SMS or WhatsApp auto-response that fires the moment a call goes unanswered: a short message confirming you saw the call and asking what the problem is and where they’re located. **The first 60 seconds after a missed call decide whether that lead is still yours**, because it’s the window where a homeowner is still deciding whether to keep dialing down the list or wait for a callback. It doesn’t replace the callback — it holds the lead in place until someone on the crew can make it.',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'You can’t fix a leak you’ve never measured — a tracking number turns guesses into a real percentage.',
+          src: missedCallsLeakTracking,
+          alt: 'A magnifying glass hovering over a dripping faucet shaped like a phone handset, with drops falling into a bucket marked with a rising number.',
+        },
+        { kind: 'heading', text: '3. Get every lead into one place' },
+        {
+          kind: 'paragraph',
+          text: 'Migrate the contacts scattered across a personal cellphone, Instagram DMs, and text threads into one centralized CRM — even the free tier of HubSpot, or a shared spreadsheet with reminders, is enough to start. A lead that lives only on one person’s phone disappears the moment that person is busy on a job, out sick, or on vacation, and nobody else even knows it exists. **The system has to survive any single employee, including the owner.**',
+        },
+        { kind: 'heading', text: 'How you measure it' },
+        {
+          kind: 'paragraph',
+          text: 'Track two numbers, not ten: the percentage of calls answered live, not sent to voicemail, and the cost per estimate booked — not cost per click, and not raw lead count. **A lead that never books a visit is worth nothing, no matter how cheap it was to generate on the ad side.** Both numbers show up directly in the CRM and the call-tracking dashboard once they’re set up; you don’t need a new report or a monthly export, just a five-minute look at the ones you already have, once a week.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'A lead scattered across three apps and one phone isn’t a system — it’s a bet that nothing goes wrong.',
+          src: missedCallsUnifiedInbox,
+          alt: 'Several paper airplanes, each labeled by a different channel, converging into a single funnel that feeds one open notebook.',
+        },
+        { kind: 'heading', text: 'What not to do' },
+        {
+          kind: 'paragraph',
+          text: 'Don’t outsource this to a generic answering service that reads a script with no context on your business — that answers the ring, but it doesn’t solve the trust problem a missed call creates. Don’t let the auto-response replace a real callback within the hour; it’s a bridge to buy time, not the destination. And don’t measure “leads captured” on its own as a sign the system is working: **a captured lead that never turns into a booked appointment is a vanity metric**, and chasing that number alone can make a broken system look healthy on paper.',
+        },
+        {
+          kind: 'quote',
+          text: 'The business that answers first isn’t the best contractor in DFW — it’s just the one still in the room when the decision gets made.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'None of this requires new hires or a phone system overhaul. A tracking number, an auto-response, and a shared CRM are usually a week of setup, not a quarter. If you run a [home improvement business](/industries/home-improvement) in DFW and aren’t sure whether this is actually where you’re leaking revenue, the free [Growth Score](/growth-score) will tell you in four minutes.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'And if your issue isn’t missed calls but a website that gets traffic and never converts, [we’ve covered that gap separately](/blog/traffic-no-leads-dallas) — it’s a different fix, with a different set of steps. Start with the [Diagnostic](/diagnostic) if you want a real person to find exactly where yours is.',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: 'Todo contratista en Dallas–Fort Worth dice alguna versión de lo mismo: **el día que no contesto, ese lead llama al siguiente nombre de la lista.** No es un problema de volumen — la mayoría de los negocios de remodelación en DFW reciben suficientes llamadas. Es un problema de lo que pasa en los quince minutos después de que un timbre no se contesta, cuando un dueño de casa con una gotera en el techo o el aire acondicionado dañado ya está marcando el siguiente número en Google.',
+        },
+        { kind: 'heading', text: 'Qué está drenando realmente el embudo' },
+        {
+          kind: 'paragraph',
+          text: 'El instinto es culpar a la calidad del lead o al presupuesto de anuncios. La causa real casi siempre es el tiempo de respuesta. Un prospecto que ya comparó dos o tres empresas trata al primer negocio que responde como el más confiable, sin importar precio ni reseñas. **La velocidad de respuesta funciona como el desempate para cualquier trabajo que todavía no está decidido.** Una llamada perdida no es una oportunidad perdida en abstracto — es un dueño de casa específico, parado en su cocina, a punto de marcar el siguiente número de la lista.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Suma a dónde van esos leads una vez que se escapan de una llamada, y el patrón se repite en casi todos los negocios de servicios para el hogar que hemos visto en DFW: un mensaje de texto sin responder en un celular personal, un DM de Facebook que se lee a las 9pm cuando la cuadrilla ya se fue a casa, un buzón de voz que nadie transcribe hasta la mañana siguiente. Ninguna de estas es una falla dramática. Son huecos pequeños, repetidos decenas de veces al mes, que un dueño de casa en medio de una emergencia no está dispuesto a esperar.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Hay también una versión de este problema que no tiene que ver con contestar, sino con a dónde va la respuesta después. Un prospecto recibe una llamada de vuelta, da su dirección y el tipo de trabajo, y esa información queda viviendo en un hilo de texto en el celular de alguien. Tres semanas después, cuando toca dar seguimiento a la cotización, nadie se acuerda, porque la información nunca salió de ese teléfono.',
+        },
+        { kind: 'heading', text: '1. Ponle un número a la fuga' },
+        {
+          kind: 'paragraph',
+          text: 'Antes de arreglar algo, mide cuánto se está perdiendo de verdad. Un número de rastreo de llamadas dedicado — conectado a tus anuncios de Google, a tu Google Business Profile o a tu página web — te dice exactamente cuántas llamadas entran, cuántas se contestan en vivo y a qué hora del día se pierden las demás. La mayoría de los dueños adivinan este número y adivinan mal; la realidad suele ser peor durante el horario de obra, entre las 8am y las 4pm, de lo que cualquiera espera. **No puedes arreglar una fuga que nunca cuantificaste.** Herramientas como CallRail o una línea dedicada de WhatsApp Business hacen esto sin necesidad de comprar un sistema telefónico nuevo.',
+        },
+        { kind: 'heading', text: '2. Responde en menos de 60 segundos — incluso cuando no puedes contestar' },
+        {
+          kind: 'paragraph',
+          text: 'Configura una respuesta automática de SMS o WhatsApp que se dispare en el momento en que una llamada se pierde: un mensaje corto confirmando que la viste y preguntando cuál es el problema y en qué zona está. **Los primeros 60 segundos después de una llamada perdida deciden si ese lead sigue siendo tuyo**, porque es la ventana en la que el dueño de casa todavía está decidiendo si sigue marcando la lista o espera tu llamada de vuelta. No reemplaza la llamada real — sostiene al lead en su lugar hasta que alguien de la cuadrilla pueda devolverla.',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'No puedes arreglar una fuga que nunca mediste — un número de rastreo convierte las suposiciones en un porcentaje real.',
+          src: missedCallsLeakTracking,
+          alt: 'Una lupa sobre un grifo con forma de auricular telefónico goteando, con gotas cayendo en un balde marcado con un número que sube.',
+        },
+        { kind: 'heading', text: '3. Junta cada lead en un solo lugar' },
+        {
+          kind: 'paragraph',
+          text: 'Migra los contactos que hoy viven dispersos — el celular personal, los DMs de Instagram, los hilos de texto — hacia un CRM centralizado, aunque sea la versión gratuita de HubSpot o un Google Sheet compartido con recordatorios; con eso basta para empezar. Un lead que solo vive en el teléfono de una persona desaparece en cuanto esa persona está ocupada en una obra, enferma o de vacaciones, y nadie más siquiera sabe que existió. **El sistema tiene que sobrevivir a cualquier empleado, incluyendo al dueño.**',
+        },
+        { kind: 'heading', text: 'Cómo se mide' },
+        {
+          kind: 'paragraph',
+          text: 'Rastrea dos números, no diez: el porcentaje de llamadas contestadas en vivo, no las que se van a buzón de voz, y el costo por estimate agendado — no el costo por clic, ni el conteo crudo de leads. **Un lead que nunca agenda una visita no vale nada, sin importar qué tan barato fue atraerlo del lado de los anuncios.** Ambos números se ven directamente en el CRM y en el panel del número de rastreo una vez configurados; no necesitas un reporte nuevo ni una exportación mensual, solo cinco minutos revisando lo que ya tienes, una vez por semana.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'Un lead disperso en tres apps y un teléfono no es un sistema — es una apuesta a que nada salga mal.',
+          src: missedCallsUnifiedInbox,
+          alt: 'Varios aviones de papel, cada uno de un canal distinto, convergiendo en un embudo que alimenta un solo cuaderno abierto.',
+        },
+        { kind: 'heading', text: 'Qué no hacer' },
+        {
+          kind: 'paragraph',
+          text: 'No tercerices esto a un servicio de contestadora genérico que lee un guion sin contexto de tu negocio — eso responde el timbre, pero no resuelve el problema de confianza que crea una llamada perdida. No dejes que la respuesta automática reemplace la llamada real de vuelta dentro de la hora; es un puente para ganar tiempo, no el destino. Y no midas “leads capturados” por sí solo como señal de que el sistema funciona: **un lead capturado que nunca se convierte en cita agendada es una métrica de vanidad**, y perseguir solo ese número puede hacer que un sistema roto se vea saludable en el papel.',
+        },
+        {
+          kind: 'quote',
+          text: 'El negocio que responde primero no es el mejor contratista de DFW — es simplemente el que sigue en el cuarto cuando se toma la decisión.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Nada de esto requiere contratar gente nueva ni cambiar de sistema telefónico. Un número de rastreo, una respuesta automática y un CRM compartido suelen tomar una semana de configuración, no un trimestre. Si tienes un [negocio de remodelación](/industries/home-improvement) en DFW y no sabes si esta es realmente tu fuga de ingresos, el [Growth Score](/growth-score) gratis te lo dice en cuatro minutos.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Y si tu problema no son las llamadas perdidas sino un sitio web que recibe tráfico y nunca convierte, [ya escribimos sobre esa fuga por separado](/blog/traffic-no-leads-dallas) — es un arreglo distinto, con pasos distintos. Empieza con el [Diagnóstico](/diagnostic) si quieres que una persona real encuentre exactamente dónde está la tuya.',
         },
       ],
     },
