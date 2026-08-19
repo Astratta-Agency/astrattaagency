@@ -16,7 +16,8 @@ import { StickyArticleBar } from '@/components/blog/StickyArticleBar'
 import { NewsletterForm } from '@/components/ui/NewsletterForm'
 import { BlogIllustration } from '@/components/ui/BlogIllustration'
 import { BLOG_POSTS, categoryLabel, resolveBlogPost, type BlogBlock } from '@/data/blogPosts'
-import { EASE, fadeUp, scaleIn, staggerContainer, viewportOnce } from '@/lib/animations'
+import { EASE, fadeUp, scaleIn, viewportOnce } from '@/lib/animations'
+import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import { localizedPath } from '@/lib/i18n/routes'
 import { SITE } from '@/lib/constants'
@@ -77,6 +78,30 @@ function headingId(text: string): string {
 }
 
 /**
+ * Cada bloque del cuerpo se revela por su cuenta.
+ *
+ * Antes el `whileInView` vivía en el <article> entero con `amount: 0.2`: el
+ * observer exigía que el 20% del artículo estuviera visible a la vez, así que
+ * en cuanto un post pasaba de ~4.5 pantallas de alto la condición no se cumplía
+ * nunca y el cuerpo se quedaba en `hidden` — texto presente en el DOM, opacidad
+ * cero. `amount: 'some'` por bloque dispara con un solo píxel visible, de modo
+ * que el umbral deja de depender de lo largo que sea el artículo.
+ */
+const BLOCK_VIEWPORT = { once: true, amount: 'some' } as const
+
+type RevealProps =
+  | { initial: false; animate: 'show' }
+  | { initial: 'hidden'; whileInView: 'show'; viewport: typeof BLOCK_VIEWPORT }
+
+/** Con `prefers-reduced-motion` el bloque nace visible y no se anima. */
+function useBlockReveal(): RevealProps {
+  const reduced = usePrefersReducedMotion()
+  return reduced
+    ? { initial: false, animate: 'show' }
+    : { initial: 'hidden', whileInView: 'show', viewport: BLOCK_VIEWPORT }
+}
+
+/**
  * The reading column stays page-centered at every breakpoint, so the title,
  * cover, and body share one axis. The table of contents floats into the left
  * margin instead of taking a grid track — reserving one would shove the whole
@@ -84,11 +109,12 @@ function headingId(text: string): string {
  */
 const ARTICLE_COL = 'mx-auto w-full max-w-2xl'
 
-function BodyBlock({ block }: { block: BlogBlock }) {
+function BodyBlock({ block, reveal }: { block: BlogBlock; reveal: RevealProps }) {
   if (block.kind === 'heading') {
     return (
       <motion.h2
         id={headingId(block.text)}
+        {...reveal}
         variants={fadeUp}
         // scroll-mt keeps the heading clear of the fixed bars when Lenis is off
         // (reduced motion) and the browser performs a native anchor jump.
@@ -102,6 +128,7 @@ function BodyBlock({ block }: { block: BlogBlock }) {
   if (block.kind === 'quote') {
     return (
       <motion.blockquote
+        {...reveal}
         variants={scaleIn}
         className="relative my-2 rounded-3xl bg-ink px-8 py-10 text-white sm:px-10"
       >
@@ -115,7 +142,7 @@ function BodyBlock({ block }: { block: BlogBlock }) {
 
   if (block.kind === 'image') {
     return (
-      <motion.figure variants={scaleIn} className="my-2">
+      <motion.figure {...reveal} variants={scaleIn} className="my-2">
         {block.src ? (
           <img
             src={block.src}
@@ -135,7 +162,7 @@ function BodyBlock({ block }: { block: BlogBlock }) {
   }
 
   return (
-    <motion.p variants={fadeUp} className="text-lg leading-relaxed text-ink/80">
+    <motion.p {...reveal} variants={fadeUp} className="text-lg leading-relaxed text-ink/80">
       {renderInline(block.text)}
     </motion.p>
   )
@@ -144,6 +171,7 @@ function BodyBlock({ block }: { block: BlogBlock }) {
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>()
   const { language, dict } = useLanguage()
+  const reveal = useBlockReveal()
   const titleRef = useRef<HTMLHeadingElement>(null)
   const articleRef = useRef<HTMLElement>(null)
   // The sticky bar takes over once the real headline leaves the viewport.
@@ -276,19 +304,12 @@ export default function BlogPost() {
             )}
 
             <div>
-              <motion.article
-                ref={articleRef}
-                initial="hidden"
-                whileInView="show"
-                viewport={viewportOnce}
-                variants={staggerContainer(0.08)}
-                className="flex flex-col gap-8"
-              >
+              <article ref={articleRef} className="flex flex-col gap-8">
                 {post.body.map((block, i) => (
                   <div key={i} className="contents">
-                    <BodyBlock block={block} />
+                    <BodyBlock block={block} reveal={reveal} />
                     {i === inlineBreakIndex && (
-                      <motion.div variants={fadeUp} className="rounded-3xl bg-neutral/40 p-8">
+                      <motion.div {...reveal} variants={fadeUp} className="rounded-3xl bg-neutral/40 p-8">
                         <p className="font-sans text-sm font-bold uppercase tracking-wide text-ink/50">
                           {t.inlineNewsletterLabel}
                         </p>
@@ -299,7 +320,7 @@ export default function BlogPost() {
                     )}
                   </div>
                 ))}
-              </motion.article>
+              </article>
 
               <motion.div
                 initial="hidden"
