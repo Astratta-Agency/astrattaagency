@@ -18,11 +18,18 @@ type Status = 'idle' | 'submitting' | 'error'
 export function LeadCaptureForm({
   submitLabel,
   source,
+  message,
   metadata,
   onSubmitted,
 }: {
   submitLabel: string
   source: string
+  /**
+   * Nota principal del lead. `capture-lead` rechaza con 400 cualquier envío
+   * sin `notes` ni `message`, así que no puede quedar vacía: sin ella el lead
+   * no llega al CRM y el formulario ni siquiera lo nota.
+   */
+  message: string
   /** Contexto que viaja con el lead — aquí, el resumen de respuestas. */
   metadata?: string
   onSubmitted: () => void
@@ -54,7 +61,7 @@ export function LeadCaptureForm({
       contact_phone: String(data.get('phone') ?? '') || null,
       company_name: String(data.get('company') ?? '') || null,
       website: null,
-      message: '',
+      message,
       metadata: metadata || null,
       source_page: source,
       recaptcha_token: recaptchaToken,

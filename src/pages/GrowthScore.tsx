@@ -17,6 +17,7 @@ import {
   TICKET_QUESTION,
 } from '@/data/growthScore'
 import {
+  buildLeadSummary,
   INITIAL_ANSWERS,
   PILLARS,
   PILLAR_MAX,
@@ -49,6 +50,9 @@ export default function GrowthScore() {
   const [answers, setAnswers] = useState<Answers>(INITIAL_ANSWERS)
 
   const result = useMemo(() => getResult(answers), [answers])
+  // Resumen que viaja con el lead al CRM. `message` es obligatorio para
+  // `capture-lead`; `metadata` es lo que hace útil al lead en ventas.
+  const leadSummary = useMemo(() => buildLeadSummary(answers, result), [answers, result])
 
   // Sin desplazamiento cuando se pide movimiento reducido: la barra de progreso
   // y el cambio de pregunta bastan para comunicar el avance.
@@ -236,6 +240,8 @@ export default function GrowthScore() {
                     <LeadCaptureForm
                       submitLabel={t.submitLabel}
                       source="growth-score"
+                      message={leadSummary.message}
+                      metadata={leadSummary.metadata}
                       onSubmitted={() => setStep(RESULT_STEP)}
                     />
                   </div>

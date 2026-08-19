@@ -174,3 +174,38 @@ export function getResult(answers: Answers): ScoreResult {
 
   return { total, pillars, leaks, band: band(total), level, foundation, breakEven, cta: CTA_BY_REVENUE[revenue] }
 }
+
+/**
+ * Resumen del quiz para el CRM.
+ *
+ * No es copy del sitio: nunca se renderiza. Viaja con el lead y termina en el
+ * campo `notes` de la tabla `leads`, para que ventas vea con qué respuestas
+ * salió el puntaje. Va en español porque el CRM está en español.
+ *
+ * Además cumple una función técnica: `capture-lead` rechaza con 400 cualquier
+ * envío sin `notes` ni `message`, así que el Growth Score necesita un mensaje
+ * real o el lead se pierde en silencio.
+ */
+export function buildLeadSummary(
+  answers: Answers,
+  result: ScoreResult,
+): { message: string; metadata: string } {
+  const sinResponder = 'sin responder'
+
+  const message = `Growth Score: ${result.total}/100 — nivel ${result.level.toUpperCase()}`
+
+  const metadata = [
+    `Industria: ${answers.industry ?? sinResponder}`,
+    `Facturación: ${answers.revenue ?? sinResponder}`,
+    `Ticket: ${answers.ticket ?? sinResponder}`,
+    `Pilares: ${PILLARS.map((p) => `${p} ${result.pillars[p]}/${PILLAR_MAX}`).join(', ')}`,
+    `Fugas: ${result.leaks.join(', ')}`,
+    result.foundation ? `Base sugerida: ${result.foundation}` : null,
+    result.breakEven ? `Punto de equilibrio: ${result.breakEven} clientes/mes` : null,
+    `Ruta CTA: ${result.cta}`,
+  ]
+    .filter(Boolean)
+    .join(' · ')
+
+  return { message, metadata }
+}
