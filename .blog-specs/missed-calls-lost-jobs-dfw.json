@@ -1,0 +1,15 @@
+{
+  "cover": {
+    "concept": "A single vintage rotary phone receiver hanging off the hook, dangling by its coiled cord in bright accent orange against a muted indigo background, positioned directly above a simple hourglass shape whose sand is rendered mid-drain, with a few loose sand grains falling past the hourglass's edge to suggest time actively running out."
+  },
+  "inline": [
+    {
+      "name": "leak-tracking",
+      "concept": "A simple geometric faucet shape, its spout formed from the silhouette of a phone handset, dripping individual round drops in bright accent orange down into a bucket below; the bucket carries a small rising bar-chart or ascending number motif on its side, and a flat circular magnifying-glass shape hovers beside the falling drops as if measuring them."
+    },
+    {
+      "name": "unified-inbox",
+      "concept": "Three simple paper-airplane shapes in muted indigo, each arriving from a different angle and each trailing a distinct thin icon (a speech bubble, a phone-call symbol, a chat-message symbol), all converging into a single funnel shape rendered in bright accent orange that feeds down into one open notebook or ledger shape at the bottom of the frame."
+    }
+  ]
+}
