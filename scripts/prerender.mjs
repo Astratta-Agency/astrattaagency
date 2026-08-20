@@ -161,13 +161,31 @@ async function main() {
     // Emptying #root is not enough: components that portal into <body> (the
     // sticky article bar, the custom cursor) render as siblings of #root and
     // would otherwise ship as dead markup that the live app then duplicates.
+    //
+    // Third-party tags need the same treatment, in both <head> and <body>:
+    // Google Tag Manager and the pixels it fires (TikTok, Meta) insert their
+    // own <script>/<noscript> nodes at runtime, which would otherwise be
+    // serialized into the shipped HTML and then load on every visit outside
+    // GTM's control, from build-time-frozen URLs carrying build-time-frozen
+    // params (`domain=localhost`). The shell's own tags are marked
+    // data-shell; a cross-origin or inline tag without it is an injection.
     await page.evaluate(() => {
       const rootEl = document.getElementById('root')
       if (rootEl) rootEl.innerHTML = ''
 
-      const KEEP = new Set(['SCRIPT', 'STYLE', 'LINK', 'NOSCRIPT', 'TEMPLATE'])
+      const isSameOrigin = (el) =>
+        !!el.src && new URL(el.src, location.href).origin === location.origin
+
+      const KEEP = new Set(['STYLE', 'LINK', 'TEMPLATE'])
       for (const child of [...document.body.children]) {
-        if (child !== rootEl && !KEEP.has(child.tagName)) child.remove()
+        if (child === rootEl || child.hasAttribute('data-shell')) continue
+        if (KEEP.has(child.tagName)) continue
+        if (child.tagName === 'SCRIPT' && isSameOrigin(child)) continue
+        child.remove()
+      }
+
+      for (const el of [...document.head.querySelectorAll('script[src]:not([data-shell])')]) {
+        if (!isSameOrigin(el)) el.remove()
       }
     })
 
