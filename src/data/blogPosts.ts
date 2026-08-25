@@ -12,6 +12,9 @@ import aiLocalPickBeacon from '@/assets/blog/ai-one-recommendation-dallas-profil
 import missedCallsCover from '@/assets/blog/missed-calls-lost-jobs-dfw-cover.webp'
 import missedCallsLeakTracking from '@/assets/blog/missed-calls-lost-jobs-dfw-leak-tracking.webp'
 import missedCallsUnifiedInbox from '@/assets/blog/missed-calls-lost-jobs-dfw-unified-inbox.webp'
+import googleAdsCover from '@/assets/blog/google-ads-target-overperformance-dallas-cover.webp'
+import googleAdsBudgetAudit from '@/assets/blog/google-ads-target-overperformance-dallas-budget-limited-audit.webp'
+import googleAdsDeliberateReset from '@/assets/blog/google-ads-target-overperformance-dallas-deliberate-reset.webp'
 
 export type BlogCategory = 'web-conversion' | 'digital-marketing' | 'design' | 'case-notes'
 
@@ -698,6 +701,176 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: 'Y si tu problema no son las llamadas perdidas sino un sitio web que recibe tráfico y nunca convierte, [ya escribimos sobre esa fuga por separado](/blog/traffic-no-leads-dallas) — es un arreglo distinto, con pasos distintos. Empieza con el [Diagnóstico](/diagnostic) si quieres que una persona real encuentre exactamente dónde está la tuya.',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'google-ads-target-overperformance-dallas', es: 'fin-sobrerendimiento-google-ads-dallas' },
+    title: {
+      en: 'Google Ads just removed a hidden discount from your Dallas campaigns',
+      es: 'Google le quitó el descuento oculto a tus campañas de anuncios en Dallas',
+    },
+    excerpt: {
+      en: 'Since August 17, Google Ads no longer lets Target CPA and Target ROAS campaigns spend less than the number you set — even when they’d been doing exactly that for months. Here’s what to check in your Dallas account this week.',
+      es: 'Desde el 17 de agosto, Google Ads ya no deja que las campañas con CPA o ROAS objetivo gasten menos del número que configuraste — aunque llevaran meses haciendo justo eso. Esto es lo que debes revisar en tu cuenta de Dallas esta semana.',
+    },
+    category: 'digital-marketing',
+    publishedAt: '2026-08-25',
+    readingTime: { en: '5 min read', es: '5 min de lectura' },
+    coverGradient: 'from-primary/20 to-secondary/20',
+    coverVariant: 'insight',
+    coverImage: googleAdsCover,
+    coverAlt: {
+      en: 'A glass tank of water sitting calm below a marked target line, with a valve on the outside just beginning to close as the water level starts rising toward the line.',
+      es: 'Un tanque de vidrio con agua tranquila debajo de una línea marcada como objetivo, con una válvula en el costado empezando a cerrarse mientras el nivel del agua sube hacia la línea.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'Google Ads Change Hits Dallas Ad Accounts | Astratta',
+      es: 'Google Ads Cambió y Afecta a Dallas | Astratta',
+    },
+    metaDescription: {
+      en: "Google changed how Target CPA and ROAS campaigns spend on August 17. Here's what Dallas advertisers should check this week before cost per lead rises.",
+      es: 'Google cambió cómo gastan las campañas con CPA y ROAS objetivo el 17 de agosto. Esto es lo que debe revisar tu cuenta de anuncios en Dallas esta semana.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: 'On August 17, 2026, Google quietly turned off a setting most advertisers didn’t know they had. If your Google Ads account runs Target CPA or Target ROAS bidding — the two most common ways agencies and in-house marketers manage paid search budgets for businesses across Dallas–Fort Worth — Smart Bidding is no longer allowed to spend less than the target you set, even when it easily could.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Before the change, a budget-limited campaign that was quietly beating its target — landing a $5 cost per lead against a $10 target, for example — kept that gap as a kind of free efficiency Google called “target overperformance.” **After August 17, Smart Bidding stops banking that gap and pushes spend toward the number actually sitting in your campaign settings, whether or not anyone has looked at that number in months.**',
+        },
+        { kind: 'heading', text: 'Why this matters for Dallas–Fort Worth ad accounts' },
+        {
+          kind: 'paragraph',
+          text: 'Almost every med spa, roofer, and law firm running Google Ads in DFW has a CPA or ROAS target that was set once — usually when the campaign launched — and never revisited, because performance looked fine and nobody had a reason to go looking. **That’s exactly the kind of account this change targets: the one that’s been quietly running better than the number written down, for reasons nobody’s checked lately.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Search ads in DFW are already expensive because so many home services, med spa, and legal accounts compete for the same handful of high-intent keywords. A campaign that’s been landing leads under target for months usually means an agency stopped tightening the account once it “worked,” not that the account was actually optimized. When the algorithm stops covering for that inattention, the account’s real, current cost structure shows up on the bill instead of staying hidden on a dashboard nobody checked.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'This isn’t a problem still on the horizon — it already happened over a week ago. If nobody on your team has opened Google Ads since mid-August, whatever drift is occurring has been running for days, not hours. It hits hardest on the accounts spending $1,000 to $3,000 a month with a target an agency configured once and hasn’t actively watched since.',
+        },
+        { kind: 'heading', text: '1. Find out if you’re even affected' },
+        {
+          kind: 'paragraph',
+          text: 'Open Google Ads, go into each campaign running Target CPA or Target ROAS, and look for the “Limited by budget” status. Only campaigns carrying that label were part of the change — an account with budget headroom to spare, or one running Maximize Conversions with no target at all, isn’t touched by this. The label sits right in the campaign table; add the “Bid strategy status” column if it isn’t showing by default, and sort by it so every budget-limited campaign lands at the top of the list. **Five minutes in the campaign list tells you whether this is your problem or someone else’s.**',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'The “Limited by budget” label separates the accounts this change touches from the ones it doesn’t.',
+          src: googleAdsBudgetAudit,
+          alt: 'A magnifying glass hovering over a row of gauges on a control panel; one gauge is dusty with a needle that hasn’t moved in a long time, sharply visible under the glass while the others blur.',
+        },
+        { kind: 'heading', text: '2. Compare the target to what you were actually paying' },
+        {
+          kind: 'paragraph',
+          text: 'Google published a Bid Target Adjustment Tool on July 6 specifically so advertisers could see this gap before the deadline, and it’s still useful after the fact. Pull the actual cost per lead or actual ROAS from the last 30 days and set it next to the target sitting in the campaign. **A target that was set to protect margin months ago isn’t the same number as what a lead actually costs you today.**',
+        },
+        { kind: 'heading', text: '3. Reset the target on purpose' },
+        {
+          kind: 'paragraph',
+          text: 'If there’s a real gap, don’t just nudge the number down to match recent performance and move on. Decide what a lead is actually worth to your business right now — including the ones that don’t close — and set the target to that figure. For a business booking $600 average jobs at a 25% close rate, a lead is worth roughly $150 before ad spend; the target should sit close to that number, not to whatever an old dashboard happened to be hitting. **A Target CPA is a business decision about margin, not a technical setting an agency configures once and forgets.**',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'Resetting on purpose means picking the number margin actually supports — not whatever the dashboard happened to show.',
+          src: googleAdsDeliberateReset,
+          alt: 'A hand turning a large dial by hand, moving the needle away from a worn red zone toward a small hand-placed marker further around the dial, with a wrench resting nearby.',
+        },
+        { kind: 'heading', text: 'What to ignore' },
+        {
+          kind: 'paragraph',
+          text: 'Ignore any advice that says the fix is abandoning Smart Bidding for manual CPC — manual bidding solves a different problem and usually performs worse at the volumes most DFW accounts run. Ignore panic headlines calling this the end of automated bidding, too; Smart Bidding still does the heavy lifting of finding the right auctions, this change only affects how tightly it’s allowed to hold the number you handed it. And ignore the version of this story that turns into “let Google’s AI handle everything,” because that’s the opposite lesson. **The algorithm was never what kept your costs down — a target you set and actually revisit was.** Removing the human check because the AI seems capable is exactly how an account drifts for six months before anyone notices.',
+        },
+        {
+          kind: 'quote',
+          text: 'A Target CPA nobody has looked at since it was set isn’t a strategy — it’s a number waiting to get expensive.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'None of this requires switching agencies or rebuilding campaigns. It’s a 20-minute audit: check which campaigns are budget-limited, compare target to actual, reset on purpose. If paid ads are one piece of a marketing system nobody’s actively watching week to week, that’s the gap our [ongoing marketing systems](/systems) are built to catch before it costs real budget.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'If you’re not sure whether your account was even affected, or nobody’s checking Google Ads changes like this one on a regular basis, the [Diagnostic](/diagnostic) is a week-long, human review of exactly where your marketing is leaking money — drift like this is precisely what it’s built to catch. And if your leak isn’t paid ads but [missed calls turning into missed jobs](/blog/missed-calls-lost-jobs-dfw), that’s a different fix worth reading separately.',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: 'El 17 de agosto de 2026, Google apagó sin hacer ruido una función que la mayoría de los anunciantes ni sabía que tenía. Si tu cuenta de Google Ads corre pujas con CPA objetivo o ROAS objetivo — las dos formas más comunes en que agencias y equipos internos manejan presupuestos de búsqueda pagada en Dallas–Fort Worth — Smart Bidding ya no puede gastar menos del objetivo que configuraste, aunque pudiera hacerlo sin problema.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Antes del cambio, una campaña limitada por presupuesto que rendía mejor que su objetivo — un costo por lead de $5 contra un objetivo de $10, por ejemplo — se quedaba con esa diferencia como una especie de eficiencia gratis que Google llamaba “sobre-rendimiento de objetivo”. **Desde el 17 de agosto, Smart Bidding deja de guardar esa diferencia y empuja el gasto hacia el número que está escrito en la configuración de tu campaña, lo haya revisado alguien en los últimos meses o no.**',
+        },
+        { kind: 'heading', text: 'Por qué importa para las cuentas de anuncios en Dallas–Fort Worth' },
+        {
+          kind: 'paragraph',
+          text: 'Casi todo med spa, techero y despacho legal que corre Google Ads en DFW tiene un objetivo de CPA o ROAS que se configuró una sola vez — normalmente cuando lanzó la campaña — y nunca se volvió a tocar, porque el rendimiento se veía bien y nadie tenía motivo para revisarlo. **Esa es exactamente la cuenta que este cambio afecta: la que llevaba meses rindiendo mejor que el número anotado, por razones que nadie había revisado.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Los anuncios de búsqueda en DFW ya son caros porque muchísimas cuentas de servicios para el hogar, med spas y despachos legales compiten por el mismo puñado de palabras clave de alta intención. Una campaña que lleva meses trayendo leads por debajo del objetivo casi siempre significa que la agencia dejó de ajustar la cuenta en cuanto “funcionó”, no que la cuenta estuviera realmente optimizada. Cuando el algoritmo deja de cubrir esa falta de atención, el costo real de la cuenta aparece en la factura en vez de quedarse escondido en un panel que nadie revisaba.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Esto no es un problema que viene — ya pasó hace más de una semana. Si nadie de tu equipo ha abierto Google Ads desde mediados de agosto, lo que sea que esté desviándose lleva días corriendo, no horas. Golpea más fuerte a las cuentas que gastan entre $1,000 y $3,000 al mes con un objetivo que una agencia configuró una vez y no ha vuelto a mirar.',
+        },
+        { kind: 'heading', text: '1. Averigua si de verdad te afecta' },
+        {
+          kind: 'paragraph',
+          text: 'Entra a Google Ads, revisa cada campaña con CPA objetivo o ROAS objetivo, y busca la etiqueta “Limitada por presupuesto”. Solo las campañas con esa etiqueta forman parte del cambio — una cuenta con margen de presupuesto de sobra, o una que corre Maximizar Conversiones sin objetivo, no se ve tocada por esto. La etiqueta está en la misma tabla de campañas; agrega la columna “Estado de la estrategia de puja” si no aparece por defecto, y ordénala para que cada campaña limitada por presupuesto quede arriba de la lista. **Cinco minutos en la lista de campañas te dicen si este es tu problema o el de alguien más.**',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'La etiqueta “Limitada por presupuesto” separa las cuentas que este cambio toca de las que no.',
+          src: googleAdsBudgetAudit,
+          alt: 'Una lupa sobre una fila de medidores en un panel de control; uno está cubierto de polvo con una aguja que no se ha movido en mucho tiempo, nítido bajo la lupa mientras los demás se ven borrosos.',
+        },
+        { kind: 'heading', text: '2. Compara el objetivo con lo que de verdad estabas pagando' },
+        {
+          kind: 'paragraph',
+          text: 'Google publicó una herramienta de ajuste de objetivos de puja el 6 de julio, justo para que los anunciantes vieran esta brecha antes del cambio, y sigue siendo útil ahora que ya pasó. Saca el costo por lead real o el ROAS real de los últimos 30 días y ponlo junto al objetivo que está en la campaña. **Un objetivo que se configuró para proteger el margen hace meses no es el mismo número que lo que un lead te cuesta hoy.**',
+        },
+        { kind: 'heading', text: '3. Reconfigura el objetivo a propósito' },
+        {
+          kind: 'paragraph',
+          text: 'Si la brecha es real, no bajes el número nada más para que empate con el rendimiento reciente y sigas adelante. Decide cuánto vale de verdad un lead para tu negocio hoy — incluyendo los que no cierran — y pon el objetivo en esa cifra. Para un negocio que agenda trabajos de $600 en promedio con una tasa de cierre del 25%, un lead vale cerca de $150 antes del gasto en anuncios; el objetivo debe estar cerca de ese número, no de lo que un panel viejo estaba marcando. **Un CPA objetivo es una decisión de negocio sobre margen, no una configuración técnica que una agencia deja puesta y olvida.**',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'Reconfigurar a propósito significa elegir el número que el margen realmente soporta — no lo que el panel estaba marcando.',
+          src: googleAdsDeliberateReset,
+          alt: 'Una mano girando un dial grande, moviendo la aguja lejos de una zona roja desgastada hacia una pequeña marca colocada a mano más adelante en el dial, con una llave de tuercas cerca.',
+        },
+        { kind: 'heading', text: 'Qué ignorar' },
+        {
+          kind: 'paragraph',
+          text: 'Ignora cualquier consejo que diga que la solución es abandonar Smart Bidding por puja manual — la puja manual resuelve un problema distinto y casi siempre rinde peor en los volúmenes que maneja la mayoría de las cuentas en DFW. Ignora también los titulares alarmistas que llaman a esto el fin de la puja automatizada; Smart Bidding sigue haciendo el trabajo pesado de encontrar las subastas correctas, este cambio solo afecta qué tan estrictamente puede sostener el número que le diste. Y evita la versión de esta historia que termina en “deja que la Inteligencia Artificial de Google se encargue de todo”, porque es la lección contraria. **El algoritmo nunca fue lo que mantenía tus costos bajos — era un objetivo que configuraste y de verdad revisabas.** Quitar la revisión humana porque la Inteligencia Artificial se ve capaz es exactamente cómo una cuenta se desvía durante seis meses sin que nadie se dé cuenta.',
+        },
+        {
+          kind: 'quote',
+          text: 'Un CPA objetivo que nadie ha vuelto a mirar desde que se configuró no es una estrategia — es un número esperando volverse caro.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Nada de esto requiere cambiar de agencia ni reconstruir campañas. Es una auditoría de 20 minutos: revisar qué campañas están limitadas por presupuesto, comparar el objetivo contra lo real, reconfigurar a propósito. Si los anuncios pagados son una sola pieza de un sistema de marketing que nadie está vigilando semana a semana, esa es exactamente la brecha que nuestros [sistemas de marketing continuo](/systems) están hechos para atrapar antes de que cueste presupuesto real.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Si no sabes si tu cuenta se vio afectada, o nadie revisa cambios de Google Ads como este de forma regular, el [Diagnóstico](/diagnostic) es una revisión humana de siete días que encuentra exactamente dónde se está fugando tu marketing — un desvío como este es justo lo que está hecho para detectar. Y si tu fuga no son los anuncios pagados sino [las llamadas perdidas que se convierten en trabajos perdidos](/blog/missed-calls-lost-jobs-dfw), ese es un arreglo distinto que vale la pena leer aparte.',
         },
       ],
     },
