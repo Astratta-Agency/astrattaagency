@@ -1,0 +1,15 @@
+{
+  "cover": {
+    "concept": "A tall glass water tank in muted indigo outline, with a bright accent-orange horizontal line marking a target level partway up the glass. The water inside sits calm and well below that line, held back by a small mechanical valve fixed to the outside of the tank, its handle shown mid-turn as if closing off. Thin concentric ripples spread out from the valve's base as the water level just begins climbing toward the marked line."
+  },
+  "inline": [
+    {
+      "name": "budget-limited-audit",
+      "concept": "A flat circular magnifying glass in bright accent orange hovering over a row of simple analog gauges mounted on a control panel rendered in muted indigo line work. Each gauge needle rests at a different angle; one gauge is noticeably duller and its needle sits frozen in place, brought into sharp, bright focus under the magnifying glass while the surrounding gauges fade slightly into the background."
+    },
+    {
+      "name": "deliberate-reset",
+      "concept": "A simple geometric hand silhouette turning a large analog dial in muted indigo, its needle moving away from a faded, worn red-orange zone toward a small hand-placed marker further around the dial's face. A single flat wrench shape in bright accent orange rests on the surface beside the dial."
+    }
+  ]
+}
