@@ -15,6 +15,9 @@ import missedCallsUnifiedInbox from '@/assets/blog/missed-calls-lost-jobs-dfw-un
 import googleAdsCover from '@/assets/blog/google-ads-target-overperformance-dallas-cover.webp'
 import googleAdsBudgetAudit from '@/assets/blog/google-ads-target-overperformance-dallas-budget-limited-audit.webp'
 import googleAdsDeliberateReset from '@/assets/blog/google-ads-target-overperformance-dallas-deliberate-reset.webp'
+import medSpaNoShowCover from '@/assets/blog/med-spa-no-show-leads-dallas-cover.webp'
+import medSpaNoShowSpeedToLead from '@/assets/blog/med-spa-no-show-leads-dallas-speed-to-lead.webp'
+import medSpaNoShowReminderSequence from '@/assets/blog/med-spa-no-show-leads-dallas-reminder-sequence.webp'
 
 export type BlogCategory = 'web-conversion' | 'digital-marketing' | 'design' | 'case-notes'
 
@@ -871,6 +874,164 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: 'Si no sabes si tu cuenta se vio afectada, o nadie revisa cambios de Google Ads como este de forma regular, el [Diagnóstico](/diagnostic) es una revisión humana de siete días que encuentra exactamente dónde se está fugando tu marketing — un desvío como este es justo lo que está hecho para detectar. Y si tu fuga no son los anuncios pagados sino [las llamadas perdidas que se convierten en trabajos perdidos](/blog/missed-calls-lost-jobs-dfw), ese es un arreglo distinto que vale la pena leer aparte.',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'med-spa-no-show-leads-dallas', es: 'leads-que-no-se-presentan-med-spa-dallas' },
+    title: {
+      en: 'Your Dallas med spa books leads that never show up — here’s why',
+      es: 'Tu med spa en Dallas agenda leads que nunca se presentan — esto es lo que pasa',
+    },
+    excerpt: {
+      en: 'Most med spa leads we’ve reviewed in DFW don’t fail because the ad was wrong — they fail because nobody replied fast enough. Here’s the four-step fix and the one metric that actually tracks it.',
+      es: 'La mayoría de los leads de med spa que hemos revisado en DFW no fallan por el anuncio — fallan porque nadie respondió a tiempo. Este es el arreglo de cuatro pasos y la única métrica que de verdad lo mide.',
+    },
+    category: 'web-conversion',
+    publishedAt: '2026-08-27',
+    readingTime: { en: '5 min read', es: '5 min de lectura' },
+    coverGradient: 'from-primary/20 to-secondary/20',
+    coverVariant: 'clarity',
+    coverImage: medSpaNoShowCover,
+    coverAlt: {
+      en: 'An appointment calendar with several confirmed time slots standing empty beside a phone showing an unanswered notification.',
+      es: 'Un calendario de citas con varios horarios confirmados vacíos, junto a un teléfono con una notificación sin responder.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'Med Spa Leads That No-Show in Dallas | Astratta',
+      es: 'Leads de Med Spa que No se Presentan en Dallas | Astratta',
+    },
+    metaDescription: {
+      en: 'Dallas med spas lose consultations to no-shows, not bad leads. The exact fix — reply speed, shorter forms, reminder texts — and how to measure it working.',
+      es: 'Los med spas en Dallas pierden consultas por no-shows, no por leads malos. El arreglo: respuesta rápida, formularios cortos y recordatorios, y cómo medirlo.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: 'We hear this from med spa owners across Dallas–Fort Worth almost word for word: "I get leads, they fill out the form, and half of them never show up to the consultation." The ad spend worked. The form got submitted. Then the appointment slot sits empty at the scheduled time, with no cancellation call and no explanation. That gap between a filled-out form and a person actually sitting in the chair is where a meaningful share of the marketing budget quietly disappears, and it’s rarely the ad campaign’s fault.',
+        },
+        { kind: 'heading', text: 'It isn’t a lead quality problem' },
+        {
+          kind: 'paragraph',
+          text: 'The instinct is to blame the ad platform or the lead source — maybe the offer wasn’t strong enough, maybe Meta is sending in people who were never going to book. In the med spas we’ve reviewed across the Metroplex, the actual cause is almost always response time. A prospect who fills out a form at 8pm on a Tuesday and gets a reply the next morning has usually already found someone else by breakfast. **The lead didn’t disappear — a faster competitor answered first.** The second, quieter cause is what gets measured. Most practices track how many forms come in each week, not how many of those people actually sit down for the consultation, so the real leak never shows up on a dashboard anyone looks at until the appointment book tells the truth.',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'The lead didn’t go cold — the reply just came too late.',
+          src: medSpaNoShowSpeedToLead,
+          alt: 'A stopwatch racing beside a phone lighting up with a reply notification, illustrating a business responding to a lead within seconds instead of hours.',
+        },
+        { kind: 'heading', text: '1. Reply inside 60 seconds, every time' },
+        {
+          kind: 'paragraph',
+          text: 'The single highest-leverage fix is speed to first contact. A text or WhatsApp message that goes out within a minute of a form submission — even a short one confirming the request was received and asking for a good callback time — keeps a lead warm long enough for a real conversation to happen later that day. Most booking and CRM tools already support an instant auto-reply; the fix is turning it on and writing three sentences that read like a person, not shopping for new software.',
+        },
+        { kind: 'heading', text: '2. Cut the form down to three fields' },
+        {
+          kind: 'paragraph',
+          text: 'A long intake form filters out exactly the people who are still deciding, and those undecided leads are the ones worth the most follow-up. Name, phone number, and the treatment they’re asking about is enough to start a conversation. Everything else — medical history, budget range, preferred date — belongs in the confirmation call or the intake paperwork after booking, not before it. **Every extra field on that first form is one more chance for someone to close the tab instead of finishing it.**',
+        },
+        { kind: 'heading', text: '3. Build a reminder sequence, not one confirmation text' },
+        {
+          kind: 'paragraph',
+          text: 'A single confirmation text sent at the moment of booking is easy to forget by the time the appointment actually arrives, especially for a consultation booked a week or two out. A short sequence — a confirmation right after booking, a reminder 48 hours out, and a same-morning text — catches the person before life gets in the way. Most scheduling platforms, plus a basic SMS tool, can automate this in an afternoon. It doesn’t need a developer or a new system, just someone willing to set it up once.',
+        },
+        { kind: 'heading', text: '4. Show the booking page real proof, not just a calendar' },
+        {
+          kind: 'paragraph',
+          text: 'A bare calendar widget asks someone to commit before they’ve seen a reason to. A real before/after photo, a two-line client quote, or a short note about what actually happens in the first visit — placed right next to the booking button — gives a hesitant lead the reassurance that gets a form actually finished instead of abandoned halfway through.',
+        },
+        {
+          kind: 'quote',
+          text: 'The lead didn’t disappear — a faster competitor answered first.',
+        },
+        { kind: 'heading', text: 'How to measure whether it’s working' },
+        {
+          kind: 'paragraph',
+          text: 'The metric that matters here is show-up rate — consultations actually attended divided by consultations booked — not the number of forms submitted. Track it alongside cost per booked consultation. Both figures live in whatever booking or CRM software the practice already uses; most scheduling platforms report this once the funnel stages — booked, confirmed, attended, no-show — are actually set up to track it, which many aren’t by default. **A campaign that lowers cost per lead but never moves show-up rate hasn’t fixed anything — it’s just made the same problem cheaper to create.** Pull the number monthly and watch it move as each fix goes live, one at a time, so it’s clear which change actually helped.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'A reminder sequence beats a single confirmation text — it’s built to survive a busy week.',
+          src: medSpaNoShowReminderSequence,
+          alt: 'A checklist showing three completed steps — confirmation, 48-hour reminder, and same-day text — leading to a filled appointment slot.',
+        },
+        { kind: 'heading', text: 'What not to do' },
+        {
+          kind: 'paragraph',
+          text: 'Don’t judge a campaign by form count alone — a form that’s easy to abandon looks identical to a form that converts until someone actually checks the show-up rate behind it. Don’t send one generic reminder and call the sequence finished; a single text a week before an appointment gets lost in everything else competing for attention that week. And don’t assume the ad account is broken before the response-time and reminder pieces are actually fixed first — most of the med spas we’ve looked at in DFW never needed a new campaign, just a faster reply and a follow-up sequence that didn’t stop after one message.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'None of this requires hiring anyone. A booking tool that already supports auto-replies, a phone, and an afternoon spent writing four short messages covers most of it. If it’s unclear exactly where the leak is happening in a specific funnel, the [Diagnostic](/diagnostic) is seven days with a real person mapping that, lead by lead, instead of guessing. For a faster first read, the free four-minute [Growth Score](/growth-score) — or the [med spa page](/industries/med-spa) for what tends to show up most in this industry — is a reasonable place to start.',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: 'Escuchamos esto de dueños de med spas en todo Dallas–Fort Worth casi con las mismas palabras: "consigo leads, llenan el formulario, y la mitad nunca se presenta a la consulta." La inversión en anuncios funcionó. El formulario se envió. Y luego el horario de la cita se queda vacío, sin llamada de cancelación ni explicación. Esa brecha entre un formulario lleno y una persona sentada en la silla es donde desaparece en silencio buena parte del presupuesto de marketing — y casi nunca es culpa de la campaña.',
+        },
+        { kind: 'heading', text: 'No es un problema de calidad de los leads' },
+        {
+          kind: 'paragraph',
+          text: 'El instinto es culpar a la plataforma de anuncios o a la fuente del lead — quizás la oferta no fue suficientemente atractiva, quizás Meta está mandando gente que nunca iba a agendar. En los med spas que hemos revisado en el Metroplex, la causa real casi siempre es el tiempo de respuesta. Un prospecto que llena un formulario un martes a las 8pm y recibe respuesta al día siguiente por la mañana ya encontró a alguien más antes del desayuno. **El lead no desapareció — un competidor más rápido respondió primero.** La segunda causa, más silenciosa, es qué se mide. La mayoría de las clínicas rastrea cuántos formularios llegan cada semana, no cuántas de esas personas realmente se sientan en la consulta, así que la fuga real nunca aparece en ningún panel — hasta que la agenda dice la verdad.',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'El lead no se enfrió — la respuesta simplemente llegó tarde.',
+          src: medSpaNoShowSpeedToLead,
+          alt: 'Un cronómetro corriendo junto a un teléfono que se ilumina con una notificación de respuesta, mostrando a un negocio respondiendo a un lead en segundos y no en horas.',
+        },
+        { kind: 'heading', text: '1. Responde en menos de 60 segundos, siempre' },
+        {
+          kind: 'paragraph',
+          text: 'El arreglo con más impacto es la velocidad de la primera respuesta. Un mensaje de texto o WhatsApp que sale en el primer minuto después de enviado el formulario — aunque sea corto, confirmando que la solicitud llegó y preguntando el mejor horario para llamar — mantiene al lead interesado el tiempo suficiente para que ocurra una conversación real más tarde ese mismo día. La mayoría de las herramientas de agenda y CRM ya soportan una respuesta automática instantánea; el arreglo es activarla y escribir tres frases que suenen a una persona, no comprar software nuevo.',
+        },
+        { kind: 'heading', text: '2. Reduce el formulario a tres campos' },
+        {
+          kind: 'paragraph',
+          text: 'Un formulario largo filtra justo a las personas que todavía están decidiendo, y esos leads indecisos son los que más valen el seguimiento. Nombre, teléfono y el tratamiento que están buscando es suficiente para empezar una conversación. Todo lo demás — historial médico, presupuesto, fecha preferida — pertenece a la llamada de confirmación o al papeleo después de agendar, no antes. **Cada campo extra en ese primer formulario es una oportunidad más para que alguien cierre la pestaña en lugar de terminarlo.**',
+        },
+        { kind: 'heading', text: '3. Arma una secuencia de recordatorios, no un solo texto de confirmación' },
+        {
+          kind: 'paragraph',
+          text: 'Un solo mensaje de confirmación enviado al momento de agendar es fácil de olvidar para cuando llega la fecha de la cita, sobre todo si la consulta se agendó con una o dos semanas de anticipación. Una secuencia corta — confirmación justo al agendar, recordatorio 48 horas antes, y un texto la misma mañana — atrapa a la persona antes de que la vida se interponga. La mayoría de las plataformas de agenda, más una herramienta básica de SMS, pueden automatizar esto en una tarde. No hace falta un desarrollador ni un sistema nuevo, solo alguien dispuesto a configurarlo una vez.',
+        },
+        { kind: 'heading', text: '4. Muestra prueba real en la página de agenda, no solo un calendario' },
+        {
+          kind: 'paragraph',
+          text: 'Un calendario vacío le pide a alguien que se comprometa antes de haber visto una razón para hacerlo. Una foto real de antes/después, una cita de dos líneas de una clienta real, o una nota corta sobre qué pasa en la primera visita — puesta justo al lado del botón de agendar — le da a un lead dudoso la tranquilidad que hace que termine el formulario en lugar de abandonarlo a la mitad.',
+        },
+        {
+          kind: 'quote',
+          text: 'El lead no desapareció — un competidor más rápido respondió primero.',
+        },
+        { kind: 'heading', text: 'Cómo se mide si está funcionando' },
+        {
+          kind: 'paragraph',
+          text: 'La métrica que importa aquí es la tasa de asistencia — consultas realmente atendidas dividido entre consultas agendadas — no el número de formularios enviados. Rastréala junto con el costo por consulta agendada. Ambas cifras viven en el software de agenda o CRM que la clínica ya usa; la mayoría de las plataformas reportan esto una vez que las etapas del embudo — agendada, confirmada, atendida, no-show — están realmente configuradas para rastrearlo, y muchas no lo están por defecto. **Una campaña que baja el costo por lead pero nunca mueve la tasa de asistencia no arregló nada — solo hizo el mismo problema más barato de crear.** Revisa el número cada mes y observa cómo se mueve con cada arreglo, uno a la vez, para que quede claro cuál cambio realmente ayudó.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'Una secuencia de recordatorios le gana a un solo texto de confirmación — está hecha para sobrevivir una semana ocupada.',
+          src: medSpaNoShowReminderSequence,
+          alt: 'Una lista de verificación con tres pasos completados — confirmación, recordatorio a las 48 horas y texto el mismo día — que lleva a una cita cumplida.',
+        },
+        { kind: 'heading', text: 'Qué no hacer' },
+        {
+          kind: 'paragraph',
+          text: 'No juzgues una campaña solo por el número de formularios — un formulario fácil de abandonar se ve idéntico a uno que convierte, hasta que alguien revisa la tasa de asistencia detrás de él. No mandes un solo recordatorio genérico y des la secuencia por terminada; un solo texto una semana antes de la cita se pierde entre todo lo demás que compite por la atención esa semana. Y no asumas que la cuenta de anuncios está rota antes de arreglar primero el tiempo de respuesta y los recordatorios — la mayoría de los med spas que hemos revisado en DFW nunca necesitaron una campaña nueva, solo una respuesta más rápida y una secuencia de seguimiento que no se detuviera después de un solo mensaje.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Nada de esto requiere contratar a nadie. Una herramienta de agenda que ya soporte respuestas automáticas, un teléfono y una tarde para escribir cuatro mensajes cortos cubre casi todo. Si no queda claro exactamente dónde está la fuga en un embudo específico, el [Diagnóstico](/diagnostic) son siete días con una persona real mapeando eso, lead por lead, en lugar de adivinar. Para una primera revisión más rápida, el [Growth Score](/growth-score) gratis de cuatro minutos — o la [página de med spa](/industries/med-spa) para lo que más se repite en este rubro — es un buen punto de partida.',
         },
       ],
     },
