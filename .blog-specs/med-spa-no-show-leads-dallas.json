@@ -1,0 +1,15 @@
+{
+  "cover": {
+    "concept": "A simple geometric appointment-calendar grid rendered in muted indigo, with three of its date cells left completely empty like abandoned seats while the surrounding cells are filled with a solid accent-orange block; beside the calendar, a flat phone silhouette tilts upward with a small round notification dot glowing in bright accent orange, its message-bubble icon left unopened, capturing the exact moment a booked appointment quietly turns into an empty chair."
+  },
+  "inline": [
+    {
+      "name": "speed-to-lead",
+      "concept": "A minimal circular stopwatch shape in muted indigo racing beside a flat phone silhouette whose screen lights up with a single round notification dot in bright accent orange; a thin curved motion line trails behind the phone as if it is being lifted and answered before the stopwatch's second hand completes its sweep, illustrating the seconds that decide whether a lead stays or calls the next business."
+    },
+    {
+      "name": "reminder-sequence",
+      "concept": "Three small flat checkpoint circles connected by a thin dotted line, the first two filled solid in muted indigo with a simple checkmark and the third filled in bright accent orange, leading toward a single open appointment-book icon at the end of the line; each checkpoint is paired with a tiny geometric glyph — a speech bubble, a bell, a sunrise — standing in for a confirmation, a reminder, and a same-day nudge."
+    }
+  ]
+}
