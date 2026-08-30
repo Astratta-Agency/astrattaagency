@@ -1,2 +1,0 @@
-BUILD_OK
-https://github.com/Astratta-Agency/astrattaagency/actions/runs/33074009204
