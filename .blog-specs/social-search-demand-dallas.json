@@ -1,0 +1,15 @@
+{
+  "cover": {
+    "concept": "Two winding ribbon-shaped light trails in muted indigo line work, one made of small square tiles evoking a social feed, the other shaped like a search bar with a small magnifying-glass tip. The two ribbons curve toward each other from opposite sides and merge into a single bright accent-orange thread exactly where they meet, that merged thread continuing on alone past the meeting point while the two separate trails fade out behind it."
+  },
+  "inline": [
+    {
+      "name": "platform-bridge",
+      "concept": "A simple geometric hand silhouette in muted indigo line work plugging a glowing accent-orange cable from a small phone shape — its screen showing a stack of scrolling square tiles — into a laptop shape whose screen shows a single flat search-bar icon. A small burst of light in accent orange marks the exact point where the cable connects."
+    },
+    {
+      "name": "topic-signal",
+      "concept": "A grid of small identical square tiles in muted indigo outline, evenly spaced, with only two of the tiles rendered in solid bright accent orange. A thin orange line rises from each of those two brighter tiles and converges upward into a single small search-bar icon floating above the grid, while the rest of the grid stays flat and unconnected below."
+    }
+  ]
+}
