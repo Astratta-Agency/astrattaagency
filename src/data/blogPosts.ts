@@ -18,6 +18,9 @@ import googleAdsDeliberateReset from '@/assets/blog/google-ads-target-overperfor
 import medSpaNoShowCover from '@/assets/blog/med-spa-no-show-leads-dallas-cover.webp'
 import medSpaNoShowSpeedToLead from '@/assets/blog/med-spa-no-show-leads-dallas-speed-to-lead.webp'
 import medSpaNoShowReminderSequence from '@/assets/blog/med-spa-no-show-leads-dallas-reminder-sequence.webp'
+import socialSearchDemandCover from '@/assets/blog/social-search-demand-dallas-cover.webp'
+import socialSearchDemandPlatformBridge from '@/assets/blog/social-search-demand-dallas-platform-bridge.webp'
+import socialSearchDemandTopicSignal from '@/assets/blog/social-search-demand-dallas-topic-signal.webp'
 
 export type BlogCategory = 'web-conversion' | 'digital-marketing' | 'design' | 'case-notes'
 
@@ -1032,6 +1035,178 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: 'Nada de esto requiere contratar a nadie. Una herramienta de agenda que ya soporte respuestas automáticas, un teléfono y una tarde para escribir cuatro mensajes cortos cubre casi todo. Si no queda claro exactamente dónde está la fuga en un embudo específico, el [Diagnóstico](/diagnostic) son siete días con una persona real mapeando eso, lead por lead, en lugar de adivinar. Para una primera revisión más rápida, el [Growth Score](/growth-score) gratis de cuatro minutos — o la [página de med spa](/industries/med-spa) para lo que más se repite en este rubro — es un buen punto de partida.',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'social-search-demand-dallas', es: 'redes-sociales-demanda-busqueda-dallas' },
+    title: {
+      en: 'Google Can Now Show If Your Social Posts Bring Dallas Customers',
+      es: 'Google ya te dice si tus redes sociales le traen clientes a tu negocio en Dallas',
+    },
+    excerpt: {
+      en: "Search Console just started connecting specific Instagram and TikTok posts to the Google searches they generate. Here's how a Dallas–Fort Worth business checks whether social content is actually working before posting anything else.",
+      es: 'Search Console empezó a conectar publicaciones específicas de Instagram y TikTok con las búsquedas de Google que generan. Así puede un negocio de Dallas–Fort Worth comprobar si sus redes sociales de verdad están funcionando.',
+    },
+    category: 'digital-marketing',
+    publishedAt: '2026-09-01',
+    readingTime: { en: '5 min read', es: '5 min de lectura' },
+    coverGradient: 'from-primary/20 to-secondary/20',
+    coverVariant: 'insight',
+    coverImage: socialSearchDemandCover,
+    coverAlt: {
+      en: 'Two ribbon-shaped light trails — one made of small social-post tiles, one shaped like a search bar — curving toward each other and merging into a single bright thread.',
+      es: 'Dos franjas de luz — una formada por pequeñas publicaciones en cuadrícula, otra con forma de barra de búsqueda — que se curvan una hacia la otra y se funden en un solo trazo brillante.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'Social Posts vs. Search Demand in Dallas | Astratta',
+      es: 'Redes Sociales y Búsquedas en Dallas | Astratta',
+    },
+    metaDescription: {
+      en: 'Google Search Console now shows whether Instagram and TikTok posts drive Google searches for your Dallas–Fort Worth business. What to check this week.',
+      es: 'Search Console ya muestra si tus publicaciones de Instagram y TikTok generan búsquedas en Google para tu negocio en Dallas–Fort Worth. Qué revisar esta semana.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: "On July 29, 2026, Google quietly rolled out something Dallas–Fort Worth business owners have wanted for years: a way to prove that a social media post actually drove someone to search for your business. The feature is called platform properties, and it lives inside Google Search Console — the free tool most businesses already have installed but rarely open. Link an Instagram, TikTok, YouTube, or X account to a platform property, and Search Console starts reporting the impressions and clicks specific videos generate inside Google Search, Discover, and Google News, not just inside the social app itself.",
+        },
+        {
+          kind: 'paragraph',
+          text: "Search Engine Land confirmed on August 18 what the feature had only hinted at three weeks earlier: this isn't a vanity-metrics dashboard bolted onto Search Console. **It's the first tool that connects a specific piece of social content to a specific search someone typed into Google afterward**, closing a gap that's forced marketers to guess for a decade whether social content and search traffic had anything to do with each other.",
+        },
+        { kind: 'heading', text: 'Why this matters for Dallas–Fort Worth businesses' },
+        {
+          kind: 'paragraph',
+          text: 'Every restaurant, med spa, and home improvement business in DFW that’s been told to "be more active on social media" has run the same experiment blind: post consistently, rack up views and likes, and hope some of that attention eventually shows up as customers walking in the door. There’s never been a way to check whether it actually did — engagement metrics live inside each platform’s own dashboard, sealed off from anything Google reports about your business.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'That blind spot has been expensive in a market this crowded. DFW has more restaurants, med spas, and home improvement contractors competing for the same short-form video attention than almost any metro in the country, which means a lot of businesses have been paying someone — an employee, a freelancer, an agency — to produce content with no real answer to the one question that decides whether it’s worth continuing: did this actually bring in a customer, or did it just perform well inside an app that has no idea what a customer is worth to you?',
+        },
+        {
+          kind: 'paragraph',
+          text: "We saw this firsthand with Perreando Hotdog, a DFW restaurant client whose short-form video campaign put up 292,000 organic views in 90 days without a dollar of ad spend. That's a real result by any measure — but at the time, there was no way to show how many of those views turned into someone typing the restaurant's name into Google that same week. **Platform properties expose that link for the first time, for any business willing to spend ten minutes setting it up.**",
+        },
+        { kind: 'heading', text: 'What to do this week' },
+        { kind: 'heading', text: '1. Connect your platform properties' },
+        {
+          kind: 'paragraph',
+          text: "In Search Console, go to property settings and add a platform property for each social account your business actively posts from — Instagram, TikTok, YouTube, and X are all supported. Each platform requires its own verification step, usually a code added to your bio or a linked website, so budget fifteen minutes per account, not per business. A med spa running Instagram and TikTok, or a home improvement contractor running TikTok and YouTube, should expect two separate setups, not one. **Do this before you judge whether social content is worth the time it takes to produce — you can't measure what you never connected.**",
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: "The account only starts reporting once it's actually connected — activity without evidence until then.",
+          src: socialSearchDemandPlatformBridge,
+          alt: 'A hand plugging a glowing cable from a phone showing a stack of scrolling video tiles into a laptop displaying a single search bar, with a small spark of light where the connection completes.',
+        },
+        { kind: 'heading', text: '2. Read the report before you post anything new' },
+        {
+          kind: 'paragraph',
+          text: "Once verified, the property's Performance report breaks impressions and clicks down the same way it already does for your website — by query, by page (in this case, by video), and by date. Sort by impressions and look for videos still generating search interest weeks after they were posted; **that's the signal a topic has staying power beyond the scroll-past engagement a platform's own analytics measures.**",
+        },
+        { kind: 'heading', text: '3. Cross-reference topics, not just totals' },
+        {
+          kind: 'paragraph',
+          text: "The number that matters isn't total views — it's which specific topics, dishes, projects, or before-and-afters show up generating Google search impressions and which don't. A home improvement business posting kitchen remodels and bathroom remodels can now see, for the first time, whether one category is quietly driving searches for the business name while the other collects views and nothing else. **Redirect next month's content calendar toward whatever the data says is actually working, not whatever performed best inside the app itself.**",
+        },
+        {
+          kind: 'image',
+          variant: 'insight',
+          caption: 'Most posts just get views. A few quietly generate the searches that actually matter.',
+          src: socialSearchDemandTopicSignal,
+          alt: 'A grid of identical small video thumbnails with only two glowing brighter than the rest, each connected by a thin rising line to a single search bar floating above the grid.',
+        },
+        { kind: 'heading', text: 'What to ignore' },
+        {
+          kind: 'paragraph',
+          text: "Ignore anyone who tells you this replaces a Google Business Profile or a real measurement setup — platform properties add one more signal to a stack that still needs GA4, call tracking, and a profile that's actually kept current. Ignore the instinct to judge results after a week, too; Search Console needs several weeks of data before a pattern is reliable, same as it does for your website. And ignore the idea that a high view count is the win — **a video that racks up views but never shows up generating a search for your business name told you something about the platform's algorithm, not about your business's demand.**",
+        },
+        {
+          kind: 'quote',
+          text: 'A viral video that never turns into a search for your name is entertainment, not marketing.',
+        },
+        {
+          kind: 'paragraph',
+          text: "None of this requires new content, a new agency, or a bigger budget — it's ten minutes connecting accounts you already post from to a tool you already have installed. For a broader read on where else your Google presence has gaps, the [local SEO checklist](/blog/local-seo-checklist-dfw) we run before recommending paid ads to any DFW client covers the six things platform properties won't catch.",
+        },
+        {
+          kind: 'paragraph',
+          text: "If nobody on your team checks a report like this on a regular schedule, that's usually a sign no one's watching the marketing system as a whole — which is exactly what the [Diagnostic](/diagnostic) is built to find in a week, and what our [ongoing marketing systems](/systems) exist to keep watching after.",
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: 'El 29 de julio de 2026, Google lanzó sin hacer ruido algo que los dueños de negocio en Dallas–Fort Worth llevaban años pidiendo: una forma de comprobar si una publicación en redes sociales de verdad hizo que alguien buscara tu negocio en Google. La función se llama propiedades de plataforma y vive dentro de Search Console, la herramienta gratuita que la mayoría de los negocios ya tiene instalada pero casi nunca abre. Vincula una cuenta de Instagram, TikTok, YouTube o X como propiedad de plataforma, y Search Console empieza a reportar las impresiones y los clics que generan esos videos específicos dentro de Google Search, Discover y Google News, no solo dentro de la app social.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'El 18 de agosto, Search Engine Land confirmó lo que la función apenas insinuaba tres semanas antes: esto no es un panel más de métricas de vanidad pegado a Search Console. **Es la primera herramienta que conecta una publicación específica de redes sociales con una búsqueda específica que alguien tecleó después en Google**, cerrando una brecha que ha obligado a los mercadólogos a adivinar durante una década si las redes sociales y el tráfico de búsqueda tenían algo que ver entre sí.',
+        },
+        { kind: 'heading', text: 'Por qué importa para los negocios de Dallas–Fort Worth' },
+        {
+          kind: 'paragraph',
+          text: 'Todo restaurante, med spa y negocio de remodelación en DFW al que le han dicho que "sea más activo en redes sociales" ha corrido el mismo experimento a ciegas: publicar seguido, acumular vistas y likes, y esperar que algo de esa atención termine convertida en clientes que entran por la puerta. Nunca hubo forma de comprobar si de verdad pasaba — las métricas de interacción viven dentro del panel de cada plataforma, aisladas de cualquier cosa que Google reporte sobre tu negocio.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Ese punto ciego ha salido caro en un mercado tan saturado. DFW tiene más restaurantes, med spas y contratistas de remodelación compitiendo por la misma atención en video corto que casi cualquier otra ciudad del país, así que muchos negocios llevan meses pagándole a alguien — un empleado, un freelancer, una agencia — para producir contenido sin ninguna respuesta real a la única pregunta que decide si vale la pena seguir: ¿esto de verdad trajo un cliente, o nada más rindió bien dentro de una app que no tiene idea de cuánto vale un cliente para ti?',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Lo vimos de cerca con Perreando Hotdog, un cliente restaurantero de DFW cuya campaña de video corto logró 292,000 vistas orgánicas en 90 días sin gastar un dólar en anuncios. Es un resultado real bajo cualquier medida — pero en ese momento no había forma de mostrar cuántas de esas vistas se convirtieron en alguien tecleando el nombre del restaurante en Google esa misma semana. **Las propiedades de plataforma exponen esa conexión por primera vez, para cualquier negocio dispuesto a invertir diez minutos en configurarla.**',
+        },
+        { kind: 'heading', text: 'Qué hacer esta semana' },
+        { kind: 'heading', text: '1. Vincula tus propiedades de plataforma' },
+        {
+          kind: 'paragraph',
+          text: 'En Search Console, entra a la configuración de la propiedad y agrega una propiedad de plataforma por cada cuenta social desde la que tu negocio publica activamente — Instagram, TikTok, YouTube y X están soportadas. Cada plataforma pide su propio paso de verificación, normalmente un código en tu biografía o en un sitio vinculado, así que calcula quince minutos por cuenta, no por negocio. Un med spa que corre Instagram y TikTok, o un contratista de remodelación que corre TikTok y YouTube, debe esperar dos configuraciones separadas, no una. **Haz esto antes de decidir si las redes sociales valen el tiempo que toma producirlas — no puedes medir lo que nunca conectaste.**',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'La cuenta solo empieza a reportar una vez conectada — antes de eso, es actividad sin evidencia.',
+          src: socialSearchDemandPlatformBridge,
+          alt: 'Una mano conectando un cable brillante desde un teléfono que muestra una pila de videos en miniatura hacia una laptop con una sola barra de búsqueda, con una pequeña chispa de luz donde se completa la conexión.',
+        },
+        { kind: 'heading', text: '2. Lee el reporte antes de publicar algo nuevo' },
+        {
+          kind: 'paragraph',
+          text: 'Una vez verificada, el reporte de Rendimiento de la propiedad desglosa impresiones y clics de la misma forma en que ya lo hace para tu sitio web — por consulta, por página (en este caso, por video) y por fecha. Ordena por impresiones y busca los videos que siguen generando interés de búsqueda semanas después de publicados; **esa es la señal de que un tema tiene permanencia más allá del scroll rápido que mide el propio panel de la plataforma.**',
+        },
+        { kind: 'heading', text: '3. Compara temas, no solo totales' },
+        {
+          kind: 'paragraph',
+          text: 'El número que importa no es el total de vistas — es qué temas, platillos, proyectos o antes-y-después específicos aparecen generando impresiones de búsqueda en Google y cuáles no. Un negocio de remodelación que publica cocinas y baños remodelados puede ver, por primera vez, si una categoría está generando búsquedas del nombre del negocio calladamente mientras la otra solo junta vistas y nada más. **Redirige el calendario de contenido del próximo mes hacia lo que los datos digan que de verdad funciona, no hacia lo que mejor rindió dentro de la propia app.**',
+        },
+        {
+          kind: 'image',
+          variant: 'insight',
+          caption: 'La mayoría de las publicaciones solo generan vistas. Unas pocas generan, sin ruido, las búsquedas que de verdad importan.',
+          src: socialSearchDemandTopicSignal,
+          alt: 'Una cuadrícula de miniaturas de video idénticas con solo dos brillando más que el resto, cada una conectada por una línea ascendente a una sola barra de búsqueda flotando arriba de la cuadrícula.',
+        },
+        { kind: 'heading', text: 'Qué ignorar' },
+        {
+          kind: 'paragraph',
+          text: 'Ignora a quien te diga que esto reemplaza un Perfil de Negocio de Google o una configuración de medición completa — las propiedades de plataforma agregan una señal más a un sistema que sigue necesitando GA4, rastreo de llamadas y un perfil que de verdad se mantenga al día. Ignora también el impulso de juzgar resultados después de una semana; Search Console necesita varias semanas de datos antes de que un patrón sea confiable, igual que con tu sitio web. Y ignora la idea de que un conteo alto de vistas es la victoria — **un video que acumula vistas pero nunca aparece generando una búsqueda de tu nombre te dijo algo sobre el algoritmo de la plataforma, no sobre la demanda de tu negocio.**',
+        },
+        {
+          kind: 'quote',
+          text: 'Un video viral que nunca se convierte en una búsqueda de tu nombre es entretenimiento, no marketing.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Nada de esto pide contenido nuevo, otra agencia ni más presupuesto — son diez minutos vinculando cuentas desde las que ya publicas a una herramienta que ya tienes instalada. Para una revisión más amplia de dónde más tiene huecos tu presencia en Google, el [checklist de SEO local](/blog/local-seo-checklist-dfw) que revisamos antes de recomendar anuncios pagados a cualquier cliente en DFW cubre las seis cosas que las propiedades de plataforma no van a detectar.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Si nadie en tu equipo revisa un reporte así con calendario fijo, normalmente es señal de que nadie está vigilando el sistema de marketing completo — que es justo lo que el [Diagnóstico](/diagnostic) está hecho para encontrar en una semana, y lo que nuestros [sistemas de marketing continuo](/systems) existen para seguir vigilando después.',
         },
       ],
     },
