@@ -21,6 +21,9 @@ import medSpaNoShowReminderSequence from '@/assets/blog/med-spa-no-show-leads-da
 import socialSearchDemandCover from '@/assets/blog/social-search-demand-dallas-cover.webp'
 import socialSearchDemandPlatformBridge from '@/assets/blog/social-search-demand-dallas-platform-bridge.webp'
 import socialSearchDemandTopicSignal from '@/assets/blog/social-search-demand-dallas-topic-signal.webp'
+import dormantClientListCover from '@/assets/blog/dormant-client-list-dallas-cover.webp'
+import dormantClientListConsolidate from '@/assets/blog/dormant-client-list-dallas-consolidate-list.webp'
+import dormantClientListReactivation from '@/assets/blog/dormant-client-list-dallas-reactivation-signal.webp'
 
 export type BlogCategory = 'web-conversion' | 'digital-marketing' | 'design' | 'case-notes'
 
@@ -1207,6 +1210,166 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: 'Si nadie en tu equipo revisa un reporte así con calendario fijo, normalmente es señal de que nadie está vigilando el sistema de marketing completo — que es justo lo que el [Diagnóstico](/diagnostic) está hecho para encontrar en una semana, y lo que nuestros [sistemas de marketing continuo](/systems) existen para seguir vigilando después.',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'dormant-client-list-dallas', es: 'lista-de-clientes-dormida-dallas' },
+    title: {
+      en: 'Your dormant client list is worth more than your next Dallas ad campaign',
+      es: 'Tu lista de clientes dormida vale más que tu próxima campaña de anuncios en Dallas',
+    },
+    excerpt: {
+      en: 'Most Dallas businesses have a list of past clients and old leads they haven’t touched in months. Here’s the exact system to reactivate it — no new ad spend required.',
+      es: 'La mayoría de los negocios en Dallas tienen una lista de clientes pasados y leads viejos que no han tocado en meses. Este es el sistema exacto para reactivarla — sin gastar un dólar más en anuncios.',
+    },
+    category: 'web-conversion',
+    publishedAt: '2026-09-03',
+    readingTime: { en: '5 min read', es: '5 min de lectura' },
+    coverGradient: 'from-primary/20 to-secondary/20',
+    coverVariant: 'clarity',
+    coverImage: dormantClientListCover,
+    coverAlt: {
+      en: 'A dusty filing box left slightly open on a shelf, with a single warm light glowing from inside while the rest of the room stays dim.',
+      es: 'Una caja de archivos polvorienta entreabierta sobre un estante, con una sola luz cálida brillando desde adentro mientras el resto del cuarto permanece oscuro.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'Reactivate Your Dormant Client List in Dallas | Astratta',
+      es: 'Reactiva tu Lista de Clientes Dormida en Dallas | Astratta',
+    },
+    metaDescription: {
+      en: 'Your old client list in Dallas isn’t dead — it’s just never been messaged. Here’s the four-step system DFW businesses use to reactivate it without new ad spend.',
+      es: 'Tu lista de clientes en Dallas no está muerta, solo nunca le has escrito. Este es el sistema de cuatro pasos para reactivarla sin gastar más en anuncios.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: 'Every [real estate agent](/industries/real-estate), restaurant owner and contractor we talk to in Dallas says some version of the same thing: business is fine when a referral shows up, slow when it doesn’t, and the list of past clients and old leads sitting in a phone or a spreadsheet hasn’t been opened in months. Nobody deletes that list. Nobody uses it either. **A DFW real estate agent depending only on referrals is one slow quarter away from an empty pipeline, and the fastest way to fill it isn’t a new lead source — it’s the one already sitting untouched.**',
+        },
+        { kind: 'heading', text: 'The list isn’t the problem — the silence is' },
+        {
+          kind: 'paragraph',
+          text: 'The instinct is to treat an old client list as a record of what already happened, not as a source of what could happen next. **A contact who already bought from you, or who inquired six months ago and went quiet, costs nothing to reach again and converts at a fraction of what a brand-new lead costs — but only if something actually reaches them.** Without a system that reaches out on a schedule, that list just ages. It’s common to find DFW businesses sitting on lists of several hundred contacts — sometimes as many as 800 — that haven’t heard from the business in over a year. That’s not a marketing failure so much as a follow-up failure: the sale happened, and then nothing happened after.',
+        },
+        { kind: 'heading', text: 'The fix, in four steps' },
+        { kind: 'heading', text: '1. Put every contact in one place' },
+        {
+          kind: 'paragraph',
+          text: 'Past clients usually live in three or four places at once: a phone’s contact list, an email inbox, a point-of-sale or booking system, and a spreadsheet someone started once and abandoned. **None of those systems can send a scheduled message on their own, so the first step is exporting all of them into one CRM or, at minimum, one spreadsheet that can be filtered and sorted.** Free tiers of tools like HubSpot, or a Google Sheet with a mail-merge add-on, are enough to start; the goal isn’t the software, it’s having one list instead of four.',
+        },
+        { kind: 'heading', text: '2. Get explicit permission before sending anything' },
+        {
+          kind: 'paragraph',
+          text: 'Before texting anyone on that list, confirm they agreed to receive messages from the business — a booking form, a past purchase, or a sign-up counts; a scraped or purchased list does not. **Sending unsolicited marketing texts in the U.S. carries real legal exposure under the TCPA, so build a short opt-in step — a reply-YES text or a checkbox at checkout — into the list before any campaign goes out.** This step also improves results: people who opted in open and respond at a much higher rate than people who never agreed to hear from the business.',
+        },
+        { kind: 'heading', text: '3. Build one automated win-back sequence' },
+        {
+          kind: 'paragraph',
+          text: 'A single blast to the whole list — “we miss you, come back” — reads as generic and gets ignored. **A short sequence of three or four messages spaced a few days apart, each with a specific reason to act now, consistently outperforms one email sent once.** Most CRMs and email tools include a basic automation builder for exactly this; it needs setting up once, and then it runs on every contact who goes quiet for a set period, without anyone remembering to send it manually.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'One list, one CRM, one sequence that runs without anyone remembering to send it.',
+          src: dormantClientListConsolidate,
+          alt: 'Several tangled paper trails — a phone, a receipt roll, a notebook — being gathered into a single glowing ledger.',
+        },
+        { kind: 'heading', text: '4. Time the offer to the slowest hours, not the busiest' },
+        {
+          kind: 'paragraph',
+          text: 'The instinct is to send the win-back offer whenever it’s convenient to write it. **The offer works harder when it’s timed to fill a specific gap — a Tuesday afternoon, a Wednesday lunch shift, a mid-month lull — because it’s solving a real capacity problem instead of just asking for attention.** Look at a booking calendar or reservation system for the slowest recurring block, and schedule the offer to arrive two or three days before it, not the morning of.',
+        },
+        { kind: 'heading', text: 'How to measure it' },
+        {
+          kind: 'paragraph',
+          text: 'Two numbers say whether this is working, and both live in the CRM or booking system report, not in a gut feeling. **Reactivation rate — the percentage of contacted dormant contacts who book or buy again — shows whether the sequence itself is working; 90-day repeat rate shows whether they stay past the first visit back.** Track both by the specific offer sent, not just in aggregate, so it’s clear which message actually pulled people back versus which one just added to the noise. Even a modest reactivation rate on a list of several hundred contacts produces real appointments that nobody had to pay a single ad dollar to generate — that’s the number worth reporting to the owner, not the raw size of the list.',
+        },
+        {
+          kind: 'image',
+          variant: 'insight',
+          caption: 'The list’s size doesn’t matter. Its reactivation rate does.',
+          src: dormantClientListReactivation,
+          alt: 'A flat signal line on a monitor spiking upward in one bright section while the rest of the line stays dim.',
+        },
+        { kind: 'heading', text: 'What not to do' },
+        {
+          kind: 'paragraph',
+          text: 'Don’t send one blast and consider the list finished — a single email or text is an event, not a system, and a cold list needs more than one touch before a response curve shows up. **Don’t skip the opt-in step to save time — a spam complaint or a carrier block affects deliverability for every future message, not just the one that triggered it.** And don’t keep messaging contacts who never respond after two or three attempts — remove them from the active sequence so the list stays clean and the engagement rate reflects the people actually worth reaching.',
+        },
+        {
+          kind: 'quote',
+          text: 'A list nobody messages isn’t an asset. It’s a record of customers who used to know your name.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'None of this requires new ad spend or a rebuilt website — it requires exporting a list that already exists and setting up a sequence that runs itself. If the gap turns out to be broader than one dormant list — no CRM at all, no tracking on the booking calendar, no consistent way to see where leads actually come from — the [Growth Score](/growth-score) is a four-minute way to see where the rest of the system stands. And if the fix needs more structure than a weekend can build, that’s exactly what the [Diagnostic](/diagnostic) exists to map out in a week.',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: 'Todo [agente de bienes raíces](/industries/real-estate), dueño de restaurante y contratista con el que hablamos en Dallas dice alguna versión de lo mismo: el negocio va bien cuando llega un referido, va lento cuando no llega, y la lista de clientes pasados y leads viejos que vive en un teléfono o una hoja de cálculo no se ha abierto en meses. Nadie borra esa lista. Tampoco nadie la usa. **Un agente de bienes raíces en DFW que depende solo de referidos está a un trimestre lento de quedarse sin pipeline, y la forma más rápida de llenarlo no es una fuente de leads nueva — es la que ya tiene guardada sin tocar.**',
+        },
+        { kind: 'heading', text: 'La lista no es el problema — el silencio sí' },
+        {
+          kind: 'paragraph',
+          text: 'El instinto es tratar una lista vieja de clientes como un registro de lo que ya pasó, no como una fuente de lo que podría pasar después. **Un contacto que ya te compró, o que preguntó hace seis meses y dejó de responder, no cuesta nada volver a contactarlo y convierte a una fracción de lo que cuesta un lead completamente nuevo — pero solo si algo realmente llega hasta él.** Sin un sistema que le escriba con calendario fijo, esa lista simplemente envejece. Es común encontrar negocios de DFW con listas de varios cientos de contactos — a veces hasta 800 — que no han sabido nada del negocio en más de un año. Eso no es tanto una falla de marketing como una falla de seguimiento: la venta ocurrió, y después no ocurrió nada más.',
+        },
+        { kind: 'heading', text: 'El arreglo, en cuatro pasos' },
+        { kind: 'heading', text: '1. Junta todos los contactos en un solo lugar' },
+        {
+          kind: 'paragraph',
+          text: 'Los clientes pasados normalmente viven en tres o cuatro lugares a la vez: la lista de contactos de un teléfono, una bandeja de correo, un sistema de punto de venta o de citas, y una hoja de cálculo que alguien empezó una vez y abandonó. **Ninguno de esos sistemas puede enviar un mensaje programado por su cuenta, así que el primer paso es exportar todo eso a un solo CRM o, como mínimo, una sola hoja de cálculo que se pueda filtrar y ordenar.** Las versiones gratuitas de herramientas como HubSpot, o un Google Sheet con un complemento de combinación de correspondencia, alcanzan para empezar; el objetivo no es el software, es tener una sola lista en lugar de cuatro.',
+        },
+        { kind: 'heading', text: '2. Consigue permiso explícito antes de enviar nada' },
+        {
+          kind: 'paragraph',
+          text: 'Antes de mandarle un mensaje de texto a cualquiera de esa lista, confirma que esa persona aceptó recibir mensajes del negocio — un formulario de reserva, una compra anterior o un registro cuentan; una lista comprada o extraída de otro lado no. **Enviar mensajes de marketing sin consentimiento en Estados Unidos tiene exposición legal real bajo la TCPA, así que arma un paso corto de opt-in — un texto de responde-SÍ o una casilla al pagar — antes de que salga cualquier campaña.** Este paso también mejora los resultados: la gente que dio su permiso abre y responde a una tasa mucho más alta que la que nunca aceptó saber del negocio.',
+        },
+        { kind: 'heading', text: '3. Arma una sola secuencia automatizada de reactivación' },
+        {
+          kind: 'paragraph',
+          text: 'Un solo envío masivo a toda la lista — “te extrañamos, vuelve” — se lee genérico y se ignora. **Una secuencia corta de tres o cuatro mensajes espaciados unos días, cada uno con una razón específica para actuar ahora, supera de forma consistente a un solo correo enviado una vez.** La mayoría de los CRM y las herramientas de correo incluyen un armador básico de automatizaciones justo para esto; se configura una vez, y después corre solo con cada contacto que queda en silencio durante un periodo definido, sin que nadie tenga que acordarse de enviarlo a mano.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'Una sola lista, un solo CRM, una secuencia que corre sin que nadie tenga que acordarse de enviarla.',
+          src: dormantClientListConsolidate,
+          alt: 'Varios rastros de papel enredados — un teléfono, un rollo de recibos, una libreta — siendo reunidos en un solo libro de contactos brillante.',
+        },
+        { kind: 'heading', text: '4. Programa la oferta para las horas más lentas, no las más ocupadas' },
+        {
+          kind: 'paragraph',
+          text: 'El instinto es mandar la oferta de reactivación cuando sea conveniente escribirla. **La oferta funciona mejor cuando está programada para llenar un hueco específico — un martes en la tarde, el turno de almuerzo de un miércoles, una quincena floja — porque está resolviendo un problema real de capacidad en lugar de solo pedir atención.** Revisa el calendario de citas o de reservaciones para encontrar el bloque más lento y recurrente, y programa la oferta para que llegue dos o tres días antes, no la mañana del mismo día.',
+        },
+        { kind: 'heading', text: 'Cómo se mide' },
+        {
+          kind: 'paragraph',
+          text: 'Dos números dicen si esto está funcionando, y ambos viven en el reporte del CRM o del sistema de citas, no en una corazonada. **La tasa de reactivación — el porcentaje de contactos dormidos contactados que vuelven a agendar o comprar — muestra si la secuencia en sí está funcionando; la tasa de repetición a 90 días muestra si se quedan después de esa primera vuelta.** Mide ambas por oferta específica enviada, no solo en conjunto, para que quede claro qué mensaje realmente trajo gente de vuelta y cuál solo agregó ruido. Incluso una tasa de reactivación modesta sobre una lista de varios cientos de contactos produce citas reales que no costaron un solo dólar en anuncios — ese es el número que vale la pena reportarle al dueño, no el tamaño bruto de la lista.',
+        },
+        {
+          kind: 'image',
+          variant: 'insight',
+          caption: 'El tamaño de la lista no importa. Su tasa de reactivación sí.',
+          src: dormantClientListReactivation,
+          alt: 'Una línea de señal plana en un monitor que se dispara hacia arriba en una sola sección brillante mientras el resto se mantiene apagado.',
+        },
+        { kind: 'heading', text: 'Qué no hacer' },
+        {
+          kind: 'paragraph',
+          text: 'No mandes un solo envío masivo y des la lista por resuelta — un correo o un texto es un evento, no un sistema, y una lista fría necesita más de un contacto antes de que aparezca cualquier curva de respuesta. **No te saltes el paso de opt-in para ahorrar tiempo — una queja de spam o un bloqueo del operador afecta la entrega de todos los mensajes futuros, no solo del que lo provocó.** Y no sigas escribiéndole a los contactos que nunca responden después de dos o tres intentos — sácalos de la secuencia activa para que la lista se mantenga limpia y la tasa de interacción refleje a la gente que de verdad vale la pena contactar.',
+        },
+        {
+          kind: 'quote',
+          text: 'Una lista a la que nadie le escribe no es un activo. Es el registro de clientes que alguna vez supieron tu nombre.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Nada de esto pide más presupuesto en anuncios ni un sitio web nuevo — pide exportar una lista que ya existe y armar una secuencia que corra sola. Si el hueco resulta ser más grande que una sola lista dormida — sin CRM, sin rastreo en el calendario de citas, sin forma consistente de ver de dónde vienen los leads — el [Growth Score](/growth-score) es una forma de cuatro minutos de ver en qué está parado el resto del sistema. Y si el arreglo necesita más estructura de la que se arma en un fin de semana, para eso existe el [Diagnóstico](/diagnostic): para mapearlo en una semana.',
         },
       ],
     },
