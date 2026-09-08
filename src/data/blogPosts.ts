@@ -24,6 +24,9 @@ import socialSearchDemandTopicSignal from '@/assets/blog/social-search-demand-da
 import dormantClientListCover from '@/assets/blog/dormant-client-list-dallas-cover.webp'
 import dormantClientListConsolidate from '@/assets/blog/dormant-client-list-dallas-consolidate-list.webp'
 import dormantClientListReactivation from '@/assets/blog/dormant-client-list-dallas-reactivation-signal.webp'
+import googleAdsLangCover from '@/assets/blog/google-ads-language-targeting-dallas-cover.webp'
+import googleAdsLangAdCopyAudit from '@/assets/blog/google-ads-language-targeting-dallas-ad-copy-audit.webp'
+import googleAdsLangLandingMirror from '@/assets/blog/google-ads-language-targeting-dallas-landing-page-mirror.webp'
 
 export type BlogCategory = 'web-conversion' | 'digital-marketing' | 'design' | 'case-notes'
 
@@ -1370,6 +1373,168 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: 'Nada de esto pide más presupuesto en anuncios ni un sitio web nuevo — pide exportar una lista que ya existe y armar una secuencia que corra sola. Si el hueco resulta ser más grande que una sola lista dormida — sin CRM, sin rastreo en el calendario de citas, sin forma consistente de ver de dónde vienen los leads — el [Growth Score](/growth-score) es una forma de cuatro minutos de ver en qué está parado el resto del sistema. Y si el arreglo necesita más estructura de la que se arma en un fin de semana, para eso existe el [Diagnóstico](/diagnostic): para mapearlo en una semana.',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'google-ads-language-targeting-dallas', es: 'fin-segmentacion-idioma-google-ads-dallas' },
+    title: {
+      en: 'Google Ads just deleted the language switch on your Dallas campaigns',
+      es: 'Google le quitó el filtro de idioma a tus campañas de Dallas',
+    },
+    excerpt: {
+      en: 'Starting in late September, Google Ads drops the campaign-level language setting on Search and Performance Max — matching runs on your ad copy and landing page instead of a checkbox. Here’s what Dallas–Fort Worth advertisers reaching Spanish-speaking customers should check first.',
+      es: 'Desde finales de septiembre, Google Ads elimina la configuración de idioma a nivel de campaña en Búsqueda y Performance Max — el filtro pasa a depender del texto de tus anuncios y tu página de aterrizaje, no de una casilla. Esto es lo que debe revisar primero un anunciante en Dallas–Fort Worth que le habla a clientes hispanohablantes.',
+    },
+    category: 'digital-marketing',
+    publishedAt: '2026-09-08',
+    readingTime: { en: '5 min read', es: '5 min de lectura' },
+    coverGradient: 'from-primary/20 to-secondary/20',
+    coverVariant: 'insight',
+    coverImage: googleAdsLangCover,
+    coverAlt: {
+      en: 'A hand unscrewing a valve marked with two small flags from a control panel, while the two streams it used to keep apart begin merging into one shared pipe below.',
+      es: 'Una mano desatornillando una válvula marcada con dos banderitas de un panel de control, mientras las dos corrientes que antes mantenía separadas empiezan a mezclarse en un mismo tubo debajo.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'Google Ads Drops Language Targeting in Dallas | Astratta',
+      es: 'Google Ads Quita el Filtro de Idioma en Dallas | Astratta',
+    },
+    metaDescription: {
+      en: 'Google Ads drops the language-targeting setting on Search campaigns in late September. What Dallas advertisers reaching Spanish speakers should check first.',
+      es: 'Google Ads elimina el filtro de idioma en Búsqueda a finales de septiembre. Esto debe revisar primero un anunciante en Dallas que le habla a hispanohablantes.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: 'Starting in late September 2026, Google Ads is deleting the language-targeting setting that Search campaigns have used for over a decade — and the same setting disappears from the Search inventory inside Performance Max. If your Dallas–Fort Worth business runs a campaign labeled “Spanish” to reach local customers, the dropdown that made that label mean anything is going away.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Google confirmed the change in August: once it rolls out, ad matching runs on the language Google reads in your actual ad copy and landing page, combined with its own signal for which languages a given searcher understands. **There’s no override left to configure — the only lever that still exists is what your ad and your page genuinely say.** The change only touches Search campaigns and the Search inventory inside Performance Max; Display, YouTube, and Discovery keep their existing language settings untouched, but for most DFW service businesses, Search is exactly where the ad budget lives.',
+        },
+        { kind: 'heading', text: 'Why this matters for Dallas–Fort Worth' },
+        {
+          kind: 'paragraph',
+          text: 'DFW has one of the largest Spanish-speaking populations of any metro in the country, and a lot of home service, med spa, and legal accounts here run a second “Spanish” campaign specifically to reach it — usually because Spanish keywords carry a lower cost per click than the English side of the same account. **For a lot of those accounts, the language setting was the only thing actually separating the Spanish campaign from the English one; the ad copy underneath was a light translation, at best.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Once the setting disappears, that gap closes. A campaign whose headlines are barely translated and whose landing page still renders in English no longer has anything telling Google it’s different from the main campaign — it just becomes another English-language ad competing in the general auction, at the general price, while still reporting up under a “Spanish” label that no longer means what it used to.',
+        },
+        { kind: 'heading', text: '1. Audit whether your Spanish campaigns are actually written in Spanish' },
+        {
+          kind: 'paragraph',
+          text: 'Open every ad group under a Spanish-labeled campaign and read the headlines and descriptions the way a customer would — not the campaign name, the actual text. **A campaign that translates only the keywords but leaves the ad copy in English was never really targeting Spanish speakers; it was targeting a lower price, and that price is going away.** If the copy is thin, rewrite it in Spanish that a customer in Oak Cliff or Grand Prairie would actually recognize as their own, not a direct translation of the English version.',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'The label on a campaign says nothing anymore. What the ad copy actually says is the only signal left.',
+          src: googleAdsLangAdCopyAudit,
+          alt: 'A magnifying glass hovering over a row of ad-copy cards on a wall; one card is sharp and glowing with a distinct pattern while the others sit flat and identical despite different labels above them.',
+        },
+        { kind: 'heading', text: '2. Check what your landing page actually renders' },
+        {
+          kind: 'paragraph',
+          text: 'Landing page language just became a much stronger signal than it used to be, because it’s now one of the only signals left. Open the page your Spanish traffic lands on in an incognito window and read it top to bottom. If it’s an English page with a language-switcher widget nobody clicks, or an English-language tag buried in its code sitting under Spanish content, that mismatch is exactly the kind of thing Google’s matching will start reading literally. **A landing page that says one thing in its code and another in its copy is now actively working against the campaign pointing at it.**',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'A page that says one thing in its code and another in its copy is now working against the campaign pointing at it.',
+          src: googleAdsLangLandingMirror,
+          alt: 'A hand smoothing the seam between two welcome mats of different patterns at a doorway threshold so they align into one continuous mat, with a small tag glowing at the door frame.',
+        },
+        { kind: 'heading', text: '3. Watch cost per lead by language over the next few weeks' },
+        {
+          kind: 'paragraph',
+          text: 'Once the change rolls out, pull cost per lead and lead quality for your Spanish-facing campaigns weekly instead of monthly for a while. An account with genuinely bilingual ad copy and a real Spanish landing page should barely move. **An account that was leaning on the setting alone will show it fast** — either cost per lead climbs, or leads start showing up who can’t actually have the conversation your team is set up to have in Spanish.',
+        },
+        { kind: 'heading', text: 'What to ignore' },
+        {
+          kind: 'paragraph',
+          text: 'Ignore anything calling this the end of bilingual advertising — it isn’t; Google still matches by language, it just reads the signal from your content instead of a checkbox. Ignore advice to rebuild a parallel campaign structure to simulate the old setting — Google has said no structural change is required, only better content. **And ignore the temptation to just run one English campaign and let the algorithm figure out who understands Spanish — without real Spanish content for it to read, there’s no signal left for the algorithm to work with at all.**',
+        },
+        {
+          kind: 'quote',
+          text: 'A “Spanish campaign” whose ad copy and landing page were quietly written in English wasn’t targeting a language — it was targeting a lower price. That price is going away in late September.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'None of this requires an account rebuild. It’s an hour of reading: pull up every campaign with “Spanish” in the name, read the actual headlines out loud, and open the landing page in an incognito window. If nobody on your team is tracking Google Ads changes like this one as they roll out, that’s exactly the kind of drift our [ongoing marketing systems](/systems) are built to catch before it shows up as a lead who can’t understand the person answering your phone.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'If the honest answer is that you don’t have a real Spanish-language landing page — just an English one that Spanish traffic gets pointed at — that’s not a Google Ads fix, it’s a [Foundation](/foundation)-level website gap this change is about to expose. And if you’re not sure whether your account has other blind spots like this one, the [Diagnostic](/diagnostic) is a week-long, human review built to find them before they cost real budget — the same kind of drift showed up in [Target CPA and ROAS campaigns back in August](/blog/google-ads-target-overperformance-dallas).',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: 'Desde finales de septiembre de 2026, Google Ads elimina la configuración de idioma que las campañas de Búsqueda han usado por más de una década — y desaparece también del inventario de Búsqueda dentro de Performance Max. Si tu negocio en Dallas–Fort Worth corre una campaña etiquetada “Español” para llegarle a tu clientela local, el menú que le daba sentido a esa etiqueta está a punto de desaparecer.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Google confirmó el cambio en agosto: una vez activo, la coincidencia de anuncios corre sobre el idioma que Google lee en el texto real de tu anuncio y tu página de aterrizaje, combinado con su propia señal de qué idiomas entiende quien busca. **Ya no queda ninguna casilla que configurar — lo único que sigue funcionando como filtro es lo que tu anuncio y tu página dicen de verdad.** El cambio solo toca campañas de Búsqueda y el inventario de Búsqueda dentro de Performance Max; Display, YouTube y Discovery mantienen su configuración de idioma intacta, pero en la mayoría de los negocios de servicios en DFW, Búsqueda es justo donde vive el presupuesto de anuncios.',
+        },
+        { kind: 'heading', text: 'Por qué importa para Dallas–Fort Worth' },
+        {
+          kind: 'paragraph',
+          text: 'DFW tiene una de las poblaciones hispanohablantes más grandes de cualquier área metropolitana del país, y muchas cuentas de servicios para el hogar, med spas y despachos legales corren aquí una segunda campaña “en español” específicamente para llegarle — casi siempre porque las palabras clave en español cuestan menos por clic que el lado en inglés de la misma cuenta. **En muchas de esas cuentas, la configuración de idioma era lo único que de verdad separaba la campaña en español de la campaña en inglés; el texto del anuncio, en el mejor de los casos, era una traducción ligera.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Cuando la configuración desaparece, esa separación se cierra sola. Una campaña con encabezados apenas traducidos y una página de aterrizaje que sigue mostrándose en inglés ya no tiene nada que le diga a Google que es distinta de la campaña principal — se convierte en un anuncio en inglés más, compitiendo en la subasta general al precio general, mientras sigue reportando bajo una etiqueta “en español” que ya no significa lo que significaba.',
+        },
+        { kind: 'heading', text: '1. Audita si tus campañas en español están de verdad escritas en español' },
+        {
+          kind: 'paragraph',
+          text: 'Abre cada grupo de anuncios bajo una campaña etiquetada en español y lee los encabezados y descripciones como los leería un cliente — no el nombre de la campaña, el texto real. **Una campaña que solo traduce las palabras clave pero deja el texto del anuncio en inglés nunca estuvo dirigida de verdad a hispanohablantes; estaba apuntando a un precio más bajo, y ese precio está a punto de desaparecer.** Si el texto es débil, reescríbelo en un español que un cliente de Oak Cliff o Grand Prairie reconozca como propio, no como la traducción directa de la versión en inglés.',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'La etiqueta de una campaña ya no dice nada. Lo único que importa es lo que el texto del anuncio dice de verdad.',
+          src: googleAdsLangAdCopyAudit,
+          alt: 'Una lupa sobre una fila de tarjetas de texto publicitario en una pared; una tarjeta se ve nítida y brillante con un patrón distinto mientras las demás se ven planas e idénticas a pesar de tener etiquetas diferentes arriba.',
+        },
+        { kind: 'heading', text: '2. Revisa qué muestra de verdad tu página de aterrizaje' },
+        {
+          kind: 'paragraph',
+          text: 'El idioma de la página de aterrizaje se volvió una señal mucho más fuerte de lo que era, porque ahora es prácticamente la única que queda. Abre en una ventana de incógnito la página a la que llega tu tráfico en español y léela de arriba a abajo. Si es una página en inglés con un selector de idioma que nadie toca, o una etiqueta en inglés escondida en su código debajo de contenido en español, ese desajuste es justo el tipo de cosa que la coincidencia de Google empezará a leer de forma literal. **Una página que dice una cosa en su código y otra en su contenido ahora trabaja en contra de la campaña que apunta hacia ella.**',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'Una página que dice una cosa en su código y otra en su contenido ahora trabaja en contra de la campaña que apunta hacia ella.',
+          src: googleAdsLangLandingMirror,
+          alt: 'Una mano alisando la unión entre dos tapetes de entrada con patrones distintos en el umbral de una puerta para que queden alineados como uno solo, con una pequeña etiqueta brillando en el marco de la puerta.',
+        },
+        { kind: 'heading', text: '3. Vigila el costo por lead por idioma durante las próximas semanas' },
+        {
+          kind: 'paragraph',
+          text: 'Cuando el cambio entre en vigor, saca el costo por lead y la calidad del lead de tus campañas en español cada semana en lugar de cada mes, por un tiempo. Una cuenta con anuncios genuinamente bilingües y una página real en español debería casi no moverse. **Una cuenta que dependía solo de la configuración lo va a mostrar rápido** — o sube el costo por lead, o empiezan a llegar leads que en realidad no pueden sostener la conversación que tu equipo tiene preparada en español.',
+        },
+        { kind: 'heading', text: 'Qué ignorar' },
+        {
+          kind: 'paragraph',
+          text: 'Ignora a quien diga que esto es el fin de la publicidad bilingüe — no lo es; Google sigue emparejando por idioma, solo que ahora lee la señal en tu contenido en lugar de en una casilla. Ignora el consejo de reconstruir una estructura de campañas paralela para simular la configuración anterior — Google ya dijo que no hace falta ningún cambio estructural, solo mejor contenido. **Y evita la tentación de correr una sola campaña en inglés y dejar que el algoritmo adivine quién entiende español — sin contenido real en español que leer, no le queda ninguna señal con la cual trabajar.**',
+        },
+        {
+          kind: 'quote',
+          text: 'Una “campaña en español” cuyo anuncio y página estaban en realidad escritos en inglés nunca apuntó a un idioma — apuntó a un precio más bajo. Ese precio desaparece a finales de septiembre.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Nada de esto pide reconstruir la cuenta. Es una hora de lectura: abre cada campaña con “español” en el nombre, lee los encabezados en voz alta, y abre la página de aterrizaje en una ventana de incógnito. Si nadie de tu equipo está revisando cambios de Google Ads como este a medida que salen, ese es justo el tipo de desvío que nuestros [sistemas de marketing continuo](/systems) están hechos para atrapar antes de que se convierta en un lead que no puede entender a la persona que contesta el teléfono.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Si la respuesta honesta es que no tienes una página de aterrizaje de verdad en español — solo una en inglés hacia la que apunta todo tu tráfico hispano — eso no se arregla en Google Ads, es un hueco de sitio web nivel [Foundation](/foundation) que este cambio está a punto de exponer. Y si no sabes si tu cuenta tiene otros puntos ciegos como este, el [Diagnóstico](/diagnostic) es una revisión humana de una semana hecha para encontrarlos antes de que cuesten presupuesto real — un desvío parecido apareció en [las campañas con CPA y ROAS objetivo en agosto](/blog/google-ads-target-overperformance-dallas).',
         },
       ],
     },
