@@ -1,0 +1,15 @@
+{
+  "cover": {
+    "concept": "A single glowing orange map-pin shape standing on the flat silhouette of a storefront, but faintly visible beneath that storefront, rendered in thin washed-out indigo linework, is the ghost outline of a different, older storefront shape half-erased underneath it — like one signal quietly overwriting another without ever fully disappearing."
+  },
+  "inline": [
+    {
+      "name": "duplicate-listings",
+      "concept": "Two nearly identical flat map-pin shapes overlapping at the base, one rendered solid in bright accent orange and the other as a faint outline in muted indigo directly behind it and slightly offset, with a thin crack or split line running between them down to a single shared circular base, as if one pin is quietly draining strength from the other."
+    },
+    {
+      "name": "nap-alignment",
+      "concept": "A row of four simple rectangular tile shapes of slightly different sizes and misaligned heights, in muted indigo, being nudged by a single geometric hand shape into becoming perfectly even and aligned, with the one tile that snaps into place glowing bright accent orange as it settles into the row."
+    }
+  ]
+}

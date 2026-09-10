@@ -27,6 +27,9 @@ import dormantClientListReactivation from '@/assets/blog/dormant-client-list-dal
 import googleAdsLangCover from '@/assets/blog/google-ads-language-targeting-dallas-cover.webp'
 import googleAdsLangAdCopyAudit from '@/assets/blog/google-ads-language-targeting-dallas-ad-copy-audit.webp'
 import googleAdsLangLandingMirror from '@/assets/blog/google-ads-language-targeting-dallas-landing-page-mirror.webp'
+import outdatedGoogleProfileCover from '@/assets/blog/outdated-google-profile-dfw-cover.webp'
+import outdatedGoogleProfileDuplicateListings from '@/assets/blog/outdated-google-profile-dfw-duplicate-listings.webp'
+import outdatedGoogleProfileNapAlignment from '@/assets/blog/outdated-google-profile-dfw-nap-alignment.webp'
 
 export type BlogCategory = 'web-conversion' | 'digital-marketing' | 'design' | 'case-notes'
 
@@ -1535,6 +1538,162 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: 'Si la respuesta honesta es que no tienes una página de aterrizaje de verdad en español — solo una en inglés hacia la que apunta todo tu tráfico hispano — eso no se arregla en Google Ads, es un hueco de sitio web nivel [Foundation](/foundation) que este cambio está a punto de exponer. Y si no sabes si tu cuenta tiene otros puntos ciegos como este, el [Diagnóstico](/diagnostic) es una revisión humana de una semana hecha para encontrarlos antes de que cuesten presupuesto real — un desvío parecido apareció en [las campañas con CPA y ROAS objetivo en agosto](/blog/google-ads-target-overperformance-dallas).',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'outdated-google-profile-dfw', es: 'perfil-google-desactualizado-dfw' },
+    title: {
+      en: 'Your Google Business Profile in Dallas might still belong to the old owner',
+      es: 'Tu perfil de Google en Dallas podría seguir siendo del dueño anterior',
+    },
+    excerpt: {
+      en: 'Old category, dead attributes, a duplicate listing from a previous owner — a Google Business Profile accumulates data nobody reviews. Here’s the four-step, no-agency audit and the exact metric that proves it worked.',
+      es: 'Categoría vieja, atributos heredados, una ficha duplicada del dueño anterior — un Perfil de Negocio de Google acumula datos que nadie revisa. Esta es la auditoría de cuatro pasos sin agencia y la métrica exacta que prueba que funcionó.',
+    },
+    category: 'web-conversion',
+    publishedAt: '2026-09-10',
+    readingTime: { en: '5 min read', es: '5 min de lectura' },
+    coverGradient: 'from-secondary/20 to-primary/20',
+    coverVariant: 'insight',
+    coverImage: outdatedGoogleProfileCover,
+    coverAlt: {
+      en: 'A bright orange map pin standing on a storefront silhouette, with the faint outline of an older, different storefront barely visible underneath it.',
+      es: 'Un marcador de mapa naranja brillante sobre la silueta de una fachada de negocio, con el contorno tenue de una fachada distinta y más antigua apenas visible debajo.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'Outdated Google Profiles Cost Dallas Leads | Astratta',
+      es: 'Perfiles de Google Desactualizados Cuestan Leads | Astratta',
+    },
+    metaDescription: {
+      en: 'Your DFW Google Business Profile may still carry data from a previous owner or an old rebrand. Here’s the four-step, no-agency fix — and how to measure it.',
+      es: 'Tu Perfil de Negocio de Google en Dallas podría cargar datos del dueño anterior o una marca vieja. El arreglo de cuatro pasos sin agencia — y cómo medirlo.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: '"My Google listing still says things about my business that haven’t been true in months — old hours, a service we don’t offer anymore, sometimes even the wrong category — and I have no idea who put that there or how to get rid of it." That’s the complaint we hear from more Dallas–Fort Worth business owners than almost any other about local search. It’s rarely vandalism. It’s the ordinary residue of running a real business: a category picked wrong the day the profile was first claimed, an old website that’s still live and still indexed, or a "fact" someone submitted through Google’s public edit system that nobody on your team ever reviewed.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'None of that is one mistake — it’s years of small, uncoordinated edits piling up on a single Google Business Profile that was never built to be edited by more than one person. **Google treats every one of those edits as a real signal, and it has no reliable way to know which signal is current and which one is three owners, two rebrands, or one office move old.** A profile first claimed under a previous business — a different name, a different service list, a different category — keeps feeding category and attribute data into the listing long after the sign outside changed. A duplicate profile created by an old vendor, or pulled together by Google itself from a data aggregator, sits there splitting your reviews and your search authority in half without ever showing up inside your own dashboard.',
+        },
+        { kind: 'heading', text: '1. Search your own business the way a stranger would' },
+        {
+          kind: 'paragraph',
+          text: 'Open an incognito window and search your business name, then search the product or service you actually sell plus your city. Write down every result: the profile you manage, any duplicate or "permanently closed" listing, any old website still ranking, any directory still showing a phone number you disconnected two years ago. **The fix starts with information you can’t get from inside your own Google account — you have to go looking for it from the outside, like a customer would.**',
+        },
+        {
+          kind: 'image',
+          variant: 'gbp',
+          caption: 'Every uncoordinated edit becomes a signal Google can’t date-stamp as current or years old.',
+          src: outdatedGoogleProfileDuplicateListings,
+          alt: 'Two overlapping map-pin shapes, one solid orange and one faint indigo outline behind it, connected by a thin crack running down to a shared base.',
+        },
+        { kind: 'heading', text: '2. Merge or close every duplicate, then fix the category on the one that survives' },
+        {
+          kind: 'paragraph',
+          text: 'Every extra listing you find gets one of two treatments: request ownership through Google’s transfer process so you can close it yourself, or flag it with "Suggest an edit" as closed or duplicate if you can’t claim it. On the profile you keep, open the category field and check it against what the business actually does today, not what it did under the last owner or the last name. **Primary category is the single strongest local-ranking signal Google gives you, and a wrong one quietly excludes you from every search that should have found you.** While you’re in there, delete any inherited attribute that doesn’t apply anymore and use the full description field — it’s indexable text most owners leave blank.',
+        },
+        { kind: 'heading', text: '3. Line up your name, address, phone, and hours everywhere they appear' },
+        {
+          kind: 'paragraph',
+          text: 'Pull up your website footer, your Google profile, your Facebook page, Yelp, and any industry directory you’re listed on, and put the business name, address, phone number, and hours side by side. **A mismatched suite number or an address still formatted the old owner’s way is enough to make automated local-search systems treat two identical businesses as two different ones.** Fix the smallest details first — "Apt" instead of "Ste," a landline that was disconnected, a holiday-hours note from a year that already ended — since those are the ones every system reads literally.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'The smallest mismatch — a suite number, a disconnected line — is the one every automated system reads literally.',
+          src: outdatedGoogleProfileNapAlignment,
+          alt: 'A row of four uneven rectangular tiles being nudged into alignment by a geometric hand shape, with the tile settling into place glowing orange.',
+        },
+        { kind: 'heading', text: '4. Put a repeat reminder on your own calendar, not Google’s' },
+        {
+          kind: 'paragraph',
+          text: 'None of this is a one-time cleanup. Anyone can submit a public edit to your listing, competitors’ profiles drift the same way yours did, and Google periodically re-pulls data from directories you’ve never heard of. **A quarterly fifteen-minute repeat of step one is what keeps a fixed profile from quietly rotting again.** Put it on the same calendar as your bills, not on a sticky note you’ll lose.',
+        },
+        { kind: 'heading', text: 'How you measure it' },
+        {
+          kind: 'paragraph',
+          text: 'Skip the temptation to judge this by one incognito search — that only shows you a single moment, and personalization can skew what you see. Instead, open Google Business Profile Manager and go to Performance. It splits your search views into "Direct" (people who searched your business name) and "Discovery" (people who searched a category, product, or service and found you anyway). Direct traffic just means people who already knew you. **Discovery search share rising week over week is the actual proof that a cleaned-up profile is now surfacing for customers who didn’t know your name yet — which is the entire point of fixing it.**',
+        },
+        { kind: 'heading', text: 'What not to do' },
+        {
+          kind: 'paragraph',
+          text: 'Don’t create a second, fresh profile to escape a messy one — that adds a new duplicate to the pile and risks Google suspending both for policy violations around duplicate listings. Don’t try to bury bad or confusing reviews under a wave of new ones; Google’s spam detection is built specifically to catch that pattern, and a suspended profile is worse than a messy one. And don’t call this "SEO" and hand it to whoever manages your ads — this is account cleanup, not a campaign, and most of it takes longer to explain to someone else than to do yourself.',
+        },
+        {
+          kind: 'quote',
+          text: 'A Google listing built from three owners’ worth of edits isn’t broken — it’s just telling the truth about all three of them at once.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'None of this requires new software or a marketing contract. It’s an afternoon: search your own name like a stranger would, request the duplicates be closed, fix the category, and align the basics everywhere they appear. If your business changed hands, moved, or rebranded any time in the last few years and nobody has done this since, that’s usually where the oldest data is hiding. If nobody on your team has the time to repeat this quarterly, it’s exactly the kind of drift our [ongoing marketing systems](/systems) are built to catch before a customer finds the wrong version of your business first. And if you’re not sure whether this is your only blind spot or just the most visible one, the [Diagnostic](/diagnostic) is a week-long, human review built to find the rest — the same kind of inherited category and attribute rot we go looking for in every [local SEO checklist](/blog/local-seo-checklist-dfw) we run before a client spends a dollar on ads.',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: '"Mi ficha de Google sigue diciendo cosas de mi negocio que ya no son ciertas desde hace meses — horarios viejos, un servicio que ya no ofrecemos, a veces hasta la categoría equivocada — y no tengo idea de quién puso eso ahí ni cómo quitarlo." Esa es la queja que más escuchamos de dueños de negocios en Dallas–Fort Worth sobre búsqueda local. Casi nunca es vandalismo. Es el residuo normal de tener un negocio real: una categoría mal elegida el día que se reclamó la ficha por primera vez, una página web vieja que sigue viva e indexada, o un "dato" que alguien mandó por el sistema público de edición de Google y que nadie de tu equipo revisó nunca.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Nada de eso es un solo error — son años de ediciones pequeñas y sin coordinar amontonándose sobre un mismo Perfil de Negocio de Google que nunca se pensó para que lo editara más de una persona. **Google trata cada una de esas ediciones como una señal real, y no tiene forma confiable de saber cuál señal es la vigente y cuál tiene tres dueños, dos cambios de marca o una mudanza de encima.** Una ficha reclamada originalmente bajo otro negocio — otro nombre, otra lista de servicios, otra categoría — sigue alimentando datos de categoría y atributos a la ficha mucho después de que el letrero de afuera cambió. Una ficha duplicada creada por un proveedor anterior, o armada por el propio Google a partir de un agregador de datos, se queda ahí partiendo tus reseñas y tu autoridad de búsqueda en dos sin que nunca aparezca dentro de tu propio panel.',
+        },
+        { kind: 'heading', text: '1. Busca tu propio negocio como lo haría un desconocido' },
+        {
+          kind: 'paragraph',
+          text: 'Abre una ventana de incógnito y busca el nombre de tu negocio, y después busca el producto o servicio que de verdad vendes junto con tu ciudad. Anota cada resultado: la ficha que administras, cualquier duplicado o ficha marcada como "cerrado permanentemente", cualquier página web vieja que todavía rankea, cualquier directorio que siga mostrando un teléfono que diste de baja hace dos años. **El arreglo empieza con información que no puedes conseguir desde dentro de tu propia cuenta de Google — hay que salir a buscarla desde afuera, como lo haría un cliente.**',
+        },
+        {
+          kind: 'image',
+          variant: 'gbp',
+          caption: 'Cada edición sin coordinar se vuelve una señal que Google no puede fechar como vigente o vieja.',
+          src: outdatedGoogleProfileDuplicateListings,
+          alt: 'Dos marcadores de mapa superpuestos, uno sólido en naranja y otro como contorno tenue en índigo detrás, conectados por una grieta delgada que baja hasta una base compartida.',
+        },
+        { kind: 'heading', text: '2. Fusiona o cierra cada duplicado, y arregla la categoría de la ficha que sobreviva' },
+        {
+          kind: 'paragraph',
+          text: 'Cada ficha extra que encuentres recibe uno de dos tratos: pide la transferencia de propiedad por el proceso de Google para poder cerrarla tú mismo, o márcala con "Sugerir una edición" como cerrada o duplicada si no la puedes reclamar. En la ficha que te quede, abre el campo de categoría y revísalo contra lo que el negocio hace hoy, no lo que hacía con el dueño anterior o el nombre anterior. **La categoría principal es la señal de posicionamiento local más fuerte que te da Google, y una equivocada te saca en silencio de cada búsqueda que debería haberte encontrado.** Ya que estás ahí, borra cualquier atributo heredado que ya no aplique y usa el campo completo de descripción — es texto indexable que la mayoría de los dueños deja en blanco.',
+        },
+        { kind: 'heading', text: '3. Alinea nombre, dirección, teléfono y horarios en todos lados donde aparezcan' },
+        {
+          kind: 'paragraph',
+          text: 'Abre el pie de página de tu sitio web, tu ficha de Google, tu página de Facebook, Yelp, y cualquier directorio del rubro donde aparezcas, y pon lado a lado el nombre del negocio, la dirección, el teléfono y los horarios. **Un número de suite que no coincide o una dirección que sigue formateada como la ponía el dueño anterior basta para que los sistemas automatizados de búsqueda local traten un mismo negocio como si fueran dos distintos.** Arregla primero los detalles más pequeños — "Apt" en lugar de "Ste", una línea fija que ya diste de baja, una nota de horario navideño de un año que ya pasó — porque esos son justo los que cada sistema lee de forma literal.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'El desajuste más pequeño — un número de suite, una línea dada de baja — es el que cada sistema automatizado lee de forma literal.',
+          src: outdatedGoogleProfileNapAlignment,
+          alt: 'Una fila de cuatro bloques rectangulares desiguales siendo alineados por una forma geométrica de mano, con el bloque que encaja brillando en naranja.',
+        },
+        { kind: 'heading', text: '4. Pon un recordatorio recurrente en tu propio calendario, no en el de Google' },
+        {
+          kind: 'paragraph',
+          text: 'Nada de esto es una limpieza de una sola vez. Cualquiera puede mandar una edición pública a tu ficha, las fichas de tu competencia se desordenan igual que la tuya, y Google de vez en cuando vuelve a jalar datos de directorios de los que ni te enteraste. **Repetir el paso uno cada tres meses, quince minutos, es lo que evita que una ficha ya arreglada se vuelva a pudrir en silencio.** Ponlo en el mismo calendario que tus pagos, no en una nota que vas a perder.',
+        },
+        { kind: 'heading', text: 'Cómo se mide' },
+        {
+          kind: 'paragraph',
+          text: 'Evita la tentación de juzgar esto con una sola búsqueda en incógnito — eso solo te muestra un momento y la personalización puede alterar lo que ves. En lugar de eso, abre el panel de Perfil de Negocio de Google y ve a Rendimiento. Ahí se divide tu tráfico de búsqueda entre "Directo" (gente que buscó el nombre de tu negocio) y "Descubrimiento" (gente que buscó una categoría, producto o servicio y te encontró de todas formas). El tráfico directo solo significa gente que ya te conocía. **El porcentaje de búsquedas por descubrimiento subiendo semana a semana es la prueba real de que una ficha ya limpia está apareciendo ante clientes que todavía no sabían tu nombre — que es justo el objetivo de arreglarla.**',
+        },
+        { kind: 'heading', text: 'Qué no hacer' },
+        {
+          kind: 'paragraph',
+          text: 'No crees una ficha nueva para escapar de una desordenada — eso solo suma un duplicado más al montón y arriesga que Google suspenda las dos por violar sus políticas de fichas duplicadas. No trates de enterrar reseñas malas o confusas bajo una ola de reseñas nuevas; la detección de spam de Google está hecha específicamente para atrapar ese patrón, y una ficha suspendida es peor que una desordenada. Y no le llames "SEO" a esto ni se lo entregues a quien maneja tus anuncios — esto es limpieza de cuenta, no una campaña, y a la mayoría le toma más tiempo explicárselo a otra persona que hacerlo uno mismo.',
+        },
+        {
+          kind: 'quote',
+          text: 'Una ficha de Google construida con las ediciones de tres dueños distintos no está rota — solo está diciendo la verdad sobre los tres al mismo tiempo.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Nada de esto pide software nuevo ni un contrato de marketing. Es una tarde: busca tu propio nombre como lo haría un desconocido, pide que cierren los duplicados, arregla la categoría, y alinea lo básico en todos lados donde aparece. Si tu negocio cambió de dueño, se mudó o cambió de marca en los últimos años y nadie ha hecho esto desde entonces, ahí suele esconderse el dato más viejo. Si nadie de tu equipo tiene tiempo de repetirlo cada trimestre, es justo el tipo de desvío que nuestros [sistemas de marketing continuo](/systems) están hechos para atrapar antes de que un cliente encuentre primero la versión equivocada de tu negocio. Y si no sabes si este es tu único punto ciego o solo el más visible, el [Diagnóstico](/diagnostic) es una revisión humana de una semana hecha para encontrar el resto — el mismo tipo de categorías y atributos heredados que buscamos en cada [checklist de SEO local](/blog/local-seo-checklist-dfw) que revisamos antes de que un cliente gaste un dólar en anuncios.',
         },
       ],
     },
