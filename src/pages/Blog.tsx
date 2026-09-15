@@ -8,7 +8,7 @@ import { RevealText } from '@/components/ui/RevealText'
 import { NewsletterForm } from '@/components/ui/NewsletterForm'
 import { BLOG_POSTS, BLOG_CATEGORIES, categoryLabel, resolveBlogPost, type BlogCategory } from '@/data/blogPosts'
 import { BlogCover } from '@/components/blog/BlogCover'
-import { fadeUp, scaleIn, staggerContainer, viewportOnce } from '@/lib/animations'
+import { fadeUp, scaleIn, viewportOnce } from '@/lib/animations'
 import { STATIC_SEO, toSeoProps } from '@/lib/seo-data'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 
@@ -82,15 +82,19 @@ export default function Blog() {
 
       <section className="pb-24 md:pb-32">
         <Container>
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={viewportOnce}
-            variants={staggerContainer(0.12)}
-            className="grid grid-cols-1 gap-10 md:grid-cols-2"
-          >
+          {/* Cada tarjeta se revela por su cuenta. Con el whileInView en el grid,
+              en mobile (una columna) la lista pasa de 5 pantallas de alto, nunca
+              llega al 20% visible de viewportOnce y las tarjetas se quedan en
+              opacidad cero — mismo fallo que ya se corrigió en BlogPost. */}
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
             {posts.map(({ source, post }) => (
-              <motion.div key={source.slug.en} variants={scaleIn}>
+              <motion.div
+                key={source.slug.en}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 'some' }}
+                variants={scaleIn}
+              >
                 {/* Canonical English path — <Link> localizes it. */}
                 <Link to={`/blog/${source.slug.en}`} data-cursor="Read" className="group block">
                   <BlogCover
@@ -113,7 +117,7 @@ export default function Blog() {
                 </Link>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
 
           {posts.length === 0 && <p className="text-ink/50">{t.noPosts}</p>}
 
