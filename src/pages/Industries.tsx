@@ -5,7 +5,7 @@ import { RevealText } from '@/components/ui/RevealText'
 import { Link } from '@/components/ui/Link'
 import { GradientBlob } from '@/components/ui/GradientBlob'
 import { INDUSTRIES } from '@/data/industries'
-import { fadeUp, scaleIn, staggerContainer, viewportOnce } from '@/lib/animations'
+import { fadeUp, scaleIn, viewportOnce } from '@/lib/animations'
 import { STATIC_SEO, toSeoProps } from '@/lib/seo-data'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 
@@ -37,15 +37,17 @@ export default function Industries() {
 
       <section className="pt-16 pb-20 md:pt-20 md:pb-24">
         <Container>
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={viewportOnce}
-            variants={staggerContainer(0.1)}
-            className="grid grid-cols-1 gap-6 md:grid-cols-2"
-          >
+          {/* Cards reveal individually — a one-column grid on mobile outgrows the
+              viewport and would never reach viewportOnce's 20% threshold as a whole. */}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {INDUSTRIES.map((industry) => (
-              <motion.div key={industry.slug} variants={scaleIn}>
+              <motion.div
+                key={industry.slug}
+                initial="hidden"
+                whileInView="show"
+                viewport={viewportOnce}
+                variants={scaleIn}
+              >
                 <Link
                   to={`/industries/${industry.slug}`}
                   data-cursor="Open"
@@ -77,7 +79,7 @@ export default function Industries() {
                 </Link>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
 
           <motion.p
             initial="hidden"
