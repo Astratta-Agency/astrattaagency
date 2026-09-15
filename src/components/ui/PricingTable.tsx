@@ -2,7 +2,7 @@ import { Link } from '@/components/ui/Link'
 import { motion } from 'framer-motion'
 import { clsx } from 'clsx'
 import { MagneticButton } from '@/components/ui/MagneticButton'
-import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
+import { fadeUp, viewportOnce } from '@/lib/animations'
 import type { PricingTier } from '@/data/pricing'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 
@@ -20,16 +20,15 @@ export function PricingTable({ tiers }: { tiers: PricingTier[] }) {
   const gridColsClass = GRID_COLS[tiers.length] ?? 'md:grid-cols-3'
 
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="show"
-      viewport={viewportOnce}
-      variants={staggerContainer(0.1)}
-      className={clsx('grid grid-cols-1 items-start gap-6', gridColsClass)}
-    >
+    // Tiers reveal individually: stacked on mobile the grid is several screens
+    // tall and would never reach viewportOnce's 20% threshold as a whole.
+    <div className={clsx('grid grid-cols-1 items-start gap-6', gridColsClass)}>
       {tiers.map((tier) => (
         <motion.div
           key={tier.slug}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
           variants={fadeUp}
           className={clsx(
             'relative flex h-full flex-col rounded-3xl p-8',
@@ -83,6 +82,6 @@ export function PricingTable({ tiers }: { tiers: PricingTier[] }) {
           </MagneticButton>
         </motion.div>
       ))}
-    </motion.div>
+    </div>
   )
 }

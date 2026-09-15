@@ -5,7 +5,7 @@ import { Container } from '@/components/ui/Container'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { RevealText } from '@/components/ui/RevealText'
 import { CASE_STUDIES, resolveCaseStudies } from '@/data/caseStudies'
-import { fadeUp, scaleIn, staggerContainer, viewportOnce } from '@/lib/animations'
+import { fadeUp, scaleIn, viewportOnce } from '@/lib/animations'
 import { STATIC_SEO, toSeoProps } from '@/lib/seo-data'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 
@@ -29,15 +29,17 @@ export default function Work() {
 
       <section className="pb-24 md:pb-32">
         <Container>
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={viewportOnce}
-            variants={staggerContainer(0.12)}
-            className="grid grid-cols-1 gap-10 md:grid-cols-2"
-          >
+          {/* Cards reveal individually — a one-column grid on mobile outgrows the
+              viewport and would never reach viewportOnce's 20% threshold as a whole. */}
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
             {caseStudies.map((project) => (
-              <motion.div key={project.slug} variants={scaleIn}>
+              <motion.div
+                key={project.slug}
+                initial="hidden"
+                whileInView="show"
+                viewport={viewportOnce}
+                variants={scaleIn}
+              >
                 <Link to={`/work/${project.slug}`} data-cursor="View" className="group block">
                   <div
                     className={`relative aspect-[4/3] overflow-hidden rounded-3xl bg-gradient-to-br ${project.coverGradient}`}
@@ -69,7 +71,7 @@ export default function Work() {
                 </Link>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
 
           <motion.div
             initial="hidden"
