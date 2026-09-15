@@ -32,3 +32,4 @@ skills-lock.json
 
 # nanobanana MCP scratch output
 generated_imgs/
+.env*
