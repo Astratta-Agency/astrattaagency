@@ -30,6 +30,9 @@ import googleAdsLangLandingMirror from '@/assets/blog/google-ads-language-target
 import outdatedGoogleProfileCover from '@/assets/blog/outdated-google-profile-dfw-cover.webp'
 import outdatedGoogleProfileDuplicateListings from '@/assets/blog/outdated-google-profile-dfw-duplicate-listings.webp'
 import outdatedGoogleProfileNapAlignment from '@/assets/blog/outdated-google-profile-dfw-nap-alignment.webp'
+import googlePostsViewCountsCover from '@/assets/blog/google-posts-view-counts-dallas-cover.webp'
+import googlePostsViewCountsPostGetsANumber from '@/assets/blog/google-posts-view-counts-dallas-post-gets-a-number.webp'
+import googlePostsViewCountsAbTestComparison from '@/assets/blog/google-posts-view-counts-dallas-ab-test-comparison.webp'
 
 export type BlogCategory = 'web-conversion' | 'digital-marketing' | 'design' | 'case-notes'
 
@@ -1694,6 +1697,156 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: 'Nada de esto pide software nuevo ni un contrato de marketing. Es una tarde: busca tu propio nombre como lo haría un desconocido, pide que cierren los duplicados, arregla la categoría, y alinea lo básico en todos lados donde aparece. Si tu negocio cambió de dueño, se mudó o cambió de marca en los últimos años y nadie ha hecho esto desde entonces, ahí suele esconderse el dato más viejo. Si nadie de tu equipo tiene tiempo de repetirlo cada trimestre, es justo el tipo de desvío que nuestros [sistemas de marketing continuo](/systems) están hechos para atrapar antes de que un cliente encuentre primero la versión equivocada de tu negocio. Y si no sabes si este es tu único punto ciego o solo el más visible, el [Diagnóstico](/diagnostic) es una revisión humana de una semana hecha para encontrar el resto — el mismo tipo de categorías y atributos heredados que buscamos en cada [checklist de SEO local](/blog/local-seo-checklist-dfw) que revisamos antes de que un cliente gaste un dólar en anuncios.',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'google-posts-view-counts-dallas', es: 'vistas-publicaciones-google-dallas' },
+    title: {
+      en: 'Your Google Business Profile posts in Dallas finally have a scoreboard',
+      es: 'Tus publicaciones del Perfil de Negocio de Google en Dallas por fin tienen marcador',
+    },
+    excerpt: {
+      en: "Google brought back view counts on Business Profile Posts, three and a half years after the old metric disappeared. Here's what a Dallas–Fort Worth business should test this week, and what the number doesn't mean yet.",
+      es: 'Google trajo de vuelta el conteo de vistas en las Publicaciones del Perfil de Negocio, tres años y medio después de que la métrica anterior desapareciera. Esto debe probar un negocio en Dallas–Fort Worth esta semana, y lo que el número todavía no significa.',
+    },
+    category: 'digital-marketing',
+    publishedAt: '2026-09-15',
+    readingTime: { en: '5 min read', es: '6 min de lectura' },
+    coverGradient: 'from-primary/20 to-secondary/20',
+    coverVariant: 'insight',
+    coverImage: googlePostsViewCountsCover,
+    coverAlt: {
+      en: 'A single beam of light cutting through fog to reveal a storefront, with a small glowing number quietly materializing inside the beam.',
+      es: 'Un haz de luz que atraviesa la niebla para revelar una fachada de negocio, con un número brillante que se va formando dentro del haz.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'Google Posts Now Show View Counts in Dallas | Astratta',
+      es: 'Las Publicaciones de Google Ya Muestran Vistas | Astratta',
+    },
+    metaDescription: {
+      en: "Google Business Profile Posts finally show view counts. Here's what a Dallas–Fort Worth business should test this week, and what not to read into yet.",
+      es: 'Las Publicaciones del Perfil de Negocio de Google ya muestran vistas. Esto debe probar un negocio en Dallas–Fort Worth esta semana, y qué no significa todavía.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: "Google’s Business Profile dashboard quietly got back a feature agencies have wanted restored for three and a half years: view counts on individual Posts. On September 10, Google confirmed in its September Small Business Bulletin that Post-level view counts are rolling out globally, covering every update, offer, and event a business has published in the last 18 months. Google is calling the feature Google Posts Reporting and describes it, in its own words, as one of the most requested features it has shipped all year — and for a Dallas–Fort Worth business owner, it finally puts a number behind a habit you’ve been keeping blind for years.",
+        },
+        {
+          kind: 'paragraph',
+          text: 'The number that now shows up on each post card in the dashboard combines views from both Google Search and Google Maps into a single count, so a "$10 off your first visit" post and a "closed for the holiday" post finally report back the same way an Instagram post does — you publish it, and within a few days you know whether anyone actually saw it. **There’s no API access to the metric yet, and Google hasn’t said if or when that’s coming, so for now the count only exists inside the dashboard itself, not inside whatever reporting tool your team already checks every week.** The old version of this metric disappeared from Business Profiles in 2023; this is Google building it back from scratch, not restoring the same number.',
+        },
+        { kind: 'heading', text: 'Why this matters in Dallas–Fort Worth' },
+        {
+          kind: 'paragraph',
+          text: 'Almost every DFW business owner we talk to already posts on their Google profile — a seasonal offer, a new hire, a reopening after a renovation — and none of them have ever known if it did anything. **Posts have always been the one part of a Google Business Profile you could fill in correctly and still have no way to tell whether it mattered**, unlike reviews, photos, or the category field, where the effect on visibility is at least somewhat provable over time. That blind spot is exactly why Posts became the first habit a busy owner dropped once the week got tight, even though Google has always treated an active profile as a stronger local signal than a static one.',
+        },
+        {
+          kind: 'image',
+          variant: 'gbp',
+          caption: 'For three and a half years, hitting publish on a Google Post meant never finding out if it worked.',
+          src: googlePostsViewCountsPostGetsANumber,
+          alt: 'A location pin with a small eye at its center, gazing toward a flat rectangular card where a faint number is quietly forming in the corner.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'That matters more in a market like DFW than it would somewhere with less local competition. A home improvement company and a med spa two exits apart on the same highway are both fighting for the same slice of "near me" searches, and until now, neither one had any way to know if a weekly offer post was doing anything besides sitting on the profile page. A number, even an imperfect one still missing from the API, is the first real feedback loop either of them has had on that specific habit — and a feedback loop is usually what turns an occasional post into a weekly one.',
+        },
+        { kind: 'heading', text: 'What to do this week' },
+        {
+          kind: 'paragraph',
+          text: 'Open Business Profile Manager, go to the Posts tab, and read the view counts on your last five to ten posts before you write anything new. Note which ones cleared the most views: a photo of finished work usually beats a text-only announcement, and a specific offer with a deadline usually beats a generic "check us out." **The view count only tells you something once you’re comparing it against a post you wrote yourself, not against a competitor whose numbers you’ll never see.**',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'Same offer, different photo. Same photo, different headline. One variable, one week, one answer.',
+          src: googlePostsViewCountsAbTestComparison,
+          alt: 'Two nearly identical rectangular post cards side by side, one subtly brighter with a small checkmark glowing at its corner.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Then publish two posts this week that each test one variable against the other — the same offer with a different photo, or the same photo with a different headline — and check back in five to seven days rather than daily. Google hasn’t said how often the count refreshes, so watching it every morning won’t tell you anything a single weekly glance won’t. Whoever already owns your Google profile inside the business — a manager, an office admin, you — is the right person to run this, not a new hire and not an outside vendor; it takes minutes, and the value is in doing it every week, not doing it once well.',
+        },
+        { kind: 'heading', text: 'What to ignore' },
+        {
+          kind: 'paragraph',
+          text: 'Don’t treat one week of view counts as a verdict. The rollout is still in progress — a screenshot circulated in August showing counts live on one account while everyone else’s dashboard stayed blank, so your history and a competitor’s aren’t necessarily built on the same number of weeks yet. **Don’t chase the view count in isolation from what it’s supposed to lead to, either: a post can rack up views and still generate zero calls, which is why this metric works as a supplement to the Discovery search share inside your profile’s Performance tab, not a replacement for it.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Skip anyone this week selling a service to "optimize your Google Posts algorithm." There isn’t enough public data yet for anyone to have found a real pattern, let alone packaged one to sell you — a metric this new is exactly the kind of thing that attracts a rushed pitch before anyone has actually tested anything against it.',
+        },
+        {
+          kind: 'quote',
+          text: 'A Google Post you can’t measure isn’t marketing — it’s a guess with a publish button attached to it.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'None of this requires new software, and it doesn’t require handing your profile over to anyone. It requires opening a dashboard you already have access to, reading ten numbers, and posting on purpose for the next few weeks instead of on impulse. If keeping up with Posts on top of reviews, photos, and everything else running a [restaurant](/industries/restaurants) or a home services business takes is more than your team can track weekly, that’s exactly the kind of detail our [ongoing marketing systems](/systems) are built to catch — the same habit-level gap we go looking for in every [Google Business Profile audit](/blog/outdated-google-profile-dfw) we run. And if you’re not sure whether Posts are your biggest blind spot in local visibility or just the most visible one, the [Diagnostic](/diagnostic) is a week-long, human review built to find out.',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: 'El panel de Perfil de Negocio de Google recuperó, sin aviso previo, una función que las agencias llevaban tres años y medio pidiendo de vuelta: el conteo de vistas en cada Publicación. El 10 de septiembre, Google lo confirmó en su boletín de septiembre para pequeños negocios: el conteo de vistas por publicación se está activando de forma global, y cubre cada actualización, oferta o evento que un negocio haya publicado en los últimos 18 meses. Google le puso nombre — Google Posts Reporting — y lo describe, en sus propias palabras, como una de las funciones más pedidas que ha lanzado en todo el año. Para un negocio en Dallas–Fort Worth, esto por fin le pone un número a un hábito que llevabas años haciendo a ciegas.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'El número que ahora aparece en cada tarjeta de publicación del panel combina las vistas de Google Search y de Google Maps en un solo conteo, así que una publicación de "$10 de descuento en tu primera visita" y una de "cerrado por el feriado" por fin reportan igual que una publicación de Instagram: la publicas, y en unos días sabes si alguien realmente la vio. **Todavía no hay acceso a esta métrica por API, y Google no ha dicho si eso va a cambiar, así que por ahora el número solo existe dentro del panel mismo, no dentro de cualquier reporte que tu equipo ya esté revisando cada semana.** La versión anterior de esta métrica desapareció de los Perfiles de Negocio en 2023; esto no es que Google haya "restaurado" el mismo número, es que lo construyó de nuevo.',
+        },
+        { kind: 'heading', text: 'Por qué importa en Dallas–Fort Worth' },
+        {
+          kind: 'paragraph',
+          text: 'Casi todos los dueños de negocio en DFW con los que hablamos ya publican en su ficha de Google — una oferta de temporada, una contratación nueva, una reapertura después de una remodelación — y ninguno ha sabido nunca si eso sirvió de algo. **Las Publicaciones siempre fueron la única parte de un Perfil de Negocio de Google que podías llenar bien y aun así no tener forma de saber si importó**, a diferencia de las reseñas, las fotos o el campo de categoría, donde el efecto sobre la visibilidad al menos se puede probar con el tiempo. Ese punto ciego es justo la razón por la que las Publicaciones eran lo primero que un dueño ocupado dejaba de hacer cuando la semana se complicaba, aunque Google siempre trató un perfil activo como una señal local más fuerte que uno estático.',
+        },
+        {
+          kind: 'image',
+          variant: 'gbp',
+          caption: 'Durante tres años y medio, publicar algo en Google significaba nunca enterarte si había funcionado.',
+          src: googlePostsViewCountsPostGetsANumber,
+          alt: 'Un marcador de ubicación con un pequeño ojo en el centro, mirando hacia una tarjeta rectangular donde un número tenue se va formando en la esquina.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Eso pesa más en un mercado como DFW que en uno con menos competencia local. Una empresa de remodelación y un med spa a dos salidas de distancia sobre la misma autopista compiten por la misma tajada de búsquedas "cerca de mí", y hasta ahora ninguno de los dos tenía forma de saber si su publicación semanal de oferta hacía algo más que quedarse ahí, quieta, en la ficha. Un número, aunque todavía imperfecto y sin acceso por API, es el primer circuito de retroalimentación real que cualquiera de los dos ha tenido sobre ese hábito específico — y un circuito de retroalimentación suele ser lo que convierte una publicación ocasional en una semanal.',
+        },
+        { kind: 'heading', text: 'Qué hacer esta semana' },
+        {
+          kind: 'paragraph',
+          text: 'Abre el Administrador de Perfil de Negocio, ve a la pestaña de Publicaciones, y lee el conteo de vistas de tus últimas cinco a diez publicaciones antes de escribir algo nuevo. Anota cuáles tuvieron más vistas: una foto de trabajo terminado casi siempre le gana a un anuncio de solo texto, y una oferta específica con fecha límite casi siempre le gana a un genérico "conócenos". **El conteo de vistas solo te dice algo cuando lo comparas contra una publicación tuya anterior, no contra un competidor cuyos números nunca vas a ver.**',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'Misma oferta, foto distinta. Misma foto, título distinto. Una variable, una semana, una respuesta.',
+          src: googlePostsViewCountsAbTestComparison,
+          alt: 'Dos tarjetas de publicación casi idénticas una junto a la otra, una ligeramente más brillante con una pequeña marca de verificación en la esquina.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Después, publica esta semana dos publicaciones que pongan a prueba una sola variable entre sí — la misma oferta con una foto distinta, o la misma foto con un título distinto — y revisa el resultado en cinco a siete días, no todos los días. Google no ha dicho cada cuánto se actualiza el conteo, así que revisarlo cada mañana no te va a decir nada que una sola revisión semanal no te diga. Quien ya maneje tu ficha de Google dentro del negocio — un gerente, alguien de administración, tú mismo — es la persona correcta para hacer esto, no una contratación nueva ni un proveedor externo; toma minutos, y el valor está en repetirlo cada semana, no en hacerlo una sola vez muy bien.',
+        },
+        { kind: 'heading', text: 'Qué ignorar' },
+        {
+          kind: 'paragraph',
+          text: 'No trates el conteo de una sola semana como un veredicto. El lanzamiento todavía está en proceso — en agosto circuló una captura de pantalla mostrando el conteo activo en una cuenta mientras el resto del panel de todos los demás seguía en blanco, así que tu historial y el de tu competencia no necesariamente tienen la misma cantidad de semanas acumuladas todavía. **Tampoco persigas el número de vistas separado de lo que se supone que debería provocar: una publicación puede acumular muchas vistas y aun así generar cero llamadas, que es justo por qué esta métrica funciona como complemento del porcentaje de búsquedas por Descubrimiento dentro de la pestaña de Rendimiento de tu perfil, no como su reemplazo.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Evita a cualquiera que esta semana te ofrezca "optimizar el algoritmo de tus Publicaciones de Google". Todavía no existe suficiente información pública para que alguien haya encontrado un patrón real, mucho menos para empaquetarlo y vendértelo — y una métrica tan nueva es justo el tipo de cosa que atrae una oferta apurada antes de que nadie haya probado nada de verdad contra ella.',
+        },
+        {
+          kind: 'quote',
+          text: 'Una Publicación de Google que no puedes medir no es marketing — es una corazonada con botón de publicar.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Nada de esto pide software nuevo, y tampoco pide entregarle tu ficha a nadie. Pide abrir un panel al que ya tienes acceso, leer diez números, y publicar con intención las próximas semanas en lugar de por impulso. Si mantener al día las Publicaciones, encima de las reseñas, las fotos y todo lo demás que exige un [restaurante](/industries/restaurants) o un negocio de servicios en el hogar, es más de lo que tu equipo alcanza a revisar cada semana, es exactamente el tipo de detalle que nuestros [sistemas de marketing continuo](/systems) están hechos para atrapar — el mismo tipo de hábito olvidado que buscamos en cada [auditoría de Perfil de Negocio de Google](/blog/outdated-google-profile-dfw) que hacemos. Y si no sabes si las Publicaciones son tu punto ciego más grande en visibilidad local o solo el más visible, el [Diagnóstico](/diagnostic) es una revisión humana de una semana hecha para averiguarlo.',
         },
       ],
     },
