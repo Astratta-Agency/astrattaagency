@@ -1,0 +1,15 @@
+{
+  "cover": {
+    "concept": "A single narrow beam of light in bright accent orange cuts down through flat muted-indigo fog to fall on one simple card-shaped silhouette below, and where the beam touches the card a small round counter shape is quietly lighting up in its corner, as if a number is materializing for the first time inside the light."
+  },
+  "inline": [
+    {
+      "name": "post-gets-a-number",
+      "concept": "A simple flat location-pin silhouette in muted indigo has a small round eye shape at its center rendered in accent orange, its gaze aimed at a flat rectangular card floating beside it; in the corner of the card a faint round counter shape is just beginning to glow, as if being watched for the first time."
+    },
+    {
+      "name": "ab-test-comparison",
+      "concept": "Two flat rectangular card silhouettes sit side by side, nearly identical in size and shape, both in muted indigo; one card is rendered slightly brighter with a small accent-orange checkmark glowing at its corner, while the other stays dim and unmarked, representing a simple side-by-side comparison revealing which version performs better."
+    }
+  ]
+}
