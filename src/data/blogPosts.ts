@@ -33,6 +33,9 @@ import outdatedGoogleProfileNapAlignment from '@/assets/blog/outdated-google-pro
 import googlePostsViewCountsCover from '@/assets/blog/google-posts-view-counts-dallas-cover.webp'
 import googlePostsViewCountsPostGetsANumber from '@/assets/blog/google-posts-view-counts-dallas-post-gets-a-number.webp'
 import googlePostsViewCountsAbTestComparison from '@/assets/blog/google-posts-view-counts-dallas-ab-test-comparison.webp'
+import singlePlatformDependencyCover from '@/assets/blog/single-platform-dependency-dfw-cover.webp'
+import singlePlatformDependencyAdminAudit from '@/assets/blog/single-platform-dependency-dfw-admin-access-audit.webp'
+import singlePlatformDependencyLighthouse from '@/assets/blog/single-platform-dependency-dfw-owned-anchor-lighthouse.webp'
 
 export type BlogCategory = 'web-conversion' | 'digital-marketing' | 'design' | 'case-notes'
 
@@ -1847,6 +1850,184 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: 'Nada de esto pide software nuevo, y tampoco pide entregarle tu ficha a nadie. Pide abrir un panel al que ya tienes acceso, leer diez números, y publicar con intención las próximas semanas en lugar de por impulso. Si mantener al día las Publicaciones, encima de las reseñas, las fotos y todo lo demás que exige un [restaurante](/industries/restaurants) o un negocio de servicios en el hogar, es más de lo que tu equipo alcanza a revisar cada semana, es exactamente el tipo de detalle que nuestros [sistemas de marketing continuo](/systems) están hechos para atrapar — el mismo tipo de hábito olvidado que buscamos en cada [auditoría de Perfil de Negocio de Google](/blog/outdated-google-profile-dfw) que hacemos. Y si no sabes si las Publicaciones son tu punto ciego más grande en visibilidad local o solo el más visible, el [Diagnóstico](/diagnostic) es una revisión humana de una semana hecha para averiguarlo.',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'single-platform-dependency-dfw', es: 'dependencia-de-una-plataforma-dfw' },
+    title: {
+      en: 'Your DFW business runs on one platform — here’s what happens when it locks you out',
+      es: 'Tu negocio en DFW depende de una sola plataforma — esto pasa cuando te bloquea el acceso',
+    },
+    excerpt: {
+      en: 'In DFW audits we keep finding the same setup: every customer, every message, every sale routes through one social account nobody at the business fully controls. Here’s the fix, in an afternoon, no agency required.',
+      es: 'En las auditorías que hacemos en DFW encontramos el mismo patrón: cada cliente, cada mensaje, cada venta pasa por una sola cuenta que nadie en el negocio controla del todo. Este es el arreglo, en una tarde, sin necesidad de agencia.',
+    },
+    category: 'web-conversion',
+    publishedAt: '2026-09-17',
+    readingTime: { en: '5 min read', es: '6 min de lectura' },
+    coverGradient: 'from-primary/20 to-secondary/20',
+    coverVariant: 'insight',
+    coverImage: singlePlatformDependencyCover,
+    coverAlt: {
+      en: 'A storefront sign hanging from a single fraying thread above an empty gap, with no other line holding it up.',
+      es: 'Un letrero de local colgando de un solo hilo deshilachado sobre un vacío, sin ninguna otra cuerda que lo sostenga.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'One Platform, No Backup: The DFW Lockout Risk | Astratta',
+      es: 'Una Plataforma, Sin Respaldo: El Riesgo DFW | Astratta',
+    },
+    metaDescription: {
+      en: 'In DFW audits, businesses running entirely on Facebook Marketplace or Instagram keep losing admin access. The five-step fix — no agency, one afternoon.',
+      es: 'En auditorías en DFW vemos negocios que dependen solo de Facebook Marketplace o Instagram y pierden el acceso de administrador. El arreglo, sin agencia.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: 'Ask a home services crew, a used-car lot, or an event-rental business in Dallas–Fort Worth where their customers actually come from, and the answer is almost always the same: Facebook Marketplace, or Instagram, or just "however people find us." In the audits we run across DFW, we keep finding the identical setup underneath that answer — **every message, every booking, every sale routes through one account, and often nobody at the business has full control of it.**',
+        },
+        { kind: 'heading', text: 'The symptom, in the owner’s own words' },
+        {
+          kind: 'paragraph',
+          text: 'It rarely sounds like a red flag when a business owner describes it. "This is just how it\'s always worked" is the usual line — someone posts when there\'s time, replies come in through the same inbox, and every new customer starts the relationship inside that one app. **The business isn’t running a marketing channel at that point — it’s renting one, and paying for it with every customer relationship it has.** Nothing about the setup feels risky day to day, because nothing has gone wrong yet.',
+        },
+        { kind: 'heading', text: 'What actually causes it' },
+        {
+          kind: 'paragraph',
+          text: 'The pattern behind that symptom is almost always the same three things stacked on top of each other. The account was often created years ago under a spouse’s, a friend’s, or an employee’s personal login, and nobody has revisited who holds admin rights since. **There’s no independent record of past customers — names and numbers live inside the platform’s message threads, not in a spreadsheet or a CRM the business actually owns.** And there’s no second channel to fall back on: no website, no verified Google listing, nothing that still works if the one account stops.',
+        },
+        {
+          kind: 'quote',
+          text: 'A platform account you don’t fully control isn’t a marketing channel — it’s a landlord who can change the locks without calling first.',
+        },
+        { kind: 'heading', text: '1. Audit who actually has admin access, this week' },
+        {
+          kind: 'paragraph',
+          text: 'Open the settings on every account the business posts from — the Facebook Page, the Instagram profile, the Google listing — and check the list of admins and managers against who’s actually still involved in the business. It’s common to find a former employee, a relative who set it up years ago, or nobody but a personal profile that isn’t the owner’s. **Add the owner as a full admin on each one, remove anyone who’s gone, and write down the login recovery details somewhere the business controls, not somewhere in one person’s head.**',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'Only one key on that ring actually belongs to the business — the rest is what a lockout looks like before it happens.',
+          src: singlePlatformDependencyAdminAudit,
+          alt: 'A ring of several mismatched keys scattered around a single lock, with only one key correctly aligned to open it.',
+        },
+        { kind: 'heading', text: '2. Claim a free Google Business Profile as an owned anchor' },
+        {
+          kind: 'paragraph',
+          text: 'A Google Business Profile isn’t rented the way a social account is — it’s tied to the business itself, it’s free to claim and verify, and it keeps showing up in local search even on a day the Instagram account is unreachable. Verification just needs a real address; a home-based business can register it and ask Google not to display it publicly, showing only the service area instead. **This alone gives the business a second place people can find it that doesn’t depend on any single login surviving.**',
+        },
+        {
+          kind: 'image',
+          variant: 'gbp',
+          caption: 'A Google Business Profile doesn’t drift with the tide of someone else’s platform — it’s the one anchor point the business actually owns.',
+          src: singlePlatformDependencyLighthouse,
+          alt: 'A single lighthouse standing on solid rock with its beam reaching toward several small unanchored boats drifting at sea.',
+        },
+        { kind: 'heading', text: '3. Capture a name and a phone number on every deal, on or off the platform' },
+        {
+          kind: 'paragraph',
+          text: 'Even a lead that starts inside Marketplace or an Instagram DM should end up somewhere the business owns — a spreadsheet, a notes app, or a free-tier CRM, whichever someone will actually keep updated. The habit is asking for a phone number or email before finalizing any booking or sale, then logging it outside the app within the same day. **A customer relationship that only exists inside someone else’s message thread disappears the moment that thread does.**',
+        },
+        { kind: 'heading', text: '4. Publish one page the business fully controls' },
+        {
+          kind: 'paragraph',
+          text: 'It doesn’t need to be elaborate — hours, phone number, a short list of services, and a handful of photos, hosted somewhere the business actually owns rather than a platform profile. **The point isn’t to replace social media; it’s to have one link that still works and still ranks even on the day a platform account is unreachable**, and one place to send a customer who asks, "do you have a website?"',
+        },
+        { kind: 'heading', text: '5. Recheck access and backups every quarter' },
+        {
+          kind: 'paragraph',
+          text: 'Set a recurring fifteen-minute check, four times a year: who currently has admin rights on each account, whether the contact list is up to date, and whether the Google listing still shows accurate hours and photos. **This is the step that actually prevents the lockout instead of just recovering from one — most businesses only find out their access was never secure after it’s already gone.**',
+        },
+        { kind: 'heading', text: 'How to measure it' },
+        {
+          kind: 'paragraph',
+          text: 'Track the share of new customer contacts that end up saved somewhere the business owns — a spreadsheet, a CRM — versus contacts that exist only inside a platform’s message threads. That ratio is the real number; **a business capturing under half its leads independently is still one lockout away from losing the rest of its pipeline overnight.** Review it alongside the quarterly access check, not as a one-time project.',
+        },
+        { kind: 'heading', text: 'What not to do' },
+        {
+          kind: 'paragraph',
+          text: 'Don’t wait to find out whether the recovery process works until the account is actually locked — test admin access before there’s a crisis, not during one. **Don’t build an elaborate booking system or e-commerce flow on top of an account the business doesn’t fully control; that’s building on rented land before the deed is settled.** And don’t assume word-of-mouth referrals will carry the business if the primary channel goes dark — referrals slow to a trickle fast once there’s no active account feeding new people into the pipeline in the first place.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'None of this requires hiring anyone. An afternoon spent auditing account access and claiming a free Google Business Profile covers most of it. For a faster first read on where the business’s actual gaps are, the free four-minute [Growth Score](/growth-score) is a reasonable place to start, and the [ongoing marketing systems](/systems) we build are designed around exactly this kind of owned, durable lead capture. If it’s unclear how much of the pipeline is actually at risk, the [Diagnostic](/diagnostic) is seven days with a real person mapping it end to end, not a guess.',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: 'Pregúntale a un negocio de servicios para el hogar, un lote de autos usados o una empresa de renta de inflables en Dallas–Fort Worth de dónde vienen realmente sus clientes, y la respuesta casi siempre es la misma: Facebook Marketplace, Instagram, o simplemente "así es como nos encuentran". En las auditorías que hacemos en DFW, encontramos una y otra vez el mismo patrón detrás de esa respuesta — **cada mensaje, cada reserva, cada venta pasa por una sola cuenta, y muchas veces nadie en el negocio tiene el control completo de esa cuenta.**',
+        },
+        { kind: 'heading', text: 'El síntoma, en palabras del dueño' },
+        {
+          kind: 'paragraph',
+          text: 'Casi nunca suena como una alarma cuando un dueño de negocio lo describe. "Así ha funcionado siempre" es la frase típica — alguien publica cuando hay tiempo, las respuestas llegan a la misma bandeja de entrada, y cada cliente nuevo empieza la relación dentro de esa única app. **En ese punto el negocio no está manejando un canal de marketing — lo está rentando, y lo está pagando con cada relación de cliente que tiene.** Nada del montaje se siente riesgoso en el día a día, porque todavía no ha pasado nada malo.',
+        },
+        { kind: 'heading', text: 'Qué lo causa de verdad' },
+        {
+          kind: 'paragraph',
+          text: 'El patrón detrás de ese síntoma casi siempre son las mismas tres cosas apiladas una sobre otra. La cuenta muchas veces se creó hace años bajo el login personal de una pareja, un amigo o un empleado, y nadie ha revisado desde entonces quién tiene los permisos de administrador. **No hay un registro independiente de los clientes anteriores — los nombres y teléfonos viven dentro de los hilos de mensajes de la plataforma, no en una hoja de cálculo o un CRM que el negocio realmente posea.** Y no hay un segundo canal de respaldo: ni sitio web, ni ficha de Google verificada, nada que siga funcionando si esa única cuenta se detiene.',
+        },
+        {
+          kind: 'quote',
+          text: 'Una cuenta de plataforma que no controlas por completo no es un canal de marketing — es un arrendador que puede cambiar las cerraduras sin avisarte primero.',
+        },
+        { kind: 'heading', text: '1. Audita quién tiene acceso de administrador, esta misma semana' },
+        {
+          kind: 'paragraph',
+          text: 'Abre la configuración de cada cuenta desde la que publica el negocio — la Página de Facebook, el perfil de Instagram, la ficha de Google — y revisa la lista de administradores contra quién realmente sigue involucrado en el negocio. Es común encontrar a un ex-empleado, a un familiar que la configuró hace años, o a nadie más que un perfil personal que no es el del dueño. **Agrega al dueño como administrador completo en cada una, elimina a quien ya no está, y anota los datos de recuperación de acceso en algún lugar que el negocio controle, no solo en la cabeza de una persona.**',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'Solo una llave de ese llavero le pertenece de verdad al negocio — el resto es cómo se ve un bloqueo antes de que ocurra.',
+          src: singlePlatformDependencyAdminAudit,
+          alt: 'Un llavero con varias llaves distintas dispersas alrededor de una sola cerradura, con solo una llave alineada correctamente para abrirla.',
+        },
+        { kind: 'heading', text: '2. Reclama una ficha de Google Business Profile gratuita como ancla propia' },
+        {
+          kind: 'paragraph',
+          text: 'Un Perfil de Negocio de Google no se renta como una cuenta social — está ligado al negocio mismo, es gratis reclamarlo y verificarlo, y sigue apareciendo en las búsquedas locales incluso el día que la cuenta de Instagram no responde. La verificación solo necesita una dirección real; un negocio que opera desde casa puede registrarla y pedirle a Google que no la muestre públicamente, mostrando solo el área de servicio. **Esto solo ya le da al negocio un segundo lugar donde la gente puede encontrarlo, que no depende de que un solo login sobreviva.**',
+        },
+        {
+          kind: 'image',
+          variant: 'gbp',
+          caption: 'Un Perfil de Negocio de Google no flota con la marea de la plataforma de otro — es el único punto de anclaje que el negocio realmente posee.',
+          src: singlePlatformDependencyLighthouse,
+          alt: 'Un faro solitario sobre roca firme con su haz de luz alcanzando varios botes pequeños sin ancla que flotan en el mar.',
+        },
+        { kind: 'heading', text: '3. Captura un nombre y un teléfono en cada trato, dentro o fuera de la plataforma' },
+        {
+          kind: 'paragraph',
+          text: 'Incluso un lead que empieza dentro de Marketplace o un DM de Instagram debería terminar en algún lugar que el negocio posea — una hoja de cálculo, una app de notas, o un CRM gratuito, lo que sea que alguien realmente vaya a mantener actualizado. El hábito es pedir un teléfono o correo antes de cerrar cualquier reserva o venta, y registrarlo fuera de la app el mismo día. **Una relación con un cliente que solo existe dentro del hilo de mensajes de otra empresa desaparece en el momento en que ese hilo desaparece.**',
+        },
+        { kind: 'heading', text: '4. Publica una página que el negocio controle por completo' },
+        {
+          kind: 'paragraph',
+          text: 'No tiene que ser elaborada — horarios, teléfono, una lista corta de servicios y algunas fotos, alojada en algún lugar que el negocio realmente posea y no en un perfil de plataforma. **El punto no es reemplazar las redes sociales; es tener un enlace que siga funcionando y siga apareciendo en búsquedas incluso el día que una cuenta de plataforma no responda**, y un lugar al que mandar al cliente que pregunta: "¿tienen página web?"',
+        },
+        { kind: 'heading', text: '5. Revisa accesos y respaldos cada trimestre' },
+        {
+          kind: 'paragraph',
+          text: 'Programa una revisión recurrente de quince minutos, cuatro veces al año: quién tiene permisos de administrador en cada cuenta ahora mismo, si la lista de contactos está actualizada, y si la ficha de Google todavía muestra horarios y fotos correctos. **Este es el paso que de verdad previene el bloqueo en lugar de solo recuperarse de uno — la mayoría de los negocios descubren que su acceso nunca estuvo asegurado solo después de haberlo perdido.**',
+        },
+        { kind: 'heading', text: 'Cómo se mide' },
+        {
+          kind: 'paragraph',
+          text: 'Rastrea qué porcentaje de los contactos de clientes nuevos termina guardado en algún lugar que el negocio posea — una hoja de cálculo, un CRM — contra los que solo existen dentro de los hilos de mensajes de una plataforma. Esa proporción es el número que importa; **un negocio que captura menos de la mitad de sus leads de forma independiente sigue a un bloqueo de distancia de perder el resto de su flujo de clientes de la noche a la mañana.** Revísalo junto con la auditoría trimestral de accesos, no como un proyecto de una sola vez.',
+        },
+        { kind: 'heading', text: 'Qué no hacer' },
+        {
+          kind: 'paragraph',
+          text: 'No esperes a descubrir si el proceso de recuperación funciona hasta que la cuenta ya esté bloqueada — prueba el acceso de administrador antes de que haya una crisis, no durante una. **No construyas un sistema de reservas o e-commerce elaborado sobre una cuenta que el negocio no controla por completo; eso es construir sobre terreno rentado antes de resolver la escritura.** Y no asumas que el boca a boca va a sostener el negocio si el canal principal se apaga — los referidos se reducen rápido en cuanto ya no hay una cuenta activa metiendo gente nueva al flujo desde el principio.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Nada de esto requiere contratar a nadie. Una tarde revisando accesos y reclamando un Perfil de Negocio de Google gratuito cubre casi todo. Para una primera revisión más rápida de dónde están las fugas reales del negocio, el [Growth Score](/growth-score) gratis de cuatro minutos es un buen punto de partida, y los [sistemas de marketing continuo](/systems) que construimos están pensados justo para este tipo de captura de leads propia y duradera. Si no queda claro cuánto del flujo de clientes está realmente en riesgo, el [Diagnóstico](/diagnostic) son siete días con una persona real mapeándolo de principio a fin, no una adivinanza.',
         },
       ],
     },

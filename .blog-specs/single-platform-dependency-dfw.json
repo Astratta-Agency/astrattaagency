@@ -1,0 +1,15 @@
+{
+  "cover": {
+    "concept": "A simple flat storefront sign silhouette in muted indigo hangs from a single thin accent-orange thread stretched taut above an empty gap, the thread visibly fraying at its topmost point where it's tied off, with no other line or support anywhere near the sign."
+  },
+  "inline": [
+    {
+      "name": "admin-access-audit",
+      "concept": "A ring holding several flat key silhouettes in muted indigo, scattered loosely around a single lock shape; only one key, rendered in accent orange, sits correctly aligned and inserted into the lock, while the rest lie mismatched and disconnected around it."
+    },
+    {
+      "name": "owned-anchor-lighthouse",
+      "concept": "A single flat lighthouse silhouette in muted indigo stands on a solid rock base, its beam rendered as a narrow accent-orange triangle reaching out toward several small unanchored boat silhouettes drifting loosely at varying distances on flat water."
+    }
+  ]
+}
