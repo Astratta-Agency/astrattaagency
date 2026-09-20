@@ -26,11 +26,7 @@ export type SeoEntry = {
  */
 export const CASE_STUDY_SEO_DESCRIPTIONS: Record<string, Bilingual<string>> = {
   'perreando-hotdog-social-media': {
-    // TODO(i18n): EN description left as the pre-existing copy — the brief
-    // that introduced the checklist/capture blocks only supplied ES copy
-    // mentioning them (docs: BRIEF-caso-perreando.md, Cambio 1.3). Update
-    // this once an EN version of that sentence is approved.
-    en: 'Case study: Perreando HotDog went from zero online presence to 292K+ views across TikTok, Instagram, and Facebook in 90 days — with $0 ad spend.',
+    en: 'Perreando HotDog went from zero online presence to 292K views in 90 days with $0 in ads. The full process, the real numbers, and the 6-point checklist to replicate it.',
     es: 'Perreando HotDog pasó de cero presencia online a 292K vistas en 90 días con $0 en ads. El proceso completo, los números reales y el checklist de 6 puntos para replicarlo.',
   },
 }
