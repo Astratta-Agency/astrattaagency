@@ -20,6 +20,13 @@ type SeoProps = {
    * from it — callers never write "/es/..." by hand.
    */
   path: string
+  /**
+   * Site-root-relative path to this page's OG/Twitter image (e.g.
+   * "/og/og-perreando-hotdog.png"). Optional — falls back to the generic
+   * "/og-image.jpg" every other page already uses. The origin is prepended
+   * here, so callers never write the absolute URL by hand.
+   */
+  image?: string
 }
 
 const OG_LOCALES: Record<Language, string> = { en: 'en_US', es: 'es_ES' }
@@ -56,7 +63,7 @@ function setLink(rel: string, href: string, hreflang?: string) {
  * URL, and the three alternates (en / es / x-default) are reciprocal, which is
  * what lets both language versions be indexed independently.
  */
-export function Seo({ title, description, path }: SeoProps) {
+export function Seo({ title, description, path, image }: SeoProps) {
   const { language } = useLanguage()
 
   useEffect(() => {
@@ -78,7 +85,7 @@ export function Seo({ title, description, path }: SeoProps) {
     setMeta('property', 'og:description', resolvedDescription)
     setMeta('property', 'og:url', url)
     setMeta('property', 'og:type', 'website')
-    setMeta('property', 'og:image', `${origin}/og-image.jpg`)
+    setMeta('property', 'og:image', `${origin}${image ?? '/og-image.jpg'}`)
     setMeta('property', 'og:locale', OG_LOCALES[language])
     setMeta('property', 'og:locale:alternate', OG_LOCALES[language === 'en' ? 'es' : 'en'])
     setMeta('name', 'twitter:card', 'summary_large_image')
@@ -89,7 +96,7 @@ export function Seo({ title, description, path }: SeoProps) {
     setLink('alternate', alternates.en, 'en')
     setLink('alternate', alternates.es, 'es')
     setLink('alternate', alternates.en, 'x-default')
-  }, [title, description, path, language])
+  }, [title, description, path, image, language])
 
   return null
 }

@@ -42,6 +42,34 @@ export type CaseStudyTestimonial = {
   role: string
 }
 
+/** One card in the "how to replicate it" checklist grid (optional, per-project). */
+export type CaseStudyChecklistItem = {
+  threshold: string
+  title: string
+  body: string
+}
+
+export type CaseStudyChecklist = {
+  title: string
+  intro: string
+  items: CaseStudyChecklistItem[]
+}
+
+/** Copy for the email-capture card that follows the checklist (optional, per-project). */
+export type CaseStudyLeadCapture = {
+  heading: string
+  body: string
+  formEyebrow: string
+  formSubtitle: string
+  emailLabel: string
+  emailPlaceholder: string
+  submitLabel: string
+  successMessage: string
+  errorFallback: string
+  scheduleQuestion: string
+  scheduleCta: string
+}
+
 export type CaseStudy = {
   slug: string
   title: string
@@ -60,6 +88,10 @@ export type CaseStudy = {
   stats: CaseStudyStat[]
   testimonial?: CaseStudyTestimonial
   liveUrl?: string
+  /** "How to replicate it" checklist grid — optional, only populated for a project when the brief calls for it. */
+  methodChecklist?: CaseStudyChecklist
+  /** Email-capture card that follows methodChecklist — optional, same rule. */
+  leadCapture?: CaseStudyLeadCapture
   /** optional per-project breakdown for case studies with multi-platform metrics (e.g. social media campaigns) */
   extraStats?: {
     heading: string
@@ -85,6 +117,32 @@ export type CaseStudy = {
 type CaseStudyStatSource = { value: Bilingual<string>; label: Bilingual<string> }
 type CaseStudyTestimonialSource = { quote: Bilingual<string>; name: string; role: Bilingual<string> }
 
+type CaseStudyChecklistItemSource = {
+  threshold: Bilingual<string>
+  title: Bilingual<string>
+  body: Bilingual<string>
+}
+
+type CaseStudyChecklistSource = {
+  title: Bilingual<string>
+  intro: Bilingual<string>
+  items: CaseStudyChecklistItemSource[]
+}
+
+type CaseStudyLeadCaptureSource = {
+  heading: Bilingual<string>
+  body: Bilingual<string>
+  formEyebrow: Bilingual<string>
+  formSubtitle: Bilingual<string>
+  emailLabel: Bilingual<string>
+  emailPlaceholder: Bilingual<string>
+  submitLabel: Bilingual<string>
+  successMessage: Bilingual<string>
+  errorFallback: Bilingual<string>
+  scheduleQuestion: Bilingual<string>
+  scheduleCta: Bilingual<string>
+}
+
 type CaseStudySource = {
   slug: string
   title: string
@@ -102,6 +160,8 @@ type CaseStudySource = {
   stats: CaseStudyStatSource[]
   testimonial?: CaseStudyTestimonialSource
   liveUrl?: string
+  methodChecklist?: CaseStudyChecklistSource
+  leadCapture?: CaseStudyLeadCaptureSource
   extraStats?: {
     heading: string
     headline: { value: string; label: Bilingual<string> }
@@ -134,6 +194,28 @@ export function resolveCaseStudy(source: CaseStudySource, language: Language): C
       role: source.testimonial.role[language],
     },
     liveUrl: source.liveUrl,
+    methodChecklist: source.methodChecklist && {
+      title: source.methodChecklist.title[language],
+      intro: source.methodChecklist.intro[language],
+      items: source.methodChecklist.items.map((item) => ({
+        threshold: item.threshold[language],
+        title: item.title[language],
+        body: item.body[language],
+      })),
+    },
+    leadCapture: source.leadCapture && {
+      heading: source.leadCapture.heading[language],
+      body: source.leadCapture.body[language],
+      formEyebrow: source.leadCapture.formEyebrow[language],
+      formSubtitle: source.leadCapture.formSubtitle[language],
+      emailLabel: source.leadCapture.emailLabel[language],
+      emailPlaceholder: source.leadCapture.emailPlaceholder[language],
+      submitLabel: source.leadCapture.submitLabel[language],
+      successMessage: source.leadCapture.successMessage[language],
+      errorFallback: source.leadCapture.errorFallback[language],
+      scheduleQuestion: source.leadCapture.scheduleQuestion[language],
+      scheduleCta: source.leadCapture.scheduleCta[language],
+    },
     extraStats: source.extraStats?.map((platform) => ({
       heading: platform.heading,
       headline: { value: platform.headline.value, label: platform.headline.label[language] },
@@ -347,6 +429,88 @@ export const CASE_STUDIES: CaseStudySource[] = [
       },
       name: 'Maria Espina',
       role: { en: 'CEO & Founder, Perreando HotDog', es: 'CEO y Fundadora, Perreando HotDog' },
+    },
+    methodChecklist: {
+      title: {
+        en: '[TODO EN copy] How to replicate it in your business',
+        es: 'Cómo replicarlo en tu negocio',
+      },
+      intro: {
+        en: '[TODO EN copy] There is no algorithm trick. There is a system. These are the six things we audit before publishing the first video — the same six we applied on Perreando HotDog. You can check them today without hiring us.',
+        es: 'No hay truco de algoritmo. Hay un sistema. Estos son los seis puntos que auditamos antes de publicar el primer video, los mismos que aplicamos en Perreando HotDog. Puedes revisarlos hoy mismo sin contratarnos.',
+      },
+      items: [
+        {
+          threshold: { en: '[TODO EN] 3 weeks', es: '3 semanas' },
+          title: { en: '[TODO EN copy] One format, not five', es: 'Un formato, no cinco' },
+          body: {
+            en: '[TODO EN copy] Most people publish on six formats at once and learn nothing from any of them. Pick one, hold it for three weeks, and only then diversify.',
+            es: 'La mayoría publica en seis formatos a la vez y no aprende nada de ninguno. Se elige uno, se sostiene tres semanas y recién ahí se diversifica.',
+          },
+        },
+        {
+          threshold: { en: '[TODO EN] Second 0', es: 'Segundo 0' },
+          title: { en: '[TODO EN copy] The product comes first', es: 'El producto primero' },
+          body: {
+            en: '[TODO EN copy] In food, you don\'t build tension: the product appears in the first frame. An intro, logo, or greeting in the first two seconds is lost audience.',
+            es: 'En comida no se construye tensión: el producto aparece en el primer frame. Intro, logo o saludo en los primeros dos segundos es audiencia perdida.',
+          },
+        },
+        {
+          threshold: { en: '[TODO EN] 50%', es: '50%' },
+          title: { en: '[TODO EN copy] Retention before anything else', es: 'Retención antes que nada' },
+          body: {
+            en: '[TODO EN copy] If fewer than half make it past the third second, the problem is the hook. Not the algorithm, not the posting time, not the hashtag.',
+            es: 'Si menos de la mitad pasa del tercer segundo, el problema es el hook. No el algoritmo, no la hora de publicación, no el hashtag.',
+          },
+        },
+        {
+          threshold: { en: '[TODO EN] 90 days', es: '90 días' },
+          title: { en: '[TODO EN copy] A cadence that holds up', es: 'Cadencia que aguante' },
+          body: {
+            en: '[TODO EN copy] Ten videos in one week and then silence kills more accounts than posting little. Define the sustainable frequency for your worst week, not your best one.',
+            es: 'Diez videos en una semana y después silencio mata más cuentas que publicar poco. Se define la frecuencia sostenible en tu peor semana, no en la mejor.',
+          },
+        },
+        {
+          threshold: { en: '[TODO EN] $0', es: '$0' },
+          title: { en: '[TODO EN copy] Zero ads until you have signal', es: 'Cero ads hasta tener señal' },
+          body: {
+            en: '[TODO EN copy] Paying to distribute content that doesn\'t retain just buys the same failure faster. First a video proves it works organically, then it gets amplified.',
+            es: 'Pagar por distribuir contenido que no retiene solo compra el mismo fracaso más rápido. Primero un video prueba que funciona orgánico, después se amplifica.',
+          },
+        },
+        {
+          threshold: { en: '[TODO EN] 1 tap', es: '1 tap' },
+          title: { en: '[TODO EN copy] One clear destination', es: 'Un destino claro' },
+          body: {
+            en: '[TODO EN copy] 292K views are worthless if the profile doesn\'t say where you are, when you\'re open, and how to order. Traffic with no destination is vanity.',
+            es: '292K vistas no sirven si el perfil no dice dónde estás, cuándo abres y cómo se ordena. El tráfico sin destino es vanidad.',
+          },
+        },
+      ],
+    },
+    leadCapture: {
+      heading: { en: '[TODO EN copy] The six points, on one sheet', es: 'Los seis puntos, en una hoja' },
+      body: {
+        en: '[TODO EN copy] We\'ll send you the full checklist as a PDF, with the exact criteria to mark each point as passed or not, and the next case study when it comes out. One case a month. No twelve-email sequences.',
+        es: 'Te mandamos el checklist completo en PDF, con el criterio exacto para marcar cada punto como aprobado o no, y el próximo caso de estudio cuando salga. Un caso al mes. Sin secuencias de doce correos.',
+      },
+      formEyebrow: { en: '[TODO EN copy] 6-point checklist', es: 'Checklist de 6 puntos' },
+      formSubtitle: { en: '[TODO EN copy] One-page PDF, printable', es: 'PDF de una página, imprimible' },
+      emailLabel: { en: '[TODO EN] Your email', es: 'Tu correo' },
+      emailPlaceholder: { en: 'name@yourbusiness.com', es: 'nombre@tunegocio.com' },
+      submitLabel: { en: '[TODO EN] Send it to me', es: 'Enviármelo' },
+      successMessage: { en: '[TODO EN copy] Done. Check your email.', es: 'Listo. Revisa tu correo.' },
+      errorFallback: {
+        en: '[TODO EN copy] The checklist service is not configured yet — write to us at info@astrattaagency.com and we\'ll send it directly.',
+        es: 'El servicio del checklist aún no está configurado — escríbenos a info@astrattaagency.com y te lo enviamos directo.',
+      },
+      scheduleQuestion: {
+        en: '[TODO EN copy] Would you rather go through it together?',
+        es: '¿Prefieres que lo revisemos juntos?',
+      },
+      scheduleCta: { en: '[TODO EN] Book a 20-min diagnostic', es: 'Agendar diagnóstico de 20 min' },
     },
     coverGradient: 'from-ink to-secondary',
     coverImage: perreandoHotdogSocialMedia,

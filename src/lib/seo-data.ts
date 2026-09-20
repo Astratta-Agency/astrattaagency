@@ -26,9 +26,22 @@ export type SeoEntry = {
  */
 export const CASE_STUDY_SEO_DESCRIPTIONS: Record<string, Bilingual<string>> = {
   'perreando-hotdog-social-media': {
+    // TODO(i18n): EN description left as the pre-existing copy — the brief
+    // that introduced the checklist/capture blocks only supplied ES copy
+    // mentioning them (docs: BRIEF-caso-perreando.md, Cambio 1.3). Update
+    // this once an EN version of that sentence is approved.
     en: 'Case study: Perreando HotDog went from zero online presence to 292K+ views across TikTok, Instagram, and Facebook in 90 days — with $0 ad spend.',
-    es: 'Caso de éxito: Perreando HotDog pasó de cero presencia online a más de 292K vistas en TikTok, Instagram y Facebook en 90 días — con $0 de inversión publicitaria.',
+    es: 'Perreando HotDog pasó de cero presencia online a 292K vistas en 90 días con $0 en ads. El proceso completo, los números reales y el checklist de 6 puntos para replicarlo.',
   },
+}
+
+/**
+ * Per-project OG/Twitter share image overrides — mirrors
+ * CASE_STUDY_SEO_DESCRIPTIONS above. Falls back to the site's generic
+ * "/og-image.jpg" (see Seo.tsx) for every case study not listed here.
+ */
+export const CASE_STUDY_OG_IMAGES: Record<string, string> = {
+  'perreando-hotdog-social-media': '/og/og-perreando-hotdog.png',
 }
 
 /**
