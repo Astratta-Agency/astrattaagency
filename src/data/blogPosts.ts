@@ -36,6 +36,9 @@ import googlePostsViewCountsAbTestComparison from '@/assets/blog/google-posts-vi
 import singlePlatformDependencyCover from '@/assets/blog/single-platform-dependency-dfw-cover.webp'
 import singlePlatformDependencyAdminAudit from '@/assets/blog/single-platform-dependency-dfw-admin-access-audit.webp'
 import singlePlatformDependencyLighthouse from '@/assets/blog/single-platform-dependency-dfw-owned-anchor-lighthouse.webp'
+import metaCreatorHubCover from '@/assets/blog/meta-creator-hub-dallas-cover.webp'
+import metaCreatorHubDiscoveryFilter from '@/assets/blog/meta-creator-hub-dallas-creator-discovery-filter.webp'
+import metaCreatorHubTimeBoxedPermission from '@/assets/blog/meta-creator-hub-dallas-time-boxed-permission.webp'
 
 export type BlogCategory = 'web-conversion' | 'digital-marketing' | 'design' | 'case-notes'
 
@@ -2028,6 +2031,162 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: 'Nada de esto requiere contratar a nadie. Una tarde revisando accesos y reclamando un Perfil de Negocio de Google gratuito cubre casi todo. Para una primera revisión más rápida de dónde están las fugas reales del negocio, el [Growth Score](/growth-score) gratis de cuatro minutos es un buen punto de partida, y los [sistemas de marketing continuo](/systems) que construimos están pensados justo para este tipo de captura de leads propia y duradera. Si no queda claro cuánto del flujo de clientes está realmente en riesgo, el [Diagnóstico](/diagnostic) son siete días con una persona real mapeándolo de principio a fin, no una adivinanza.',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'meta-creator-hub-dallas', es: 'centro-creadores-meta-dallas' },
+    title: {
+      en: "Meta's new Creator Hub lets DFW businesses turn real customer content into paid ads",
+      es: 'El nuevo Creator Hub de Meta deja a los negocios de DFW convertir contenido real de clientes en anuncios',
+    },
+    excerpt: {
+      en: 'Meta just launched a Creator Marketing Hub that turns an already-approved organic post into a paid ad with one click. Here’s what a Dallas–Fort Worth business should do with it this week — and what to skip.',
+      es: 'Meta lanzó un Creator Marketing Hub que convierte una publicación orgánica ya aprobada en anuncio pagado con un clic. Esto es lo que un negocio de Dallas–Fort Worth debería hacer esta semana — y qué ignorar.',
+    },
+    category: 'digital-marketing',
+    publishedAt: '2026-09-22',
+    readingTime: { en: '5 min read', es: '5 min de lectura' },
+    coverGradient: 'from-secondary/20 to-primary/20',
+    coverVariant: 'insight',
+    coverImage: metaCreatorHubCover,
+    coverAlt: {
+      en: 'A single lantern glowing inside a small storefront window at night, its light gathered and redirected outward through a megaphone horn to reach far down an otherwise dim street.',
+      es: 'Una lámpara encendida dentro del escaparate de un pequeño local por la noche, con su luz recogida y redirigida hacia afuera a través de un megáfono que alcanza una calle oscura a lo lejos.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: "Meta's Creator Hub: DFW Turns UGC Into Ads | Astratta",
+      es: 'Creator Hub de Meta: Negocios DFW Ganan con UGC | Astratta',
+    },
+    metaDescription: {
+      en: "Meta's new Creator Marketing Hub turns approved organic posts into paid ads with one click. What Dallas–Fort Worth businesses should do with it this week.",
+      es: 'El nuevo Creator Hub de Meta convierte publicaciones orgánicas aprobadas en anuncios con un clic. Qué debe hacer tu negocio de Dallas–Fort Worth esta semana.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: 'Meta just closed the gap between the content a Dallas–Fort Worth business already has sitting in its tagged posts and DMs, and the paid reach it never turns into. At IAB’s first Global Creator Week on September 16, Meta rolled out its new Creator Marketing Hub globally, folding the Creator Marketplace and the Partnership Ads Hub into a single workspace. The headline features are discovery filters that surface creators already organically featuring products like yours, content-level permissions with expiration dates instead of open-ended usage rights, and one-click ad creation that turns an already-approved organic post directly into a paid ad.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Before this, turning a customer’s glowing TikTok or a food blogger’s organic review into a real ad meant finding that person, negotiating usage rights over DM or email, and often rebuilding the post from scratch inside Ads Manager. Most small businesses skipped the step entirely and let genuinely good, free content disappear after its organic run. **The friction was never the creative — it was the legal and workflow gap between a post that already worked and a budget that could have pushed it further**, and that’s the specific gap this update closes.',
+        },
+        { kind: 'heading', text: 'Why it matters for home improvement, restaurant and med spa businesses in DFW' },
+        {
+          kind: 'paragraph',
+          text: 'DFW produces this kind of content constantly without anyone planning for it. A remodeling client posts a before-and-after reel unprompted, a taco truck goes semi-viral off a college student’s phone, a med spa patient reshares her own results. Perreando Hotdog is the clearest local proof this works at scale: 292,000 organic views in 90 days, built entirely on real customer content and $0 in ad spend. Most DFW owners running a [restaurant](/industries/restaurants) or a [home improvement](/industries/home-improvement) business have some version of that content sitting untouched right now — **what they’re missing isn’t the content, it’s a legal and technical bridge to put money behind the piece that already proved itself.**',
+        },
+        {
+          kind: 'image',
+          variant: 'proof',
+          caption: 'The best paid partner is the creator who already chose to post about your business for free.',
+          src: metaCreatorHubDiscoveryFilter,
+          alt: 'A magnifying glass hovering over a dense grid of identical grey silhouetted figures, with only a few glowing warm orange because they already hold a small matching object.',
+        },
+        { kind: 'heading', text: '1. Audit what you already have before you ask for anything new' },
+        {
+          kind: 'paragraph',
+          text: 'Before opening the Hub, pull together what already exists: a Google review with a photo attached, an unprompted TikTok, a Facebook comment thread with a real before-and-after. **This is the raw material the update was built to activate, not something that needs to be produced from a blank page**, and most businesses have more of it than they remember collecting.',
+        },
+        { kind: 'heading', text: '2. Get explicit, time-boxed permission — not an indefinite handshake' },
+        {
+          kind: 'paragraph',
+          text: 'The content-level permissions with expiration dates matter more than the phrase suggests. For years the only options were skipping the ask entirely, which is a real legal risk, or asking for open-ended rights forever, which makes a happy customer or a small creator understandably hesitant to say yes. **A permission that expires in 60 or 90 days is an easier yes to get, and it’s still long enough to run a genuine paid test** — use that window instead of over-asking on the first message.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'A permission with an end date is an easier yes than a forever one — and long enough to prove the ad works.',
+          src: metaCreatorHubTimeBoxedPermission,
+          alt: 'A handshake rendered in warm outline, sealed at the wrist by a small hourglass instead of a knot or lock, with fine sand settled in the lower bulb.',
+        },
+        { kind: 'heading', text: '3. Use the discovery filters to find who’s already talking about you' },
+        {
+          kind: 'paragraph',
+          text: 'The Hub’s discovery filters are built to surface creators already organically featuring products in a given category, which means a DFW business can search for people already posting about its industry and neighborhood instead of cold-pitching strangers with a media kit. **Someone who mentioned the business without being asked is a far stronger paid partner than someone who’s never heard of it**, and that list is worth checking before any new outreach goes out.',
+        },
+        { kind: 'heading', text: '4. Turn the post that already worked into the ad — don’t shoot a new one' },
+        {
+          kind: 'paragraph',
+          text: 'One-click ad creation exists specifically so a business doesn’t have to produce new footage to run a campaign; it converts an already-approved organic post straight into an ad. Pick the post with the strongest organic response first, not the most recent one — **an ad built from something that already proved itself with real customers outperforms a script written cold for the ad platform far more often than instinct, or most agencies, tend to admit.**',
+        },
+        {
+          kind: 'quote',
+          text: 'Someone who mentioned the business without being asked is a far stronger paid partner than someone who’s never heard of it.',
+        },
+        { kind: 'heading', text: 'What to ignore' },
+        {
+          kind: 'paragraph',
+          text: 'Ignore anyone pitching a full creator-strategy retainer this week — this is a workflow change inside a platform DFW businesses already run ads on, not a new line item. Ignore follower count when deciding who to feature; the Hub’s filters surface relevance to the category, not raw reach, and a local creator with three thousand real followers who already talks about home improvement in Frisco beats a stranger with three hundred thousand who’s never mentioned the industry. **Resist locking every piece of content behind a twelve-month permission just because the option exists — a shorter, easier yes produces more usable content than one long negotiation that never closes.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'None of this replaces getting the fundamentals right first — a site that converts once paid traffic actually lands on it, a Google profile the AI and the buyer can both trust. But for a business that already has real proof sitting untouched in its own tagged posts, this is the first time turning it into paid reach doesn’t start with rebuilding it from scratch. The [Diagnostic](/diagnostic) — seven days, a real person mapping exactly what’s already working before a single new dollar goes into ads — is the place to start if it’s unclear how much proof is already sitting there unused, and the [ongoing marketing systems](/systems) we build are designed to keep using it after that first campaign ends.',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: 'Meta acaba de cerrar la brecha entre el contenido que un negocio de Dallas–Fort Worth ya tiene guardado en publicaciones etiquetadas y mensajes directos, y el alcance pagado que nunca llega a usar. El 16 de septiembre, en la primera Semana Global del Creador organizada por IAB, Meta lanzó a nivel mundial su nuevo Creator Marketing Hub, que junta el Creator Marketplace y el Partnership Ads Hub en un solo espacio de trabajo. Las funciones centrales son filtros de descubrimiento que muestran creadores que ya presentan productos como los tuyos de forma orgánica, permisos de contenido con fecha de vencimiento en lugar de derechos de uso indefinidos, y creación de anuncios en un solo clic que convierte una publicación orgánica ya aprobada directamente en anuncio pagado.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Antes de esto, convertir el video espontáneo de un cliente satisfecho o la reseña orgánica de un food blogger en un anuncio real significaba encontrar a esa persona, negociar los derechos de uso por mensaje directo o correo, y muchas veces reconstruir la publicación desde cero dentro de Ads Manager. La mayoría de los negocios pequeños se saltaban el paso por completo y dejaban que contenido genuinamente bueno y gratuito desapareciera después de su etapa orgánica. **La fricción nunca fue la parte creativa — era el vacío legal y operativo entre una publicación que ya funcionó y un presupuesto que pudo haberla empujado más lejos**, y ese es justo el vacío que cierra esta actualización.',
+        },
+        { kind: 'heading', text: 'Por qué importa para negocios de remodelación, restaurantes y med spas en DFW' },
+        {
+          kind: 'paragraph',
+          text: 'DFW produce este tipo de contenido todo el tiempo sin que nadie lo planee. Un cliente de remodelación publica un video de antes y después sin que se lo pidan, un food truck se vuelve semi-viral por el celular de un estudiante universitario, una paciente de med spa comparte ella misma sus resultados. Perreando Hotdog es la prueba local más clara de que esto funciona a escala: 292 mil vistas orgánicas en 90 días, construidas enteramente con contenido real de clientes y $0 en anuncios. La mayoría de los dueños de [restaurantes](/industries/restaurants) o negocios de [remodelación](/industries/home-improvement) en DFW ya tienen alguna versión de ese contenido guardada sin usar — **lo que les falta no es el contenido, es un puente legal y técnico para poner dinero detrás de la pieza que ya demostró que funciona.**',
+        },
+        {
+          kind: 'image',
+          variant: 'proof',
+          caption: 'El mejor socio pagado es el creador que ya eligió hablar de tu negocio gratis.',
+          src: metaCreatorHubDiscoveryFilter,
+          alt: 'Una lupa flotando sobre una cuadrícula densa de figuras grises idénticas, con solo unas pocas brillando en naranja porque ya sostienen un pequeño objeto que coincide.',
+        },
+        { kind: 'heading', text: '1. Revisa lo que ya tienes antes de pedir algo nuevo' },
+        {
+          kind: 'paragraph',
+          text: 'Antes de abrir el Hub, junta lo que ya existe: una reseña de Google con una foto adjunta, un TikTok espontáneo, un hilo de comentarios en Facebook con un antes y después real. **Esta es la materia prima que la actualización fue diseñada para activar, no algo que hay que producir desde cero**, y la mayoría de los negocios tiene más de esto de lo que recuerda haber guardado.',
+        },
+        { kind: 'heading', text: '2. Consigue permiso explícito y con fecha límite — no un acuerdo indefinido' },
+        {
+          kind: 'paragraph',
+          text: 'Los permisos de contenido con fecha de vencimiento importan más de lo que suena. Durante años las únicas opciones eran saltarse el permiso por completo, lo cual es un riesgo legal real, o pedir derechos abiertos para siempre, lo cual entendiblemente hace que un cliente contento o un creador pequeño duden en decir que sí. **Un permiso que vence en 60 o 90 días es un sí mucho más fácil de conseguir, y sigue siendo suficiente tiempo para correr una prueba pagada real** — usa esa ventana en lugar de pedir de más desde el primer mensaje.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'Un permiso con fecha de vencimiento es un sí más fácil que uno para siempre — y alcanza para probar que el anuncio funciona.',
+          src: metaCreatorHubTimeBoxedPermission,
+          alt: 'Un apretón de manos en contorno cálido, sellado en la muñeca por un pequeño reloj de arena en lugar de un nudo o un candado, con arena fina asentada en la parte inferior.',
+        },
+        { kind: 'heading', text: '3. Usa los filtros de descubrimiento para encontrar a quién ya habla de ti' },
+        {
+          kind: 'paragraph',
+          text: 'Los filtros de descubrimiento del Hub están hechos para mostrar creadores que ya presentan productos de una categoría de forma orgánica, lo que significa que un negocio en DFW puede buscar a personas que ya publican sobre su industria y su zona en lugar de escribirle en frío a desconocidos con un media kit. **Alguien que mencionó tu negocio sin que se lo pidieras es un socio pagado mucho más fuerte que alguien que nunca ha oído de él**, y esa lista vale la pena revisarla antes de cualquier acercamiento nuevo.',
+        },
+        { kind: 'heading', text: '4. Convierte en anuncio la publicación que ya funcionó — no grabes una nueva' },
+        {
+          kind: 'paragraph',
+          text: 'La creación de anuncios en un solo clic existe justamente para que un negocio no tenga que producir contenido nuevo para correr una campaña; convierte una publicación orgánica ya aprobada directamente en anuncio. Elige primero la publicación con la respuesta orgánica más fuerte, no la más reciente — **un anuncio construido sobre algo que ya demostró funcionar con clientes reales gana casi siempre contra un guion escrito en frío para la plataforma de anuncios, más de lo que el instinto, o muchas agencias, suelen admitir.**',
+        },
+        {
+          kind: 'quote',
+          text: 'Alguien que mencionó tu negocio sin que se lo pidieras es un socio pagado mucho más fuerte que alguien que nunca ha oído de él.',
+        },
+        { kind: 'heading', text: 'Qué ignorar' },
+        {
+          kind: 'paragraph',
+          text: 'Ignora a quien te ofrezca un retainer completo de "estrategia de creadores" esta semana — esto es un cambio de flujo de trabajo dentro de una plataforma en la que tu negocio ya corre anuncios, no una línea nueva de gasto. Ignora el número de seguidores al elegir a quién destacar; los filtros del Hub muestran relevancia con la categoría, no alcance bruto, y un creador local con tres mil seguidores reales que ya habla de remodelación en Frisco vale más que un desconocido con trescientos mil que nunca ha mencionado la industria. **Evita encerrar cada pieza de contenido en un permiso de doce meses solo porque la opción existe — un sí más corto y más fácil produce más contenido usable que una negociación larga que nunca cierra.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Nada de esto reemplaza tener primero los fundamentos resueltos — un sitio que convierta una vez que el tráfico pagado llegue, un perfil de Google en el que confíen tanto la IA como el comprador. Pero para un negocio que ya tiene prueba real guardada sin usar en sus propias publicaciones etiquetadas, esta es la primera vez que convertirla en alcance pagado no empieza por reconstruirla desde cero. El [Diagnóstico](/diagnostic) — siete días, una persona real mapeando exactamente qué ya está funcionando antes de meter un solo dólar nuevo en anuncios — es el punto de partida si no queda claro cuánta prueba ya tienes guardada sin usar, y los [sistemas de marketing continuo](/systems) que construimos están pensados para seguir usándola después de que termine esa primera campaña.',
         },
       ],
     },
