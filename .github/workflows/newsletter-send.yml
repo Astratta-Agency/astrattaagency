@@ -5,6 +5,8 @@ name: Newsletter — enviar artículo
 #   · modo "send": envía a todos los suscriptores activos. Un artículo sale una
 #     sola vez — un segundo "send" del mismo slug responde already_sent.
 # Siempre deja la vista previa HTML como artifact descargable del run.
+# El envío normal es automático (newsletter-auto.yml); este botón es para
+# pruebas y para reenviar a mano.
 # Necesita el secret NEWSLETTER_SEND_SECRET (el mismo valor en Supabase).
 
 on:

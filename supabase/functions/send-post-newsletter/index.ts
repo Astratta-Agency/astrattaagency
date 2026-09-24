@@ -15,6 +15,8 @@
 //   send — every `subscribed` subscriber gets their language's version via
 //          Resend's batch API. The unique (workspace_id, post_slug) row in
 //          `newsletter_sends` guarantees an article goes out only once.
+//   status — returns the slugs already in `newsletter_sends` (sent, sending
+//          or baseline), so the auto workflow only renders what's new.
 //
 // Source of truth: supabase/functions/send-post-newsletter/index.ts in the website repo.
 
@@ -93,7 +95,27 @@ Deno.serve(async (req) => {
   const from = Deno.env.get("RESEND_FROM") ?? DEFAULT_FROM;
 
   try {
-    const parsed = BodySchema.safeParse(await req.json().catch(() => null));
+    const raw = await req.json().catch(() => null);
+
+    if (raw?.mode === "status") {
+      const admin = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
+      const { data: workspace } = await admin
+        .from("workspaces")
+        .select("id")
+        .eq("slug", String(raw.workspace_slug ?? ""))
+        .maybeSingle();
+      if (!workspace) return json({ success: false, error: "workspace_not_found" }, 404);
+      // A failed run that mailed nobody may be retried, so it doesn't count as handled.
+      const { data: rows, error } = await admin
+        .from("newsletter_sends")
+        .select("post_slug, status, recipients")
+        .eq("workspace_id", workspace.id);
+      if (error) return json({ success: false, error: "status_failed", detail: error.message }, 500);
+      const slugs = (rows ?? []).filter((r) => r.status !== "failed" || r.recipients > 0).map((r) => r.post_slug);
+      return json({ success: true, slugs });
+    }
+
+    const parsed = BodySchema.safeParse(raw);
     if (!parsed.success) {
       return json({ success: false, error: "invalid_body", details: parsed.error.flatten() }, 400);
     }
