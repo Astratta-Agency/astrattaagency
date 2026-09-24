@@ -19,6 +19,7 @@
 | **I** | FAQ del home "¿qué incluye la auditoría?" | ✅ eliminada + reemplazo aplicado |
 | **J** | Migración SEO de las 4 páginas que mueren | ✅ resuelto con 4 frases · 301 aplicados |
 | **K** | FAQ perdidas al vaciar las 3 CONSERVAR | ✅ aplicado — FAQ restauradas + titulares |
+| **L** | Política de privacidad `/privacy-policy` · `/es/politica-de-privacidad` | ⚠️ aplicada — pendiente de revisión del negocio |
 
 **Las metas siguen siendo el único hueco estructural.** El doc no define meta
 title/description para ninguna página nueva; las de `/how-it-works` y las que
@@ -361,3 +362,20 @@ de Foundation, que es canónica.
 `/services/digital-marketing` se queda sin bloque FAQ a propósito: sus tres
 preguntas vendían Paid Ads y Lead Generation como productos sueltos, y la página
 ya no vende nada — solo redirige la intención hacia `/systems`.
+
+---
+
+## L · Política de privacidad
+`src/locales/{en,es}/privacy.ts` · Página legal pedida directamente; el doc de
+contenido no la cubre. El texto se escribió a partir de lo que el sitio hace de
+verdad, sin claims de más:
+
+- Formularios (Growth Score, diagnóstico, newsletter) → Edge Functions de Supabase.
+- Google Analytics 4 (`G-31Q2BFE1XC`, en `index.html`) y reCAPTCHA v3.
+- Idioma en `localStorage`, que no sale del navegador.
+- Hosting en Vercel. No hay Meta Pixel en el propio sitio (la CSP no lo permite).
+
+**Pendiente de confirmar por el negocio:** que no se vende información a
+terceros, el criterio de retención y que la lista de proveedores está completa.
+Si se añade una herramienta que recoja datos (Pixel, chat, agenda), esta página
+se actualiza junto con la fecha. No sustituye revisión legal.

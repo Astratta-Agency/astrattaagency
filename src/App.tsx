@@ -22,6 +22,7 @@ import DigitalMarketing from '@/pages/DigitalMarketing'
 import Pricing from '@/pages/Pricing'
 import Contact from '@/pages/Contact'
 import About from '@/pages/About'
+import Privacy from '@/pages/Privacy'
 import NotFound from '@/pages/NotFound'
 
 /**
@@ -45,6 +46,7 @@ const PAGE_ROUTES: { id: RouteId; element: ReactElement }[] = [
   { id: 'pricing', element: <Pricing /> },
   { id: 'contact', element: <Contact /> },
   { id: 'about', element: <About /> },
+  { id: 'privacy', element: <Privacy /> },
 ]
 
 /** Keyed by the canonical English slug — the same key SERVICE_SLUGS uses. */

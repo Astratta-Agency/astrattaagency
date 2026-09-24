@@ -182,6 +182,18 @@ export const STATIC_SEO: Record<string, Bilingual<{ title: string; description: 
         'Ponte en contacto con Astratta Agency, un estudio de diseño web y marketing digital en Dallas–Fort Worth.',
     },
   },
+  '/privacy-policy': {
+    en: {
+      title: 'Privacy Policy — Astratta Agency',
+      description:
+        'How Astratta Agency collects, uses, and protects the information you share on astrattaagency.com — forms, analytics, cookies, and your choices.',
+    },
+    es: {
+      title: 'Política de Privacidad — Astratta Agency',
+      description:
+        'Cómo Astratta Agency recoge, usa y protege la información que compartes en astrattaagency.com — formularios, analítica, cookies y tus opciones.',
+    },
+  },
   '/about': {
     en: {
       title: 'About — Astratta Agency | Dallas–Fort Worth Web Studio',

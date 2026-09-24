@@ -4,4 +4,5 @@ export const footer = {
   newsletterSubtext: 'Web, marketing, and design breakdowns — no spam, unsubscribe anytime.',
   socialsHeading: 'Socials',
   copyrightSuffix: 'All rights reserved.',
+  privacyLink: 'Privacy Policy',
 }
