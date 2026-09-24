@@ -5,4 +5,5 @@ export const footer = {
   socialsHeading: 'Socials',
   copyrightSuffix: 'All rights reserved.',
   privacyLink: 'Privacy Policy',
+  termsLink: 'Terms & Conditions',
 }

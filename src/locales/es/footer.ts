@@ -7,4 +7,5 @@ export const footer: typeof en = {
   socialsHeading: 'Redes sociales',
   copyrightSuffix: 'Todos los derechos reservados.',
   privacyLink: 'Política de Privacidad',
+  termsLink: 'Términos y Condiciones',
 }

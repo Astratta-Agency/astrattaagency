@@ -24,6 +24,7 @@ export type RouteId =
   | 'contact'
   | 'about'
   | 'privacy'
+  | 'terms'
 
 /**
  * Path template per route, per language, relative to the language root (no
@@ -52,6 +53,7 @@ const ROUTE_DEFS: Record<RouteId, Bilingual<string>> = {
   contact: { en: 'contact', es: 'contacto' },
   about: { en: 'about', es: 'nosotros' },
   privacy: { en: 'privacy-policy', es: 'politica-de-privacidad' },
+  terms: { en: 'terms', es: 'terminos' },
 }
 
 /**

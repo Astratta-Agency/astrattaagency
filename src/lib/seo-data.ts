@@ -194,6 +194,18 @@ export const STATIC_SEO: Record<string, Bilingual<{ title: string; description: 
         'Cómo Astratta Agency recoge, usa y protege la información que compartes en astrattaagency.com — formularios, analítica, cookies y tus opciones.',
     },
   },
+  '/terms': {
+    en: {
+      title: 'Terms & Conditions — Astratta Agency',
+      description:
+        'The terms for using astrattaagency.com and buying the $297 Diagnostic — payment, refunds, the guarantee, and the 90-day credit.',
+    },
+    es: {
+      title: 'Términos y Condiciones — Astratta Agency',
+      description:
+        'Los términos de uso de astrattaagency.com y de la compra del Diagnóstico de $297 — pago, reembolsos, la garantía y el crédito de 90 días.',
+    },
+  },
   '/about': {
     en: {
       title: 'About — Astratta Agency | Dallas–Fort Worth Web Studio',

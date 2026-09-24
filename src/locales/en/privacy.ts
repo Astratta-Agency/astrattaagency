@@ -4,10 +4,12 @@
  * verdad: formularios → Supabase, GA4, reCAPTCHA v3, idioma en localStorage.
  * Si cambia lo que se recoge (p. ej. se añade Meta Pixel), esto se actualiza.
  */
-export type PrivacySection = {
+export type LegalSection = {
   heading: string
   paragraphs: string[]
   list?: string[]
+  /** Enlace interno al final de la sección — ruta canónica en inglés. */
+  link?: { label: string; to: string }
 }
 
 export const privacy = {
@@ -49,6 +51,7 @@ export const privacy = {
       list: [
         'Vercel — hosts the website.',
         'Supabase — stores the information you submit through our forms.',
+        'Stripe — processes Diagnostic payments. Your card details go straight to Stripe; we never see or store them.',
         'Google — provides Google Analytics and reCAPTCHA.',
       ],
     },
@@ -101,7 +104,7 @@ export const privacy = {
         'If we change how we handle your information, we\'ll update this page and the date at the top.',
       ],
     },
-  ] as PrivacySection[],
+  ] as LegalSection[],
   contactHeading: 'Questions',
   contactText: 'Any question about this policy or your data goes to:',
 }

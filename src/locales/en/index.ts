@@ -18,6 +18,7 @@ import { servicePages } from '@/locales/en/servicePages'
 import { digitalMarketing } from '@/locales/en/digitalMarketing'
 import { blog } from '@/locales/en/blog'
 import { privacy } from '@/locales/en/privacy'
+import { terms } from '@/locales/en/terms'
 
 export const en = {
   nav,
@@ -40,6 +41,7 @@ export const en = {
   digitalMarketing,
   blog,
   privacy,
+  terms,
 }
 
 export type Dictionary = typeof en

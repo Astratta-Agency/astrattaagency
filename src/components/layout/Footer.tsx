@@ -101,6 +101,9 @@ export function Footer() {
               <Link to="/privacy-policy" className="transition-colors hover:text-secondary">
                 {dict.footer.privacyLink}
               </Link>
+              <Link to="/terms" className="transition-colors hover:text-secondary">
+                {dict.footer.termsLink}
+              </Link>
               <p>
                 © {new Date().getFullYear()} {SITE.name}. {dict.footer.copyrightSuffix}
               </p>

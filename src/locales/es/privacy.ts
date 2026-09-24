@@ -39,6 +39,7 @@ export const privacy: typeof en = {
       list: [
         'Vercel — aloja el sitio web.',
         'Supabase — guarda la información que envías en nuestros formularios.',
+        'Stripe — procesa los pagos del Diagnóstico. Los datos de tu tarjeta van directo a Stripe; nosotros nunca los vemos ni los guardamos.',
         'Google — provee Google Analytics y reCAPTCHA.',
       ],
     },
