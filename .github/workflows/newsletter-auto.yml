@@ -1,0 +1,58 @@
+name: Newsletter — envío automático
+
+# Envía cada artículo nuevo a los suscriptores en cuanto está en vivo.
+#   · Disparo principal: Vercel termina un deploy de producción (deployment_status).
+#   · Respaldo: cada 6 horas, por si el aviso de Vercel no llegara.
+# El script solo envía artículos de los últimos 7 días cuya página ya responde
+# 200 en astrattaagency.com y que no estén en `newsletter_sends`, así que correr
+# de más no duplica nada. Para pruebas o reenvíos manuales:
+# "Newsletter — enviar artículo".
+
+on:
+  deployment_status:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: newsletter-send
+  cancel-in-progress: false
+
+jobs:
+  auto:
+    if: >-
+      github.event_name != 'deployment_status' ||
+      (github.event.deployment_status.state == 'success' &&
+       github.event.deployment.environment == 'Production')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # En un deploy, exactamente el commit que Vercel acaba de publicar.
+          ref: ${{ github.event.deployment.sha || github.sha }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Enviar artículos nuevos
+        run: node scripts/newsletter/send-post.mjs --mode auto
+        env:
+          NEWSLETTER_SEND_SECRET: ${{ secrets.NEWSLETTER_SEND_SECRET }}
+
+      - name: Subir vista previa
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: newsletter-preview
+          path: newsletter-preview/
+          if-no-files-found: ignore
