@@ -19,7 +19,9 @@
 | **I** | FAQ del home "¿qué incluye la auditoría?" | ✅ eliminada + reemplazo aplicado |
 | **J** | Migración SEO de las 4 páginas que mueren | ✅ resuelto con 4 frases · 301 aplicados |
 | **K** | FAQ perdidas al vaciar las 3 CONSERVAR | ✅ aplicado — FAQ restauradas + titulares |
-| **L** | Newsletter: correo de bienvenida + página de baja | ✅ aprobado por el dueño y aplicado |
+| **L** | Política de privacidad `/privacy-policy` · `/es/politica-de-privacidad` | ✅ aplicada — confirmada por el negocio |
+| **M** | Términos y condiciones `/terms` · `/es/terminos` + crédito del diagnóstico a 90 días | ✅ aplicado — condiciones confirmadas por el negocio |
+| **N** | Newsletter: correo de bienvenida + página de baja | ✅ aprobado por el dueño y aplicado |
 
 **Las metas siguen siendo el único hueco estructural.** El doc no define meta
 title/description para ninguna página nueva; las de `/how-it-works` y las que
@@ -365,7 +367,41 @@ ya no vende nada — solo redirige la intención hacia `/systems`.
 
 ---
 
-## L · Newsletter — bienvenida y baja
+## L · Política de privacidad
+`src/locales/{en,es}/privacy.ts` · Página legal pedida directamente; el doc de
+contenido no la cubre. El texto se escribió a partir de lo que el sitio hace de
+verdad, sin claims de más:
+
+- Formularios (Growth Score, diagnóstico, newsletter) → Edge Functions de Supabase.
+- Google Analytics 4 (`G-31Q2BFE1XC`, en `index.html`) y reCAPTCHA v3.
+- Idioma en `localStorage`, que no sale del navegador.
+- Hosting en Vercel. No hay Meta Pixel en el propio sitio (la CSP no lo permite).
+
+**Confirmado por el negocio (2026-09-24):** no se vende información a
+terceros, el criterio de retención queda como está y no hay más proveedores que
+los listados. Si se añade una herramienta que recoja datos (Pixel, chat, agenda),
+esta página se actualiza junto con la fecha. No sustituye revisión legal.
+
+---
+
+## M · Términos y condiciones
+`src/locales/{en,es}/terms.ts` · Pedidos directamente; el doc de contenido no
+los cubre. Condiciones del Diagnóstico confirmadas por el negocio (2026-09-24):
+
+- Pago único de $297 por adelantado vía **Stripe**. Stripe se añadió también a
+  la lista de proveedores de la política de privacidad (bloque L).
+- Cancelación antes de empezar → reembolso completo. Una vez empezado → sin
+  reembolso, **salvo la garantía** de las tres fugas cuantificables, que se mantiene.
+- Crédito completo si contrata en **90 días** desde la entrega. Esto **reemplaza
+  los 30 días** que tenía la garantía de `/diagnostic` (§ GARANTÍA del doc de
+  contenido, actualizado en el mismo commit).
+
+Foundation y los sistemas mensuales se remiten al contrato firmado con cada
+cliente: los términos del sitio no fijan sus condiciones. No sustituye revisión legal.
+
+---
+
+## N · Newsletter — bienvenida y baja
 Aprobado por el dueño (sep 2026) al migrar los correos de AWS SES a Resend.
 No está en el doc de contenido; si se añade allí, este bloque se actualiza.
 
@@ -403,5 +439,7 @@ Pie: © 2026 Astratta Agency · Dallas–Fort Worth, TX · [Cancelar suscripció
 ¿Cancelar tu suscripción?  [Cancelar]
 → Listo, cancelaste tu suscripción. No recibirás más correos.
 ```
+
+Resend se añadió a la lista de proveedores de la política de privacidad (bloque L), aprobado por el dueño.
 
 El pie lleva solo la ciudad por decisión del dueño. CAN-SPAM pide una dirección postal válida (sirve un PO Box): conviene completarla en `POSTAL_ADDRESS` de `subscribe-newsletter`.

@@ -355,8 +355,8 @@
 
 ### GARANTÍA
 
-**EN:** `Credited in full if we work together within 30 days. And if we don't find at least three quantifiable leaks, we refund it.`
-**ES:** `Se acredita completo si trabajamos juntos dentro de 30 días. Y si no encontramos al menos tres fugas cuantificables, te lo devolvemos.`
+**EN:** `Credited in full if we work together within 90 days. And if we don't find at least three quantifiable leaks, we refund it.`
+**ES:** `Se acredita completo si trabajamos juntos dentro de 90 días. Y si no encontramos al menos tres fugas cuantificables, te lo devolvemos.`
 
 ### FAQ
 

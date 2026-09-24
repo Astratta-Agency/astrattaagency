@@ -97,9 +97,17 @@ export function Footer() {
 
           <div className="flex flex-col justify-between gap-4 text-sm text-white/40 md:flex-row">
             <p>{SITE.location}</p>
-            <p>
-              © {new Date().getFullYear()} {SITE.name}. {dict.footer.copyrightSuffix}
-            </p>
+            <div className="flex flex-col gap-4 md:flex-row md:gap-8">
+              <Link to="/privacy-policy" className="transition-colors hover:text-secondary">
+                {dict.footer.privacyLink}
+              </Link>
+              <Link to="/terms" className="transition-colors hover:text-secondary">
+                {dict.footer.termsLink}
+              </Link>
+              <p>
+                © {new Date().getFullYear()} {SITE.name}. {dict.footer.copyrightSuffix}
+              </p>
+            </div>
           </div>
         </motion.div>
       </Container>

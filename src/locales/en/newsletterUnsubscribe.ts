@@ -1,4 +1,4 @@
-// Copy aprobado fuera del doc de contenido — ver docs/COPY-PENDIENTE.md (bloque L).
+// Copy aprobado fuera del doc de contenido — ver docs/COPY-PENDIENTE.md (bloque N).
 export const newsletterUnsubscribe = {
   metaTitle: 'Unsubscribe — Astratta Agency',
   heading: 'Unsubscribe from the newsletter?',

@@ -1,6 +1,6 @@
 import type { newsletterUnsubscribe as en } from '@/locales/en/newsletterUnsubscribe'
 
-// Copy aprobado fuera del doc de contenido — ver docs/COPY-PENDIENTE.md (bloque L).
+// Copy aprobado fuera del doc de contenido — ver docs/COPY-PENDIENTE.md (bloque N).
 export const newsletterUnsubscribe: typeof en = {
   metaTitle: 'Cancelar suscripción — Astratta Agency',
   heading: '¿Cancelar tu suscripción?',

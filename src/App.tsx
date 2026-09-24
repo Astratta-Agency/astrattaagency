@@ -22,6 +22,8 @@ import DigitalMarketing from '@/pages/DigitalMarketing'
 import Pricing from '@/pages/Pricing'
 import Contact from '@/pages/Contact'
 import About from '@/pages/About'
+import Privacy from '@/pages/Privacy'
+import Terms from '@/pages/Terms'
 import NotFound from '@/pages/NotFound'
 import NewsletterUnsubscribe from '@/pages/NewsletterUnsubscribe'
 
@@ -46,6 +48,8 @@ const PAGE_ROUTES: { id: RouteId; element: ReactElement }[] = [
   { id: 'pricing', element: <Pricing /> },
   { id: 'contact', element: <Contact /> },
   { id: 'about', element: <About /> },
+  { id: 'privacy', element: <Privacy /> },
+  { id: 'terms', element: <Terms /> },
   { id: 'newsletterUnsubscribe', element: <NewsletterUnsubscribe /> },
 ]
 

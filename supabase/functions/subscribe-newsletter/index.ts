@@ -63,7 +63,7 @@ async function verifyRecaptcha(token: string | null | undefined): Promise<{ ok: 
   return { ok: true };
 }
 
-// Copy approved by the owner — registered in docs/COPY-PENDIENTE.md (bloque L).
+// Copy approved by the owner — registered in docs/COPY-PENDIENTE.md (bloque N).
 // Each paragraph is a list of segments; a segment with `href` renders as a link.
 type Segment = { text: string; href?: LinkKey };
 type LinkKey = "blog" | "instagram" | "facebook" | "linkedin";

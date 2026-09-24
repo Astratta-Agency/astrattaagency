@@ -17,6 +17,8 @@ import { about } from '@/locales/en/about'
 import { servicePages } from '@/locales/en/servicePages'
 import { digitalMarketing } from '@/locales/en/digitalMarketing'
 import { blog } from '@/locales/en/blog'
+import { privacy } from '@/locales/en/privacy'
+import { terms } from '@/locales/en/terms'
 import { newsletterUnsubscribe } from '@/locales/en/newsletterUnsubscribe'
 
 export const en = {
@@ -39,6 +41,8 @@ export const en = {
   servicePages,
   digitalMarketing,
   blog,
+  privacy,
+  terms,
   newsletterUnsubscribe,
 }
 

@@ -23,7 +23,7 @@ export const diagnostic: typeof en = {
 
   guaranteeEyebrow: 'Garantía',
   guarantee:
-    'Se acredita completo si trabajamos juntos dentro de 30 días. Y si no encontramos al menos tres fugas cuantificables, te lo devolvemos.',
+    'Se acredita completo si trabajamos juntos dentro de 90 días. Y si no encontramos al menos tres fugas cuantificables, te lo devolvemos.',
 
   faqEyebrow: 'FAQ',
   faq: [
