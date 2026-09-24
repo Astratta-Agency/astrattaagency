@@ -71,6 +71,16 @@
       "permanent": true
     }
   ],
+  "rewrites": [
+    {
+      "source": "/newsletter/unsubscribe",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/es/newsletter/baja",
+      "destination": "/index.html"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

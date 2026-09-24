@@ -18,7 +18,7 @@ export function NewsletterForm({
   /** single-row layout for inline/footer placements; the full stacked form is used on the blog index */
   compact?: boolean
 }) {
-  const { dict } = useLanguage()
+  const { dict, language } = useLanguage()
   const t = dict.forms.newsletter
   const resolvedSubmitLabel = submitLabel ?? t.subscribeLabel
   const INTERESTS = [
@@ -51,6 +51,7 @@ export function NewsletterForm({
       email: String(data.get('email') ?? ''),
       interest_tag: interest,
       source_page: source,
+      language,
       recaptcha_token: recaptchaToken,
       honeypot: String(data.get('company_role') ?? ''),
     }

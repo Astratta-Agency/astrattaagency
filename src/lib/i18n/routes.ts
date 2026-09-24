@@ -25,6 +25,7 @@ export type RouteId =
   | 'about'
   | 'privacy'
   | 'terms'
+  | 'newsletterUnsubscribe'
 
 /**
  * Path template per route, per language, relative to the language root (no
@@ -54,6 +55,10 @@ const ROUTE_DEFS: Record<RouteId, Bilingual<string>> = {
   about: { en: 'about', es: 'nosotros' },
   privacy: { en: 'privacy-policy', es: 'politica-de-privacidad' },
   terms: { en: 'terms', es: 'terminos' },
+
+  // Destino del enlace de baja de los correos del newsletter (noindex, fuera
+  // del sitemap). La Edge Function subscribe-newsletter construye esta URL.
+  newsletterUnsubscribe: { en: 'newsletter/unsubscribe', es: 'newsletter/baja' },
 }
 
 /**

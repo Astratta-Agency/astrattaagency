@@ -40,3 +40,4 @@ generated_imgs/
 # Blog automation
 src/assets/blog/_test-*.webp
 .blog-specs/*.local.json
+newsletter-preview/

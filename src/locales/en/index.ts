@@ -19,6 +19,7 @@ import { digitalMarketing } from '@/locales/en/digitalMarketing'
 import { blog } from '@/locales/en/blog'
 import { privacy } from '@/locales/en/privacy'
 import { terms } from '@/locales/en/terms'
+import { newsletterUnsubscribe } from '@/locales/en/newsletterUnsubscribe'
 
 export const en = {
   nav,
@@ -42,6 +43,7 @@ export const en = {
   blog,
   privacy,
   terms,
+  newsletterUnsubscribe,
 }
 
 export type Dictionary = typeof en

@@ -51,6 +51,7 @@ export const privacy = {
       list: [
         'Vercel — hosts the website.',
         'Supabase — stores the information you submit through our forms.',
+        'Resend — sends our emails, including the newsletter and replies to the forms you submit.',
         'Stripe — processes Diagnostic payments. Your card details go straight to Stripe; we never see or store them.',
         'Google — provides Google Analytics and reCAPTCHA.',
       ],

@@ -88,5 +88,8 @@ export const FORM_ENDPOINT = import.meta.env.VITE_FORM_ENDPOINT ?? ''
 /** Newsletter capture endpoint (Supabase Edge Function `subscribe-newsletter`) — set VITE_NEWSLETTER_ENDPOINT in .env / Vercel. */
 export const NEWSLETTER_ENDPOINT = import.meta.env.VITE_NEWSLETTER_ENDPOINT ?? ''
 
+/** Newsletter unsubscribe endpoint (Supabase Edge Function `unsubscribe-newsletter`) — lives next to subscribe-newsletter. */
+export const UNSUBSCRIBE_ENDPOINT = NEWSLETTER_ENDPOINT.replace(/subscribe-newsletter$/, 'unsubscribe-newsletter')
+
 /** reCAPTCHA v3 site key (public) — set VITE_RECAPTCHA_SITE_KEY in .env / Vercel. Forms skip reCAPTCHA if unset. */
 export const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY ?? ''

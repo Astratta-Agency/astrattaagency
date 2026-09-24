@@ -1,0 +1,348 @@
+// Edge Function: subscribe-newsletter
+// Public endpoint (no auth) — receives newsletter signups from the blog
+// (inline opt-in, footer opt-in, /newsletter landing).
+// Upserts into `subscribers` via the service-role client (RLS blocks
+// anon writes) scoped to the astratta-agency workspace. Re-subscribing
+// with the same email flips status back to 'subscribed'.
+//
+// Sends a welcome email through Resend to new (or returning) subscribers,
+// in the language they signed up in. Every email carries the subscriber's
+// unsubscribe link plus RFC 8058 List-Unsubscribe headers (one-click
+// unsubscribe, handled by the `unsubscribe-newsletter` function).
+// Email failure never blocks the signup.
+//
+// Source of truth: supabase/functions/subscribe-newsletter/index.ts in the website repo.
+
+import { createClient } from "npm:@supabase/supabase-js@2";
+import { z } from "npm:zod@3.23.8";
+
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+};
+
+const DEFAULT_FROM = "Astratta Agency <info@astrattaagency.com>";
+const DEFAULT_SITE_URL = "https://astrattaagency.com";
+
+const BodySchema = z.object({
+  workspace_slug: z.string().min(1).max(200),
+  email: z.string().trim().email().max(255),
+  interest_tag: z.string().trim().max(100).optional().nullable(),
+  source_page: z.string().trim().max(100).optional().nullable(),
+  language: z.enum(["en", "es"]).optional().nullable(),
+  recaptcha_token: z.string().trim().min(1).optional().nullable(),
+  honeypot: z.string().optional().nullable(),
+});
+
+type Language = "en" | "es";
+
+const json = (body: unknown, status = 200) =>
+  new Response(JSON.stringify(body), {
+    status,
+    headers: { ...corsHeaders, "Content-Type": "application/json" },
+  });
+
+// reCAPTCHA v3 verification. Only enforced when RECAPTCHA_SECRET_KEY is
+// configured — same secret already used by capture-lead.
+async function verifyRecaptcha(token: string | null | undefined): Promise<{ ok: boolean; reason?: string }> {
+  const secret = Deno.env.get("RECAPTCHA_SECRET_KEY");
+  if (!secret) return { ok: true };
+  if (!token) return { ok: false, reason: "missing_token" };
+
+  const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({ secret, response: token }),
+  });
+  const result = await res.json().catch(() => null);
+  if (!result?.success) return { ok: false, reason: "verify_failed" };
+  if (typeof result.score === "number" && result.score < 0.5) {
+    return { ok: false, reason: `low_score_${result.score}` };
+  }
+  return { ok: true };
+}
+
+// Copy approved by the owner — registered in docs/COPY-PENDIENTE.md (bloque N).
+// Each paragraph is a list of segments; a segment with `href` renders as a link.
+type Segment = { text: string; href?: LinkKey };
+type LinkKey = "blog" | "instagram" | "facebook" | "linkedin";
+
+const WELCOME_COPY: Record<
+  Language,
+  { subject: string; greeting: string; paragraphs: Segment[][]; closing: string; signature: string; unsubscribe: string }
+> = {
+  en: {
+    subject: "You're in — welcome to Astratta",
+    greeting: "Hi!",
+    paragraphs: [
+      [{ text: "Thanks for subscribing. You'll get our web, marketing, and design breakdowns — no spam." }],
+      [
+        { text: "Missed one? Catch up on past breakdowns on " },
+        { text: "our blog", href: "blog" },
+        { text: "." },
+      ],
+      [
+        { text: "Know someone who'd find these useful? Forward this email — or follow us on " },
+        { text: "Instagram", href: "instagram" },
+        { text: ", " },
+        { text: "Facebook", href: "facebook" },
+        { text: ", or " },
+        { text: "LinkedIn", href: "linkedin" },
+        { text: "." },
+      ],
+    ],
+    closing: "See you in your inbox.",
+    signature: "— Astratta Agency",
+    unsubscribe: "Unsubscribe",
+  },
+  es: {
+    subject: "Ya estás dentro — bienvenido a Astratta",
+    greeting: "¡Hola!",
+    paragraphs: [
+      [{ text: "Gracias por suscribirte. Vas a recibir nuestros análisis de web, marketing y diseño — sin spam." }],
+      [
+        { text: "¿Te perdiste alguno? Ponte al día con los análisis anteriores en " },
+        { text: "nuestro blog", href: "blog" },
+        { text: "." },
+      ],
+      [
+        { text: "¿Conoces a alguien a quien le sirvan? Reenvíale este correo — o síguenos en " },
+        { text: "Instagram", href: "instagram" },
+        { text: ", " },
+        { text: "Facebook", href: "facebook" },
+        { text: " o " },
+        { text: "LinkedIn", href: "linkedin" },
+        { text: "." },
+      ],
+    ],
+    closing: "Nos vemos en tu bandeja de entrada.",
+    signature: "— Astratta Agency",
+    unsubscribe: "Cancelar suscripción",
+  },
+};
+
+/** Postal line required by CAN-SPAM — the owner chose city-level for now. */
+const POSTAL_ADDRESS = "Dallas–Fort Worth, TX";
+
+// Mirrors SOCIALS in src/lib/constants.ts.
+const SOCIAL_URLS = {
+  instagram: "https://instagram.com/astrattaagency",
+  facebook: "https://facebook.com/astrattaagency",
+  linkedin: "https://linkedin.com/company/astrattaagency",
+} as const;
+
+function siteUrl(): string {
+  return (Deno.env.get("SITE_URL") ?? DEFAULT_SITE_URL).replace(/\/+$/, "");
+}
+
+function linkUrl(key: LinkKey, language: Language): string {
+  if (key === "blog") return `${siteUrl()}${language === "es" ? "/es/blog" : "/blog"}`;
+  return SOCIAL_URLS[key];
+}
+
+/** The site page that confirms the unsubscribe — kept in sync with ROUTE_DEFS.newsletterUnsubscribe. */
+function unsubscribePageUrl(language: Language, token: string): string {
+  const path = language === "es" ? "/es/newsletter/baja" : "/newsletter/unsubscribe";
+  return `${siteUrl()}${path}?token=${encodeURIComponent(token)}`;
+}
+
+/** RFC 8058 one-click endpoint — mail clients POST here directly from their own "Unsubscribe" button. */
+function oneClickUrl(token: string): string {
+  const supabaseUrl = Deno.env.get("SUPABASE_URL")!.replace(/\/+$/, "");
+  return `${supabaseUrl}/functions/v1/unsubscribe-newsletter?token=${encodeURIComponent(token)}`;
+}
+
+// Brand tokens (CLAUDE.md §12) inlined — email clients don't load stylesheets.
+const INK = "#0e0e12";
+const PRIMARY = "#5140f2";
+const MUTED = "#6b6b73";
+const FONT = "Mulish,Helvetica,Arial,sans-serif";
+
+function welcomeHtml(language: Language, unsubscribeUrl: string): string {
+  const t = WELCOME_COPY[language];
+  const year = new Date().getFullYear();
+  const p = (content: string) =>
+    `<p style="margin:0 0 20px;font-family:${FONT};font-size:16px;line-height:1.65;color:${INK};">${content}</p>`;
+  const renderSegments = (segments: Segment[]) =>
+    segments
+      .map((seg) =>
+        seg.href
+          ? `<a href="${linkUrl(seg.href, language)}" style="color:${PRIMARY};font-weight:700;text-decoration:none;">${seg.text}</a>`
+          : seg.text,
+      )
+      .join("");
+
+  return `<!doctype html>
+<html lang="${language}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>${t.subject}</title>
+  </head>
+  <body style="margin:0;padding:0;background:#ffffff;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;">
+      <tr>
+        <td align="center" style="padding:40px 20px;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;">
+            <tr>
+              <td style="padding:0 0 40px;">
+                <a href="${siteUrl()}${language === "es" ? "/es" : "/"}">
+                  <img src="${siteUrl()}/email/logo.png" width="148" alt="Astratta Agency" style="display:block;width:148px;height:auto;border:0;" />
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                ${p(`<strong style="font-size:20px;">${t.greeting}</strong>`)}
+                ${t.paragraphs.map((segments) => p(renderSegments(segments))).join("\n                ")}
+                ${p(`${t.closing}<br />${t.signature}`)}
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:24px 0 0;border-top:1px solid #eaeaea;text-align:center;font-family:${FONT};font-size:12px;line-height:1.8;color:${MUTED};">
+                © ${year} Astratta Agency<br />
+                ${POSTAL_ADDRESS}<br />
+                <a href="${unsubscribeUrl}" style="color:${MUTED};text-decoration:underline;">${t.unsubscribe}</a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>`;
+}
+
+function welcomeText(language: Language, unsubscribeUrl: string): string {
+  const t = WELCOME_COPY[language];
+  const paragraphs = t.paragraphs.map((segments) =>
+    segments.map((seg) => (seg.href ? `${seg.text} (${linkUrl(seg.href, language)})` : seg.text)).join(""),
+  );
+  return [
+    t.greeting,
+    "",
+    ...paragraphs.flatMap((para) => [para, ""]),
+    t.closing,
+    t.signature,
+    "",
+    "—",
+    `© ${new Date().getFullYear()} Astratta Agency · ${POSTAL_ADDRESS}`,
+    `${t.unsubscribe}: ${unsubscribeUrl}`,
+  ].join("\n");
+}
+
+async function sendWelcomeEmail(to: string, language: Language, token: string): Promise<void> {
+  const apiKey = Deno.env.get("RESEND_API_KEY");
+  if (!apiKey) {
+    console.warn("[subscribe-newsletter] RESEND_API_KEY not configured — skipping welcome email");
+    return;
+  }
+
+  const pageUrl = unsubscribePageUrl(language, token);
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      from: Deno.env.get("RESEND_FROM") ?? DEFAULT_FROM,
+      to: [to],
+      subject: WELCOME_COPY[language].subject,
+      html: welcomeHtml(language, pageUrl),
+      text: welcomeText(language, pageUrl),
+      headers: {
+        "List-Unsubscribe": `<${oneClickUrl(token)}>`,
+        "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+      },
+      tags: [{ name: "category", value: "newsletter_welcome" }],
+    }),
+  });
+
+  if (!res.ok) {
+    const detail = await res.text().catch(() => "");
+    console.error("[subscribe-newsletter] Resend send failed", res.status, detail);
+  }
+}
+
+Deno.serve(async (req) => {
+  if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
+
+  try {
+    const raw = await req.json().catch(() => null);
+    const parsed = BodySchema.safeParse(raw);
+    if (!parsed.success) {
+      return json({ success: false, error: "invalid_body", details: parsed.error.flatten() }, 400);
+    }
+    const data = parsed.data;
+
+    if (data.honeypot && data.honeypot.trim().length > 0) {
+      return json({ success: true });
+    }
+
+    const rc = await verifyRecaptcha(data.recaptcha_token);
+    if (!rc.ok) {
+      console.warn("[subscribe-newsletter] recaptcha rejected", rc.reason);
+      return json({ success: false, error: "recaptcha_failed" }, 400);
+    }
+
+    const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+    const serviceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+    const admin = createClient(supabaseUrl, serviceKey);
+
+    const { data: workspace, error: wsErr } = await admin
+      .from("workspaces")
+      .select("id")
+      .eq("slug", data.workspace_slug)
+      .maybeSingle();
+    if (wsErr) return json({ success: false, error: "workspace_lookup_failed", detail: wsErr.message }, 500);
+    if (!workspace) return json({ success: false, error: "workspace_not_found" }, 404);
+
+    const email = data.email.toLowerCase();
+    const language: Language = data.language ?? "en";
+
+    // Someone already subscribed who submits the form again doesn't get a
+    // second welcome — only brand-new and returning (previously unsubscribed)
+    // addresses do.
+    const { data: existing } = await admin
+      .from("subscribers")
+      .select("status")
+      .eq("workspace_id", workspace.id)
+      .eq("email", email)
+      .maybeSingle();
+    const shouldWelcome = existing?.status !== "subscribed";
+
+    const { data: row, error: upsertErr } = await admin
+      .from("subscribers")
+      .upsert(
+        {
+          workspace_id: workspace.id,
+          email,
+          interest_tag: data.interest_tag || null,
+          source_page: data.source_page || null,
+          language,
+          status: "subscribed",
+          unsubscribed_at: null,
+        },
+        { onConflict: "workspace_id,email" },
+      )
+      .select("unsubscribe_token")
+      .single();
+
+    if (upsertErr) {
+      console.error("[subscribe-newsletter] upsert failed", upsertErr);
+      return json({ success: false, error: "insert_failed", detail: upsertErr.message }, 500);
+    }
+
+    if (shouldWelcome && row?.unsubscribe_token) {
+      try {
+        await sendWelcomeEmail(email, language, row.unsubscribe_token);
+      } catch (e) {
+        console.error("[subscribe-newsletter] email error (subscriber saved)", e);
+      }
+    }
+
+    return json({ success: true });
+  } catch (e) {
+    console.error("[subscribe-newsletter] unexpected", e);
+    return json({ success: false, error: "unexpected", detail: String(e) }, 500);
+  }
+});
