@@ -19,7 +19,7 @@
 | **I** | FAQ del home "¿qué incluye la auditoría?" | ✅ eliminada + reemplazo aplicado |
 | **J** | Migración SEO de las 4 páginas que mueren | ✅ resuelto con 4 frases · 301 aplicados |
 | **K** | FAQ perdidas al vaciar las 3 CONSERVAR | ✅ aplicado — FAQ restauradas + titulares |
-| **L** | Política de privacidad `/privacy-policy` · `/es/politica-de-privacidad` | ⚠️ aplicada — pendiente de revisión del negocio |
+| **L** | Política de privacidad `/privacy-policy` · `/es/politica-de-privacidad` | ✅ aplicada — confirmada por el negocio |
 
 **Las metas siguen siendo el único hueco estructural.** El doc no define meta
 title/description para ninguna página nueva; las de `/how-it-works` y las que
@@ -375,7 +375,7 @@ verdad, sin claims de más:
 - Idioma en `localStorage`, que no sale del navegador.
 - Hosting en Vercel. No hay Meta Pixel en el propio sitio (la CSP no lo permite).
 
-**Pendiente de confirmar por el negocio:** que no se vende información a
-terceros, el criterio de retención y que la lista de proveedores está completa.
-Si se añade una herramienta que recoja datos (Pixel, chat, agenda), esta página
-se actualiza junto con la fecha. No sustituye revisión legal.
+**Confirmado por el negocio (2026-09-24):** no se vende información a
+terceros, el criterio de retención queda como está y no hay más proveedores que
+los listados. Si se añade una herramienta que recoja datos (Pixel, chat, agenda),
+esta página se actualiza junto con la fecha. No sustituye revisión legal.
