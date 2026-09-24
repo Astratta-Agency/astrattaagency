@@ -20,6 +20,8 @@ type SeoProps = {
    * from it — callers never write "/es/..." by hand.
    */
   path: string
+  /** Keeps utility pages (e.g. newsletter unsubscribe) out of search results. */
+  noindex?: boolean
 }
 
 const OG_LOCALES: Record<Language, string> = { en: 'en_US', es: 'es_ES' }
@@ -56,7 +58,7 @@ function setLink(rel: string, href: string, hreflang?: string) {
  * URL, and the three alternates (en / es / x-default) are reciprocal, which is
  * what lets both language versions be indexed independently.
  */
-export function Seo({ title, description, path }: SeoProps) {
+export function Seo({ title, description, path, noindex = false }: SeoProps) {
   const { language } = useLanguage()
 
   useEffect(() => {
@@ -90,6 +92,12 @@ export function Seo({ title, description, path }: SeoProps) {
     setLink('alternate', alternates.es, 'es')
     setLink('alternate', alternates.en, 'x-default')
   }, [title, description, path, language])
+
+  useEffect(() => {
+    if (!noindex) return
+    setMeta('name', 'robots', 'noindex, nofollow')
+    return () => document.querySelector('meta[name="robots"]')?.remove()
+  }, [noindex])
 
   return null
 }

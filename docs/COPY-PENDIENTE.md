@@ -19,6 +19,7 @@
 | **I** | FAQ del home "¿qué incluye la auditoría?" | ✅ eliminada + reemplazo aplicado |
 | **J** | Migración SEO de las 4 páginas que mueren | ✅ resuelto con 4 frases · 301 aplicados |
 | **K** | FAQ perdidas al vaciar las 3 CONSERVAR | ✅ aplicado — FAQ restauradas + titulares |
+| **L** | Newsletter: correo de bienvenida + página de baja | ✅ aprobado por el dueño y aplicado |
 
 **Las metas siguen siendo el único hueco estructural.** El doc no define meta
 title/description para ninguna página nueva; las de `/how-it-works` y las que
@@ -361,3 +362,34 @@ de Foundation, que es canónica.
 `/services/digital-marketing` se queda sin bloque FAQ a propósito: sus tres
 preguntas vendían Paid Ads y Lead Generation como productos sueltos, y la página
 ya no vende nada — solo redirige la intención hacia `/systems`.
+
+---
+
+## L · Newsletter — bienvenida y baja
+Aprobado por el dueño (sep 2026) al migrar los correos de AWS SES a Resend.
+No está en el doc de contenido; si se añade allí, este bloque se actualiza.
+
+- **Correo de bienvenida** → `supabase/functions/subscribe-newsletter/index.ts` (`WELCOME_COPY`)
+- **Página de baja** (`/newsletter/unsubscribe` · `/es/newsletter/baja`) → `src/locales/{en,es}/newsletterUnsubscribe.ts`
+
+**EN**
+```
+Subject: You're in — welcome to Astratta
+Hi!
+Thanks for subscribing. You'll get our web, marketing, and design breakdowns — no spam.
+If you ever want out, one click: [Unsubscribe]
+
+Unsubscribe from the newsletter?  [Unsubscribe]
+→ You're unsubscribed. You won't get any more emails from us.
+```
+
+**ES**
+```
+Asunto: Ya estás dentro — bienvenido a Astratta
+¡Hola!
+Gracias por suscribirte. Vas a recibir nuestros análisis de web, marketing y diseño — sin spam.
+Si algún día quieres salir, un clic: [Cancelar suscripción]
+
+¿Cancelar tu suscripción?  [Cancelar]
+→ Listo, cancelaste tu suscripción. No recibirás más correos.
+```

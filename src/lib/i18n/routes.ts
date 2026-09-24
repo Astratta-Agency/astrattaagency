@@ -23,6 +23,7 @@ export type RouteId =
   | 'pricing'
   | 'contact'
   | 'about'
+  | 'newsletterUnsubscribe'
 
 /**
  * Path template per route, per language, relative to the language root (no
@@ -50,6 +51,10 @@ const ROUTE_DEFS: Record<RouteId, Bilingual<string>> = {
   pricing: { en: 'pricing', es: 'precios' },
   contact: { en: 'contact', es: 'contacto' },
   about: { en: 'about', es: 'nosotros' },
+
+  // Destino del enlace de baja de los correos del newsletter (noindex, fuera
+  // del sitemap). La Edge Function subscribe-newsletter construye esta URL.
+  newsletterUnsubscribe: { en: 'newsletter/unsubscribe', es: 'newsletter/baja' },
 }
 
 /**

@@ -152,6 +152,9 @@ React 19.2 · Vite 8.1 · react-router-dom 7.18 · TypeScript 6.0 · Tailwind v4
 - Añadir una página nueva implica añadir su entrada a `STATIC_SEO` en `src/lib/seo-data.ts`, o el prerender no la cubrirá.
 - Componentes que hagan `createPortal` a `<body>` deben contemplarse en `scripts/prerender.mjs` (ya limpia los hijos de `body` que no sean `#root`).
 
+### Formularios y correo
+Los formularios llaman a Edge Functions de Supabase (proyecto `vdnblnrwkkychxzbixam`) cuyo código vive en **`supabase/functions/`** (fuente de verdad; se despliegan desde ahí): `capture-lead`, `subscribe-newsletter`, `unsubscribe-newsletter`. El correo sale por **Resend** (secret `RESEND_API_KEY` en Supabase); `capture-lead` cae a SES solo si falta la key. Todo correo del newsletter lleva enlace de baja (`/newsletter/unsubscribe` · `/es/newsletter/baja`, noindex, con rewrite en `vercel.json`) y cabeceras `List-Unsubscribe` one-click.
+
 ### Componentes reutilizables
 Antes de crear uno nuevo, revisa: `PricingTable`, `FaqAccordion`/`Accordion`, `ServiceProcess` (timeline), `ServiceBenefits`, `ServiceFrustrations`, `AddOnsList`, `ProofSnapshot`, `ProofGallery`, `Breadcrumbs`, `ContactForm`, `NewsletterForm`, `MagneticButton`, `RevealText`, `Container`, `SectionLabel`, `Counter`, `JsonLd`.
 

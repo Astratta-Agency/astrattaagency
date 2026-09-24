@@ -23,6 +23,7 @@ import Pricing from '@/pages/Pricing'
 import Contact from '@/pages/Contact'
 import About from '@/pages/About'
 import NotFound from '@/pages/NotFound'
+import NewsletterUnsubscribe from '@/pages/NewsletterUnsubscribe'
 
 /**
  * Every page is registered once here and emitted per language by the loop
@@ -45,6 +46,7 @@ const PAGE_ROUTES: { id: RouteId; element: ReactElement }[] = [
   { id: 'pricing', element: <Pricing /> },
   { id: 'contact', element: <Contact /> },
   { id: 'about', element: <About /> },
+  { id: 'newsletterUnsubscribe', element: <NewsletterUnsubscribe /> },
 ]
 
 /** Keyed by the canonical English slug — the same key SERVICE_SLUGS uses. */
