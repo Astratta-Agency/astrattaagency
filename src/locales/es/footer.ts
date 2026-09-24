@@ -6,4 +6,6 @@ export const footer: typeof en = {
   newsletterSubtext: 'Análisis de web, marketing y diseño — sin spam, cancela cuando quieras.',
   socialsHeading: 'Redes sociales',
   copyrightSuffix: 'Todos los derechos reservados.',
+  privacyLink: 'Política de Privacidad',
+  termsLink: 'Términos y Condiciones',
 }

@@ -21,7 +21,7 @@ export const diagnostic = {
 
   guaranteeEyebrow: 'Guarantee',
   guarantee:
-    "Credited in full if we work together within 30 days. And if we don't find at least three quantifiable leaks, we refund it.",
+    "Credited in full if we work together within 90 days. And if we don't find at least three quantifiable leaks, we refund it.",
 
   faqEyebrow: 'FAQ',
   faq: [

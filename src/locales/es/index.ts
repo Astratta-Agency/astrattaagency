@@ -18,6 +18,8 @@ import { about } from '@/locales/es/about'
 import { servicePages } from '@/locales/es/servicePages'
 import { digitalMarketing } from '@/locales/es/digitalMarketing'
 import { blog } from '@/locales/es/blog'
+import { privacy } from '@/locales/es/privacy'
+import { terms } from '@/locales/es/terms'
 
 export const es: Dictionary = {
   nav,
@@ -39,4 +41,6 @@ export const es: Dictionary = {
   servicePages,
   digitalMarketing,
   blog,
+  privacy,
+  terms,
 }
