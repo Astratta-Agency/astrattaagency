@@ -21,7 +21,7 @@
 | **K** | FAQ perdidas al vaciar las 3 CONSERVAR | ✅ aplicado — FAQ restauradas + titulares |
 | **L** | Política de privacidad `/privacy-policy` · `/es/politica-de-privacidad` | ✅ aplicada — confirmada por el negocio |
 | **M** | Términos y condiciones `/terms` · `/es/terminos` + crédito del diagnóstico a 90 días | ✅ aplicado — condiciones confirmadas por el negocio |
-| **N** | Newsletter: correo de bienvenida + página de baja | ✅ aprobado por el dueño y aplicado |
+| **N** | Newsletter: bienvenida, página de baja y correo de artículo nuevo | ✅ aprobado por el dueño y aplicado |
 
 **Las metas siguen siendo el único hueco estructural.** El doc no define meta
 title/description para ninguna página nueva; las de `/how-it-works` y las que
@@ -443,3 +443,15 @@ Pie: © 2026 Astratta Agency · Dallas–Fort Worth, TX · [Cancelar suscripció
 Resend se añadió a la lista de proveedores de la política de privacidad (bloque L), aprobado por el dueño.
 
 El pie lleva solo la ciudad por decisión del dueño. CAN-SPAM pide una dirección postal válida (sirve un PO Box): conviene completarla en `POSTAL_ADDRESS` de `subscribe-newsletter`.
+
+### Correo de artículo nuevo
+El artículo completo dentro del correo (referencia: Weplash). Plantilla en
+`scripts/newsletter/post-email.mjs`. Título, extracto, fecha, tiempo de lectura,
+autor, cuerpo, CTA del diagnóstico y "Compartir" salen del artículo y de
+`src/locales/{en,es}/blog.ts`. Solo estas frases son nuevas (aprobadas):
+
+| | EN | ES |
+|---|---|---|
+| Arriba | Was this forwarded to you? [Subscribe here] | ¿Te reenviaron este correo? [Suscríbete aquí] |
+| Botón | Read on the web ↗ | Leer en la web ↗ |
+| Asunto | {título del artículo} | {título del artículo} |

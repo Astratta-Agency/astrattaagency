@@ -155,6 +155,8 @@ React 19.2 · Vite 8.1 · react-router-dom 7.18 · TypeScript 6.0 · Tailwind v4
 ### Formularios y correo
 Los formularios llaman a Edge Functions de Supabase (proyecto `vdnblnrwkkychxzbixam`) cuyo código vive en **`supabase/functions/`** (fuente de verdad; se despliegan desde ahí): `capture-lead`, `subscribe-newsletter`, `unsubscribe-newsletter`. El correo sale por **Resend** (secret `RESEND_API_KEY` en Supabase); `capture-lead` cae a SES solo si falta la key. Todo correo del newsletter lleva enlace de baja (`/newsletter/unsubscribe` · `/es/newsletter/baja`, noindex, con rewrite en `vercel.json`) y cabeceras `List-Unsubscribe` one-click.
 
+**Artículo nuevo → newsletter:** botón manual en GitHub Actions ("Newsletter — enviar artículo", modo `test` o `send`). `scripts/newsletter/send-post.mjs` arma el correo con el artículo completo y la Edge Function `send-post-newsletter` lo envía; `newsletter_sends` impide que un artículo salga dos veces. Vista previa local: `node scripts/newsletter/send-post.mjs --mode preview`.
+
 ### Componentes reutilizables
 Antes de crear uno nuevo, revisa: `PricingTable`, `FaqAccordion`/`Accordion`, `ServiceProcess` (timeline), `ServiceBenefits`, `ServiceFrustrations`, `AddOnsList`, `ProofSnapshot`, `ProofGallery`, `Breadcrumbs`, `ContactForm`, `NewsletterForm`, `MagneticButton`, `RevealText`, `Container`, `SectionLabel`, `Counter`, `JsonLd`.
 

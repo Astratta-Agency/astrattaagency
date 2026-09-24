@@ -1,0 +1,65 @@
+name: Newsletter — enviar artículo
+
+# Botón manual: Actions → "Newsletter — enviar artículo" → Run workflow.
+#   · modo "test": envía EN y ES solo a info@astrattaagency.com (se puede repetir).
+#   · modo "send": envía a todos los suscriptores activos. Un artículo sale una
+#     sola vez — un segundo "send" del mismo slug responde already_sent.
+# Siempre deja la vista previa HTML como artifact descargable del run.
+# Necesita el secret NEWSLETTER_SEND_SECRET (el mismo valor en Supabase).
+
+on:
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: 'Slug EN del artículo (vacío = el más reciente)'
+        required: false
+        default: ''
+      mode:
+        description: 'test = solo a info@ · send = a todos los suscriptores'
+        required: true
+        type: choice
+        default: test
+        options:
+          - test
+          - send
+
+permissions:
+  contents: read
+
+concurrency:
+  group: newsletter-send
+  cancel-in-progress: false
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Vista previa
+        run: node scripts/newsletter/send-post.mjs --mode preview ${SLUG:+--slug "$SLUG"}
+        env:
+          SLUG: ${{ inputs.slug }}
+
+      - name: Subir vista previa
+        uses: actions/upload-artifact@v4
+        with:
+          name: newsletter-preview
+          path: newsletter-preview/
+
+      - name: Enviar (${{ inputs.mode }})
+        run: node scripts/newsletter/send-post.mjs --mode "$MODE" ${SLUG:+--slug "$SLUG"}
+        env:
+          SLUG: ${{ inputs.slug }}
+          MODE: ${{ inputs.mode }}
+          NEWSLETTER_SEND_SECRET: ${{ secrets.NEWSLETTER_SEND_SECRET }}
