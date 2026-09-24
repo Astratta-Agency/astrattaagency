@@ -64,28 +64,87 @@ async function verifyRecaptcha(token: string | null | undefined): Promise<{ ok: 
 }
 
 // Copy approved by the owner — registered in docs/COPY-PENDIENTE.md (bloque L).
-const WELCOME_COPY: Record<Language, { subject: string; greeting: string; body: string; outro: string; unsubscribe: string }> = {
+// Each paragraph is a list of segments; a segment with `href` renders as a link.
+type Segment = { text: string; href?: LinkKey };
+type LinkKey = "blog" | "instagram" | "facebook" | "linkedin";
+
+const WELCOME_COPY: Record<
+  Language,
+  { subject: string; greeting: string; paragraphs: Segment[][]; closing: string; signature: string; unsubscribe: string }
+> = {
   en: {
     subject: "You're in — welcome to Astratta",
     greeting: "Hi!",
-    body: "Thanks for subscribing. You'll get our web, marketing, and design breakdowns — no spam.",
-    outro: "If you ever want out, one click:",
+    paragraphs: [
+      [{ text: "Thanks for subscribing. You'll get our web, marketing, and design breakdowns — no spam." }],
+      [
+        { text: "Missed one? Catch up on past breakdowns on " },
+        { text: "our blog", href: "blog" },
+        { text: "." },
+      ],
+      [
+        { text: "Know someone who'd find these useful? Forward this email — or follow us on " },
+        { text: "Instagram", href: "instagram" },
+        { text: ", " },
+        { text: "Facebook", href: "facebook" },
+        { text: ", or " },
+        { text: "LinkedIn", href: "linkedin" },
+        { text: "." },
+      ],
+    ],
+    closing: "See you in your inbox.",
+    signature: "— Astratta Agency",
     unsubscribe: "Unsubscribe",
   },
   es: {
     subject: "Ya estás dentro — bienvenido a Astratta",
     greeting: "¡Hola!",
-    body: "Gracias por suscribirte. Vas a recibir nuestros análisis de web, marketing y diseño — sin spam.",
-    outro: "Si algún día quieres salir, un clic:",
+    paragraphs: [
+      [{ text: "Gracias por suscribirte. Vas a recibir nuestros análisis de web, marketing y diseño — sin spam." }],
+      [
+        { text: "¿Te perdiste alguno? Ponte al día con los análisis anteriores en " },
+        { text: "nuestro blog", href: "blog" },
+        { text: "." },
+      ],
+      [
+        { text: "¿Conoces a alguien a quien le sirvan? Reenvíale este correo — o síguenos en " },
+        { text: "Instagram", href: "instagram" },
+        { text: ", " },
+        { text: "Facebook", href: "facebook" },
+        { text: " o " },
+        { text: "LinkedIn", href: "linkedin" },
+        { text: "." },
+      ],
+    ],
+    closing: "Nos vemos en tu bandeja de entrada.",
+    signature: "— Astratta Agency",
     unsubscribe: "Cancelar suscripción",
   },
 };
 
+/** Postal line required by CAN-SPAM — the owner chose city-level for now. */
+const POSTAL_ADDRESS = "Dallas–Fort Worth, TX";
+
+// Mirrors SOCIALS in src/lib/constants.ts.
+const SOCIAL_URLS = {
+  instagram: "https://instagram.com/astrattaagency",
+  facebook: "https://facebook.com/astrattaagency",
+  linkedin: "https://linkedin.com/company/astrattaagency",
+} as const;
+
+function siteUrl(): string {
+  return (Deno.env.get("SITE_URL") ?? DEFAULT_SITE_URL).replace(/\/+$/, "");
+}
+
+function linkUrl(key: LinkKey, language: Language): string {
+  if (key === "blog") return `${siteUrl()}${language === "es" ? "/es/blog" : "/blog"}`;
+  return SOCIAL_URLS[key];
+}
+
 /** The site page that confirms the unsubscribe — kept in sync with ROUTE_DEFS.newsletterUnsubscribe. */
 function unsubscribePageUrl(language: Language, token: string): string {
-  const site = (Deno.env.get("SITE_URL") ?? DEFAULT_SITE_URL).replace(/\/+$/, "");
   const path = language === "es" ? "/es/newsletter/baja" : "/newsletter/unsubscribe";
-  return `${site}${path}?token=${encodeURIComponent(token)}`;
+  return `${siteUrl()}${path}?token=${encodeURIComponent(token)}`;
 }
 
 /** RFC 8058 one-click endpoint — mail clients POST here directly from their own "Unsubscribe" button. */
@@ -94,21 +153,57 @@ function oneClickUrl(token: string): string {
   return `${supabaseUrl}/functions/v1/unsubscribe-newsletter?token=${encodeURIComponent(token)}`;
 }
 
+// Brand tokens (CLAUDE.md §12) inlined — email clients don't load stylesheets.
+const INK = "#0e0e12";
+const PRIMARY = "#5140f2";
+const MUTED = "#6b6b73";
+const FONT = "Mulish,Helvetica,Arial,sans-serif";
+
 function welcomeHtml(language: Language, unsubscribeUrl: string): string {
   const t = WELCOME_COPY[language];
+  const year = new Date().getFullYear();
+  const p = (content: string) =>
+    `<p style="margin:0 0 20px;font-family:${FONT};font-size:16px;line-height:1.65;color:${INK};">${content}</p>`;
+  const renderSegments = (segments: Segment[]) =>
+    segments
+      .map((seg) =>
+        seg.href
+          ? `<a href="${linkUrl(seg.href, language)}" style="color:${PRIMARY};font-weight:700;text-decoration:none;">${seg.text}</a>`
+          : seg.text,
+      )
+      .join("");
+
   return `<!doctype html>
 <html lang="${language}">
-  <body style="margin:0;padding:0;background:#eaeaea;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#eaeaea;padding:40px 16px;">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>${t.subject}</title>
+  </head>
+  <body style="margin:0;padding:0;background:#ffffff;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;">
       <tr>
-        <td align="center">
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border-radius:16px;">
+        <td align="center" style="padding:40px 20px;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;">
             <tr>
-              <td style="padding:40px;font-family:Mulish,Helvetica,Arial,sans-serif;color:#0e0e12;">
-                <p style="margin:0 0 32px;font-size:14px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#5140f2;">Astratta Agency</p>
-                <p style="margin:0 0 16px;font-size:22px;font-weight:700;">${t.greeting}</p>
-                <p style="margin:0 0 32px;font-size:16px;line-height:1.6;">${t.body}</p>
-                <p style="margin:0;font-size:13px;line-height:1.6;color:#6b6b73;">${t.outro} <a href="${unsubscribeUrl}" style="color:#5140f2;">${t.unsubscribe}</a></p>
+              <td style="padding:0 0 40px;">
+                <a href="${siteUrl()}${language === "es" ? "/es" : "/"}">
+                  <img src="${siteUrl()}/email/logo.png" width="148" alt="Astratta Agency" style="display:block;width:148px;height:auto;border:0;" />
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                ${p(`<strong style="font-size:20px;">${t.greeting}</strong>`)}
+                ${t.paragraphs.map((segments) => p(renderSegments(segments))).join("\n                ")}
+                ${p(`${t.closing}<br />${t.signature}`)}
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:24px 0 0;border-top:1px solid #eaeaea;text-align:center;font-family:${FONT};font-size:12px;line-height:1.8;color:${MUTED};">
+                © ${year} Astratta Agency<br />
+                ${POSTAL_ADDRESS}<br />
+                <a href="${unsubscribeUrl}" style="color:${MUTED};text-decoration:underline;">${t.unsubscribe}</a>
               </td>
             </tr>
           </table>
@@ -121,7 +216,20 @@ function welcomeHtml(language: Language, unsubscribeUrl: string): string {
 
 function welcomeText(language: Language, unsubscribeUrl: string): string {
   const t = WELCOME_COPY[language];
-  return [t.greeting, "", t.body, "", `${t.outro} ${t.unsubscribe}: ${unsubscribeUrl}`].join("\n");
+  const paragraphs = t.paragraphs.map((segments) =>
+    segments.map((seg) => (seg.href ? `${seg.text} (${linkUrl(seg.href, language)})` : seg.text)).join(""),
+  );
+  return [
+    t.greeting,
+    "",
+    ...paragraphs.flatMap((para) => [para, ""]),
+    t.closing,
+    t.signature,
+    "",
+    "—",
+    `© ${new Date().getFullYear()} Astratta Agency · ${POSTAL_ADDRESS}`,
+    `${t.unsubscribe}: ${unsubscribeUrl}`,
+  ].join("\n");
 }
 
 async function sendWelcomeEmail(to: string, language: Language, token: string): Promise<void> {

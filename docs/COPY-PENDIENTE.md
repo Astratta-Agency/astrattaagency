@@ -372,12 +372,18 @@ No está en el doc de contenido; si se añade allí, este bloque se actualiza.
 - **Correo de bienvenida** → `supabase/functions/subscribe-newsletter/index.ts` (`WELCOME_COPY`)
 - **Página de baja** (`/newsletter/unsubscribe` · `/es/newsletter/baja`) → `src/locales/{en,es}/newsletterUnsubscribe.ts`
 
+Diseño del correo con referencia de Weplash: logo arriba, párrafos con enlaces y pie con © + ubicación (CAN-SPAM) + baja.
+
 **EN**
 ```
 Subject: You're in — welcome to Astratta
 Hi!
 Thanks for subscribing. You'll get our web, marketing, and design breakdowns — no spam.
-If you ever want out, one click: [Unsubscribe]
+Missed one? Catch up on past breakdowns on [our blog].
+Know someone who'd find these useful? Forward this email — or follow us on [Instagram], [Facebook], or [LinkedIn].
+See you in your inbox.
+— Astratta Agency
+Pie: © 2026 Astratta Agency · Dallas–Fort Worth, TX · [Unsubscribe]
 
 Unsubscribe from the newsletter?  [Unsubscribe]
 → You're unsubscribed. You won't get any more emails from us.
@@ -388,8 +394,14 @@ Unsubscribe from the newsletter?  [Unsubscribe]
 Asunto: Ya estás dentro — bienvenido a Astratta
 ¡Hola!
 Gracias por suscribirte. Vas a recibir nuestros análisis de web, marketing y diseño — sin spam.
-Si algún día quieres salir, un clic: [Cancelar suscripción]
+¿Te perdiste alguno? Ponte al día con los análisis anteriores en [nuestro blog].
+¿Conoces a alguien a quien le sirvan? Reenvíale este correo — o síguenos en [Instagram], [Facebook] o [LinkedIn].
+Nos vemos en tu bandeja de entrada.
+— Astratta Agency
+Pie: © 2026 Astratta Agency · Dallas–Fort Worth, TX · [Cancelar suscripción]
 
 ¿Cancelar tu suscripción?  [Cancelar]
 → Listo, cancelaste tu suscripción. No recibirás más correos.
 ```
+
+El pie lleva solo la ciudad por decisión del dueño. CAN-SPAM pide una dirección postal válida (sirve un PO Box): conviene completarla en `POSTAL_ADDRESS` de `subscribe-newsletter`.
