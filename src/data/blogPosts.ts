@@ -39,6 +39,9 @@ import singlePlatformDependencyLighthouse from '@/assets/blog/single-platform-de
 import metaCreatorHubCover from '@/assets/blog/meta-creator-hub-dallas-cover.webp'
 import metaCreatorHubDiscoveryFilter from '@/assets/blog/meta-creator-hub-dallas-creator-discovery-filter.webp'
 import metaCreatorHubTimeBoxedPermission from '@/assets/blog/meta-creator-hub-dallas-time-boxed-permission.webp'
+import afterHoursBookingCover from '@/assets/blog/after-hours-booking-dfw-cover.webp'
+import afterHoursBookingSortingStandardCustom from '@/assets/blog/after-hours-booking-dfw-sorting-standard-custom.webp'
+import afterHoursBookingDepositLocksSlot from '@/assets/blog/after-hours-booking-dfw-deposit-locks-slot.webp'
 
 export type BlogCategory = 'web-conversion' | 'digital-marketing' | 'design' | 'case-notes'
 
@@ -2187,6 +2190,172 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: 'Nada de esto reemplaza tener primero los fundamentos resueltos — un sitio que convierta una vez que el tráfico pagado llegue, un perfil de Google en el que confíen tanto la IA como el comprador. Pero para un negocio que ya tiene prueba real guardada sin usar en sus propias publicaciones etiquetadas, esta es la primera vez que convertirla en alcance pagado no empieza por reconstruirla desde cero. El [Diagnóstico](/diagnostic) — siete días, una persona real mapeando exactamente qué ya está funcionando antes de meter un solo dólar nuevo en anuncios — es el punto de partida si no queda claro cuánta prueba ya tienes guardada sin usar, y los [sistemas de marketing continuo](/systems) que construimos están pensados para seguir usándola después de que termine esa primera campaña.',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'after-hours-booking-dfw', es: 'reservas-fuera-de-horario-dfw' },
+    title: {
+      en: 'Your Dallas home service business keeps losing the after-hours booking',
+      es: 'Tu negocio de servicios para el hogar en Dallas sigue perdiendo la reserva fuera de horario',
+    },
+    excerpt: {
+      en: 'The lead who was ready to book at nine on a Tuesday night usually isn’t gone — they just found a business whose site could book them without a phone call. Here’s the five-step, no-agency fix for the jobs simple enough to book themselves.',
+      es: 'El lead que estaba listo para reservar un martes a las nueve de la noche casi nunca se fue — solo encontró un negocio cuyo sitio pudo reservarlo sin una llamada. Este es el arreglo de cinco pasos sin agencia para los trabajos lo bastante simples como para reservarse solos.',
+    },
+    category: 'web-conversion',
+    publishedAt: '2026-09-24',
+    readingTime: { en: '5 min read', es: '5 min de lectura' },
+    coverGradient: 'from-primary/20 to-secondary/20',
+    coverVariant: 'insight',
+    coverImage: afterHoursBookingCover,
+    coverAlt: {
+      en: 'A single calendar time slot glowing through the night beside a dark, silent phone.',
+      es: 'Un solo horario de calendario brillando en la noche junto a un teléfono oscuro y silencioso.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'Stop Losing After-Hours Bookings in Dallas | Astratta',
+      es: 'Deja de Perder Reservas Fuera de Horario Dallas | Astratta',
+    },
+    metaDescription: {
+      en: 'Dallas–Fort Worth home service businesses lose bookings made outside business hours. Here’s the five-step, no-agency fix — and the exact metric to track it.',
+      es: 'Tu negocio de servicios para el hogar en Dallas pierde reservas fuera de horario. El arreglo de cinco pasos sin agencia — y la métrica exacta para medirlo.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: '"I don’t pick up calls after six, and by the time I call these people back in the morning, they’ve already found somebody else." We hear a version of that sentence in almost every discovery call with a Dallas–Fort Worth home service business — a contractor, a landscaper, a cleaning crew. It’s rarely because the lead lost interest. It’s because the only way to book anything on the site was to talk to a person first, and the person wasn’t available when the customer was ready. In a market with this many home service businesses competing for the same searches, the first one to reply usually wins the job — and increasingly, replying fast doesn’t mean answering the phone.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'The jobs that get lost this way are almost always the simple ones. A gutter cleaning, a routine maintenance visit, a thirty-minute estimate slot — services with one price range and a scope the business already knows by heart. **None of that needs a human to negotiate, yet the booking still routes through a phone call anyway, because the website was built to answer questions, not to take a reservation.** A visitor ready to commit at nine on a Tuesday night hits a contact form or a phone number, gets a reply the next business day, and by then they’ve already called the next name on their search results.',
+        },
+        { kind: 'heading', text: '1. Sort your last 20 jobs into standard and custom' },
+        {
+          kind: 'paragraph',
+          text: 'Pull the job list from the last month or two and mark each one. A standard job has a fixed scope and a price range you could quote over the phone in under a minute without seeing the property — a gutter cleaning, an HVAC tune-up, a fence estimate visit. **If the price barely changes from one job to the next, it doesn’t need a human to book it — it needs a calendar.** Anything that depends on square footage, damage, or a custom design stays out of this list.',
+        },
+        { kind: 'heading', text: '2. Pick one scheduling tool that takes a deposit' },
+        {
+          kind: 'paragraph',
+          text: 'Square Appointments, Acuity, and Housecall Pro’s Book Online module all do the same core job: they show a customer real open slots and collect a small deposit — $25 to $50 is common — to hold one. **The deposit matters more than which tool you pick: it filters out the people who’d have wasted the slot anyway, and it turns a maybe into a commitment the customer already made before you ever spoke to them.** Any of these connects to a Google or Outlook calendar in under an hour.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'If the price barely changes from job to job, it doesn’t need a person to book it — it needs a calendar.',
+          src: afterHoursBookingSortingStandardCustom,
+          alt: 'A doorway splitting into two paths, one leading to a calendar icon and the other to a hand studying a blueprint with a magnifying glass.',
+        },
+        { kind: 'heading', text: '3. Put the booking widget on the page for that specific service' },
+        {
+          kind: 'paragraph',
+          text: 'A visitor who lands on your gutter-cleaning page should see open times right there, not a link to a general contact form that dumps them into the same inbox as every custom quote request. Embed the widget directly on each standard-service page, and keep the phone number visible for the customer who still wants to call — just stop making the call the only door in. Most of these bookings happen on a phone at night, so test the flow on your own phone before publishing it — **a widget that needs pinching and zooming to find an open slot defeats the point.**',
+        },
+        { kind: 'heading', text: '4. Keep variable-scope work behind a separate quote form' },
+        {
+          kind: 'paragraph',
+          text: 'Everything that needs eyes on the property — a full remodel, storm damage, anything you’d price differently for every customer — stays behind its own quote request, not the booking calendar. **Self-serve booking only works for the jobs you’d quote the same way every time; forcing a custom job through it either underprices the work or frustrates the customer with a form that can’t ask the right questions.**',
+        },
+        { kind: 'heading', text: '5. Turn on a confirmation and reminder text' },
+        {
+          kind: 'paragraph',
+          text: 'Most scheduling tools include this for free — a text the moment someone books, and another the day before. It’s the one step that isn’t about capturing the after-hours lead, it’s about keeping the slot you already won. A booked, unconfirmed appointment made at midnight is still just a maybe until the customer sees it in writing twice.',
+        },
+        {
+          kind: 'quote',
+          text: 'A booking made at nine on a Tuesday night isn’t a lead anymore — it’s an appointment, and it only stays one if nothing between the click and the visit still needs a human to hold it there.',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'A deposit turns a maybe into a commitment the customer already made before you ever spoke.',
+          src: afterHoursBookingDepositLocksSlot,
+          alt: 'A small coin sliding into a glowing calendar square while a faint, unlocked square fades beside it.',
+        },
+        { kind: 'heading', text: 'How you measure it' },
+        {
+          kind: 'paragraph',
+          text: 'Open your scheduling tool’s own reporting, not your website analytics. **The number that proves this is working is the share of bookings created outside your posted business hours — nights, weekends, the exact windows a phone call could never catch.** Most tools show this by default under bookings or activity; if yours doesn’t, filter by timestamp against your listed hours once a month. Watch that share climb over the following weeks, and cross-check it against your no-show rate, which should drop once deposits are in place.',
+        },
+        { kind: 'heading', text: 'What not to do' },
+        {
+          kind: 'paragraph',
+          text: 'Don’t put the booking widget on every service, including the ones you can’t price sight unseen — a bad guess costs more than a lost call would have. Don’t skip the deposit to make booking feel more casual; a free hold has a far higher no-show rate than a paid one, and that gap is the whole point of this fix. Don’t launch this across every service at once — pick the two or three you’re most confident quoting blind, run them for a month, and expand once you’ve seen real bookings come through outside business hours. And don’t take the phone number down: some customers will always prefer to call, and forcing everyone into a widget just moves the friction instead of removing it.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'None of this needs a developer or a new website. It’s an afternoon with a scheduling tool you can cancel if it doesn’t work, connected to a calendar you already have. If missed calls are the bigger issue behind this — the phone rings and nobody answers it, standard job or not — [the fix for that runs alongside this one](/blog/missed-calls-lost-jobs-dfw). And if you’re not sure how much of your [home improvement](/industries/home-improvement) business is bleeding out through gaps like this one, the [Diagnostic](/diagnostic) is a week-long, human review built to find the rest before you spend another dollar on ads.',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: '"No contesto llamadas después de las seis, y para cuando les devuelvo la llamada en la mañana, ya encontraron a alguien más." Escuchamos una versión de esa frase en casi cada llamada de diagnóstico con negocios de servicios para el hogar en Dallas–Fort Worth — un contratista, un jardinero, un equipo de limpieza. Casi nunca es porque el lead perdió el interés. Es porque la única forma de reservar algo en el sitio era hablar primero con una persona, y esa persona no estaba disponible cuando el cliente sí lo estaba. En un mercado con tantos negocios de servicios para el hogar compitiendo por las mismas búsquedas, el primero en responder suele quedarse con el trabajo — y cada vez más, responder rápido no significa contestar el teléfono.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Los trabajos que se pierden así casi siempre son los sencillos. Una limpieza de canaletas, una visita de mantenimiento rutinario, una cita de treinta minutos para cotizar — servicios con un rango de precio fijo y un alcance que el negocio ya se sabe de memoria. **Nada de eso necesita que una persona negocie nada, y aun así la reserva sigue pasando por una llamada, porque el sitio se construyó para responder preguntas, no para tomar una reservación.** Un visitante listo para comprometerse un martes a las nueve de la noche se topa con un formulario de contacto o un número de teléfono, recibe respuesta al siguiente día hábil, y para entonces ya llamó al siguiente nombre en sus resultados de búsqueda.',
+        },
+        { kind: 'heading', text: '1. Separa tus últimos 20 trabajos entre estándar y personalizado' },
+        {
+          kind: 'paragraph',
+          text: 'Saca la lista de trabajos del último mes o dos y márcalos. Un trabajo estándar tiene un alcance fijo y un rango de precio que podrías cotizar por teléfono en menos de un minuto sin ver la propiedad — una limpieza de canaletas, un mantenimiento de aire acondicionado, una visita de estimado para cerca. **Si el precio casi no cambia de un trabajo a otro, no necesita a una persona para reservarse — necesita un calendario.** Todo lo que dependa de metros cuadrados, daños o un diseño a medida se queda fuera de esta lista.',
+        },
+        { kind: 'heading', text: '2. Elige una sola herramienta de agenda que cobre depósito' },
+        {
+          kind: 'paragraph',
+          text: 'Square Appointments, Acuity y el módulo Book Online de Housecall Pro hacen lo mismo en el fondo: le muestran al cliente horarios reales disponibles y cobran un depósito pequeño — entre $25 y $50 es común — para apartar el espacio. **El depósito importa más que la herramienta que elijas: filtra a quien de todos modos iba a desperdiciar el espacio, y convierte un tal vez en un compromiso que el cliente ya hizo antes de que ustedes hablaran.** Cualquiera de estas se conecta a un calendario de Google u Outlook en menos de una hora.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'Si el precio casi no cambia de un trabajo a otro, no necesita a una persona para reservarse — necesita un calendario.',
+          src: afterHoursBookingSortingStandardCustom,
+          alt: 'Una puerta que se divide en dos caminos, uno hacia un ícono de calendario y otro hacia una mano revisando un plano con lupa.',
+        },
+        { kind: 'heading', text: '3. Pon el widget de reserva en la página de ese servicio específico' },
+        {
+          kind: 'paragraph',
+          text: 'Un visitante que llega a tu página de limpieza de canaletas debería ver horarios disponibles ahí mismo, no un enlace a un formulario general de contacto que lo mezcla con cada solicitud de cotización personalizada. Incrusta el widget directamente en cada página de servicio estándar, y deja el teléfono visible para el cliente que todavía prefiere llamar — solo deja de hacer de la llamada la única puerta. La mayoría de estas reservas ocurren desde un teléfono en la noche, así que prueba el flujo en el tuyo antes de publicarlo — **un widget que obliga a hacer zoom para encontrar un horario libre pierde todo el sentido.**',
+        },
+        { kind: 'heading', text: '4. Deja el trabajo de alcance variable detrás de un formulario de cotización aparte' },
+        {
+          kind: 'paragraph',
+          text: 'Todo lo que necesite ojos sobre la propiedad — una remodelación completa, daño por tormenta, cualquier cosa que cotizarías distinto con cada cliente — se queda detrás de su propia solicitud de cotización, no del calendario de reservas. **La reserva sin intervención humana solo funciona para los trabajos que cotizarías igual siempre; forzar un trabajo personalizado por ahí o subvalúa el trabajo o frustra al cliente con un formulario que no puede hacer las preguntas correctas.**',
+        },
+        { kind: 'heading', text: '5. Activa un mensaje de confirmación y de recordatorio' },
+        {
+          kind: 'paragraph',
+          text: 'La mayoría de las herramientas de agenda incluyen esto gratis — un mensaje en el momento en que alguien reserva, y otro el día antes. Es el único paso que no se trata de capturar el lead fuera de horario, sino de conservar el espacio que ya ganaste. Una cita reservada sin confirmar a medianoche sigue siendo solo un tal vez hasta que el cliente la ve por escrito dos veces.',
+        },
+        {
+          kind: 'quote',
+          text: 'Una reserva hecha un martes a las nueve de la noche ya no es un lead — es una cita, y solo sigue siéndolo si nada entre el clic y la visita todavía necesita a una persona para sostenerla ahí.',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'Un depósito convierte un tal vez en un compromiso que el cliente ya hizo antes de que hablaran.',
+          src: afterHoursBookingDepositLocksSlot,
+          alt: 'Una pequeña moneda deslizándose hacia un cuadro de calendario iluminado, mientras un cuadro tenue y sin asegurar se desvanece al lado.',
+        },
+        { kind: 'heading', text: 'Cómo se mide' },
+        {
+          kind: 'paragraph',
+          text: 'Abre el reporte propio de tu herramienta de agenda, no el análisis de tu sitio web. **El número que prueba que esto está funcionando es el porcentaje de reservas hechas fuera de tu horario publicado — noches, fines de semana, exactamente las ventanas que una llamada nunca iba a capturar.** La mayoría de las herramientas muestra esto por defecto en reservas o actividad; si la tuya no, filtra por marca de tiempo contra tu horario listado una vez al mes. Observa cómo sube ese porcentaje en las semanas siguientes, y crúzalo con tu tasa de inasistencia, que debería bajar en cuanto los depósitos estén activos.',
+        },
+        { kind: 'heading', text: 'Qué no hacer' },
+        {
+          kind: 'paragraph',
+          text: 'No pongas el widget de reserva en cada servicio, incluyendo los que no puedes cotizar sin ver — una mala adivinanza cuesta más que una llamada perdida. No te saltes el depósito para que reservar se sienta más casual; un espacio gratis tiene una tasa de inasistencia mucho más alta que uno pagado, y esa diferencia es justo el punto de este arreglo. No lo lances en todos los servicios a la vez — elige los dos o tres que más confianza te dan para cotizar sin ver, córrelos un mes, y expande una vez que veas reservas reales llegando fuera de horario. Y no quites el número de teléfono: algunos clientes siempre van a preferir llamar, y forzar a todos por un widget solo mueve la fricción en vez de quitarla.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Nada de esto necesita un desarrollador ni un sitio nuevo. Es una tarde con una herramienta de agenda que puedes cancelar si no funciona, conectada a un calendario que ya tienes. Si las llamadas perdidas son el problema más grande detrás de esto — el teléfono suena y nadie contesta, sea trabajo estándar o no — [el arreglo para eso corre junto con este](/blog/missed-calls-lost-jobs-dfw). Y si no sabes cuánto de tu negocio de [remodelación de hogar](/industries/home-improvement) se está escapando por huecos como este, el [Diagnóstico](/diagnostic) es una revisión humana de una semana hecha para encontrar el resto antes de que gastes otro dólar en anuncios.',
         },
       ],
     },

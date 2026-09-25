@@ -1,0 +1,15 @@
+{
+  "cover": {
+    "concept": "A single simple calendar-square shape glowing warmly in bright accent orange, its glow the only light source in the frame, positioned beside a plain rotary-style phone handset rendered in flat muted indigo, resting silent and dark on its cradle with no motion lines or sound marks around it, suggesting a booking that happened without anyone picking up the phone."
+  },
+  "inline": [
+    {
+      "name": "sorting-standard-custom",
+      "concept": "A simple geometric doorway or archway shape splitting into two diverging paths rendered as thin flat lines: one path leads to a plain calendar-grid icon glowing in bright accent orange, the other path leads to a simple hand silhouette holding a round magnifying glass over a small blueprint or floor-plan rectangle in muted indigo, showing a single entry point branching into a quick standard route and a slower custom-inspection route."
+    },
+    {
+      "name": "deposit-locks-slot",
+      "concept": "A small flat coin shape in bright accent orange sliding toward and settling into one glowing square of a calendar grid, with a thin geometric lock or latch motif clicking shut around that square; beside it, one adjacent calendar square is rendered as a faint, semi-transparent outline in muted indigo, fading out to suggest an unclaimed slot disappearing."
+    }
+  ]
+}
