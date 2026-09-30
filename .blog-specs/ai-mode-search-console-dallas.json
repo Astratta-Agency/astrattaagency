@@ -1,0 +1,15 @@
+{
+  "cover": {
+    "concept": "A dense tangle of thin muted-indigo line work drifting from the left, passing through a narrow geometric filter shape in the center, and emerging on the right as one single clean accent-orange thread. The tangle is chaotic and overlapping; the orange thread is straight, calm and precise."
+  },
+  "inline": [
+    {
+      "name": "noise-filter",
+      "concept": "A wide funnel drawn in muted indigo outline, filled at the top with scattered tiny grey speech-bubble shapes of many sizes. Only three of the bubbles reach the narrow bottom outlet, and those three glow solid accent orange while the rest stay pale and fall away at the sides."
+    },
+    {
+      "name": "question-to-faq",
+      "concept": "A single speech-bubble shape in muted indigo line work on the left, unfolding along one bright accent-orange line into a tidy rectangular page layout on the right made of a heading bar and two neat answer blocks. A small burst of orange light marks the point where the bubble becomes the page."
+    }
+  ]
+}

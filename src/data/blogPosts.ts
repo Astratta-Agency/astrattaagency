@@ -42,6 +42,9 @@ import metaCreatorHubTimeBoxedPermission from '@/assets/blog/meta-creator-hub-da
 import afterHoursBookingCover from '@/assets/blog/after-hours-booking-dfw-cover.webp'
 import afterHoursBookingSortingStandardCustom from '@/assets/blog/after-hours-booking-dfw-sorting-standard-custom.webp'
 import afterHoursBookingDepositLocksSlot from '@/assets/blog/after-hours-booking-dfw-deposit-locks-slot.webp'
+import aiModeSearchConsoleCover from '@/assets/blog/ai-mode-search-console-dallas-cover.webp'
+import aiModeSearchConsoleNoiseFilter from '@/assets/blog/ai-mode-search-console-dallas-noise-filter.webp'
+import aiModeSearchConsoleQuestionToFaq from '@/assets/blog/ai-mode-search-console-dallas-question-to-faq.webp'
 
 export type BlogCategory = 'web-conversion' | 'digital-marketing' | 'design' | 'case-notes'
 
@@ -2356,6 +2359,202 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: 'Nada de esto necesita un desarrollador ni un sitio nuevo. Es una tarde con una herramienta de agenda que puedes cancelar si no funciona, conectada a un calendario que ya tienes. Si las llamadas perdidas son el problema más grande detrás de esto — el teléfono suena y nadie contesta, sea trabajo estándar o no — [el arreglo para eso corre junto con este](/blog/missed-calls-lost-jobs-dfw). Y si no sabes cuánto de tu negocio de [remodelación de hogar](/industries/home-improvement) se está escapando por huecos como este, el [Diagnóstico](/diagnostic) es una revisión humana de una semana hecha para encontrar el resto antes de que gastes otro dólar en anuncios.',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'ai-mode-search-console-dallas', es: 'consultas-modo-ia-search-console-dallas' },
+    title: {
+      en: 'Google Search Console now shows AI Mode questions — what a Dallas business does with them',
+      es: 'Google Search Console ahora muestra preguntas del Modo IA — qué hace con ellas un negocio en Dallas',
+    },
+    excerpt: {
+      en: 'Search Console is quietly logging the full sentences people type into Google’s AI Mode. Most of it is noise, but a few lines are your customers’ exact words — and they’re free. Here’s the four-step way to use them this week.',
+      es: 'Search Console está registrando en silencio las frases completas que la gente escribe en el Modo IA de Google. La mayoría es ruido, pero unas cuantas líneas son las palabras exactas de tus clientes — y son gratis. Así se aprovechan esta semana, en cuatro pasos.',
+    },
+    category: 'digital-marketing',
+    publishedAt: '2026-09-29',
+    readingTime: { en: '5 min read', es: '5 min de lectura' },
+    coverGradient: 'from-primary/20 to-secondary/20',
+    coverVariant: 'insight',
+    coverImage: aiModeSearchConsoleCover,
+    coverAlt: {
+      en: 'A dense tangle of thin lines passing through a narrow filter, with a single bright orange thread emerging clean on the other side.',
+      es: 'Una maraña densa de líneas finas que atraviesa un filtro estrecho, con un solo hilo naranja brillante saliendo limpio del otro lado.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'AI Mode Queries in Search Console: Dallas Guide | Astratta',
+      es: 'Consultas del Modo IA en Search Console Dallas | Astratta',
+    },
+    metaDescription: {
+      en: 'Search Console now logs AI Mode questions. Here’s how a Dallas business finds the ones worth answering, turns them into FAQs, and ignores the noise this week.',
+      es: 'Search Console ya registra preguntas del Modo IA. Así encuentra un negocio en Dallas las que valen la pena, las vuelve preguntas frecuentes e ignora el ruido.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: 'Search Engine Journal reported this week that Google Search Console is recording what people type into Google’s AI Mode — which means a Dallas–Fort Worth business owner may already have their customers’ exact wording sitting in a report they can open for free. Google’s own documentation says AI Overviews and AI Mode activity lands in the regular Search Console performance report, and that a follow-up question asked inside AI Mode counts as a brand-new query.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'The catch is that the data is messy. When someone answers the AI with “yes, go on” and your page appears in what comes back, Search Console logs an impression against that phrase. Analysts who sorted the fragments found seven kinds: reply artifacts, pivot follow-ups, conversational questions, tracker probes, agent harnesses, pasted strings, and a review pile. Only a couple of those are useful to a local business — and finding them is the whole job.',
+        },
+        { kind: 'heading', text: 'Why this matters in Dallas–Fort Worth' },
+        {
+          kind: 'paragraph',
+          text: 'For years, local search meant two or three words: “roofer Plano,” “med spa Frisco.” Someone typing to an AI writes the way they’d talk to a neighbor — a full sentence with the neighborhood, the problem, and often the worry attached. **That sentence is the closest thing to a customer interview you can get without picking up the phone, and it costs nothing.** The owners who read it will write pages that answer the real question. The rest will keep guessing at keywords.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'A Frisco med spa and a Garland contractor will see completely different questions, which is the point: the report is specific to your site, your services and your part of town.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'It also changes the mood around AI search. The loud version says AI will eat your clicks and there’s nothing to do. The quieter fact is that this report hands you the questions your prospects are asking before they choose anyone. If you already worked on [being the one business AI recommends](/blog/ai-one-recommendation-dallas), this is the raw material for the next step.',
+        },
+        { kind: 'heading', text: '1. Filter for long queries' },
+        {
+          kind: 'paragraph',
+          text: 'Open Search Console, go to Performance, then Search results, and add a Query filter set to “Custom (regex).” Paste ([^ ]+ ){6,}[^ ]+ to keep only queries of seven words or more. **Long queries are where the conversational fragments hide, and short ones are the keywords you already know.** Set the date range to the last three months and sort by impressions.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Sort by impressions, not clicks. AI Mode impressions rarely come with clicks, so the click column will look empty; impressions are the signal that your page was pulled into an answer. If a long query shows impressions but the wrong page is appearing — a blog post where a service page should be — note that too. That mismatch is the cheapest fix on the whole list.',
+        },
+        { kind: 'heading', text: '2. Throw out the noise' },
+        {
+          kind: 'paragraph',
+          text: 'Scan the list and delete anything that isn’t a person asking something. Reply artifacts like “yes go on,” long pasted blocks of text, and strings that read like a bot or a test script all go. **Keep only lines that sound like a customer: a service, a place, a price worry, a “how long does it take.”** Expect most of the list to disappear. Three to five good lines is a win.',
+        },
+        {
+          kind: 'image',
+          variant: 'insight',
+          caption: 'Most of the list is noise — the few lines that survive the filter are your customers’ own words.',
+          src: aiModeSearchConsoleNoiseFilter,
+          alt: 'A wide funnel of tangled grey lines narrowing into a clean stream, with three small orange dots gathered at the outlet.',
+        },
+        { kind: 'heading', text: '3. Turn each survivor into an FAQ answer' },
+        {
+          kind: 'paragraph',
+          text: 'Take each question and put it, in the customer’s own words, as a heading on the service page it belongs to. Answer it in the first two sentences, then add the detail. If the honest answer depends on the job, say what it depends on. **A page that answers the exact question in plain language is a page an AI can quote and a person can trust.** A [home improvement](/industries/home-improvement) contractor with a line about “how long a roof replacement takes in Dallas” should have that question, with a straight answer, on the roofing page.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Keep the answer honest. If the question is about price, give the range you actually charge or explain what moves it; vague answers get skipped by people and by AI alike. A restaurant can do the same with catering and private events, a med spa with downtime and consultations, a contractor with permits and timelines. Use your own real details, never a number borrowed from a competitor’s page.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'The customer’s question, copied word for word, is the best heading your service page can have.',
+          src: aiModeSearchConsoleQuestionToFaq,
+          alt: 'A speech bubble shape unfolding into a tidy page layout, with a single orange line linking the question to its answer block.',
+        },
+        { kind: 'heading', text: '4. Write down today’s baseline' },
+        {
+          kind: 'paragraph',
+          text: 'Before you publish anything, note how many long queries you have and their total impressions. **Without a starting number you’ll never know whether the new answers did anything.** Check again in thirty days. Don’t expect a spike — impressions from AI Mode don’t always turn into visits — but watch whether your service pages start appearing against the questions you answered. Put a reminder on the calendar for the same day next month and give it twenty minutes. That is the entire maintenance.',
+        },
+        {
+          kind: 'quote',
+          text: 'The best keyword research you’ll do this year is reading what your customers already asked.',
+        },
+        { kind: 'heading', text: 'What to ignore' },
+        {
+          kind: 'paragraph',
+          text: 'Don’t pay for an “AI query tracker” — the report is free and already yours. Don’t chase every strange line; a fragment that no customer would type isn’t a customer. Don’t rewrite your whole site around this; five good answers on the right pages beat fifty rushed ones. And don’t drop the basics: your [Google Business Profile](/blog/outdated-google-profile-dfw) and clear service pages still do the heavy lifting. **This is a reading exercise, not a rebuild.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Also skip the urge to turn every question into a new blog post. Most of them belong as a short answer on a page you already have. Write a new page only when three or more questions point at the same topic and nothing on your site covers it.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'If you open the report and can’t tell which lines are real customers, or you realize your site has no page that could answer them, that’s a structure problem, not a keyword problem. The free [Growth Score](/growth-score) takes four minutes and shows where your site stands. And the [Diagnostic](/diagnostic) is a human review that finds the pages and questions you’re missing before you spend on anything else.',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: 'Search Engine Journal reportó esta semana que Google Search Console está registrando lo que la gente escribe en el Modo IA de Google — así que un dueño de negocio en Dallas–Fort Worth puede tener las palabras exactas de sus clientes en un reporte que abre gratis. La propia documentación de Google dice que la actividad de AI Overviews y del Modo IA aparece en el reporte normal de rendimiento de Search Console, y que una pregunta de seguimiento dentro del Modo IA cuenta como una consulta nueva.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'El problema es que los datos vienen sucios. Cuando alguien le responde a la IA “sí, sigue” y tu página aparece en lo que vuelve, Search Console anota una impresión contra esa frase. Los analistas que clasificaron los fragmentos encontraron siete tipos: respuestas sueltas, giros de seguimiento, preguntas conversacionales, sondas de rastreadores, agentes automáticos, textos pegados y un montón por revisar. Solo un par sirve para un negocio local — y encontrarlos es todo el trabajo.',
+        },
+        { kind: 'heading', text: 'Por qué importa en Dallas–Fort Worth' },
+        {
+          kind: 'paragraph',
+          text: 'Durante años, la búsqueda local eran dos o tres palabras: “techador Plano”, “med spa Frisco”. Quien le escribe a una IA lo hace como le hablaría a un vecino — una frase completa con la zona, el problema y, muchas veces, la duda. **Esa frase es lo más parecido a una entrevista con tu cliente que puedes conseguir sin levantar el teléfono, y no cuesta nada.** Los dueños que la lean van a escribir páginas que respondan la pregunta real. Los demás seguirán adivinando palabras clave.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Un med spa en Frisco y un contratista en Garland verán preguntas totalmente distintas, y ese es el punto: el reporte es específico de tu sitio, tus servicios y tu zona de la ciudad.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'También cambia el tono de la conversación sobre la IA. La versión ruidosa dice que la IA se va a comer tus clics y que no hay nada que hacer. Lo que casi no se cuenta es que este reporte te entrega las preguntas de tus prospectos antes de que elijan a nadie. Si ya trabajaste en [ser el negocio que la IA recomienda](/blog/ai-one-recommendation-dallas), esta es la materia prima del siguiente paso.',
+        },
+        { kind: 'heading', text: '1. Filtra las consultas largas' },
+        {
+          kind: 'paragraph',
+          text: 'Entra a Search Console, ve a Rendimiento, luego a Resultados de búsqueda, y agrega un filtro de Consulta en “Personalizado (regex)”. Pega ([^ ]+ ){6,}[^ ]+ para quedarte solo con consultas de siete palabras o más. **Los fragmentos conversacionales se esconden en las consultas largas; las cortas son las palabras clave que ya conoces.** Fija el rango en los últimos tres meses y ordena por impresiones.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Ordena por impresiones, no por clics. Las impresiones del Modo IA casi nunca traen clics, así que la columna de clics se verá vacía; las impresiones son la señal de que tu página entró en una respuesta. Si una consulta larga tiene impresiones pero aparece la página equivocada — una entrada del blog donde debería salir una página de servicio — anótalo también. Ese desajuste es el arreglo más barato de toda la lista.',
+        },
+        { kind: 'heading', text: '2. Descarta el ruido' },
+        {
+          kind: 'paragraph',
+          text: 'Recorre la lista y borra todo lo que no sea una persona preguntando algo. Las respuestas sueltas tipo “sí sigue”, los bloques largos de texto pegado y las cadenas que parecen de un bot o de un script de prueba se van. **Quédate solo con lo que suene a cliente: un servicio, un lugar, una duda de precio, un “cuánto tarda”.** Es normal que casi toda la lista desaparezca. Tres a cinco líneas buenas ya es un buen resultado.',
+        },
+        {
+          kind: 'image',
+          variant: 'insight',
+          caption: 'Casi toda la lista es ruido — las pocas líneas que pasan el filtro son las palabras de tus clientes.',
+          src: aiModeSearchConsoleNoiseFilter,
+          alt: 'Un embudo ancho de líneas grises enredadas que se angosta hasta un flujo limpio, con tres puntos naranjas pequeños reunidos en la salida.',
+        },
+        { kind: 'heading', text: '3. Convierte cada sobreviviente en una respuesta' },
+        {
+          kind: 'paragraph',
+          text: 'Toma cada pregunta y ponla, con las palabras del cliente, como título en la página del servicio que le corresponde. Respóndela en las dos primeras frases y luego agrega el detalle. Si la respuesta honesta depende del trabajo, di de qué depende. **Una página que responde la pregunta exacta en lenguaje claro es una página que una IA puede citar y una persona puede creerle.** Un contratista de [remodelación del hogar](/industries/home-improvement) con una línea sobre “cuánto tarda cambiar un techo en Dallas” debe tener esa pregunta, con respuesta directa, en su página de techos.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Que la respuesta sea honesta. Si la pregunta es de precio, da el rango que de verdad cobras o explica qué lo mueve; las respuestas vagas las saltan tanto las personas como la IA. Un restaurante puede hacer lo mismo con catering y eventos privados, un med spa con el tiempo de recuperación y las consultas, un contratista con permisos y plazos. Usa tus propios datos reales, nunca una cifra prestada de la página de un competidor.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'La pregunta del cliente, copiada tal cual, es el mejor título que puede tener tu página de servicio.',
+          src: aiModeSearchConsoleQuestionToFaq,
+          alt: 'Una forma de burbuja de diálogo que se despliega en una página ordenada, con una sola línea naranja uniendo la pregunta con su bloque de respuesta.',
+        },
+        { kind: 'heading', text: '4. Anota el punto de partida de hoy' },
+        {
+          kind: 'paragraph',
+          text: 'Antes de publicar nada, apunta cuántas consultas largas tienes y sus impresiones totales. **Sin un número de partida nunca sabrás si las respuestas nuevas sirvieron de algo.** Vuelve a mirar en treinta días. No esperes un salto — las impresiones del Modo IA no siempre se vuelven visitas — pero fíjate si tus páginas de servicio empiezan a aparecer con las preguntas que respondiste. Deja un recordatorio en el calendario para el mismo día del mes siguiente y dedícale veinte minutos. Ese es todo el mantenimiento.',
+        },
+        {
+          kind: 'quote',
+          text: 'La mejor investigación de palabras clave que harás este año es leer lo que tus clientes ya preguntaron.',
+        },
+        { kind: 'heading', text: 'Qué ignorar' },
+        {
+          kind: 'paragraph',
+          text: 'No pagues por un “rastreador de consultas de IA” — el reporte es gratis y ya es tuyo. No persigas cada línea rara; un fragmento que ningún cliente escribiría no es un cliente. No rehagas todo tu sitio por esto; cinco buenas respuestas en las páginas correctas valen más que cincuenta hechas de prisa. Y no sueltes lo básico: tu [perfil de Google](/blog/outdated-google-profile-dfw) y unas páginas de servicio claras siguen haciendo el trabajo pesado. **Esto es un ejercicio de lectura, no una reconstrucción.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Tampoco conviertas cada pregunta en una entrada nueva del blog. La mayoría cabe como una respuesta corta en una página que ya tienes. Escribe una página nueva solo cuando tres o más preguntas apunten al mismo tema y nada en tu sitio lo cubra.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Si abres el reporte y no distingues qué líneas son clientes reales, o descubres que tu sitio no tiene ninguna página que pueda responderlas, eso es un problema de estructura, no de palabras clave. El [Growth Score](/growth-score) gratuito toma cuatro minutos y te muestra dónde está tu sitio. Y el [Diagnóstico](/diagnostic) es una revisión humana que encuentra las páginas y las preguntas que te faltan antes de que gastes en cualquier otra cosa.',
         },
       ],
     },
