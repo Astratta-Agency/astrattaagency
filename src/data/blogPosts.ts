@@ -45,6 +45,9 @@ import afterHoursBookingDepositLocksSlot from '@/assets/blog/after-hours-booking
 import aiModeSearchConsoleCover from '@/assets/blog/ai-mode-search-console-dallas-cover.webp'
 import aiModeSearchConsoleNoiseFilter from '@/assets/blog/ai-mode-search-console-dallas-noise-filter.webp'
 import aiModeSearchConsoleQuestionToFaq from '@/assets/blog/ai-mode-search-console-dallas-question-to-faq.webp'
+import reviewsStuckOnGoogleCover from '@/assets/blog/reviews-stuck-on-google-dallas-cover.webp'
+import reviewsStuckOnGoogleProofBesideButton from '@/assets/blog/reviews-stuck-on-google-dallas-proof-beside-button.webp'
+import reviewsStuckOnGoogleOneProofManyPlaces from '@/assets/blog/reviews-stuck-on-google-dallas-one-proof-many-places.webp'
 
 export type BlogCategory = 'web-conversion' | 'digital-marketing' | 'design' | 'case-notes'
 
@@ -2555,6 +2558,214 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: 'Si abres el reporte y no distingues qué líneas son clientes reales, o descubres que tu sitio no tiene ninguna página que pueda responderlas, eso es un problema de estructura, no de palabras clave. El [Growth Score](/growth-score) gratuito toma cuatro minutos y te muestra dónde está tu sitio. Y el [Diagnóstico](/diagnostic) es una revisión humana que encuentra las páginas y las preguntas que te faltan antes de que gastes en cualquier otra cosa.',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'reviews-stuck-on-google-dallas', es: 'resenas-atrapadas-en-google-dallas' },
+    title: {
+      en: 'Your Dallas business has great Google reviews that never reach your website',
+      es: 'Tu negocio en Dallas tiene excelentes reseñas en Google que nunca llegan a tu sitio web',
+    },
+    excerpt: {
+      en: 'Five-star reviews sitting only on Google can’t sell for you on the page where a customer decides. Here’s the five-step, no-agency way to move them next to the button this week.',
+      es: 'Las reseñas de cinco estrellas que viven solo en Google no venden por ti en la página donde el cliente decide. Así las pones junto al botón esta semana, en cinco pasos y sin agencia.',
+    },
+    category: 'web-conversion',
+    publishedAt: '2026-10-01',
+    readingTime: { en: '5 min read', es: '5 min de lectura' },
+    coverGradient: 'from-primary/20 to-secondary/20',
+    coverVariant: 'reviews',
+    coverImage: reviewsStuckOnGoogleCover,
+    coverAlt: {
+      en: 'A glowing orange thread of light locked inside a sealed glass box, while an empty open doorway stands beside it in the dark.',
+      es: 'Un hilo de luz naranja encerrado en una caja de cristal sellada, mientras una puerta abierta y vacía queda a su lado en la oscuridad.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'Google Reviews Not Selling? A Dallas Fix | Astratta',
+      es: 'Reseñas de Google que no venden: arreglo Dallas | Astratta',
+    },
+    metaDescription: {
+      en: 'Great Google reviews but few new customers? A Dallas business can fix it in five steps: put the proof next to the button and measure it, no agency needed.',
+      es: '¿Reseñas excelentes en Google pero pocos clientes nuevos? Un negocio en Dallas lo arregla en cinco pasos: pon la prueba junto al botón y mídela, sin agencia.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: 'You’ve got a wall of five-star reviews on Google, the customers who wrote them were genuinely happy, and the phone still isn’t ringing the way it should. If you run a Dallas–Fort Worth business and that sounds familiar, the problem usually isn’t the reviews. It’s where they live.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'In three of the audits we’ve run for local businesses — a restaurant, an auto dealer and our own agency — the same pattern showed up. The Google profile was full of warm, specific praise. The website had none of it: no quote, no star rating, no link. A new customer landing on the site saw a business making claims, with the proof sitting on a different site entirely.',
+        },
+        { kind: 'heading', text: 'Why good reviews don’t sell on their own' },
+        {
+          kind: 'paragraph',
+          text: 'A lot of visitors arrive at your website from an Instagram post, a referral text or an ad, and make their decision right there. **If the proof isn’t on the page where the decision happens, it might as well not exist for that visit.** Asking a stranger to leave your site, find your Google listing and scroll is asking a lot.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Reviews are also stored in a format that’s hard to use. They sit in one long list, mixed with one-word ratings. The three that would actually calm a nervous buyer — the ones describing a specific job, a specific problem and how it ended — are buried under dozens that just say “great service.”',
+        },
+        { kind: 'heading', text: '1. Pick the five reviews that answer a worry' },
+        {
+          kind: 'paragraph',
+          text: 'Open your Google Business Profile and read your reviews with one question: which ones would calm a stranger who’s about to spend money with you? Pick five that name a real job, a real problem and how it turned out. “They showed up when they said and the quote didn’t change” beats “great work!” **A review that answers a buyer’s fear is worth more than ten that only say thanks.** Copy them word for word. Don’t tidy the grammar, and never write one yourself.',
+        },
+        { kind: 'heading', text: '2. Put them next to the button' },
+        {
+          kind: 'paragraph',
+          text: 'Place those reviews on the service page or contact page, right beside the phone number or the form — not on a separate “Testimonials” page nobody visits. Under each one, add the reviewer’s name as Google shows it, the service, and a small “See it on Google” link to your profile. **Proof placed beside the decision does more than proof placed in a gallery.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'If you edit the site yourself in Squarespace, Wix or WordPress, this is a text block and a link. It takes under an hour.',
+        },
+        {
+          kind: 'image',
+          variant: 'proof',
+          caption: 'Proof only counts where the decision is made — next to the button, not three clicks away.',
+          src: reviewsStuckOnGoogleProofBesideButton,
+          alt: 'A single bright orange line running from a cluster of small glowing points straight into a rounded button shape.',
+        },
+        { kind: 'heading', text: '3. State the rating and where it comes from' },
+        {
+          kind: 'paragraph',
+          text: 'Near the top of the page, write your current star rating and review count, and say where they come from: the real rating, the real number, then “on Google.” Read both from your profile on the day you publish, and update them when you check next month. **A number with a named source is believable; a badge that says “trusted” is not.** If your rating isn’t perfect, show it anyway. Rounding up is the quickest way to lose a reader.',
+        },
+        { kind: 'heading', text: '4. Reuse the same words on social' },
+        {
+          kind: 'paragraph',
+          text: 'Take a screenshot of the same five reviews, crop out anything private, and save them as an Instagram Highlight called “Reviews” or “Clients.” Put your rating in your bio line. If you use Stories to answer questions, answer with a review instead of a pitch. **The review does the selling; your job is only to put it where people are already looking.**',
+        },
+        {
+          kind: 'image',
+          variant: 'reviews',
+          caption: 'The same five reviews, shown on the site and on social, are one piece of proof doing two jobs.',
+          src: reviewsStuckOnGoogleOneProofManyPlaces,
+          alt: 'One glowing orange point casting identical soft rays toward three different rounded screen shapes.',
+        },
+        { kind: 'heading', text: '5. Ask for the next one at the moment of the sale' },
+        {
+          kind: 'paragraph',
+          text: 'Text your review link the same day the job finishes, while the customer is still pleased. Add one line: “If you can, mention what we did and how it went.” That nudge is why your next reviews will describe jobs instead of just praising. **Specific reviews don’t happen by luck; they happen because someone asked a specific question.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Never offer a discount or a gift in exchange for a review, and never ask only your happiest customers. Google’s policies restrict both.',
+        },
+        { kind: 'heading', text: 'How to measure it' },
+        {
+          kind: 'paragraph',
+          text: 'Before you change anything, write down two numbers from the last 30 days. In Google Business Profile, open Performance and note website clicks and calls. In Google Analytics 4, open Reports, then Engagement, then Pages and screens, find the page where you added the reviews, and note its key events — form submissions or taps on the phone number — next to its views. If those events aren’t set up yet, set them up first.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Check again after 30 days. **The number that matters is how many visitors to that one page contact you, not total traffic,** because traffic can rise while the page does worse. On a small site a handful of contacts won’t prove anything, so look at the direction over two months.',
+        },
+        {
+          kind: 'quote',
+          text: 'Your best sales copy is already written — it’s sitting on Google, signed by your customers.',
+        },
+        { kind: 'heading', text: 'What not to do' },
+        {
+          kind: 'paragraph',
+          text: 'Don’t buy a plug-in or service that promises to “boost” your reviews; it’s a fast way to get a profile flagged. Don’t invent reviews, and don’t polish real ones — customers can tell. Don’t hide everything in a rotating slider that moves before anyone reads it. And don’t add reviews to the site while the rest of your presence sends mixed signals: if your profile lists old hours or the wrong phone number, [fix that first](/blog/outdated-google-profile-dfw).',
+        },
+        {
+          kind: 'paragraph',
+          text: 'If you finish all five steps and the page still doesn’t bring in contacts, the problem is probably the page itself — the offer, the layout, the path to the button. The free [Growth Score](/growth-score) takes four minutes and shows where your site is leaking. And the [Diagnostic](/diagnostic) is a seven-day human review of your site and profile that tells you exactly what to fix first.',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: 'Tienes un muro de reseñas de cinco estrellas en Google, los clientes que las escribieron quedaron contentos de verdad, y aun así el teléfono no suena como debería. Si manejas un negocio en Dallas–Fort Worth y esto te suena, casi nunca el problema son las reseñas. Es dónde viven.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'En tres de las auditorías que hemos hecho a negocios locales — un restaurante, un concesionario de autos y nuestra propia agencia — apareció el mismo patrón. El perfil de Google estaba lleno de elogios cálidos y concretos. El sitio web no tenía nada de eso: ni una cita, ni las estrellas, ni un enlace. Un cliente nuevo que llegaba al sitio veía a un negocio que afirmaba cosas, con la prueba guardada en otro sitio completamente distinto.',
+        },
+        { kind: 'heading', text: 'Por qué las buenas reseñas no venden solas' },
+        {
+          kind: 'paragraph',
+          text: 'Muchos visitantes llegan a tu web desde una publicación de Instagram, un mensaje de un conocido o un anuncio, y deciden ahí mismo. **Si la prueba no está en la página donde se decide, para esa visita es como si no existiera.** Pedirle a un desconocido que salga de tu sitio, busque tu ficha de Google y se ponga a bajar es pedir demasiado.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Además, las reseñas están guardadas en un formato difícil de usar. Viven en una lista larga, mezcladas con calificaciones de una sola palabra. Las tres que de verdad tranquilizarían a un comprador con dudas — las que cuentan un trabajo concreto, un problema concreto y cómo terminó — quedan enterradas bajo decenas que solo dicen “excelente servicio”.',
+        },
+        { kind: 'heading', text: '1. Elige las cinco reseñas que contestan una duda' },
+        {
+          kind: 'paragraph',
+          text: 'Abre tu Perfil de Negocio en Google y lee tus reseñas con una sola pregunta: ¿cuáles tranquilizarían a un desconocido a punto de gastar dinero contigo? Elige cinco que nombren un trabajo real, un problema real y cómo salió. “Llegaron cuando dijeron y la cotización no cambió” le gana a “¡buen trabajo!”. **Una reseña que contesta el miedo del comprador vale más que diez que solo dan las gracias.** Cópialas palabra por palabra. No les arregles la gramática y nunca escribas una tú.',
+        },
+        { kind: 'heading', text: '2. Ponlas junto al botón' },
+        {
+          kind: 'paragraph',
+          text: 'Coloca esas reseñas en la página del servicio o en la de contacto, justo al lado del teléfono o del formulario — no en una página aparte de “Testimonios” que nadie visita. Debajo de cada una agrega el nombre del cliente tal como lo muestra Google, el servicio y un pequeño enlace “Ver en Google” a tu perfil. **La prueba puesta junto a la decisión pesa más que la prueba puesta en una galería.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Si editas tu sitio tú mismo en Squarespace, Wix o WordPress, esto es un bloque de texto y un enlace. Toma menos de una hora.',
+        },
+        {
+          kind: 'image',
+          variant: 'proof',
+          caption: 'La prueba solo cuenta donde se decide — junto al botón, no a tres clics de distancia.',
+          src: reviewsStuckOnGoogleProofBesideButton,
+          alt: 'Una sola línea naranja brillante que va de un grupo de pequeños puntos luminosos directo a la forma de un botón redondeado.',
+        },
+        { kind: 'heading', text: '3. Muestra tu calificación y de dónde sale' },
+        {
+          kind: 'paragraph',
+          text: 'Cerca del inicio de la página, escribe tu calificación actual y el número de reseñas, y di de dónde vienen: la calificación real, la cifra real y luego “en Google”. Léelas de tu perfil el día que publiques y actualízalas cuando revises el mes que viene. **Un número con fuente nombrada se cree; una insignia que dice “confiable” no.** Si tu calificación no es perfecta, muéstrala igual. Redondear hacia arriba es la forma más rápida de perder al lector.',
+        },
+        { kind: 'heading', text: '4. Usa las mismas palabras en redes' },
+        {
+          kind: 'paragraph',
+          text: 'Haz captura de esas mismas cinco reseñas, recorta lo privado y guárdalas como un Destacado de Instagram llamado “Reseñas” o “Clientes”. Pon tu calificación en la línea de la biografía. Si usas Stories para responder preguntas, responde con una reseña en lugar de un discurso de venta. **La reseña hace la venta; tu trabajo es solo ponerla donde la gente ya está mirando.**',
+        },
+        {
+          kind: 'image',
+          variant: 'reviews',
+          caption: 'Las mismas cinco reseñas, en el sitio y en redes, son una sola prueba haciendo dos trabajos.',
+          src: reviewsStuckOnGoogleOneProofManyPlaces,
+          alt: 'Un punto naranja brillante que lanza rayos suaves idénticos hacia tres formas de pantalla redondeadas distintas.',
+        },
+        { kind: 'heading', text: '5. Pide la siguiente en el momento de la venta' },
+        {
+          kind: 'paragraph',
+          text: 'Manda por texto el enlace para reseñar el mismo día que termina el trabajo, mientras el cliente sigue contento. Agrega una línea: “Si puedes, cuéntanos qué hicimos y cómo te fue.” Ese empujón es la razón por la que tus próximas reseñas describirán trabajos en vez de solo elogiar. **Las reseñas concretas no llegan por suerte; llegan porque alguien hizo una pregunta concreta.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Nunca ofrezcas un descuento o un regalo a cambio de una reseña, y nunca le pidas reseña solo a tus clientes más felices. Las políticas de Google restringen ambas cosas.',
+        },
+        { kind: 'heading', text: 'Cómo se mide' },
+        {
+          kind: 'paragraph',
+          text: 'Antes de cambiar nada, anota dos números de los últimos 30 días. En el Perfil de Negocio de Google, abre Rendimiento y apunta los clics al sitio web y las llamadas. En Google Analytics 4, abre Informes, luego Participación, luego Páginas y pantallas, busca la página donde pusiste las reseñas y anota sus eventos clave — envíos del formulario o toques al número de teléfono — junto a sus vistas. Si esos eventos todavía no están configurados, configúralos primero.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Vuelve a mirar a los 30 días. **El número que importa es cuántos visitantes de esa página te contactan, no el tráfico total,** porque el tráfico puede subir mientras la página rinde peor. En un sitio pequeño un puñado de contactos no prueba nada, así que fíjate en la tendencia a lo largo de dos meses.',
+        },
+        {
+          kind: 'quote',
+          text: 'Tu mejor texto de ventas ya está escrito — está en Google, firmado por tus clientes.',
+        },
+        { kind: 'heading', text: 'Qué no hacer' },
+        {
+          kind: 'paragraph',
+          text: 'No compres un plugin o servicio que prometa “impulsar” tus reseñas; es una forma rápida de que marquen tu perfil. No inventes reseñas ni pulas las reales — los clientes lo notan. No lo escondas todo en un carrusel que se mueve antes de que nadie lo lea. Y no agregues reseñas al sitio mientras el resto de tu presencia manda señales cruzadas: si tu perfil muestra horarios viejos o un teléfono equivocado, [arregla eso primero](/blog/outdated-google-profile-dfw).',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Si terminas los cinco pasos y la página igual no trae contactos, el problema probablemente es la página misma — la oferta, el diseño, el camino hasta el botón. El [Growth Score](/growth-score) gratuito toma cuatro minutos y te muestra dónde se está yendo la gente en tu sitio. Y el [Diagnóstico](/diagnostic) es una revisión humana de siete días de tu sitio y tu perfil que te dice exactamente qué arreglar primero.',
         },
       ],
     },
