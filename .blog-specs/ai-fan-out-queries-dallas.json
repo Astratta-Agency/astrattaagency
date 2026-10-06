@@ -1,0 +1,15 @@
+{
+  "cover": {
+    "concept": "A single accent-orange thread entering from the left, splitting in the middle into many fine muted-indigo lines that fan out to small geometric tiles of different sizes, then converging again on the right into one bright accent-orange point. The fan is airy and precise; the final point is calm and solid."
+  },
+  "inline": [
+    {
+      "name": "one-prompt-many-searches",
+      "concept": "One speech-bubble outline in muted indigo on the left, from which five thin lines branch out to five small rounded tiles stacked on the right. Four tiles stay pale and quiet; the one reached by the finest, most precise line glows solid accent orange."
+    },
+    {
+      "name": "one-page-one-decision",
+      "concept": "One tall page shape in muted indigo outline at center, with a single bold accent-orange line running from top to bottom through it like a clear decision path. Around it, several faint, empty page outlines recede into the background, unmarked and pale."
+    }
+  ]
+}
