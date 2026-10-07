@@ -48,6 +48,9 @@ import aiModeSearchConsoleQuestionToFaq from '@/assets/blog/ai-mode-search-conso
 import reviewsStuckOnGoogleCover from '@/assets/blog/reviews-stuck-on-google-dallas-cover.webp'
 import reviewsStuckOnGoogleProofBesideButton from '@/assets/blog/reviews-stuck-on-google-dallas-proof-beside-button.webp'
 import reviewsStuckOnGoogleOneProofManyPlaces from '@/assets/blog/reviews-stuck-on-google-dallas-one-proof-many-places.webp'
+import aiFanOutCover from '@/assets/blog/ai-fan-out-queries-dallas-cover.webp'
+import aiFanOutOnePromptManySearches from '@/assets/blog/ai-fan-out-queries-dallas-one-prompt-many-searches.webp'
+import aiFanOutOnePageOneDecision from '@/assets/blog/ai-fan-out-queries-dallas-one-page-one-decision.webp'
 
 export type BlogCategory = 'web-conversion' | 'digital-marketing' | 'design' | 'case-notes'
 
@@ -2766,6 +2769,252 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: 'Si terminas los cinco pasos y la página igual no trae contactos, el problema probablemente es la página misma — la oferta, el diseño, el camino hasta el botón. El [Growth Score](/growth-score) gratuito toma cuatro minutos y te muestra dónde se está yendo la gente en tu sitio. Y el [Diagnóstico](/diagnostic) es una revisión humana de siete días de tu sitio y tu perfil que te dice exactamente qué arreglar primero.',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'ai-fan-out-queries-dallas', es: 'consultas-fan-out-ia-dallas' },
+    title: {
+      en: 'AI assistants now search for your customers — what a Dallas business should answer first',
+      es: 'Los asistentes de IA ya buscan por tus clientes — qué debe responder primero un negocio en Dallas',
+    },
+    excerpt: {
+      en: 'ChatGPT turns one customer question into several narrower searches, and it leans on sources it trusts. Here’s what that means for a Dallas–Fort Worth business, and the three things to do this week.',
+      es: 'ChatGPT convierte una pregunta del cliente en varias búsquedas más precisas, y se apoya en fuentes en las que confía. Esto es lo que significa para un negocio de Dallas–Fort Worth y las tres cosas que hacer esta semana.',
+    },
+    category: 'digital-marketing',
+    publishedAt: '2026-10-06',
+    readingTime: { en: '5 min read', es: '5 min de lectura' },
+    coverGradient: 'from-primary/20 to-secondary/20',
+    coverVariant: 'insight',
+    coverImage: aiFanOutCover,
+    coverAlt: {
+      en: 'A single orange thread splitting into many fine indigo lines that fan out to small tiles and come back together at one bright point.',
+      es: 'Un solo hilo naranja que se divide en muchas líneas finas índigo, se abre hacia pequeños recuadros y vuelve a juntarse en un punto brillante.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'AI Fan-Out Queries: A Dallas Business Guide | Astratta',
+      es: 'Consultas fan-out de IA: guía para Dallas | Astratta',
+    },
+    metaDescription: {
+      en: 'ChatGPT now turns one customer question into several searches. Here’s what a Dallas business should answer first, and what to do this week to get named.',
+      es: 'ChatGPT ya convierte una pregunta del cliente en varias búsquedas. Esto es lo que debe responder primero un negocio en Dallas y qué hacer esta semana.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: 'Search Engine Journal published an analysis this week of how ChatGPT searches on a person’s behalf, and it matters if you run a Dallas–Fort Worth business. When someone asks ChatGPT a question, it doesn’t run one search. It splits the question into several narrower searches, called fan-out queries, and builds one answer from what comes back.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'The same analysis found that ChatGPT often limits those searches to specific websites using the site: operator. In plain terms, it appears to lean on sources it already considers trustworthy instead of searching the whole web equally.',
+        },
+        { kind: 'heading', text: 'Why this matters in Dallas–Fort Worth' },
+        {
+          kind: 'paragraph',
+          text: 'Picture someone typing “who can redo my kitchen floors in Plano without a three-month wait.” They aren’t searching “flooring Plano” anymore. The assistant breaks that sentence into smaller questions — cost, timeline, reviews, who works nearby — and looks for a page that answers each one. (That example is ours, to illustrate the idea.)',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Many local sites are built around the generic term: one services page, one headline, one phone number. That page competes for “dentist in Fort Worth” against every other dentist, and it never answers the follow-up questions. **The buying decision no longer happens on the generic keyword; it happens in the specific questions underneath it.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Take two hypothetical Dallas roofers. One has a single page that says “Roofing in Dallas — call us.” The other has a page explaining how it prices a storm-damage repair, how long the work takes and which neighborhoods it covers. When an assistant goes looking for an answer about cost, only one of them has anything to find.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'It also explains why monthly search volume can mislead you. A question asked a few times a month looks worthless in a keyword tool, yet it can be exactly the sub-question an assistant needs answered before it names a business. That’s our reading of the mechanism, not a measured number.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'If you already worked on [being the one business AI recommends](/blog/ai-one-recommendation-dallas), or on [reading the questions in Search Console](/blog/ai-mode-search-console-dallas), this is the next layer: deciding which questions deserve a full answer on your own site.',
+        },
+        { kind: 'heading', text: 'What to do this week' },
+        {
+          kind: 'paragraph',
+          text: 'You don’t need new software for any of this. You need an hour, a notepad and the honest answers you already give customers every week.',
+        },
+        { kind: 'heading', text: '1. Write down the five questions people ask before they buy' },
+        {
+          kind: 'paragraph',
+          text: 'Open last month’s texts, emails and call notes. List the questions that came up before someone hired you: price range, how long it takes, what can go wrong, whether you serve their city, what happens afterward. Five is plenty.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'A Garland remodeler will hear permit and timeline questions; a Frisco med spa will hear about downtime and who performs the treatment. **The questions customers ask you out loud are the same ones an assistant is asking for them.** Your [industry](/industries/home-improvement) changes the list, not the method.',
+        },
+        {
+          kind: 'image',
+          variant: 'insight',
+          caption: 'One customer question becomes several searches — the business that answers the most precise one is the one that gets named.',
+          src: aiFanOutOnePromptManySearches,
+          alt: 'A single speech bubble outline on the left splitting into five fine lines that reach five small tiles, one of them glowing orange.',
+        },
+        { kind: 'heading', text: '2. Answer the heaviest one completely, on your own site' },
+        {
+          kind: 'paragraph',
+          text: 'Pick the question with the most buying weight — usually price or timeline — and give it its own page or its own section. Answer it in the first two sentences, then add the detail: an honest range, what moves it up or down, and what you do about it. Mention the city and the neighborhoods you actually serve, naturally.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Write what you’d say across the counter, not what you think sounds professional. If the honest answer is “it depends,” say what it depends on. That specificity is what separates a page worth quoting from one that only exists.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'If you’d rather talk than write, record a short video answering it step by step and put it on the same page with a few lines of text beside it. **One page that fully answers one real decision is worth more than ten pages repeating the same keyword.**',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'A page built around one real decision gives a buyer, and an assistant, something specific to point to.',
+          src: aiFanOutOnePageOneDecision,
+          alt: 'One tall page shape with a single bold orange line running through its center, beside several faint empty page outlines.',
+        },
+        { kind: 'heading', text: '3. Make your name look the same everywhere' },
+        {
+          kind: 'paragraph',
+          text: 'If assistants lean on sources they trust, a small business earns that trust by being consistent. Check that your Google Business Profile, your website and your main listings all show the same name, address, phone, hours and services. The [local SEO checklist](/blog/local-seo-checklist-dfw) walks through where to look.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Fix the contradictions first, such as an old phone number or a service you stopped offering. **Consistency is how a small business looks trustworthy to a machine,** and it costs nothing but an afternoon.',
+        },
+        { kind: 'heading', text: 'How to know it worked' },
+        {
+          kind: 'paragraph',
+          text: 'Before you publish, write down how many calls and form submissions your website produced in the last 30 days. You’ll find them in Google Analytics and in the Performance section of your Google Business Profile. Look again in 30 days; don’t expect an overnight jump.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Also add one option to your intake form and your phone script: “ChatGPT or another AI assistant” under “How did you hear about us?” **If new customers start telling you an assistant sent them, you’ll know the page works before any report does.**',
+        },
+        {
+          kind: 'quote',
+          text: 'Your customers stopped searching for a keyword. They’re asking for a decision.',
+        },
+        { kind: 'heading', text: 'What to ignore' },
+        {
+          kind: 'paragraph',
+          text: 'Skip any tool that promises to show you every query ChatGPT runs about your business. Nobody outside OpenAI sees all of them, so what you’d be paying for is an estimate. Your own customers’ questions are a better source, and they’re free.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Don’t delete the generic pages you already have, and don’t write fifty thin pages, one per question. Five honest, complete answers beat fifty copies of the same paragraph. And ignore anyone who says search is dead; the way people ask changed, not the fact that they ask.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'If you finish the three steps and your site still doesn’t turn those questions into contacts, the problem is probably structure: no page that can hold the answer, or no clear path to the button. The free [Growth Score](/growth-score) takes four minutes and shows where your site is leaking. And the [Diagnostic](/diagnostic) is a seven-day human review of your site and profile that tells you exactly which questions to answer first.',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: 'Search Engine Journal publicó esta semana un análisis de cómo busca ChatGPT en nombre de una persona, y te toca de cerca si tienes un negocio en Dallas–Fort Worth. Cuando alguien le hace una pregunta, ChatGPT no hace una sola búsqueda: la divide en varias búsquedas más precisas, llamadas consultas fan-out, y arma una respuesta con lo que encuentra.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'El mismo análisis encontró que ChatGPT suele limitar esas búsquedas a sitios concretos con el operador site:. Dicho simple: parece apoyarse en fuentes que ya considera confiables, en lugar de buscar por igual en toda la web.',
+        },
+        { kind: 'heading', text: 'Por qué importa en Dallas–Fort Worth' },
+        {
+          kind: 'paragraph',
+          text: 'Imagina a alguien escribiendo “quién me cambia el piso de la cocina en Plano sin esperar tres meses”. Ya no está buscando “pisos Plano”. El asistente parte esa frase en preguntas más chicas — costo, tiempo, reseñas, quién trabaja cerca — y busca una página que responda cada una. (El ejemplo es nuestro, para ilustrar la idea.)',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Muchos sitios locales se construyen alrededor del término genérico: una página de servicios, un titular, un teléfono. Esa página compite por “dentista en Fort Worth” contra todos los demás dentistas y nunca responde las preguntas que vienen después. **La decisión de compra ya no ocurre en la palabra clave genérica; ocurre en las preguntas concretas que hay debajo.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Piensa en dos roofers hipotéticos de Dallas. Uno tiene una sola página que dice “Techos en Dallas — llámanos”. El otro tiene una página que explica cómo cotiza la reparación de un daño por tormenta, cuánto tarda el trabajo y qué zonas cubre. Cuando un asistente busca una respuesta sobre costo, solo uno de los dos tiene algo que encontrar.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Eso también explica por qué el volumen de búsqueda mensual puede engañarte. Una pregunta que se hace unas pocas veces al mes parece no valer nada en una herramienta de palabras clave, pero puede ser justo la duda que un asistente necesita resolver antes de nombrar un negocio. Es nuestra lectura del mecanismo, no una cifra medida.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Si ya trabajaste en [ser el negocio que la IA recomienda](/blog/ai-one-recommendation-dallas) o en [leer las preguntas en Search Console](/blog/ai-mode-search-console-dallas), esta es la siguiente capa: decidir qué preguntas merecen una respuesta completa en tu propio sitio.',
+        },
+        { kind: 'heading', text: 'Qué hacer esta semana' },
+        {
+          kind: 'paragraph',
+          text: 'No necesitas software nuevo para nada de esto. Necesitas una hora, una libreta y las respuestas honestas que ya das a tus clientes cada semana.',
+        },
+        { kind: 'heading', text: '1. Anota las cinco preguntas que la gente hace antes de comprar' },
+        {
+          kind: 'paragraph',
+          text: 'Abre los mensajes, correos y notas de llamadas del mes pasado. Haz la lista de lo que preguntaron antes de contratarte: rango de precio, cuánto tarda, qué puede salir mal, si atiendes su ciudad, qué pasa después. Con cinco basta.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Un remodelador en Garland oirá preguntas de permisos y plazos; un med spa en Frisco, de tiempo de recuperación y de quién hace el tratamiento. **Las preguntas que tus clientes te hacen en voz alta son las mismas que un asistente hace por ellos.** Tu [industria](/industries/home-improvement) cambia la lista, no el método.',
+        },
+        {
+          kind: 'image',
+          variant: 'insight',
+          caption: 'Una pregunta del cliente se vuelve varias búsquedas: el negocio que responde la más precisa es el que sale nombrado.',
+          src: aiFanOutOnePromptManySearches,
+          alt: 'El contorno de una sola burbuja de diálogo a la izquierda que se divide en cinco líneas finas hacia cinco pequeños recuadros, uno de ellos brillando en naranja.',
+        },
+        { kind: 'heading', text: '2. Responde la más pesada, completa, en tu propio sitio' },
+        {
+          kind: 'paragraph',
+          text: 'Elige la pregunta con más peso de compra — casi siempre precio o plazo — y dale su propia página o su propia sección. Respóndela en las dos primeras frases y luego añade el detalle: un rango honesto, qué lo sube o lo baja y qué haces tú al respecto. Menciona la ciudad y las zonas que de verdad atiendes, con naturalidad.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Escribe lo que dirías en el mostrador, no lo que crees que suena profesional. Si la respuesta honesta es “depende”, di de qué depende. Esa especificidad es lo que separa una página digna de citarse de una que solo existe.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Si prefieres hablar a escribir, graba un video corto que la conteste paso a paso y súbelo a esa misma página con unas líneas de texto al lado. **Una página que responde a fondo una decisión real vale más que diez páginas repitiendo la misma palabra clave.**',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'Una página construida alrededor de una decisión real le da al comprador, y al asistente, algo concreto a lo que señalar.',
+          src: aiFanOutOnePageOneDecision,
+          alt: 'Una página alta con una sola línea naranja gruesa que la recorre por el centro, junto a varios contornos de páginas vacías y tenues.',
+        },
+        { kind: 'heading', text: '3. Que tu nombre se vea igual en todas partes' },
+        {
+          kind: 'paragraph',
+          text: 'Si los asistentes se apoyan en fuentes de confianza, un negocio pequeño se la gana siendo consistente. Revisa que tu Perfil de Negocio de Google, tu sitio y tus listados principales muestren el mismo nombre, dirección, teléfono, horario y servicios. La [lista de SEO local](/blog/local-seo-checklist-dfw) te dice dónde mirar.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Arregla primero las contradicciones, como un teléfono viejo o un servicio que ya no ofreces. **La consistencia es la forma en que un negocio pequeño se ve confiable para una máquina,** y solo cuesta una tarde.',
+        },
+        { kind: 'heading', text: 'Cómo saber si funcionó' },
+        {
+          kind: 'paragraph',
+          text: 'Antes de publicar, anota cuántas llamadas y formularios generó tu sitio en los últimos 30 días. Los encuentras en Google Analytics y en la sección Rendimiento de tu Perfil de Negocio de Google. Vuelve a mirar en 30 días; no esperes un salto de un día para otro.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Agrega además una opción a tu formulario y a tu guion telefónico: “ChatGPT u otro asistente de IA” en la pregunta “¿Cómo nos conociste?”. **Si los clientes nuevos empiezan a decirte que los mandó un asistente, sabrás que la página funciona antes que cualquier reporte.**',
+        },
+        {
+          kind: 'quote',
+          text: 'Tus clientes dejaron de buscar una palabra clave. Están pidiendo una decisión.',
+        },
+        { kind: 'heading', text: 'Qué ignorar' },
+        {
+          kind: 'paragraph',
+          text: 'Descarta cualquier herramienta que prometa mostrarte todas las consultas que ChatGPT hace sobre tu negocio. Nadie fuera de OpenAI las ve todas, así que lo que pagarías es una estimación. Las preguntas de tus propios clientes son mejor fuente, y son gratis.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'No borres las páginas genéricas que ya tienes ni escribas cincuenta páginas flacas, una por pregunta. Cinco respuestas honestas y completas le ganan a cincuenta copias del mismo párrafo. Y no le hagas caso a quien diga que la búsqueda murió: cambió la forma de preguntar, no el hecho de que la gente pregunta.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Si terminas los tres pasos y tu sitio igual no convierte esas preguntas en contactos, el problema probablemente es de estructura: falta una página que pueda sostener la respuesta, o un camino claro hasta el botón. El [Growth Score](/growth-score) gratuito toma cuatro minutos y te muestra dónde se está escapando tu sitio. Y el [Diagnóstico](/diagnostic) es una revisión humana de siete días de tu sitio y tu perfil que te dice qué preguntas responder primero.',
         },
       ],
     },
