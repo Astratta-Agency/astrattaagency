@@ -51,6 +51,9 @@ import reviewsStuckOnGoogleOneProofManyPlaces from '@/assets/blog/reviews-stuck-
 import aiFanOutCover from '@/assets/blog/ai-fan-out-queries-dallas-cover.webp'
 import aiFanOutOnePromptManySearches from '@/assets/blog/ai-fan-out-queries-dallas-one-prompt-many-searches.webp'
 import aiFanOutOnePageOneDecision from '@/assets/blog/ai-fan-out-queries-dallas-one-page-one-decision.webp'
+import callForPriceCover from '@/assets/blog/call-for-price-lost-leads-dallas-cover.webp'
+import callForPriceRangeBridge from '@/assets/blog/call-for-price-lost-leads-dallas-range-bridge.webp'
+import callForPriceQuoteSteps from '@/assets/blog/call-for-price-lost-leads-dallas-quote-steps.webp'
 
 export type BlogCategory = 'web-conversion' | 'digital-marketing' | 'design' | 'case-notes'
 
@@ -3015,6 +3018,246 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: 'Si terminas los tres pasos y tu sitio igual no convierte esas preguntas en contactos, el problema probablemente es de estructura: falta una página que pueda sostener la respuesta, o un camino claro hasta el botón. El [Growth Score](/growth-score) gratuito toma cuatro minutos y te muestra dónde se está escapando tu sitio. Y el [Diagnóstico](/diagnostic) es una revisión humana de siete días de tu sitio y tu perfil que te dice qué preguntas responder primero.',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'call-for-price-lost-leads-dallas', es: 'llama-para-cotizar-leads-perdidos-dallas' },
+    title: {
+      en: 'Why “call for price” is costing a Dallas business its leads — and what to publish instead',
+      es: 'Por qué “llama para cotizar” le cuesta clientes a un negocio de Dallas — y qué publicar en su lugar',
+    },
+    excerpt: {
+      en: 'Customers ask “how much?” and then go quiet. For a Dallas–Fort Worth business, the fix is a published price range, and you can do it in an afternoon without hiring anyone.',
+      es: 'Los clientes preguntan “¿cuánto cuesta?” y luego desaparecen. Para un negocio de Dallas–Fort Worth, el arreglo es publicar un rango de precio, y se hace en una tarde sin contratar a nadie.',
+    },
+    category: 'web-conversion',
+    publishedAt: '2026-10-08',
+    readingTime: { en: '5 min read', es: '5 min de lectura' },
+    coverGradient: 'from-primary/20 to-secondary/20',
+    coverVariant: 'clarity',
+    coverImage: callForPriceCover,
+    coverAlt: {
+      en: 'A closed glass box holding a single orange thread of light, next to an open doorway with a faint path leading through it.',
+      es: 'Una caja de vidrio cerrada que guarda un solo hilo de luz naranja, junto a una puerta abierta con un camino tenue que la atraviesa.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'Call for Price Is Costing Dallas Leads | Astratta',
+      es: 'Llama para cotizar: leads perdidos en Dallas | Astratta',
+    },
+    metaDescription: {
+      en: 'Customers in Dallas ask “how much?” and never buy. Here’s how to replace “call for price” with a clear range and measure whether it brings better leads.',
+      es: 'Tus clientes en Dallas preguntan “¿cuánto cuesta?” y no compran. Así reemplazas “llama para cotizar” por un rango claro y mides si trae mejores leads.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: 'If you run a business in Dallas–Fort Worth, you probably know this message: “Hi, how much for…?” You reply with “it depends, give us a call,” and the conversation goes quiet. The person wasn’t rude and wasn’t lost. They just went to find a number somewhere else.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'In three of the audits we’ve run for DFW businesses, the same pattern showed up: product listings with a “call for price” button, or social posts that never mention a cost. Plenty of questions came in. Few turned into sales.',
+        },
+        { kind: 'heading', text: 'What actually causes it' },
+        {
+          kind: 'paragraph',
+          text: 'People compare before they contact anyone. When they land on your site, they’re trying to answer one private question: “Can I afford this, and is it worth a phone call?” If your page can’t answer it, the safest move for them is to leave.',
+        },
+        {
+          kind: 'paragraph',
+          text: '**A hidden price doesn’t protect you from comparison; it just makes you the only option the buyer can’t evaluate.** The competitor who shows a number, even a wide one, gets the call because a number feels like less risk than a blank.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'There’s a second cost. Without a range, you get inquiries from people who were never going to buy at your level, and you spend your day on those calls. That’s our reading of the pattern, not a measured number, but it matches what business owners tell us.',
+        },
+        { kind: 'heading', text: 'Four steps you can do this week' },
+        {
+          kind: 'paragraph',
+          text: 'You don’t need a designer or an agency. You need an hour with your last twenty quotes and a spreadsheet.',
+        },
+        { kind: 'heading', text: '1. Turn your last quotes into three honest ranges' },
+        {
+          kind: 'paragraph',
+          text: 'Pull your last ten to twenty quotes and group them by your three most-requested services. For each one, write the lowest and highest number you actually charged, and the two or three things that moved it: size, materials, timeline, location.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'A Plano flooring contractor might see that square footage and subfloor condition explain most of the spread. (That example is ours, to illustrate the method.) **A range with its reasons attached is more believable than a single number or no number at all,** because the reader can place themselves inside it.',
+        },
+        { kind: 'heading', text: '2. Replace “call for price” on your website' },
+        {
+          kind: 'paragraph',
+          text: 'On each service or product page, put the range near the top: “Typically $X to $Y,” then one short paragraph on what moves it, then your button. Keep the button, but change what it promises, for example “Get an exact quote for your job.”',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Ask for only a name, a phone number and one detail that affects price. Every extra field costs you submissions. If your site can’t hold a section like this, that’s a structure problem, and it’s what a [Foundation](/foundation) rebuild is for.',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'A visible range turns a blank into a decision the buyer can make before they ever pick up the phone.',
+          src: callForPriceRangeBridge,
+          alt: 'A bold orange line bridging a gap between a small glowing point on the left and a rounded button shape on the right.',
+        },
+        { kind: 'heading', text: '3. Put the number where people already look' },
+        {
+          kind: 'paragraph',
+          text: 'Add the range, or a clear “starting at,” to the text of your next social posts, your Google Business Profile services and your Instagram highlights. If someone sees a price in a Reel caption, the first message you get is no longer “how much?” but “can you do Saturday?”',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Use the same number everywhere. A range that says one thing on the site and another on Instagram creates the distrust you were trying to remove.',
+        },
+        { kind: 'heading', text: '4. Record one video on how you quote' },
+        {
+          kind: 'paragraph',
+          text: 'Film a two-minute clip, with your phone and no script, showing how you build a quote: what you ask, what you measure, what changes the number. Post it on the same page as your range and as a Reel.',
+        },
+        {
+          kind: 'paragraph',
+          text: '**People trust a price more when they have watched how it was built.** It also gives you something to send the next time someone asks “how much?” in a DM. If you want more on putting proof next to the decision, see [how reviews stuck on Google can sit beside your button](/blog/reviews-stuck-on-google-dallas).',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'Showing how a quote is built answers the question behind “how much?”, which is “can I trust this number?”',
+          src: callForPriceQuoteSteps,
+          alt: 'Three small rounded steps rising from left to right, joined by a thin orange line that ends at a bright point.',
+        },
+        { kind: 'heading', text: 'How to measure it' },
+        {
+          kind: 'paragraph',
+          text: 'Your exact metric is the conversion rate from website visit to completed form. Before you change anything, open Google Analytics 4 and go to Reports, then Engagement, then Pages and screens. Write down the visits and form submissions for the page you’ll change over the last 30 days. (Make sure the form submission is marked as a key event first.)',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Check again after 30 days. Also keep a simple tally of how many inquiries fit inside your published range. **If submissions hold steady but the share of serious inquiries goes up, the range is working,** even if the raw number of messages drops.',
+        },
+        {
+          kind: 'quote',
+          text: 'A price you hide doesn’t protect your margin. It just hands the buyer to the competitor who will say a number.',
+        },
+        { kind: 'heading', text: 'What not to do' },
+        {
+          kind: 'paragraph',
+          text: 'Don’t publish a number you can’t honor. If the range says $X to $Y, the quote has to land inside it or you have to explain why. Don’t copy a competitor’s price; yours depends on your costs and your work. And don’t bury the range behind a form that says “get pricing.” That’s the same hidden price with an extra step.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Also skip fake “sale” prices to look cheaper. They get remembered the first time the real number shows up on the invoice.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'If you do all four steps and the inquiries still don’t turn into jobs, the problem is probably deeper than the price: the offer, the page, or the path to the button. The free [Growth Score](/growth-score) takes four minutes and shows where your site leaks. And the [Diagnostic](/diagnostic) is a seven-day human review of your site and profile that tells you exactly what to fix first.',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: 'Si tienes un negocio en Dallas–Fort Worth, seguro conoces este mensaje: “Hola, ¿cuánto cuesta…?”. Respondes “depende, llámanos”, y la conversación se queda en silencio. La persona no fue grosera ni estaba perdida. Simplemente se fue a buscar un número a otro lado.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'En tres de las auditorías que hemos hecho a negocios de DFW apareció el mismo patrón: listados de productos con un botón de “llama para el precio”, o publicaciones en redes que nunca mencionan un costo. Llegaban muchas preguntas. Pocas se volvían ventas.',
+        },
+        { kind: 'heading', text: 'Qué lo causa de verdad' },
+        {
+          kind: 'paragraph',
+          text: 'La gente compara antes de contactar a nadie. Cuando llega a tu sitio, intenta responder una pregunta privada: “¿Me alcanza, y vale la pena una llamada?”. Si tu página no la responde, lo más seguro para ella es irse.',
+        },
+        {
+          kind: 'paragraph',
+          text: '**Un precio escondido no te protege de la comparación; solo te convierte en la única opción que el comprador no puede evaluar.** El competidor que muestra un número, aunque sea un rango amplio, se lleva la llamada, porque un número se siente menos riesgoso que un vacío.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Hay un segundo costo. Sin rango, te escriben personas que nunca iban a comprar a tu nivel, y tu día se va en esas llamadas. Es nuestra lectura del patrón, no una cifra medida, pero coincide con lo que nos cuentan los dueños.',
+        },
+        { kind: 'heading', text: 'Cuatro pasos para esta semana' },
+        {
+          kind: 'paragraph',
+          text: 'No necesitas diseñador ni agencia. Necesitas una hora con tus últimas veinte cotizaciones y una hoja de cálculo.',
+        },
+        { kind: 'heading', text: '1. Convierte tus últimas cotizaciones en tres rangos honestos' },
+        {
+          kind: 'paragraph',
+          text: 'Saca tus últimas diez a veinte cotizaciones y agrúpalas por tus tres servicios más pedidos. Para cada uno, anota el número más bajo y el más alto que de verdad cobraste, y las dos o tres cosas que lo movieron: tamaño, materiales, plazo, ubicación.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Un contratista de pisos en Plano puede ver que los pies cuadrados y el estado del contrapiso explican casi toda la diferencia. (El ejemplo es nuestro, para ilustrar el método.) **Un rango con sus razones es más creíble que un solo número o que ningún número,** porque quien lee puede ubicarse dentro de él.',
+        },
+        { kind: 'heading', text: '2. Reemplaza “llama para cotizar” en tu sitio' },
+        {
+          kind: 'paragraph',
+          text: 'En cada página de servicio o producto, pon el rango arriba: “Normalmente de $X a $Y”, luego un párrafo corto sobre qué lo mueve, y después tu botón. Conserva el botón, pero cambia lo que promete, por ejemplo “Pide la cotización exacta de tu trabajo”.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Pide solo un nombre, un teléfono y un dato que afecte el precio. Cada campo extra te cuesta envíos. Si tu sitio no puede sostener una sección así, es un problema de estructura, y para eso sirve reconstruir con [Foundation](/foundation).',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'Un rango visible convierte un vacío en una decisión que el comprador puede tomar antes de levantar el teléfono.',
+          src: callForPriceRangeBridge,
+          alt: 'Una línea naranja gruesa que une un pequeño punto luminoso a la izquierda con la forma de un botón redondeado a la derecha.',
+        },
+        { kind: 'heading', text: '3. Pon el número donde la gente ya mira' },
+        {
+          kind: 'paragraph',
+          text: 'Agrega el rango, o un “desde” claro, al texto de tus próximas publicaciones, a los servicios de tu Perfil de Negocio de Google y a tus historias destacadas de Instagram. Si alguien ve un precio en el texto de un Reel, el primer mensaje que recibes deja de ser “¿cuánto cuesta?” y pasa a ser “¿puedes el sábado?”.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Usa el mismo número en todas partes. Un rango que dice una cosa en el sitio y otra en Instagram crea la desconfianza que querías quitar.',
+        },
+        { kind: 'heading', text: '4. Graba un video de cómo cotizas' },
+        {
+          kind: 'paragraph',
+          text: 'Filma un clip de dos minutos, con tu celular y sin guion, mostrando cómo armas una cotización: qué preguntas, qué mides, qué cambia el número. Súbelo en la misma página de tu rango y como Reel.',
+        },
+        {
+          kind: 'paragraph',
+          text: '**La gente confía más en un precio cuando vio cómo se armó.** Además te da algo que enviar la próxima vez que alguien pregunte “¿cuánto cuesta?” por mensaje directo. Si quieres más sobre poner la prueba junto a la decisión, mira [cómo las reseñas atrapadas en Google pueden estar junto a tu botón](/blog/reviews-stuck-on-google-dallas).',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'Mostrar cómo se arma una cotización responde la pregunta detrás de “¿cuánto cuesta?”, que es “¿puedo confiar en este número?”.',
+          src: callForPriceQuoteSteps,
+          alt: 'Tres pequeños escalones redondeados que suben de izquierda a derecha, unidos por una fina línea naranja que termina en un punto brillante.',
+        },
+        { kind: 'heading', text: 'Cómo se mide' },
+        {
+          kind: 'paragraph',
+          text: 'Tu métrica exacta es la tasa de conversión de visita al sitio a formulario enviado. Antes de cambiar nada, abre Google Analytics 4 y ve a Informes, luego Participación, luego Páginas y pantallas. Anota las visitas y los formularios enviados de la página que vas a cambiar en los últimos 30 días. (Primero asegúrate de que el envío del formulario esté marcado como evento clave.)',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Vuelve a mirar a los 30 días. Lleva también una cuenta simple de cuántas consultas encajan dentro del rango que publicaste. **Si los envíos se mantienen pero sube la proporción de consultas serias, el rango está funcionando,** aunque baje el número total de mensajes.',
+        },
+        {
+          kind: 'quote',
+          text: 'Un precio escondido no protege tu margen. Solo le entrega el comprador al competidor que sí diga un número.',
+        },
+        { kind: 'heading', text: 'Qué no hacer' },
+        {
+          kind: 'paragraph',
+          text: 'No publiques un número que no puedas cumplir. Si el rango dice de $X a $Y, la cotización tiene que caer dentro o debes explicar por qué. No copies el precio de un competidor; el tuyo depende de tus costos y de tu trabajo. Y no entierres el rango detrás de un formulario que dice “recibe precios”. Es el mismo precio escondido con un paso extra.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Tampoco inventes precios de “oferta” para parecer más barato. Se recuerdan la primera vez que el número real aparece en la factura.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Si haces los cuatro pasos y las consultas igual no se vuelven trabajos, el problema probablemente es más profundo que el precio: la oferta, la página o el camino hasta el botón. El [Growth Score](/growth-score) gratuito toma cuatro minutos y te muestra dónde se escapa tu sitio. Y el [Diagnóstico](/diagnostic) es una revisión humana de siete días de tu sitio y tu perfil que te dice exactamente qué arreglar primero.',
         },
       ],
     },
