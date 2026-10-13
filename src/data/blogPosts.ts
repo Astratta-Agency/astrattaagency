@@ -3292,7 +3292,7 @@ export const BLOG_POSTS: BlogPostSource[] = [
     },
     metaDescription: {
       en: 'Google is moving Local Services Ads into Performance Max. Here is what Dallas contractors should connect this week so Google learns what a real job looks like.',
-      es: 'Google mueve los Anuncios de Servicios Locales a Performance Max. Qué conectar esta semana en Dallas para que Google aprenda qué es un trabajo real y no solo una llamada.',
+      es: 'Google mueve los Anuncios de Servicios Locales a Performance Max. Qué conectar en Dallas para que Google aprenda qué es un trabajo real, no una llamada.',
     },
     body: {
       en: [
