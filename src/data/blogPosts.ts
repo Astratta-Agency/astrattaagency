@@ -54,6 +54,9 @@ import aiFanOutOnePageOneDecision from '@/assets/blog/ai-fan-out-queries-dallas-
 import callForPriceCover from '@/assets/blog/call-for-price-lost-leads-dallas-cover.webp'
 import callForPriceRangeBridge from '@/assets/blog/call-for-price-lost-leads-dallas-range-bridge.webp'
 import callForPriceQuoteSteps from '@/assets/blog/call-for-price-lost-leads-dallas-quote-steps.webp'
+import lsaPmaxCover from '@/assets/blog/local-services-ads-performance-max-dallas-cover.webp'
+import lsaPmaxRealJobSignal from '@/assets/blog/local-services-ads-performance-max-dallas-real-job-signal.webp'
+import lsaPmaxLeadFilter from '@/assets/blog/local-services-ads-performance-max-dallas-lead-filter.webp'
 
 export type BlogCategory = 'web-conversion' | 'digital-marketing' | 'design' | 'case-notes'
 
@@ -3258,6 +3261,230 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: 'Si haces los cuatro pasos y las consultas igual no se vuelven trabajos, el problema probablemente es más profundo que el precio: la oferta, la página o el camino hasta el botón. El [Growth Score](/growth-score) gratuito toma cuatro minutos y te muestra dónde se escapa tu sitio. Y el [Diagnóstico](/diagnostic) es una revisión humana de siete días de tu sitio y tu perfil que te dice exactamente qué arreglar primero.',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'local-services-ads-performance-max-dallas', es: 'anuncios-servicios-locales-performance-max-dallas' },
+    title: {
+      en: 'Google is moving Local Services Ads into Performance Max — what Dallas contractors should do first',
+      es: 'Google mueve los Anuncios de Servicios Locales a Performance Max — lo que debe hacer primero un contratista de Dallas',
+    },
+    excerpt: {
+      en: 'Local Services Ads are becoming a Performance Max campaign type inside Google Ads. For Dallas–Fort Worth contractors, the lever that matters is no longer keywords. It is telling Google which leads became real jobs.',
+      es: 'Los Anuncios de Servicios Locales se están convirtiendo en un tipo de campaña Performance Max dentro de Google Ads. Para un contratista de Dallas–Fort Worth, lo que importa ya no son las palabras clave, sino decirle a Google qué leads se volvieron trabajos reales.',
+    },
+    category: 'digital-marketing',
+    publishedAt: '2026-10-13',
+    readingTime: { en: '5 min read', es: '5 min de lectura' },
+    coverGradient: 'from-primary/20 to-secondary/20',
+    coverVariant: 'insight',
+    coverImage: lsaPmaxCover,
+    coverAlt: {
+      en: 'A wide funnel of pale dots narrowing toward a single bright orange point, with a thin line feeding that point back to the start of the funnel.',
+      es: 'Un embudo ancho de puntos pálidos que se estrecha hacia un solo punto naranja brillante, con una línea fina que devuelve ese punto al inicio del embudo.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'Dallas Local Services Ads Are Moving to PMax | Astratta',
+      es: 'Anuncios Locales de Google pasan a PMax en Dallas | Astratta',
+    },
+    metaDescription: {
+      en: 'Google is moving Local Services Ads into Performance Max. Here is what Dallas contractors should connect this week so Google learns what a real job looks like.',
+      es: 'Google mueve los Anuncios de Servicios Locales a Performance Max. Qué conectar esta semana en Dallas para que Google aprenda qué es un trabajo real y no solo una llamada.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: 'Google is moving Local Services Ads into Google Ads as a specialized Performance Max campaign type. It began with a small group of U.S. advertisers in August 2026 and plans to move other accounts in phases through 2027. If you run Google Ads for a contractor business in Dallas, this will reach your account at some point.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'According to Search Engine Journal’s coverage, these campaigns stay on Search and Maps, stay keywordless, and keep charging per valid lead (calls, messages, bookings) instead of per click. The separate Local Services dashboard goes away, and bidding, budgets and reporting move inside Google Ads.',
+        },
+        { kind: 'heading', text: 'Why this matters in Dallas–Fort Worth' },
+        {
+          kind: 'paragraph',
+          text: 'Most advice this month says to “optimize your keywords.” For this campaign type that advice has nothing to grab: there are no keywords to optimize. Google’s system decides when and where you appear, and it learns from whatever signal you give it.',
+        },
+        {
+          kind: 'paragraph',
+          text: '**When the system has no keywords to steer, the one thing you still control is the definition of a good lead.** If Google only knows that the phone rang, it will find you more phone rings. It cannot know the caller wanted a job outside your service area, or was a price shopper who never booked.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'That cost is sharper in DFW than in a small market. Plano, Frisco, Fort Worth and Arlington are different service areas with different job sizes. A lead is cheap to buy. A lead that turns into a signed job is the thing you are actually paying for, and only you know the difference.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'The pay-per-lead model has a catch too. You are billed for valid leads, and “valid” is Google’s definition: a real person reaching you through the ad. It is not your definition. A homeowner asking for a free opinion on a job you never take can be a valid lead and a wasted one at the same time.',
+        },
+        { kind: 'heading', text: 'What to do this week' },
+        {
+          kind: 'paragraph',
+          text: 'You do not need to rebuild your account. You need to give the system a better answer to one question: which leads were worth it? Here are four steps, in order.',
+        },
+        { kind: 'heading', text: '1. Write down what a real lead is' },
+        {
+          kind: 'paragraph',
+          text: 'One sentence, in writing: “A real lead is someone inside our service area who asks about [your top service] and gets a quote from us.” Put it where whoever answers the phone can see it. **If your team cannot say what a good lead is, an algorithm cannot learn it.**',
+        },
+        { kind: 'heading', text: '2. Track what happened to every lead for two weeks' },
+        {
+          kind: 'paragraph',
+          text: 'Keep one list, even a spreadsheet: date, how they reached you, whether you answered, whether a quote went out, whether it became a job, and the job value. Do not trust memory; the leads you forget are usually the ones that did not convert.',
+        },
+        {
+          kind: 'image',
+          variant: 'insight',
+          caption: 'Google can count calls on its own. Only you can tell it which of them became jobs.',
+          src: lsaPmaxRealJobSignal,
+          alt: 'A line of pale dots on the left, with one dot glowing orange and a thin line carrying it back toward the start of the line.',
+        },
+        { kind: 'heading', text: '3. Send the outcome back to Google' },
+        {
+          kind: 'paragraph',
+          text: 'Connect your CRM or customer list to your Google Ads account so booked jobs, not just clicks or calls, count as the result. How you do it depends on your tools and on what your account offers once it is migrated, so check Google’s Help Center for your campaign type. If you have no CRM yet, the spreadsheet from step 2 is a start.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'If you are not sure your tracking is set up right, do not guess. Fixing it is part of what we build in [Systems](/systems), and a [Diagnostic](/diagnostic) will tell you whether it is broken.',
+        },
+        { kind: 'heading', text: '4. Fix the profile these campaigns read from' },
+        {
+          kind: 'paragraph',
+          text: 'Because these campaigns use your Google Business Profile data, check it before the migration reaches you: service areas, categories, hours, phone number and photos. A wrong service area sends you leads from places you do not work. Our post on [an outdated Google profile](/blog/outdated-google-profile-dfw) walks through the same checks.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'The cleaner the profile, the less budget the system spends on leads you would have turned down.',
+          src: lsaPmaxLeadFilter,
+          alt: 'Pale dots passing through a narrow gate, where only the ones that line up with a thin orange line come out the other side.',
+        },
+        { kind: 'heading', text: 'How to measure it' },
+        {
+          kind: 'paragraph',
+          text: 'Your exact metric is cost per booked job, not cost per lead. Divide what you spent on Google ads in the last 60 days by the jobs you can trace to them. Write that number down before the migration, and compare it 30 days after. A rising cost per lead with a flat or falling cost per booked job is fine. The reverse is the warning.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Also answer faster. A lead you reach in minutes is worth more than the same lead reached tomorrow, and we wrote about [what missed calls cost a DFW contractor](/blog/missed-calls-lost-jobs-dfw). It applies to every channel, not only ads.',
+        },
+        {
+          kind: 'quote',
+          text: 'When Google stops asking for keywords, the only thing it still needs from you is proof of which leads were worth having.',
+        },
+        { kind: 'heading', text: 'What to ignore' },
+        {
+          kind: 'paragraph',
+          text: 'Ignore the keyword lists. They no longer steer this campaign type, and the hours spent on them are better spent on step 3. Ignore any agency dashboard that celebrates “more leads” without a single booked job next to it.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'And do not pause everything out of fear. The rollout is phased through 2027, so you have time to prepare. Waiting until your account switches to find out your tracking is broken is the expensive way to learn it. Winning here means fewer, better leads, answered fast. Go back over the leads you turned down in recent weeks and note why, because those notes are the first draft of your definition in step 1. If you run a home improvement business, our [home improvement page](/industries/home-improvement) shows how we think about the rest of the funnel.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Not sure where your leads actually leak? The free [Growth Score](/growth-score) takes 12 questions and four minutes. For a human review of your site, your profile and your lead tracking in seven days, start with the [Diagnostic](/diagnostic).',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: 'Google está moviendo los Anuncios de Servicios Locales a Google Ads como un tipo especializado de campaña Performance Max. Empezó con un grupo pequeño de anunciantes en EE. UU. en agosto de 2026 y planea pasar el resto de las cuentas por fases hasta 2027. Si manejas Google Ads para un negocio de contratistas en Dallas, tarde o temprano esto llega a tu cuenta.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Según la cobertura de Search Engine Journal, estas campañas se quedan en Búsqueda y Maps, siguen sin palabras clave y siguen cobrando por lead válido (llamadas, mensajes, citas) y no por clic. El panel separado de Servicios Locales desaparece, y las ofertas, el presupuesto y los reportes pasan a vivir dentro de Google Ads.',
+        },
+        { kind: 'heading', text: 'Por qué importa en Dallas–Fort Worth' },
+        {
+          kind: 'paragraph',
+          text: 'Casi todo el consejo de este mes dice “optimiza tus palabras clave”. En este tipo de campaña ese consejo no tiene de dónde agarrarse: no hay palabras clave que optimizar. El sistema de Google decide cuándo y dónde apareces, y aprende de la señal que tú le des.',
+        },
+        {
+          kind: 'paragraph',
+          text: '**Cuando el sistema no tiene palabras clave que orientar, lo único que sigues controlando es la definición de un buen lead.** Si Google solo sabe que sonó el teléfono, te va a conseguir más teléfonos sonando. No puede saber que quien llamó quería un trabajo fuera de tu zona, o que solo estaba comparando precios y nunca agendó.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Ese costo se nota más en DFW que en un mercado pequeño. Plano, Frisco, Fort Worth y Arlington son zonas de servicio distintas, con trabajos de tamaños distintos. Comprar un lead es barato. Lo que de verdad pagas es el lead que termina en un trabajo firmado, y solo tú sabes la diferencia.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'El modelo de pago por lead también tiene su trampa. Te cobran por leads válidos, y “válido” es la definición de Google: una persona real que te contacta por el anuncio. No es la tuya. Un dueño de casa que pide una opinión gratis sobre un trabajo que tú nunca tomas puede ser un lead válido y un lead perdido al mismo tiempo.',
+        },
+        { kind: 'heading', text: 'Qué hacer esta semana' },
+        {
+          kind: 'paragraph',
+          text: 'No necesitas rehacer tu cuenta. Necesitas darle al sistema una mejor respuesta a una sola pregunta: ¿qué leads valieron la pena? Son cuatro pasos, en este orden.',
+        },
+        { kind: 'heading', text: '1. Escribe qué es un lead real' },
+        {
+          kind: 'paragraph',
+          text: 'Una frase, por escrito: “Un lead real es alguien dentro de nuestra zona de servicio que pregunta por [tu servicio principal] y recibe una cotización nuestra”. Ponla donde la vea quien contesta el teléfono. **Si tu equipo no sabe decir qué es un buen lead, un algoritmo no puede aprenderlo.**',
+        },
+        { kind: 'heading', text: '2. Anota qué pasó con cada lead durante dos semanas' },
+        {
+          kind: 'paragraph',
+          text: 'Lleva una sola lista, aunque sea una hoja de cálculo: fecha, cómo te contactaron, si contestaste, si salió una cotización, si se volvió trabajo y cuánto valió. No confíes en la memoria; los leads que se te olvidan suelen ser justo los que no cerraron.',
+        },
+        {
+          kind: 'image',
+          variant: 'insight',
+          caption: 'Google puede contar llamadas por sí solo. Solo tú puedes decirle cuáles de ellas se volvieron trabajos.',
+          src: lsaPmaxRealJobSignal,
+          alt: 'Una fila de puntos pálidos a la izquierda, con uno que brilla en naranja y una línea fina que lo lleva de vuelta hacia el inicio de la fila.',
+        },
+        { kind: 'heading', text: '3. Devuélvele el resultado a Google' },
+        {
+          kind: 'paragraph',
+          text: 'Conecta tu CRM o tu lista de clientes a tu cuenta de Google Ads para que cuenten como resultado los trabajos agendados, no solo los clics o las llamadas. Cómo se hace depende de tus herramientas y de lo que ofrezca tu cuenta una vez migrada, así que revisa el Centro de Ayuda de Google para tu tipo de campaña. Si todavía no tienes CRM, la hoja del paso 2 es un comienzo.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Si no estás seguro de que tu medición esté bien configurada, no adivines. Arreglarla es parte de lo que construimos en [Systems](/systems), y un [Diagnóstico](/diagnostic) te dice si está rota.',
+        },
+        { kind: 'heading', text: '4. Arregla el perfil del que leen estas campañas' },
+        {
+          kind: 'paragraph',
+          text: 'Como estas campañas usan los datos de tu Perfil de Negocio de Google, revísalo antes de que la migración te llegue: zonas de servicio, categorías, horario, teléfono y fotos. Una zona de servicio equivocada te manda leads de lugares donde no trabajas. Nuestro artículo sobre [un perfil de Google desactualizado](/blog/outdated-google-profile-dfw) repasa las mismas revisiones.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'Mientras más limpio el perfil, menos presupuesto gasta el sistema en leads que tú habrías rechazado.',
+          src: lsaPmaxLeadFilter,
+          alt: 'Puntos pálidos que pasan por una puerta estrecha, donde solo salen del otro lado los que coinciden con una fina línea naranja.',
+        },
+        { kind: 'heading', text: 'Cómo se mide' },
+        {
+          kind: 'paragraph',
+          text: 'Tu métrica exacta es el costo por trabajo agendado, no el costo por lead. Divide lo que gastaste en anuncios de Google en los últimos 60 días entre los trabajos que puedes rastrear hasta ellos. Anota ese número antes de la migración y compáralo 30 días después. Que suba el costo por lead mientras el costo por trabajo agendado se mantiene o baja está bien. Lo contrario es la alarma.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Contesta también más rápido. Un lead al que llegas en minutos vale más que el mismo lead al día siguiente, y ya escribimos sobre [lo que cuestan las llamadas perdidas a un contratista de DFW](/blog/missed-calls-lost-jobs-dfw). Aplica a todos los canales, no solo a los anuncios.',
+        },
+        {
+          kind: 'quote',
+          text: 'Cuando Google deja de pedirte palabras clave, lo único que todavía necesita de ti es la prueba de qué leads valían la pena.',
+        },
+        { kind: 'heading', text: 'Qué ignorar' },
+        {
+          kind: 'paragraph',
+          text: 'Ignora las listas de palabras clave. Ya no orientan este tipo de campaña, y esas horas rinden más en el paso 3. Ignora cualquier panel de agencia que celebre “más leads” sin un solo trabajo agendado al lado.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Y no pauses todo por miedo. El despliegue es por fases hasta 2027, así que tienes tiempo de prepararte. Esperar a que tu cuenta cambie para descubrir que tu medición está rota es la forma cara de enterarse. Ganar aquí significa menos leads, pero mejores y atendidos rápido. Repasa los leads que rechazaste en las últimas semanas y anota por qué, porque esas notas son el primer borrador de tu definición del paso 1. Si tienes un negocio de remodelación, nuestra [página de remodelación](/industries/home-improvement) muestra cómo pensamos el resto del embudo.',
+        },
+        {
+          kind: 'paragraph',
+          text: '¿No sabes por dónde se te escapan los leads? El [Growth Score](/growth-score) gratuito son 12 preguntas y cuatro minutos. Para una revisión humana de tu sitio, tu perfil y tu seguimiento de leads en siete días, empieza con el [Diagnóstico](/diagnostic).',
         },
       ],
     },

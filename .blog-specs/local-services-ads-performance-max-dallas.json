@@ -1,0 +1,7 @@
+{
+  "cover": { "concept": "A wide funnel of pale scattered dots narrowing toward a single bright orange point, with one thin line looping that point back to the start of the funnel — an algorithm that learns from the result, not the input. No text." },
+  "inline": [
+    { "name": "real-job-signal", "concept": "A long row of identical pale dots on the left, with exactly one glowing orange dot and a thin line carrying it back toward the start of the row — only one signal out of many is the one that matters. No text." },
+    { "name": "lead-filter", "concept": "Many pale dots drifting toward a narrow gate, where only the dots aligned with a thin orange line pass through to the other side — a clean profile filtering the noise before it costs money. No text." }
+  ]
+}
