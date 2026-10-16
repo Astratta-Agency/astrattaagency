@@ -57,6 +57,9 @@ import callForPriceQuoteSteps from '@/assets/blog/call-for-price-lost-leads-dall
 import lsaPmaxCover from '@/assets/blog/local-services-ads-performance-max-dallas-cover.webp'
 import lsaPmaxRealJobSignal from '@/assets/blog/local-services-ads-performance-max-dallas-real-job-signal.webp'
 import lsaPmaxLeadFilter from '@/assets/blog/local-services-ads-performance-max-dallas-lead-filter.webp'
+import linkBioCover from '@/assets/blog/link-in-bio-no-inquiries-dallas-cover.webp'
+import linkBioDeadEnd from '@/assets/blog/link-in-bio-no-inquiries-dallas-dead-end.webp'
+import linkBioOnePath from '@/assets/blog/link-in-bio-no-inquiries-dallas-one-path.webp'
 
 export type BlogCategory = 'web-conversion' | 'digital-marketing' | 'design' | 'case-notes'
 
@@ -3485,6 +3488,270 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: '¿No sabes por dónde se te escapan los leads? El [Growth Score](/growth-score) gratuito son 12 preguntas y cuatro minutos. Para una revisión humana de tu sitio, tu perfil y tu seguimiento de leads en siete días, empieza con el [Diagnóstico](/diagnostic).',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'link-in-bio-no-inquiries-dallas', es: 'enlace-en-bio-sin-consultas-dallas' },
+    title: {
+      en: 'Lots of views, zero messages? Check the link in your bio (Dallas business owners)',
+      es: '¿Muchas vistas y cero mensajes? Revisa el enlace de tu bio (dueños de negocios en Dallas)',
+    },
+    excerpt: {
+      en: 'If people watch your posts but never contact you, the cause is often not your content. In Dallas–Fort Worth we keep finding a missing or broken link in the bio.',
+      es: 'Si la gente ve tus posts pero nunca te contacta, la causa muchas veces no es tu contenido. En Dallas–Fort Worth seguimos encontrando un enlace roto o ausente en la bio.',
+    },
+    category: 'web-conversion',
+    publishedAt: '2026-10-15',
+    readingTime: { en: '5 min read', es: '5 min de lectura' },
+    coverGradient: 'from-primary/20 to-secondary/20',
+    coverVariant: 'clarity',
+    coverImage: linkBioCover,
+    coverAlt: {
+      en: 'A stream of pale dots flowing toward a single open doorway outlined in orange, with a closed grey door standing unused beside it.',
+      es: 'Un flujo de puntos pálidos que avanza hacia una sola puerta abierta con contorno naranja, con una puerta gris cerrada sin usar a su lado.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'Dallas Link in Bio: Why Views Don’t Become Leads | Astratta',
+      es: 'Enlace en la bio en Dallas: vistas sin leads | Astratta',
+    },
+    metaDescription: {
+      en: 'Views but no messages? In Dallas–Fort Worth, a missing or broken link in your bio is often the leak. Four steps to fix it today and how to measure the result.',
+      es: '¿Vistas pero sin mensajes? En Dallas–Fort Worth, un enlace roto o ausente en tu bio suele ser la fuga. Cuatro pasos para arreglarlo hoy y medir el resultado.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: 'Your Instagram gets views, your TikTok gets plays, and your phone stays quiet. If you run a business in Dallas–Fort Worth, you have probably said some version of this: “People watch my posts, but nobody contacts me or books. I don’t know where they go.” In four of the DFW businesses we have audited, the answer was the same, and it had nothing to do with the content.',
+        },
+        {
+          kind: 'heading',
+          text: 'What is actually going wrong',
+        },
+        {
+          kind: 'paragraph',
+          text: 'In those four audits, the link in the bio was missing, or it pointed to a page that returned a 404 error. The posts did their job and got attention. Then the interested person tapped your profile, looked for the next step, and found nothing to tap.',
+        },
+        {
+          kind: 'paragraph',
+          text: '**A post can only create interest; the bio link is the only door out of the app, and a missing or broken door ends the journey.** Most owners blame the content or the algorithm, because the broken link never shows up as a problem. It just looks like silence.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'The second cause is the same gap in other clothes: no clear call to action. Even with a working link, people do not know what to do with it unless the post tells them. “Link in bio” without a reason is easy to scroll past.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'It also hides well. Your follower count looks fine, your views look fine, and nobody on your team ever taps the link from a stranger’s phone. The broken door can sit there for months while you keep paying for photos, filming time and posting hours that lead nowhere. Check it today, before you change anything else.',
+        },
+        {
+          kind: 'image',
+          variant: 'insight',
+          caption: 'A view is only interest. Without a working link, interest has nowhere to go.',
+          src: linkBioDeadEnd,
+          alt: 'A line of pale dots rising from the left and stopping at a closed grey bar, with one orange dot waiting in front of it.',
+        },
+        {
+          kind: 'heading',
+          text: 'The fix, in four steps you can do today',
+        },
+        {
+          kind: 'heading',
+          text: '1. Choose one place you want people to land',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Pick the single action that is worth most to you: a WhatsApp chat, a booking page, a quote form, or a phone call. If you have no website page ready, a direct WhatsApp chat link works as a start, and a basic link-tree page is the fallback. **One clear destination beats five options, because every extra choice is another reason to leave.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'A few examples. A restaurant can send people to a WhatsApp chat for catering and large orders. A home improvement company can send them to a short quote form. A salon or service business can send them to a booking page. The right answer is the one your best customers would find easiest, not the one that looks most impressive.',
+        },
+        {
+          kind: 'heading',
+          text: '2. Put that link in every bio',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Paste it into the “Website” field on Instagram and TikTok. Instagram also lets you add more than one link, but put the main one first. Where the platform asks for a business account to show the link or the contact buttons, switch to one. It takes a minute in settings.',
+        },
+        {
+          kind: 'heading',
+          text: '3. Test it like a customer would',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Pick up your phone, close the app, and open your own profile as a stranger would. Tap the link. Does it open? Does it load in a few seconds? Can you tell what to do next without zooming or guessing? Do this again once a month, because links break quietly when a site is rebuilt or a domain changes.',
+        },
+        {
+          kind: 'heading',
+          text: '4. Give every post a reason to tap',
+        },
+        {
+          kind: 'paragraph',
+          text: 'End each caption, and say in each video, one specific next step: “Tap the link in our bio to get a quote,” or “Message us on WhatsApp to book Saturday.” Tell people what they get, not just where to click. Our post on [how social search is changing what Dallas customers look for](/blog/social-search-demand-dallas) explains why a clear next step matters more every month.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'One clear destination beats five options: every extra choice is another reason to leave.',
+          src: linkBioOnePath,
+          alt: 'Many pale dots gathering into a single orange line that runs straight through an open doorway.',
+        },
+        {
+          kind: 'heading',
+          text: 'How to measure it',
+        },
+        {
+          kind: 'paragraph',
+          text: 'The exact metric is clicks on your bio link. You see it in Instagram Insights under profile activity (Meta renames the labels now and then, so look for taps on your website or link) and in the TikTok analytics for your profile. Write down the number for the last 30 days before you change anything.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Then go one step further and add a tracking tag to your link, such as ?utm_source=instagram&utm_medium=bio at the end of the web address. In Google Analytics 4, under the acquisition reports, you will see how many of those visits turned into messages, calls or bookings. Clicks tell you people found the door. Conversions tell you the room behind it works.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Give it two to four weeks. If link clicks rise but nobody contacts you, the problem has moved from the door to the room, which means the page itself needs work. That is when a [Foundation](/foundation) page built to convert pays off.',
+        },
+        {
+          kind: 'quote',
+          text: 'If people can see you but cannot find the next step, your content is not the problem; your doorway is.',
+        },
+        {
+          kind: 'heading',
+          text: 'What not to do',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Do not post more content to fix this. Doubling your posts while the link is broken just sends more people to the same dead end. Do not bury the link under five others, and do not point it at your homepage when you are promoting one specific thing. Send people to the page that matches what the post said.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Do not trust that it works because it worked once. Do not skip the phone test, and do not guess at results from views alone. Views are the most flattering number you have, and the least useful. For a restaurant or a service business, a single working link with a clear call to action is often the highest-return change of the month. See how we think about [restaurant marketing](/industries/restaurants) for the rest of the picture.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Want to know whether your link is the leak, or something further down? The free [Growth Score](/growth-score) takes 12 questions and four minutes. For a human review of your profiles, your site and your path from post to message in seven days, start with the [Diagnostic](/diagnostic).',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: 'Tu Instagram suma vistas, tu TikTok suma reproducciones, y tu teléfono sigue callado. Si tienes un negocio en Dallas–Fort Worth, seguramente has dicho algo así: “La gente ve mis posts, pero nadie me contacta ni agenda. No sé a dónde se van”. En cuatro de los negocios de DFW que hemos auditado, la respuesta fue la misma, y no tenía nada que ver con el contenido.',
+        },
+        {
+          kind: 'heading',
+          text: 'Qué está fallando de verdad',
+        },
+        {
+          kind: 'paragraph',
+          text: 'En esas cuatro auditorías, el enlace de la biografía no existía o llevaba a una página con error 404. Las publicaciones cumplieron: llamaron la atención. Pero la persona interesada entró a tu perfil, buscó el siguiente paso y no encontró nada que tocar.',
+        },
+        {
+          kind: 'paragraph',
+          text: '**Un post solo puede despertar interés; el enlace de la bio es la única puerta para salir de la app, y una puerta rota o ausente termina el recorrido.** La mayoría culpa al contenido o al algoritmo, porque un enlace roto nunca aparece como problema. Solo se ve como silencio.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'La segunda causa es el mismo hueco con otra cara: no hay un llamado a la acción claro. Aun con un enlace que funciona, la gente no sabe qué hacer con él si la publicación no se lo dice. Un “link en la bio” sin motivo es fácil de ignorar.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Además, se esconde bien. Tus seguidores se ven bien, tus vistas se ven bien, y nadie de tu equipo toca el enlace desde el celular de un desconocido. La puerta rota puede quedarse así por meses mientras sigues pagando fotos, tiempo de grabación y horas de publicación que no llevan a ningún lado. Revísalo hoy, antes de cambiar cualquier otra cosa.',
+        },
+        {
+          kind: 'image',
+          variant: 'insight',
+          caption: 'Una vista es solo interés. Sin un enlace que funcione, el interés no tiene a dónde ir.',
+          src: linkBioDeadEnd,
+          alt: 'Una fila de puntos pálidos que sube desde la izquierda y se detiene ante una barra gris cerrada, con un punto naranja esperando delante.',
+        },
+        {
+          kind: 'heading',
+          text: 'El arreglo, en cuatro pasos que puedes hacer hoy',
+        },
+        {
+          kind: 'heading',
+          text: '1. Elige un solo lugar al que quieres llevar a la gente',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Escoge la acción que más vale para ti: un chat de WhatsApp, una página de reservas, un formulario de cotización o una llamada. Si no tienes una página lista en tu sitio, un enlace directo a un chat de WhatsApp sirve para empezar, y una página básica de enlaces es el plan B. **Un destino claro le gana a cinco opciones, porque cada opción extra es otra razón para irse.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Algunos ejemplos. Un restaurante puede mandar a la gente a un chat de WhatsApp para catering y pedidos grandes. Una empresa de remodelación puede mandarla a un formulario corto de cotización. Un salón o negocio de servicios puede mandarla a una página de reservas. La respuesta correcta es la que a tus mejores clientes les resulte más fácil, no la que se vea más impresionante.',
+        },
+        {
+          kind: 'heading',
+          text: '2. Pon ese enlace en todas tus biografías',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Pégalo en el campo “Sitio web” de Instagram y de TikTok. Instagram también te deja añadir más de un enlace, pero pon el principal primero. Donde la plataforma pida una cuenta de empresa para mostrar el enlace o los botones de contacto, cámbiate a una. En los ajustes toma un minuto.',
+        },
+        {
+          kind: 'heading',
+          text: '3. Pruébalo como lo haría un cliente',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Toma tu celular, cierra la app y abre tu propio perfil como lo haría un desconocido. Toca el enlace. ¿Abre? ¿Carga en pocos segundos? ¿Se entiende qué hacer después sin hacer zoom ni adivinar? Repite la prueba una vez al mes, porque los enlaces se rompen en silencio cuando se rehace un sitio o cambia un dominio.',
+        },
+        {
+          kind: 'heading',
+          text: '4. Dale a cada post un motivo para tocar',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Cierra cada texto, y dilo en cada video, con un paso concreto: “Toca el enlace de nuestra bio para pedir tu cotización” o “Escríbenos por WhatsApp para agendar el sábado”. Dile a la gente qué recibe, no solo dónde hacer clic. Nuestro artículo sobre [cómo las redes sociales están cambiando lo que buscan los clientes de Dallas](/blog/social-search-demand-dallas) explica por qué un paso claro importa más cada mes.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'Un destino claro le gana a cinco opciones: cada opción extra es otra razón para irse.',
+          src: linkBioOnePath,
+          alt: 'Muchos puntos pálidos que se reúnen en una sola línea naranja que atraviesa una puerta abierta.',
+        },
+        {
+          kind: 'heading',
+          text: 'Cómo se mide',
+        },
+        {
+          kind: 'paragraph',
+          text: 'La métrica exacta son los clics en el enlace de tu bio. La ves en los Insights de Instagram, en la actividad del perfil (Meta cambia los nombres de vez en cuando, así que busca los toques en tu sitio web o enlace), y en las analíticas de tu perfil en TikTok. Anota el número de los últimos 30 días antes de cambiar nada.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Después da un paso más y añade una etiqueta de seguimiento a tu enlace, como ?utm_source=instagram&utm_medium=bio al final de la dirección. En Google Analytics 4, dentro de los informes de adquisición, verás cuántas de esas visitas se volvieron mensajes, llamadas o citas. Los clics te dicen que la gente encontró la puerta. Las conversiones te dicen que el cuarto de atrás funciona.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Dale de dos a cuatro semanas. Si los clics suben pero nadie te contacta, el problema pasó de la puerta al cuarto, es decir, la página en sí necesita trabajo. Ahí es cuando una página de [Foundation](/foundation) hecha para convertir se paga sola.',
+        },
+        {
+          kind: 'quote',
+          text: 'Si la gente te ve pero no encuentra el siguiente paso, el problema no es tu contenido; es tu puerta.',
+        },
+        {
+          kind: 'heading',
+          text: 'Qué NO hacer',
+        },
+        {
+          kind: 'paragraph',
+          text: 'No publiques más contenido para arreglar esto. Duplicar los posts con el enlace roto solo manda más gente al mismo callejón sin salida. No entierres el enlace debajo de otros cinco, y no lo apuntes a tu página de inicio cuando estás promoviendo una sola cosa. Manda a la gente a la página que coincide con lo que dijo el post.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'No asumas que funciona porque funcionó una vez. No te saltes la prueba con el celular, y no adivines resultados solo con las vistas. Las vistas son el número más halagador que tienes y el menos útil. Para un restaurante o un negocio de servicios, un solo enlace que funcione con un llamado a la acción claro suele ser el cambio de mayor retorno del mes. Mira cómo pensamos el [marketing para restaurantes](/industries/restaurants) para ver el resto del cuadro.',
+        },
+        {
+          kind: 'paragraph',
+          text: '¿Quieres saber si el enlace es la fuga, o si es algo más abajo? El [Growth Score](/growth-score) gratuito son 12 preguntas y cuatro minutos. Para una revisión humana de tus perfiles, tu sitio y tu camino del post al mensaje en siete días, empieza con el [Diagnóstico](/diagnostic).',
         },
       ],
     },

@@ -1,0 +1,7 @@
+{
+  "cover": { "concept": "A stream of small pale dots flowing toward a doorway, where one door is sealed shut and unused while a second open doorway outlined in orange lets the stream pass through — attention only counts if there is an open exit. No text." },
+  "inline": [
+    { "name": "dead-end", "concept": "A line of pale dots rising from the left and stopping against a closed grey bar, with a single orange dot waiting in front of it — interest with nowhere to go. No text." },
+    { "name": "one-path", "concept": "Many pale dots gathering into one bold orange line that runs straight through an open doorway — a single clear path instead of many choices. No text." }
+  ]
+}
