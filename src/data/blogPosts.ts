@@ -92,6 +92,9 @@ export const AUTHORS = {
   },
 } as const
 
+import pmaxVideoCover from '@/assets/blog/pmax-video-auto-resize-dallas-cover.webp'
+import pmaxVideoMaster from '@/assets/blog/pmax-video-auto-resize-dallas-master-video.webp'
+import pmaxVideoFrameCheck from '@/assets/blog/pmax-video-auto-resize-dallas-frame-check.webp'
 export type AuthorId = keyof typeof AUTHORS
 
 export type ResolvedAuthor = { name: string; role: string }
@@ -3752,6 +3755,270 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: '¿Quieres saber si el enlace es la fuga, o si es algo más abajo? El [Growth Score](/growth-score) gratuito son 12 preguntas y cuatro minutos. Para una revisión humana de tus perfiles, tu sitio y tu camino del post al mensaje en siete días, empieza con el [Diagnóstico](/diagnostic).',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'pmax-video-auto-resize-dallas', es: 'video-performance-max-formatos-automaticos-dallas' },
+    title: {
+      en: 'Google now resizes your Performance Max videos for you: what Dallas business owners should check first',
+      es: 'Google ahora adapta solo tus videos de Performance Max: lo que debe revisar primero un negocio de Dallas',
+    },
+    excerpt: {
+      en: 'Google is using generative AI to fill in missing video formats in Performance Max. For a Dallas–Fort Worth business with one phone-shot video, the win is reach. The risk is a crop you never approved.',
+      es: 'Google usa IA generativa para crear los formatos de video que faltan en Performance Max. Para un negocio de Dallas–Fort Worth con un solo video grabado en el celular, la ventaja es el alcance. El riesgo es un recorte que nunca aprobaste.',
+    },
+    category: 'digital-marketing',
+    publishedAt: '2026-10-20',
+    readingTime: { en: '5 min read', es: '5 min de lectura' },
+    coverGradient: 'from-primary/20 to-secondary/20',
+    coverVariant: 'insight',
+    coverImage: pmaxVideoCover,
+    coverAlt: {
+      en: 'One tall orange rectangle at the center, with a wide pale frame and a square pale frame growing out of it, all sharing the same bright core.',
+      es: 'Un rectángulo naranja alto al centro, del que salen un marco pálido ancho y uno cuadrado, todos con el mismo núcleo brillante.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'Dallas Performance Max Video: Google Resizes Ads | Astratta',
+      es: 'Video de Performance Max en Dallas: IA lo adapta | Astratta',
+    },
+    metaDescription: {
+      en: 'Google now resizes Performance Max videos with AI. What a Dallas business should check this week so the new vertical and square cuts still look like your brand.',
+      es: 'Google ahora adapta con IA tus videos de Performance Max. Qué debes revisar esta semana en Dallas para que los nuevos cortes sigan viéndose como tu marca.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: 'If you run ads for a Dallas business, Google just changed what happens to the one video you uploaded. According to Search Engine Land, Google is using generative AI to fill in the missing video formats in Performance Max campaigns. Upload a horizontal clip, and Google can build the vertical or square versions itself, so the ad can show up in placements that need a different shape.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'This builds on earlier Performance Max video enhancements that already reformatted clips. Reports describe an opt-out through your Google account team or a form, and Search Engine Land advises brands to review visual consistency, product accuracy and brand guidelines. Timing and details differ between reports, so treat your own account as the source of truth, not any date you read online.',
+        },
+        {
+          kind: 'heading',
+          text: 'Why this matters in Dallas–Fort Worth',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Most DFW owners we talk to do not have a video team. They have one clip from a phone, a contractor’s walkthrough, a restaurant’s kitchen shot or a med spa’s treatment room. Paying an editor for three separate cuts used to be the reason many of those ads never ran in vertical placements at all.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Now Google will make those cuts for you, at no editing cost. That is real value for a small budget. **The risk is not that Google resizes your video; it is that Google decides how your business looks inside a frame you never approved.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'A crop can cut off a phone number, hide a price, slice through a logo or center the wrong thing. On a small account, one bad cut can run for weeks before anyone looks at it, because nobody opens the vertical preview of an ad they believe is finished.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Think about a Dallas roofing company whose video ends on a phone number, or a restaurant whose video ends on an ordering link. If the vertical cut trims the last two seconds, the video still plays and the ad still gets spend, but the one thing that turns a viewer into a call is gone. Nothing alerts you, because the ad is not broken, only less useful.',
+        },
+        {
+          kind: 'image',
+          variant: 'insight',
+          caption: 'One master video can travel far. Only if the part that sells survives every frame.',
+          src: pmaxVideoMaster,
+          alt: 'A single bright orange core held at the center of a tall frame, a wide frame and a square frame at the same time.',
+        },
+        {
+          kind: 'heading',
+          text: 'What to do this week',
+        },
+        {
+          kind: 'heading',
+          text: '1. Find out whether it is on for your account',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Open your Performance Max campaign and look at the video settings in the asset group. If an agency or freelancer runs your ads, send one message: “Are Google’s automatic video enhancements on for our account, and who approved them?” **If nobody can answer, assume it is on and act as if it is.**',
+        },
+        {
+          kind: 'heading',
+          text: '2. Look at every version Google made',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Use the asset preview to watch the vertical and square versions on a phone-sized screen. Check four things: is the logo whole, is the phone number or offer readable, is the face or the product in frame, and does any text get cut at the edges? **Judge each version the way a stranger scrolling past would, in two seconds.**',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'The preview check takes five minutes. A bad crop running for a month costs far more.',
+          src: pmaxVideoFrameCheck,
+          alt: 'Three pale frames of different shapes laid side by side, with a small orange mark moving from frame to frame as if being inspected.',
+        },
+        {
+          kind: 'heading',
+          text: '3. Keep what works, replace what does not',
+        },
+        {
+          kind: 'paragraph',
+          text: 'If a generated version looks good, leave it. If one cuts a price, a phone number or a line you are required to show, upload your own version for that shape, or opt out for that video. **A video that looks wrong in one format is worse than no video in that format.** Do not delete the whole campaign over one bad crop.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Write down what you decided and the date. Google keeps changing these defaults, and in three months nobody will remember whether the vertical cut was approved or simply never checked. A single line in a shared note is enough. Look again whenever you upload a new video, because each new clip gets its own set of generated versions.',
+        },
+        {
+          kind: 'heading',
+          text: '4. Shoot your next video with the crop in mind',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Keep the subject in the middle of the frame, keep text away from the edges, and say the offer out loud instead of relying on a caption. **A video built around its center survives any shape Google puts it in.** That one habit costs nothing and makes every future resize safer.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'If you can only do one thing while you are filming, record a clean ten-second version where the offer and the next step are spoken, with the speaker in the middle of the frame. Spoken words survive a crop. A caption at the bottom of the screen does not.',
+        },
+        {
+          kind: 'quote',
+          text: 'Google can reshape your video for free. It cannot know which part of it is your business.',
+        },
+        {
+          kind: 'heading',
+          text: 'What to ignore',
+        },
+        {
+          kind: 'paragraph',
+          text: '**Ignore the pitch that you now need three separate video productions per campaign.** For a local budget, a good master clip and a five-minute preview check will get you most of the way. Pay for extra cuts only if you see a real problem in the preview.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'The same goes for anyone who tells you this improves your results by itself. More formats mean more places your ad can appear. They do not mean more jobs. The only number that settles it is how many real, booked jobs came from the campaign, and that comes from your tracking, not from the video settings.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Ignore, too, the idea that automatic resizing fixes weak creative. A confusing video in one shape becomes a confusing video in three shapes. And if your lead tracking is broken, no format change will help, because Google still cannot learn which clicks became jobs. We covered that in our post on [Local Services Ads moving into Performance Max](/blog/local-services-ads-performance-max-dallas).',
+        },
+        {
+          kind: 'paragraph',
+          text: 'If you are not running Performance Max today, this is not a reason to start. Fix your site and your follow-up first, because video reach only helps when the page behind it converts. Our [Systems](/systems) page shows how we connect ads, tracking and follow-up.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Not sure where your marketing leaks? The free [Growth Score](/growth-score) is 12 questions and four minutes. For a human review of your site, your profiles and your lead path in seven days, start with the [Diagnostic](/diagnostic).',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: 'Si pautas anuncios para un negocio en Dallas, Google acaba de cambiar lo que pasa con el único video que subiste. Según Search Engine Land, Google usa IA generativa para crear los formatos de video que faltan en las campañas de Performance Max. Subes un clip horizontal, y Google puede armar solo las versiones vertical o cuadrada, para que el anuncio aparezca en lugares que piden otra forma.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Esto se apoya en mejoras de video anteriores de Performance Max que ya reformateaban clips. Los reportes mencionan una salida opcional (opt-out) a través de tu contacto en Google o de un formulario, y Search Engine Land recomienda a las marcas revisar la coherencia visual, la exactitud del producto y las pautas de marca. Las fechas y los detalles cambian de un reporte a otro, así que toma tu propia cuenta como fuente de verdad, no una fecha leída en internet.',
+        },
+        {
+          kind: 'heading',
+          text: 'Por qué importa en Dallas–Fort Worth',
+        },
+        {
+          kind: 'paragraph',
+          text: 'La mayoría de los dueños de DFW con los que hablamos no tienen equipo de video. Tienen un clip del celular, el recorrido de un contratista, la cocina de un restaurante o la cabina de tratamiento de un med spa. Pagarle a un editor tres cortes distintos era la razón por la que muchos de esos anuncios nunca salían en formatos verticales.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Ahora Google hace esos cortes por ti, sin costo de edición. Eso vale mucho con un presupuesto chico. **El riesgo no es que Google cambie el tamaño de tu video; es que decida cómo se ve tu negocio dentro de un cuadro que nunca aprobaste.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Un recorte puede cortar un teléfono, esconder un precio, partir un logo o centrar lo que no era. En una cuenta pequeña, un mal corte puede correr semanas sin que nadie lo vea, porque nadie abre la vista vertical de un anuncio que da por terminado.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Piensa en una empresa de techos de Dallas cuyo video termina con un número de teléfono, o en un restaurante cuyo video termina con un enlace para pedir. Si el corte vertical se come los últimos dos segundos, el video igual se reproduce y el anuncio igual gasta, pero desaparece lo único que convierte a un espectador en una llamada. Nada te avisa, porque el anuncio no está roto, solo rinde menos.',
+        },
+        {
+          kind: 'image',
+          variant: 'insight',
+          caption: 'Un video maestro puede llegar lejos. Siempre que lo que vende sobreviva en cada cuadro.',
+          src: pmaxVideoMaster,
+          alt: 'Un solo núcleo naranja brillante sostenido al centro de un marco alto, uno ancho y uno cuadrado a la vez.',
+        },
+        {
+          kind: 'heading',
+          text: 'Qué hacer esta semana',
+        },
+        {
+          kind: 'heading',
+          text: '1. Averigua si está activo en tu cuenta',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Abre tu campaña de Performance Max y mira la configuración de video en el grupo de recursos. Si te maneja los anuncios una agencia o un freelancer, mándale un solo mensaje: “¿Están activadas las mejoras automáticas de video de Google en nuestra cuenta y quién las aprobó?”. **Si nadie sabe contestar, da por hecho que están activas y actúa en consecuencia.**',
+        },
+        {
+          kind: 'heading',
+          text: '2. Mira cada versión que hizo Google',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Usa la vista previa de recursos para ver las versiones vertical y cuadrada en una pantalla del tamaño de un celular. Revisa cuatro cosas: ¿el logo está completo?, ¿se lee el teléfono o la oferta?, ¿la cara o el producto quedan en cuadro? y ¿algún texto se corta en los bordes? **Juzga cada versión como lo haría un desconocido que pasa de largo, en dos segundos.**',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'Revisar la vista previa toma cinco minutos. Un mal recorte corriendo un mes cuesta mucho más.',
+          src: pmaxVideoFrameCheck,
+          alt: 'Tres marcos pálidos de formas distintas, uno junto al otro, con una pequeña marca naranja que pasa de uno a otro como si los inspeccionara.',
+        },
+        {
+          kind: 'heading',
+          text: '3. Quédate con lo que funciona, reemplaza lo que no',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Si una versión generada se ve bien, déjala. Si alguna corta un precio, un teléfono o una línea que estás obligado a mostrar, sube tu propia versión para esa forma, o sal del automático (opt-out) en ese video. **Un video que se ve mal en un formato es peor que no tener video en ese formato.** No borres toda la campaña por un recorte malo.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Anota qué decidiste y la fecha. Google sigue cambiando estos valores por defecto, y en tres meses nadie recordará si el corte vertical se aprobó o simplemente nunca se revisó. Una línea en una nota compartida basta. Vuelve a mirar cada vez que subas un video nuevo, porque cada clip nuevo trae su propio juego de versiones generadas.',
+        },
+        {
+          kind: 'heading',
+          text: '4. Graba tu próximo video pensando en el recorte',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Deja lo importante en el centro del cuadro, aleja el texto de los bordes y di la oferta en voz alta en vez de depender de un letrero. **Un video armado alrededor de su centro sobrevive a cualquier forma en que Google lo ponga.** Ese hábito no cuesta nada y hace más seguro cada ajuste futuro.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Si solo puedes hacer una cosa mientras grabas, graba una versión limpia de diez segundos donde la oferta y el siguiente paso se digan en voz alta, con quien habla en el centro del cuadro. Las palabras habladas sobreviven a un recorte. Un letrero al pie de la pantalla, no.',
+        },
+        {
+          kind: 'quote',
+          text: 'Google puede cambiar la forma de tu video gratis. No puede saber cuál parte es tu negocio.',
+        },
+        {
+          kind: 'heading',
+          text: 'Qué ignorar',
+        },
+        {
+          kind: 'paragraph',
+          text: '**Ignora el discurso de que ahora necesitas tres producciones de video por campaña.** Con un presupuesto local, un buen clip maestro y cinco minutos de revisión te llevan casi todo el camino. Paga cortes extra solo si ves un problema real en la vista previa.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Lo mismo vale para quien te diga que esto mejora tus resultados por sí solo. Más formatos son más lugares donde puede aparecer tu anuncio. No son más trabajos. El único número que lo define es cuántos trabajos reales y agendados salieron de la campaña, y ese número sale de tu medición, no de la configuración del video.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Ignora también la idea de que el ajuste automático arregla un creativo débil. Un video confuso en una forma se vuelve un video confuso en tres. Y si tu seguimiento de leads está roto, ningún formato ayuda, porque Google sigue sin poder aprender qué clics se volvieron trabajos. Lo vimos en nuestro artículo sobre [los Anuncios de Servicios Locales que pasan a Performance Max](/blog/local-services-ads-performance-max-dallas).',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Si hoy no usas Performance Max, esto no es motivo para empezar. Arregla primero tu sitio y tu seguimiento, porque el alcance del video solo sirve si la página que lo recibe convierte. En [Systems](/systems) mostramos cómo conectamos anuncios, medición y seguimiento.',
+        },
+        {
+          kind: 'paragraph',
+          text: '¿No sabes por dónde se te escapa el marketing? El [Growth Score](/growth-score) gratuito son 12 preguntas y cuatro minutos. Para una revisión humana de tu sitio, tus perfiles y tu camino de leads en siete días, empieza con el [Diagnóstico](/diagnostic).',
         },
       ],
     },
