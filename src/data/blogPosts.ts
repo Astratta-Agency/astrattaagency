@@ -61,6 +61,10 @@ import linkBioCover from '@/assets/blog/link-in-bio-no-inquiries-dallas-cover.we
 import linkBioDeadEnd from '@/assets/blog/link-in-bio-no-inquiries-dallas-dead-end.webp'
 import linkBioOnePath from '@/assets/blog/link-in-bio-no-inquiries-dallas-one-path.webp'
 
+import oneServiceCover from '@/assets/blog/website-shows-one-service-dallas-cover.webp'
+import oneServiceAllLines from '@/assets/blog/website-shows-one-service-dallas-all-lines-first-screen.webp'
+import oneServiceDoors from '@/assets/blog/website-shows-one-service-dallas-one-door-per-service.webp'
+
 export type BlogCategory = 'web-conversion' | 'digital-marketing' | 'design' | 'case-notes'
 
 /**
@@ -4019,6 +4023,294 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: '¿No sabes por dónde se te escapa el marketing? El [Growth Score](/growth-score) gratuito son 12 preguntas y cuatro minutos. Para una revisión humana de tu sitio, tus perfiles y tu camino de leads en siete días, empieza con el [Diagnóstico](/diagnostic).',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'website-shows-one-service-dallas', es: 'sitio-web-muestra-un-solo-servicio-dallas' },
+    title: {
+      en: 'Your Dallas website makes you look like a one-service business — here’s the fix',
+      es: 'Tu sitio web en Dallas te hace ver como un negocio de un solo servicio: el arreglo',
+    },
+    excerpt: {
+      en: 'Your site leads with your most obvious product, so the services that pay you well never get asked about. Here is how a Dallas owner can show the full offer in one afternoon.',
+      es: 'Tu sitio abre con tu producto más obvio, así que los servicios que mejor te pagan nadie los pregunta. Así puede un dueño de Dallas mostrar toda su oferta en una tarde.',
+    },
+    category: 'web-conversion',
+    publishedAt: '2026-10-22',
+    readingTime: { en: '6 min read', es: '6 min de lectura' },
+    coverGradient: 'from-primary/20 to-secondary/20',
+    coverVariant: 'clarity',
+    coverImage: oneServiceCover,
+    coverAlt: {
+      en: 'One large pale doorway at the center with a single orange thread running through it, while several smaller doorways beside it stay dark and unlit.',
+      es: 'Una puerta grande y pálida al centro con un hilo naranja que la cruza, mientras varias puertas más pequeñas a su lado permanecen oscuras y apagadas.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'Dallas Website Offer Clarity: Show Every Service | Astratta',
+      es: 'Oferta clara en Dallas: muestra cada servicio | Astratta',
+    },
+    metaDescription: {
+      en: 'Visitors to your Dallas website think you sell one thing, so your other services never get asked about. Here is a simple five-step fix, no agency needed.',
+      es: 'Quien visita tu sitio en Dallas cree que vendes una sola cosa y nunca pregunta por tus otros servicios. Este es el arreglo en cinco pasos, sin agencia.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: 'A Dallas owner described it to us like this: “I do several services that pay well, but anyone who lands on my page thinks I only do one thing.” The phone rings for the obvious product. The other lines of the business, the ones that often carry a good share of the revenue, almost never get a call.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'If that sounds familiar, your website is probably not broken. It is just telling a smaller story than your business actually has. This fix needs no developer and no agency, only an afternoon and a spreadsheet.',
+        },
+        {
+          kind: 'heading',
+          text: 'What actually causes it',
+        },
+        {
+          kind: 'paragraph',
+          text: 'In three of the audits we have run for DFW businesses, the pattern was the same. The website and the social profiles were built around the single most obvious product. Everything else was missing, buried in a footer or squeezed into a generic template block.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'It happens for ordinary reasons. The first version of the site was built when the business sold one thing. A template had room for one headline and one button. Nobody went back when the business grew. **A visitor decides what you sell in the first few seconds, and they decide using only what is on the screen.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'The cost is quiet. Nobody complains that your site is unclear. They simply never ask about the service you did not show, and you never find out how many people would have.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'You can see it yourself in thirty seconds. Open your homepage on your phone, cover everything below the first screen with your thumb, and read only what is left. That is all a new visitor gets before deciding whether to scroll, call or leave.',
+        },
+        {
+          kind: 'heading',
+          text: 'The fix, in five steps you can do alone',
+        },
+        {
+          kind: 'heading',
+          text: '1. Write down every line of business',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Open a blank sheet and list every service you sell, one per row. Next to each, write roughly how much of last year’s revenue it brought in, using your own books. **Rank the rows by money, not by how obvious the service feels.** You will likely find that the line your site hides is higher on the list than you assumed.',
+        },
+        {
+          kind: 'heading',
+          text: '2. Put all your lines in the first screen',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Rewrite the headline and the sentence under it so they name every main line of business and the city. For example: “Flooring, kitchens and bathrooms for homes in Dallas.” **If a stranger cannot name three things you sell after two seconds on your homepage, the headline is doing too little.**',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'Whatever is not in the first screen does not exist for a new visitor.',
+          src: oneServiceAllLines,
+          alt: 'A tall pale frame with three orange marks of different shapes sitting side by side at its top, all lit equally.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Test it before you publish. Show the new first screen to someone who has never heard of your business, take it away after five seconds, and ask what you sell. If they name only one thing, rewrite the headline again. Repeat with a second person, because one answer can be luck.',
+        },
+        {
+          kind: 'heading',
+          text: '3. Name the services in your menu',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Replace the generic “Services” button with the actual service names, one link each. A person looking for one specific thing should be able to click it without guessing which page holds it. **A menu item that says what it is beats a menu item that says “Solutions.”**',
+        },
+        {
+          kind: 'heading',
+          text: '4. Give each service its own door',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Make one page per service, even a short one: what it is, who it is for, a real photo, the price or a range, and one button. Do the same on Instagram by creating one Highlight per service with a clear title. **Each service needs one place where a person can land, understand it and act.**',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'One door per service turns a vague visit into a specific request.',
+          src: oneServiceDoors,
+          alt: 'Several narrow doorways in a row, each with a small orange mark above it, one doorway slightly open with warm light behind it.',
+        },
+        {
+          kind: 'heading',
+          text: '5. Ask which service they want',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Add a single dropdown to your contact form with your service names, and ask the same question every time someone calls or messages you. This costs one field. **It also gives you the only data that proves whether the change worked.**',
+        },
+        {
+          kind: 'heading',
+          text: 'How to measure it',
+        },
+        {
+          kind: 'paragraph',
+          text: 'The metric is inquiries by service type: how many requests you get for each line of business each month. Where you see it: the dropdown answers in your form inbox, plus a column in your CRM or a plain spreadsheet for phone calls and messages.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Count the 30 days before you make the changes and the 30 days after. The number to watch is the share of inquiries that are not for your main product. If it rises, the site is finally telling the whole story. If total inquiries stay flat, that is still information, and it tells you the next leak is somewhere else.',
+        },
+        {
+          kind: 'quote',
+          text: 'Customers cannot ask for a service your website never showed them.',
+        },
+        {
+          kind: 'heading',
+          text: 'What not to do',
+        },
+        {
+          kind: 'paragraph',
+          text: '**Do not list fifteen services in the headline.** Name your main lines and let the menu carry the detail. A headline with everything in it says nothing, and it reads like a business that has not decided what it is.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Do not rename the menu with words that sound polished but say nothing. Do not hide the lines you want to grow in the footer. And do not spend on ads to push people to a page that still shows one service, because you would pay to send traffic to the same blind spot.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'The same logic applies to prices. If a service has no visible number or range, visitors fill the gap with the worst guess. We wrote about that in [why “call for price” costs a Dallas business its leads](/blog/call-for-price-lost-leads-dallas). For a deeper look at how this plays out in one trade, see our page on [home improvement marketing](/industries/home-improvement).',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Not sure whether your site is hiding services or whether the leak is somewhere else? The free [Growth Score](/growth-score) is 12 questions and four minutes. For a human review of your site, your profiles and your lead path in seven days, start with the [Diagnostic](/diagnostic).',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: 'Un dueño de Dallas nos lo describió así: “Hago varios servicios que dejan dinero, pero quien ve mi página cree que solo hago una cosa”. El teléfono suena por el producto más obvio. Las otras líneas del negocio, las que muchas veces cargan buena parte de los ingresos, casi nunca reciben una llamada.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Si te suena familiar, lo más probable es que tu sitio no esté roto. Está contando una historia más chica que la de tu negocio. Este arreglo no necesita programador ni agencia, solo una tarde y una hoja de cálculo.',
+        },
+        {
+          kind: 'heading',
+          text: 'Qué lo causa de verdad',
+        },
+        {
+          kind: 'paragraph',
+          text: 'En tres de las auditorías que hemos hecho a negocios de DFW, el patrón fue el mismo. El sitio y los perfiles de redes estaban armados alrededor del producto más obvio. Todo lo demás faltaba, quedaba enterrado en el pie de página o apretado en un bloque genérico de plantilla.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Pasa por razones normales. La primera versión del sitio se hizo cuando el negocio vendía una sola cosa. La plantilla tenía espacio para un titular y un botón. Nadie volvió a tocarlo cuando el negocio creció. **Un visitante decide qué vendes en los primeros segundos, y lo decide solo con lo que ve en la pantalla.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'El costo es silencioso. Nadie se queja de que tu sitio sea confuso. Simplemente nunca preguntan por el servicio que no les mostraste, y tú nunca sabes cuántos lo habrían hecho.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Puedes verlo tú mismo en treinta segundos. Abre tu página de inicio en el celular, tapa con el pulgar todo lo que queda debajo de la primera pantalla y lee solo lo que sobra. Eso es todo lo que recibe un visitante nuevo antes de decidir si baja, llama o se va.',
+        },
+        {
+          kind: 'heading',
+          text: 'El arreglo, en cinco pasos que puedes hacer solo',
+        },
+        {
+          kind: 'heading',
+          text: '1. Anota cada línea de negocio',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Abre una hoja en blanco y lista cada servicio que vendes, uno por fila. Al lado, escribe más o menos cuánto de los ingresos del año pasado trajo, con tus propios libros. **Ordena las filas por dinero, no por lo obvio que se sienta el servicio.** Es probable que la línea que tu sitio esconde esté más arriba de lo que pensabas.',
+        },
+        {
+          kind: 'heading',
+          text: '2. Pon todas tus líneas en la primera pantalla',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Reescribe el titular y la frase de abajo para que nombren todas las líneas principales y la ciudad. Por ejemplo: “Pisos, cocinas y baños para casas en Dallas”. **Si un desconocido no puede nombrar tres cosas que vendes después de dos segundos en tu página de inicio, el titular está haciendo poco.**',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'Lo que no está en la primera pantalla no existe para un visitante nuevo.',
+          src: oneServiceAllLines,
+          alt: 'Un marco alto y pálido con tres marcas naranjas de formas distintas, una junto a la otra en su parte superior, todas igual de iluminadas.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Pruébalo antes de publicar. Enséñale la nueva primera pantalla a alguien que nunca haya oído de tu negocio, quítasela a los cinco segundos y pregúntale qué vendes. Si nombra una sola cosa, reescribe el titular otra vez. Repite con una segunda persona, porque una respuesta puede ser suerte.',
+        },
+        {
+          kind: 'heading',
+          text: '3. Nombra los servicios en el menú',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Cambia el botón genérico “Servicios” por los nombres reales, un enlace cada uno. Quien busca algo específico debería poder hacer clic sin adivinar en qué página está. **Un menú que dice lo que es le gana a uno que dice “Soluciones”.**',
+        },
+        {
+          kind: 'heading',
+          text: '4. Dale a cada servicio su propia puerta',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Haz una página por servicio, aunque sea corta: qué es, para quién es, una foto real, el precio o un rango, y un botón. Haz lo mismo en Instagram con una Historia Destacada por servicio y un título claro. **Cada servicio necesita un lugar donde alguien pueda llegar, entenderlo y actuar.**',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'Una puerta por servicio convierte una visita vaga en una solicitud concreta.',
+          src: oneServiceDoors,
+          alt: 'Varias puertas angostas en fila, cada una con una pequeña marca naranja arriba, una de ellas entreabierta con luz cálida detrás.',
+        },
+        {
+          kind: 'heading',
+          text: '5. Pregunta qué servicio quieren',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Agrega un solo menú desplegable a tu formulario de contacto con los nombres de tus servicios, y haz la misma pregunta cada vez que alguien llame o escriba. Cuesta un campo. **Además te da el único dato que prueba si el cambio funcionó.**',
+        },
+        {
+          kind: 'heading',
+          text: 'Cómo se mide',
+        },
+        {
+          kind: 'paragraph',
+          text: 'La métrica es consultas por tipo de servicio: cuántas solicitudes recibes al mes por cada línea de negocio. Dónde se ve: las respuestas del menú desplegable en la bandeja del formulario, más una columna en tu CRM o en una hoja simple para llamadas y mensajes.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Cuenta los 30 días antes de hacer los cambios y los 30 días después. El número que importa es la parte de consultas que no son de tu producto principal. Si sube, el sitio por fin cuenta la historia completa. Si el total se queda igual, también es información: te dice que la próxima fuga está en otro lado.',
+        },
+        {
+          kind: 'quote',
+          text: 'Los clientes no pueden pedir un servicio que tu sitio nunca les mostró.',
+        },
+        {
+          kind: 'heading',
+          text: 'Qué NO hacer',
+        },
+        {
+          kind: 'paragraph',
+          text: '**No pongas quince servicios en el titular.** Nombra tus líneas principales y deja que el menú cargue el detalle. Un titular que lo dice todo no dice nada, y suena a un negocio que no ha decidido qué es.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'No renombres el menú con palabras que suenan pulidas pero no dicen nada. No escondas en el pie de página las líneas que quieres hacer crecer. Y no gastes en anuncios para mandar gente a una página que todavía muestra un solo servicio, porque pagarías por llevar tráfico al mismo punto ciego.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'La misma lógica aplica a los precios. Si un servicio no tiene un número o un rango visible, el visitante llena el hueco con la peor suposición. Lo vimos en [por qué “llama para cotizar” le cuesta leads a un negocio de Dallas](/blog/call-for-price-lost-leads-dallas). Para ver cómo se juega esto en un rubro, mira nuestra página de [marketing para home improvement](/industries/home-improvement).',
+        },
+        {
+          kind: 'paragraph',
+          text: '¿No sabes si tu sitio esconde servicios o si la fuga está en otro lado? El [Growth Score](/growth-score) gratuito son 12 preguntas y cuatro minutos. Para una revisión humana de tu sitio, tus perfiles y tu camino de leads en siete días, empieza con el [Diagnóstico](/diagnostic).',
         },
       ],
     },
