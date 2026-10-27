@@ -1,0 +1,15 @@
+{
+  "cover": {
+    "concept": "A pale rectangular page frame in muted indigo with one small accent-orange tag lifting gently off its surface and floating on a thin thread toward a separate, distant card shape, as if something written for one place is quietly being carried to another."
+  },
+  "inline": [
+    {
+      "name": "page-offer-source",
+      "concept": "A flat page frame in muted indigo holding three small tag shapes of equal size; two are dim and faded, one glows accent orange, and a single thin line rises from the glowing tag up toward a floating card, showing that the machine picks whichever tag is readable, not whichever is current."
+    },
+    {
+      "name": "account-switch",
+      "concept": "A single small toggle switch in accent orange on a calm pale indigo panel, with one thin thread running from it to a floating card shape; the switch sits alone and deliberate, suggesting one setting decides whether an outside system speaks on the owner's behalf."
+    }
+  ]
+}
