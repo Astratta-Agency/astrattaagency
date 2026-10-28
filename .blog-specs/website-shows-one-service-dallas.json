@@ -1,0 +1,15 @@
+{
+  "cover": {
+    "concept": "One large pale doorway outline at the center with a single accent-orange thread running through it, while several smaller doorway outlines beside it stay dark, flat and unlit in muted indigo, suggesting a business with many rooms but only one visible entrance."
+  },
+  "inline": [
+    {
+      "name": "all-lines-first-screen",
+      "concept": "A tall pale rectangular frame with three small accent-orange shapes of different geometry (circle, square, triangle) lined up side by side at its top edge, all glowing equally, with calm empty space below them."
+    },
+    {
+      "name": "one-door-per-service",
+      "concept": "A row of narrow geometric doorway outlines in muted indigo, each with a small accent-orange mark above it, one doorway slightly ajar with a warm orange glow spilling out, the others closed and quiet."
+    }
+  ]
+}
