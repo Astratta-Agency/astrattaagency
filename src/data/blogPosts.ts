@@ -1,5 +1,8 @@
 import type { Bilingual, Language } from '@/lib/i18n/types'
 import type { BlogIllustrationVariant } from '@/components/ui/BlogIllustration'
+import gbpWebsiteLinkCover from '@/assets/blog/gbp-missing-website-link-dallas-cover.webp'
+import gbpWebsiteLinkEmptyField from '@/assets/blog/gbp-missing-website-link-dallas-empty-field.webp'
+import gbpWebsiteLinkClickPath from '@/assets/blog/gbp-missing-website-link-dallas-click-path.webp'
 import trafficNoLeadsCover from '@/assets/blog/traffic-no-leads-cover.webp'
 import trafficNoLeadsClarity from '@/assets/blog/traffic-no-leads-clarity.webp'
 import trafficNoLeadsProof from '@/assets/blog/traffic-no-leads-proof.webp'
@@ -4311,6 +4314,194 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: '¿No sabes si tu sitio esconde servicios o si la fuga está en otro lado? El [Growth Score](/growth-score) gratuito son 12 preguntas y cuatro minutos. Para una revisión humana de tu sitio, tus perfiles y tu camino de leads en siete días, empieza con el [Diagnóstico](/diagnostic).',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'gbp-missing-website-link-dallas', es: 'ficha-google-sin-sitio-web-dallas' },
+    title: {
+      en: 'Your Dallas Google listing has no website button, and customers leave',
+      es: 'Tu ficha de Google en Dallas no tiene botón de sitio web, y el cliente se va',
+    },
+    excerpt: {
+      en: 'People find you on the map, then hit a dead end because the website field is empty or points nowhere. Here’s the four-step, no-agency fix and the one number that proves it worked.',
+      es: 'La gente te encuentra en el mapa y se topa con un callejón sin salida porque el campo de sitio web está vacío o no lleva a nada. Este es el arreglo de cuatro pasos sin agencia y el número que prueba que funcionó.',
+    },
+    category: 'web-conversion',
+    publishedAt: '2026-10-29',
+    readingTime: { en: '5 min read', es: '5 min de lectura' },
+    coverGradient: 'from-primary/20 to-secondary/20',
+    coverVariant: 'gbp',
+    coverImage: gbpWebsiteLinkCover,
+    coverAlt: {
+      en: 'A glowing orange map pin above a row of buttons, with one empty slot in the row where a button should be, leading nowhere.',
+      es: 'Un marcador de mapa naranja brillante sobre una fila de botones, con un hueco vacío en la fila donde debería haber un botón, que no lleva a ningún lado.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'Google Profile Missing a Website Link? Dallas Fix | Astratta',
+      es: 'Ficha de Google sin Sitio Web en Dallas: Arreglo | Astratta',
+    },
+    metaDescription: {
+      en: 'Your Dallas Google Business Profile gets found, but with no website link customers can’t see your menu or services. Four no-agency steps, and the metric.',
+      es: 'Tu ficha de Google en Dallas aparece, pero sin enlace al sitio web el cliente no ve tu menú ni tus servicios. Arreglo de cuatro pasos sin agencia y su métrica.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: '"I show up on the Google map, but people leave because there’s nowhere to see my menu or my full list of services." Dallas–Fort Worth owners tell us some version of this all the time. The listing is doing its job: it got found. Then the customer, phone in hand, tries to check one detail before deciding, and there is nothing to tap.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'In three of the audits we ran for local businesses, the Google Business Profile had no website connected, or the field had been left blank. **A profile with no website link is a dead end: the person who wants to confirm one thing before they visit or buy has no button to press, so the only moves left are guessing or leaving.** It usually happens at setup. Someone claims the profile in a hurry, skips the optional fields, and nobody opens it again.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'The cost is invisible. Nobody emails to say they couldn’t find your menu; they just don’t come in. The profile’s own numbers still look fine, because a view gets counted and the click that never happened does not. That is why this problem survives for years in listings that otherwise look healthy.',
+        },
+        { kind: 'heading', text: '1. See the profile the way a stranger sees it' },
+        {
+          kind: 'paragraph',
+          text: 'On your phone, open a private tab and search your business name plus Dallas. Look at the row of buttons under the name: Call, Directions, Website. If Website is missing, you have found the problem. If it is there, tap it. Many owners discover the link points to an old domain, a page that errors out, or a site that was never finished.',
+        },
+        {
+          kind: 'image',
+          variant: 'gbp',
+          caption: 'A customer who can’t check one detail doesn’t ask you. They open the next result.',
+          src: gbpWebsiteLinkEmptyField,
+          alt: 'A row of three round buttons in muted indigo with a fourth slot left empty as a dashed outline, a thin line running from it into blank space.',
+        },
+        { kind: 'heading', text: '2. Add or correct the URL in the profile editor' },
+        {
+          kind: 'paragraph',
+          text: 'Sign in with the Google account that owns the profile and search your business name. Choose to edit the profile, open Business information, and find the Website field under contact details. Paste the full address starting with https://, save, and wait for Google to confirm the edit. **This is a two-minute change, and it is the only step that puts a button in front of customers.** If the profile also offers fields for a menu or appointment link, fill those in too.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Use the exact address of your live site, and check it for typos, because a single wrong character sends people to an error page. If you don’t have a website yet, a one-page site you can build yourself in an afternoon, with your services, hours, phone number and a way to contact you, beats an empty field. When you want something built properly, that is what our [Foundation](/foundation) work is for.',
+        },
+        { kind: 'heading', text: '3. Send the click to the page that answers the question' },
+        {
+          kind: 'paragraph',
+          text: 'The homepage is not always the right destination. A diner checking the profile wants the menu. Someone shopping for a used car wants the inventory. A person comparing service providers wants the services page. **The best link is the one that answers the exact question the person had when they tapped it, so choose it deliberately instead of defaulting to the homepage.** If that page doesn’t exist yet, our post on [a website that shows only one service](/blog/website-shows-one-service-dallas) covers how to build it.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'If your menu or price list is a PDF, open it on your phone and check that you can read it without pinching and zooming. A plain web page loads faster, reads better on a small screen, and gives Google text it can actually index.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'The link’s job isn’t to bring people to your site. It’s to answer the question they came with.',
+          src: gbpWebsiteLinkClickPath,
+          alt: 'A single orange line running from a map pin straight through a doorway shape into a lit rectangle, while faint grey lines wander off in other directions.',
+        },
+        { kind: 'heading', text: '4. Tag the link and test it on a phone' },
+        {
+          kind: 'paragraph',
+          text: 'Add tracking to the end of the URL so Google Analytics 4 can tell you where the visit came from, for example ?utm_source=google&utm_medium=organic&utm_campaign=business-profile. Save it, then repeat step one in a private tab on your phone. **Tap the button yourself and confirm it opens the right page, quickly, and that nothing covers the content on a small screen.** Do this once and write down the exact tagged address, so nobody changes it by accident later.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Take a screenshot of your Performance numbers before you change anything. It takes ten seconds and gives you an honest baseline, so in a month you are comparing real numbers and not your memory of them.',
+        },
+        { kind: 'heading', text: 'How you measure it' },
+        {
+          kind: 'paragraph',
+          text: 'Open the Performance section of your Google Business Profile and note the number of website clicks. Compare four weeks after the fix against the four weeks before it. Then open Google Analytics 4, go to Reports, then Acquisition, and filter for the campaign name you used in the tag. **Website clicks rising while your profile views stay roughly flat is the proof that the dead end is gone.** Keep an eye on calls and directions too; they shouldn’t drop.',
+        },
+        { kind: 'heading', text: 'What not to do' },
+        {
+          kind: 'paragraph',
+          text: 'Don’t create a second profile to get a clean start. That adds a duplicate, and we cover why that hurts in our guide to [outdated Google profiles](/blog/outdated-google-profile-dfw). Don’t point the button at a "coming soon" page or a page with a pop-up that blocks the menu. And don’t spend on ads to send more people to a profile that still has nowhere for them to go.',
+        },
+        {
+          kind: 'quote',
+          text: 'A listing that gets seen but can’t be clicked is a billboard with no phone number.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'You can fix this in an afternoon without hiring anyone. If you want to know where else the path from search to inquiry breaks, the [Growth Score](/growth-score) is a free, 12-question, four-minute check you can take right now. And if you would rather have a person review the whole picture, the [Diagnostic](/diagnostic) is a $297, seven-day human review with a real deliverable.',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: '"Aparezco en el mapa de Google, pero la gente se sale porque no hay dónde ver mi menú ni mi lista completa de servicios." Los dueños de negocio en Dallas–Fort Worth nos dicen alguna versión de esto todo el tiempo. La ficha cumplió su trabajo: te encontraron. Luego el cliente, con el celular en la mano, quiere confirmar un dato antes de decidir, y no hay nada que tocar.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'En tres de las auditorías que hicimos a negocios locales, la ficha de Google no tenía sitio web conectado, o el campo se había dejado vacío. **Una ficha sin enlace al sitio web es un callejón sin salida: quien quiere confirmar una cosa antes de ir o comprar no tiene botón que tocar, y solo le quedan dos opciones: adivinar o irse.** Casi siempre pasa al crear la ficha. Alguien la reclama con prisa, salta los campos opcionales y nadie la vuelve a abrir.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'El costo es invisible. Nadie te escribe para decirte que no encontró tu menú; simplemente no llega. Los números de la propia ficha se ven bien, porque la vista se cuenta y el clic que nunca ocurrió no. Por eso este problema dura años en fichas que por lo demás se ven sanas.',
+        },
+        { kind: 'heading', text: '1. Mira tu ficha como la ve un desconocido' },
+        {
+          kind: 'paragraph',
+          text: 'En tu celular, abre una pestaña privada y busca el nombre de tu negocio más Dallas. Mira la fila de botones debajo del nombre: Llamar, Cómo llegar, Sitio web. Si falta Sitio web, ya encontraste el problema. Si está, tócalo. A muchos dueños les pasa que descubren que el enlace lleva a un dominio viejo, a una página con error o a un sitio que nunca se terminó.',
+        },
+        {
+          kind: 'image',
+          variant: 'gbp',
+          caption: 'El cliente que no puede revisar un dato no te pregunta a ti. Abre el siguiente resultado.',
+          src: gbpWebsiteLinkEmptyField,
+          alt: 'Una fila de tres botones redondos en índigo apagado con un cuarto lugar vacío, marcado con línea punteada, y una línea delgada que sale de él hacia un espacio en blanco.',
+        },
+        { kind: 'heading', text: '2. Agrega o corrige la URL en el editor de la ficha' },
+        {
+          kind: 'paragraph',
+          text: 'Entra con la cuenta de Google que administra la ficha y busca el nombre de tu negocio. Elige editar el perfil, abre Información de la empresa y busca el campo Sitio web dentro de los datos de contacto. Pega la dirección completa empezando con https://, guarda y espera a que Google confirme el cambio. **Son dos minutos de trabajo y es el único paso que de verdad pone un botón frente al cliente.** Si la ficha también ofrece campos para el menú o para agendar citas, llénalos también.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Usa la dirección exacta de tu sitio activo y revísala bien, porque un solo carácter equivocado manda a la gente a una página de error. Si todavía no tienes sitio web, una página sencilla que armes tú en una tarde, con tus servicios, horarios, teléfono y una forma de contactarte, es mejor que un campo vacío. Cuando quieras algo bien hecho, para eso existe nuestro trabajo de [Foundation](/foundation).',
+        },
+        { kind: 'heading', text: '3. Manda el clic a la página que responde la pregunta' },
+        {
+          kind: 'paragraph',
+          text: 'La página de inicio no siempre es el destino correcto. Quien revisa un restaurante quiere el menú. Quien busca un carro usado quiere el inventario. Quien compara proveedores de un servicio quiere la página de servicios. **El mejor enlace es el que responde la duda exacta que tenía la persona cuando tocó el botón, así que elígelo a propósito y no lo dejes en el inicio por costumbre.** Si esa página todavía no existe, nuestro artículo sobre [un sitio web que muestra un solo servicio](/blog/website-shows-one-service-dallas) explica cómo armarla.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Si tu menú o lista de precios es un PDF, ábrelo en tu celular y confirma que se lee sin pellizcar ni hacer zoom. Una página web sencilla carga más rápido, se lee mejor en pantalla chica y le da a Google texto que sí puede indexar.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'El enlace no sirve para traer gente a tu sitio. Sirve para responder la duda con la que llegó.',
+          src: gbpWebsiteLinkClickPath,
+          alt: 'Una sola línea naranja que sale de un marcador de mapa, atraviesa la silueta de una puerta y llega a un rectángulo iluminado, mientras líneas grises tenues se pierden en otras direcciones.',
+        },
+        { kind: 'heading', text: '4. Etiqueta el enlace y pruébalo en el celular' },
+        {
+          kind: 'paragraph',
+          text: 'Agrega seguimiento al final de la URL para que Google Analytics 4 te diga de dónde vino la visita, por ejemplo ?utm_source=google&utm_medium=organic&utm_campaign=business-profile. Guarda y repite el paso uno en una pestaña privada del celular. **Toca el botón tú mismo y confirma que abre la página correcta, rápido, y que nada tapa el contenido en una pantalla chica.** Hazlo una vez y anota la dirección exacta con etiquetas, para que nadie la cambie por accidente después.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Toma una captura de tus números de Rendimiento antes de cambiar nada. Toma diez segundos y te da un punto de partida honesto, para que en un mes compares números reales y no lo que recuerdas.',
+        },
+        { kind: 'heading', text: 'Cómo se mide' },
+        {
+          kind: 'paragraph',
+          text: 'Abre la sección Rendimiento de tu ficha de Google y anota los clics al sitio web. Compara las cuatro semanas posteriores al arreglo con las cuatro anteriores. Después entra a Google Analytics 4, ve a Informes, luego Adquisición, y filtra por el nombre de campaña que usaste en la etiqueta. **Que los clics al sitio web suban mientras las vistas de la ficha se quedan más o menos igual es la prueba de que el callejón sin salida desapareció.** Vigila también las llamadas y las indicaciones; no deberían bajar.',
+        },
+        { kind: 'heading', text: 'Qué no hacer' },
+        {
+          kind: 'paragraph',
+          text: 'No crees una segunda ficha para empezar de cero. Eso suma un duplicado, y en nuestra guía sobre [fichas de Google desactualizadas](/blog/outdated-google-profile-dfw) explicamos por qué daña. No apuntes el botón a una página de "próximamente" ni a una con una ventana emergente que tape el menú. Y no gastes en anuncios para mandar más gente a una ficha que todavía no tiene a dónde llevarla.',
+        },
+        {
+          kind: 'quote',
+          text: 'Una ficha que se ve pero no se puede tocar es un espectacular sin número de teléfono.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Esto se arregla en una tarde y sin contratar a nadie. Si quieres saber en qué otro punto se rompe el camino entre la búsqueda y la consulta, el [Growth Score](/growth-score) es una revisión gratis de 12 preguntas y cuatro minutos que puedes hacer ahora mismo. Y si prefieres que una persona revise el panorama completo, el [Diagnóstico](/diagnostic) cuesta $297, dura siete días y es una revisión humana con un entregable real.',
         },
       ],
     },

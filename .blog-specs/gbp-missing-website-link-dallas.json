@@ -1,0 +1,15 @@
+{
+  "cover": {
+    "concept": "A glowing orange map-pin shape hovering above a row of round indigo button shapes, with one slot in the row left empty as a faint dashed outline; a thin line drops from that empty slot into blank space, suggesting a path that leads nowhere."
+  },
+  "inline": [
+    {
+      "name": "empty-field",
+      "concept": "A row of three solid round buttons in muted indigo with a fourth slot left as an empty dashed outline, and a single thin line running out of that empty slot into open negative space, like a signal with nowhere to land."
+    },
+    {
+      "name": "click-path",
+      "concept": "One bright accent-orange line running from a map-pin shape straight through a simple doorway shape into a softly lit rectangle, while several faint grey lines drift off in other directions and fade out."
+    }
+  ]
+}
