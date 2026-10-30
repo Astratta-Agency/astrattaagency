@@ -99,6 +99,9 @@ export const AUTHORS = {
 import pmaxVideoCover from '@/assets/blog/pmax-video-auto-resize-dallas-cover.webp'
 import pmaxVideoMaster from '@/assets/blog/pmax-video-auto-resize-dallas-master-video.webp'
 import pmaxVideoFrameCheck from '@/assets/blog/pmax-video-auto-resize-dallas-frame-check.webp'
+import autoPromoCover from '@/assets/blog/google-ads-auto-promotions-dallas-cover.webp'
+import autoPromoPageOffer from '@/assets/blog/google-ads-auto-promotions-dallas-page-offer-source.webp'
+import autoPromoSwitch from '@/assets/blog/google-ads-auto-promotions-dallas-account-switch.webp'
 export type AuthorId = keyof typeof AUTHORS
 
 export type ResolvedAuthor = { name: string; role: string }
@@ -4311,6 +4314,262 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: '¿No sabes si tu sitio esconde servicios o si la fuga está en otro lado? El [Growth Score](/growth-score) gratuito son 12 preguntas y cuatro minutos. Para una revisión humana de tu sitio, tus perfiles y tu camino de leads en siete días, empieza con el [Diagnóstico](/diagnostic).',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'google-ads-auto-promotions-dallas', es: 'promociones-automaticas-google-ads-dallas' },
+    title: {
+      en: 'Google Ads now pulls deals off your website: what Dallas business owners should check first',
+      es: 'Google Ads ahora saca ofertas de tu sitio web: lo que debe revisar primero un negocio de Dallas',
+    },
+    excerpt: {
+      en: 'Google Ads can now read the deals on your website and attach them to your ads on its own. For a Dallas–Fort Worth business, the risk is an old offer showing up as if it were current.',
+      es: 'Google Ads ahora puede leer las ofertas de tu sitio y ponerlas en tus anuncios por su cuenta. Para un negocio de Dallas–Fort Worth, el riesgo es que una oferta vieja salga como si fuera actual.',
+    },
+    category: 'digital-marketing',
+    publishedAt: '2026-10-27',
+    readingTime: { en: '5 min read', es: '5 min de lectura' },
+    coverGradient: 'from-primary/20 to-secondary/20',
+    coverVariant: 'insight',
+    coverImage: autoPromoCover,
+    coverAlt: {
+      en: 'A pale web page frame with one small orange tag lifting off it and floating toward a separate ad card, pulled by a thin thread.',
+      es: 'Un marco pálido de página web con una pequeña etiqueta naranja que se despega y flota hacia una tarjeta de anuncio aparte, jalada por un hilo delgado.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'Dallas Google Ads Auto Promotions: What to Check | Astratta',
+      es: 'Promociones automáticas de Google Ads en Dallas | Astratta',
+    },
+    metaDescription: {
+      en: 'Google Ads now reads deals off your website and adds them to ads. What a Dallas business should check this week so no expired offer goes out in your name.',
+      es: 'Google Ads ahora lee las ofertas de tu sitio y las suma a tus anuncios. Qué debe revisar esta semana un negocio de Dallas para que no salga una oferta vencida.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: 'If you run Google Ads for a Dallas business, Google may now be advertising offers you never wrote an ad for. According to reports based on a Google email, from October 12, 2026 Google Ads scans your website for deals and coupons and attaches them to eligible Search and Performance Max ads as promotion assets, unless you switch the feature off.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'The rule is narrow. It reportedly applies to campaigns that have location assets linked and no promotion assets of their own. Each promotion is said to serve for under 24 hours and is renewed only while the offer is still visible on your site. Reports differ on dates and details, so treat your own account as the source of truth, not any article, this one included.',
+        },
+        {
+          kind: 'heading',
+          text: 'Why this matters in Dallas–Fort Worth',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Small-business sites in DFW collect old offers the way garages collect boxes. A seasonal discount banner nobody removed. A “free estimate” line from a campaign that ended. A financing note from a partner you no longer use. Until now, those leftovers only confused the people who happened to read them.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Now Google reads that text and can put it in an ad, in front of people who never saw your site. **The risk is not that Google shows a deal; it is that Google decides which of your old offers is the current one.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Picture a Dallas roofing company with a storm-season discount still sitting in the footer in the middle of winter. The ad runs, the click costs money, the caller asks for the discount, and the owner either honors a deal that was never meant to last or loses the job in an awkward argument. Nobody did anything wrong on purpose. The page just said something the business no longer meant.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'This is also a restaurant and med spa problem. A Dallas restaurant that ran a lunch special last spring, or a med spa that posted a first-visit offer for a launch week, may still have that text live. The offer feels dead to the owner because the campaign ended. To a crawler, a sentence on a page is a sentence on a page, and nothing on it says “expired”.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'There is an upside. If you do have a real, current offer, an ad that names it is more specific than one that does not, and you did not have to write it. That only works when the offer on the page is true today.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'Google reads the page you published, not the page you meant to publish.',
+          src: autoPromoPageOffer,
+          alt: 'A pale page frame with three small tags on it, one glowing orange, and a thin thread rising from the glowing tag toward an ad card.',
+        },
+        {
+          kind: 'heading',
+          text: 'What to do this week',
+        },
+        {
+          kind: 'heading',
+          text: '1. Find out whether it is on for your account',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Reports point to the account-level automated assets settings: Assets, then account-level automated assets, then Advanced settings, where Automated promotions can be turned off. If an agency or freelancer runs your ads, send one message: “Are automated promotions on for our account, and who decided that?” **If nobody can answer, assume it is on and act as if it is.**',
+        },
+        {
+          kind: 'heading',
+          text: '2. Read your site the way Google does',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Open your home page, your service pages and the pages your ads land on. Look in banners, pop-ups, footers and sidebars for anything that sounds like a deal: a percentage, a coupon, a free offer, a financing line. **Every offer a visitor can see on your site, Google can read.** Write down each one and mark it true or expired.',
+        },
+        {
+          kind: 'heading',
+          text: '3. Fix the page first, then decide on or off',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Delete what is expired and correct what is wrong. Then choose. If you have a real offer you will honor, leaving the feature on can help. If your offers change often or you cannot promise them, turn it off. **Your own promotion asset is better than Google’s guess**, and under the eligibility rule reported so far, adding your own means the automatic one does not apply.',
+        },
+        {
+          kind: 'heading',
+          text: '4. Write it down and look again in a week',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Note the decision and the date in one shared line. Then check the assets report for any promotion you did not write. **A setting nobody reviews is a setting nobody owns.** Repeat the check each time you change a banner or launch a seasonal offer, because the page is now part of your ad.',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'One account-level switch decides whether Google speaks for you.',
+          src: autoPromoSwitch,
+          alt: 'A single small orange switch on a pale panel, with a thin thread running from it to a floating ad card.',
+        },
+        {
+          kind: 'quote',
+          text: 'Your website is now part of your ad copy, whether you wrote it for that or not.',
+        },
+        {
+          kind: 'heading',
+          text: 'What to ignore',
+        },
+        {
+          kind: 'paragraph',
+          text: '**Ignore the idea that this is a free conversion boost.** More text in an ad can help or hurt. The only number that settles it is how many real, booked jobs came from the campaign, and that comes from your tracking, not from the promotion setting.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Ignore the panic, too. If your campaigns do not use location assets, or you already run your own promotion assets, this may not touch you at all. Do the five-minute check before you change anything.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'And ignore anyone who says the fix is a bigger ad budget. If an offer is wrong, more spend only spreads it faster. We covered a related shift in our post on [Local Services Ads moving into Performance Max](/blog/local-services-ads-performance-max-dallas), where the same rule applied: Google acts on the signals you give it, so the signals have to be true.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'If you are not running Google Ads today, this does not change your plan. Fix your site and your follow-up first. Our [Systems](/systems) page shows how we connect ads, tracking and follow-up.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Not sure where your marketing leaks? The free [Growth Score](/growth-score) is 12 questions and four minutes. For a human review of your site, your profiles and your lead path in seven days, start with the [Diagnostic](/diagnostic).',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: 'Si pautas en Google Ads para un negocio en Dallas, Google puede estar anunciando ofertas para las que nunca escribiste un anuncio. Según reportes basados en un correo de Google, desde el 12 de octubre de 2026 Google Ads revisa tu sitio web en busca de ofertas y cupones y los suma a los anuncios elegibles de Búsqueda y Performance Max como recursos de promoción, a menos que apagues la función.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'La regla es estrecha. Según los reportes, aplica a campañas con recursos de ubicación vinculados y sin recursos de promoción propios. Se dice que cada promoción se muestra menos de 24 horas y se renueva solo mientras la oferta siga visible en tu sitio. Los reportes difieren en fechas y detalles, así que toma tu propia cuenta como fuente de verdad, no un artículo, este incluido.',
+        },
+        {
+          kind: 'heading',
+          text: 'Por qué importa en Dallas–Fort Worth',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Los sitios de negocios chicos en DFW acumulan ofertas viejas como un garaje acumula cajas. Un banner de descuento de temporada que nadie quitó. Una línea de “cotización gratis” de una campaña que ya terminó. Una nota de financiamiento de un aliado que ya no usas. Hasta ahora, esos restos solo confundían a quien los leía por casualidad.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Ahora Google lee ese texto y puede ponerlo en un anuncio, frente a gente que nunca vio tu sitio. **El riesgo no es que Google muestre una oferta; es que decida cuál de tus ofertas viejas es la vigente.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Imagina una empresa de techos en Dallas con un descuento de temporada de tormentas todavía en el pie de página en pleno invierno. Sale el anuncio, el clic cuesta, el cliente llama pidiendo el descuento y el dueño o respeta una oferta que nunca debió durar, o pierde el trabajo en una discusión incómoda. Nadie hizo nada a propósito. La página solo decía algo que el negocio ya no quería decir.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Esto también le pasa a restaurantes y med spas. Un restaurante de Dallas que corrió un especial de almuerzo la primavera pasada, o un med spa que publicó una oferta de primera visita por una semana de lanzamiento, quizá todavía tenga ese texto vivo. Para el dueño la oferta está muerta porque la campaña terminó. Para un rastreador, una frase en la página es una frase en la página, y ninguna dice “vencida”.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'También hay ventaja. Si tienes una oferta real y vigente, un anuncio que la nombra es más concreto que uno que no, y no tuviste que escribirlo. Eso solo funciona cuando la oferta de la página es cierta hoy.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'Google lee la página que publicaste, no la que querías publicar.',
+          src: autoPromoPageOffer,
+          alt: 'Un marco pálido de página con tres etiquetas pequeñas, una brillando en naranja, y un hilo delgado que sube desde la etiqueta brillante hacia una tarjeta de anuncio.',
+        },
+        {
+          kind: 'heading',
+          text: 'Qué hacer esta semana',
+        },
+        {
+          kind: 'heading',
+          text: '1. Averigua si está activo en tu cuenta',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Los reportes señalan la configuración de recursos automáticos a nivel de cuenta: Recursos, luego recursos automáticos a nivel de cuenta, luego Configuración avanzada, donde se pueden apagar las promociones automáticas. Si te maneja los anuncios una agencia o un freelancer, mándale un solo mensaje: “¿Están activas las promociones automáticas en nuestra cuenta y quién lo decidió?”. **Si nadie sabe contestar, da por hecho que están activas y actúa en consecuencia.**',
+        },
+        {
+          kind: 'heading',
+          text: '2. Lee tu sitio como lo lee Google',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Abre tu página de inicio, tus páginas de servicio y las páginas a las que llegan tus anuncios. Busca en banners, ventanas emergentes, pies de página y barras laterales cualquier cosa que suene a oferta: un porcentaje, un cupón, algo gratis, una línea de financiamiento. **Toda oferta que un visitante ve en tu sitio, Google la puede leer.** Anota cada una y márcala como vigente o vencida.',
+        },
+        {
+          kind: 'heading',
+          text: '3. Primero arregla la página, después decide si lo dejas o no',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Borra lo vencido y corrige lo erróneo. Luego decide. Si tienes una oferta real que vas a respetar, dejar la función activa puede ayudarte. Si tus ofertas cambian seguido o no puedes garantizarlas, apágala. **Un recurso de promoción propio es mejor que la suposición de Google**, y con la regla de elegibilidad reportada hasta ahora, poner el tuyo hace que la automática no aplique.',
+        },
+        {
+          kind: 'heading',
+          text: '4. Anótalo y vuelve a mirar en una semana',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Deja la decisión y la fecha en una línea compartida. Después revisa el informe de recursos por si hay alguna promoción que no escribiste. **Una configuración que nadie revisa es una configuración que nadie tiene a cargo.** Repite la revisión cada vez que cambies un banner o lances una oferta de temporada, porque ahora la página es parte de tu anuncio.',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'Un interruptor a nivel de cuenta decide si Google habla por ti.',
+          src: autoPromoSwitch,
+          alt: 'Un solo interruptor naranja pequeño sobre un panel pálido, con un hilo delgado que va de él a una tarjeta de anuncio flotante.',
+        },
+        {
+          kind: 'quote',
+          text: 'Tu sitio web ya es parte del texto de tu anuncio, lo hayas escrito para eso o no.',
+        },
+        {
+          kind: 'heading',
+          text: 'Qué ignorar',
+        },
+        {
+          kind: 'paragraph',
+          text: '**Ignora la idea de que esto es un impulso gratis a las conversiones.** Más texto en un anuncio puede ayudar o perjudicar. El único número que lo define es cuántos trabajos reales y agendados salieron de la campaña, y ese número sale de tu medición, no de la configuración de promociones.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Ignora también el pánico. Si tus campañas no usan recursos de ubicación, o ya tienes tus propios recursos de promoción, esto quizá ni te toque. Haz la revisión de cinco minutos antes de cambiar nada.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Y no le hagas caso a quien diga que la solución es subir el presupuesto. Si una oferta está mal, gastar más solo la reparte más rápido. Vimos un cambio parecido en nuestro artículo sobre [los Anuncios de Servicios Locales que pasan a Performance Max](/blog/local-services-ads-performance-max-dallas), donde aplicaba la misma regla: Google actúa sobre las señales que le das, así que las señales tienen que ser ciertas.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Si hoy no usas Google Ads, esto no cambia tu plan. Arregla primero tu sitio y tu seguimiento. En [Systems](/systems) mostramos cómo conectamos anuncios, medición y seguimiento.',
+        },
+        {
+          kind: 'paragraph',
+          text: '¿No sabes por dónde se te escapa el marketing? El [Growth Score](/growth-score) gratuito son 12 preguntas y cuatro minutos. Para una revisión humana de tu sitio, tus perfiles y tu camino de leads en siete días, empieza con el [Diagnóstico](/diagnostic).',
         },
       ],
     },
