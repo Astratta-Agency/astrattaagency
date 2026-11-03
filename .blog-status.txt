@@ -1,14 +1,2 @@
-IMAGES_FAIL
+BUILD_OK
 https://github.com/Astratta-Agency/astrattaagency/actions/runs/41633874666
---- últimas 40 líneas del paso de imágenes ---
-Modelo: gemini-3.1-flash-image
-Post: adobe-ai-chat-design-dallas
-  · adobe-ai-chat-design-dallas-cover.webp … 
-✗ Gemini 402: [{
-  "error": {
-    "code": 402,
-    "message": "Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. ",
-    "status": "RESOURCE_EXHAUSTED"
-  }
-}
-]
