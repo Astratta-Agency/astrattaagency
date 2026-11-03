@@ -4642,7 +4642,7 @@ export const BLOG_POSTS: BlogPostSource[] = [
         },
         {
           kind: 'paragraph',
-          text: 'We see the same pattern in our own work. Perreando Hotdog, a Dallas restaurant, reached 292K organic views in 90 days with $0 in ads. That result did not come from a better design tool. It came from content that felt like the place and gave people something to react to. Polish was not the lever.',
+          text: 'We see the same pattern in our own work. Perreando Hotdog, a Dallas restaurant, reached 292K organic views in 90 days with $0 in ads. That result came from organic content, not from a bigger budget or a pricier design workflow. Reach like that comes from what you show, not from how fast you can produce it.',
         },
         {
           kind: 'heading',
@@ -4762,7 +4762,7 @@ export const BLOG_POSTS: BlogPostSource[] = [
         },
         {
           kind: 'paragraph',
-          text: 'Lo vemos en nuestro propio trabajo. Perreando Hotdog, un restaurante de Dallas, llegó a 292K vistas orgánicas en 90 días con $0 en anuncios. Ese resultado no vino de una mejor herramienta de diseño. Vino de contenido que se sentía como el lugar y daba algo a lo que reaccionar. El pulido no fue la palanca.',
+          text: 'Lo vemos en nuestro propio trabajo. Perreando Hotdog, un restaurante de Dallas, llegó a 292K vistas orgánicas en 90 días con $0 en anuncios. Ese resultado vino de contenido orgánico, no de un presupuesto mayor ni de un flujo de diseño más caro. Un alcance así depende de lo que muestras, no de qué tan rápido puedas producirlo.',
         },
         {
           kind: 'heading',
