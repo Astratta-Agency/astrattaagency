@@ -102,6 +102,9 @@ import pmaxVideoFrameCheck from '@/assets/blog/pmax-video-auto-resize-dallas-fra
 import autoPromoCover from '@/assets/blog/google-ads-auto-promotions-dallas-cover.webp'
 import autoPromoPageOffer from '@/assets/blog/google-ads-auto-promotions-dallas-page-offer-source.webp'
 import autoPromoSwitch from '@/assets/blog/google-ads-auto-promotions-dallas-account-switch.webp'
+import adobeChatDesignCover from '@/assets/blog/adobe-ai-chat-design-dallas-cover.webp'
+import adobeChatDesignOneOffer from '@/assets/blog/adobe-ai-chat-design-dallas-one-offer-ten-graphics.webp'
+import adobeChatDesignBrandGuardrail from '@/assets/blog/adobe-ai-chat-design-dallas-brand-guardrail.webp'
 export type AuthorId = keyof typeof AUTHORS
 
 export type ResolvedAuthor = { name: string; role: string }
@@ -4570,6 +4573,278 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: '¿No sabes por dónde se te escapa el marketing? El [Growth Score](/growth-score) gratuito son 12 preguntas y cuatro minutos. Para una revisión humana de tu sitio, tus perfiles y tu camino de leads en siete días, empieza con el [Diagnóstico](/diagnostic).',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'adobe-ai-chat-design-dallas', es: 'diseno-adobe-ia-chat-dallas' },
+    title: {
+      en: 'Adobe now works inside Gemini and Claude: what a Dallas business should do first',
+      es: 'Adobe ya funciona dentro de Gemini y Claude: lo que debe hacer primero un negocio de Dallas',
+    },
+    excerpt: {
+      en: 'Adobe tools now run inside Gemini and Claude. For a Dallas–Fort Worth business, a faster graphic only helps if the offer and the next step are clear.',
+      es: 'Las herramientas de Adobe ya corren dentro de Gemini y Claude. Para un negocio de Dallas–Fort Worth, un gráfico más rápido solo ayuda si la oferta y el siguiente paso están claros.',
+    },
+    category: 'design',
+    publishedAt: '2026-11-03',
+    readingTime: { en: '5 min read', es: '5 min de lectura' },
+    coverGradient: 'from-primary/20 to-secondary/20',
+    coverVariant: 'insight',
+    coverImage: adobeChatDesignCover,
+    coverAlt: {
+      en: 'A pale indigo card on a calm background with one small orange spark moving from a chat bubble outline into the card, turning a rough sketch into a clean shape.',
+      es: 'Una tarjeta índigo pálida sobre un fondo calmado con una pequeña chispa naranja que pasa del contorno de un globo de chat a la tarjeta, convirtiendo un boceto en una forma limpia.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'Adobe in Gemini & Claude: A Dallas Business Guide | Astratta',
+      es: 'Adobe en Gemini y Claude: guía para Dallas | Astratta',
+    },
+    metaDescription: {
+      en: 'Adobe now works inside Gemini and Claude. What a Dallas business should do this week so fast AI graphics bring leads, not just more posts to scroll past.',
+      es: 'Adobe ya funciona dentro de Gemini y Claude. Qué debe hacer esta semana un negocio de Dallas para que los gráficos con IA traigan leads y no solo publicaciones.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: 'If you run a Dallas business and pay for every flyer, promo graphic or menu update, the price of that work just changed. On September 24, 2026, Adobe announced it is bringing tools from Photoshop, Lightroom, Express and Firefly into Google Gemini, and adding Acrobat to its existing Claude plugin. Reports say the Gemini version is rolling out worldwide across all Gemini plans.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'The Claude plugin now covers more than 80 tools across apps like Acrobat, Express, Photoshop, Illustrator and InDesign, in one conversation. You can ask for a product photo cleanup, a promo graphic or a resized version for another channel without leaving the chat. Reports differ on which tools are free and which need an Adobe plan, so check your own account before you plan around it.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Nothing here is a new business model. It is the same Adobe software, reachable from a chat box you may already use. What changed is who can reach it: someone with no design training and ten free minutes between customers.',
+        },
+        {
+          kind: 'heading',
+          text: 'Why this matters in Dallas–Fort Worth',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Most DFW owners we talk to do not have a design problem. They have a Tuesday problem: a slow day, a new offer, and nobody free to make the graphic. For a business doing $30K to $500K a year, waiting three days and paying an agency for one post is hard to justify, so the post never goes out.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'That is the real change. **The cost of producing a graphic just dropped close to zero, which means the graphic is no longer what separates you from the business down the road.** Your competitor in Plano or Fort Worth can now make the same polished flyer in the same chat window.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'When everyone can make something that looks professional, three things start to matter instead. What the piece says. What it asks the customer to do. And whether it still looks like you.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Picture a med spa in Frisco announcing a seasonal offer, or a remodeler in Garland showing a finished kitchen. The graphic used to be the slow, expensive step. Now the slow step is deciding what to say, and that was always the harder part.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'We see the same pattern in our own work. Perreando Hotdog, a Dallas restaurant, reached 292K organic views in 90 days with $0 in ads. That result did not come from a better design tool. It came from content that felt like the place and gave people something to react to. Polish was not the lever.',
+        },
+        {
+          kind: 'heading',
+          text: 'What to do this week',
+        },
+        {
+          kind: 'heading',
+          text: '1. Pick one offer and write it in one sentence',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Before you open any AI tool, decide what the graphic is selling. One service, one price or one deadline. **A tool that makes ten graphics in ten minutes will happily make ten graphics with ten different messages.** Write the sentence first, then ask for the design.',
+        },
+        {
+          kind: 'image',
+          variant: 'proof',
+          caption: 'One sentence of offer, written before the tool opens, is what makes ten fast graphics work as one message.',
+          src: adobeChatDesignOneOffer,
+          alt: 'One pale indigo card with a single orange line running through it while ten faint copies of the card fan out behind it, all carrying the same line.',
+        },
+        {
+          kind: 'heading',
+          text: '2. Give every piece one next step',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Every graphic needs one action: call, text, book, or visit. Put it in the last line and use the same wording everywhere. If you are not sure where the next step should lead, this is the same problem we covered in [why your link in bio brings views but no messages](/blog/link-in-bio-no-inquiries-dallas). A fast graphic that points nowhere is still a dead end.',
+        },
+        {
+          kind: 'heading',
+          text: '3. Lock your brand basics before you generate anything',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Write down your two or three brand colors, your font and your logo placement, and paste them into every request. **Generic AI output is cheap to make, and customers can spot it.** A flyer that looks like every other flyer tells people you did not take much care, which is the opposite of what you are paying to say.',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'Colors, font and logo placement are the guardrail that keeps fast output looking like you.',
+          src: adobeChatDesignBrandGuardrail,
+          alt: 'A pale indigo frame with three small orange guide marks at its corners, holding a smooth shape that stays inside the lines while a loose blur drifts outside them.',
+        },
+        {
+          kind: 'heading',
+          text: '4. Fix the page the graphic sends people to',
+        },
+        {
+          kind: 'paragraph',
+          text: 'A good promo that lands on a weak page loses the lead anyway. Check that the offer on your graphic is the same offer on your site, with the same price and the same button. We covered the other half of this in [why your website can look like a one-service business](/blog/website-shows-one-service-dallas).',
+        },
+        {
+          kind: 'heading',
+          text: '5. Test one piece, then measure it',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Make one graphic, post it, and count real responses: calls, messages, bookings. **One piece you can measure beats ten pieces you cannot.** Do not make a month of content in an afternoon and hope. Make one, learn from it, then make the next.',
+        },
+        {
+          kind: 'quote',
+          text: 'When everyone can make a good-looking graphic, the business with a clear offer wins.',
+        },
+        {
+          kind: 'heading',
+          text: 'What to ignore',
+        },
+        {
+          kind: 'paragraph',
+          text: '**Ignore the idea that this replaces a brand.** A tool can produce a graphic. It cannot decide who you are for, what you charge, or why a customer should pick you over the next name on the map. That work still comes first.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Ignore the pressure to post more. More graphics with a vague offer just means more places for people to scroll past you. And ignore anyone who tells you design no longer matters because AI can do it. When everyone has access to the same tool, taste and consistency are what people notice.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Also ignore the urge to switch tools every week. Pick one assistant, learn it, and judge it by the responses you count, not by how impressive the preview looks.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'If you are not sure whether your problem is design, the offer or the follow-up, the free [Growth Score](/growth-score) is 12 questions and four minutes. For a human review of your site, your profiles and your lead path in seven days, start with the [Diagnostic](/diagnostic). If the issue is that your site itself is not set up to convert, see our [Foundation](/foundation) work.',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: 'Si tienes un negocio en Dallas y pagas cada volante, cada gráfico de promoción o cada actualización de menú, el costo de ese trabajo acaba de cambiar. El 24 de septiembre de 2026, Adobe anunció que lleva herramientas de Photoshop, Lightroom, Express y Firefly a Google Gemini, y que suma Acrobat a su plugin para Claude. Según los reportes, la versión de Gemini se despliega en todo el mundo en todos los planes de Gemini.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'El plugin para Claude ahora cubre más de 80 herramientas en apps como Acrobat, Express, Photoshop, Illustrator e InDesign, dentro de una sola conversación. Puedes pedir la limpieza de una foto de producto, un gráfico de promoción o una versión adaptada a otro canal sin salir del chat. Los reportes no coinciden en qué herramientas son gratis y cuáles piden un plan de Adobe, así que revisa tu propia cuenta antes de planear alrededor de esto.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Nada de esto es un modelo de negocio nuevo. Es el mismo software de Adobe, al que se llega desde un chat que quizá ya usas. Lo que cambió es quién puede llegar: alguien sin formación en diseño y con diez minutos libres entre un cliente y otro.',
+        },
+        {
+          kind: 'heading',
+          text: 'Por qué importa en Dallas–Fort Worth',
+        },
+        {
+          kind: 'paragraph',
+          text: 'A la mayoría de dueños de DFW con quienes hablamos no les falta diseño. Les falta un martes: un día lento, una oferta nueva y nadie libre para hacer el gráfico. Para un negocio que factura entre $30K y $500K al año, esperar tres días y pagar a una agencia por una sola publicación cuesta demasiado, así que la publicación nunca sale.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Ese es el cambio de fondo. **Hacer un gráfico ahora cuesta casi nada, y por eso el gráfico ya no es lo que te separa del negocio de la esquina.** Tu competidor en Plano o Fort Worth puede hacer el mismo volante pulido en la misma ventana de chat.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Cuando todos pueden hacer algo que se ve profesional, importan otras tres cosas. Qué dice la pieza. Qué le pide hacer al cliente. Y si todavía se ve como tú.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Imagina un med spa en Frisco que anuncia una oferta de temporada, o un remodelador en Garland que muestra una cocina terminada. El gráfico era el paso lento y caro. Ahora el paso lento es decidir qué decir, y esa siempre fue la parte más difícil.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Lo vemos en nuestro propio trabajo. Perreando Hotdog, un restaurante de Dallas, llegó a 292K vistas orgánicas en 90 días con $0 en anuncios. Ese resultado no vino de una mejor herramienta de diseño. Vino de contenido que se sentía como el lugar y daba algo a lo que reaccionar. El pulido no fue la palanca.',
+        },
+        {
+          kind: 'heading',
+          text: 'Qué hacer esta semana',
+        },
+        {
+          kind: 'heading',
+          text: '1. Elige una oferta y escríbela en una frase',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Antes de abrir cualquier herramienta de IA, decide qué vende el gráfico. Un servicio, un precio o una fecha límite. **Una herramienta que hace diez gráficos en diez minutos los hará felizmente con diez mensajes distintos.** Escribe la frase primero y luego pide el diseño.',
+        },
+        {
+          kind: 'image',
+          variant: 'proof',
+          caption: 'Una frase de oferta, escrita antes de abrir la herramienta, hace que diez gráficos rápidos funcionen como un solo mensaje.',
+          src: adobeChatDesignOneOffer,
+          alt: 'Una tarjeta índigo pálida con una sola línea naranja que la atraviesa, y diez copias tenues de la tarjeta abiertas en abanico detrás, todas con la misma línea.',
+        },
+        {
+          kind: 'heading',
+          text: '2. Dale a cada pieza un solo siguiente paso',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Cada gráfico necesita una acción: llamar, escribir, reservar o visitar. Ponla en la última línea y usa las mismas palabras en todas partes. Si no tienes claro a dónde debe llevar ese paso, es el mismo problema que vimos en [por qué tu enlace en bio trae vistas pero ningún mensaje](/blog/link-in-bio-no-inquiries-dallas). Un gráfico rápido que no lleva a ningún lado sigue siendo un callejón sin salida.',
+        },
+        {
+          kind: 'heading',
+          text: '3. Fija lo básico de tu marca antes de generar nada',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Anota tus dos o tres colores, tu tipografía y dónde va tu logo, y pégalos en cada petición. **Lo genérico de la IA es barato de hacer, y los clientes lo notan.** Un volante igual a todos los demás le dice a la gente que no pusiste cuidado, justo lo contrario de lo que quieres comunicar.',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'Colores, tipografía y lugar del logo son la guía que mantiene el resultado rápido luciendo como tú.',
+          src: adobeChatDesignBrandGuardrail,
+          alt: 'Un marco índigo pálido con tres pequeñas marcas guía naranjas en las esquinas, que contiene una forma limpia dentro de las líneas mientras una mancha suelta se desliza hacia afuera.',
+        },
+        {
+          kind: 'heading',
+          text: '4. Arregla la página a la que manda el gráfico',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Una buena promoción que cae en una página débil pierde el lead igual. Revisa que la oferta del gráfico sea la misma que la de tu sitio, con el mismo precio y el mismo botón. La otra mitad de esto la vimos en [por qué tu sitio puede parecer un negocio de un solo servicio](/blog/website-shows-one-service-dallas).',
+        },
+        {
+          kind: 'heading',
+          text: '5. Prueba una pieza y mídela',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Haz un gráfico, publícalo y cuenta las respuestas reales: llamadas, mensajes, reservas. **Una pieza que puedes medir vale más que diez que no.** No hagas el contenido de un mes en una tarde y esperes lo mejor. Haz una, aprende y haz la siguiente.',
+        },
+        {
+          kind: 'quote',
+          text: 'Cuando todos pueden hacer un gráfico bonito, gana el negocio que tiene una oferta clara.',
+        },
+        {
+          kind: 'heading',
+          text: 'Qué ignorar',
+        },
+        {
+          kind: 'paragraph',
+          text: '**Ignora la idea de que esto reemplaza una marca.** Una herramienta puede producir un gráfico. No puede decidir para quién eres, cuánto cobras ni por qué un cliente debería elegirte a ti y no al siguiente nombre del mapa. Ese trabajo va primero.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Ignora la presión de publicar más. Más gráficos con una oferta vaga son solo más lugares donde la gente pasa de largo. Y no le hagas caso a quien diga que el diseño ya no importa porque la IA lo hace. Cuando todos tienen la misma herramienta, lo que la gente nota es el criterio y la consistencia.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Ignora también las ganas de cambiar de herramienta cada semana. Elige un asistente, apréndelo y júzgalo por las respuestas que cuentas, no por lo impresionante que se vea la vista previa.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Si no sabes si tu problema es el diseño, la oferta o el seguimiento, el [Growth Score](/growth-score) gratuito son 12 preguntas y cuatro minutos. Para una revisión humana de tu sitio, tus perfiles y tu camino de leads en siete días, empieza con el [Diagnóstico](/diagnostic). Si el problema es que tu sitio no está armado para convertir, mira nuestro trabajo de [Foundation](/foundation).',
         },
       ],
     },
