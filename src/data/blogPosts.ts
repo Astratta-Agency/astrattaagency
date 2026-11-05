@@ -102,6 +102,9 @@ import pmaxVideoFrameCheck from '@/assets/blog/pmax-video-auto-resize-dallas-fra
 import autoPromoCover from '@/assets/blog/google-ads-auto-promotions-dallas-cover.webp'
 import autoPromoPageOffer from '@/assets/blog/google-ads-auto-promotions-dallas-page-offer-source.webp'
 import autoPromoSwitch from '@/assets/blog/google-ads-auto-promotions-dallas-account-switch.webp'
+import nextStepCover from '@/assets/blog/one-next-step-no-replies-dallas-cover.webp'
+import nextStepOneWord from '@/assets/blog/one-next-step-no-replies-dallas-one-word-reply.webp'
+import nextStepClosingLine from '@/assets/blog/one-next-step-no-replies-dallas-closing-line-check.webp'
 export type AuthorId = keyof typeof AUTHORS
 
 export type ResolvedAuthor = { name: string; role: string }
@@ -4570,6 +4573,294 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: '¿No sabes por dónde se te escapa el marketing? El [Growth Score](/growth-score) gratuito son 12 preguntas y cuatro minutos. Para una revisión humana de tu sitio, tus perfiles y tu camino de leads en siete días, empieza con el [Diagnóstico](/diagnostic).',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'one-next-step-no-replies-dallas', es: 'un-solo-siguiente-paso-sin-respuestas-dallas' },
+    title: {
+      en: 'Dallas customers watch your posts but never message you: give every post one next step',
+      es: 'Los clientes de Dallas ven tus publicaciones pero nunca te escriben: dale a cada una un solo siguiente paso',
+    },
+    excerpt: {
+      en: 'Your posts get views and almost no replies. For a Dallas–Fort Worth business, the cause is usually the last line: no clear next step, or too many. Here is the fix in four steps.',
+      es: 'Tus publicaciones tienen vistas y casi ninguna respuesta. En un negocio de Dallas–Fort Worth, la causa suele ser la última línea: ningún siguiente paso claro, o demasiados. Aquí está el arreglo en cuatro pasos.',
+    },
+    category: 'web-conversion',
+    publishedAt: '2026-11-05',
+    readingTime: { en: '5 min read', es: '5 min de lectura' },
+    coverGradient: 'from-primary/20 to-secondary/20',
+    coverVariant: 'insight',
+    coverImage: nextStepCover,
+    coverAlt: {
+      en: 'Many pale figures drifting past a long muted-indigo path, with one small accent-orange arrow marking the single turn that leads to an open doorway.',
+      es: 'Muchas figuras pálidas que pasan junto a un largo camino índigo apagado, con una pequeña flecha naranja que marca el único giro que lleva a una puerta abierta.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'Dallas Posts Get Views, No Messages? Add One Step | Astratta',
+      es: 'Publicaciones en Dallas sin mensajes: un paso | Astratta',
+    },
+    metaDescription: {
+      en: 'Dallas customers watch your posts but never message you. Add one offer, one reply word and one fast answer so views turn into inquiries. Four steps inside.',
+      es: 'Los clientes de Dallas ven tus publicaciones pero no te escriben. Una oferta, una palabra de respuesta y una contestación rápida convierten vistas en consultas.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: 'If you run a restaurant, shop or service business in Dallas and you post every week, you may know this feeling: people watch, a few like, and almost nobody writes to ask for anything. The content is rarely the problem. The last line usually is, because most posts, videos and descriptions end without telling the viewer what to do next.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'In three of the recent reviews we did for small businesses in Dallas–Fort Worth, the pattern was the same: steady posting, a decent offer, and closings like “follow us for more” or no closing at all. Each owner described it in almost the same words. People watch, nobody asks.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Views can be earned without ads. Perreando Hotdog reached 292K organic views in 90 days with $0 in ads. Views are the easier half. A next step is what turns them into customers.',
+        },
+        {
+          kind: 'heading',
+          text: 'What is really going on',
+        },
+        {
+          kind: 'paragraph',
+          text: 'A viewer who enjoys your video has no reason to leave it. Nothing stops them from scrolling, and nothing pulls them forward either. **When a post offers three possible next steps, or none, the easiest choice is to do nothing.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Vague promises make it worse. “Best flavor in town” and “quality you can trust” give the viewer nothing to act on and nothing to check. They read like every other business in DFW, so they get the same response: silence.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'The asks also pile up in different places. One post says to call, the next says to use the link, the profile says to email. The business is asking the customer to work out which door is open.',
+        },
+        {
+          kind: 'heading',
+          text: 'The fix, in four steps',
+        },
+        {
+          kind: 'heading',
+          text: '1. Pick one offer you can honor',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Choose a single thing a new customer can ask for today: a quote, a booking, the menu with this week’s hours, a first visit. It has to be real and current. If you cannot say it in about six words, it is not one offer yet. **The offer is the reason to reply; without it, a reply word has nothing behind it.**',
+        },
+        {
+          kind: 'heading',
+          text: '2. Give it one reply word',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Pick a short word tied to the offer, such as QUOTE, BOOK or MENU. Ask viewers to send that word as a comment or a direct message. One word is easy to type on a phone and easy for you to count. Use the same word everywhere for 30 days, so you can see what it produced.',
+        },
+        {
+          kind: 'heading',
+          text: '3. Put the word in the last frame and the last line',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Add it to the final two seconds of every video, the last line of every caption, your bio and the end of your Google Business Profile description. Say it out loud in the video, too, in a plain sentence: “Send us the word QUOTE and we will reply with the next steps.” **The closing line is where the decision happens, so it is the first line to rewrite.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Picture a Dallas flooring installer whose videos end with a nice shot of a finished room and no words. The same video, ending with “Send QUOTE and we will ask you three questions about your room,” gives a viewer something small to do. It is the same video with a different last five seconds.',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'A viewer needs one word to type, not four doors to choose from.',
+          src: nextStepOneWord,
+          alt: 'A single small orange shape at the end of a long pale path, with several faded exits fading into the background on both sides.',
+        },
+        {
+          kind: 'heading',
+          text: '4. Answer fast, with one question',
+        },
+        {
+          kind: 'paragraph',
+          text: 'When the word arrives, reply the same day, ideally within the hour, and ask one question that moves things forward: the address of the job, or the date they have in mind. We covered the cost of slow follow-up in [our post on missed calls in DFW](/blog/missed-calls-lost-jobs-dfw). **A message answered tomorrow is often a customer who already booked someone else.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'If your Instagram link is broken or missing, fix that as well. We walked through it in [our post on link-in-bio setups](/blog/link-in-bio-no-inquiries-dallas). The reply word and the link should point to the same offer.',
+        },
+        {
+          kind: 'heading',
+          text: 'How to measure it',
+        },
+        {
+          kind: 'paragraph',
+          text: 'The metric is the number of comments and direct messages that contain your reply word each week. You can see it in your own inbox and comment threads, with no extra tool. **Keep three numbers per week in one note: views from the platform’s own insights, reply-word messages received, and how many became a booking or a quote request.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Divide messages by views for the posts that carried the word. The first week is a baseline, not a verdict. Judge the change after four weeks, and change one thing at a time. If views stay flat while messages rise, the closing line worked. If neither moves, the offer is the problem, not the word.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'If you cannot count the replies, you cannot tell what worked.',
+          src: nextStepClosingLine,
+          alt: 'A row of small pale frames, each ending in a tiny orange mark, with one frame lit slightly brighter than the rest.',
+        },
+        {
+          kind: 'quote',
+          text: 'Viewers do not owe you a next step. You have to hand them one.',
+        },
+        {
+          kind: 'heading',
+          text: 'What not to do',
+        },
+        {
+          kind: 'paragraph',
+          text: '**Do not stack calls to action.** “Call us, DM us, use the link and follow” is four asks, and four asks read as none. One per post.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Do not change the word every week. You lose the count, and the habit never forms. Do not swap vague adjectives for bigger ones either; “amazing” and “unbeatable” still prove nothing. A fact does: a start date, a service area, what is included.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'And do not pay for ads to push views higher before this works. More people watching a post with no next step only gives you more silent views.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Once replies are coming in, the next job is making sure they land somewhere organized. Our [Systems](/systems) page shows how we connect that follow-up.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Not sure whether your posts, profile and website all point to the same next step? The free [Growth Score](/growth-score) is 12 questions and four minutes. For a human review of your site, your profiles and your lead path in seven days, start with the [Diagnostic](/diagnostic).',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: 'Si tienes un restaurante, una tienda o un negocio de servicios en Dallas y publicas cada semana, quizá conozcas esta sensación: la gente mira, unos cuantos dan like y casi nadie escribe para pedir algo. El contenido rara vez es el problema. Lo es la última línea, porque la mayoría de las publicaciones, videos y descripciones terminan sin decirle al espectador qué hacer después.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'En tres de las revisiones recientes que hicimos a negocios pequeños de Dallas–Fort Worth, el patrón fue el mismo: publicación constante, una oferta decente y cierres como “síguenos para más” o ningún cierre. Cada dueño lo describió casi con las mismas palabras. La gente mira, nadie pregunta.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Las vistas se pueden ganar sin anuncios. Perreando Hotdog llegó a 292K vistas orgánicas en 90 días con $0 en anuncios. Las vistas son la mitad fácil. Un siguiente paso es lo que las convierte en clientes.',
+        },
+        {
+          kind: 'heading',
+          text: 'Qué está pasando de verdad',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Quien disfruta tu video no tiene motivo para quedarse en él. Nada le impide seguir deslizando y nada lo empuja hacia adelante. **Cuando una publicación ofrece tres siguientes pasos posibles, o ninguno, lo más fácil es no hacer nada.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Las promesas vagas lo empeoran. “El mejor sabor de la ciudad” y “calidad en la que puedes confiar” no le dan al espectador nada que hacer ni nada que comprobar. Suenan igual que cualquier otro negocio de DFW, así que reciben la misma respuesta: silencio.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Además, los pedidos se reparten en lugares distintos. Una publicación dice que llames, la siguiente que uses el enlace, el perfil que escribas un correo. El negocio le pide al cliente que averigüe cuál puerta está abierta.',
+        },
+        {
+          kind: 'heading',
+          text: 'El arreglo, en cuatro pasos',
+        },
+        {
+          kind: 'heading',
+          text: '1. Elige una oferta que puedas cumplir',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Escoge una sola cosa que un cliente nuevo pueda pedir hoy: una cotización, una reserva, el menú con los horarios de esta semana, una primera visita. Tiene que ser real y vigente. Si no la puedes decir en unas seis palabras, todavía no es una sola oferta. **La oferta es el motivo para responder; sin ella, la palabra de respuesta no tiene nada detrás.**',
+        },
+        {
+          kind: 'heading',
+          text: '2. Dale una sola palabra de respuesta',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Elige una palabra corta ligada a la oferta, como COTIZA, RESERVA o MENÚ. Pide que te manden esa palabra en un comentario o en un mensaje directo. Una palabra es fácil de escribir en el celular y fácil de contar para ti. Usa la misma en todas partes durante 30 días, para ver qué produjo.',
+        },
+        {
+          kind: 'heading',
+          text: '3. Ponla en el último cuadro y en la última línea',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Agrégala a los dos últimos segundos de cada video, a la última línea de cada texto, a tu biografía y al final de la descripción de tu Perfil de Negocio de Google. Dila también en voz alta en el video, con una frase sencilla: “Mándanos la palabra COTIZA y te respondemos con los siguientes pasos”. **La línea final es donde se toma la decisión, así que es la primera que hay que reescribir.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Imagina a un instalador de pisos en Dallas cuyos videos terminan con una linda toma del cuarto terminado y ninguna palabra. El mismo video, cerrando con “Mándanos COTIZA y te hacemos tres preguntas sobre tu cuarto”, le da al espectador algo pequeño que hacer. Es el mismo video con otros últimos cinco segundos.',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'Quien te mira necesita una palabra que escribir, no cuatro puertas entre las que elegir.',
+          src: nextStepOneWord,
+          alt: 'Una sola forma naranja pequeña al final de un largo camino pálido, con varias salidas desvanecidas en el fondo a ambos lados.',
+        },
+        {
+          kind: 'heading',
+          text: '4. Responde rápido y con una pregunta',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Cuando llegue la palabra, responde el mismo día, idealmente en la hora, y haz una pregunta que avance la conversación: la dirección del trabajo o la fecha que tiene en mente. Contamos lo que cuesta el seguimiento lento en [nuestro artículo sobre llamadas perdidas en DFW](/blog/missed-calls-lost-jobs-dfw). **Un mensaje contestado mañana suele ser un cliente que ya contrató a otro.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Si el enlace de tu Instagram está roto o no existe, arréglalo también. Lo recorrimos en [nuestro artículo sobre el enlace en la bio](/blog/link-in-bio-no-inquiries-dallas). La palabra de respuesta y el enlace deben apuntar a la misma oferta.',
+        },
+        {
+          kind: 'heading',
+          text: 'Cómo se mide',
+        },
+        {
+          kind: 'paragraph',
+          text: 'La métrica es la cantidad de comentarios y mensajes directos que contienen tu palabra de respuesta cada semana. La ves en tu propia bandeja y en tus comentarios, sin herramientas extra. **Anota tres números por semana en una sola nota: las vistas según las estadísticas de la propia plataforma, los mensajes con la palabra recibidos y cuántos se volvieron una reserva o una solicitud de cotización.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Divide los mensajes entre las vistas de las publicaciones que llevaban la palabra. La primera semana es una base de comparación, no un veredicto. Juzga el cambio a las cuatro semanas y cambia una sola cosa a la vez. Si las vistas siguen igual y los mensajes suben, la línea final funcionó. Si ninguno se mueve, el problema es la oferta, no la palabra.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'Si no puedes contar las respuestas, no puedes saber qué funcionó.',
+          src: nextStepClosingLine,
+          alt: 'Una fila de pequeños marcos pálidos, cada uno con una diminuta marca naranja al final, y un marco iluminado un poco más que los demás.',
+        },
+        {
+          kind: 'quote',
+          text: 'Quien te ve no te debe un siguiente paso. Tienes que dárselo tú.',
+        },
+        {
+          kind: 'heading',
+          text: 'Qué no hacer',
+        },
+        {
+          kind: 'paragraph',
+          text: '**No apiles llamados a la acción.** “Llámanos, escríbenos, usa el enlace y síguenos” son cuatro pedidos, y cuatro pedidos se leen como ninguno. Uno por publicación.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'No cambies la palabra cada semana. Pierdes la cuenta y el hábito nunca se forma. Tampoco cambies adjetivos vagos por otros más grandes; “increíble” e “inmejorable” siguen sin probar nada. Un dato sí: una fecha de inicio, una zona de servicio, qué incluye.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Y no pagues anuncios para subir las vistas antes de que esto funcione. Más gente mirando una publicación sin siguiente paso solo te da más vistas silenciosas.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Cuando ya lleguen respuestas, lo siguiente es que caigan en un lugar ordenado. En [Systems](/systems) mostramos cómo conectamos ese seguimiento.',
+        },
+        {
+          kind: 'paragraph',
+          text: '¿No sabes si tus publicaciones, tu perfil y tu sitio apuntan al mismo siguiente paso? El [Growth Score](/growth-score) gratuito son 12 preguntas y cuatro minutos. Para una revisión humana de tu sitio, tus perfiles y tu camino de leads en siete días, empieza con el [Diagnóstico](/diagnostic).',
         },
       ],
     },
