@@ -1,0 +1,15 @@
+{
+  "cover": {
+    "concept": "A column of small tally marks in muted indigo growing taller, its top section drawn only as a pale outline to suggest an added, different way of counting, standing beside one unchanged solid accent-orange coin that stays exactly the same size, suggesting the number grew but the underlying business did not."
+  },
+  "inline": [
+    {
+      "name": "extra-tally",
+      "concept": "A flat ruler shape in muted indigo extending past its original end with a pale dashed segment, while a plain rectangle representing a room or table beneath it stays the same size, with one small accent-orange dot in the room, suggesting that a longer ruler does not make the room bigger."
+    },
+    {
+      "name": "own-ledger",
+      "concept": "A plain indigo ledger rectangle with a single bold accent-orange check line drawn across one row, placed in front of a faded, thin grey outline of a dashboard panel, suggesting that the count you keep yourself matters more than the platform's screen."
+    }
+  ]
+}
