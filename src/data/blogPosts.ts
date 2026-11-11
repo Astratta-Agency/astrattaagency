@@ -1,5 +1,8 @@
 import type { Bilingual, Language } from '@/lib/i18n/types'
 import type { BlogIllustrationVariant } from '@/components/ui/BlogIllustration'
+import metaPixelCover from '@/assets/blog/meta-pixel-device-conversions-dallas-cover.webp'
+import metaPixelExtraTally from '@/assets/blog/meta-pixel-device-conversions-dallas-extra-tally.webp'
+import metaPixelOwnLedger from '@/assets/blog/meta-pixel-device-conversions-dallas-own-ledger.webp'
 import gbpWebsiteLinkCover from '@/assets/blog/gbp-missing-website-link-dallas-cover.webp'
 import gbpWebsiteLinkEmptyField from '@/assets/blog/gbp-missing-website-link-dallas-empty-field.webp'
 import gbpWebsiteLinkClickPath from '@/assets/blog/gbp-missing-website-link-dallas-click-path.webp'
@@ -4761,6 +4764,226 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: 'Esto se arregla en una tarde y sin contratar a nadie. Si quieres saber en qué otro punto se rompe el camino entre la búsqueda y la consulta, el [Growth Score](/growth-score) es una revisión gratis de 12 preguntas y cuatro minutos que puedes hacer ahora mismo. Y si prefieres que una persona revise el panorama completo, el [Diagnóstico](/diagnostic) cuesta $297, dura siete días y es una revisión humana con un entregable real.',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'meta-pixel-device-conversions-dallas', es: 'pixel-meta-conversiones-en-dispositivo-dallas' },
+    title: {
+      en: 'Meta’s Pixel counts more conversions from Nov 12 — what Dallas advertisers should do first',
+      es: 'El Pixel de Meta contará más conversiones desde el 12 de noviembre — qué debe hacer primero un anunciante de Dallas',
+    },
+    excerpt: {
+      en: 'Meta is switching on a Pixel setting that matches purchases on the customer’s own device. Your conversions will rise on paper. Here’s what a Dallas–Fort Worth business checks first, so the bigger number doesn’t fool you.',
+      es: 'Meta activa una opción del Pixel que empareja compras en el dispositivo del propio cliente. En el papel, tus conversiones van a subir. Esto es lo que revisa primero un negocio de Dallas–Fort Worth para que el número más grande no lo engañe.',
+    },
+    category: 'digital-marketing',
+    publishedAt: '2026-11-10',
+    readingTime: { en: '5 min read', es: '5 min de lectura' },
+    coverGradient: 'from-primary/20 to-secondary/20',
+    coverVariant: 'insight',
+    coverImage: metaPixelCover,
+    coverAlt: {
+      en: 'A column of small tally marks in muted indigo growing taller with a pale outlined extension on top, beside one unchanged solid orange coin that stays the same size.',
+      es: 'Una columna de pequeñas marcas de conteo en índigo apagado que crece con una extensión pálida de solo contorno, junto a una moneda naranja sólida que no cambia de tamaño.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'Meta Pixel Nov 12 Change: Dallas Advertisers | Astratta',
+      es: 'Pixel de Meta 12 de nov: Anunciantes en Dallas | Astratta',
+    },
+    metaDescription: {
+      en: 'Meta’s Pixel will count more conversions from Nov 12. What a Dallas business should screenshot, check and ignore this week so the bigger number doesn’t mislead.',
+      es: 'El Pixel de Meta contará más conversiones desde el 12 de noviembre. Qué debe capturar, revisar e ignorar un negocio de Dallas esta semana para no confundirse.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: 'If you run Meta ads for a Dallas–Fort Worth business, a new Pixel setting is about to change the numbers in your account. It is called "Measure conversions on customer devices," and trade-press reports say Events Manager shows it starting November 12, 2026. Outside the EU and UK, the reports say it is on by default. Meta’s own help pages don’t state the date, so confirm what you see in your own account.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Here is what it does. When someone buys after seeing your ad, Meta can match that purchase on the shopper’s own phone or computer, using details the customer already gave your business, such as an email address, plus temporary device data that doesn’t identify them. Meta receives only the fact that a purchase happened and which campaign gets the credit. The practical result: your ad account will report more conversions than it did last week.',
+        },
+        { kind: 'heading', text: 'Why this matters for a Dallas business' },
+        {
+          kind: 'paragraph',
+          text: 'After November 12, an owner running Meta ads will open the dashboard and see conversions go up. Nothing about the ad changed. **A bigger conversion number after a measurement change is a new way of counting, not a new batch of customers.** If you don’t know that, you may raise the budget on a result that was never real.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'The risk is sharper for service businesses. A "conversion" in Meta can be a form fill, a message or a purchase event, and none of those is a booked job. Contractors, med spas and restaurants already live with the gap between a lead and a customer. Our post on [Local Services Ads moving into Performance Max](/blog/local-services-ads-performance-max-dallas) makes the same point for Google: the platform optimizes for whatever you tell it counts.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'There is a quieter question too. Your customers’ emails are the raw material for this matching. Ask whoever manages your website whether your privacy policy honestly covers how that data gets used.',
+        },
+        { kind: 'heading', text: '1. Screenshot your numbers today' },
+        {
+          kind: 'paragraph',
+          text: 'Before November 12, open Ads Manager and screenshot the last 30 days: conversions, cost per result and spend, campaign by campaign. **Without a "before" picture, you can’t tell a real improvement from a counting change.** Write the date on it.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Do it campaign by campaign, not just the account total. The campaign with the most spend is where a counting change matters most.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Then add one number the platform doesn’t own: how many calls, forms and bookings your business actually received in those same weeks, taken from your phone log, your inbox and your calendar.',
+        },
+        {
+          kind: 'image',
+          variant: 'insight',
+          caption: 'When the ruler gets longer, the room didn’t get bigger. Measure the room.',
+          src: metaPixelExtraTally,
+          alt: 'A column of indigo tally marks with a pale dashed extension added on top, next to a single solid orange coin of unchanged size.',
+        },
+        { kind: 'heading', text: '2. Check the setting in Events Manager' },
+        {
+          kind: 'paragraph',
+          text: 'Open Events Manager, choose your Pixel and go to Settings. Look for "Measure conversions on customer devices" and note whether it is on and what start date it shows. **Decide on purpose whether to leave it on, instead of letting the default decide for you.** If an agency or freelancer runs your ads, ask them in writing what the setting is and when they saw it.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Leaving it on is reasonable if your ads sell something online and you want fuller reporting. Turning it off is reasonable if you need clean before-and-after comparisons for the next month. Either is fine. Not knowing is the only bad answer.',
+        },
+        { kind: 'heading', text: '3. Judge the ads against your own count' },
+        {
+          kind: 'paragraph',
+          text: 'For four weeks after November 12, compare Meta’s conversions with what you can verify yourself: calls, filled forms, messages answered, appointments booked. **If Meta’s count rises and your own count stays flat, the ad did not get better; the ruler got longer.** Judge cost per real lead, not cost per reported result.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Be strict about what you count. A message nobody answered is not a lead you won, and a call that went to voicemail is not a booking. Count only what a person at your business followed up on, and write down what happened to each one. That small discipline is worth more than any setting inside the ad platform.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'A simple weekly sheet is enough: week, spend, Meta-reported conversions, real inquiries, real jobs or bookings. Five columns, ten minutes on Friday. If you don’t track real inquiries yet, start there. Our post on [missed calls and lost jobs](/blog/missed-calls-lost-jobs-dfw) shows where those leaks usually hide.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'The only count that pays your rent is the one you can name customer by customer.',
+          src: metaPixelOwnLedger,
+          alt: 'A plain indigo ledger rectangle with one orange check line, beside a faded dashboard shape drawn in thin grey outline.',
+        },
+        { kind: 'heading', text: '4. Hold budget decisions for two weeks' },
+        {
+          kind: 'paragraph',
+          text: 'Don’t raise or cut spend on the strength of the first week. Any change in how results are counted makes the first days hard to read. Two full weeks of comparison against your screenshot is the minimum before you move money. **The decision to spend more should come from leads you can name, not from a line that went up.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'If the real numbers do improve, good. You will know it, and you will know why. If they don’t, you have just saved yourself a budget increase that would have bought nothing.',
+        },
+        { kind: 'heading', text: 'What to ignore' },
+        {
+          kind: 'paragraph',
+          text: 'Ignore any email that treats the new numbers as a win before they have been compared with real inquiries. Ignore anyone who says this setting makes your ads obviously better or obviously worse; nobody can know that for your account yet. And ignore the urge to rebuild your campaigns this week. This is a measurement setting, not a reason to start over.',
+        },
+        {
+          kind: 'quote',
+          text: 'A conversion count that grows when you change the ruler is not growth.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'If you are not sure whether your ads bring real inquiries or only reported conversions, start with the [Growth Score](/growth-score): free, 12 questions, four minutes. If you want a person to trace the path from ad to booked job, the [Diagnostic](/diagnostic) is a $297, seven-day human review with a real deliverable. And when the tracking has to live inside the business for good, that is the territory of our [Systems](/systems) plans.',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: 'Si anuncias en Meta un negocio de Dallas–Fort Worth, una nueva opción del Pixel está por cambiar los números de tu cuenta. Se llama "Medir conversiones en los dispositivos de los clientes" (Measure conversions on customer devices) y, según la prensa especializada, Events Manager la muestra con inicio el 12 de noviembre de 2026. Fuera de la UE y el Reino Unido, esos reportes dicen que viene activada por defecto. Las páginas de ayuda de Meta no indican la fecha, así que confirma lo que ves en tu propia cuenta.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Esto es lo que hace. Cuando alguien compra después de ver tu anuncio, Meta puede emparejar esa compra en el teléfono o la computadora del comprador, usando datos que el cliente ya le dio a tu negocio, como un correo, más datos temporales del dispositivo que no lo identifican. Meta recibe solo el hecho de que hubo una compra y a qué campaña se le da el crédito. En la práctica: tu cuenta de anuncios va a reportar más conversiones que la semana pasada.',
+        },
+        { kind: 'heading', text: 'Por qué le importa a un negocio de Dallas' },
+        {
+          kind: 'paragraph',
+          text: 'Después del 12 de noviembre, quien anuncia en Meta va a abrir el panel y ver que las conversiones subieron. El anuncio no cambió en nada. **Un número de conversiones más alto tras un cambio de medición es otra forma de contar, no un grupo nuevo de clientes.** Si no lo sabes, puedes subir el presupuesto por un resultado que nunca fue real.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'El riesgo pesa más en los negocios de servicios. Una "conversión" en Meta puede ser un formulario, un mensaje o un evento de compra, y ninguno de esos es un trabajo agendado. Contratistas, med spas y restaurantes ya viven con la distancia entre un contacto y un cliente. Nuestro artículo sobre [Anuncios de Servicios Locales que pasan a Performance Max](/blog/local-services-ads-performance-max-dallas) dice lo mismo de Google: la plataforma optimiza lo que tú le digas que cuenta.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Hay además una pregunta más discreta. Los correos de tus clientes son la materia prima de este emparejamiento. Pregúntale a quien administra tu sitio web si tu política de privacidad explica con honestidad cómo se usan esos datos.',
+        },
+        { kind: 'heading', text: '1. Captura tus números hoy' },
+        {
+          kind: 'paragraph',
+          text: 'Antes del 12 de noviembre, abre el Administrador de anuncios y captura los últimos 30 días: conversiones, costo por resultado y gasto, campaña por campaña. **Sin una foto del "antes", no puedes distinguir una mejora real de un cambio en la forma de contar.** Anota la fecha en la captura.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Hazlo campaña por campaña, no solo con el total de la cuenta. La campaña con más gasto es donde más pesa un cambio en la forma de contar.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Después suma un número que la plataforma no controla: cuántas llamadas, formularios y reservas recibió de verdad tu negocio esas mismas semanas, sacadas de tu registro de llamadas, tu bandeja de entrada y tu calendario.',
+        },
+        {
+          kind: 'image',
+          variant: 'insight',
+          caption: 'Si la regla se alarga, el cuarto no creció. Mide el cuarto.',
+          src: metaPixelExtraTally,
+          alt: 'Una columna de marcas de conteo en índigo con una extensión pálida de línea discontinua encima, junto a una sola moneda naranja sólida de tamaño sin cambio.',
+        },
+        { kind: 'heading', text: '2. Revisa la opción en Events Manager' },
+        {
+          kind: 'paragraph',
+          text: 'Abre Events Manager, elige tu Pixel y entra a Configuración. Busca "Medir conversiones en los dispositivos de los clientes" y fíjate si está activada y qué fecha de inicio muestra. **Decide a propósito si la dejas encendida, en lugar de dejar que la decida el valor por defecto.** Si tus anuncios los lleva una agencia o un freelancer, pregúntales por escrito qué es esta opción y cuándo la vieron.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Dejarla activada tiene sentido si tus anuncios venden algo en línea y quieres reportes más completos. Apagarla tiene sentido si necesitas comparar el antes y el después sin ruido durante el próximo mes. Las dos son válidas. La única mala respuesta es no saber.',
+        },
+        { kind: 'heading', text: '3. Juzga los anuncios con tu propia cuenta' },
+        {
+          kind: 'paragraph',
+          text: 'Durante cuatro semanas después del 12 de noviembre, compara las conversiones de Meta con lo que tú puedes comprobar: llamadas, formularios llenos, mensajes atendidos, citas agendadas. **Si el conteo de Meta sube y el tuyo se queda igual, el anuncio no mejoró; lo que se alargó fue la regla.** Juzga el costo por contacto real, no el costo por resultado reportado.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Sé estricto con lo que cuentas. Un mensaje que nadie contestó no es un cliente ganado, y una llamada que cayó al buzón no es una reserva. Cuenta solo lo que alguien de tu negocio atendió, y anota qué pasó con cada uno. Esa pequeña disciplina vale más que cualquier opción dentro de la plataforma de anuncios.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Basta una hoja semanal sencilla: semana, gasto, conversiones según Meta, consultas reales, trabajos o reservas reales. Cinco columnas, diez minutos el viernes. Si todavía no registras las consultas reales, empieza por ahí. Nuestro artículo sobre [llamadas perdidas y trabajos perdidos](/blog/missed-calls-lost-jobs-dfw) muestra dónde suelen esconderse esas fugas.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'La única cuenta que paga la renta es la que puedes nombrar cliente por cliente.',
+          src: metaPixelOwnLedger,
+          alt: 'Un libro de cuentas sencillo en índigo con una línea de visto naranja, junto a la silueta desvaída de un panel dibujada con línea gris fina.',
+        },
+        { kind: 'heading', text: '4. Congela las decisiones de presupuesto dos semanas' },
+        {
+          kind: 'paragraph',
+          text: 'No subas ni recortes el gasto con lo que ves en la primera semana. Cualquier cambio en la forma de contar hace difíciles de leer los primeros días. Dos semanas completas de comparación contra tu captura son el mínimo antes de mover dinero. **La decisión de gastar más debe salir de contactos que puedes nombrar, no de una línea que subió.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Si los números reales mejoran, perfecto: lo sabrás y sabrás por qué. Si no, te ahorraste un aumento de presupuesto que no iba a comprar nada.',
+        },
+        { kind: 'heading', text: 'Qué ignorar' },
+        {
+          kind: 'paragraph',
+          text: 'Ignora cualquier correo que presente los números nuevos como un triunfo antes de compararlos con consultas reales. Ignora a quien diga que esta opción hace tus anuncios claramente mejores o claramente peores; nadie puede saberlo todavía para tu cuenta. Y ignora las ganas de rehacer tus campañas esta semana. Es una opción de medición, no un motivo para empezar de cero.',
+        },
+        {
+          kind: 'quote',
+          text: 'Un conteo de conversiones que crece porque cambiaste la regla no es crecimiento.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Si no estás seguro de si tus anuncios traen consultas reales o solo conversiones reportadas, empieza con el [Growth Score](/growth-score): gratis, 12 preguntas, cuatro minutos. Si quieres que una persona trace el camino desde el anuncio hasta el trabajo agendado, el [Diagnóstico](/diagnostic) cuesta $297, dura siete días y es una revisión humana con un entregable real. Y cuando el seguimiento tenga que vivir dentro del negocio para siempre, ese es el terreno de nuestros planes de [Systems](/systems).',
         },
       ],
     },
