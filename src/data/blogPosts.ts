@@ -108,6 +108,9 @@ import pmaxVideoFrameCheck from '@/assets/blog/pmax-video-auto-resize-dallas-fra
 import autoPromoCover from '@/assets/blog/google-ads-auto-promotions-dallas-cover.webp'
 import autoPromoPageOffer from '@/assets/blog/google-ads-auto-promotions-dallas-page-offer-source.webp'
 import autoPromoSwitch from '@/assets/blog/google-ads-auto-promotions-dallas-account-switch.webp'
+import bilingualSiteCover from '@/assets/blog/bilingual-customers-one-language-dallas-cover.webp'
+import bilingualSiteSecondDoor from '@/assets/blog/bilingual-customers-one-language-dallas-second-door.webp'
+import bilingualSiteQueryCount from '@/assets/blog/bilingual-customers-one-language-dallas-query-count.webp'
 export type AuthorId = keyof typeof AUTHORS
 
 export type ResolvedAuthor = { name: string; role: string }
@@ -4984,6 +4987,260 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: 'Si no estás seguro de si tus anuncios traen consultas reales o solo conversiones reportadas, empieza con el [Growth Score](/growth-score): gratis, 12 preguntas, cuatro minutos. Si quieres que una persona trace el camino desde el anuncio hasta el trabajo agendado, el [Diagnóstico](/diagnostic) cuesta $297, dura siete días y es una revisión humana con un entregable real. Y cuando el seguimiento tenga que vivir dentro del negocio para siempre, ese es el terreno de nuestros planes de [Systems](/systems).',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'bilingual-customers-one-language-dallas', es: 'clientes-bilingues-web-un-idioma-dallas' },
+    title: {
+      en: 'Your Dallas customers speak two languages. Your website speaks one.',
+      es: 'Tus clientes en Dallas hablan dos idiomas. Tu sitio web habla uno.',
+    },
+    excerpt: {
+      en: 'At the counter you switch languages without thinking. Online, your business only answers in one, and the people searching in the other language never find out you speak theirs. Four fixes a Dallas–Fort Worth owner can make this week, and the report that proves they worked.',
+      es: 'En el mostrador cambias de idioma sin pensarlo. En internet, tu negocio responde en uno solo, y quienes buscan en el otro idioma nunca se enteran de que hablas el suyo. Cuatro arreglos que un dueño de Dallas–Fort Worth puede hacer esta semana, y el reporte que prueba que funcionaron.',
+    },
+    category: 'web-conversion',
+    publishedAt: '2026-11-12',
+    readingTime: { en: '6 min read', es: '6 min de lectura' },
+    coverGradient: 'from-primary/20 to-secondary/20',
+    coverVariant: 'clarity',
+    coverImage: bilingualSiteCover,
+    coverAlt: {
+      en: 'Two overlapping translucent circles, one indigo and one orange, with a single narrow pale doorway shape that opens into only the indigo circle.',
+      es: 'Dos círculos translúcidos superpuestos, uno índigo y uno naranja, con una sola puerta estrecha y pálida que da únicamente al círculo índigo.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'Bilingual Customers, One-Language Site: Dallas | Astratta',
+      es: 'Clientes bilingües, web en un idioma: Dallas | Astratta',
+    },
+    metaDescription: {
+      en: 'A Dallas business that serves customers in two languages but posts in only one misses every search in the other. Four fixes for this week, and how to measure.',
+      es: 'Un negocio de Dallas que atiende en dos idiomas pero publica en uno solo se pierde las búsquedas del otro. Cuatro arreglos para esta semana y cómo medirlos.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: 'Here is how owners describe it: “I serve every kind of customer in person, but online I only seem to reach one kind.” In Dallas–Fort Worth this is ordinary. The Census Bureau’s QuickFacts puts roughly four in ten Dallas County residents age five and older speaking a language other than English at home (American Community Survey, 2020–2024).',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Picture a taquería whose English-speaking regulars only found it by walking past. Or a med spa whose front desk takes Spanish calls all day while every page of the website is in English. Or a used-car lot whose Instagram is entirely in Spanish, while many of the people on the lot ask their questions in English.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'It showed up in three of our recent audits of DFW businesses, ours included. In every case the business already worked in two languages. Only its online presence didn’t.',
+        },
+        { kind: 'heading', text: 'What actually causes it' },
+        {
+          kind: 'paragraph',
+          text: 'It isn’t the algorithm, and it isn’t that the other group “doesn’t use social media.” Search engines and platforms match people to content in the language they search in. **If nothing you publish is written in a language, you don’t exist for the people who search in it.** Someone typing “tacos cerca de mí” or “lash extensions near me” is matched with pages and profiles that use those words.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'A translate button doesn’t solve it either. A widget that swaps the words inside a visitor’s browser usually leaves search engines with one page in one language. Google’s own documentation says it identifies a page’s language from the visible content, so the words have to be on the page, written for real.',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'One open door is a choice. A second door, in a second language, is an invitation.',
+          src: bilingualSiteSecondDoor,
+          alt: 'Two identical narrow doorway outlines side by side on a pale field; the left one glows indigo, the right one is newly opened with a soft orange light spilling out.',
+        },
+        { kind: 'heading', text: '1. Write down the questions you already answer in the other language' },
+        {
+          kind: 'paragraph',
+          text: 'Before you translate anything, spend one week listening. Keep a note on your phone and, every time a customer asks something in your second language, write the question down word for word: at the counter, on the phone, in DMs. **Your customers have already written your second-language copy for you; you just haven’t been recording it.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'By Friday you will have ten to twenty questions. They are usually the same handful: price, hours, whether you take walk-ins, where to park, whether someone there speaks their language. That list is your raw material for every step below, and it is better than any translation, because it uses the words your customers actually use.',
+        },
+        { kind: 'heading', text: '2. Put both languages where people decide' },
+        {
+          kind: 'paragraph',
+          text: 'People don’t read your whole website before contacting you. They decide in three places: your Instagram or TikTok bio, your Google Business Profile, and the button next to your phone number. **Each of those three places needs one line in each language, not a second account.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Rewrite your bio so it says what you do and where, in both languages, in two short lines. In Google Business Profile, the description allows up to 750 characters; write the main paragraph in your primary language and a shorter one in the second, using the exact words from your list. Then add a plain line next to your contact button: “Se habla español” or “We speak English,” whichever is true for your team. If you haven’t checked that your bio link works, our post on [the link in your bio](/blog/link-in-bio-no-inquiries-dallas) covers that first.',
+        },
+        { kind: 'heading', text: '3. Add a real second-language section to your website' },
+        {
+          kind: 'paragraph',
+          text: 'You don’t need a second website. You need one page, or one clearly labeled section, written in the second language and answering the questions from step one. **One honest page that answers ten real questions does more than a whole site run through a translation tool.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'On Wix, Squarespace or WordPress this is a normal new page: give it a title in the second language, add your services, your price range or starting price, your hours, your address and how to book. Link to it from your main menu with the language name written in that language: “Español,” not “Spanish.” Have someone who speaks the language natively read it once before it goes live.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'This is the same logic as our post on [websites that make a business look like it sells one thing](/blog/website-shows-one-service-dallas): whatever isn’t on the page doesn’t exist for the visitor.',
+        },
+        { kind: 'heading', text: '4. Give a share of your videos to the second language' },
+        {
+          kind: 'paragraph',
+          text: 'Your content doesn’t need to be half and half. Start with one video in every four, or even one in ten, in the second language. **The point isn’t to switch audiences; it’s to send a signal that the second audience is welcome.** Use the questions from step one as topics: “Where do I park?” answered in thirty seconds, in Spanish or in English, is a complete video.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Always add captions in the language you speak in the video. Many people watch with the sound off, and captions put the words where the platform can read them.',
+        },
+        { kind: 'heading', text: 'How to measure it' },
+        {
+          kind: 'paragraph',
+          text: 'Pick the date you finish step three and write it down. Then check two free reports once a month. **The number that matters is how many searches in your second language find you, not how many followers you gain.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'First, Google Business Profile: open your profile, go to Performance, and look at the searches breakdown, which lists the terms people used to find you. Count how many are in your second language.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Second, if your website is connected to Google Search Console, open Performance, then Search results, and filter Queries by a common word in that language, such as “cerca” or “near.” Write down impressions and clicks for those queries. Compare the month before your change with the two months after. Search changes are slow; give it eight weeks before you judge it.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Add one count that no platform owns: how many messages or calls per week arrive in the second language. You already started that note in step one. Keep it going.',
+        },
+        {
+          kind: 'image',
+          variant: 'insight',
+          caption: 'Count the searches that find you in the second language. That number moves before the followers do.',
+          src: bilingualSiteQueryCount,
+          alt: 'A row of small indigo dots on a pale field, with a short orange cluster beginning to gather at one end of the row.',
+        },
+        { kind: 'heading', text: 'What not to do' },
+        {
+          kind: 'paragraph',
+          text: 'Don’t paste your whole site into a translation tool and publish it unread; a page with wrong prices or odd phrasing costs more trust than having no page. Don’t create a second Instagram or Facebook account for the other language; you split your followers and your reviews in two.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Don’t translate your business name or change your address format between languages; your name, address and phone should look identical everywhere. And don’t promise service in a language nobody on your team speaks. The first unanswered call ends that customer.',
+        },
+        {
+          kind: 'quote',
+          text: 'Your business already speaks two languages. Make sure the internet hears both.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'If you want to see where your online presence is losing people, start with the [Growth Score](/growth-score): free, 12 questions, four minutes. If you want a person to go through your website, your Google profile and your social accounts in both languages, the [Diagnostic](/diagnostic) is a $297, seven-day human review with a real deliverable. And when the fix needs a website built for two languages from the start, that is what [Foundation](/foundation) is for.',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: 'Así lo cuentan los dueños: “En persona atiendo a todo tipo de clientes, pero en internet parece que solo llego a uno.” En Dallas–Fort Worth esto es lo normal. Según QuickFacts de la Oficina del Censo, cerca de cuatro de cada diez residentes del condado de Dallas de cinco años o más hablan en casa un idioma distinto del inglés (American Community Survey, 2020–2024).',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Piensa en una taquería a la que sus clientes que hablan inglés solo llegaron por pasar enfrente. O en un med spa cuya recepción contesta llamadas en español todo el día mientras cada página del sitio está en inglés. O en un lote de autos usados con un Instagram completamente en español, mientras mucha de la gente que llega pregunta en inglés.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Lo encontramos en tres de nuestras auditorías recientes a negocios de DFW, incluida la nuestra. En todos los casos el negocio ya trabajaba en dos idiomas. Lo único que no lo hacía era su presencia en internet.',
+        },
+        { kind: 'heading', text: 'Qué lo causa de verdad' },
+        {
+          kind: 'paragraph',
+          text: 'No es el algoritmo, y no es que el otro público “no use redes”. Los buscadores y las plataformas conectan a la gente con contenido en el idioma en el que busca. **Si nada de lo que publicas está escrito en un idioma, no existes para quien busca en ese idioma.** Quien escribe “tacos cerca de mí” o “lash extensions near me” recibe páginas y perfiles que usan esas palabras.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Un botón de traducir tampoco lo resuelve. Un widget que cambia las palabras dentro del navegador del visitante suele dejarle al buscador una sola página en un solo idioma. La propia documentación de Google dice que identifica el idioma de una página por el contenido visible, así que las palabras tienen que estar en la página, escritas de verdad.',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'Una puerta abierta es una opción. Una segunda puerta, en un segundo idioma, es una invitación.',
+          src: bilingualSiteSecondDoor,
+          alt: 'Dos siluetas de puertas estrechas e idénticas, una junto a otra sobre un fondo claro; la izquierda brilla en índigo y la derecha está recién abierta, con una luz naranja suave que se derrama.',
+        },
+        { kind: 'heading', text: '1. Anota las preguntas que ya respondes en el otro idioma' },
+        {
+          kind: 'paragraph',
+          text: 'Antes de traducir nada, pasa una semana escuchando. Abre una nota en el teléfono y cada vez que un cliente pregunte algo en tu segundo idioma, apunta la pregunta palabra por palabra: en el mostrador, por teléfono, por mensaje directo. **Tus clientes ya escribieron el texto de tu segundo idioma; solo que no lo estabas anotando.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Para el viernes tendrás entre diez y veinte preguntas. Casi siempre son las mismas: precio, horario, si atiendes sin cita, dónde estacionarse, si alguien ahí habla su idioma. Esa lista es la materia prima de todo lo que sigue, y vale más que cualquier traducción, porque usa las palabras que de verdad usan tus clientes.',
+        },
+        { kind: 'heading', text: '2. Pon los dos idiomas donde la gente decide' },
+        {
+          kind: 'paragraph',
+          text: 'Nadie lee tu sitio completo antes de escribirte. La gente decide en tres lugares: la bio de Instagram o TikTok, tu Perfil de Negocio de Google y el botón junto a tu teléfono. **Cada uno de esos tres lugares necesita una línea en cada idioma, no una segunda cuenta.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Reescribe tu bio para que diga qué haces y dónde, en los dos idiomas, en dos líneas cortas. En el Perfil de Negocio de Google, la descripción admite hasta 750 caracteres: escribe el párrafo principal en tu idioma principal y uno más corto en el segundo, con las palabras exactas de tu lista. Después agrega una línea sencilla junto al botón de contacto: “Se habla español” o “We speak English”, la que sea cierta para tu equipo. Si no has comprobado que el enlace de tu bio funciona, nuestro artículo sobre [el enlace en tu bio](/blog/link-in-bio-no-inquiries-dallas) va primero.',
+        },
+        { kind: 'heading', text: '3. Agrega a tu sitio una sección real en el segundo idioma' },
+        {
+          kind: 'paragraph',
+          text: 'No necesitas un segundo sitio web. Necesitas una página, o una sección bien marcada, escrita en el segundo idioma y que responda las preguntas del paso uno. **Una página honesta que responde diez preguntas reales rinde más que un sitio entero pasado por un traductor.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'En Wix, Squarespace o WordPress es una página nueva como cualquier otra: ponle un título en el segundo idioma y agrega tus servicios, tu rango de precios o precio de partida, tu horario, tu dirección y cómo reservar. Enlázala desde el menú principal con el nombre del idioma escrito en ese idioma: “English”, no “Inglés”; “Español”, no “Spanish”. Pídele a alguien que hable ese idioma de nacimiento que la lea una vez antes de publicarla.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Es la misma lógica de nuestro artículo sobre [sitios web que hacen parecer que un negocio vende una sola cosa](/blog/website-shows-one-service-dallas): lo que no está en la página no existe para quien la visita.',
+        },
+        { kind: 'heading', text: '4. Dale al segundo idioma una parte de tus videos' },
+        {
+          kind: 'paragraph',
+          text: 'Tu contenido no tiene que ser mitad y mitad. Empieza con un video de cada cuatro, o incluso uno de cada diez, en el segundo idioma. **No se trata de cambiar de público; se trata de avisarle al segundo público que es bienvenido.** Usa las preguntas del paso uno como temas: “¿Dónde me estaciono?” respondida en treinta segundos, en español o en inglés, ya es un video completo.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Pon siempre subtítulos en el idioma en el que hablas en el video. Mucha gente ve sin sonido, y los subtítulos dejan las palabras donde la plataforma puede leerlas.',
+        },
+        { kind: 'heading', text: 'Cómo se mide' },
+        {
+          kind: 'paragraph',
+          text: 'Elige la fecha en que terminas el paso tres y anótala. Después revisa dos reportes gratuitos una vez al mes. **El número que importa es cuántas búsquedas en tu segundo idioma te encuentran, no cuántos seguidores ganas.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Primero, el Perfil de Negocio de Google: abre tu perfil, entra a Rendimiento y mira el desglose de búsquedas, que muestra los términos con los que la gente te encontró. Cuenta cuántos están en tu segundo idioma.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Segundo, si tu sitio está conectado a Google Search Console, abre Rendimiento, luego Resultados de búsqueda, y filtra las Consultas por una palabra común de ese idioma, como “cerca” o “near”. Anota impresiones y clics de esas consultas. Compara el mes anterior al cambio con los dos meses siguientes. La búsqueda cambia despacio: dale ocho semanas antes de juzgar.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Suma una cuenta que ninguna plataforma controla: cuántos mensajes o llamadas por semana llegan en el segundo idioma. Esa nota ya la empezaste en el paso uno. Sigue llevándola.',
+        },
+        {
+          kind: 'image',
+          variant: 'insight',
+          caption: 'Cuenta las búsquedas que te encuentran en el segundo idioma. Ese número se mueve antes que los seguidores.',
+          src: bilingualSiteQueryCount,
+          alt: 'Una fila de pequeños puntos índigo sobre un fondo claro, con un grupo corto de puntos naranja que empieza a juntarse en un extremo.',
+        },
+        { kind: 'heading', text: 'Qué no hacer' },
+        {
+          kind: 'paragraph',
+          text: 'No pases tu sitio entero por un traductor para publicarlo sin leerlo: **una página con precios equivocados o frases raras cuesta más confianza que no tener página.** No abras una segunda cuenta de Instagram o Facebook para el otro idioma: partes en dos tus seguidores y tus reseñas.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'No traduzcas el nombre de tu negocio ni cambies el formato de tu dirección según el idioma: nombre, dirección y teléfono deben verse idénticos en todas partes. Y no prometas atención en un idioma que nadie en tu equipo habla. La primera llamada sin respuesta termina con ese cliente.',
+        },
+        {
+          kind: 'quote',
+          text: 'Tu negocio ya habla dos idiomas. Asegúrate de que internet escuche los dos.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Si quieres ver dónde tu presencia en internet está perdiendo gente, empieza con el [Growth Score](/growth-score): gratis, 12 preguntas, cuatro minutos. Si quieres que una persona revise tu sitio, tu perfil de Google y tus redes en los dos idiomas, el [Diagnóstico](/diagnostic) cuesta $297, dura siete días y es una revisión humana con un entregable real. Y cuando el arreglo pide un sitio pensado para dos idiomas desde el principio, para eso está [Foundation](/foundation).',
         },
       ],
     },
