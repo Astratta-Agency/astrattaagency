@@ -5117,7 +5117,7 @@ export const BLOG_POSTS: BlogPostSource[] = [
         { kind: 'heading', text: 'What not to do' },
         {
           kind: 'paragraph',
-          text: 'Don’t paste your whole site into a translation tool and publish it unread; a page with wrong prices or odd phrasing costs more trust than having no page. Don’t create a second Instagram or Facebook account for the other language; you split your followers and your reviews in two.',
+          text: 'Don’t paste your whole site into a translation tool and publish it unread; **a page with wrong prices or odd phrasing costs more trust than having no page.** Don’t create a second Instagram or Facebook account for the other language; you split your followers and your reviews in two.',
         },
         {
           kind: 'paragraph',
