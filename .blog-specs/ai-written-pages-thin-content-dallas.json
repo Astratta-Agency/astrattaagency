@@ -1,0 +1,15 @@
+{
+  "cover": {
+    "concept": "A tall stack of identical flat grey sheets in muted tones; a single sheet in deep indigo slides out of the middle of the pile and carries one small accent-orange mark, standing visibly apart from the uniform stack against a plain off-white background."
+  },
+  "inline": [
+    {
+      "name": "real-proof-page",
+      "concept": "One indigo page lifted away from a pile of identical grey pages, joined by a single fine line to one accent-orange point on a minimal abstract map outline, suggesting a page anchored to one real place that no copy could imitate."
+    },
+    {
+      "name": "search-console-check",
+      "concept": "A simple indigo ledger with ten short rows, three of them marked with an accent-orange tick, beside a faint magnifying glass drawn in thin grey line, calm and orderly with generous negative space."
+    }
+  ]
+}

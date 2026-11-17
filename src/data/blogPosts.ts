@@ -108,6 +108,9 @@ import pmaxVideoFrameCheck from '@/assets/blog/pmax-video-auto-resize-dallas-fra
 import autoPromoCover from '@/assets/blog/google-ads-auto-promotions-dallas-cover.webp'
 import autoPromoPageOffer from '@/assets/blog/google-ads-auto-promotions-dallas-page-offer-source.webp'
 import autoPromoSwitch from '@/assets/blog/google-ads-auto-promotions-dallas-account-switch.webp'
+import aiThinCover from '@/assets/blog/ai-written-pages-thin-content-dallas-cover.webp'
+import aiThinPageProof from '@/assets/blog/ai-written-pages-thin-content-dallas-real-proof-page.webp'
+import aiThinSearchConsole from '@/assets/blog/ai-written-pages-thin-content-dallas-search-console-check.webp'
 export type AuthorId = keyof typeof AUTHORS
 
 export type ResolvedAuthor = { name: string; role: string }
@@ -4984,6 +4987,212 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: 'Si no estás seguro de si tus anuncios traen consultas reales o solo conversiones reportadas, empieza con el [Growth Score](/growth-score): gratis, 12 preguntas, cuatro minutos. Si quieres que una persona trace el camino desde el anuncio hasta el trabajo agendado, el [Diagnóstico](/diagnostic) cuesta $297, dura siete días y es una revisión humana con un entregable real. Y cuando el seguimiento tenga que vivir dentro del negocio para siempre, ese es el terreno de nuestros planes de [Systems](/systems).',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'ai-written-pages-thin-content-dallas', es: 'paginas-escritas-con-ia-contenido-pobre-dallas' },
+    title: {
+      en: 'Dallas sites full of AI-written pages: what Google’s thin-content case really says',
+      es: 'Tu sitio en Dallas lleno de páginas escritas con IA: lo que sí sabemos de Google',
+    },
+    excerpt: {
+      en: 'One forum got a thin-content penalty and SEOs blamed AI text. Here’s what is confirmed, what isn’t, and the four checks a Dallas business should run on its own pages this week.',
+      es: 'Un foro recibió una sanción por contenido pobre y los SEO culparon al texto de IA. Esto es lo confirmado, lo que no, y las cuatro revisiones que un negocio en Dallas debe hacer esta semana.',
+    },
+    category: 'digital-marketing',
+    publishedAt: '2026-11-17',
+    readingTime: { en: '5 min read', es: '5 min de lectura' },
+    coverGradient: 'from-primary/20 to-secondary/20',
+    coverVariant: 'insight',
+    coverImage: aiThinCover,
+    coverAlt: {
+      en: 'A stack of identical grey sheets with one sheet in indigo carrying a small orange mark, lifted slightly out of the pile.',
+      es: 'Una pila de hojas grises idénticas con una hoja índigo con una pequeña marca naranja, levantada un poco fuera del montón.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'AI-Written Pages: What Dallas Should Check | Astratta',
+      es: 'Páginas con IA y Google en Dallas: Qué Revisar | Astratta',
+    },
+    metaDescription: {
+      en: 'Google flagged a forum for thin content and SEOs blamed AI text. What is confirmed, and four checks Dallas businesses can run on their own pages this week.',
+      es: 'Google sancionó a un foro por contenido pobre y los SEO culparon a la IA. Qué está confirmado y cuatro revisiones para negocios en Dallas esta semana.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: 'A forum received a manual action from Google for “thin content,” and part of the SEO world has argued ever since about whether AI-written text was the real reason. Search Engine Journal reported the case in late July. It matters if you run a business in Dallas–Fort Worth with a website that grew faster than anyone read it.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Here is what is actually known. The site owner posted about the penalty publicly, and Google’s label said thin content. One SEO, Gagan Ghotra, argued that the forum’s answers read as machine-written, and that a forum is supposed to hold human experience. Google has not confirmed that AI was the trigger, and it has said before that AI-written content is not automatically bad. This is a theory about one site, not a new rule.',
+        },
+        { kind: 'heading', text: 'Why it matters in Dallas' },
+        {
+          kind: 'paragraph',
+          text: 'The theory is unproven, but the thing it points at is real and sits on a lot of local sites. Plenty of DFW restaurants, realtors and contractors now have pages produced in bulk: “Kitchen remodeling in Plano,” “Kitchen remodeling in Frisco,” “Kitchen remodeling in McKinney,” each one the same text with a city swapped in.',
+        },
+        {
+          kind: 'paragraph',
+          text: '**Whether or not Google punishes the tool, pages that say nothing a competitor’s page doesn’t already say have never held up.** That is what “thin” means. And a customer reaches the same verdict in about ten seconds: no photos of real work, no names, no prices, no sign that anyone actually did this job.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'That second reader is the one who pays you. A homeowner comparing three Plano remodelers won’t forgive a page that could belong to anyone. Our article on [a website that shows only one service](/blog/website-shows-one-service-dallas) covers the same weakness from the other side: the pages exist, but none of them answers the buyer.',
+        },
+        { kind: 'heading', text: 'What to do this week' },
+        { kind: 'heading', text: '1. Find your three weakest pages' },
+        {
+          kind: 'paragraph',
+          text: 'List every service and location page on your site. Pick the three you would be least comfortable showing a customer in person. Then ask one question about each: could a competitor paste their name over mine and publish it unchanged? If the answer is yes, the page is thin, no matter who or what wrote it. Write the three addresses down; the next steps are for those pages only, so you aren’t rewriting a whole site on a hunch.',
+        },
+        { kind: 'heading', text: '2. Add proof that only you have' },
+        {
+          kind: 'paragraph',
+          text: 'Add what a template cannot invent: photos from your own jobs or your own kitchen, a real customer review used with their permission, the neighborhood you worked in, how long the job took, and a price range if you can share one. **A page earns its place when it contains at least one fact that only your business could know.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'You don’t need a new website to do this. Open the page, replace one generic paragraph with a real job, and add two photos. Fifteen minutes per page is enough to tell whether it is worth keeping, and the answer is often clearer than you expect: if you can’t think of one real job to add, the page probably shouldn’t exist. This is also how we plan the pages of a [Foundation](/foundation) site: around your real work and your real service area, not around filler.',
+        },
+        {
+          kind: 'image',
+          variant: 'proof',
+          caption: 'A page nobody else could have written is the only kind a customer, or a search engine, has a reason to keep.',
+          src: aiThinPageProof,
+          alt: 'One indigo page lifted from a pile of identical grey pages, with a small orange mark and a fine line tying it to a single point on a map outline.',
+        },
+        { kind: 'heading', text: '3. Merge or remove the pages you can’t strengthen' },
+        {
+          kind: 'paragraph',
+          text: 'Say you have eight near-identical city pages and real proof for two cities. Keep those two and fold the rest into one service-area page. **Two pages you can defend beat eight you can’t,** and they are far easier to keep current.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'One rule before you delete anything: if a page has traffic, set a permanent redirect to the page that replaces it. A deleted address with no redirect throws away whatever ranking it had earned. If you don’t know whether a page gets traffic, check first and delete second.',
+        },
+        { kind: 'heading', text: '4. Check your own numbers before blaming Google' },
+        {
+          kind: 'paragraph',
+          text: 'If your traffic dropped, don’t assume AI content is the cause. Open Search Console and compare the last 28 days with the 28 before. Sort by clicks lost and write down the ten pages that fell the most. Then open the manual actions report: if it lists nothing, no penalty was applied to your site.',
+        },
+        {
+          kind: 'paragraph',
+          text: '**A traffic drop is a symptom; Search Console tells you which pages it hit, and the manual actions report tells you whether Google flagged you.** Rankings also move because a competitor improved a page, because a season ended, or because a listing changed. Rule those out before you rewrite anything.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'The diagnosis starts with which pages lost clicks, not with a guess about who wrote them.',
+          src: aiThinSearchConsole,
+          alt: 'A simple indigo ledger with ten short rows, three of them marked with an orange tick, beside a faint magnifying glass drawn in thin grey line.',
+        },
+        { kind: 'heading', text: 'What to ignore' },
+        {
+          kind: 'paragraph',
+          text: 'Ignore anyone selling a “penalty-proof” AI content package. Nobody outside Google knows what triggered one forum’s action, so a guarantee is a guess with a price on it.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Ignore the opposite advice too, that you must stop using AI tools altogether. Google has said AI-written content isn’t automatically bad. The risk is publishing it unedited and unproven. And ignore posting volume as a goal: ten pages nobody finishes reading don’t make a business look bigger.',
+        },
+        {
+          kind: 'quote',
+          text: 'A page a competitor could copy and sign is a page a customer won’t trust.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'If you’re not sure whether your site is converting the visitors it already has, start with the [Growth Score](/growth-score): free, 12 questions, four minutes. If you want a person to read your pages against your real jobs and tell you which to keep, rewrite or merge, the [Diagnostic](/diagnostic) is $297, takes seven days, and ends with a real deliverable.',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: 'Google le aplicó una acción manual por “contenido pobre” a un foro, y desde entonces una parte del mundo SEO discute si el verdadero motivo fue el texto escrito con IA. Search Engine Journal contó el caso a finales de julio. Te interesa si tienes un negocio en Dallas–Fort Worth con un sitio web que creció más rápido de lo que alguien lo leyó.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Esto es lo que realmente se sabe. El dueño del sitio publicó la sanción y la etiqueta de Google decía contenido pobre. Un especialista, Gagan Ghotra, sostuvo que las respuestas del foro sonaban a máquina y que un foro debería contener experiencia humana. Google no ha confirmado que la IA fuera el motivo, y ya había dicho que el contenido escrito con IA no es malo por sí solo. Es una teoría sobre un solo sitio, no una regla nueva.',
+        },
+        { kind: 'heading', text: 'Por qué importa en Dallas' },
+        {
+          kind: 'paragraph',
+          text: 'La teoría no está probada, pero lo que señala es real y está en muchos sitios locales. Bastantes restaurantes, agentes de bienes raíces y contratistas de DFW tienen hoy páginas hechas en serie: “Remodelación de cocinas en Plano”, “Remodelación de cocinas en Frisco”, “Remodelación de cocinas en McKinney”, todas con el mismo texto y solo la ciudad cambiada.',
+        },
+        {
+          kind: 'paragraph',
+          text: '**Castigue Google la herramienta o no, las páginas que no dicen nada que la competencia no diga ya nunca han resistido.** Eso es “pobre”. Y el cliente llega al mismo veredicto en unos diez segundos: sin fotos de trabajo real, sin nombres, sin precios, sin señal de que alguien hizo ese trabajo.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Ese segundo lector es el que te paga. Un propietario que compara tres remodeladores en Plano no perdona una página que podría ser de cualquiera. Nuestro artículo sobre [un sitio web que muestra un solo servicio](/blog/website-shows-one-service-dallas) toca la misma debilidad desde el otro lado: las páginas existen, pero ninguna le responde al comprador.',
+        },
+        { kind: 'heading', text: 'Qué hacer esta semana' },
+        { kind: 'heading', text: '1. Encuentra tus tres páginas más flojas' },
+        {
+          kind: 'paragraph',
+          text: 'Haz una lista de todas tus páginas de servicio y de ciudad. Elige las tres que menos te gustaría enseñarle a un cliente en persona. Y hazle a cada una una sola pregunta: ¿podría un competidor ponerle su nombre encima y publicarla igual? Si la respuesta es sí, la página es pobre, la haya escrito quien la haya escrito. Anota las tres direcciones; los pasos siguientes son solo para esas páginas, así que no reescribes un sitio entero por una corazonada.',
+        },
+        { kind: 'heading', text: '2. Súmale una prueba que solo tú tienes' },
+        {
+          kind: 'paragraph',
+          text: 'Agrega lo que una plantilla no puede inventar: fotos de tus propios trabajos o de tu propia cocina, una reseña real usada con permiso del cliente, la colonia donde trabajaste, cuánto tardó el trabajo y un rango de precio si puedes compartirlo. **Una página se gana su lugar cuando contiene al menos un dato que solo tu negocio podría saber.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'No hace falta un sitio nuevo. Abre la página, cambia un párrafo genérico por un trabajo real y súmale dos fotos. Con quince minutos por página ya sabes si vale la pena conservarla, y la respuesta suele ser más clara de lo que esperas: si no se te ocurre un solo trabajo real para agregar, probablemente la página no debería existir. Así también planeamos las páginas de un sitio [Foundation](/foundation): alrededor de tu trabajo real y de tu zona de servicio, no de relleno.',
+        },
+        {
+          kind: 'image',
+          variant: 'proof',
+          caption: 'Una página que nadie más habría podido escribir es la única que un cliente, o un buscador, tiene motivo para conservar.',
+          src: aiThinPageProof,
+          alt: 'Una página índigo levantada de un montón de páginas grises idénticas, con una pequeña marca naranja y una línea fina que la une a un solo punto en el contorno de un mapa.',
+        },
+        { kind: 'heading', text: '3. Une o elimina las páginas que no puedas reforzar' },
+        {
+          kind: 'paragraph',
+          text: 'Supón que tienes ocho páginas de ciudad casi idénticas y prueba real de solo dos. Quédate con esas dos y reúne el resto en una sola página de zona de servicio. **Dos páginas que puedes defender valen más que ocho que no,** y es mucho más fácil mantenerlas al día.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Una regla antes de borrar nada: si una página tiene tráfico, ponle una redirección permanente hacia la que la reemplaza. Una dirección borrada sin redirección tira el posicionamiento que había ganado. Si no sabes si una página recibe visitas, primero revisa y después borra.',
+        },
+        { kind: 'heading', text: '4. Revisa tus propios números antes de culpar a Google' },
+        {
+          kind: 'paragraph',
+          text: 'Si tu tráfico bajó, no des por hecho que la causa es el contenido de IA. Abre Search Console y compara los últimos 28 días con los 28 anteriores. Ordena por clics perdidos y anota las diez páginas que más cayeron. Luego abre el informe de acciones manuales: si no aparece nada, Google no aplicó ninguna sanción a tu sitio.',
+        },
+        {
+          kind: 'paragraph',
+          text: '**Una caída de tráfico es un síntoma; Search Console te dice qué páginas golpeó y el informe de acciones manuales te dice si Google te marcó.** Las posiciones también se mueven porque un competidor mejoró una página, porque terminó una temporada o porque cambió una ficha. Descarta eso antes de reescribir nada.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'El diagnóstico empieza por saber qué páginas perdieron clics, no por adivinar quién las escribió.',
+          src: aiThinSearchConsole,
+          alt: 'Un libro de cuentas sencillo en índigo con diez filas cortas, tres marcadas con un visto naranja, junto a una lupa tenue dibujada con línea gris fina.',
+        },
+        { kind: 'heading', text: 'Qué ignorar' },
+        {
+          kind: 'paragraph',
+          text: 'Ignora a quien te venda un paquete de contenido con IA “a prueba de sanciones”. Nadie fuera de Google sabe qué disparó la acción contra un foro, así que una garantía es una suposición con precio.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Ignora también el consejo contrario, el de dejar de usar herramientas de IA por completo. Google ha dicho que el contenido escrito con IA no es malo por sí solo. El riesgo está en publicarlo sin editar y sin pruebas. Y ignora el volumen de publicaciones como meta: diez páginas que nadie termina de leer no hacen más grande a un negocio.',
+        },
+        {
+          kind: 'quote',
+          text: 'Una página que un competidor puede copiar y firmar es una página en la que el cliente no confía.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Si no sabes si tu sitio convierte a las visitas que ya tiene, empieza con el [Growth Score](/growth-score): gratis, 12 preguntas, cuatro minutos. Si quieres que una persona lea tus páginas frente a tus trabajos reales y te diga cuáles conservar, reescribir o unir, el [Diagnóstico](/diagnostic) cuesta $297, dura siete días y termina con un entregable real.',
         },
       ],
     },
