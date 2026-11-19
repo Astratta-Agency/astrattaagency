@@ -1,0 +1,15 @@
+{
+  "cover": {
+    "concept": "A small warm orange sphere resting on a calm pale field, facing a tall, softly lit indigo doorway in the distance; the straight path between them is crossed by a long row of thin, closely spaced translucent bars, so the open door is visible but quietly out of reach."
+  },
+  "inline": [
+    {
+      "name": "too-many-gates",
+      "concept": "A narrow straight path on a pale field crossed by a long sequence of thin indigo gates, each one slightly taller than the last; a small orange sphere has stopped in front of the first few, and the far end of the path fades into soft light."
+    },
+    {
+      "name": "start-to-send",
+      "concept": "Two columns of small dots on a pale field: a tall column of muted indigo dots on the left and a much shorter column of warm orange dots on the right, connected by faint thin lines, most of which fade out halfway across the gap."
+    }
+  ]
+}

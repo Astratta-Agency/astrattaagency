@@ -111,6 +111,9 @@ import autoPromoSwitch from '@/assets/blog/google-ads-auto-promotions-dallas-acc
 import bilingualSiteCover from '@/assets/blog/bilingual-customers-one-language-dallas-cover.webp'
 import bilingualSiteSecondDoor from '@/assets/blog/bilingual-customers-one-language-dallas-second-door.webp'
 import bilingualSiteQueryCount from '@/assets/blog/bilingual-customers-one-language-dallas-query-count.webp'
+import contactFormCover from '@/assets/blog/contact-form-no-submissions-dallas-cover.webp'
+import contactFormTooManyGates from '@/assets/blog/contact-form-no-submissions-dallas-too-many-gates.webp'
+import contactFormStartToSend from '@/assets/blog/contact-form-no-submissions-dallas-start-to-send.webp'
 export type AuthorId = keyof typeof AUTHORS
 
 export type ResolvedAuthor = { name: string; role: string }
@@ -5241,6 +5244,230 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: 'Si quieres ver dónde tu presencia en internet está perdiendo gente, empieza con el [Growth Score](/growth-score): gratis, 12 preguntas, cuatro minutos. Si quieres que una persona revise tu sitio, tu perfil de Google y tus redes en los dos idiomas, el [Diagnóstico](/diagnostic) cuesta $297, dura siete días y es una revisión humana con un entregable real. Y cuando el arreglo pide un sitio pensado para dos idiomas desde el principio, para eso está [Foundation](/foundation).',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'contact-form-no-submissions-dallas', es: 'formulario-de-contacto-sin-envios-dallas' },
+    title: {
+      en: 'Your Dallas website gets visits, but the contact form stays empty. Here’s the fix.',
+      es: 'Tu sitio web en Dallas recibe visitas, pero el formulario de contacto sigue vacío. Este es el arreglo.',
+    },
+    excerpt: {
+      en: 'The traffic is real. The ad or the Google profile did its job. Then the visitor reaches the form and quietly leaves. Five fixes a Dallas–Fort Worth owner can make without hiring anyone, and the one number that proves they worked.',
+      es: 'Las visitas son reales. El anuncio o la ficha de Google cumplieron. Y entonces el visitante llega al formulario y se va sin decir nada. Cinco arreglos que un dueño de Dallas–Fort Worth puede hacer sin contratar a nadie, y el número que prueba que funcionaron.',
+    },
+    category: 'web-conversion',
+    publishedAt: '2026-11-19',
+    readingTime: { en: '6 min read', es: '6 min de lectura' },
+    coverGradient: 'from-primary/20 to-secondary/20',
+    coverVariant: 'checklist',
+    coverImage: contactFormCover,
+    coverAlt: {
+      en: 'A small orange sphere on a pale field facing a tall indigo doorway, with a long row of thin, closely spaced bars crossing the path between them.',
+      es: 'Una pequeña esfera naranja sobre un fondo claro frente a una puerta alta de color índigo, con una larga fila de barras finas y muy juntas que cruzan el camino entre ambas.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'Contact Form Getting No Leads? A Dallas Fix | Astratta',
+      es: '¿Tu formulario no recibe envíos? Arreglo Dallas | Astratta',
+    },
+    metaDescription: {
+      en: 'A Dallas website with visits but an empty contact form usually has one of three problems. Five fixes you can make this week, and the GA4 number that proves it.',
+      es: 'Si tu sitio en Dallas recibe visitas y el formulario sigue vacío, suele ser una de tres fallas. Cinco arreglos para esta semana y el dato de GA4 que lo prueba.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: 'Here is how owners put it: “People visit the website. I can see them in the numbers. But the contact form almost never sends me anything.” We hear it from Dallas–Fort Worth contractors, med spas and car lots alike. The traffic is real. The ad or the Google profile did its job. Then the visitor reaches the form and quietly leaves.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'In one recent audit of a DFW business, the contact form asked for nine fields before it would send. Nobody on the team could remember the last time they had filled it out from a phone. That combination, a long form that nobody tests, is one of the most common reasons a site with visits produces no leads.',
+        },
+        { kind: 'heading', text: 'What actually causes it' },
+        {
+          kind: 'paragraph',
+          text: 'It is rarely the traffic, and rarely the colors. **A contact form usually fails for one of three reasons: it asks for too much, it doesn’t say what happens next, or it doesn’t actually deliver.** Every extra field is one more decision for someone who is still comparing you with two other businesses on a small screen. A button that only says “Submit” gives them no reason to believe anyone will answer.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'The third reason is the one nobody checks. Forms break silently. A plugin update, a changed email password, or a notification address that belongs to someone who no longer works there, and the messages land in spam or nowhere at all. The website keeps looking fine. The visitor thinks they wrote to you. You never hear from them.',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'Each field is a small gate. Nine of them in a row is a wall.',
+          src: contactFormTooManyGates,
+          alt: 'A narrow path on a pale field crossed by a long sequence of thin indigo gates, with a small orange sphere stopped in front of the first few.',
+        },
+        { kind: 'heading', text: '1. Send your own form from your phone, today' },
+        {
+          kind: 'paragraph',
+          text: 'Open your website on your phone, not your computer, and fill out the form the way a customer would. Time how long it takes. Then check three things: did the message arrive, where did it land (inbox, spam, or a dashboard nobody opens), and how long did it take to get there. **If you haven’t sent your own form in the last month, you don’t know whether it works.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Do it a second time from another phone or a friend’s email. If anything fails, check the notification address in your website builder’s form settings first; on Wix, Squarespace and the common WordPress form plugins it is a settings field, not a developer job. Add a second recipient so a lead never depends on a single inbox.',
+        },
+        { kind: 'heading', text: '2. Cut the form to three fields' },
+        {
+          kind: 'paragraph',
+          text: 'Name, phone, and what they need. That is enough to start a conversation. Address, budget, how they heard about you, preferred date: those belong on the first call, not in front of it. **Every field you remove is one less reason to close the tab halfway through.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'If a field truly has to stay, make it optional instead of required. And swap any open box that asks people to “describe your project” for a short dropdown of your services; choosing is faster than writing, especially with one thumb. We made the same point for clinics in [why med spa leads never show up](/blog/med-spa-no-show-leads-dallas), and it applies to any business with a form.',
+        },
+        { kind: 'heading', text: '3. Say what happens next, right on the button' },
+        {
+          kind: 'paragraph',
+          text: '“Submit” describes what the visitor does. The button should describe what they get. Change it to something like “Get my quote” or “Request a call back,” and put one plain line above it with your real reply time, for example “We reply within two business hours,” but only if that is true. **A promise you keep, placed beside the button, does more than a paragraph about your values placed above it.**',
+        },
+        { kind: 'heading', text: '4. Give people a second door next to the form' },
+        {
+          kind: 'paragraph',
+          text: 'Some visitors will never type into a form. Put a tap-to-call phone number and a text or WhatsApp link right beside it, not only in the footer. Most website builders include a click-to-call button and a WhatsApp button as built-in elements. **The form should be one way in, not the only way in.** If calls are the door you open, make sure someone picks up; our post on [the missed call that costs the job](/blog/missed-calls-lost-jobs-dfw) covers that side.',
+        },
+        { kind: 'heading', text: '5. Replace the dead-end thank-you message' },
+        {
+          kind: 'paragraph',
+          text: 'After someone sends the form, most sites show a small “Thank you” and nothing else. Use that moment. Confirm the request arrived, repeat the reply time, and give one useful next step: your phone number, your hours, or a link back to the service they asked about. Turn on the automatic confirmation email that almost every form tool includes, too. **The minutes right after a submission are when a lead is most likely to contact the next business on the list.**',
+        },
+        { kind: 'heading', text: 'How to measure it' },
+        {
+          kind: 'paragraph',
+          text: 'The metric is form completion rate: of the people who start your form, how many actually send it. In Google Analytics 4, go to Admin, then Data streams, choose your website, open Enhanced measurement and confirm that Form interactions is turned on. GA4 then records two events: form_start when someone begins filling it out, and form_submit when they send it. Both appear under Reports, then Engagement, then Events.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Divide form_submit by form_start for the last 30 days and write that number down before you change anything. **If many people start the form and few send it, the form is the problem; if few people start it, the page above it is.** Check the same number again 30 days after your changes.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'One caution: GA4’s automatic form tracking doesn’t work equally well with every website builder. Compare form_submit with the real number of messages in your inbox for the same period. If they don’t match, trust the inbox, and read GA4 as a direction rather than an exact count.',
+        },
+        {
+          kind: 'image',
+          variant: 'insight',
+          caption: 'Starts versus sends. The gap between the two is the leak you can actually fix.',
+          src: contactFormStartToSend,
+          alt: 'Two columns of small dots on a pale field: a tall indigo column on the left and a much shorter orange column on the right, joined by faint lines that fade out halfway across.',
+        },
+        { kind: 'heading', text: 'What not to do' },
+        {
+          kind: 'paragraph',
+          text: 'Don’t add fields to “qualify” people before you have ever spoken to them; **qualifying is the job of the first call, not the form.** Don’t hide your phone number to push everyone into the form, either. You lose exactly the people who were ready to talk.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Don’t add a puzzle CAPTCHA before checking whether spam is really a problem; most form tools offer invisible spam filtering you can switch on instead. Don’t change five things in one afternoon and then guess which one worked; note the date of each change. And don’t write a reply time you can’t keep. The first promise you break is the one the customer remembers.',
+        },
+        {
+          kind: 'quote',
+          text: 'A form nobody tests is a door you only think is open.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Every step above is yours to do this week. If you’d rather have a person walk through your website, your forms and your Google profile and show you exactly where the lead is getting lost, the [Diagnostic](/diagnostic) is a $297, seven-day human review with a real deliverable.',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: 'Así lo dicen los dueños: “La gente entra a la página. Lo veo en los números. Pero el formulario de contacto casi nunca me manda nada.” Lo escuchamos de contratistas, med spas y lotes de autos en todo Dallas–Fort Worth. Las visitas son reales. El anuncio o la ficha de Google hicieron su parte. Y entonces el visitante llega al formulario y se va sin decir nada.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'En una auditoría reciente a un negocio de DFW, el formulario de contacto pedía nueve campos antes de dejarte enviarlo. Nadie en el equipo recordaba la última vez que lo había llenado desde un celular. Esa combinación, un formulario largo que nadie prueba, es una de las razones más comunes por las que un sitio con visitas no genera clientes.',
+        },
+        { kind: 'heading', text: 'Qué lo causa de verdad' },
+        {
+          kind: 'paragraph',
+          text: 'Casi nunca es el tráfico, y casi nunca son los colores. **Un formulario de contacto suele fallar por una de tres razones: pide demasiado, no dice qué pasa después o, sencillamente, no llega.** Cada campo extra es una decisión más para alguien que todavía te está comparando con otros dos negocios en una pantalla pequeña. Un botón que solo dice “Enviar” no le da ningún motivo para creer que alguien le va a contestar.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'La tercera razón es la que nadie revisa. Los formularios se rompen en silencio. Basta una actualización de un plugin, un cambio de contraseña del correo o un correo de aviso que pertenece a alguien que ya no trabaja ahí, y los mensajes terminan en spam o en ninguna parte. El sitio se sigue viendo bien. El visitante cree que te escribió. Tú nunca te enteras.',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'Cada campo es una pequeña reja. Nueve seguidas ya son un muro.',
+          src: contactFormTooManyGates,
+          alt: 'Un camino estrecho sobre un fondo claro atravesado por una larga secuencia de rejas finas de color índigo, con una pequeña esfera naranja detenida frente a las primeras.',
+        },
+        { kind: 'heading', text: '1. Envía tu propio formulario desde tu celular, hoy mismo' },
+        {
+          kind: 'paragraph',
+          text: 'Abre tu sitio en el celular, no en la computadora, y llena el formulario como lo haría un cliente. Mide cuánto tardas. Después revisa tres cosas: si el mensaje llegó, a dónde llegó (bandeja de entrada, spam o un panel que nadie abre) y cuánto tardó en llegar. **Si no has enviado tu propio formulario en el último mes, no sabes si funciona.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Hazlo una segunda vez desde otro celular o con el correo de un amigo. Si algo falla, revisa primero el correo de aviso en la configuración del formulario de tu plataforma; en Wix, Squarespace y los plugins de formularios más comunes de WordPress es un campo de configuración, no un trabajo de programador. Agrega un segundo destinatario para que ningún cliente dependa de una sola bandeja.',
+        },
+        { kind: 'heading', text: '2. Deja el formulario en tres campos' },
+        {
+          kind: 'paragraph',
+          text: 'Nombre, teléfono y qué necesita. Con eso basta para empezar una conversación. Dirección, presupuesto, cómo te conoció, fecha preferida: todo eso va en la primera llamada, no antes. **Cada campo que quitas es una razón menos para cerrar la pestaña a la mitad.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Si de verdad un campo tiene que quedarse, hazlo opcional en lugar de obligatorio. Y cambia cualquier caja abierta que diga “describe tu proyecto” por un menú corto con tus servicios: elegir es más rápido que escribir, sobre todo con un solo pulgar. Lo explicamos para clínicas en [por qué los leads de un med spa no se presentan](/blog/med-spa-no-show-leads-dallas), y aplica a cualquier negocio con formulario.',
+        },
+        { kind: 'heading', text: '3. Di qué pasa después, en el mismo botón' },
+        {
+          kind: 'paragraph',
+          text: '“Enviar” describe lo que hace el visitante. El botón debería describir lo que recibe. Cámbialo por algo como “Quiero mi cotización” o “Que me llamen”, y pon arriba una línea sencilla con tu tiempo real de respuesta, por ejemplo “Respondemos en menos de dos horas hábiles”, pero solo si es cierto. **Una promesa que cumples, puesta junto al botón, rinde más que un párrafo sobre tus valores puesto encima.**',
+        },
+        { kind: 'heading', text: '4. Abre una segunda puerta junto al formulario' },
+        {
+          kind: 'paragraph',
+          text: 'Hay visitantes que nunca van a escribir en un formulario. Pon un teléfono que se marque con un toque y un enlace a mensaje de texto o WhatsApp justo al lado, no solo en el pie de página. Casi todas las plataformas de sitios web traen un botón de llamada y uno de WhatsApp listos para usar. **El formulario debe ser una entrada, no la única entrada.** Si abres la puerta del teléfono, asegúrate de que alguien conteste; nuestro artículo sobre [la llamada perdida que cuesta el contrato](/blog/missed-calls-lost-jobs-dfw) cubre ese lado.',
+        },
+        { kind: 'heading', text: '5. Cambia el “Gracias” que no lleva a ningún lado' },
+        {
+          kind: 'paragraph',
+          text: 'Cuando alguien envía el formulario, la mayoría de los sitios muestra un pequeño “Gracias” y nada más. Aprovecha ese momento. Confirma que la solicitud llegó, repite el tiempo de respuesta y da un siguiente paso útil: tu teléfono, tu horario o un enlace de vuelta al servicio que pidió. Activa también el correo de confirmación automático que trae casi cualquier herramienta de formularios. **Los minutos justo después de enviar son cuando un cliente tiene más probabilidades de escribirle al siguiente negocio de la lista.**',
+        },
+        { kind: 'heading', text: 'Cómo se mide' },
+        {
+          kind: 'paragraph',
+          text: 'La métrica es la tasa de finalización del formulario: de las personas que empiezan a llenarlo, cuántas lo envían de verdad. En Google Analytics 4, entra a Administrar, luego Flujos de datos, elige tu sitio web, abre Medición mejorada y confirma que Interacciones con formularios esté activada. GA4 registra entonces dos eventos: form_start cuando alguien empieza a llenarlo y form_submit cuando lo envía. Los dos aparecen en Informes, luego Participación, luego Eventos.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Divide form_submit entre form_start de los últimos 30 días y anota ese número antes de cambiar nada. **Si mucha gente empieza el formulario y poca lo envía, el problema es el formulario; si poca gente lo empieza, el problema es la página que está encima.** Vuelve a revisar el mismo número 30 días después de tus cambios.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Una advertencia: el seguimiento automático de formularios de GA4 no funciona igual de bien con todas las plataformas. Compara form_submit con el número real de mensajes en tu bandeja durante el mismo periodo. Si no coinciden, créele a la bandeja y usa GA4 como dirección, no como conteo exacto.',
+        },
+        {
+          kind: 'image',
+          variant: 'insight',
+          caption: 'Los que empiezan contra los que envían. La diferencia entre los dos es la fuga que sí puedes arreglar.',
+          src: contactFormStartToSend,
+          alt: 'Dos columnas de pequeños puntos sobre un fondo claro: una columna alta de color índigo a la izquierda y una mucho más corta de color naranja a la derecha, unidas por líneas tenues que se desvanecen a mitad de camino.',
+        },
+        { kind: 'heading', text: 'Qué no hacer' },
+        {
+          kind: 'paragraph',
+          text: 'No agregues campos para “filtrar” a la gente antes de haber hablado con ella: **filtrar es trabajo de la primera llamada, no del formulario.** Tampoco escondas tu teléfono para obligar a todos a usar el formulario. Pierdes justo a las personas que ya estaban listas para hablar.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'No pongas un CAPTCHA de rompecabezas sin antes comprobar si el spam de verdad es un problema; la mayoría de las herramientas de formularios tienen un filtro invisible que puedes activar en su lugar. No cambies cinco cosas en una tarde para después adivinar cuál funcionó; anota la fecha de cada cambio. Y no escribas un tiempo de respuesta que no puedes cumplir. La primera promesa que rompes es la que el cliente recuerda.',
+        },
+        {
+          kind: 'quote',
+          text: 'Un formulario que nadie prueba es una puerta que solo crees que está abierta.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Cada paso de este artículo lo puedes hacer tú esta semana. Si prefieres que una persona revise tu sitio, tus formularios y tu ficha de Google y te muestre exactamente dónde se está perdiendo el cliente, el [Diagnóstico](/diagnostic) cuesta $297, dura siete días y es una revisión humana con un entregable real.',
         },
       ],
     },
