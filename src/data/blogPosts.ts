@@ -70,6 +70,9 @@ import linkBioOnePath from '@/assets/blog/link-in-bio-no-inquiries-dallas-one-pa
 import oneServiceCover from '@/assets/blog/website-shows-one-service-dallas-cover.webp'
 import oneServiceAllLines from '@/assets/blog/website-shows-one-service-dallas-all-lines-first-screen.webp'
 import oneServiceDoors from '@/assets/blog/website-shows-one-service-dallas-one-door-per-service.webp'
+import adobeChatCover from '@/assets/blog/adobe-ai-chat-promo-design-dallas-cover.webp'
+import adobeChatFiveStyles from '@/assets/blog/adobe-ai-chat-promo-design-dallas-five-styles-one-business.webp'
+import adobeChatMasterVersions from '@/assets/blog/adobe-ai-chat-promo-design-dallas-one-master-many-versions.webp'
 
 export type BlogCategory = 'web-conversion' | 'digital-marketing' | 'design' | 'case-notes'
 
@@ -5241,6 +5244,242 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: 'Si quieres ver dónde tu presencia en internet está perdiendo gente, empieza con el [Growth Score](/growth-score): gratis, 12 preguntas, cuatro minutos. Si quieres que una persona revise tu sitio, tu perfil de Google y tus redes en los dos idiomas, el [Diagnóstico](/diagnostic) cuesta $297, dura siete días y es una revisión humana con un entregable real. Y cuando el arreglo pide un sitio pensado para dos idiomas desde el principio, para eso está [Foundation](/foundation).',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'adobe-ai-chat-promo-design-dallas', es: 'adobe-chat-ia-diseno-promociones-dallas' },
+    title: {
+      en: 'Adobe now designs inside Gemini and Claude. What Dallas businesses should do with it',
+      es: 'Adobe ya diseña dentro de Gemini y Claude. Qué debe hacer con eso un negocio en Dallas',
+    },
+    excerpt: {
+      en: 'Adobe’s design tools now work inside the AI chats many Dallas–Fort Worth owners already use. A holiday flyer takes minutes. The risk is no longer the cost of design; it is five promos that look like five different businesses.',
+      es: 'Las herramientas de diseño de Adobe ya funcionan dentro de los chats de IA que muchos dueños en Dallas–Fort Worth usan a diario. Un flyer de temporada sale en minutos. El riesgo ya no es lo que cuesta diseñar, sino cinco promociones que parecen de cinco negocios distintos.',
+    },
+    category: 'design',
+    publishedAt: '2026-11-24',
+    readingTime: { en: '5 min read', es: '5 min de lectura' },
+    coverGradient: 'from-primary/20 to-secondary/20',
+    coverVariant: 'insight',
+    coverImage: adobeChatCover,
+    coverAlt: {
+      en: 'Small tiles in slightly different shades of orange drifting apart on the left, passing through a thin indigo frame in the center and leaving on the right aligned in one tidy row, all the same orange.',
+      es: 'Pequeños mosaicos en tonos de naranja ligeramente distintos que se dispersan a la izquierda, atraviesan un marco índigo delgado en el centro y salen a la derecha alineados en una sola fila ordenada, todos del mismo naranja.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'Adobe in Gemini and Claude: A Dallas Promo Guide | Astratta',
+      es: 'Adobe en Gemini y Claude: guía para Dallas | Astratta',
+    },
+    metaDescription: {
+      en: 'Adobe’s tools now work inside Gemini and Claude, so a Dallas business can make a holiday flyer in minutes. Three steps to keep every promo on brand this week.',
+      es: 'Adobe ya funciona dentro de Gemini y Claude, y un negocio en Dallas puede hacer su flyer de temporada en minutos. Tres pasos para que cada pieza siga tu marca.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: 'On September 24, Adobe put its design tools inside two AI assistants that many Dallas–Fort Worth owners already keep open on their phones. A new connector brings tools from Photoshop, Lightroom, Express and Firefly into Google Gemini, and Adobe says it is available on every Gemini plan.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Adobe’s plugin for Claude now reaches more than 80 tools across Acrobat, Express, Photoshop, Illustrator and others, and adds an editor where you change a design’s images, text, colors and fonts one layer at a time. Per Adobe, guests can use the Claude plugin without an Adobe account; signing in unlocks the full experience. In plain terms: the holiday flyer, the menu update and the Instagram graphic can now be made by typing what you want into a chat.',
+        },
+        { kind: 'heading', text: 'Why it matters in Dallas–Fort Worth' },
+        {
+          kind: 'paragraph',
+          text: 'The timing is the point. Thanksgiving is Thursday, Black Friday is Friday and Small Business Saturday is November 28. For a restaurant in Oak Cliff or a contractor in Frisco, this is the week the promo has to go out, and the week nobody has time to wait for a design to come back.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'But making the flyer was never the hard part. **The bottleneck just moved from making the piece to deciding what it says and how it should look.** When anyone on the team can produce a graphic in two minutes, you end up with five graphics in five styles: one orange on the window sign, another on Instagram, a different font on the menu, a logo stretched to fit.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Each piece looks fine on its own. Together they look like five businesses. A customer who sees your post on Tuesday and your sign on Saturday should recognize the same place without reading the name, and pieces that don’t match make every impression start from zero.',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'Five pieces made in five minutes only help if they look like one business.',
+          src: adobeChatFiveStyles,
+          alt: 'Five small rounded shapes scattered on a pale field, each a slightly different shade and size, with only one of them outlined in the exact brand orange.',
+        },
+        { kind: 'heading', text: 'What to do this week' },
+        {
+          kind: 'paragraph',
+          text: 'Three steps, in this order. None of them needs a designer, and the first one is the one most owners skip.',
+        },
+        { kind: 'heading', text: '1. Write a one-page brand sheet before you open the chat' },
+        {
+          kind: 'paragraph',
+          text: 'Put four things on one page: your logo file (the original, not a screenshot), your two brand colors as hex codes, the one or two fonts you use, and three words for how the business should feel. If you don’t know your hex codes, ask whoever built your website or printed your last sign.',
+        },
+        {
+          kind: 'paragraph',
+          text: '**Paste that sheet into the chat before every design request.** An AI assistant follows the instructions it gets. If you don’t give it your rules, it makes up its own, and it will make up different ones every time you ask.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Save the sheet as a note on your phone and share it with everyone who posts for the business. It takes an hour to write once, and it ends the argument about which orange is the right one every time after that.',
+        },
+        { kind: 'heading', text: '2. Write the offer before you design anything' },
+        {
+          kind: 'paragraph',
+          text: 'A good-looking flyer with a vague offer is still a vague offer. Write the promotion in one sentence first: what it is, who it is for, when it ends and what the customer should do next. Something like “gift cards with a bonus through Sunday, buy at the counter or online.”',
+        },
+        {
+          kind: 'paragraph',
+          text: '**If you can’t say the offer in one sentence, no tool will design it into clarity.** Once you have the sentence, give it to the AI word for word and tell it not to rewrite it. The chat’s job is the layout, not the deal.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Then check the dates and the fine print yourself. Give an AI a vague instruction and it may write “ends Monday” on a promo that ends Sunday, and the customer at your counter will hold you to whatever the flyer says.',
+        },
+        { kind: 'heading', text: '3. Make one master piece, then ask for versions' },
+        {
+          kind: 'paragraph',
+          text: 'Get one design right first, usually the Instagram post, because it is the piece most people will see. Use the layer editor to fix the details: replace the stock image with a real photo of your place, correct the color, cut the text down. **Versions of one approved piece stay consistent; five fresh requests don’t.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Then ask for that same design resized as a story, a printed flyer and a post for your Google Business Profile. Before anything goes out, look at it on your phone at arm’s length. If your name and the offer aren’t readable in two seconds, simplify.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Use real photos of your food, your crew or your finished work wherever you can. A generated picture of a dish you don’t serve, or a kitchen you didn’t remodel, is a promise the customer will check in person.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'Approve one piece. Everything else is a copy of it, not a new idea.',
+          src: adobeChatMasterVersions,
+          alt: 'One solid orange rectangle at the center of a pale field, with three smaller indigo outlines of different proportions around it, each repeating the same simple inner layout.',
+        },
+        { kind: 'heading', text: 'What to ignore' },
+        {
+          kind: 'paragraph',
+          text: 'Ignore the claim that this replaces having a brand. These tools are very good at following rules and have no way of knowing what yours should be. A business without defined colors, fonts and voice will simply produce inconsistency faster.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Ignore the urge to generate twenty options. **More options is how the week disappears; one approved direction is how the promo actually ships.** Pick one, fix it, publish it.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'And ignore the opposite worry, that using AI for a flyer is cutting corners. Your customers don’t care who moved the text box. They care whether the offer is clear and whether the place looks like the one they remember.',
+        },
+        {
+          kind: 'quote',
+          text: 'The software made the flyer free. It didn’t make the decisions free.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'If you want to see where your online presence is losing people, the [Growth Score](/growth-score) is free: 12 questions, four minutes. When the brand sheet itself has never been defined, building it properly is what [Foundation](/foundation) is for. And if you want a person to review your brand, your website and your profiles together, the [Diagnostic](/diagnostic) is a $297, seven-day human review with a real deliverable.',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: 'El 24 de septiembre, Adobe metió sus herramientas de diseño en dos asistentes de IA que muchos dueños de negocio en Dallas–Fort Worth ya tienen abiertos en el teléfono. Un nuevo conector lleva herramientas de Photoshop, Lightroom, Express y Firefly a Google Gemini, y según Adobe está disponible en todos los planes de Gemini.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'El plugin de Adobe para Claude ahora llega a más de 80 herramientas de Acrobat, Express, Photoshop, Illustrator y otras, y suma un editor donde cambias las imágenes, el texto, los colores y las tipografías de un diseño capa por capa. Según Adobe, el plugin de Claude se puede usar como invitado, sin cuenta de Adobe; al iniciar sesión se desbloquea todo. En la práctica: el flyer de temporada, el cambio de menú y el post de Instagram ya se pueden hacer escribiendo en un chat lo que quieres.',
+        },
+        { kind: 'heading', text: 'Por qué importa en Dallas–Fort Worth' },
+        {
+          kind: 'paragraph',
+          text: 'El momento lo explica todo. Thanksgiving es el jueves, Black Friday el viernes y Small Business Saturday el 28 de noviembre. Para un restaurante en Oak Cliff o un contratista en Frisco, esta es la semana en que la promoción tiene que salir, y la semana en que nadie puede esperar a que le devuelvan un diseño.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Pero hacer el flyer nunca fue lo difícil. **El cuello de botella pasó de producir la pieza a decidir qué dice y cómo se ve.** Cuando cualquiera del equipo puede sacar un gráfico en dos minutos, terminas con cinco gráficos en cinco estilos: un naranja en el letrero de la vitrina, otro en Instagram, otra tipografía en el menú y un logo estirado para que quepa.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Cada pieza, por separado, se ve bien. Juntas parecen de cinco negocios distintos. Quien ve tu post el martes y tu letrero el sábado debería reconocer el lugar sin leer el nombre; si las piezas no coinciden, cada impresión empieza de cero.',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'Cinco piezas hechas en cinco minutos solo sirven si parecen de un mismo negocio.',
+          src: adobeChatFiveStyles,
+          alt: 'Cinco formas redondeadas pequeñas dispersas sobre un fondo claro, cada una de un tono y tamaño ligeramente distinto; solo una lleva el contorno en el naranja exacto de la marca.',
+        },
+        { kind: 'heading', text: 'Qué hacer esta semana' },
+        {
+          kind: 'paragraph',
+          text: 'Tres pasos, en este orden. Ninguno requiere diseñador, y el primero es justo el que casi todos los dueños se saltan.',
+        },
+        { kind: 'heading', text: '1. Arma una hoja de marca antes de abrir el chat' },
+        {
+          kind: 'paragraph',
+          text: 'Pon cuatro cosas en una sola página: el archivo de tu logo (el original, no una captura de pantalla), tus dos colores de marca en código hexadecimal, la tipografía o las dos que usas, y tres palabras sobre cómo debe sentirse el negocio. Si no sabes tus códigos de color, pídeselos a quien hizo tu sitio web o imprimió tu último letrero.',
+        },
+        {
+          kind: 'paragraph',
+          text: '**Pega esa hoja en el chat antes de cada pedido de diseño.** Un asistente de IA hace lo que se le indica. Si no le das tus reglas, se inventa las suyas, y cada vez que le pidas algo se va a inventar otras.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Guarda la hoja como nota en el teléfono y compártela con todos los que publican por el negocio. Escribirla toma una hora una sola vez, y se acaba para siempre la discusión sobre cuál es el naranja correcto.',
+        },
+        { kind: 'heading', text: '2. Escribe la oferta antes de diseñar' },
+        {
+          kind: 'paragraph',
+          text: 'Un flyer bonito con una oferta confusa sigue siendo una oferta confusa. Primero escribe la promoción en una frase: qué es, para quién, cuándo termina y qué tiene que hacer el cliente. Algo como “tarjetas de regalo con bono hasta el domingo, cómpralas en el mostrador o en línea”.',
+        },
+        {
+          kind: 'paragraph',
+          text: '**Si no puedes decir la oferta en una frase, ninguna herramienta la va a volver clara con diseño.** Cuando tengas la frase, dásela a la IA tal cual y pídele que no la reescriba. Al chat le toca el diseño, no el trato.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Después revisa tú mismo las fechas y la letra pequeña. Con una instrucción vaga, la IA puede poner “termina el lunes” en una promoción que termina el domingo, y el cliente en tu mostrador te va a exigir lo que diga el flyer.',
+        },
+        { kind: 'heading', text: '3. Haz una pieza maestra y luego pide versiones' },
+        {
+          kind: 'paragraph',
+          text: 'Deja una pieza perfecta primero, normalmente el post de Instagram, porque es la que más gente va a ver. Usa el editor por capas para afinar: cambia la imagen genérica por una foto real de tu local, corrige el color, recorta el texto. **Las versiones de una pieza aprobada se mantienen consistentes; cinco pedidos desde cero, no.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Después pide ese mismo diseño en formato de historia, de flyer impreso y de publicación para tu Perfil de Negocio de Google. Antes de publicar, míralo en el teléfono con el brazo estirado. Si tu nombre y la oferta no se leen en dos segundos, simplifica.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Usa fotos reales de tu comida, de tu equipo o de tus trabajos terminados siempre que puedas. Una imagen generada de un plato que no sirves, o de una cocina que no remodelaste, es una promesa que el cliente va a comprobar en persona.',
+        },
+        {
+          kind: 'image',
+          variant: 'checklist',
+          caption: 'Aprueba una pieza. Todo lo demás es una copia de esa, no una idea nueva.',
+          src: adobeChatMasterVersions,
+          alt: 'Un rectángulo naranja sólido en el centro de un fondo claro, rodeado de tres contornos índigo más pequeños de proporciones distintas, cada uno repitiendo el mismo diseño interior sencillo.',
+        },
+        { kind: 'heading', text: 'Qué ignorar' },
+        {
+          kind: 'paragraph',
+          text: 'Ignora la idea de que esto reemplaza tener una marca. Estas herramientas siguen reglas muy bien, pero no tienen forma de saber cuáles deberían ser las tuyas. Un negocio sin colores, tipografía ni tono definidos solo va a producir inconsistencia más rápido.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Ignora las ganas de generar veinte opciones. **Más opciones es como se pierde la semana; una dirección aprobada es como la promoción sale de verdad.** Elige una, ajústala, publícala.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'E ignora también el miedo contrario, que usar IA para un flyer sea hacer trampa. A tus clientes no les importa quién movió el cuadro de texto. Les importa que la oferta se entienda y que el lugar se vea como el que recuerdan.',
+        },
+        {
+          kind: 'quote',
+          text: 'El software volvió gratis el flyer. Las decisiones siguen costando.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Si quieres ver dónde tu presencia en internet está perdiendo gente, el [Growth Score](/growth-score) es gratis: 12 preguntas, cuatro minutos. Cuando la hoja de marca nunca se ha definido, construirla bien es para lo que existe [Foundation](/foundation). Y si quieres que una persona revise tu marca, tu sitio web y tus perfiles en conjunto, el [Diagnóstico](/diagnostic) cuesta $297, dura siete días y es una revisión humana con un entregable real.',
         },
       ],
     },
