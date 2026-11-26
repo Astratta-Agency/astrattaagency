@@ -1,0 +1,15 @@
+{
+  "cover": {
+    "concept": "A neat, perfectly aligned grid of identical pale square tiles on a calm field, still and catalog-like; at one point the grid opens and a single soft, irregular warm-orange organic shape sits in the gap, sending gentle ripples outward across the surrounding tiles."
+  },
+  "inline": [
+    {
+      "name": "still-catalog",
+      "concept": "Two bands on a pale field: above, a row of identical polished deep-indigo squares, evenly spaced and motionless like a display shelf; below, a single loose, hand-drawn-feeling warm orange curve that moves unevenly across the whole frame, alive and in motion."
+    },
+    {
+      "name": "share-ripple",
+      "concept": "A small warm orange dot at the center of a calm pale field sending out soft concentric rings that travel far beyond its first circle, reaching and gently lighting up a few scattered muted-indigo dots near the edges."
+    }
+  ]
+}
