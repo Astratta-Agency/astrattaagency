@@ -114,6 +114,9 @@ import autoPromoSwitch from '@/assets/blog/google-ads-auto-promotions-dallas-acc
 import bilingualSiteCover from '@/assets/blog/bilingual-customers-one-language-dallas-cover.webp'
 import bilingualSiteSecondDoor from '@/assets/blog/bilingual-customers-one-language-dallas-second-door.webp'
 import bilingualSiteQueryCount from '@/assets/blog/bilingual-customers-one-language-dallas-query-count.webp'
+import productPhotosCover from '@/assets/blog/product-photos-no-reach-dallas-cover.webp'
+import productPhotosStillCatalog from '@/assets/blog/product-photos-no-reach-dallas-still-catalog.webp'
+import productPhotosShareRipple from '@/assets/blog/product-photos-no-reach-dallas-share-ripple.webp'
 export type AuthorId = keyof typeof AUTHORS
 
 export type ResolvedAuthor = { name: string; role: string }
@@ -5480,6 +5483,262 @@ export const BLOG_POSTS: BlogPostSource[] = [
         {
           kind: 'paragraph',
           text: 'Si quieres ver dónde tu presencia en internet está perdiendo gente, el [Growth Score](/growth-score) es gratis: 12 preguntas, cuatro minutos. Cuando la hoja de marca nunca se ha definido, construirla bien es para lo que existe [Foundation](/foundation). Y si quieres que una persona revise tu marca, tu sitio web y tus perfiles en conjunto, el [Diagnóstico](/diagnostic) cuesta $297, dura siete días y es una revisión humana con un entregable real.',
+        },
+      ],
+    },
+  },
+  {
+    slug: { en: 'product-photos-no-reach-dallas', es: 'fotos-de-producto-sin-alcance-dallas' },
+    title: {
+      en: 'Your product photos look great. Why does nobody in Dallas share them?',
+      es: 'Tus fotos de producto se ven bien. ¿Por qué nadie en Dallas las comparte?',
+    },
+    excerpt: {
+      en: 'Hours on clean product shots, and they go nowhere. The quick clip from your phone travels further. Five fixes a Dallas–Fort Worth owner can make without hiring anyone, and the one number that proves they worked.',
+      es: 'Horas en fotos limpias de producto, y no llegan a nadie. El video rápido del celular llega más lejos. Cinco arreglos que un dueño de Dallas–Fort Worth puede hacer sin contratar a nadie, y el número que prueba que funcionaron.',
+    },
+    category: 'design',
+    publishedAt: '2026-11-26',
+    readingTime: { en: '6 min read', es: '6 min de lectura' },
+    coverGradient: 'from-secondary/20 to-primary/20',
+    coverVariant: 'insight',
+    coverImage: productPhotosCover,
+    coverAlt: {
+      en: 'A neat grid of identical pale square tiles on a calm field; at one point the grid opens and a soft, irregular orange shape sends gentle ripples out across the tiles.',
+      es: 'Una cuadrícula ordenada de baldosas cuadradas, claras e idénticas, sobre un fondo sereno; en un punto la cuadrícula se abre y una forma naranja, suave e irregular, envía ondas leves sobre las baldosas.',
+    },
+    author: 'hisbelis',
+    metaTitle: {
+      en: 'Product Photos, No Shares: A Dallas Fix | Astratta',
+      es: 'Fotos de producto sin alcance en Dallas | Astratta',
+    },
+    metaDescription: {
+      en: 'Dallas owners: polished product photos get likes but few shares. Five fixes you can do this week to post content people pass along, and how to measure it.',
+      es: 'Dueños en Dallas: las fotos de producto pulidas reciben likes y pocos compartidos. Cinco arreglos para esta semana con contenido que se comparte y cómo medirlo.',
+    },
+    body: {
+      en: [
+        {
+          kind: 'paragraph',
+          text: 'Here is how owners put it: “I spend hours on beautiful photos of my products, and they go nowhere. Then I post something quick from my phone and it takes off.” We hear it from restaurants, bakeries, boutiques and service businesses in Dallas and across DFW, and it came up in two of our recent audits, ours included.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'The pattern was the same both times. The feed worked like a catalog: clean product shots and branded graphics, one after another. The posts that traveled were the rough ones: a person, a process, a moment nobody had planned to film.',
+        },
+        { kind: 'heading', text: 'What actually causes it' },
+        {
+          kind: 'paragraph',
+          text: 'A product photo answers one question: what does it look like? That is useful on a menu or a product page, where someone is already deciding. In a feed, nobody is deciding yet. **People share people, not catalogs: a post travels when it gives someone a reason to send it to a friend.** A perfect photo of a plate rarely does that. Watching the cook flip it, or hearing the owner explain why the sauce takes two days, sometimes does.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'The platforms reward the same thing. Instagram has said publicly since 2022 that its ranking tries to value original content more, and a polished graphic built from a template looks like everyone else’s. A shaky clip of your own kitchen can only come from you.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'We saw the human version work with Perreando HotDog, a Venezuelan food truck in Dallas. The content showed the food being made, the Venezuelan identity behind it and the late-night crowd, not just finished hot dogs. In 90 days it reached 292,000 views across TikTok, Instagram and Facebook with $0 in ad spend, and customers started showing up at the truck saying they had seen it on TikTok.',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'A catalog stands still. A process moves, and moving things get passed along.',
+          src: productPhotosStillCatalog,
+          alt: 'A row of identical polished indigo squares, evenly spaced and motionless, above a single loose orange curve that crosses the pale field.',
+        },
+        { kind: 'heading', text: '1. Sort your last 20 posts into two piles' },
+        {
+          kind: 'paragraph',
+          text: 'Open your Instagram or TikTok profile and scroll back through your last 20 posts. Put each one in a pile: product only (a photo or graphic with no person in it), or people and process (a face, hands at work, a customer, your team). A note on your phone with two columns is enough.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Next to each post, write down its shares. On Instagram, tap the post, then View insights; on TikTok, open the video’s analytics. **Your last 20 posts already tell you what your audience wants more of; you just haven’t sorted them.** If the second pile is short but holds your best numbers, you have your answer.',
+        },
+        { kind: 'heading', text: '2. Film the process, not the result' },
+        {
+          kind: 'paragraph',
+          text: 'Pick one thing your business does every day that customers never see: dough being folded, a floor being leveled, a dress being steamed, a car being detailed. Film 20 to 40 seconds of it on your phone, with the original sound. Trim the start and the end, and post it. No music, no text template, no filter.',
+        },
+        {
+          kind: 'paragraph',
+          text: '**The process is the part only your business has; the finished product looks like everyone else’s.** If a clip feels too ordinary to post, that is usually a sign it’s the right one. What is routine to you is new to the person watching.',
+        },
+        { kind: 'heading', text: '3. Put one face on camera, saying one sentence' },
+        {
+          kind: 'paragraph',
+          text: 'You don’t need to become a presenter. Have the owner or one team member look at the camera for five seconds and say one sentence about what they are doing: “This is the dough we start every morning at six, and here’s why.” Then cut to the work.',
+        },
+        {
+          kind: 'paragraph',
+          text: '**A recognizable face turns a business into someone people can recommend by name.** Use the same person often enough that viewers start to recognize them. Record five of these openings in one sitting and you have a week of them.',
+        },
+        { kind: 'heading', text: '4. Let real customers into the frame, with permission' },
+        {
+          kind: 'paragraph',
+          text: 'The most convincing person in any video is a customer nobody paid to be there. When a regular is clearly happy, with the first bite, the finished kitchen, the new haircut, ask: “Can I film your reaction for our page?” Post it only if they say yes, and never film children without a parent’s clear permission.',
+        },
+        {
+          kind: 'paragraph',
+          text: '**A real customer’s reaction does what no caption can: it shows a stranger what it feels like to buy from you.** Keep it short and unscripted. Don’t ask them to say anything in particular; the honest reaction is the point.',
+        },
+        { kind: 'heading', text: '5. Batch one hour a week' },
+        {
+          kind: 'paragraph',
+          text: 'Inspiration is unreliable, so make it a slot on the calendar. Block one hour a week at a time when the work is visible: the prep before opening, a job in progress, the Saturday rush. Film five or six short clips in that hour and post them across the week.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Keep your product photos. **Product photos belong where people decide; people belong in the feed.** Put the photos on your website, your menu and your Google Business Profile, where a clean shot earns its keep. If your Google profile still points nowhere, our post on [the missing website link](/blog/gbp-missing-website-link-dallas) is a ten-minute fix.',
+        },
+        { kind: 'heading', text: 'How to measure it' },
+        {
+          kind: 'paragraph',
+          text: 'Ignore likes for this. **The number that matters is shares per post, because every share puts your business in front of someone who doesn’t follow you yet.** Write down the average shares of your product-only pile from step one. That is your baseline.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'On Instagram, open each new post’s insights and note two things: shares, and how much of the views came from non-followers. On TikTok, open the video’s analytics and note views and shares. Keep the same two-column note going for four weeks, then compare the averages of the two piles.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Four weeks is the minimum. One video that takes off, or one that flops, tells you nothing. A month of posts in each pile tells you which way to lean.',
+        },
+        {
+          kind: 'image',
+          variant: 'insight',
+          caption: 'A share carries you past your own followers. Count that, not the likes.',
+          src: productPhotosShareRipple,
+          alt: 'A small orange dot at the center of a pale field sends out concentric rings that reach and light up a few scattered indigo dots far beyond its first circle.',
+        },
+        { kind: 'heading', text: 'What not to do' },
+        {
+          kind: 'paragraph',
+          text: 'Don’t delete your product photos or stop taking them; they still do their job on the menu and the website. Don’t buy lights, a gimbal or a new phone before you have posted ten process clips; **the first problem is never the camera.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Don’t copy a trending dance that has nothing to do with your business; views from people who will never buy from you don’t pay the rent. Don’t film customers or employees who haven’t agreed to it. And don’t judge the new approach on its first week.',
+        },
+        {
+          kind: 'quote',
+          text: 'Your product photo shows what you sell. Your process shows why anyone should buy it from you.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'If you run a [restaurant](/industries/restaurants) or any business where the work happens in front of you, start with step one this week. If you want to know where else your online presence is losing people, the [Growth Score](/growth-score) is free: 12 questions, four minutes. If you want a person to go through your social accounts, your website and your Google profile and tell you what to fix first, the [Diagnostic](/diagnostic) is a $297, seven-day human review with a real deliverable.',
+        },
+      ],
+      es: [
+        {
+          kind: 'paragraph',
+          text: 'Así lo cuentan los dueños: “Le dedico horas a fotos bonitas de mis productos y no llegan a nadie. Luego subo algo rápido del celular y explota.” Lo oímos de restaurantes, panaderías, boutiques y negocios de servicios en Dallas y todo DFW, y apareció en dos de nuestras auditorías recientes, incluida la nuestra.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Las dos veces el patrón fue el mismo. El feed funcionaba como un catálogo: fotos limpias de producto y gráficos de marca, uno tras otro. Lo que sí viajaba eran las publicaciones sin pulir: una persona, un proceso, un momento que nadie planeó grabar.',
+        },
+        { kind: 'heading', text: 'Qué lo causa de verdad' },
+        {
+          kind: 'paragraph',
+          text: 'Una foto de producto responde una sola pregunta: ¿cómo se ve? Eso sirve en un menú o en la página de un producto, donde alguien ya está decidiendo. En el feed nadie está decidiendo todavía. **La gente comparte personas, no catálogos: una publicación viaja cuando le da a alguien una razón para mandársela a un amigo.** La foto perfecta de un plato casi nunca la da. Ver al cocinero voltearlo, u oír al dueño explicar por qué la salsa tarda dos días, a veces sí.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Las plataformas premian lo mismo. Instagram dice públicamente desde 2022 que su sistema de clasificación busca valorar más el contenido original, y un gráfico pulido hecho con plantilla se parece al de todos los demás. Un video movido de tu propia cocina solo puede venir de ti.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Lo vimos funcionar con Perreando HotDog, un food truck venezolano en Dallas. El contenido mostraba la comida mientras se preparaba, la identidad venezolana detrás y el ambiente de madrugada, no solo hot dogs terminados. En 90 días llegó a 292,000 vistas entre TikTok, Instagram y Facebook con $0 en anuncios, y empezaron a llegar clientes al food truck diciendo que lo habían visto en TikTok.',
+        },
+        {
+          kind: 'image',
+          variant: 'clarity',
+          caption: 'Un catálogo se queda quieto. Un proceso se mueve, y lo que se mueve se comparte.',
+          src: productPhotosStillCatalog,
+          alt: 'Una fila de cuadrados índigo pulidos e idénticos, separados por igual y sin movimiento, sobre una sola curva naranja suelta que cruza el fondo claro.',
+        },
+        { kind: 'heading', text: '1. Separa tus últimas 20 publicaciones en dos grupos' },
+        {
+          kind: 'paragraph',
+          text: 'Abre tu perfil de Instagram o TikTok y revisa tus últimas 20 publicaciones. Pon cada una en un grupo: solo producto (una foto o un gráfico sin ninguna persona), o personas y proceso (una cara, unas manos trabajando, un cliente, tu equipo). Basta una nota en el teléfono con dos columnas.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Al lado de cada publicación, anota cuántas veces se compartió. En Instagram, toca la publicación y luego Ver estadísticas; en TikTok, abre las estadísticas del video. **Tus últimas 20 publicaciones ya te dicen qué quiere ver más tu público; solo falta ordenarlas.** Si el segundo grupo es corto pero tiene tus mejores números, ahí está tu respuesta.',
+        },
+        { kind: 'heading', text: '2. Graba el proceso, no el resultado' },
+        {
+          kind: 'paragraph',
+          text: 'Elige algo que tu negocio hace todos los días y que el cliente nunca ve: la masa mientras se amasa, un piso mientras se nivela, un vestido mientras se plancha, un carro mientras se detalla. Grábalo de 20 a 40 segundos con el celular y con el sonido original. Corta el principio y el final, y publícalo. Sin música, sin plantilla de texto, sin filtro.',
+        },
+        {
+          kind: 'paragraph',
+          text: '**El proceso es lo único que solo tiene tu negocio; el producto terminado se parece al de todos.** Si un video te parece demasiado común para publicarlo, suele ser señal de que es el correcto. Lo que para ti es rutina, para quien lo ve es nuevo.',
+        },
+        { kind: 'heading', text: '3. Pon una cara frente a la cámara, diciendo una sola frase' },
+        {
+          kind: 'paragraph',
+          text: 'No tienes que volverte presentador. Que el dueño o alguien del equipo mire a la cámara cinco segundos y diga una frase sobre lo que está haciendo: “Esta es la masa que empezamos todos los días a las seis, y te cuento por qué.” Después, corta al trabajo.',
+        },
+        {
+          kind: 'paragraph',
+          text: '**Una cara conocida convierte a un negocio en alguien a quien la gente puede recomendar por su nombre.** Usa a la misma persona lo bastante seguido como para que la reconozcan. Graba cinco de estas entradas de una sola vez y tienes las de toda la semana.',
+        },
+        { kind: 'heading', text: '4. Deja entrar a clientes reales, con permiso' },
+        {
+          kind: 'paragraph',
+          text: 'La persona más convincente en cualquier video es un cliente al que nadie le pagó por estar ahí. Cuando un cliente de siempre está claramente contento, con el primer bocado, la cocina terminada, el corte nuevo, pregúntale: “¿Puedo grabar tu reacción para nuestra página?” Publícalo solo si dice que sí, y nunca grabes a menores sin el permiso claro de sus padres.',
+        },
+        {
+          kind: 'paragraph',
+          text: '**La reacción de un cliente real hace lo que ningún texto logra: le muestra a un desconocido cómo se siente comprarte.** Que sea corta y sin guion. No le pidas que diga nada en particular; la reacción honesta es lo que vale.',
+        },
+        { kind: 'heading', text: '5. Graba en bloque una hora a la semana' },
+        {
+          kind: 'paragraph',
+          text: 'La inspiración no es confiable, así que conviértela en un espacio fijo en el calendario. Aparta una hora a la semana en un momento en que el trabajo se vea: la preparación antes de abrir, un trabajo a medias, el corre-corre del sábado. Graba cinco o seis videos cortos en esa hora y publícalos a lo largo de la semana.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Quédate con tus fotos de producto. **Las fotos de producto van donde la gente decide; las personas van en el feed.** Ponlas en tu sitio web, en tu menú y en tu Perfil de Negocio de Google, donde una foto limpia sí rinde. Si tu perfil de Google todavía no lleva a ningún lado, nuestro artículo sobre [el enlace al sitio web que falta](/blog/gbp-missing-website-link-dallas) se arregla en diez minutos.',
+        },
+        { kind: 'heading', text: 'Cómo se mide' },
+        {
+          kind: 'paragraph',
+          text: 'Aquí olvídate de los likes. **El número que importa son los compartidos por publicación, porque cada compartido pone tu negocio frente a alguien que todavía no te sigue.** Anota el promedio de compartidos de tu grupo de solo producto del paso uno. Ese es tu punto de partida.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'En Instagram, abre las estadísticas de cada publicación nueva y anota dos cosas: los compartidos y qué parte de las visualizaciones vino de no seguidores. En TikTok, abre las estadísticas del video y anota visualizaciones y compartidos. Sigue con la misma nota de dos columnas durante cuatro semanas y luego compara los promedios de los dos grupos.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Cuatro semanas es lo mínimo. Un video que explota, o uno que no llega a nadie, no te dice nada. Un mes de publicaciones en cada grupo te dice hacia dónde inclinarte.',
+        },
+        {
+          kind: 'image',
+          variant: 'insight',
+          caption: 'Un compartido te lleva más allá de tus propios seguidores. Cuenta eso, no los likes.',
+          src: productPhotosShareRipple,
+          alt: 'Un pequeño punto naranja en el centro de un fondo claro emite anillos concéntricos que alcanzan e iluminan algunos puntos índigo dispersos, lejos de su primer círculo.',
+        },
+        { kind: 'heading', text: 'Qué no hacer' },
+        {
+          kind: 'paragraph',
+          text: 'No borres tus fotos de producto ni dejes de tomarlas: siguen haciendo su trabajo en el menú y en el sitio web. No compres luces, estabilizador ni un teléfono nuevo antes de haber publicado diez videos de proceso: **el primer problema nunca es la cámara.**',
+        },
+        {
+          kind: 'paragraph',
+          text: 'No copies un baile de moda que no tiene nada que ver con tu negocio: las vistas de gente que nunca te va a comprar no pagan la renta. No grabes a clientes ni a empleados que no hayan aceptado. Y no juzgues el cambio en su primera semana.',
+        },
+        {
+          kind: 'quote',
+          text: 'Tu foto de producto muestra lo que vendes. Tu proceso muestra por qué alguien debería comprártelo a ti.',
+        },
+        {
+          kind: 'paragraph',
+          text: 'Si tienes un [restaurante](/industries/restaurants) o cualquier negocio donde el trabajo pasa frente a ti, empieza esta semana con el paso uno. Si quieres saber dónde más está perdiendo gente tu presencia en internet, el [Growth Score](/growth-score) es gratis: 12 preguntas, cuatro minutos. Si quieres que una persona revise tus redes, tu sitio web y tu perfil de Google y te diga qué arreglar primero, el [Diagnóstico](/diagnostic) cuesta $297, dura siete días y es una revisión humana con un entregable real.',
         },
       ],
     },
